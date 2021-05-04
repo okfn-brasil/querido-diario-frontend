@@ -1,11 +1,42 @@
 @import '../../../assets/_tools.sass'
 
+::ng-deep .mat-form-field-flex
+  background-color: unset !important
+  height: rem(60)
+
+::ng-deep .mat-form-field-infix
+  margin-top: 8px
+
+::ng-deep .mat-form-field-prefix
+  align-self: center
+
+::ng-deep .mat-form-field-label
+  opacity: 0.5
+  color: #5E3F8E
+  font-family: Lato
+  font-size: 16px
+  font-weight: 600
+  letter-spacing: 0
+  line-height: 16px
+
+mat-form-field
+  mat-icon
+    margin-right: rem(6)
+    height: rem(28)
+    width: rem(28)
+
 .explore
   width: rem(982)
   margin: 0 auto
 
   h1
     width: rem(744)
+
+.search-input
+  width: rem(383) !important
+
+.city-input, .period-input
+  width: rem(182) !important
 
 .container
   padding: rem(80) 0
@@ -21,7 +52,6 @@
 .goals-section,
 .details,
 .way,
-.partners,
 .sitemap,
 .container
   width: rem(1220)
@@ -34,25 +64,8 @@ h2
   margin: 0
 
 form
-  input
-    height: rem(60)
-    border-radius: rem(10) rem(10) 0 0
-    border-top: none
-    border-left: none
-    border-right: none
-    background-color: #f3e9e9
-    border-bottom: rem(1) solid #2e194f
-    width: 100%
-
   mat-form-field 
     width: 100%
-
-  .search
-    width: rem(383)
-
-  .city,
-  .period
-    width: rem(182)
 
   button
     height: rem(60)
@@ -340,6 +353,9 @@ h2
     text-align: center
 
 .partners
+  padding: rem(82) rem(16)
+  margin: 0 auto
+
   mat-icon 
     margin-right: rem(34)
 
@@ -389,6 +405,12 @@ h2
 @media only screen and (max-width: 768px)
   :host
     overflow-x: hidden
+
+  .search-input
+    width: 100% !important
+
+  .city-input, .period-input
+    width: calc(50% - 8px) !important
 
   .explore
     width: 100%
@@ -441,9 +463,6 @@ h2
       width: rem(50)
       margin-bottom: 16px
 
-  .support
-    margin-bottom: rem(54)
-
   .social
     margin-top: 68px
 
@@ -458,6 +477,9 @@ h2
   .dev-icon
     height: rem(120)
     width: rem(120)
+
+  .partners
+    width: 100%
 
   .video
     img

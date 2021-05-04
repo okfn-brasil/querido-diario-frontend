@@ -42,7 +42,10 @@ const Icons: string[] = [
 
   '../assets/icons/bars.svg',
   
-  '../assets/icons/close.svg'
+  '../assets/icons/close.svg',
+
+  '../assets/icons/search-gray.svg',
+  
 ]
 
 @Component({

@@ -3,13 +3,25 @@
     <div class="container">
       <div fxLayout="column" class="explore" fxLayoutAlign="center">
         <h1>Explore os diários oficiais dos municípios e fique de olho nas ações dos governos</h1>
-        <form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+        <form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px" fxLayoutGap.xs="0">
           <div fxLayout="column">
-            <input type="text" class="search" placeholder="Ex.: licitação, contratação, COVID 19">
+            <mat-form-field appearance="fill" class="search-input">
+              <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
+              <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
+              <input class="search" matInput>
+            </mat-form-field>
           </div>
           <div fxLayout="row" fxLayoutGap="16px">
-            <input type="text" class="city" placeholder="Municípios">
-            <input type="text" class="period" placeholder="Período">
+            <mat-form-field appearance="fill" class="city-input">
+              <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
+              <mat-label>Municípios</mat-label>
+              <input class="city" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="period-input">
+              <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
+              <mat-label>Período</mat-label>
+              <input class="period" matInput>
+            </mat-form-field>
           </div>
           <button class='btn'>Pesquisar</button>
         </form>
@@ -21,7 +33,7 @@
     <div class="follow container" fxFlexAlign="center" fxLayout="column">
       <h2>Acompanhe a evolução do Querido Diário</h2>
       <div fxLayout="row" class="container-inner" fxLayoutGap.xs="16px">
-        <div class="follow-card flex" fxFlex="33%"  fxLayout="column">
+        <div class="follow-card flex" fxFlex="33%" fxLayout="column">
           <div fxLayout="row" fxLayout.xs="column">
             <mat-icon svgIcon="check"></mat-icon>
             <div fxLayout="column">
@@ -60,7 +72,8 @@
   <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
     <div class="help container" fxFlexAlign="center" fxLayout="column">
       <h2>Precisamos do seu apoio</h2>
-      <div fxLayout="row" class="container-inner" fxLayout.xs="column" fxLayoutGap.xs="60px" fxLayoutAlign="space-between">
+      <div fxLayout="row" class="container-inner" fxLayout.xs="column" fxLayoutGap.xs="60px"
+        fxLayoutAlign="space-between">
         <div class="help-card" fxLayout="column" fxLayout.xs="row" fxLayoutGap="42px" fxLayoutGap.xs="22px">
           <mat-icon svgIcon="box" class="box-icon"></mat-icon>
           <div fxLayout="column">
@@ -227,9 +240,9 @@
     </div>
   </section>
   <section class="bg-white-1">
-    <div class="partners container">
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
-        <div fxLayout="column" fxFlex="50%" fxFlex.xs="100%" class="support">
+    <div class="partners">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between"  fxLayoutGap.xs="54px">
+        <div fxLayout="column" fxFlex="50%" fxFlex.xs="100%">
           <p>REALIZAÇÃO</p>
           <div fxLayout="row" fxLayoutGap="34px">
             <mat-icon svgIcon="logo-OK" class="logo-OK"></mat-icon>
@@ -237,7 +250,7 @@
             <mat-icon svgIcon="logo-embaixadores" class="logo-embaixadores"></mat-icon>
           </div>
         </div>
-        <div fxLayout="column" fxFlex="50%" fxFlex.xs="100%" class="support">
+        <div fxLayout="column" fxFlex="50%" fxFlex.xs="100%">
           <p>APOIO</p>
           <div fxLayout="row" fxLayoutGap="34px">
             <mat-icon svgIcon="logo-Ilda" class="logo-Ilda"></mat-icon>
