@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './pages/about/about.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AboutComponent } from './pages/about/about.component';
     ModalComponent,
     FooterComponent,
     AboutComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
