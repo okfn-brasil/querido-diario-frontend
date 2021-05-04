@@ -31,6 +31,7 @@ const Icons: string[] = [
 
   '../assets/icons/right-arrow.svg',
   '../assets/icons/right-arrow-white.svg',
+  '../assets/icons/right-arrow-purple.svg',
 
   '../assets/icons/logo.svg',
   '../assets/icons/notification.svg',
