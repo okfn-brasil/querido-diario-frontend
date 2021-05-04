@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'querido-diario'`, () => {
+  it(`should have as title 'querido-diario-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('querido-diario');
+    expect(app.title).toEqual('querido-diario-frontend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('querido-diario app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('querido-diario-frontend app is running!');
   });
 });

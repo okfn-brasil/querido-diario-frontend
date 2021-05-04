@@ -1,0 +1,19 @@
+<header fxLayout="row">
+  <div class="container">
+    <mat-icon svgIcon="logo" class="logo"></mat-icon>
+    <nav fxHide.xs fxLayoutGap="32px">
+      <a>Explore</a>
+      <a>Tecnologia</a>
+      <a>Sobre o querido diário</a>
+      <a>
+        <mat-icon svgIcon="notification" class="notification"></mat-icon>
+      </a>
+      <button class='btn'>Apoie</button>
+    </nav>
+    <a (click)="openDialog()" fxHide fxHide.xs="false">
+      <mat-icon svgIcon="bars" class="bars"></mat-icon>
+    </a>
+  </div>
+  <app-modal fxHide>
+  </app-modal>
+</header>

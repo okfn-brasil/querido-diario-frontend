@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>C82BF91A-9959-4FE9-8236-8A5AA2FED856</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.368627 0 0 0 0 0.247059 0 0 0 0 0.556863 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <polygon id="path-2" points="0.00036154264 0.404845085 151.810308 0.404845085 151.810308 4.73918742 0.00036154264 4.73918742"></polygon>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#F3E9E9" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#F3E9E9" offset="100%"></stop>
+        </linearGradient>
+        <filter id="filter-5">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.952941 0 0 0 0 0.913725 0 0 0 0 0.913725 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desk_Home" transform="translate(-111.000000, -2649.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1220" height="4208"></rect>
+            <g id="entenda" transform="translate(-93.923954, 2308.000000)">
+                <rect id="Mask" fill="#F3E9E9" transform="translate(703.923954, 273.000000) scale(1, -1) translate(-703.923954, -273.000000) " x="93.9239544" y="0" width="1220" height="546"></rect>
+                <g filter="url(#filter-1)" id="1.-assets/patterns/document-copy-2" opacity="0.3">
+                    <g transform="translate(0.000000, 215.000000)">
+                        <g id="Group-2" transform="translate(95.695817, 111.963303)">
+                            <g id="Group-16-Copy-3" transform="translate(0.000000, 0.000000)">
+                                <g id="Group-3" transform="translate(0.000000, 25.139375)">
+                                    <mask id="mask-3" fill="white">
+                                        <use xlink:href="#path-2"></use>
+                                    </mask>
+                                    <g id="Clip-2"></g>
+                                    <path d="M149.606103,4.73942438 L2.2045665,4.73942438 C0.986770378,4.73942438 0.00036154264,3.76848336 0.00036154264,2.57183853 C0.00036154264,1.37460131 0.986770378,0.404845085 2.2045665,0.404845085 L149.606103,0.404845085 C150.823899,0.404845085 151.810308,1.37460131 151.810308,2.57183853 C151.810308,3.76848336 150.823899,4.73942438 149.606103,4.73942438" id="Fill-1" fill="#2F2D3D" mask="url(#mask-3)"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <rect id="Mask" fill="url(#linearGradient-4)" transform="translate(704.923954, 376.000000) scale(1, -1) translate(-704.923954, -376.000000) " x="94.9239544" y="206" width="1220" height="340"></rect>
+                <g id="Card-width-link" transform="translate(109.923954, 157.000000)">
+                    <rect id="card" fill="#5E3F8E" x="0" y="0" width="382" height="269"></rect>
+                    <g id="1.-assets/button/textlink+icon" transform="translate(30.000000, 42.000000)" filter="url(#filter-5)">
+                        <g transform="translate(0.000000, 137.000000)">
+                            <g id="1.-assets_icon-downarrow" fill="#F3E9E9" transform="translate(71.000000, 11.000000) scale(-1, 1) rotate(90.000000) translate(-71.000000, -11.000000) translate(65.000000, 5.000000)">
+                                <path d="M2.66666667,1.11226631 L2.66666667,10.8668718 C2.66666667,11.1430142 2.89052429,11.3668718 3.16666667,11.3668718 C3.29137109,11.3668718 3.41157453,11.3202716 3.50369186,11.2362145 L8.51250096,6.6656762 C8.92046562,6.29340845 8.94940369,5.66090511 8.57713593,5.25294045 C8.55348209,5.22701843 8.52848017,5.20235948 8.50223392,5.17906594 L3.49855834,0.738303862 C3.29202458,0.555005151 2.97600293,0.573840879 2.79270421,0.780374638 C2.71150803,0.871863296 2.66666667,0.989942994 2.66666667,1.11226631 Z" id="Path-2" transform="translate(6.000000, 6.000000) rotate(90.000000) translate(-6.000000, -6.000000) "></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

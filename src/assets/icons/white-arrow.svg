@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>0DAA27E1-4B03-4876-ABB1-FF60D6FC17C6</title>
+    <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.-group/home-mobile-v3" transform="translate(-220.000000, -1026.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="414" height="6822"></rect>
+            <g id="estatisticas-QD" transform="translate(0.000000, 590.000000)">
+                <rect id="bg-copy-2" fill="#2C1338" x="0" y="0" width="414" height="510"></rect>
+                <g id="1.-assets/button/textlink+icon" transform="translate(16.000000, 431.000000)" fill="#F3E9E9">
+                    <g id="1.-assets_icon-downarrow" transform="translate(210.000000, 11.000000) scale(-1, 1) rotate(90.000000) translate(-210.000000, -11.000000) translate(204.000000, 5.000000)">
+                        <path d="M2.66666667,1.11226631 L2.66666667,10.8668718 C2.66666667,11.1430142 2.89052429,11.3668718 3.16666667,11.3668718 C3.29137109,11.3668718 3.41157453,11.3202716 3.50369186,11.2362145 L8.51250096,6.6656762 C8.92046562,6.29340845 8.94940369,5.66090511 8.57713593,5.25294045 C8.55348209,5.22701843 8.52848017,5.20235948 8.50223392,5.17906594 L3.49855834,0.738303862 C3.29202458,0.555005151 2.97600293,0.573840879 2.79270421,0.780374638 C2.71150803,0.871863296 2.66666667,0.989942994 2.66666667,1.11226631 Z" id="Path-2" transform="translate(6.000000, 6.000000) rotate(90.000000) translate(-6.000000, -6.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

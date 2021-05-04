@@ -1,0 +1,251 @@
+<div fxLayout="column">
+  <section class="explore-section" fxLayoutAlign="center" fxLayout="row" class="bg-white-1">
+    <div class="container">
+      <div fxLayout="column" class="explore" fxLayoutAlign="center">
+        <h1>Explore os diários oficiais dos municípios e fique de olho nas ações dos governos</h1>
+        <form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+          <div fxLayout="column">
+            <input type="text" class="search" placeholder="Ex.: licitação, contratação, COVID 19">
+          </div>
+          <div fxLayout="row" fxLayoutGap="16px">
+            <input type="text" class="city" placeholder="Municípios">
+            <input type="text" class="period" placeholder="Período">
+          </div>
+          <button class='btn'>Pesquisar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
+    <div class="follow container" fxFlexAlign="center" fxLayout="column">
+      <h2>Acompanhe a evolução do Querido Diário</h2>
+      <div fxLayout="row" class="container-inner" fxLayoutGap.xs="16px">
+        <div class="follow-card flex" fxFlex="33%"  fxLayout="column">
+          <div fxLayout="row" fxLayout.xs="column">
+            <mat-icon svgIcon="check"></mat-icon>
+            <div fxLayout="column">
+              <h3>12</h3>
+              <p>Cidade já estão na plataforma</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="follow-card flex" fxFlex="33%" fxLayout="column">
+          <div fxLayout="row" fxLayout.xs="column">
+            <mat-icon svgIcon="search"></mat-icon>
+            <div fxLayout="column">
+              <h3>2.226</h3>
+              <p>Cidades já têm robôs para coletar diários</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="follow-card flex" fxFlex="33%" fxLayout="column">
+          <div fxLayout="row" fxLayout.xs="column">
+            <mat-icon svgIcon="pin"></mat-icon>
+            <div fxLayout="column">
+              <h3>597</h3>
+              <p>Cidades já foram mapeadas pelo censo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a>
+        Conheça os nívels de acesso
+        <mat-icon svgIcon="white-arrow" class="white-arrow"></mat-icon>
+      </a>
+    </div>
+  </section>
+  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
+    <div class="help container" fxFlexAlign="center" fxLayout="column">
+      <h2>Precisamos do seu apoio</h2>
+      <div fxLayout="row" class="container-inner" fxLayout.xs="column" fxLayoutGap.xs="60px" fxLayoutAlign="space-between">
+        <div class="help-card" fxLayout="column" fxLayout.xs="row" fxLayoutGap="42px" fxLayoutGap.xs="22px">
+          <mat-icon svgIcon="box" class="box-icon"></mat-icon>
+          <div fxLayout="column">
+            <h3>
+              Nossa próxima meta
+            </h3>
+            <p>Hoje poderíamos ter 2226 cidades na plataforma, e você pode nos ajudar a chegar lá:</p>
+            <div fxLayout="row">
+              <button class="donation">
+                Doe
+              </button>
+              <button class="goals">
+                Ver todas as metas
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="help-card" fxLayout="column" fxLayout.xs="row" fxLayoutGap="42px" fxLayoutGap.xs="22px">
+          <mat-icon svgIcon="document" class="document-icon"></mat-icon>
+          <div fxLayout="column">
+            <h3>Cadastre um município</h3>
+            <p>Cadastre um município - precisamos saber onde as prefeituras publicam seus diários oficiais</p>
+            <button class="censo">
+              Ir para censo
+            </button>
+          </div>
+        </div>
+        <div class="help-card" fxLayout="column" fxLayout.xs="row" fxLayoutGap="42px" fxLayoutGap.xs="22px">
+          <mat-icon svgIcon="dev" class="dev-icon"></mat-icon>
+          <div fxLayout="column">
+            <h3>Contribua como desenvolvedor</h3>
+            <p>
+              Contribua com código - o Querido Diário é um projeto de código aberto, então qualquer pessoa
+              pode
+              colaborar com novas funcionalidades para a plataforma
+            </p>
+            <button class="start">
+              Comece por aqui
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- style="height: 785px;" -->
+  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
+    <div class="container goals-section" fxLayout="column" fxFlexAlign="center" fxLayoutAlign="space-between">
+      <h2>Nossas Metas</h2>
+      <p>O querido diário está só começando! Temos vários objetivos para o projeto, e você pode nos ajudar a
+        chegar
+        lá:
+      </p>
+      <div fxLayout="row" fxLayout.xs="column" class="goals container-inner" fxLayoutAlign="space-between">
+        <div fxLayout="column" class="goal-card">
+          <mat-icon svgIcon="ok-hand" class="hand-icon"></mat-icon>
+          <h2>Chegamos aqui!</h2>
+          <p>
+            Já construímos toda a infraestrutura e libertamos 12 capitais.
+          </p>
+          <h3>R$ 2.000</h3>
+        </div>
+
+        <div fxLayout="column" class="goal-card">
+          <mat-icon svgIcon="computer" class="computer-icon"></mat-icon>
+          <h2>Plataforma turbinada!</h2>
+          <p>
+            + 100 municípios disponíveis na plataforma e mecanismo de busca mais eficiente.
+          </p>
+          <h3 class="purple">R$ 6.000</h3>
+          <a class="purple">
+            Ir para o Catarse
+            <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
+          </a>
+        </div>
+
+        <div fxLayout="column" class="goal-card">
+          <mat-icon svgIcon="project" class="project-icon"></mat-icon>
+          <h2>O Brasil é o limite!</h2>
+          <p>
+            Todas as cidades brasileiras com mais de 100 mil habitantes na plataforma.
+          </p>
+          <h3 class="purple">R$ 10.000</h3>
+          <a class="purple">
+            Ir para o Catarse
+            <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
+          </a>
+        </div>
+
+        <div fxLayout="column" class="goal-card">
+          <mat-icon svgIcon="graphics" class="graphics-icon"></mat-icon>
+          <h2>Busca inteligente</h2>
+          <p>
+            Cruzamentos com bases de dados relevantes e sistema de recomendação de conteúdo.
+          </p>
+          <h3 class="purple">R$ 14.000</h3>
+          <a class="purple">
+            Ir para o Catarse
+            <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- style="height: 546px;" -->
+  <section class="bg-white-1" fxLayoutAlign="center" fxLayout="row">
+    <div class="container details" fxLayout="column" fxFlexAlign="center" fxLayoutAlign="space-between">
+      <h2>Entenda</h2>
+      <div fxLayout="row" fxLayout.xs="column" class="container-inner" fxLayoutAlign="space-between">
+        <div fxLayout="column" class="project-card">
+          <h2>
+            Níveis de acesso
+          </h2>
+          <p>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+            commodo.
+          </p>
+          <a>
+            Ler mais
+            <mat-icon svgIcon="right-arrow-white" class="right-arrow-white"></mat-icon>
+          </a>
+        </div>
+
+        <div fxLayout="column" class="project-card">
+          <h2>
+            Glossário
+          </h2>
+          <p>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+            commodo.
+          </p>
+          <a>
+            Ler mais
+            <mat-icon svgIcon="right-arrow-white" class="right-arrow-white"></mat-icon>
+          </a>
+        </div>
+
+        <div fxLayout="column" class="project-card">
+          <h2>
+            Como denunciar ou pedir informações
+          </h2>
+          <p>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+            commodo.
+          </p>
+          <a>
+            Ler mais
+            <mat-icon svgIcon="right-arrow-white" class="right-arrow-white"></mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="column">
+    <div class="video" fxLayout="row">
+      <img src="../../../assets/images/video@1x.jpg" srcset="assets/images/video@2x.jpg 2x" />
+      <mat-icon svgIcon="play"></mat-icon>
+    </div>
+  </section>
+  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="column">
+    <div class="way container" fxLayout="column">
+      <h2>Conheça a trajetória e os próximos passos do Querido Diário</h2>
+      <br /><br />
+      <p>Saiba mais sobre o projeto</p>
+    </div>
+  </section>
+  <section class="bg-white-1">
+    <div class="partners container">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
+        <div fxLayout="column" fxFlex="50%" fxFlex.xs="100%" class="support">
+          <p>REALIZAÇÃO</p>
+          <div fxLayout="row" fxLayoutGap="34px">
+            <mat-icon svgIcon="logo-OK" class="logo-OK"></mat-icon>
+            <mat-icon svgIcon="logo-serenata" class="logo-serenata"></mat-icon>
+            <mat-icon svgIcon="logo-embaixadores" class="logo-embaixadores"></mat-icon>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlex="50%" fxFlex.xs="100%" class="support">
+          <p>APOIO</p>
+          <div fxLayout="row" fxLayoutGap="34px">
+            <mat-icon svgIcon="logo-Ilda" class="logo-Ilda"></mat-icon>
+            <mat-icon svgIcon="logo-jurema" class="logo-jurema"></mat-icon>
+            <mat-icon svgIcon="logo-digitalocean" class="logo-digitalocean"></mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

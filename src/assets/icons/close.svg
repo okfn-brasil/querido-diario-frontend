@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>B7D19D63-9A5F-4286-8C3F-29AD814498B0</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.172549 0 0 0 0 0.074510 0 0 0 0 0.219608 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <path d="M8,6.30044221 L13.9484523,0.351989943 C14.4177722,-0.117329981 15.1786901,-0.117329981 15.6480101,0.351989943 C16.11733,0.821309868 16.11733,1.58222781 15.6480101,2.05154773 L9.69955779,8 L15.6480101,13.9484523 C16.11733,14.4177722 16.11733,15.1786901 15.6480101,15.6480101 C15.1786901,16.11733 14.4177722,16.11733 13.9484523,15.6480101 L8,9.69955779 L2.05154773,15.6480101 C1.58222781,16.11733 0.821309868,16.11733 0.351989943,15.6480101 C-0.117329981,15.1786901 -0.117329981,14.4177722 0.351989943,13.9484523 L6.30044221,8 L0.351989943,2.05154773 C-0.117329981,1.58222781 -0.117329981,0.821309868 0.351989943,0.351989943 C0.821309868,-0.117329981 1.58222781,-0.117329981 2.05154773,0.351989943 L8,6.30044221 Z" id="path-2"></path>
+    </defs>
+    <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mobile_Nav" transform="translate(-361.000000, -9.000000)">
+            <rect fill="#F3E9E9" x="0" y="0" width="414" height="736"></rect>
+            <g id="2.-component_navbar">
+                <rect id="navbar" fill="#F3E9E9" x="0" y="0" width="414" height="54" rx="4"></rect>
+                <g id="1.-assets-icon-nav" transform="translate(16.000000, 8.000000)" filter="url(#filter-1)">
+                    <g transform="translate(355.000000, 11.000000)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Path" fill="#373A3C" xlink:href="#path-2"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
