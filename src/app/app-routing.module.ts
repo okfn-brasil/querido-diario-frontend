@@ -5,6 +5,8 @@ import { AccessLevelsComponent } from './pages/access-levels/access-levels.compo
 import { ComplaintComponent } from './pages/complaint/complaint.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { SupportComponent } from './pages/support/support.component';
+import { TechComponent } from './pages/tech/tech.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'privacidade', component: PrivacyPolicyComponent },
   { path: 'informacoes', component: ComplaintComponent },
   { path: 'acesso', component: AccessLevelsComponent },
+  { path: 'apoie', component: SupportComponent },
+  { path: 'tecnologia', component: TechComponent },
 ];
 
 @NgModule({

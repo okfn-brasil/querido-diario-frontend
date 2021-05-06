@@ -1,0 +1,304 @@
+<div fxLayout="column">
+  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
+    <div class="container" fxLayout="column" fxLayoutGap="16px">
+      <h1>Tecnologia</h1>
+      <h3>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque odio neque, interdum vel nunc
+        varius,
+        fringilla viverra risus.
+      </h3>
+      <div></div>
+      <div fxLayout="row" fxLayoutGap="36px" class="color-orange-1" fxHide.xs>
+        <a>Documentação</a>
+        <a>Contribua com código</a>
+        <a>Relatórios</a>
+      </div>
+    </div>
+  </section>
+  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
+    <div class="container color-purple-1" fxLayoutGap="40px">
+      <h1 class="color-purple-1">
+        Documentação
+      </h1>
+      <div fxLayout="column" fxLayoutGap="60px">
+        <div fxLayout="column">
+          <p>Se está chegando aqui agora, vamos te dar algumas dicas para começar. Bem-vinda(o)s!</p>
+          <a>Já sabe o que é o Querido Diário?</a>
+          <a>Vídeo do Catarse</a>
+          <a>Está aprendendo a programar e contribuir para código aberto? Comece por aqui!</a>
+          <a>Glossário do Querido Diário</a>
+          <a>Você já tinha ouvido falar da Operação Serenata de Amor?</a>
+          <a>Quer contribuir financeiramente?</a>
+        </div>
+        <div fxLayout="column" fxLayoutGap="34px">
+          <h2>Onde pedir ajuda?</h2>
+          <p>
+            A comunidade de pessoas envolvidas no Querido Diário é muito receptiva, temos um canal no Discord onde
+            utilizamos para fazer conversas por texto e voz, entre e se apresente! Por lá organizamos para fazer nossa
+            reunião pública e mensal com as pessoas que mantêm o projeto.
+          </p>
+
+          <p>
+            Caso tenha alguma dúvida sobre o projeto e a nossa comunidade você também pode nos mandar um email pelo
+            seguinte endereço: <a>contato@serenata.ai</a>.
+          </p>
+        </div>
+
+        <div fxLayout="column" fxLayoutGap="34px">
+          <h2>
+            O escopo do Querido Diário
+          </h2>
+
+          <p>
+            O Querido Diário é um projeto de código aberto da <a>Open Knowledge Brasil</a> - junto à valiosas
+            contribuições da
+            comunidade - que está usando tecnologia para libertar e centralizar as informações publicadas nos diários
+            oficiais dos municípios, hoje presas em PDFs obscuros de acesso complicado.
+            Todo ato público, para que seja válido no Brasil, deve ser publicado em um diário oficial, ou seja, desde o
+            governo federal, tribunais e até a câmara de vereadores da sua cidade, todos divulgam atos oficiais em
+            arquivos
+            que devem ser acessíveis pela população.
+          </p>
+
+          <p>
+            O escopo atual do projeto está em coletar os atos do poder executivo dos 5.570 municípios brasileiros. É uma
+            iniciativa muito ambiciosa dada a diversidade de desafios e barreiras para se acessar esses dados, desde a
+            falta
+            de padronização até a escassez de recursos de tecnologias que muitos municípios brasileiros possuem para
+            manterem informações públicas acessíveis na internet.
+          </p>
+        </div>
+
+        <div fxLayout="column">
+          <h2>Arquitetura</h2>
+        </div>
+
+        <div fxLayout="column" fxLayoutGap="34px">
+          <h2>Versões</h2>
+          <div fxLayout="column">
+            <p>Versão X.Y - Change Log</p>
+            <p>Versão X.X - Change Log</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
+    <div class="container" fxLayoutGap="40px">
+      <div class="row">
+        <h1>Contribua com código</h1>
+
+        <div fxLayout="column" fxLayoutGap="60px">
+          <div fxLayout="column" fxLayoutGap="34px">
+            <p>
+              Olá! Quer contribuir para o Querido Diário? Aqui você vai encontrar todas as informações para entender
+              cada
+              parte
+              do projeto. Dessa forma, poderá decidir por onde começar de acordo com o seu interesse e de forma mais
+              confortável.
+            </p>
+
+            <p>
+              Todos os nossos códigos estão no Github da OKBR e estão sob licenças de software explícitas na raíz de
+              cada
+              repositório. Dessa forma, reforçamos que todo o projeto tem seu código fonte aberto para a comunidade.
+            </p>
+
+            <p>
+              A maior parte do desenvolvimento técnico no projeto foi feita por uma comunidade incrível. Essas pessoas
+              trabalharam voluntariamente por anos ajudando a OKBR a chegar na estrutura atual do Querido Diário.
+            </p>
+          </div>
+
+          <div fxLayout="column" fxLayoutGap="34px">
+            <h2>
+              Coleta de dados
+            </h2>
+            <p>
+              Para entender o Querido Diário, é muito importante saber como funciona a estrutura de coleta de arquivos
+              de
+              diários oficiais. Todos os scripts são desenvolvidos utilizando o framework Scrapy, ferramenta muito
+              popular
+              para raspagem de dados. Caso nunca tenha utilizado, o tutorial é um ótimo caminho para aprender a fazer
+              seus
+              primeiros scripts de coleta de dados.
+            </p>
+
+            <p>
+              Temos um repositório direcionado para organizar a coleta de arquivos. Nele, você encontrará arquivos em
+              Python
+              desenvolvidos pela comunidade para cada município, chamamos esses arquivos de spiders (Spider é o termo
+              utilizado para um script de raspagem de dados no Scrapy).
+            </p>
+          </div>
+
+          <div fxLayout="column" fxLayoutGap="34px">
+            <h2>
+              Censo
+            </h2>
+
+            <p>Antes de alguém conseguir escrever um spider para um município é importante sabermos em qual site os
+              arquivos
+              do
+              diário oficial estão sendo publicados, e isso não é tão simples. Estamos falando de um país com 5.570
+              municípios
+              que publicam seus atos públicos sem nenhum padrão, dentre eles alguns publicam em sites de associações,
+              empresas
+              privadas ou até mesmo site de outros entes da federação, e tudo isso sem nenhuma gestão de fluxo da
+              informação.
+            </p>
+
+            <p>Por isso, nós criamos uma iniciativa de mapeamento das fontes de publicação, o Censo Querido Diário, onde
+              qualquer
+              pessoa pode preencher um formulário e nos enviar a fonte de publicação de diários oficiais de um
+              município.
+            </p>
+
+            <p>
+              Todas as fontes de publicação enviadas são validadas por um time voluntário e estão sendo feitas análises
+              de
+              dados
+              que irão compor relatórios sobre o diagnóstico de como está esse retrato de divulgação de atos públicos no
+              Brasil.
+              Com acesso à base de dados você consegue utilizar a linguagem R e Python para realizar análises
+              exploratórias
+              e
+              contribuir no nosso repositório do censo.
+            </p>
+          </div>
+
+          <div fxLayout="column" fxLayoutGap="34px">
+            <h2>
+              Toolbox
+            </h2>
+            <p>
+              O objetivo do <a>Querido Diário Toolbox</a> é fornecer para a comunidade um conjunto de ferramentas que
+              possibilitem a
+              análise e manipulação dos dados extraídos de diários oficiais. Com o toolbox, ampliamos as possibilidades
+              de
+              novos
+              projetos que se utilizem da base de dados e compartilhamos conhecimento acumulado na limpeza e tratamento
+              de
+              dados
+              que o projeto já enfrentou. O toolbox, inclusive, é utilizado internamente pela equipe da OKBR para o
+              tratamento
+              dos diários que são oferecidos na API; ele permite a extração de dados, metadados, limpeza de caracteres
+              irrelevantes e extração de CPF e CNPJ. O toolbox não é, nem nunca será, um projeto concluído: com o apoio
+              da
+              comunidade, vamos sempre adicionar novas ferramentas e disponibilizá-las a todas as pessoas interessadas
+              no
+              projeto!
+            </p>
+          </div>
+
+          <div fxLayout="column" fxLayoutGap="34px">
+            <h2>
+              API pública
+            </h2>
+
+            <p>
+              A API pública é uma das camadas principais do projeto, pois permite a divulgação da base de dados de uma
+              forma
+              acessível e automatizável por máquinas, além de promover um acesso direto aos dados para pessoas
+              desenvolvedoras
+              e
+              pesquisadoras. Além disso, a plataforma consome os dados da API para a disponibilização dos dados para o
+              público
+              geral.
+            </p>
+
+            <p>
+              A API foi construída com FastAPI e Python e é integrada ao Swagger para a obtenção da documentação de
+              forma
+              automática. Você pode contribuir com ideias para a API no repositório oficial.
+            </p>
+
+            <div fxLayout="column" fxLayoutGap="22px">
+              <h3>
+                Front end
+              </h3>
+              <p>
+                xxx
+              </p>
+            </div>
+
+            <div fxLayout="column" fxLayoutGap="22px">
+              <h3>
+                Para começar
+              </h3>
+
+              <p>Linguagem Python</p>
+              <a>https://python.org.br/</a>
+              <a>https://www.pycursos.com/python-para-zumbis/</a>
+              <a>https://escoladedados.org/</a>
+
+              <p>
+                Pandas
+              </p>
+
+              <p>
+                Vídeos do Renne
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-yellow-1" fxLayoutAlign="center" fxLayout="row">
+    <div class="container details" fxLayout="column" fxFlexAlign="center" fxLayoutGap="36px"
+      fxLayoutAlign="space-between">
+      <div fxLayout="column">
+        <h1 class="color-purple-3">Relatórios</h1>
+        <p class="color-purple-3">
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus.
+        </p>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" class="container-inner" fxLayoutAlign="space-between" fxLayoutGap="18px">
+        <div fxLayout="column" class="bg-purple-4 card" fxLayoutGap="16px">
+          <h2 class="color-white-2">
+            Nulla vel metus scelerisque ante sollicitudin commodo.
+          </h2>
+          <p>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+            commodo.
+          </p>
+          <a>
+            Acessar
+            <mat-icon svgIcon="right-arrow-white" class="right-arrow-white"></mat-icon>
+          </a>
+        </div>
+
+        <div fxLayout="column" class="bg-purple-4 card" fxLayoutGap="16px">
+          <h2 class="color-white-2">
+            Nulla vel metus scelerisque ante sollicitudin commodo.
+          </h2>
+          <p>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+            commodo.
+          </p>
+          <a>
+            Acessar
+            <mat-icon svgIcon="right-arrow-white" class="right-arrow-white"></mat-icon>
+          </a>
+        </div>
+
+        <div fxLayout="column" class="bg-purple-4 card" fxLayoutGap="16px">
+          <h2 class="color-white-2">
+            Nulla vel metus scelerisque ante sollicitudin commodo.
+          </h2>
+          <p>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
+            commodo.
+          </p>
+          <a>
+            Acessar
+            <mat-icon svgIcon="right-arrow-white" class="right-arrow-white"></mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
