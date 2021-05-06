@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './pages/about/about.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { ComplaintComponent } from './pages/complaint/complaint.component';
+import { AccessLevelsComponent } from './pages/access-levels/access-levels.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ComplaintComponent } from './pages/complaint/complaint.component';
     AboutComponent,
     PrivacyPolicyComponent,
     ComplaintComponent,
+    AccessLevelsComponent,
   ],
   imports: [
     BrowserModule,
