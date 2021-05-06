@@ -24,6 +24,7 @@ import { ComplaintComponent } from './pages/complaint/complaint.component';
 import { AccessLevelsComponent } from './pages/access-levels/access-levels.component';
 import { SupportComponent } from './pages/support/support.component';
 import { TechComponent } from './pages/tech/tech.component';
+import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TechComponent } from './pages/tech/tech.component';
     AccessLevelsComponent,
     SupportComponent,
     TechComponent,
+    SuggestionComponent,
   ],
   imports: [
     BrowserModule,

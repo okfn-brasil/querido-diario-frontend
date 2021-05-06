@@ -1,0 +1,38 @@
+@import '../../../assets/_variables.sass'
+@import '../../../assets/_tools.sass'
+
+.container
+  width: rem(579)
+  padding: rem(80) 0 rem(120) 0
+
+mat-label
+  color: $white1
+
+h1
+  color: $white2
+  font-family: Baloo-Bold
+  font-size: rem(36)
+  font-weight: 800
+  letter-spacing: rem(-0.6)
+  line-height: rem(42)
+
+p
+  color: $white2
+  font-family: Lato-Regular
+  font-size: rem(16)
+  font-weight: 600
+  letter-spacing: 0
+  line-height: rem(28)
+
+button
+  height: rem(42)
+  width: rem(183)
+  border-radius: rem(21)
+  background-color: $orange1
+  border: none
+  color: $white1
+  align-self: flex-end
+
+@media only screen and (max-width: 768px)
+  .container
+    padding: rem(80) rem(16) rem(150) rem(16)
