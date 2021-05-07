@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
@@ -52,6 +53,7 @@ import { SuggestionComponent } from './pages/suggestion/suggestion.component';
     MatInputModule,
     MatIconModule,
     MatDialogModule,
+    MatCardModule,
 
     HttpClientModule,
     FlexLayoutModule,
