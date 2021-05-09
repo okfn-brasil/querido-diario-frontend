@@ -1,0 +1,51 @@
+@import '../../../assets/_variables.sass'
+@import '../../../assets/_tools.sass'
+
+section
+  padding: rem(80) 0
+
+.container
+  width: rem(979)
+
+form
+  mat-form-field 
+    width: 100%
+
+.result
+  padding: rem(46) rem(16)
+
+  p
+    color: #2C1338
+    font-family: Lato-Regular
+    font-size: 16px
+    letter-spacing: 0
+    line-height: 28px
+
+h2
+  color: #F3E9E9
+  font-family: Lato-Bold
+  font-size: 24px
+  font-weight: 900
+  letter-spacing: -0.57px
+  line-height: 23px
+
+p
+  color: #F3E9E9
+  font-family: Lato-Regular
+  font-size: 16px
+  font-weight: 600
+  letter-spacing: 0
+  line-height: 28px
+
+@media only screen and (max-width: 768px)
+  :host
+    overflow-x: hidden
+
+  section, .container
+    width: 100%
+
+  section
+    padding: rem(36) 0
+
+  .container
+    padding: 0 rem(16)

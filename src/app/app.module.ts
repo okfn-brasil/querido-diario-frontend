@@ -27,6 +27,7 @@ import { SupportComponent } from './pages/support/support.component';
 import { TechComponent } from './pages/tech/tech.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 import { GlossaryComponent } from './pages/glossary/glossary.component';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { GlossaryComponent } from './pages/glossary/glossary.component';
     TechComponent,
     SuggestionComponent,
     GlossaryComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { ComplaintComponent } from './pages/complaint/complaint.component';
 import { GlossaryComponent } from './pages/glossary/glossary.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { SearchComponent } from './pages/search/search.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 import { SupportComponent } from './pages/support/support.component';
 import { TechComponent } from './pages/tech/tech.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'tecnologia', component: TechComponent },
   { path: 'sugestao', component: SuggestionComponent },
   { path: 'glossario', component: GlossaryComponent },
+  { path: 'pesquisa', component: SearchComponent },
 ];
 
 @NgModule({
