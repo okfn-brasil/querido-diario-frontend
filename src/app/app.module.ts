@@ -29,6 +29,7 @@ import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 import { GlossaryComponent } from './pages/glossary/glossary.component';
 import { SearchComponent } from './pages/search/search.component';
 import { H1Component } from './components/h1/h1.component';
+import { H2Component } from './components/h2/h2.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { H1Component } from './components/h1/h1.component';
     GlossaryComponent,
     SearchComponent,
     H1Component,
+    H2Component,
   ],
   imports: [
     BrowserModule,
