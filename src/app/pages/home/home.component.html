@@ -2,7 +2,8 @@
   <section class="explore-section" fxLayoutAlign="center" fxLayout="row" class="bg-white-1">
     <div class="container">
       <div fxLayout="column" class="explore" fxLayoutAlign="center">
-        <app-h1 class="purple">Explore os diários oficiais dos municípios e fique de olho nas ações dos governos</app-h1>
+        <app-h1 class="purple">Explore os diários oficiais dos municípios e fique de olho nas ações dos governos
+        </app-h1>
         <form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px" fxLayoutGap.xs="0">
           <div fxLayout="column">
             <mat-form-field appearance="fill" class="search-input">
@@ -36,8 +37,8 @@
         <div class="follow-card flex" fxFlex="33%" fxLayout="column">
           <div fxLayout="row" fxLayout.xs="column">
             <mat-icon svgIcon="check"></mat-icon>
-            <div fxLayout="column">
-              <app-h2>12</app-h2>
+            <div fxLayout="column" fxLayoutGap="8px">
+              <div class="number">12</div>
               <p>Cidade já estão na plataforma</p>
             </div>
           </div>
@@ -46,8 +47,8 @@
         <div class="follow-card flex" fxFlex="33%" fxLayout="column">
           <div fxLayout="row" fxLayout.xs="column">
             <mat-icon svgIcon="search"></mat-icon>
-            <div fxLayout="column">
-              <app-h2>2.226</app-h2>
+            <div fxLayout="column" fxLayoutGap="8px">
+              <div class="number">12</div>
               <p>Cidades já têm robôs para coletar diários</p>
             </div>
           </div>
@@ -56,8 +57,8 @@
         <div class="follow-card flex" fxFlex="33%" fxLayout="column">
           <div fxLayout="row" fxLayout.xs="column">
             <mat-icon svgIcon="pin"></mat-icon>
-            <div fxLayout="column">
-              <app-h2>597</app-h2>
+            <div fxLayout="column" fxLayoutGap="8px">
+              <div class="number">12</div>
               <p>Cidades já foram mapeadas pelo censo</p>
             </div>
           </div>
@@ -147,50 +148,66 @@
       <div fxLayout="row" fxLayout.xs="column" class="goals container-inner" fxLayoutAlign="space-between">
         <div fxLayout="column" class="goal-card">
           <mat-icon svgIcon="ok-hand" class="hand-icon"></mat-icon>
-          <app-h2>Chegamos aqui!</app-h2>
-          <p>
-            Já construímos toda a infraestrutura e libertamos 12 capitais.
-          </p>
-          <app-h1>R$ 2.000</app-h1>
+          <div fxLayout="column" fxLayoutGap="8px">
+            <app-h2>Chegamos aqui!</app-h2>
+            <div fxLayout="column" fxLayoutGap="22px">
+              <p>
+                Já construímos toda a infraestrutura e libertamos 12 capitais.
+              </p>
+              <app-h1 class="lato">R$ 2.000</app-h1>
+            </div>
+          </div>
         </div>
 
         <div fxLayout="column" class="goal-card">
           <mat-icon svgIcon="computer" class="computer-icon"></mat-icon>
-          <app-h2>Plataforma turbinada!</app-h2>
-          <p>
-            + 100 municípios disponíveis na plataforma e mecanismo de busca mais eficiente.
-          </p>
-          <app-h1 class="purple">R$ 6.000</app-h1>
-          <a class="purple">
-            Ir para o Catarse
-            <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
-          </a>
+          <div fxLayout="column" fxLayoutGap="8px">
+            <app-h2>Plataforma turbinada!</app-h2>
+            <div fxLayout="column" fxLayoutGap="22px">
+              <p>
+                + 100 municípios disponíveis na plataforma e mecanismo de busca mais eficiente.
+              </p>
+              <app-h1 class="purple lato">R$ 6.000</app-h1>
+              <a class="purple">
+                Ir para o Catarse
+                <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div fxLayout="column" class="goal-card">
           <mat-icon svgIcon="project" class="project-icon"></mat-icon>
-          <app-h2>O Brasil é o limite!</app-h2>
-          <p>
-            Todas as cidades brasileiras com mais de 100 mil habitantes na plataforma.
-          </p>
-          <app-h1 class="purple">R$ 10.000</app-h1>
-          <a class="purple">
-            Ir para o Catarse
-            <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
-          </a>
+          <div fxLayout="column" fxLayoutGap="8px">
+            <app-h2>O Brasil é o limite!</app-h2>
+            <div fxLayout="column" fxLayoutGap="22px">
+              <p>
+                Todas as cidades brasileiras com mais de 100 mil habitantes na plataforma.
+              </p>
+              <app-h1 class="purple lato">R$ 10.000</app-h1>
+              <a class="purple">
+                Ir para o Catarse
+                <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div fxLayout="column" class="goal-card">
           <mat-icon svgIcon="graphics" class="graphics-icon"></mat-icon>
-          <app-h2>Busca inteligente</app-h2>
-          <p>
-            Cruzamentos com bases de dados relevantes e sistema de recomendação de conteúdo.
-          </p>
-          <app-h1 class="purple">R$ 14.000</app-h1>
-          <a class="purple">
-            Ir para o Catarse
-            <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
-          </a>
+          <div fxLayout="column" fxLayoutGap="8px">
+            <app-h2>Busca inteligente</app-h2>
+            <div fxLayout="column" fxLayoutGap="22px">
+              <p>
+                Cruzamentos com bases de dados relevantes e sistema de recomendação de conteúdo.
+              </p>
+              <app-h1 class="purple lato">R$ 14.000</app-h1>
+              <a class="purple">
+                Ir para o Catarse
+                <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -199,7 +216,7 @@
     <div class="container details" fxLayout="column" fxFlexAlign="center" fxLayoutAlign="space-between">
       <app-h1>Entenda</app-h1>
       <div fxLayout="row" fxLayout.xs="column" class="container-inner" fxLayoutAlign="space-between">
-        <div fxLayout="column" class="project-card">
+        <div fxLayout="column" class="project-card" fxLayoutGap="12px">
           <app-h2>
             Níveis de acesso
           </app-h2>
@@ -213,7 +230,7 @@
           </a>
         </div>
 
-        <div fxLayout="column" class="project-card">
+        <div fxLayout="column" class="project-card" fxLayoutGap="12px">>
           <app-h2>
             Glossário
           </app-h2>
@@ -227,7 +244,7 @@
           </a>
         </div>
 
-        <div fxLayout="column" class="project-card">
+        <div fxLayout="column" class="project-card" fxLayoutGap="12px">
           <app-h2>
             Como denunciar ou pedir informações
           </app-h2>
