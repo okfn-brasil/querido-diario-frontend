@@ -12,6 +12,11 @@ import {MatInputModule} from '@angular/material/input'
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
@@ -30,7 +35,6 @@ import { GlossaryComponent } from './pages/glossary/glossary.component';
 import { SearchComponent } from './pages/search/search.component';
 import { H1Component } from './components/h1/h1.component';
 import { H2Component } from './components/h2/h2.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +66,11 @@ import { H2Component } from './components/h2/h2.component';
     MatIconModule,
     MatDialogModule,
     MatCardModule,
+    MatAutocompleteModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
     HttpClientModule,
     FlexLayoutModule,
