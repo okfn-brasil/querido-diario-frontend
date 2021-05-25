@@ -9,19 +9,44 @@
             <mat-form-field appearance="fill" class="search-input">
               <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
               <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
-              <input class="search" matInput>
+              <input class="search" matInput [formControl]="termControl" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <p class="p-secondary autocomplete-title">Sugestões de busca</p>
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  <div fxLayout="row" class="autocomplete">
+                    <mat-icon fxFlexAlign="center" matPrefix svgIcon="money"></mat-icon>
+                    <p>{{option}}</p>
+                  </div>
+                </mat-option>
+              </mat-autocomplete>
             </mat-form-field>
           </div>
+
           <div fxLayout="row" fxLayoutGap="16px">
+
             <mat-form-field appearance="fill" class="city-input">
               <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
               <mat-label>Municípios</mat-label>
-              <input class="city" matInput>
+              <input class="city" matInput [formControl]="cityControl" [matAutocomplete]="cityInput">
+
+              <mat-autocomplete #cityInput="matAutocomplete">
+                <mat-option *ngFor="let option of filteredCities | async" [value]="option">
+                  <div fxLayout="row" class="autocomplete">
+                    <mat-icon fxFlexAlign="center" matPrefix svgIcon="gray-pin"></mat-icon>
+                    <p>{{option}}</p>
+                  </div>
+                </mat-option>
+              </mat-autocomplete>
+
             </mat-form-field>
+
+
             <mat-form-field appearance="fill" class="period-input">
               <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
               <mat-label>Período</mat-label>
-              <input class="period" matInput>
+              <input matInput [matDatepicker]="picker" class="period">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
           </div>
           <button class='btn'>Pesquisar</button>
