@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
-import * as data from '../../data/cities.json';
-
+import { Observable, of, EMPTY } from 'rxjs';
+import { map, startWith, switchMap } from 'rxjs/operators';
+import { CitiesService } from 'src/app/services/cities.service';
+interface City {
+  territory_name: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -24,12 +26,9 @@ export class HomeComponent implements OnInit {
 
   cityControl = new FormControl();
 
-  cityOptions: string[] = data.cities.map((city) => city.territory_name)
+  filteredCities: Observable<City[]> = new Observable();
 
-  filteredCities: Observable<string[]> = new Observable();
-  
-
-  constructor() { }
+  constructor(private citiesService: CitiesService) { }
 
   ngOnInit() {
     this.filteredOptions = this.termControl.valueChanges
@@ -38,10 +37,16 @@ export class HomeComponent implements OnInit {
         map(value => this._filter(value))
       );
 
-      this.filteredCities = this.cityControl.valueChanges
+    this.filteredCities = this.cityControl.valueChanges
       .pipe(
         startWith(''),
-        map(value => this._filterCity(value))
+        switchMap(value => {
+          if (value !== '') {
+            return this._filterCity(value)
+          } else {
+            return of([])
+          }
+        })
       );
   }
 
@@ -51,10 +56,12 @@ export class HomeComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
-  private _filterCity(value: string): string[] {
+  private _filterCity(value: string): Observable<City[]> {
     const filterValue = value.toLowerCase();
-
-    return this.cityOptions.filter(option => option.toLowerCase().includes(filterValue));
+    return this.citiesService.findByName(filterValue)
+      .pipe(
+        map((result) => result)
+      )
   }
 
 }
