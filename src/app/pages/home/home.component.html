@@ -30,10 +30,10 @@
               <input class="city" matInput [formControl]="cityControl" [matAutocomplete]="cityInput">
 
               <mat-autocomplete #cityInput="matAutocomplete">
-                <mat-option *ngFor="let option of filteredCities | async" [value]="option">
+                <mat-option *ngFor="let option of filteredCities | async" [value]="option.territory_name">
                   <div fxLayout="row" class="autocomplete">
                     <mat-icon fxFlexAlign="center" matPrefix svgIcon="gray-pin"></mat-icon>
-                    <p>{{option}}</p>
+                    <p>{{option.territory_name}}</p>
                   </div>
                 </mat-option>
               </mat-autocomplete>
