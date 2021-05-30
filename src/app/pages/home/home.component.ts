@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable, of, EMPTY } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
+import { VideoModalComponent } from 'src/app/components/video-modal/video-modal.component';
 import { CitiesService } from 'src/app/services/cities.service';
 interface City {
   territory_name: string;
@@ -28,7 +30,10 @@ export class HomeComponent implements OnInit {
 
   filteredCities: Observable<City[]> = new Observable();
 
-  constructor(private citiesService: CitiesService) { }
+  constructor(
+    private citiesService: CitiesService,
+    private modal: MatDialog,
+    ) { }
 
   ngOnInit() {
     this.filteredOptions = this.termControl.valueChanges
@@ -48,6 +53,14 @@ export class HomeComponent implements OnInit {
           }
         })
       );
+  }
+
+  openVideo(): void {
+    this.modal.open(VideoModalComponent, {
+      width: '100%',
+      height: '100%',
+      maxWidth: '100%',
+    });
   }
 
   private _filter(value: string): string[] {

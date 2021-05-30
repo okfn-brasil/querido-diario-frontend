@@ -37,6 +37,7 @@ import { H2Component } from './components/h2/h2.component';
 import { Event, Router, Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { VideoModalComponent } from './components/video-modal/video-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,7 @@ import { filter } from 'rxjs/operators';
     SearchComponent,
     H1Component,
     H2Component,
+    VideoModalComponent,
   ],
   imports: [
     BrowserModule,
