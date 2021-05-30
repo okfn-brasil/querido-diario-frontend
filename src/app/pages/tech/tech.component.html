@@ -11,17 +11,17 @@
         <div></div>
         <div fxLayout="row" fxLayoutGap="36px" class="color-orange-1 nav" fxLayoutGap.xs="92px">
           <nav fxLayout.xs="column" fxLayoutGap="36px" fxLayoutGap.xs="16px">
-            <a>Documentação</a>
-            <a>Contribua com código</a>
+            <a href="/tecnologia#documentacao">Documentação</a>
+            <a href="/tecnologia#contribua">Contribua com código</a>
           </nav>
           <nav fxLayout.xs="column">
-            <a>Relatórios</a>
+            <a href="/tecnologia#relatorios">Relatórios</a>
           </nav>
         </div>
       </div>
     </div>
   </section>
-  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
+  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row" id="documentacao">
     <div class="container">
       <div class="container-inner color-purple-1" fxLayout="column" fxLayoutGap="40px">
         <app-h1 class="color-purple-1">
@@ -30,18 +30,17 @@
         <div fxLayout="column" fxLayoutGap="60px">
           <div fxLayout="column">
             <p>Se está chegando aqui agora, vamos te dar algumas dicas para começar. Bem-vinda(o)s!</p>
-            <a>Já sabe o que é o Querido Diário?</a>
-            <a>Vídeo do Catarse</a>
-            <a>Está aprendendo a programar e contribuir para código aberto? Comece por
-              aqui!</a>
-            <a>Glossário do Querido Diário</a>
-            <a>Você já tinha ouvido falar da Operação Serenata de Amor?</a>
-            <a>Quer contribuir financeiramente?</a>
+            <a routerLink="/sobre">Já sabe o que é o Querido Diário?</a>
+            <a href="https://www.catarse.me/queridodiario-okbr?ref=ctrse_explore_pgsearch&project_id=120548&project_user_id=1384462">Vídeo do Catarse</a>
+            <a href="/tecnologia#contribua">Está aprendendo a programar e contribuir para código aberto? Comece por aqui!</a>
+            <a routerLink="/glossario">Glossário do Querido Diário</a>
+            <a href="https://serenata.ai/" target="_blank">Você já tinha ouvido falar da Operação Serenata de Amor?</a>
+            <a href="https://www.catarse.me/queridodiario-okbr?ref=ctrse_explore_pgsearch&project_id=120548&project_user_id=1384462" target="_blank">Quer contribuir financeiramente?</a>
           </div>
           <div fxLayout="column" fxLayoutGap="34px">
             <app-h2>Onde pedir ajuda?</app-h2>
             <p>
-              A comunidade de pessoas envolvidas no Querido Diário é muito receptiva, temos um <a>canal no Discord</a>
+              A comunidade de pessoas envolvidas no Querido Diário é muito receptiva, temos um <a href="https://discord.gg/fsEhQxSWjt" target="_blank">canal no Discord</a>
               onde
               utilizamos para fazer conversas por texto e voz, entre e se apresente! Por lá organizamos para fazer nossa
               reunião pública e mensal com as pessoas que mantêm o projeto.
@@ -49,7 +48,7 @@
 
             <p>
               Caso tenha alguma dúvida sobre o projeto e a nossa comunidade você também pode nos mandar um email pelo
-              seguinte endereço: <a>contato@serenata.ai</a>.
+              seguinte endereço: <a href="mailto:contato@serenata.ai">contato@serenata.ai</a>.
             </p>
           </div>
 
@@ -59,8 +58,7 @@
             </app-h2>
 
             <p>
-              O Querido Diário é um projeto de código aberto da <a>Open Knowledge
-                Brasil</a>
+              O Querido Diário é um projeto de código aberto da <a href="https://www.ok.org.br/" target="_blank">Open Knowledge Brasil</a>
               - junto à valiosas
               contribuições da
               comunidade - que está usando tecnologia para libertar e centralizar as informações publicadas nos diários
@@ -98,7 +96,7 @@
     </div>
   </section>
 
-  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
+  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row" id="contribua">
     <div class="container">
       <div class="container-inner" fxLayout="column" fxLayoutGap="40px">
         <app-h1>Contribua com código</app-h1>
@@ -114,7 +112,7 @@
             </p>
 
             <p>
-              Todos os nossos códigos estão no <a>Github da OKBR</a> e estão sob licenças
+              Todos os nossos códigos estão no <a href="https://github.com/okfn-brasil">Github da OKBR</a> e estão sob licenças
               de software explícitas na raíz de
               cada
               repositório. Dessa forma, reforçamos que todo o projeto tem seu código fonte aberto para a comunidade.
@@ -133,16 +131,16 @@
             <p>
               Para entender o Querido Diário, é muito importante saber como funciona a estrutura de coleta de arquivos
               de
-              diários oficiais. Todos os scripts são desenvolvidos utilizando o framework <a>Scrapy</a>, ferramenta muito
+              diários oficiais. Todos os scripts são desenvolvidos utilizando o framework <a href="https://scrapy.org/" target="_blank">Scrapy</a>, ferramenta muito
               popular
-              para raspagem de dados. Caso nunca tenha utilizado, o <a>tutorial</a> é um
+              para raspagem de dados. Caso nunca tenha utilizado, o <a href="https://docs.scrapy.org/en/latest/intro/tutorial.html" target="_blank">tutorial</a> é um
               ótimo caminho para aprender a fazer
               seus
               primeiros scripts de coleta de dados.
             </p>
 
             <p>
-              Temos um <a>repositório direcionado para organizar a coleta de arquivos</a>.
+              Temos um <a href="https://github.com/okfn-brasil/querido-diario">repositório direcionado para organizar a coleta de arquivos</a>.
               Nele, você encontrará arquivos em
               Python
               desenvolvidos pela comunidade para cada município, chamamos esses arquivos de spiders (Spider é o termo
@@ -166,8 +164,7 @@
               informação.
             </p>
 
-            <p>Por isso, nós criamos uma iniciativa de mapeamento das fontes de publicação, o <a>Censo Querido
-                Diário</a>, onde
+            <p>Por isso, nós criamos uma iniciativa de mapeamento das fontes de publicação, o <a href="https://censo.ok.org.br/"> Censo Querido Diário</a>, onde
               qualquer
               pessoa pode preencher um formulário e nos enviar a fonte de publicação de diários oficiais de um
               município.
@@ -182,7 +179,7 @@
               Com acesso à base de dados você consegue utilizar a linguagem R e Python para realizar análises
               exploratórias
               e
-              contribuir no nosso repositório do censo.
+              contribuir no nosso <a href="https://github.com/okfn-brasil/censo-querido-diario" target="_blank">repositório do censo.</a>
             </p>
           </div>
 
@@ -191,7 +188,7 @@
               Toolbox
             </app-h2>
             <p>
-              O objetivo do <a>Querido Diário Toolbox</a> é fornecer para a comunidade um
+              O objetivo do <a href="https://github.com/okfn-brasil/querido-diario-toolbox">Querido Diário Toolbox</a> é fornecer para a comunidade um
               conjunto de ferramentas que
               possibilitem a
               análise e manipulação dos dados extraídos de diários oficiais. Com o toolbox, ampliamos as possibilidades
@@ -217,7 +214,7 @@
             </app-h2>
 
             <p>
-              A API pública é uma das camadas principais do projeto, pois permite a divulgação da base de dados de uma
+              A <a href="https://queridodiario.ok.org.br/api/docs" target="_blank">API pública</a> é uma das camadas principais do projeto, pois permite a divulgação da base de dados de uma
               forma
               acessível e automatizável por máquinas, além de promover um acesso direto aos dados para pessoas
               desenvolvedoras
@@ -228,9 +225,9 @@
             </p>
 
             <p>
-              A API foi construída com FastAPI e Python e é integrada ao Swagger para a obtenção da documentação de
+              A API foi construída com <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a> e Python e é integrada ao <a href="https://swagger.io/" target="_blank">Swagger</a> para a obtenção da documentação de
               forma
-              automática. Você pode contribuir com ideias para a API no repositório oficial.
+              automática. Você pode contribuir com ideias para a API no <a>repositório oficial</a>.
             </p>
 
             <div fxLayout="column" fxLayoutGap="22px">
@@ -251,9 +248,9 @@
                 <p>Linguagem Python</p>
                 <div fxLayout="row">
                   <div fxLayout="column" fxFlexOffset="22px">
-                    <a>https://python.org.br/</a>
-                    <a>https://www.pycursos.com/python-para-zumbis/</a>
-                    <a>https://escoladedados.org/</a>
+                    <a href="https://python.org.br/" target="_blank">https://python.org.br/</a>
+                    <a href="https://www.pycursos.com/python-para-zumbis/" target="_blank">https://www.pycursos.com/python-para-zumbis/</a>
+                    <a href="https://escoladedados.org/" target="_blank">https://escoladedados.org/</a>
                   </div>
                 </div>
               </div>
@@ -272,7 +269,7 @@
     </div>
   </section>
 
-  <section class="bg-yellow-1" fxLayoutAlign="center" fxLayout="row">
+  <section class="bg-yellow-1" fxLayoutAlign="center" fxLayout="row" id="relatorios">
     <div class="container details" fxLayout="column" fxFlexAlign="center" fxLayoutGap="36px"
       fxLayoutAlign="space-between">
       <div fxLayout="column" class="container-inner">

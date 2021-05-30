@@ -8,28 +8,28 @@
       </p>
       <div></div>
       <nav fxLayout="row" fxLayoutGap="36px" class="color-orange-1" fxHide.xs>
-        <a>História</a>
-        <a>Entenda</a>
-        <a>Casos de sucesso</a>
-        <a>Quem somos</a>
+        <a href="/sobre#historia">História</a>
+        <a href="/sobre#entenda">Entenda</a>
+        <a href="/sobre#casos-de-sucesso">Casos de sucesso</a>
+        <a href="/sobre#quem-somos">Quem somos</a>
         <a routerLink="/privacidade">Política de privacidade</a>
       </nav>
 
       <div fxLayout="row" fxLayoutGap="38px" class="color-orange-1" fxHide fxHide.xs="false">
         <nav fxLayout="column" fxLayoutGap="16px">
-          <a>História</a>
-          <a>Casos de sucesso</a>
+          <a href="/sobre#historia">História</a>
+          <a href="/sobre#casos-de-sucesso">Casos de sucesso</a>
           <a routerLink="/privacidade">Política de privacidade</a>
         </nav>
         <nav fxLayout="column" fxLayoutGap="16px">
-          <a>Entenda</a>
-          <a>Quem somos</a>
+          <a href="/sobre#entenda">Entenda</a>
+          <a href="/sobre#quem-somos">Quem somos</a>
         </nav>
       </div>
     </div>
   </section>
 
-  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
+  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row" id="historia">
     <div class="container" fxLayout="column" fxLayoutGap="16px" fxFlexOffset="200px" fxFlexOffset.xs="0">
       <app-h1>História</app-h1>
       <p>
@@ -38,7 +38,7 @@
       </p>
 
       <p>
-        A primeira ideia foi concebida pela Open Knowledge Brasil e se chamava <a>"Projeto Nosso Querido Diário
+        A primeira ideia foi concebida pela Open Knowledge Brasil e se chamava <a href="https://github.com/okfn-brasil/queriDO" target="_blank">"Projeto Nosso Querido Diário
           Oficial",
           abreviadamente queriDO</a>. A iniciativa estabeleceu uma metodologia para recuperação da informação registrada
         nos
@@ -48,7 +48,7 @@
       </p>
 
       <p>
-        A segunda ideia veio inspirada no sucesso da <a>Operação Serenata de Amor</a>, que por meio da <a>Rosie</a>, uma
+        A segunda ideia veio inspirada no sucesso da <a href="https://serenata.ai/" target="_blank">Operação Serenata de Amor</a>, que por meio da <a href="https://twitter.com/RosieDaSerenata" target="_blank">Rosie</a>, uma
         robô que
         expõe
         suspeitas de mal uso de dinheiro público pelos deputados federais, levou inúmeras pessoas no Brasil a pedir uma
@@ -79,7 +79,7 @@
       <p>
         No segundo semestre de 2020, conseguimos o nosso primeiro financiamento, por meio de uma chamada do projeto
         Empatía
-        promovido pela <a>ILDA</a>. O recurso foi patrocinado pelo Banco Interamericano de Desenvolvimento (BID). Esse
+        promovido pela <a href="https://idatosabiertos.org/en/" target="_blank">ILDA</a>. O recurso foi patrocinado pelo Banco Interamericano de Desenvolvimento (BID). Esse
         apoio
         nos
         permitiu dar início ao desenvolvimento da nossa API aberta e também da nossa plataforma de busca.
@@ -93,7 +93,7 @@
   </section>
 
 
-  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
+  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row" id="entenda">
     <div class="container details" fxLayout="column" fxFlexAlign="center" fxLayoutAlign="space-between"
       fxLayoutGap="32px">
       <div>
@@ -145,7 +145,7 @@
     </div>
   </section>
 
-  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
+  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row" id="casos-de-sucesso">
     <div class="container" fxLayout="column" fxLayoutGap="16px">
       <div>
         <app-h1 fxFlexOffset="110px" fxFlexOffset.xs="0">Casos de sucesso</app-h1>
@@ -224,7 +224,7 @@
     </div>
   </section>
 
-  <section class="bg-blue-1" fxLayoutAlign="center" fxLayout="row">
+  <section class="bg-blue-1" fxLayoutAlign="center" fxLayout="row" id="quem-somos">
     <div class="container" fxLayout="column" fxLayoutGap="36px" fxFlexOffset="200px" fxFlexOffset.xs="0">
       <app-h1>Quem somos</app-h1>
 
@@ -252,7 +252,7 @@
     </div>
   </section>
 
-  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
+  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row" id="politica-de-privacidade">
     <div class="container" fxLayout="column" fxLayoutGap="36px" fxFlexOffset="200px" fxFlexOffset.xs="0">
       <app-h1>
         Política de Privacidade e Proteção de dados
@@ -265,7 +265,7 @@
         sodales. Praesent gravida massa est
       </p>
 
-      <button class='btn'>Leia mais</button>
+      <button routerLink="/privacidade" class='btn'>Leia mais</button>
     </div>
   </section>
 </div>
