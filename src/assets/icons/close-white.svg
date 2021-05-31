@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>6507E4E7-A067-4DA6-8654-714F2F7978AC</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.952941 0 0 0 0 0.913725 0 0 0 0 0.913725 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <path d="M6.66666667,5.25036851 L11.6237102,0.293324953 C12.0148102,-0.0977749843 12.6489084,-0.0977749843 13.0400084,0.293324953 C13.4311083,0.68442489 13.4311083,1.31852317 13.0400084,1.70962311 L8.08296483,6.66666667 L13.0400084,11.6237102 C13.4311083,12.0148102 13.4311083,12.6489084 13.0400084,13.0400084 C12.6489084,13.4311083 12.0148102,13.4311083 11.6237102,13.0400084 L6.66666667,8.08296483 L1.70962311,13.0400084 C1.31852317,13.4311083 0.68442489,13.4311083 0.293324953,13.0400084 C-0.0977749843,12.6489084 -0.0977749843,12.0148102 0.293324953,11.6237102 L5.25036851,6.66666667 L0.293324953,1.70962311 C-0.0977749843,1.31852317 -0.0977749843,0.68442489 0.293324953,0.293324953 C0.68442489,-0.0977749843 1.31852317,-0.0977749843 1.70962311,0.293324953 L6.66666667,5.25036851 Z" id="path-2"></path>
+    </defs>
+    <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desk_VideoPreview" transform="translate(-1159.000000, -38.000000)">
+            <rect id="bg-copy-2" fill="#2C1338" opacity="0.7" x="0" y="0" width="1220" height="860"></rect>
+            <g id="1.-assets/icon/nivel/3" transform="translate(1149.000000, 28.000000)">
+                <circle id="Oval" stroke="#F3E9E9" cx="25" cy="25" r="24.5"></circle>
+                <g filter="url(#filter-1)" id="1.-assets/icon/long-arrow">
+                    <g transform="translate(18.333333, 18.333333)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Path" fill="#373A3C" xlink:href="#path-2"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
