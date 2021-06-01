@@ -1,31 +1,33 @@
-<mat-dialog-actions>
-  <div fxLayout="row" fxLayoutAlign="space-between">
-    <mat-icon svgIcon="logo" class="logo"></mat-icon>
-    <div fxLayoutAlign="flex-end" fxLayoutGap="16px">
-      <a>
-        <mat-icon svgIcon="notification" class="bell"></mat-icon>
-      </a>
-      <button>
-        <mat-icon
-          aria-label="Fechar Menu"
-          aria-hidden="false"
-          mat-dialog-close
-          svgIcon="close"
-          class="close"
-        ></mat-icon>
-      </button>
+<div class="menu-container" fxLayoutGap="32px" fxLayout="column">
+  <mat-dialog-actions>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-icon svgIcon="logo" class="logo"></mat-icon>
+      <div fxLayoutAlign="flex-end" fxLayoutGap="16px">
+        <a>
+          <mat-icon svgIcon="notification" class="bell"></mat-icon>
+        </a>
+        <button>
+          <mat-icon
+            aria-label="Fechar Menu"
+            aria-hidden="false"
+            mat-dialog-close
+            svgIcon="close"
+            class="close"
+          ></mat-icon>
+        </button>
+      </div>
     </div>
-  </div>
-</mat-dialog-actions>
-<mat-dialog-content>
-  <div fxLayout="column" fxLayoutAlign="space-between" fxFlexFill>
-    <div class="nav-container">
-      <nav fxLayout="column" fxLayoutGap="32px">
-        <a mat-dialog-close routerLink="/">Explore</a>
-        <a mat-dialog-close routerLink="/tecnologia">Tecnologia</a>
-        <a mat-dialog-close routerLink="/sobre">Sobre o querido diário</a>
-      </nav>
-      <button class="btn">Apoie</button>
+  </mat-dialog-actions>
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="space-between" fxFlexFill>
+      <div class="nav-container">
+        <nav fxLayout="column" fxLayoutGap="32px">
+          <a mat-dialog-close routerLink="/">Explore</a>
+          <a mat-dialog-close routerLink="/tecnologia">Tecnologia</a>
+          <a mat-dialog-close routerLink="/sobre">Sobre o querido diário</a>
+        </nav>
+        <button class="btn">Apoie</button>
+      </div>
     </div>
-  </div>
-</mat-dialog-content>
+  </mat-dialog-content>
+</div>
