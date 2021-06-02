@@ -28,13 +28,13 @@ export class CitiesService {
   findByName(name: string): Observable<City[]> {
     const url = `https://queridodiario.ok.org.br/api/cities/?city_name=` + name;
 
-    return of(cities);
+    //return of(cities);
 
-    /*return this.http.get<CityResponse>(url)
+    return this.http.get<CityResponse>(url)
       .pipe(
         map((res: CityResponse) => {
           return res.cities;
         })
-      )*/
+      )
   }
 }
