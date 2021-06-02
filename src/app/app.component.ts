@@ -46,7 +46,7 @@ const Icons: string[] = [
   
   '../assets/icons/close.svg',
 
-  '../assets/icons/close-blank.svg',
+  '../assets/icons/close-white.svg',
 
   '../assets/icons/search-gray.svg',
 
