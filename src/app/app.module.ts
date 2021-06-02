@@ -38,6 +38,7 @@ import { Event, Router, Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { VideoModalComponent } from './components/video-modal/video-modal.component';
+import { DatePickerRangeComponent } from './components/date-picker-range/date-picker-range.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +58,7 @@ import { VideoModalComponent } from './components/video-modal/video-modal.compon
     H1Component,
     H2Component,
     VideoModalComponent,
+    DatePickerRangeComponent,
   ],
   imports: [
     BrowserModule,

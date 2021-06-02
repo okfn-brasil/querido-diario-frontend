@@ -74,16 +74,7 @@
               </mat-autocomplete>
             </mat-form-field>
 
-            <mat-form-field appearance="fill" class="period-input">
-              <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
-              <mat-label>Período</mat-label>
-              <input matInput [matDatepicker]="picker" class="period" />
-              <mat-datepicker-toggle
-                matSuffix
-                [for]="picker"
-              ></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
+            <app-date-picker-range class="period-input"></app-date-picker-range>
           </div>
           <button class="btn">Pesquisar</button>
         </form>
