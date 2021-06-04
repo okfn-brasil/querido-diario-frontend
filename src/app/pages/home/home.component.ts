@@ -4,10 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable, of, EMPTY } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { VideoModalComponent } from 'src/app/components/video-modal/video-modal.component';
+import { City } from 'src/app/interfaces/city';
 import { CitiesService } from 'src/app/services/cities.service';
-interface City {
-  territory_name: string;
-}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

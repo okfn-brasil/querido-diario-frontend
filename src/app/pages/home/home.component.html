@@ -63,12 +63,10 @@
                   [value]="option.territory_name"
                 >
                   <div fxLayout="row" class="autocomplete">
-                    <mat-icon
-                      fxFlexAlign="center"
-                      matPrefix
-                      svgIcon="gray-pin"
-                    ></mat-icon>
-                    <p>{{ option.territory_name }}</p>
+                    <app-autocomplete-item
+                    [textPrimary]="option.territory_name"
+                    [textSecondary]="'NÍVEL ' + option.level + ' DE ABERTURA'"
+                    ></app-autocomplete-item>
                   </div>
                 </mat-option>
               </mat-autocomplete>
