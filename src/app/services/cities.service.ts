@@ -1,16 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
 import cities from '../data/cities.json';
-
-interface City {
-  territory_id: string;
-  territory_name: string;
-  state_code: string;
-  publication_urls?: string[],
-  level: string;
-}
+import { City } from '../interfaces/city';
 
 interface CityResponse {
   cities: City[];

@@ -39,6 +39,7 @@ import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { VideoModalComponent } from './components/video-modal/video-modal.component';
 import { DatePickerRangeComponent } from './components/date-picker-range/date-picker-range.component';
+import { AutocompleteItemComponent } from './components/autocomplete-item/autocomplete-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { DatePickerRangeComponent } from './components/date-picker-range/date-pi
     H2Component,
     VideoModalComponent,
     DatePickerRangeComponent,
+    AutocompleteItemComponent,
   ],
   imports: [
     BrowserModule,
