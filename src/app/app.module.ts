@@ -40,6 +40,7 @@ import { filter } from 'rxjs/operators';
 import { VideoModalComponent } from './components/video-modal/video-modal.component';
 import { DatePickerRangeComponent } from './components/date-picker-range/date-picker-range.component';
 import { AutocompleteItemComponent } from './components/autocomplete-item/autocomplete-item.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { AutocompleteItemComponent } from './components/autocomplete-item/autoco
     VideoModalComponent,
     DatePickerRangeComponent,
     AutocompleteItemComponent,
+    NotificationsComponent,
   ],
   imports: [
     BrowserModule,
