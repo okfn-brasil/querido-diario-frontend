@@ -29,6 +29,7 @@
     "@angular/platform-browser": "~11.2.11",
     "@angular/platform-browser-dynamic": "~11.2.11",
     "@angular/router": "~11.2.11",
+    "angular-responsive-carousel": "^2.0.2",
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "path": "^0.12.7",

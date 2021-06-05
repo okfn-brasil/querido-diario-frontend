@@ -1612,6 +1612,13 @@ alphanum-sort@^1.0.2:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
+angular-responsive-carousel@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/angular-responsive-carousel/-/angular-responsive-carousel-2.0.2.tgz#d8d46837015ef65f9f3fbc7e58e620ba811281ce"
+  integrity sha512-ade+YNVnZiq7q7Ljwhp5jk+p/+zT+k+iRC1V+rjbRB93L6qqvoDOjSl6y7TugzMyvk/QumWVsFnQGlB9O3IRsQ==
+  dependencies:
+    tslib "^2.0.0"
+
 ansi-colors@4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"

@@ -17,6 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -41,6 +43,11 @@ import { VideoModalComponent } from './components/video-modal/video-modal.compon
 import { DatePickerRangeComponent } from './components/date-picker-range/date-picker-range.component';
 import { AutocompleteItemComponent } from './components/autocomplete-item/autocomplete-item.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CardComponent } from './components/card/card.component';
+import { HeightDirective } from './directives/height.directive';
+import { WidthDirective } from './directives/width.directive';
+import { GoalsComponent } from './components/goals/goals.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +70,11 @@ import { NotificationsComponent } from './components/notifications/notifications
     DatePickerRangeComponent,
     AutocompleteItemComponent,
     NotificationsComponent,
+    CarouselComponent,
+    CardComponent,
+    HeightDirective,
+    WidthDirective,
+    GoalsComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,6 +96,9 @@ import { NotificationsComponent } from './components/notifications/notifications
 
     HttpClientModule,
     FlexLayoutModule,
+
+
+    IvyCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
