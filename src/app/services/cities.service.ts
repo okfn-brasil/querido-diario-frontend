@@ -29,4 +29,12 @@ export class CitiesService {
         })
       )*/
   }
+
+  findOne(name: string): Observable<City | null> {
+    const territory = cities.find(
+      (city: City) => city.territory_name.toLowerCase() === name
+    );
+    console.log('find one ', cities[0]);
+    return of(territory || cities[0]);
+  }
 }

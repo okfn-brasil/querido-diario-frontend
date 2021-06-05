@@ -23,6 +23,7 @@
               <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
               <input
                 class="search"
+                #termField
                 matInput
                 [formControl]="termControl"
                 [matAutocomplete]="auto"
@@ -52,6 +53,7 @@
               <mat-label>Municípios</mat-label>
               <input
                 class="city"
+                #cityField
                 matInput
                 [formControl]="cityControl"
                 [matAutocomplete]="cityInput"
@@ -72,9 +74,9 @@
               </mat-autocomplete>
             </mat-form-field>
 
-            <app-date-picker-range class="period-input"></app-date-picker-range>
+            <app-date-picker-range #periodField class="period-input"></app-date-picker-range>
           </div>
-          <button class="btn">Pesquisar</button>
+          <button (click)="search()" class="btn">Pesquisar</button>
         </form>
       </div>
     </div>

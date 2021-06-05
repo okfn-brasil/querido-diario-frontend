@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Observable, of, EMPTY } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { VideoModalComponent } from 'src/app/components/video-modal/video-modal.component';
@@ -28,9 +29,14 @@ export class HomeComponent implements OnInit {
 
   filteredCities: Observable<City[]> = new Observable();
 
+  @ViewChild('cityField') cityField!: ElementRef;
+  @ViewChild('termField') termField!: ElementRef;
+  @ViewChild('periodField') periodField!: ElementRef;
+
   constructor(
     private citiesService: CitiesService,
     private modal: MatDialog,
+    private router: Router,
     ) { }
 
   ngOnInit() {
@@ -59,6 +65,25 @@ export class HomeComponent implements OnInit {
       height: '100%',
       maxWidth: '100%',
     });
+  }
+
+  search(): void {
+    console.log('city ', this.cityField.nativeElement.value)
+    console.log('term ', this.termField.nativeElement.value)
+    //console.log('period ', this.periodField.nativeElement.value)
+    let queryParams = {};
+    const city = this.cityField.nativeElement.value;
+    const term = this.termField.nativeElement.value;
+
+    if (city) {
+      queryParams = {...queryParams, city}
+    }
+
+    if (term) {
+      queryParams = {...queryParams, term}
+    }
+
+    this.router.navigate(['/pesquisa'], { queryParams })
   }
 
   private _filter(value: string): string[] {
