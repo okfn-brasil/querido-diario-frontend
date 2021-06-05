@@ -11,7 +11,7 @@
     fxLayout="row"
     *ngIf="!(response | async)?.results?.length && !(city | async)"
   >
-    <div class="container" fxLayout="column">
+    <div class="container" fxLayout="column" fxLayoutGap="18px">
       <app-h2>
         Sua pesquisa não encontrou nenhum conteúdo correspondente
       </app-h2>
@@ -26,7 +26,7 @@
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="(city | async) as territory"
+    *ngIf="city | async as territory"
   >
     <div class="container" fxLayout.xs="column" fxLayoutGap.xs="36px">
       <div fxLayout="row" fxFlex="40%" fxFlex.xs fxLayoutGap="12px">
@@ -41,70 +41,55 @@
         <p>
           {{ getLevelDescriptionForTerritory(territory.level).text }}
         </p>
-        <button *ngIf="getLevelDescriptionForTerritory(territory.level).button?.text">
+        <button
+          *ngIf="getLevelDescriptionForTerritory(territory.level).button?.text"
+        >
           {{ getLevelDescriptionForTerritory(territory.level).button?.text }}
         </button>
       </div>
     </div>
   </section>
 
-  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row" fxHide>
-    <div class="container" fxLayout="column" fxLayoutGap="42px">
-      <p>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-        ante sollicitudin commodo.
-      </p>
-      <div fxLayout="row">
-        <app-h2> 10943 resultados encontrados </app-h2>
-      </div>
-
-      <div fxLayout="column" fxLayoutGap="18px">
-        <div
-          fxLayout="column"
-          class="bg-white-2 result color-purple-1"
-          fxLayoutGap="22px"
-        >
-          <p>
-            Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam
-            sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum.
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in
-            merenda nulla. Nulla vel metus scelerisque ante sollicitudin
-            commodo.
-          </p>
-          <div
-            fxLayout="row"
-            fxLayout.xs="column"
-            fxLayoutAlign="space-between"
-          >
-            <p>10/02/2021 • <span class="color-purple-3">Recife</span></p>
-            <p class="color-purple-3">Baixar diário oficial</p>
-          </div>
+  <div *ngIf="response | async as searchResult">
+    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row" *ngIf="searchResult.count > 0">
+      <div
+        class="container"
+        fxLayout="column"
+        fxLayoutGap="42px"
+      >
+        <p>
+          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+          scelerisque ante sollicitudin commodo.
+        </p>
+        <div fxLayout="row">
+          <app-h2>{{ searchResult.count }} resultados encontrados</app-h2>
         </div>
 
         <div
           fxLayout="column"
-          class="bg-white-2 result color-purple-1"
-          fxLayoutGap="22px"
+          fxLayoutGap="18px"
+          *ngFor="let result of searchResult.results"
         >
-          <p>
-            Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam
-            sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum.
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in
-            merenda nulla. Nulla vel metus scelerisque ante sollicitudin
-            commodo.
-          </p>
           <div
-            fxLayout="row"
-            fxLayout.xs="column"
-            fxLayoutAlign="space-between"
+            fxLayout="column"
+            class="bg-white-2 result color-purple-1"
+            fxLayoutGap="22px"
           >
-            <p>10/02/2021 • <span class="color-purple-3">Recife</span></p>
-            <p class="color-purple-3">Baixar diário oficial</p>
+            <p>{{ result.text }}</p>
+            <div
+              fxLayout="row"
+              fxLayout.xs="column"
+              fxLayoutAlign="space-between"
+            >
+              <p>
+                {{ result.updatedAt }} •
+                <span class="color-purple-3">{{ result.city }}</span>
+              </p>
+              <p class="color-purple-3">Baixar diário oficial</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>

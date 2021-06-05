@@ -1,45 +1,52 @@
 export const termsResult = [
   {
     text: 'Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in merenda nulla. Nulla vel metus scelerisque ante sollicitudin commodo.',
-    updatedAt: '10/02/2021',
+    updatedAt: '11/02/2021',
     downloadUrl: 'http://google.com',
     city: 'Recife',
+    territoryId: '1302504'
   },
   {
     text: 'Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in merenda nulla. Nulla vel metus scelerisque ante sollicitudin commodo.',
-    updatedAt: '10/02/2021',
+    updatedAt: '12/02/2021',
     downloadUrl: 'http://google.com',
     city: 'São Paulo',
+    territoryId: '1302504',
   },
   {
     text: 'Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in merenda nulla. Nulla vel metus scelerisque ante sollicitudin commodo.',
     updatedAt: '10/02/2021',
     downloadUrl: 'http://google.com',
     city: 'Rio de Janeiro',
+    territoryId: '1302504',
   },
   {
     text: 'Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in merenda nulla. Nulla vel metus scelerisque ante sollicitudin commodo.',
     updatedAt: '10/02/2021',
     downloadUrl: 'http://google.com',
     city: 'Recife',
+    territoryId: '1302504',
   },
   {
     text: 'Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in merenda nulla. Nulla vel metus scelerisque ante sollicitudin commodo.',
     updatedAt: '10/02/2021',
     downloadUrl: 'http://google.com',
     city: 'Florianópolis',
+    territoryId: '1302504',
   },
   {
     text: 'Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in merenda nulla. Nulla vel metus scelerisque ante sollicitudin commodo.',
     updatedAt: '10/02/2021',
     downloadUrl: 'http://google.com',
     city: 'Belo Horizonte',
+    territoryId: '1302504',
   },
   {
     text: 'Lorem compra dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin gravida arcu eget R$5.000 … Vivamus merenda bibendum. Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras sit amet nibh libero, in merenda nulla. Nulla vel metus scelerisque ante sollicitudin commodo.',
     updatedAt: '10/02/2021',
     downloadUrl: 'http://google.com',
     city: 'Natal',
+    territoryId: '1302504',
   },
 ];
 

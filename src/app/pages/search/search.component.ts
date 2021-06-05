@@ -10,6 +10,7 @@ interface SearchResult {
   city: string;
   updatedAt: string;
   downloadUrl: string;
+  territoryId: string;
 }
 
 interface SearchResponse {
@@ -48,8 +49,15 @@ export class SearchComponent implements OnInit {
       this.cityName = city;
       if (city) {
         this.city = this.findTerritory(city);
+        this.findTerritory(city).subscribe((city) => {
+          if (city) {
+            const territoryId = city.territory_id;
+            this.response = this.findByResults({term, territoryId});
+          }
+        });
       } else {
-        this.response = this.findByTerm(term);
+        console.log('logging ', term)
+        this.response = this.findByResults({term});
       }
     });
   }
@@ -65,10 +73,29 @@ export class SearchComponent implements OnInit {
       .pipe(map((result) => result));
   }
 
-  findByTerm(term: string): Observable<SearchResponse> {
-    const results = termsResult.filter(
-      (result) => result.text.indexOf(term) > -1
-    );
+  findByResults(options: {
+    term?: string;
+    territoryId?: string;
+  }): Observable<SearchResponse> {
+    let results = [] as SearchResult[];
+    const { term, territoryId } = options;
+    console.log('term ', term)
+    if (term && territoryId) {
+      results = termsResult.filter(
+        (result) =>
+          result.text.indexOf(term) > -1 &&
+          result.territoryId == territoryId
+      );
+    } else if (term) {
+      results = termsResult.filter(
+        (result) => result.text.indexOf(term) > -1
+      );
+    } else if (territoryId) {
+      results = termsResult.filter(
+        (result) => result.territoryId == territoryId
+      );
+    }
+    console.log('results ',  { count: results.length, results })
 
     return of({ count: results.length, results });
   }
