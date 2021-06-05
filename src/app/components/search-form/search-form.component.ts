@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { City } from 'src/app/interfaces/city';
@@ -35,6 +35,7 @@ export class SearchFormComponent implements OnInit {
   constructor(
     private citiesService: CitiesService,
     private router: Router,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -55,6 +56,12 @@ export class SearchFormComponent implements OnInit {
         }
       })
     );
+
+    this.route.queryParams.subscribe((params) => {
+      const { term, city } = params;
+      this.termControl.setValue(term);
+      this.cityControl.setValue(city);
+    })
   }
 
   search(): void {
