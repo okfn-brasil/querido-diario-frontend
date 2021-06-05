@@ -11,73 +11,7 @@
           >Explore os diários oficiais dos municípios e fique de olho nas ações
           dos governos
         </app-h1>
-        <form
-          fxLayout="row"
-          fxLayout.xs="column"
-          fxLayoutGap="16px"
-          fxLayoutGap.xs="0"
-        >
-          <div fxLayout="column">
-            <mat-form-field appearance="fill" class="search-input">
-              <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
-              <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
-              <input
-                class="search"
-                #termField
-                matInput
-                [formControl]="termControl"
-                [matAutocomplete]="auto"
-              />
-              <mat-autocomplete #auto="matAutocomplete">
-                <p class="p-secondary autocomplete-title">Sugestões de busca</p>
-                <mat-option
-                  *ngFor="let option of filteredOptions | async"
-                  [value]="option"
-                >
-                  <div fxLayout="row" class="autocomplete">
-                    <mat-icon
-                      fxFlexAlign="center"
-                      matPrefix
-                      svgIcon="money"
-                    ></mat-icon>
-                    <p>{{ option }}</p>
-                  </div>
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
-          </div>
-
-          <div fxLayout="row" fxLayoutGap="16px">
-            <mat-form-field appearance="fill" class="city-input">
-              <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
-              <mat-label>Municípios</mat-label>
-              <input
-                class="city"
-                #cityField
-                matInput
-                [formControl]="cityControl"
-                [matAutocomplete]="cityInput"
-              />
-
-              <mat-autocomplete #cityInput="matAutocomplete">
-                <mat-option
-                  *ngFor="let option of filteredCities | async"
-                  [value]="option.territory_name"
-                >
-                  <div fxLayout="row" class="autocomplete">
-                    <app-autocomplete-item
-                      [textPrimary]="option.territory_name"
-                      [textSecondary]="'NÍVEL ' + option.level + ' DE ABERTURA'"
-                    ></app-autocomplete-item>
-                  </div>
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
-
-            <app-date-picker-range #periodField class="period-input"></app-date-picker-range>
-          </div>
-          <button (click)="search()" class="btn">Pesquisar</button>
-        </form>
+        <app-search-form></app-search-form>
       </div>
     </div>
   </section>

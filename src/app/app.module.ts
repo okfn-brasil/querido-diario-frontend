@@ -48,6 +48,7 @@ import { CardComponent } from './components/card/card.component';
 import { HeightDirective } from './directives/height.directive';
 import { WidthDirective } from './directives/width.directive';
 import { GoalsComponent } from './components/goals/goals.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { GoalsComponent } from './components/goals/goals.component';
     HeightDirective,
     WidthDirective,
     GoalsComponent,
+    SearchFormComponent,
   ],
   imports: [
     BrowserModule,

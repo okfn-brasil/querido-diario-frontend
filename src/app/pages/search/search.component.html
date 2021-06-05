@@ -1,36 +1,7 @@
 <div fxLayout="column">
   <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
     <div class="container" fxLayout="column">
-      <form
-        fxLayout="row"
-        fxLayout.xs="column"
-        fxLayoutGap="16px"
-        fxLayoutGap.xs="0"
-      >
-        <div fxFlex="50%">
-          <mat-form-field appearance="fill" class="search-input">
-            <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
-            <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
-            <input class="search" matInput />
-          </mat-form-field>
-        </div>
-        <div fxLayout="row wrap" fxLayoutGap="16px">
-          <div fxFlex="calc(48% - 16px)">
-            <mat-form-field appearance="fill" class="city-input">
-              <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
-              <mat-label>Municípios</mat-label>
-              <input class="city" matInput />
-            </mat-form-field>
-          </div>
-          <div fxFlex="calc(48% - 16px)">
-            <mat-form-field appearance="fill" class="period-input">
-              <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
-              <mat-label>Período</mat-label>
-              <input class="period" matInput />
-            </mat-form-field>
-          </div>
-        </div>
-      </form>
+      <app-search-form></app-search-form>
     </div>
   </section>
 
