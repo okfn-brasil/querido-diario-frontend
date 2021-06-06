@@ -1,5 +1,13 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
+interface Option {
+  value: string;
+  viewValue: string;
+}
+
+interface Options {
+  options: Option[]
+}
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
@@ -16,25 +24,13 @@ export class SelectComponent implements OnInit {
 
   constructor() { }
 
+  @Input()
+  options: Option[] = [];
+
   selectedOption: { value: string, viewValue: string} = {
     value: 'Relevância',
     viewValue: 'Relevância',
   }
-
-  options = [
-    {
-      value: 'Relevância',
-      viewValue: 'Relavância'
-    },
-    {
-      value: 'Mais recentes',
-      viewValue: 'Mais recentes'
-    },
-    {
-      value: 'Mais antigos',
-      viewValue: 'Mais antigos'
-    },
-  ]
 
   ngOnInit(): void {
   }

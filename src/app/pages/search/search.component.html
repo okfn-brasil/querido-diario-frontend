@@ -51,7 +51,12 @@
   </section>
 
   <div *ngIf="response | async as searchResult">
-    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row" *ngIf="searchResult.count > 0">
+    <section
+      class="bg-purple-2"
+      fxLayoutAlign="center"
+      fxLayout="row"
+      *ngIf="searchResult.count > 0"
+    >
       <div class="container" fxLayout="column" fxLayoutGap="42px">
         <p>
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
@@ -59,7 +64,10 @@
         </p>
         <div fxLayout="row" fxLayoutAlign="space-between">
           <app-h2>{{ searchResult.count }} resultados encontrados</app-h2>
-          <app-select [label]="'ORDENAR POR'"></app-select>
+          <app-select
+            [label]="'ORDENAR POR'"
+            [options]="orderOptions"
+          ></app-select>
         </div>
 
         <pagination-template
@@ -107,6 +115,16 @@
               </p>
               <app-select
                 [theme]="'theme-dark'"
+                [options]="[
+                {
+                  value: 'http://path/to/text',
+                  viewValue: 'Baixar txt'
+                },
+                {
+                  value: 'http://path/to/original',
+                  viewValue: 'Baixar arquivo original'
+                }
+                ]"
                 [label]="'Baixar diário oficial'"
               ></app-select>
             </div>

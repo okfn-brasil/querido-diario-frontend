@@ -47,6 +47,21 @@ export class SearchComponent implements OnInit {
   //@Output() pageChange = new EventEmitter();
   @Output() pageBoundsCorrection = new EventEmitter();
 
+  orderOptions = [
+    {
+      value: 'Relevância',
+      viewValue: 'Relavância'
+    },
+    {
+      value: 'Mais recentes',
+      viewValue: 'Mais recentes'
+    },
+    {
+      value: 'Mais antigos',
+      viewValue: 'Mais antigos'
+    },
+  ]
+
   p: number = 0;
 
   childEventEmitter() {

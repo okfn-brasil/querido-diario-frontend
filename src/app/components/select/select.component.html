@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutGap="8px" [ngClass]="theme">
   <mat-form-field appearance="legacy">
     <mat-label>{{ label }}</mat-label>
-    <mat-select [(ngModel)]="selectedOption" name="option" disableRipple>
+    <mat-select [(ngModel)]="selectedOption" name="option">
       <mat-option *ngFor="let option of options" [value]="option.value">
         {{ option.viewValue }}
       </mat-option>
