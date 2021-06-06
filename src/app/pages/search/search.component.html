@@ -5,8 +5,12 @@
     </div>
   </section>
 
-  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
-    <!-- *ngIf="!(response | async)?.results?.length && !(city | async)"> -->
+  <section
+    class="bg-purple-2"
+    fxLayoutAlign="center"
+    fxLayout="row"
+    *ngIf="!(response | async)?.results?.length && !(city | async)"
+  >
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <app-h2>
         Sua pesquisa não encontrou nenhum conteúdo correspondente
@@ -102,7 +106,10 @@
                 {{ result.updatedAt }} •
                 <span class="color-purple-3">{{ result.city }}</span>
               </p>
-              <app-select [theme]="'theme-dark'" [label]="'Baixar diário oficial'"></app-select>
+              <app-select
+                [theme]="'theme-dark'"
+                [label]="'Baixar diário oficial'"
+              ></app-select>
             </div>
           </div>
         </pagination-template>
