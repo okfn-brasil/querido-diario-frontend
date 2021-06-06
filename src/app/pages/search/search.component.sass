@@ -1,9 +1,6 @@
 @import '../../../assets/_variables.sass'
 @import '../../../assets/_tools.sass'
 
-pagination-controls
-  background-color: yellow
-
 section
   padding: rem(80) 0
 
@@ -60,3 +57,53 @@ button
 
   .container
     padding: 0 rem(16)
+
+.ngx-pagination
+  display: flex
+  justify-content: center
+
+.ngx-pagination li
+  height: 41px
+  width: 41px
+  text-align: center
+
+  a
+    &:hover
+      background-color: transparent
+      opacity: 1
+
+  span
+    color: gray !important
+    opacity: 0.5
+    color: #F3E9E9
+    font-family: Lato
+    font-size: 16px
+    font-weight: 600
+    letter-spacing: 0
+    line-height: 29px
+
+.ngx-pagination .current
+  background-color: transparent !important
+  height: 41px
+  width: 41px
+  border: 1px solid #FF8500
+  border-radius: 20px
+  text-align: center
+  span
+    color: #F3E9E9
+    opacity: 1
+
+
+.pagination-previous, .pagination-next a, .ngx-pagination a, .ngx-pagination button, .ngx-pagination .disabled
+  font-size: 26px
+  color: #F3E9E9 !important
+  height: 41px
+  width: 41px
+
+.pagination-previous, .ngx-pagination .disabled, .pagination-next
+  border: 1px solid #F3E9E9
+  border-radius: 20px !important
+
+.ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before,
+.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after
+  margin: 5px 0 0 0 !important

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -29,6 +29,7 @@ interface LevelDescription {
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SearchComponent implements OnInit {
   constructor(
