@@ -19,6 +19,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -99,8 +101,9 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
     HttpClientModule,
     FlexLayoutModule,
 
-
     IvyCarouselModule,
+
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

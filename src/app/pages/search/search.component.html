@@ -5,12 +5,8 @@
     </div>
   </section>
 
-  <section
-    class="bg-purple-2"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    *ngIf="!(response | async)?.results?.length && !(city | async)"
-  >
+  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
+    <!-- *ngIf="!(response | async)?.results?.length && !(city | async)"> -->
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <app-h2>
         Sua pesquisa não encontrou nenhum conteúdo correspondente
@@ -51,12 +47,9 @@
   </section>
 
   <div *ngIf="response | async as searchResult">
-    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row" *ngIf="searchResult.count > 0">
-      <div
-        class="container"
-        fxLayout="column"
-        fxLayoutGap="42px"
-      >
+    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
+      <!-- *ngIf="searchResult.count > 0" -->
+      <div class="container" fxLayout="column" fxLayoutGap="42px">
         <p>
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
           scelerisque ante sollicitudin commodo.
@@ -65,11 +58,34 @@
           <app-h2>{{ searchResult.count }} resultados encontrados</app-h2>
         </div>
 
-        <div
+        <pagination-template
+          #p="paginationApi"
+          *ngFor="
+            let result of searchResult.results
+              | paginate
+                : {
+                    itemsPerPage: 3,
+                    currentPage: page,
+                    totalItems: searchResult.count
+                  }
+          "
+        >
+          <!-- <pagination-template
+          #p="paginationApi"
           fxLayout="column"
           fxLayoutGap="18px"
-          *ngFor="let result of searchResult.results"
-        >
+          *ngFor="
+            let result of searchResult.results
+              | paginate
+                : {
+                    itemsPerPage: 3,
+                    currentPage: p,
+                    totalItems: 10
+                  }
+          "
+        > -->
+          <!--<li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p, totalItems: res.count }">...</li>-->
+
           <div
             fxLayout="column"
             class="bg-white-2 result color-purple-1"
@@ -88,7 +104,30 @@
               <p class="color-purple-3">Baixar diário oficial</p>
             </div>
           </div>
-        </div>
+        </pagination-template>
+        <pagination-controls
+          (pageChange)="pageChange($event)"
+          previousLabel="Prev"
+          [maxSize]="3"
+          nextLabel="Next"
+          [responsive]="true"
+        ></pagination-controls>
+
+        <!--<pagination-controls
+          id="some_id"
+          (pageChange)="pageChange($event)"
+          (pageBoundsCorrection)="pageChange($event)"
+          [maxSize]="9"
+          [directionLinks]="true"
+          [autoHide]="true"
+          [responsive]="true"
+          previousLabel="Previous"
+          nextLabel="Next"
+          screenReaderPaginationLabel="Pagination"
+          screenReaderPageLabel="page"
+          screenReaderCurrentLabel="You're on page"
+        >
+        </pagination-controls>-->
       </div>
     </section>
   </div>

@@ -5623,6 +5623,11 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+ngx-pagination@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-pagination/-/ngx-pagination-5.1.0.tgz#b09ad72c20283b392fb9ea457ec2d4825e149358"
+  integrity sha512-GDI5GwmYIaeLu3hW3tgdIw/LXOzLj05PjVhtf2Ze63QsJ6zhZ7g5tg6S4EhhuUOdbMdXWyOng/uMVZwbYpi0Eg==
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

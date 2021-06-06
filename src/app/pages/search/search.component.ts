@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -35,13 +35,30 @@ export class SearchComponent implements OnInit {
     private route: ActivatedRoute,
     private citiesService: CitiesService
   ) {}
-  term: string | null = null;
+  term: string | undefined = undefined;
+  territoryId: string | undefined = undefined;
   cityName: string | null = null;
   foundResult: boolean = false;
   response: Observable<SearchResponse> = new Observable();
+  //response: Observable<String[]> = new Observable();
   city: Observable<City | null> = new Observable();
   levelDescription: LevelDescription | null = null;
 
+  //@Output() pageChange = new EventEmitter();
+  @Output() pageBoundsCorrection = new EventEmitter();
+
+  p: number = 0;
+
+  childEventEmitter() {
+    
+  }
+  page = 1
+  pageChange(event: any) {
+    console.log('event ', event)
+    this.page = event;
+    this.response = this.findByResults({term: this.term, territoryId: this.territoryId, page: this.page })
+  }
+  
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       const { term, city } = params;
@@ -52,12 +69,13 @@ export class SearchComponent implements OnInit {
         this.findTerritory(city).subscribe((city) => {
           if (city) {
             const territoryId = city.territory_id;
-            this.response = this.findByResults({term, territoryId});
+            this.territoryId = territoryId;
+            this.response = this.findByResults({term, territoryId, page: this.page});
           }
         });
       } else {
         console.log('logging ', term)
-        this.response = this.findByResults({term});
+        this.response = this.findByResults({term, page: this.page});
       }
     });
   }
@@ -76,9 +94,10 @@ export class SearchComponent implements OnInit {
   findByResults(options: {
     term?: string;
     territoryId?: string;
+    page: number,
   }): Observable<SearchResponse> {
     let results = [] as SearchResult[];
-    const { term, territoryId } = options;
+    const { term, territoryId, page } = options;
     console.log('term ', term)
     if (term && territoryId) {
       results = termsResult.filter(
@@ -95,8 +114,10 @@ export class SearchComponent implements OnInit {
         (result) => result.territoryId == territoryId
       );
     }
-    console.log('results ',  { count: results.length, results })
+    const count = results.length;
+    results = results.slice((page - 1), (page+3) )
+    console.log('results ',  { count: results, results })
 
-    return of({ count: results.length, results });
+    return of({ count, results });
   }
 }
