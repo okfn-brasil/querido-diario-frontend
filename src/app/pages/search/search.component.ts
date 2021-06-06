@@ -64,9 +64,6 @@ export class SearchComponent implements OnInit {
 
   p: number = 0;
 
-  childEventEmitter() {
-    
-  }
   page = 1
   pageChange(event: any) {
     console.log('event ', event)
@@ -134,5 +131,10 @@ export class SearchComponent implements OnInit {
     console.log('results ',  { count: results, results })
 
     return of({ count, results });
+  }
+
+  openFile(link: string) {
+    console.log('received ', link)
+    window.open(link);
   }
 }

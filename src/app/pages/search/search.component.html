@@ -115,6 +115,7 @@
               </p>
               <app-select
                 [theme]="'theme-dark'"
+                (onSelected)="openFile($event)"
                 [options]="[
                 {
                   value: 'http://path/to/text',

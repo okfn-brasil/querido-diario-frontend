@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 interface Option {
   value: string;
@@ -22,6 +22,8 @@ export class SelectComponent implements OnInit {
   @Input()
   theme: string = 'theme-light';
 
+  @Output() onSelected = new EventEmitter<string>();
+
   constructor() { }
 
   @Input()
@@ -33,6 +35,11 @@ export class SelectComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  selectionChange(value: string) {
+    console.log('on select ', value)
+    this.onSelected.emit(value);
   }
 
 }
