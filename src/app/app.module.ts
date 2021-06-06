@@ -16,6 +16,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 
@@ -51,6 +52,7 @@ import { HeightDirective } from './directives/height.directive';
 import { WidthDirective } from './directives/width.directive';
 import { GoalsComponent } from './components/goals/goals.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
+import { SelectComponent } from './components/select/select.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +81,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
     WidthDirective,
     GoalsComponent,
     SearchFormComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,6 +100,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSelectModule,
 
     HttpClientModule,
     FlexLayoutModule,

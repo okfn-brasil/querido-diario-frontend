@@ -54,8 +54,9 @@
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
           scelerisque ante sollicitudin commodo.
         </p>
-        <div fxLayout="row">
+        <div fxLayout="row" fxLayoutAlign="space-between">
           <app-h2>{{ searchResult.count }} resultados encontrados</app-h2>
+          <app-select [label]="'ORDENAR POR'"></app-select>
         </div>
 
         <pagination-template
@@ -101,7 +102,7 @@
                 {{ result.updatedAt }} •
                 <span class="color-purple-3">{{ result.city }}</span>
               </p>
-              <p class="color-purple-3">Baixar diário oficial</p>
+              <app-select [theme]="'theme-dark'" [label]="'Baixar diário oficial'"></app-select>
             </div>
           </div>
         </pagination-template>
