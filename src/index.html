@@ -1,16 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>QueridoDiario</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body class="mat-typography">
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>QueridoDiario</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <style type="text/css">
+    body,
+    html {
+      height: 100%;
+    }
+    .loading {
+      align-self: center;
+      margin-left: calc(50vw - 53px);
+      margin-top: calc(50vh - 53px);
+      border: 6px solid rgba(0, 0, 0, 0.1);
+      border-top: 6px solid #FF8500;
+      border-radius: 50%;
+      background: transparent;
+      width: 100px;
+      height: 100px;
+      animation: spin 1.2s linear infinite;
+      box-shadow: 0 0 20px 4px #FFF;
+    }
+    
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .loading {
+        box-shadow: none;
+      }
+    }
+  </style>
+  <body class="mat-typography">
+    <app-root>
+      <div class="app-loading">
+        <svg class="loading" viewBox="25 25 50 50"></svg>
+      </div>
+    </app-root>
+  </body>
 </html>
