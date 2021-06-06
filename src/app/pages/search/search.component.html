@@ -51,8 +51,7 @@
   </section>
 
   <div *ngIf="response | async as searchResult">
-    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
-      <!-- *ngIf="searchResult.count > 0" -->
+    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row" *ngIf="searchResult.count > 0">
       <div class="container" fxLayout="column" fxLayoutGap="42px">
         <p>
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
