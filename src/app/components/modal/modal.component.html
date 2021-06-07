@@ -4,7 +4,11 @@
       <mat-icon svgIcon="logo" class="logo"></mat-icon>
       <div fxLayoutAlign="flex-end" fxLayoutGap="16px">
         <a>
-          <mat-icon svgIcon="notification" class="bell"></mat-icon>
+          <mat-icon
+            svgIcon="notification"
+            (click)="openNotifications()"
+            class="bell"
+          ></mat-icon>
         </a>
         <button>
           <mat-icon

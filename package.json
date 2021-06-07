@@ -12,8 +12,8 @@
   },
   "private": true,
   "engines": {
-    "node": "15.8.0",
-    "npm": "7.5.1"
+    "node": "16.2.0",
+    "npm": "7.10.0"
   },
   "dependencies": {
     "@angular/animations": "~11.2.11",
@@ -29,8 +29,10 @@
     "@angular/platform-browser": "~11.2.11",
     "@angular/platform-browser-dynamic": "~11.2.11",
     "@angular/router": "~11.2.11",
+    "angular-responsive-carousel": "^2.0.2",
     "express": "^4.17.1",
     "moment": "^2.29.1",
+    "ngx-pagination": "^5.1.0",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

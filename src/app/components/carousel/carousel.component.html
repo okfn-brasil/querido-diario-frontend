@@ -1,0 +1,9 @@
+<carousel [cellsToShow]="4" [width]="1200" [height]="585" [arrowsOutside]="true" [dots]="true">
+  <div
+    class="carousel-cell"
+    *ngFor="let item of items"
+    style="width: 17.375rem"
+  >
+    <app-card [item]="item"></app-card>
+  </div>
+</carousel>

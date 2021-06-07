@@ -16,6 +16,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
@@ -40,6 +45,14 @@ import { filter } from 'rxjs/operators';
 import { VideoModalComponent } from './components/video-modal/video-modal.component';
 import { DatePickerRangeComponent } from './components/date-picker-range/date-picker-range.component';
 import { AutocompleteItemComponent } from './components/autocomplete-item/autocomplete-item.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CardComponent } from './components/card/card.component';
+import { HeightDirective } from './directives/height.directive';
+import { WidthDirective } from './directives/width.directive';
+import { GoalsComponent } from './components/goals/goals.component';
+import { SearchFormComponent } from './components/search-form/search-form.component';
+import { SelectComponent } from './components/select/select.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +74,14 @@ import { AutocompleteItemComponent } from './components/autocomplete-item/autoco
     VideoModalComponent,
     DatePickerRangeComponent,
     AutocompleteItemComponent,
+    NotificationsComponent,
+    CarouselComponent,
+    CardComponent,
+    HeightDirective,
+    WidthDirective,
+    GoalsComponent,
+    SearchFormComponent,
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,9 +100,14 @@ import { AutocompleteItemComponent } from './components/autocomplete-item/autoco
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSelectModule,
 
     HttpClientModule,
     FlexLayoutModule,
+
+    IvyCarouselModule,
+
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

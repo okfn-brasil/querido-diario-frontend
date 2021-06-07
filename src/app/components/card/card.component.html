@@ -1,0 +1,24 @@
+<div fxLayout="column" class="goal-card">
+  <mat-icon
+    [appHeight]="item.icon.height"
+    [appWidth]="item.icon.width"
+    svgIcon="{{ item.icon.name }}"
+    class="hand-icon"
+  ></mat-icon>
+  <div fxLayout="column" fxLayoutGap="8px">
+    <app-h2>{{ item.textPrimary }}</app-h2>
+    <div fxLayout="column" fxLayoutGap="22px">
+      <p>{{ item.textSecondary }}</p>
+      <app-h1 class="lato">{{ item.money }}</app-h1>
+    </div>
+    <nav *ngIf="item.link">
+      <a class="purple">
+        {{item.link.text}}
+        <mat-icon
+          svgIcon="right-arrow"
+          class="right-arrow"
+        ></mat-icon>
+      </a>
+    </nav>
+  </div>
+</div>

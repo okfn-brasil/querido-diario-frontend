@@ -1,0 +1,26 @@
+<div class="notifications-container" fxLayoutGap="32px" fxLayout="column">
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="space-between" fxFlexFill>
+      <div class="notifications-inner" fxLayout="column">
+        <div class="triangule" fxHide.xs></div>
+        <div class="bg-purple-2 notifications" fxLayoutGap="16px" fxLayout="column">
+          <div
+            *ngFor="let notification of notifications"
+            class="bg-white-2 notifications"
+            fxLayoutGap="22px"
+          >
+            <p>
+              {{ notification.title }}
+            </p>
+            <p>
+              {{ notification.content }}
+            </p>
+            <span>
+              {{ notification.updatedAt }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>
