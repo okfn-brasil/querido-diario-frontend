@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 import cities from '../data/cities.json';
 import { City } from '../interfaces/city';
 
@@ -20,14 +21,14 @@ export class CitiesService {
   findByName(name: string): Observable<City[]> {
     const url = `https://queridodiario.ok.org.br/api/cities/?city_name=` + name;
 
-    return of(cities);
+    //return of(cities);
 
-    /*return this.http.get<CityResponse>(url)
+    return this.http.get<CityResponse>(url)
       .pipe(
         map((res: CityResponse) => {
           return res.cities;
         })
-      )*/
+      )
   }
 
   findOne(name: string): Observable<City | null> {
