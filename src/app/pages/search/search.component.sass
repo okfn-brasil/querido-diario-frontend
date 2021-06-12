@@ -1,6 +1,23 @@
 @import '../../../assets/_variables.sass'
 @import '../../../assets/_tools.sass'
 
+:host
+  h2
+    color: #F3E9E9
+    font-family: Lato
+    font-size: 24px
+    font-weight: 900
+    letter-spacing: -0.57px
+    line-height: 23px
+
+  p
+    color: #F3E9E9
+    font-family: Lato
+    font-size: 16px
+    font-weight: 600
+    letter-spacing: 0
+    line-height: 28px
+
 .territory-icon
   height: 50px !important
   width: 50px !important
@@ -20,22 +37,6 @@ section
     font-size: 16px
     letter-spacing: 0
     line-height: 28px
-
-h2
-  color: #F3E9E9
-  font-family: Lato
-  font-size: 24px
-  font-weight: 900
-  letter-spacing: -0.57px
-  line-height: 23px
-
-p
-  color: #F3E9E9
-  font-family: Lato
-  font-size: 16px
-  font-weight: 600
-  letter-spacing: 0
-  line-height: 28px
 
 mat-icon
   height: 50px
@@ -97,7 +98,6 @@ button
     color: #F3E9E9
     opacity: 1
 
-
 .pagination-previous, .pagination-next a, .ngx-pagination a, .ngx-pagination button, .ngx-pagination .disabled
   font-size: 26px
   color: #F3E9E9 !important
@@ -108,6 +108,28 @@ button
   border: 1px solid #F3E9E9
   border-radius: 20px !important
 
+.pagination-previous, .pagination-next
+  display: none !important
+
 .ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before,
 .ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after
   margin: 5px 0 0 0 !important
+
+.ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before
+  content: '‹' !important
+
+.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after
+  content: '›'!important
+
+.pagination-first-page, .pagination-last-page
+  box-sizing: border-box
+  height: 41px
+  width: 41px
+  border: 1px solid #5E3F8E
+  border-radius: 20px
+  text-decoration: none
+  text-align: center
+  line-height: 36px
+  font-weight: 100
+  font-size: 30px
+
