@@ -1,8 +1,14 @@
 <div fxLayout="column" fxLayoutGap="8px" [ngClass]="theme">
-  <mat-label *ngIf="title" class="title">{{ title }}</mat-label>
+  <span *ngIf="title" class="title"
+    ><p>{{ title }}</p></span
+  >
   <mat-form-field appearance="legacy">
     <mat-label *ngIf="label">{{ label }}</mat-label>
-    <mat-select [(ngModel)]="selectedOption" name="option" (selectionChange)="selectionChange($event.value)">
+    <mat-select
+      [(ngModel)]="selectedOption"
+      name="option"
+      (selectionChange)="selectionChange($event.value)"
+    >
       <mat-option *ngFor="let option of options" [value]="option.value">
         {{ option.viewValue }}
       </mat-option>
