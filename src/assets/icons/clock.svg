@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1E4FF02E-BE7B-432A-829A-B659FD39FF87</title>
+    <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desk_Notificacoes" transform="translate(-761.000000, -704.000000)">
+            <g id="Group-4" transform="translate(725.000000, 40.000000)">
+                <g id="Group-3" fill="#2C1338">
+                    <rect id="Rectangle" x="0" y="20" width="414" height="709"></rect>
+                </g>
+                <g id="Group-2" transform="translate(16.000000, 36.000000)">
+                    <g id="Card-width-link-Copy-4" transform="translate(0.000000, 464.000000)">
+                        <rect id="card" fill="#F3E9E9" x="0" y="0" width="382" height="214"></rect>
+                        <g id="card-block" opacity="0.5" transform="translate(20.000000, 32.000000)" fill="#2C1338" fill-rule="nonzero">
+                            <g id="1.-assets/icon/clock" transform="translate(0.000000, 132.000000)">
+                                <path d="M9,0 C13.9627991,0 18,4.03720095 18,9 C18,13.9627991 13.9627991,18 9,18 C4.03720095,18 0,13.9627991 0,9 C0,4.03720095 4.03720095,0 9,0 Z M9,1.125 C4.65751649,1.125 1.125,4.65751649 1.125,9 C1.125,13.3424835 4.65751649,16.875 9,16.875 C13.3424835,16.875 16.875,13.3424835 16.875,9 C16.875,4.65751649 13.3424835,1.125 9,1.125 Z M9,3.56245421 C9.31050109,3.56245421 9.5625,3.81445312 9.5625,4.12495421 L9.5625,9.14172363 L13.3350678,12.9142914 C13.5547943,13.134018 13.5547943,13.4902496 13.3350678,13.7099762 C13.2254791,13.8202515 13.0815582,13.8750458 12.9375,13.8750458 C12.7934418,13.8750458 12.6495209,13.8202515 12.5399322,13.7099762 L8.60243224,9.77247619 C8.49668885,9.6667328 8.4375,9.52349854 8.4375,9.37504579 L8.4375,4.12495421 C8.4375,3.81445312 8.68949891,3.56245421 9,3.56245421 Z" id="Combined-Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <rect id="hotspot-voltar" x="0" y="0" width="1220" height="860"></rect>
+        </g>
+    </g>
+</svg>

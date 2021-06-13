@@ -3,7 +3,11 @@
     <div fxLayout="column" fxLayoutAlign="space-between" fxFlexFill>
       <div class="notifications-inner" fxLayout="column">
         <div class="triangule" fxHide.xs></div>
-        <div class="bg-purple-2 notifications" fxLayoutGap="16px" fxLayout="column">
+        <div
+          class="bg-purple-2 notifications"
+          fxLayoutGap="16px"
+          fxLayout="column"
+        >
           <div
             *ngFor="let notification of notifications"
             class="bg-white-2 notifications"
@@ -15,9 +19,18 @@
             <p>
               {{ notification.content }}
             </p>
-            <span>
-              {{ notification.updatedAt }}
-            </span>
+            <div fxLayout="row" fxLayoutGap="6px">
+              <mat-icon
+                svgIcon="clock"
+                [appHeight]="18"
+                [appWidth]="18"
+              ></mat-icon>
+              <span>
+                <p>
+                  {{ notification.updatedAt }}
+                </p>
+              </span>
+            </div>
           </div>
         </div>
       </div>
