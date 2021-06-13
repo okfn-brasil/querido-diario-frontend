@@ -30,10 +30,10 @@
   >
     <div class="container" fxLayout.xs="column" fxLayoutGap.xs="36px">
       <div fxLayout="row" fxFlex="40%" fxFlex.xs fxLayoutGap="12px">
-        <mat-icon svgIcon="check"></mat-icon>
+        <mat-icon [appHeight]='50' [appWidth]='50' svgIcon="check"></mat-icon>
         <div fxLayout="column" fxLayoutGap="16px">
           <p>{{ territory.territory_name }}</p>
-          <p>Nível {{ territory.level }} de acesso</p>
+          <span><p>NÍVEL {{ territory.level }} DE ACESSO</p></span>
         </div>
       </div>
 
@@ -65,8 +65,9 @@
         <div fxLayout="row" fxLayoutAlign="space-between">
           <app-h2>{{ searchResult.count }} resultados encontrados</app-h2>
           <app-select
-            [label]="'ORDENAR POR'"
+            [title]="'ORDENAR POR'"
             [options]="orderOptions"
+            [theme]="'theme-dark'"
           ></app-select>
         </div>
 
@@ -98,7 +99,7 @@
                 <span class="color-purple-3">{{ result.city }}</span>
               </p>
               <app-select
-                [theme]="'theme-dark'"
+                [theme]="'theme-light'"
                 (onSelected)="openFile($event)"
                 [options]="[
                   {

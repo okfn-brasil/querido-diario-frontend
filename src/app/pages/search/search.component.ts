@@ -67,7 +67,7 @@ export class SearchComponent implements OnInit {
   orderOptions = [
     {
       value: 'Relevância',
-      viewValue: 'Relavância',
+      viewValue: 'Relevância',
     },
     {
       value: 'Mais recentes',
