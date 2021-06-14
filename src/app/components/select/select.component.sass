@@ -1,3 +1,28 @@
+.mat-form-field-infix
+  border-top: 0 !important
+
+:host ::ng-deep 
+  .mat-form-field-underline
+    display: none
+
+ 
+  .theme-dark
+    .mat-primary .mat-select-arrow
+      color: #F3E9E9
+
+    .mat-select-min-line
+      color: #F3E9E9
+
+  .theme-light
+    .mat-primary .mat-select-arrow
+      color: #966bE8
+
+
+
+:host
+  .title
+    opacity: 0.5
+
 .theme-light
   mat-label
     color: #F3E9E9
@@ -5,12 +30,6 @@
     font-size: 14px
     letter-spacing: 0
     line-height: 16px
-
-  .mat-primary .mat-select-arrow
-    color: #FFF
-
-  .mat-form-field.mat-focused.mat-primary .mat-select-arrow
-    color: #FFF
 
   .mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-underline
     background-color: #FFF
@@ -35,12 +54,12 @@
     color: #FFF
 
   .mat-form-field-underline
-    background-color: #FFF !important
+    display: none !important
 
   .mat-form-field.mat-focused .mat-form-field-ripple
     background-color: white
 
-.theme-dark
+.theme-light
   mat-label
     color: #966bE8
     opacity: 1

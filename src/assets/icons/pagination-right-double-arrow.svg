@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>EBDDB896-38EB-4921-967A-69975B05D9EA</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.952941 0 0 0 0 0.913725 0 0 0 0 0.913725 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desk_Explore-termo-não-cidade-sim-nivel-2" transform="translate(-768.000000, -1348.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1220" height="1936"></rect>
+            <g id="apoio" transform="translate(0.000000, 214.000000)" fill="#351E41">
+                <rect id="bg" transform="translate(610.000000, 702.000000) scale(1, -1) translate(-610.000000, -702.000000) " x="0" y="0" width="1220" height="1404"></rect>
+            </g>
+            <g id="Group-6" transform="translate(120.000000, 388.000000)">
+                <g id="pagination-lg" transform="translate(299.000000, 953.000000)">
+                    <rect id="Rectangle" x="0" y="0" width="382" height="40"></rect>
+                    <g id="Group-2" transform="translate(342.000000, 0.000000)">
+                        <circle id="Oval-Copy" stroke="#5E3F8E" cx="20" cy="20" r="20"></circle>
+                        <g filter="url(#filter-1)" id="1.-assets_icon-downarrow-copy">
+                            <g transform="translate(7.000000, 7.000000)">
+                                <g id="down-arrow-(1)" transform="translate(14.123457, 12.959877) scale(-1, 1) rotate(90.000000) translate(-14.123457, -12.959877) translate(7.984568, 5.737654)" fill="#373A3C" fill-rule="nonzero">
+                                    <path d="M12.1239488,0.153828956 C11.9188552,-0.0512646465 11.5862653,-0.0512996633 11.3811367,0.153863973 L6.50014007,5.03496566 L1.61889832,0.153828956 C1.41380471,-0.0512646465 1.08121481,-0.0512996633 0.876086195,0.153863973 C0.670957576,0.358992593 0.670957576,0.691547475 0.876086195,0.896676094 L6.12875152,6.14920135 C6.22725387,6.2477037 6.3608431,6.3030303 6.50014007,6.3030303 C6.63943704,6.3030303 6.77306128,6.24766869 6.87152862,6.14916633 L12.1239138,0.896641077 C12.3290774,0.691547475 12.3290774,0.358957576 12.1239488,0.153828956 Z" id="XMLID_225_"></path>
+                                    <path d="M11.8029437,7.69703883 C11.5978501,7.49194523 11.2652602,7.49191021 11.0601315,7.69707385 L6.1791349,12.5781755 L1.29789315,7.69703883 C1.09279955,7.49194523 0.760209652,7.49191021 0.555081033,7.69707385 C0.349952413,7.90220247 0.349952413,8.23475735 0.555081033,8.43988597 L5.80774635,13.6924112 C5.90624871,13.7909136 6.03983793,13.8462402 6.1791349,13.8462402 C6.31843187,13.8462402 6.45205612,13.7908786 6.55052346,13.6923762 L11.8029086,8.43985095 C12.0080723,8.23475735 12.0080723,7.90216745 11.8029437,7.69703883 Z" id="XMLID_225_"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

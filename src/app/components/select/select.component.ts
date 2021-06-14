@@ -12,12 +12,14 @@ interface Options {
   selector: 'app-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.sass'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class SelectComponent implements OnInit {
 
   @Input()
-  label: string = '';
+  label: string | undefined = undefined;
+
+  @Input()
+  title: string | undefined = undefined;
 
   @Input()
   theme: string = 'theme-light';

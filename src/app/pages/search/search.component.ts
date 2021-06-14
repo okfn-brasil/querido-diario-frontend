@@ -1,5 +1,14 @@
-import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { getLevelDescription, termsResult } from 'src/app/data/search';
@@ -30,6 +39,7 @@ interface LevelDescription {
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent implements OnInit {
   constructor(
@@ -48,30 +58,41 @@ export class SearchComponent implements OnInit {
   //@Output() pageChange = new EventEmitter();
   @Output() pageBoundsCorrection = new EventEmitter();
 
+  public config: PaginationInstance = {
+    id: 'custom',
+    itemsPerPage: 10,
+    currentPage: 1,
+  };
+
   orderOptions = [
     {
       value: 'Relevância',
-      viewValue: 'Relavância'
+      viewValue: 'Relevância',
     },
     {
       value: 'Mais recentes',
-      viewValue: 'Mais recentes'
+      viewValue: 'Mais recentes',
     },
     {
       value: 'Mais antigos',
-      viewValue: 'Mais antigos'
+      viewValue: 'Mais antigos',
     },
-  ]
+  ];
 
-  p: number = 0;
+  //p: number = 0;
+  p: number[] = [];
 
-  page = 1
+  page = 1;
   pageChange(event: any) {
-    console.log('event ', event)
+    console.log('event ', event);
     this.page = event;
-    this.response = this.findByResults({term: this.term, territoryId: this.territoryId, page: this.page })
+    this.response = this.findByResults({
+      term: this.term,
+      territoryId: this.territoryId,
+      page: this.page,
+    });
   }
-  
+
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       const { term, city } = params;
@@ -83,12 +104,16 @@ export class SearchComponent implements OnInit {
           if (city) {
             const territoryId = city.territory_id;
             this.territoryId = territoryId;
-            this.response = this.findByResults({term, territoryId, page: this.page});
+            this.response = this.findByResults({
+              term,
+              territoryId,
+              page: this.page,
+            });
           }
         });
       } else {
-        console.log('logging ', term)
-        this.response = this.findByResults({term, page: this.page});
+        console.log('logging ', term);
+        this.response = this.findByResults({ term, page: this.page });
       }
     });
   }
@@ -107,35 +132,36 @@ export class SearchComponent implements OnInit {
   findByResults(options: {
     term?: string;
     territoryId?: string;
-    page: number,
+    page: number;
   }): Observable<SearchResponse> {
     let results = [] as SearchResult[];
     const { term, territoryId, page } = options;
-    console.log('term ', term)
+    console.log('term ', term);
     if (term && territoryId) {
       results = termsResult.filter(
         (result) =>
-          result.text.indexOf(term) > -1 &&
-          result.territoryId == territoryId
+          result.text.indexOf(term) > -1 && result.territoryId == territoryId
       );
     } else if (term) {
-      results = termsResult.filter(
-        (result) => result.text.indexOf(term) > -1
-      );
+      results = termsResult.filter((result) => result.text.indexOf(term) > -1);
     } else if (territoryId) {
       results = termsResult.filter(
         (result) => result.territoryId == territoryId
       );
     }
     const count = results.length;
-    results = results.slice((page - 1), (page+3) )
-    console.log('results ',  { count: results, results })
+    results = results.slice(page - 1, page + 3);
+    console.log('results ', { count: results, results });
 
     return of({ count, results });
   }
 
   openFile(link: string) {
-    console.log('received ', link)
+    console.log('received ', link);
     window.open(link);
+  }
+
+  previous() {
+
   }
 }
