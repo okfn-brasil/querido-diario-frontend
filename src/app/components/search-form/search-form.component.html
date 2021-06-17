@@ -39,7 +39,7 @@
 
       <mat-autocomplete #cityInput="matAutocomplete">
         <mat-option
-          *ngFor="let option of filteredCities | async"
+          *ngFor="let option of territories | async"
           [value]="option.territory_name"
         >
           <div fxLayout="row" class="autocomplete">

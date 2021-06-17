@@ -9,8 +9,9 @@
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="!(response | async)?.results?.length && !(city | async)"
+    *ngIf="!territory"
   >
+    <!--     this.territoryService.select(city) -->
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <app-h2>
         Sua pesquisa não encontrou nenhum conteúdo correspondente
@@ -26,44 +27,47 @@
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="city | async as territory"
+    *ngIf="!!territory"
   >
     <div class="container" fxLayout.xs="column" fxLayoutGap.xs="36px">
       <div fxLayout="row" fxFlex="40%" fxFlex.xs fxLayoutGap="12px">
-        <mat-icon [appHeight]='50' [appWidth]='50' svgIcon="check"></mat-icon>
+        <mat-icon [appHeight]="50" [appWidth]="50" svgIcon="check"></mat-icon>
         <div fxLayout="column" fxLayoutGap="16px">
           <p>{{ territory.territory_name }}</p>
-          <span><p>NÍVEL {{ territory.level }} DE ACESSO</p></span>
+          <span
+            ><p>NÍVEL {{ territory.level }} DE ACESSO</p></span
+          >
         </div>
       </div>
 
-      <div fxLayout="column" fxFlex="60%" fxFlex.xs fxLayoutGap="18px">
+      <div
+        fxLayout="column"
+        fxFlex="60%"
+        fxFlex.xs
+        fxLayoutGap="18px"
+        *ngIf="!!levelDescription"
+      >
         <p>
-          {{ getLevelDescriptionForTerritory(territory.level).text }}
+          {{ levelDescription.text }}
         </p>
-        <button
-          *ngIf="getLevelDescriptionForTerritory(territory.level).button?.text"
-        >
-          {{ getLevelDescriptionForTerritory(territory.level).button?.text }}
+        <button *ngIf="levelDescription.button">
+          {{ levelDescription.button.text }}
         </button>
       </div>
     </div>
   </section>
 
-  <div *ngIf="response | async as searchResult">
-    <section
-      class="bg-purple-2"
-      fxLayoutAlign="center"
-      fxLayout="row"
-      *ngIf="searchResult.count > 0"
-    >
+  <div *ngIf="gazetteResponse && gazetteResponse.total_gazettes">
+    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
       <div class="container" fxLayout="column" fxLayoutGap="42px">
         <p>
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
           scelerisque ante sollicitudin commodo.
         </p>
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <app-h2>{{ searchResult.count }} resultados encontrados</app-h2>
+          <app-h2
+            >{{ gazetteResponse.total_gazettes }} resultados encontrados</app-h2
+          >
           <app-select
             [title]="'ORDENAR POR'"
             [options]="orderOptions"
@@ -74,12 +78,12 @@
         <pagination-template
           #p="paginationApi"
           *ngFor="
-            let result of searchResult.results
+            let gazette of gazetteResponse.gazettes
               | paginate
                 : {
                     itemsPerPage: 3,
                     currentPage: page,
-                    totalItems: searchResult.count
+                    totalItems: gazetteResponse.total_gazettes
                   }
           "
         >
@@ -88,15 +92,17 @@
             class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px"
           >
-            <p>{{ result.text }}</p>
+            <p *ngFor="let highlight_text of gazette.highlight_texts">
+              {{ highlight_text }}
+            </p>
             <div
               fxLayout="row"
               fxLayout.xs="column"
               fxLayoutAlign="space-between"
             >
               <p>
-                {{ result.updatedAt }} •
-                <span class="color-purple-3">{{ result.city }}</span>
+                {{ gazette.date }} •
+                <span class="color-purple-3">{{ gazette.territory_name }}</span>
               </p>
               <app-select
                 [theme]="'theme-light'"

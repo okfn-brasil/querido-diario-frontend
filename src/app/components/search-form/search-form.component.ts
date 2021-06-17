@@ -1,10 +1,19 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { City } from 'src/app/interfaces/city';
-import { CitiesService } from 'src/app/services/cities.service';
+import { TerritoryService } from 'src/app/territory.service';
+
+interface Territory {
+  territory_id: string;
+  territory_name: string;
+  state_code: string;
+  publication_urls: string[];
+  level: string;
+}
 
 @Component({
   selector: 'app-search-form',
@@ -26,14 +35,14 @@ export class SearchFormComponent implements OnInit {
   filteredOptions: Observable<string[]> = new Observable();
 
   cityControl = new FormControl();
-  filteredCities: Observable<City[]> = new Observable();
+  territories: Observable<City[]> = new Observable();
 
   @ViewChild('cityField') cityField!: ElementRef;
   @ViewChild('termField') termField!: ElementRef;
   @ViewChild('periodField') periodField!: ElementRef;
 
   constructor(
-    private citiesService: CitiesService,
+    private territoryService: TerritoryService,
     private router: Router,
     private route: ActivatedRoute,
   ) { }
@@ -45,12 +54,12 @@ export class SearchFormComponent implements OnInit {
       map(value => this._filter(value))
     );
 
-  this.filteredCities = this.cityControl.valueChanges
+  this.territories = this.cityControl.valueChanges
     .pipe(
       startWith(''),
       switchMap(value => {
         if (value !== '') {
-          return this._filterCity(value)
+          return this.findTerritory(value)
         } else {
           return of([])
         }
@@ -67,6 +76,9 @@ export class SearchFormComponent implements OnInit {
   search(): void {
     let queryParams = {};
     const city = this.cityField.nativeElement.value;
+
+    console.log('city ', city)
+
     const term = this.termField.nativeElement.value;
 
     if (city) {
@@ -86,12 +98,11 @@ export class SearchFormComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
-  private _filterCity(value: string): Observable<City[]> {
+  private findTerritory(value: string): Observable<Territory[]> {
     const filterValue = value.toLowerCase();
-    return this.citiesService.findByName(filterValue)
+    return this.territoryService.findByName(filterValue)
       .pipe(
         map((result) => result)
       )
   }
-
 }

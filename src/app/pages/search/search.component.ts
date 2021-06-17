@@ -12,8 +12,10 @@ import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { getLevelDescription, termsResult } from 'src/app/data/search';
+import { GazetteResponse, GazetteService } from 'src/app/gazette.service';
 import { City } from 'src/app/interfaces/city';
 import { CitiesService } from 'src/app/services/cities.service';
+import { TerritoryService, Territory } from 'src/app/territory.service';
 interface SearchResult {
   text: string;
   city: string;
@@ -39,12 +41,13 @@ interface LevelDescription {
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private citiesService: CitiesService
+    private citiesService: CitiesService,
+    private territoryService: TerritoryService,
+    private gazetteService: GazetteService
   ) {}
   term: string | undefined = undefined;
   territoryId: string | undefined = undefined;
@@ -53,7 +56,11 @@ export class SearchComponent implements OnInit {
   response: Observable<SearchResponse> = new Observable();
   //response: Observable<String[]> = new Observable();
   city: Observable<City | null> = new Observable();
-  levelDescription: LevelDescription | null = null;
+  levelDescription: LevelDescription | undefined = undefined;
+
+  territory: Territory | null = null;
+
+  gazetteResponse: GazetteResponse | null = null;
 
   //@Output() pageChange = new EventEmitter();
   @Output() pageBoundsCorrection = new EventEmitter();
@@ -95,7 +102,20 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
+      this.territoryService.territory$.subscribe((territory: Territory) => {
+        console.log('get it ', territory);
+        this.territory = territory;
+        this.levelDescription = getLevelDescription(territory.level);
+        this.gazetteService.findAll(territory.territory_id).subscribe((res) => {
+          this.gazetteResponse = res;
+          console.log('get gazettes ', this.gazetteResponse)
+        })
+        console.log('levelDescription ', this.levelDescription);
+      });
       const { term, city } = params;
+      this.territoryService.select(city);
+
+      /*
       this.term = term;
       this.cityName = city;
       if (city) {
@@ -114,12 +134,8 @@ export class SearchComponent implements OnInit {
       } else {
         console.log('logging ', term);
         this.response = this.findByResults({ term, page: this.page });
-      }
+      }*/
     });
-  }
-
-  getLevelDescriptionForTerritory(level: string): LevelDescription {
-    return getLevelDescription(level);
   }
 
   private findTerritory(value: string): Observable<City | null> {
@@ -161,7 +177,5 @@ export class SearchComponent implements OnInit {
     window.open(link);
   }
 
-  previous() {
-
-  }
+  previous() {}
 }
