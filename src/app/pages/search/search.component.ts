@@ -103,14 +103,12 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.territoryService.territory$.subscribe((territory: Territory) => {
-        console.log('get it ', territory);
         this.territory = territory;
         this.levelDescription = getLevelDescription(territory.level);
-        this.gazetteService.findAll(territory.territory_id).subscribe((res) => {
+        const term = params.term;
+        this.gazetteService.findAll(territory.territory_id, term).subscribe((res) => {
           this.gazetteResponse = res;
-          console.log('get gazettes ', this.gazetteResponse)
         })
-        console.log('levelDescription ', this.levelDescription);
       });
       const { term, city } = params;
       this.territoryService.select(city);

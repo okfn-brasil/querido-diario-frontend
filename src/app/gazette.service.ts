@@ -26,8 +26,8 @@ export interface GazetteResponse {
 export class GazetteService {
   constructor(private http: HttpClient) {}
 
-  findAll(territoryId: string): Observable<GazetteResponse> {
-    const url = `https://queridodiario.ok.org.br/api/gazettes/${territoryId}?keywords=test`;
+  findAll(territoryId: string, keywords: string = ''): Observable<GazetteResponse> {
+    const url = `https://queridodiario.ok.org.br/api/gazettes/${territoryId}?keywords=${keywords}`;
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {
         return res;
