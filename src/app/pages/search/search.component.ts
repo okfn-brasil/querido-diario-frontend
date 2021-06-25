@@ -91,7 +91,6 @@ export class SearchComponent implements OnInit {
 
   page = 1;
   pageChange(event: any) {
-    console.log('event ', event);
     this.page = event;
     this.response = this.findByResults({
       term: this.term,
@@ -103,14 +102,11 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.territoryService.territory$.subscribe((territory: Territory) => {
-        console.log('get it ', territory);
         this.territory = territory;
         this.levelDescription = getLevelDescription(territory.level);
-        this.gazetteService.findAll(territory.territory_id).subscribe((res) => {
+        this.gazetteService.findAll(territory.territory_id, params).subscribe((res) => {
           this.gazetteResponse = res;
-          console.log('get gazettes ', this.gazetteResponse)
         })
-        console.log('levelDescription ', this.levelDescription);
       });
       const { term, city } = params;
       this.territoryService.select(city);
@@ -167,13 +163,11 @@ export class SearchComponent implements OnInit {
     }
     const count = results.length;
     results = results.slice(page - 1, page + 3);
-    console.log('results ', { count: results, results });
 
     return of({ count, results });
   }
 
   openFile(link: string) {
-    console.log('received ', link);
     window.open(link);
   }
 
