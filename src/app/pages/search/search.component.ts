@@ -91,7 +91,6 @@ export class SearchComponent implements OnInit {
 
   page = 1;
   pageChange(event: any) {
-    console.log('event ', event);
     this.page = event;
     this.response = this.findByResults({
       term: this.term,
@@ -105,8 +104,7 @@ export class SearchComponent implements OnInit {
       this.territoryService.territory$.subscribe((territory: Territory) => {
         this.territory = territory;
         this.levelDescription = getLevelDescription(territory.level);
-        const term = params.term;
-        this.gazetteService.findAll(territory.territory_id, term).subscribe((res) => {
+        this.gazetteService.findAll(territory.territory_id, params).subscribe((res) => {
           this.gazetteResponse = res;
         })
       });
@@ -165,13 +163,11 @@ export class SearchComponent implements OnInit {
     }
     const count = results.length;
     results = results.slice(page - 1, page + 3);
-    console.log('results ', { count: results, results });
 
     return of({ count, results });
   }
 
   openFile(link: string) {
-    console.log('received ', link);
     window.open(link);
   }
 
