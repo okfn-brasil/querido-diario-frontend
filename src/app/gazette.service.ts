@@ -28,13 +28,21 @@ export class GazetteService {
 
   findAll(territoryId: string, params: any): Observable<GazetteResponse> {
     const { term, since, until } = params;
-    // @todo pass query string as object to get
-    let url: string;
-    if (until && since) {
-      url = `https://queridodiario.ok.org.br/api/gazettes/${territoryId}?keywords=${term}&since=${since}&until=${until}`;
-    } else {
-      url = `https://queridodiario.ok.org.br/api/gazettes/${territoryId}?keywords=${term}`;
+    let url = `https://queridodiario.ok.org.br/api/gazettes/${territoryId}?`;
+
+    if (term) {
+      url += `keywords=${term}&`
     }
+
+    if (since) {
+      url += `since=${since}&`
+    }
+
+    if (until) {
+      url += `until=${until}&`
+    }
+
+    // @todo pass query string as object to get
     console.log('url ', url);
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {
