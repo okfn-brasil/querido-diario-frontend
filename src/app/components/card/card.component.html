@@ -2,20 +2,20 @@
   <mat-icon
     [appHeight]="item.icon.height"
     [appWidth]="item.icon.width"
-    svgIcon="{{ item.icon.name }}"
+    svgIcon="{{ item.icon.file }}"
     class="hand-icon"
   ></mat-icon>
   <div fxLayout="column" fxLayoutGap="8px">
-    <app-h2>{{ item.textPrimary }}</app-h2>
+    <app-h2>{{ item.title }}</app-h2>
     <div fxLayout="column" fxLayoutGap="22px">
-      <p>{{ item.textSecondary }}</p>
-      <app-h1 class="lato">{{ item.money }}</app-h1>
+      <p>{{ item.text }}</p>
+      <app-h1 class="lato">{{ item.subTitle }}</app-h1>
     </div>
-    <nav *ngIf="item.link">
+    <nav *ngIf="let action of item.actions">
       <a class="purple">
-        {{item.link.text}}
+        {{action}} aqui
         <mat-icon
-          svgIcon="right-arrow"
+          svgIcon="{{action}}"
           class="right-arrow"
         ></mat-icon>
       </a>

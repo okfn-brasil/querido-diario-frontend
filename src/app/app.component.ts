@@ -1,69 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-
-const Icons: string[] = [
-  '../assets/icons/search.svg',
-  '../assets/icons/dev.svg',
-  '../assets/icons/ok-hand.svg',
-  '../assets/icons/pin.svg',
-  '../assets/icons/document.svg',
-  '../assets/icons/check.svg',
-  '../assets/icons/box.svg',
-  '../assets/icons/project.svg',
-  '../assets/icons/computer.svg',
-  '../assets/icons/graphics.svg',
-
-  '../assets/icons/logo-Ilda.svg',
-  '../assets/icons/logo-embaixadores.svg',
-  '../assets/icons/logo-jurema.svg',
-  '../assets/icons/logo-serenata.svg',
-  '../assets/icons/logo-OK.svg',
-  '../assets/icons/logo-digitalocean.svg',
-
-  '../assets/icons/bitmap.svg',
-  '../assets/icons/circle-person.svg',
-
-  '../assets/icons/twitter.svg',
-  '../assets/icons/instagram.svg',
-  '../assets/icons/facebook.svg',
-  '../assets/icons/linkedin.svg',
-
-  '../assets/icons/right-arrow.svg',
-  '../assets/icons/right-arrow-white.svg',
-  '../assets/icons/right-arrow-purple.svg',
-  '../assets/icons/right-arrow-purple-3.svg',
-
-  '../assets/icons/logo.svg',
-  '../assets/icons/notification.svg',
-
-  '../assets/icons/search-form.svg',
-  '../assets/icons/play.svg',
-
-  '../assets/icons/white-arrow.svg',
-
-  '../assets/icons/bars.svg',
-  
-  '../assets/icons/close.svg',
-
-  '../assets/icons/close-white.svg',
-
-  '../assets/icons/clock.svg',
-
-  '../assets/icons/search-gray.svg',
-
-  '../assets/icons/level-0.svg',
-
-  '../assets/icons/money.svg',
-  '../assets/icons/gray-pin.svg',
-
-  '../assets/icons/pagination-left-double-arrow.svg',
-  '../assets/icons/pagination-right-double-arrow.svg',
-
-  '../assets/icons/pagination-left-single-arrow.svg',
-  '../assets/icons/pagination-right-single-arrow.svg',
-  
-]
+import { Icons } from './data/icons';
 
 @Component({
   selector: 'app-root',
@@ -83,8 +21,8 @@ export class AppComponent {
   registerIcons(sanitizer: DomSanitizer): void {
     Icons.map((icon) => {
       this.matIconRegistry.addSvgIcon(
-        icon.split('/')[3].split('.')[0],
-        this.sanitizer.bypassSecurityTrustResourceUrl(icon)
+        icon,
+        this.sanitizer.bypassSecurityTrustResourceUrl(`../assets/icons/${icon}.svg`)
       )
     })
   }
