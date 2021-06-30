@@ -24,7 +24,7 @@
     <div class="container" fxLayout="column" [fxLayoutGap]="follow.gap + 'px'">
       <ng-container *ngFor="let element of follow.content">
         <ng-container [ngSwitch]="element.type">
-          <app-h1 *ngSwitchCase="'h1'">{{ element.content }}</app-h1>
+          <app-content [element]="element"></app-content>
           <ng-container *ngSwitchCase="'list'">
             <div
               [fxLayout]="element.layout"
@@ -41,22 +41,13 @@
                     <ng-container *ngSwitchCase="'list'">
                       <ng-container *ngFor="let sub_item of item.content">
                         <ng-container [ngSwitch]="sub_item.type">
-                          <mat-icon
-                            *ngSwitchCase="'icon'"
-                            [svgIcon]="sub_item.file"
-                            [appHeight]="sub_item.height"
-                            [appWidth]="sub_item.width"
-                          ></mat-icon>
+                          <app-content [element]="sub_item"></app-content>
                           <ng-container *ngSwitchCase="'list'">
                             <div [fxLayout]="sub_item.layout">
                               <ng-container
                                 *ngFor="let subitem of sub_item.content"
                               >
-                                <ng-container [ngSwitch]="subitem.type">
-                                  <p *ngSwitchCase="'text'">
-                                    {{ subitem.content }}
-                                  </p>
-                                </ng-container>
+                                <app-content [element]="subitem"></app-content>
                               </ng-container>
                             </div>
                           </ng-container>
@@ -64,23 +55,12 @@
                       </ng-container>
                     </ng-container>
                   </ng-container>
+
+                  
                 </div>
               </ng-container>
             </div>
           </ng-container>
-          <a
-            *ngSwitchCase="'link'"
-            [routerLink]="element.link"
-            class="color-white-2"
-          >
-            {{ element.text }}
-            <mat-icon
-              *nfIg="element.icon"
-              [svgIcon]="element.icon.file"
-              [appHeight]="element.icon.height"
-              [appWidth]="element.icon.width"
-            ></mat-icon>
-          </a>
         </ng-container>
       </ng-container>
     </div>

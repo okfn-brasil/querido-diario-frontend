@@ -53,6 +53,8 @@ import { WidthDirective } from './directives/width.directive';
 import { GoalsComponent } from './components/goals/goals.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { SelectComponent } from './components/select/select.component';
+import { IconComponent } from './components/icon/icon.component';
+import { ContentComponent } from './components/content/content.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,6 +84,8 @@ import { SelectComponent } from './components/select/select.component';
     GoalsComponent,
     SearchFormComponent,
     SelectComponent,
+    IconComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,

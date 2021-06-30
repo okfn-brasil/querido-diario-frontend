@@ -1,0 +1,11 @@
+<ng-container [ngSwitch]="element.type">
+  <app-h1 *ngSwitchCase="'h1'">{{ element.content }}</app-h1>
+  <app-icon *ngSwitchCase="'icon'" [icon]="element"></app-icon>
+  <p *ngSwitchCase="'text'">
+    {{ element.content }}
+  </p>
+  <a *ngSwitchCase="'link'" [routerLink]="element.link" class="color-white-2">
+    {{ element.text }}
+    <app-icon *ngIf="element.icon" [icon]="element.icon"></app-icon>
+  </a>
+</ng-container>
