@@ -16,17 +16,9 @@
     </div>
   </section>
 
-  <section
-    [ngClass]="follow.theme"
-    [fxLayoutAlign]="follow.layoutAlign"
-    [fxLayout]="follow.layout"
-  >
-    <div class="container" fxLayout="column" [fxLayoutGap]="follow.gap + 'px'">
-      <ng-container *ngFor="let element of follow.content">
-        <app-content [element]="element"></app-content>
-      </ng-container>
-    </div>
-  </section>
+  <ng-container *ngFor="let element of sections">
+    <app-content [element]="element"></app-content>
+  </ng-container>
 
   <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
     <div

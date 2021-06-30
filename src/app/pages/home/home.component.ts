@@ -12,11 +12,11 @@ import {
 
 const FOLLOW = {
   theme: 'bg-purple-1',
-  type: 'list',
+  type: 'section',
   gap: 62,
   layout: 'row',
   layoutAlign: 'center',
-  content: [
+  content: of([
     {
       type: 'h1',
       content: 'Acompanhe a evolução do Querido Diário',
@@ -37,7 +37,7 @@ const FOLLOW = {
         width: 12,
       },
     },
-  ],
+  ]),
 };
 
 @Component({
@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
   access_levels: Observable<any[]> = of(ACCESS_LEVEL_LIST);
   searchForm: Observable<any> = of(SEARCH_FORM);
   follow: any = FOLLOW;
+  sections: any[] = [FOLLOW]
 
   constructor(private modal: MatDialog) {}
 

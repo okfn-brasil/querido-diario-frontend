@@ -9,10 +9,31 @@
     <app-icon *ngIf="element.icon" [icon]="element.icon"></app-icon>
   </a>
   <ng-container *ngSwitchCase="'list'">
-    <div [fxLayout]="element.layout" [fxLayoutAlign]="element.layoutAlign">
+    <div
+      [fxLayout]="element.layout"
+      [fxLayoutAlign]="element.layoutAlign"
+      [fxLayoutGap]="element.gap + 'px'"
+    >
       <ng-container *ngFor="let item of element.content | async">
         <app-content [element]="item"></app-content>
       </ng-container>
     </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'section'">
+    <section
+      [ngClass]="element.theme"
+      [fxLayoutAlign]="element.layoutAlign"
+      [fxLayout]="element.layout"
+    >
+      <div
+        class="container"
+        fxLayout="column"
+        [fxLayoutGap]="element.gap + 'px'"
+      >
+        <ng-container *ngFor="let item of element.content | async">
+          <app-content [element]="item"></app-content>
+        </ng-container>
+      </div>
+    </section>
   </ng-container>
 </ng-container>

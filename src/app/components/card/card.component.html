@@ -11,7 +11,7 @@
       <p>{{ item.text }}</p>
       <app-h1 class="lato">{{ item.subTitle }}</app-h1>
     </div>
-    <nav *ngIf="let action of item.actions">
+    <nav *ngFor="let action of item.actions">
       <a class="purple">
         {{action}} aqui
         <mat-icon
