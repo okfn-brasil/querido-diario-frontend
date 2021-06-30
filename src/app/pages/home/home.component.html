@@ -23,45 +23,7 @@
   >
     <div class="container" fxLayout="column" [fxLayoutGap]="follow.gap + 'px'">
       <ng-container *ngFor="let element of follow.content">
-        <ng-container [ngSwitch]="element.type">
-          <app-content [element]="element"></app-content>
-          <ng-container *ngSwitchCase="'list'">
-            <div
-              [fxLayout]="element.layout"
-              [fxLayoutAlign]="element.layoutAlign"
-            >
-              <ng-container *ngFor="let item of element.content | async">
-                <div
-                  [fxLayout]="item.layout"
-                  [fxLayoutGap]="item.gap + 'px'"
-                  fxLayout.xs="column"
-                  fxLayoutGap.xs="16px"
-                >
-                  <ng-container [ngSwitch]="item.type">
-                    <ng-container *ngSwitchCase="'list'">
-                      <ng-container *ngFor="let sub_item of item.content">
-                        <ng-container [ngSwitch]="sub_item.type">
-                          <app-content [element]="sub_item"></app-content>
-                          <ng-container *ngSwitchCase="'list'">
-                            <div [fxLayout]="sub_item.layout">
-                              <ng-container
-                                *ngFor="let subitem of sub_item.content"
-                              >
-                                <app-content [element]="subitem"></app-content>
-                              </ng-container>
-                            </div>
-                          </ng-container>
-                        </ng-container>
-                      </ng-container>
-                    </ng-container>
-                  </ng-container>
-
-                  
-                </div>
-              </ng-container>
-            </div>
-          </ng-container>
-        </ng-container>
+        <app-content [element]="element"></app-content>
       </ng-container>
     </div>
   </section>

@@ -8,4 +8,11 @@
     {{ element.text }}
     <app-icon *ngIf="element.icon" [icon]="element.icon"></app-icon>
   </a>
+  <ng-container *ngSwitchCase="'list'">
+    <div [fxLayout]="element.layout" [fxLayoutAlign]="element.layoutAlign">
+      <ng-container *ngFor="let item of element.content | async">
+        <app-content [element]="item"></app-content>
+      </ng-container>
+    </div>
+  </ng-container>
 </ng-container>

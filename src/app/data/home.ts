@@ -5,7 +5,7 @@ export const EVOLUTION_LIST = [
     layout: 'row',
     gap: 24,
     type: 'list',
-    content: [
+    content: of([
       {
         type: 'icon',
         file: 'check',
@@ -15,7 +15,7 @@ export const EVOLUTION_LIST = [
       {
         type: 'list',
         layout: 'column',
-        content: [
+        content: of([
           {
             type: 'text',
             content: '12',
@@ -24,15 +24,15 @@ export const EVOLUTION_LIST = [
             type: 'text',
             content: 'Cidade já na plataforma',
           },
-        ],
+        ]),
       },
-    ],
+    ]),
   },
   {
     layout: 'row',
     gap: 24,
     type: 'list',
-    content: [
+    content: of([
       {
         type: 'icon',
         file: 'search',
@@ -42,7 +42,7 @@ export const EVOLUTION_LIST = [
       {
         type: 'list',
         layout: 'column',
-        content: [
+        content: of([
           {
             type: 'text',
             content: '12',
@@ -51,15 +51,15 @@ export const EVOLUTION_LIST = [
             type: 'text',
             content: 'Cidades já têm robôs para coletar diários',
           },
-        ],
+        ]),
       },
-    ],
+    ]),
   },
   {
     layout: 'row',
     gap: 24,
     type: 'list',
-    content: [
+    content: of([
       {
         type: 'icon',
         file: 'pin',
@@ -69,7 +69,7 @@ export const EVOLUTION_LIST = [
       {
         type: 'list',
         layout: 'column',
-        content: [
+        content: of([
           {
             type: 'text',
             content: '12',
@@ -78,9 +78,9 @@ export const EVOLUTION_LIST = [
             type: 'text',
             content: 'Cidades já foram mapeadas pelo censo',
           },
-        ],
+        ]),
       },
-    ],
+    ]),
   },
 ];
 
