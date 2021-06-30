@@ -16,33 +16,76 @@
     </div>
   </section>
 
-  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
-    <div class="follow container" fxFlexAlign="center" fxLayout="column">
-      <app-h1>Acompanhe a evolução do Querido Diário</app-h1>
-      <div fxLayout="row" class="container-inner" fxLayoutGap.xs="16px">
-
-
-
-
-        <div *ngFor="let item of evolution | async" class="follow-card flex" fxFlex="33%" fxLayout="column">
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="16px">
-            <mat-icon svgIcon="{{item.icon.file}}"></mat-icon>
-            <div fxLayout="column" fxLayoutGap="8px">
-              <div class="number">{{item.count}}</div>
-              <p>{{item.text}}</p>
+  <section
+    [ngClass]="follow.theme"
+    [fxLayoutAlign]="follow.layoutAlign"
+    [fxLayout]="follow.layout"
+  >
+    <div class="container" fxLayout="column" [fxLayoutGap]="follow.gap + 'px'">
+      <ng-container *ngFor="let element of follow.content">
+        <ng-container [ngSwitch]="element.type">
+          <app-h1 *ngSwitchCase="'h1'">{{ element.content }}</app-h1>
+          <ng-container *ngSwitchCase="'list'">
+            <div
+              [fxLayout]="element.layout"
+              [fxLayoutAlign]="element.layoutAlign"
+            >
+              <ng-container *ngFor="let item of element.content | async">
+                <div
+                  [fxLayout]="item.layout"
+                  [fxLayoutGap]="item.gap + 'px'"
+                  fxLayout.xs="column"
+                  fxLayoutGap.xs="16px"
+                >
+                  <ng-container [ngSwitch]="item.type">
+                    <ng-container *ngSwitchCase="'list'">
+                      <ng-container *ngFor="let sub_item of item.content">
+                        <ng-container [ngSwitch]="sub_item.type">
+                          <mat-icon
+                            *ngSwitchCase="'icon'"
+                            [svgIcon]="sub_item.file"
+                            [appHeight]="sub_item.height"
+                            [appWidth]="sub_item.width"
+                          ></mat-icon>
+                          <ng-container *ngSwitchCase="'list'">
+                            <div [fxLayout]="sub_item.layout">
+                              <ng-container
+                                *ngFor="let subitem of sub_item.content"
+                              >
+                                <ng-container [ngSwitch]="subitem.type">
+                                  <p *ngSwitchCase="'text'">
+                                    {{ subitem.content }}
+                                  </p>
+                                </ng-container>
+                              </ng-container>
+                            </div>
+                          </ng-container>
+                        </ng-container>
+                      </ng-container>
+                    </ng-container>
+                  </ng-container>
+                </div>
+              </ng-container>
             </div>
-          </div>
-        </div>
-
-      </div>
-      <nav>
-        <a routerLink="/acesso" class="color-white-2">
-          Conheça os nívels de acesso
-          <mat-icon svgIcon="white-arrow" class="white-arrow"></mat-icon>
-        </a>
-      </nav>
+          </ng-container>
+          <a
+            *ngSwitchCase="'link'"
+            [routerLink]="element.link"
+            class="color-white-2"
+          >
+            {{ element.text }}
+            <mat-icon
+              *nfIg="element.icon"
+              [svgIcon]="element.icon.file"
+              [appHeight]="element.icon.height"
+              [appWidth]="element.icon.width"
+            ></mat-icon>
+          </a>
+        </ng-container>
+      </ng-container>
     </div>
   </section>
+
   <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
     <div
       class="help container"
@@ -73,11 +116,13 @@
             <div fxLayout="column" fxLayoutGap="12px">
               <app-h2>{{ item.title }}</app-h2>
               <p>
-                {{item.text}}
+                {{ item.text }}
               </p>
             </div>
             <div fxLayout="row" fxLayoutGap="12px">
-              <button *ngFor="let action of item.actions" class="censo">{{action.text}}</button>
+              <button *ngFor="let action of item.actions" class="censo">
+                {{ action.text }}
+              </button>
             </div>
           </div>
         </div>
@@ -98,8 +143,6 @@
     </div>
   </section>
 
-
-
   <section
     class="bg-white-1 bg-gray-square"
     fxLayoutAlign="center"
@@ -119,17 +162,22 @@
         fxLayoutAlign="space-between"
         fxLayoutGap.xs="16px"
       >
-        <div fxLayout="column" class="project-card" fxLayoutGap="12px" *ngFor="let item of access_levels | async">
-          <app-h2>{{item.title}}</app-h2>
+        <div
+          fxLayout="column"
+          class="project-card"
+          fxLayoutGap="12px"
+          *ngFor="let item of access_levels | async"
+        >
+          <app-h2>{{ item.title }}</app-h2>
           <nav>
             <p>
-              {{item.text}}
+              {{ item.text }}
             </p>
             <a routerLink="/acesso" *ngFor="let action of item.actions">
-              {{action.text}}
+              {{ action.text }}
               <mat-icon
-                svgIcon="{{item.file}}"
-                class="{{item.file}}"
+                svgIcon="{{ item.file }}"
+                class="{{ item.file }}"
               ></mat-icon>
             </a>
           </nav>
@@ -137,7 +185,6 @@
       </div>
     </div>
   </section>
-
 
   <section
     class="bg-purple-2 bg-purple-square"
@@ -170,8 +217,6 @@
       </div>
     </div>
   </section>
-
-
 
   <section class="bg-white-1">
     <div class="partners">

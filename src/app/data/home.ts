@@ -1,20 +1,86 @@
-import { of } from "rxjs";
+import { of } from 'rxjs';
 
 export const EVOLUTION_LIST = [
   {
-    icon: { file: 'check' },
-    text: 'Cidade já na plataforma',
-    count: 12,
+    layout: 'row',
+    gap: 24,
+    type: 'list',
+    content: [
+      {
+        type: 'icon',
+        file: 'check',
+        height: 76,
+        width: 76,
+      },
+      {
+        type: 'list',
+        layout: 'column',
+        content: [
+          {
+            type: 'text',
+            content: '12',
+          },
+          {
+            type: 'text',
+            content: 'Cidade já na plataforma',
+          },
+        ],
+      },
+    ],
   },
   {
-    icon: { file: 'search' },
-    text: 'Cidades já têm robôs para coletar diários',
-    count: 12,
+    layout: 'row',
+    gap: 24,
+    type: 'list',
+    content: [
+      {
+        type: 'icon',
+        file: 'search',
+        height: 76,
+        width: 76,
+      },
+      {
+        type: 'list',
+        layout: 'column',
+        content: [
+          {
+            type: 'text',
+            content: '12',
+          },
+          {
+            type: 'text',
+            content: 'Cidades já têm robôs para coletar diários',
+          },
+        ],
+      },
+    ],
   },
   {
-    icon: { file: 'pin' },
-    text: 'Cidades já foram mapeadas pelo censo',
-    count: 12,
+    layout: 'row',
+    gap: 24,
+    type: 'list',
+    content: [
+      {
+        type: 'icon',
+        file: 'pin',
+        height: 76,
+        width: 76,
+      },
+      {
+        type: 'list',
+        layout: 'column',
+        content: [
+          {
+            type: 'text',
+            content: '12',
+          },
+          {
+            type: 'text',
+            content: 'Cidades já foram mapeadas pelo censo',
+          },
+        ],
+      },
+    ],
   },
 ];
 
@@ -33,8 +99,8 @@ export const HELP_LIST = [
         text: 'Ver todas as metas',
         link: '/doe',
         classes: ['yellow-bg'],
-      }
-    ]
+      },
+    ],
   },
   {
     icon: { file: 'document' },
@@ -45,8 +111,8 @@ export const HELP_LIST = [
         text: 'Comece por aqui',
         link: '/doe',
         classes: ['yellow-bg'],
-      }
-    ]
+      },
+    ],
   },
   {
     icon: { file: 'document' },
@@ -57,10 +123,10 @@ export const HELP_LIST = [
         text: 'Comece por aqui',
         link: '/doe',
         classes: ['yellow-bg'],
-      }
-    ]
+      },
+    ],
   },
-]
+];
 
 export const GOAL_LIST = [
   {
@@ -70,16 +136,16 @@ export const GOAL_LIST = [
     subTitle: 'R$ 2.000',
   },
   {
-    icon: { file: 'computer',  height: 120, width: 116 },
+    icon: { file: 'computer', height: 120, width: 116 },
     title: 'Plataforma turbinada!',
     text: '+ 100 municípios disponíveis na plataforma e mecanismo de busca mais eficiente.',
     subTitle: 'R$ 10.000',
     actions: [
       {
         text: 'Ir para o Catarse',
-        icon: { file: 'right-arrow' }
-      }
-    ]
+        icon: { file: 'right-arrow' },
+      },
+    ],
   },
   {
     icon: { file: 'project', height: 128, width: 108 },
@@ -89,23 +155,23 @@ export const GOAL_LIST = [
     actions: [
       {
         text: 'Ir para o Catarse',
-        icon: { file: 'right-arrow' }
-      }
-    ]
+        icon: { file: 'right-arrow' },
+      },
+    ],
   },
   {
-    icon: { file: 'graphics', height: 120, width: 108  },
+    icon: { file: 'graphics', height: 120, width: 108 },
     title: 'O Brasil é o limite!',
     text: 'Todas as cidades brasileiras com mais de 100 mil habitantes na plataforma.',
     subTitle: 'R$ 6.000',
     actions: [
       {
         text: 'Ir para o Catarse',
-        icon: { file: 'right-arrow' }
-      }
-    ]
-  }
-]
+        icon: { file: 'right-arrow' },
+      },
+    ],
+  },
+];
 
 export const ACCESS_LEVEL_LIST = [
   {
@@ -115,8 +181,8 @@ export const ACCESS_LEVEL_LIST = [
       {
         text: 'Ler mais',
         icon: { file: 'right-arrow' },
-      }
-    ]
+      },
+    ],
   },
 
   {
@@ -126,8 +192,8 @@ export const ACCESS_LEVEL_LIST = [
       {
         text: 'Ler mais',
         icon: { file: 'right-arrow-white' },
-      }
-    ]
+      },
+    ],
   },
   {
     title: 'Como denunciar ou pedir informações',
@@ -136,10 +202,10 @@ export const ACCESS_LEVEL_LIST = [
       {
         text: 'Ler mais',
         icon: { file: 'right-arrow' },
-      }
-    ]
+      },
+    ],
   },
-]
+];
 
 enum FieldTypes {
   AUTOCOMPLETE = 'AUTOCOMPLETE',
@@ -162,7 +228,7 @@ export const SEARCH_FORM = {
       text: 'Sugestão de busca',
       icon: 'search',
       type: FieldTypes.AUTOCOMPLETE,
-      options: of([termSuggestions])
+      options: of([termSuggestions]),
     },
     {
       type: FieldTypes.INPUT,
@@ -172,6 +238,6 @@ export const SEARCH_FORM = {
     {
       type: FieldTypes.DATEPICKER_RANGE,
       icon: 'search',
-    }
+    },
   ],
-}
+};
