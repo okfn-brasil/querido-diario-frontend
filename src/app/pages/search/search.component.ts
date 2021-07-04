@@ -74,16 +74,16 @@ export class SearchComponent implements OnInit {
 
   orderOptions = [
     {
-      value: 'Relevância',
       viewValue: 'Relevância',
+      value: 'relevance',
     },
     {
-      value: 'Mais recentes',
       viewValue: 'Mais recentes',
+      value: 'descending_date',
     },
     {
-      value: 'Mais antigos',
       viewValue: 'Mais antigos',
+      value: 'ascending_date',
     },
   ];
 
@@ -91,34 +91,34 @@ export class SearchComponent implements OnInit {
   p: number[] = [];
 
   page = 1;
+  sort_by: string = '';
   pageChange(page: number) {
     const queryParams = this.route.snapshot.queryParams;
-    this.router.navigate(['/pesquisa'], { queryParams: { ...queryParams, page }});
+    this.router.navigate(['/pesquisa'], {
+      queryParams: { ...queryParams, page },
+    });
   }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      this.territoryService.territory$.subscribe((territory: Territory) => {
-        this.page = params.page;
-        this.territory = territory;
-        this.levelDescription = getLevelDescription(territory.level);
-        this.gazetteService
-          .findAll({ ...params, territory_id: territory.territory_id })
-          .subscribe((res) => {
-            this.gazetteResponse = res;
-          });
-      });
-      const { term, city } = params;
-      if (city) {
-        this.territoryService.select(city);
-      }
+      this.sort_by = params.sort_by;
 
-      if (!city && term) {
-        this.gazetteService
-          .findAll(params)
+      if (params.city) {
+        this.territoryService
+          .findAll({ name: params.city })
           .subscribe((res) => {
-            this.gazetteResponse = res;
+            const territory = res[0];
+            this.territory = territory;
+            this.levelDescription = getLevelDescription(territory.level);
+
+            this.gazetteService.findAll({...params, territory_id: territory.territory_id}).subscribe((res) => {
+              this.gazetteResponse = res;
+            })
           });
+      } else {
+        this.gazetteService.findAll(params).subscribe((res) => {
+          this.gazetteResponse = res;
+        })
       }
     });
   }
@@ -162,8 +162,10 @@ export class SearchComponent implements OnInit {
 
   orderChanged(sort_by: string) {
     const queryParams = this.route.snapshot.queryParams;
-    console.log('queryParams ', queryParams)
-    this.router.navigate(['/pesquisa'], { queryParams: { ...queryParams, sort_by }});
+    console.log('queryParams ', queryParams);
+    this.router.navigate(['/pesquisa'], {
+      queryParams: { ...queryParams, sort_by },
+    });
   }
 
   previous() {}

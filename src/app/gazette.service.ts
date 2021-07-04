@@ -69,17 +69,7 @@ export class GazetteService {
 
     console.log('sort_by ', sort_by);
     if (sort_by) {
-      if (sort_by === 'Mais recentes') {
-        url += 'sort_by=descending_date&'; // default
-      }
-
-      if (sort_by === 'Mais antigos') {
-        url += 'sort_by=ascending_date&';
-      }
-
-      if (sort_by === 'Relevâncis') {
-        url + 'sort_by=relevance&';
-      }
+      url += `sort_by=${sort_by}`; // default
     }
 
     if (page && page > 1) {

@@ -71,6 +71,7 @@
           <app-select
             [title]="'ORDENAR POR'"
             [options]="orderOptions"
+            [selected]="sort_by"
             (onSelected)="orderChanged($event)"
             [theme]="'theme-dark'"
           ></app-select>

@@ -1,4 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 interface Option {
   value: string;
@@ -6,7 +14,7 @@ interface Option {
 }
 
 interface Options {
-  options: Option[]
+  options: Option[];
 }
 @Component({
   selector: 'app-select',
@@ -14,7 +22,6 @@ interface Options {
   styleUrls: ['./select.component.sass'],
 })
 export class SelectComponent implements OnInit {
-
   @Input()
   label: string | undefined = undefined;
 
@@ -26,22 +33,28 @@ export class SelectComponent implements OnInit {
 
   @Output() onSelected = new EventEmitter<string>();
 
-  constructor() { }
+  @Input()
+  selected: any;
+
+  selectControl = new FormControl({});
+
+  constructor() {}
 
   @Input()
   options: Option[] = [];
 
-  selectedOption: { value: string, viewValue: string} = {
-    value: 'Relevância',
+  selectedOption: { value: string; viewValue: string } = {
+    value: 'relevance',
     viewValue: 'Relevância',
-  }
+  };
 
   ngOnInit(): void {
+    if (this.selected) {
+      this.selectControl = new FormControl(this.selected);
+    }
   }
 
   selectionChange(value: string) {
-    console.log('on select ', value)
     this.onSelected.emit(value);
   }
-
 }
