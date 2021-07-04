@@ -15,6 +15,14 @@ export interface Gazette {
   file_raw_txt: string;
 }
 
+interface GazetteQuery {
+  term?: string;
+  territory_id?: string;
+  since?: string;
+  until?: string;
+  sort_by?: string;
+}
+
 export interface GazetteResponse {
   total_gazettes: number;
   gazettes: Gazette[];
@@ -26,9 +34,11 @@ export interface GazetteResponse {
 export class GazetteService {
   constructor(private http: HttpClient) {}
 
-  findAll(territoryId: string, params: any): Observable<GazetteResponse> {
-    const { term, since, until } = params;
-    let url = `https://queridodiario.ok.org.br/api/gazettes/${territoryId}?`;
+  findAll(query: GazetteQuery): Observable<GazetteResponse> {
+    console.log('find by query ', query)
+
+    const { term, territory_id, since, until, sort_by } = query;
+    let url = `https://queridodiario.ok.org.br/api/gazettes/${territory_id || ''}?`;
 
     if (term) {
       url += `keywords=${term}&`
@@ -40,6 +50,22 @@ export class GazetteService {
 
     if (until) {
       url += `until=${until}&`
+    }
+
+    if (sort_by) {
+      if (sort_by === 'Mais recentes') {
+        url += '&sort_by=descending_date' // default
+
+      }
+
+      if (sort_by === 'Mais antigos') {
+        url += '&sort_by=ascending_date' 
+        
+      }
+
+      if (sort_by === 'Relevâncis') {
+        url + '&sort_by=relevance'
+      }
     }
 
     // @todo pass query string as object to get

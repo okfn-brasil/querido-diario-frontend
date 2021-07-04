@@ -9,7 +9,7 @@
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="!territory"
+    *ngIf="!territory && gazetteResponse && gazetteResponse.total_gazettes == 0"
   >
     <!--     this.territoryService.select(city) -->
     <div class="container" fxLayout="column" fxLayoutGap="18px">
@@ -71,6 +71,7 @@
           <app-select
             [title]="'ORDENAR POR'"
             [options]="orderOptions"
+            (onSelected)="orderChanged($event)"
             [theme]="'theme-dark'"
           ></app-select>
         </div>

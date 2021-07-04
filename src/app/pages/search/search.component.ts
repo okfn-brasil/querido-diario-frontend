@@ -7,10 +7,10 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { getLevelDescription, termsResult } from 'src/app/data/search';
 import { GazetteResponse, GazetteService } from 'src/app/gazette.service';
 import { City } from 'src/app/interfaces/city';
@@ -44,6 +44,7 @@ interface LevelDescription {
 })
 export class SearchComponent implements OnInit {
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private citiesService: CitiesService,
     private territoryService: TerritoryService,
@@ -104,13 +105,24 @@ export class SearchComponent implements OnInit {
       this.territoryService.territory$.subscribe((territory: Territory) => {
         this.territory = territory;
         this.levelDescription = getLevelDescription(territory.level);
-        this.gazetteService.findAll(territory.territory_id, params).subscribe((res) => {
-          this.gazetteResponse = res;
-        })
+        this.gazetteService
+          .findAll({ ...params, territory_id: territory.territory_id })
+          .subscribe((res) => {
+            this.gazetteResponse = res;
+          });
       });
       const { term, city } = params;
-      this.territoryService.select(city);
+      if (city) {
+        this.territoryService.select(city);
+      }
 
+      if (term) {
+        this.gazetteService
+          .findAll(params)
+          .subscribe((res) => {
+            this.gazetteResponse = res;
+          });
+      }
       /*
       this.term = term;
       this.cityName = city;
@@ -169,6 +181,13 @@ export class SearchComponent implements OnInit {
 
   openFile(link: string) {
     window.open(link);
+  }
+
+  orderChanged(sort_by: string) {
+    const queryParams = this.route.snapshot.queryParams;
+    console.log('queryParams ', queryParams)
+    console.log('event' , event)
+    this.router.navigate(['/pesquisa'], { queryParams: { ...queryParams, sort_by }});
   }
 
   previous() {}
