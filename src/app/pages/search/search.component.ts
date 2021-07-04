@@ -91,18 +91,15 @@ export class SearchComponent implements OnInit {
   p: number[] = [];
 
   page = 1;
-  pageChange(event: any) {
-    this.page = event;
-    this.response = this.findByResults({
-      term: this.term,
-      territoryId: this.territoryId,
-      page: this.page,
-    });
+  pageChange(page: number) {
+    const queryParams = this.route.snapshot.queryParams;
+    this.router.navigate(['/pesquisa'], { queryParams: { ...queryParams, page }});
   }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.territoryService.territory$.subscribe((territory: Territory) => {
+        this.page = params.page;
         this.territory = territory;
         this.levelDescription = getLevelDescription(territory.level);
         this.gazetteService
@@ -116,33 +113,13 @@ export class SearchComponent implements OnInit {
         this.territoryService.select(city);
       }
 
-      if (term) {
+      if (!city && term) {
         this.gazetteService
           .findAll(params)
           .subscribe((res) => {
             this.gazetteResponse = res;
           });
       }
-      /*
-      this.term = term;
-      this.cityName = city;
-      if (city) {
-        this.city = this.findTerritory(city);
-        this.findTerritory(city).subscribe((city) => {
-          if (city) {
-            const territoryId = city.territory_id;
-            this.territoryId = territoryId;
-            this.response = this.findByResults({
-              term,
-              territoryId,
-              page: this.page,
-            });
-          }
-        });
-      } else {
-        console.log('logging ', term);
-        this.response = this.findByResults({ term, page: this.page });
-      }*/
     });
   }
 
@@ -186,7 +163,6 @@ export class SearchComponent implements OnInit {
   orderChanged(sort_by: string) {
     const queryParams = this.route.snapshot.queryParams;
     console.log('queryParams ', queryParams)
-    console.log('event' , event)
     this.router.navigate(['/pesquisa'], { queryParams: { ...queryParams, sort_by }});
   }
 
