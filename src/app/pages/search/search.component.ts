@@ -36,6 +36,12 @@ interface LevelDescription {
     href: string;
   };
 }
+
+interface Pagination {
+  itemsPerPage: number;
+  currentPage: number;
+  totalItems?: number;
+}
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -62,6 +68,8 @@ export class SearchComponent implements OnInit {
   territory: Territory | null = null;
 
   gazetteResponse: GazetteResponse | null = null;
+
+  pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
 
   //@Output() pageChange = new EventEmitter();
   @Output() pageBoundsCorrection = new EventEmitter();
@@ -90,13 +98,38 @@ export class SearchComponent implements OnInit {
   //p: number = 0;
   p: number[] = [];
 
-  page = 1;
+  page: number = 1;
   sort_by: string = '';
   pageChange(page: number) {
     const queryParams = this.route.snapshot.queryParams;
     this.router.navigate(['/pesquisa'], {
       queryParams: { ...queryParams, page },
     });
+  }
+
+  nextPage() {
+    console.log('pagination ', this.pagination)
+    this.pageChange(Number(this.pagination.currentPage) + 1);
+  }
+
+  previousPage() {
+    this.pageChange(Number(this.pagination.currentPage) - 1);
+  }
+
+  firstPage() {
+    this.pageChange(1);
+  }
+
+  lastPage() {
+    console.log(
+      'this.gazetteResponse.total_gazettes ',
+      this.gazetteResponse?.total_gazettes
+    );
+    const page =
+      this.gazetteResponse && this.gazetteResponse.total_gazettes / 10;
+    if (page) {
+      this.pageChange(Math.ceil(page));
+    }
   }
 
   ngOnInit(): void {
@@ -111,14 +144,30 @@ export class SearchComponent implements OnInit {
             this.territory = territory;
             this.levelDescription = getLevelDescription(territory.level);
 
-            this.gazetteService.findAll({...params, territory_id: territory.territory_id}).subscribe((res) => {
-              this.gazetteResponse = res;
-            })
+            this.gazetteService
+              .findAll({ ...params, territory_id: territory.territory_id })
+              .subscribe((res) => {
+                this.gazetteResponse = res;
+                let pagination: Pagination = this.pagination;
+                const totalItems = Math.ceil(res.total_gazettes / 10);
+          console.log('params page ', params.page)
+                pagination = {
+                  ...pagination,
+                  currentPage: params.page,
+                  totalItems,
+                };
+                this.pagination = pagination;
+              });
           });
       } else {
         this.gazetteService.findAll(params).subscribe((res) => {
           this.gazetteResponse = res;
-        })
+          let pagination: Pagination = this.pagination;
+          const totalItems = Math.ceil(res.total_gazettes / 10);
+          console.log('params page ', params.page)
+          pagination = { ...pagination, currentPage: params.page, totalItems };
+          this.pagination = pagination;
+        });
       }
     });
   }

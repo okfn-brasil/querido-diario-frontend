@@ -41,10 +41,7 @@ export class GazetteService {
   constructor(private http: HttpClient) {}
 
   pagination(page: number): Pagination {
-    if (page > 1) {
-      return { size: 10, offset: page * 10 };
-    }
-    return { size: 10, offset: 0 };
+    return { size: 10, offset: (page - 1) * 10 };
   }
 
   findAll(query: GazetteQuery): Observable<GazetteResponse> {
