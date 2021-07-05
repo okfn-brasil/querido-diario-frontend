@@ -2,6 +2,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -29,6 +30,9 @@ interface Territory {
 })
 export class SearchFormComponent implements OnInit {
   termControl = new FormControl();
+
+  @Input()
+  form: any;
 
   options: string[] = [
     'Compra emergencial COVID-19',

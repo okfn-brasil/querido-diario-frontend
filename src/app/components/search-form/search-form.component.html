@@ -1,5 +1,39 @@
 <form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px" fxLayoutGap.xs="0">
-  <div fxLayout="column">
+  <!-- <div *ngFor="let field of form.fields">
+    <div fxLayout="row">
+      <mat-form-field appearance="fill" class="search-input">
+        <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
+        <mat-label>{{ field.label }}</mat-label>
+        <input
+          class="{{ field.icon }}"
+          #termField
+          matInput
+          [formControl]="termControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <p class="p-secondary autocomplete-title">{{ field.text }}</p>
+          <div *ngIf="field.options">
+            <mat-option
+              *ngFor="let option of field.options | async"
+              [value]="option"
+            >
+              <div fxLayout="row" class="autocomplete">
+                <mat-icon
+                  fxFlexAlign="center"
+                  matPrefix
+                  svgIcon="money"
+                ></mat-icon>
+                <p>{{ option }}</p>
+              </div>
+            </mat-option>
+          </div>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </div> -->
+
+  <div fxLayout="row">
     <mat-form-field appearance="fill" class="search-input">
       <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
       <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>

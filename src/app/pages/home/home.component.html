@@ -11,53 +11,15 @@
           >Explore os diários oficiais dos municípios e fique de olho nas ações
           dos governos
         </app-h1>
-        <app-search-form></app-search-form>
+        <app-search-form [form]="searchForm | async"></app-search-form>
       </div>
     </div>
   </section>
 
-  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
-    <div class="follow container" fxFlexAlign="center" fxLayout="column">
-      <app-h1>Acompanhe a evolução do Querido Diário</app-h1>
-      <div fxLayout="row" class="container-inner" fxLayoutGap.xs="16px">
-        <div class="follow-card flex" fxFlex="33%" fxLayout="column">
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="16px">
-            <mat-icon svgIcon="check"></mat-icon>
-            <div fxLayout="column" fxLayoutGap="8px">
-              <div class="number">12</div>
-              <p>Cidade já estão na plataforma</p>
-            </div>
-          </div>
-        </div>
+  <ng-container *ngFor="let element of sections">
+    <app-content [element]="element"></app-content>
+  </ng-container>
 
-        <div class="follow-card flex" fxFlex="33%" fxLayout="column">
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="16px">
-            <mat-icon svgIcon="search"></mat-icon>
-            <div fxLayout="column" fxLayoutGap="8px">
-              <div class="number">12</div>
-              <p>Cidades já têm robôs para coletar diários</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="follow-card flex" fxFlex="33%" fxLayout="column">
-          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="16px">
-            <mat-icon svgIcon="pin"></mat-icon>
-            <div fxLayout="column" fxLayoutGap="8px">
-              <div class="number">12</div>
-              <p>Cidades já foram mapeadas pelo censo</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav>
-        <a routerLink="/acesso" class="color-white-2">
-          Conheça os nívels de acesso
-          <mat-icon svgIcon="white-arrow" class="white-arrow"></mat-icon>
-        </a>
-      </nav>
-    </div>
-  </section>
   <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
     <div
       class="help container"
@@ -75,31 +37,7 @@
       >
         <div
           class="help-card"
-          fxLayout="column"
-          fxLayout.xs="row"
-          fxLayoutGap="34px"
-          fxLayoutGap.xs="22px"
-        >
-          <div>
-            <mat-icon svgIcon="box" class="box-icon"></mat-icon>
-          </div>
-          <div fxLayout="column" fxLayoutGap="34px" fxLayoutGap.xs="4px">
-            <div fxLayout="column" fxLayoutGap="12px">
-              <app-h2> Nossa próxima meta </app-h2>
-              <p>
-                Hoje poderíamos ter 2226 cidades na plataforma, e você pode nos
-                ajudar a chegar lá:
-              </p>
-            </div>
-            <div fxLayout="row" fxLayoutGap="12px">
-              <button class="donation">Doe</button>
-              <button class="goals">Ver todas as metas</button>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="help-card"
+          *ngFor="let item of help | async"
           fxLayout="column"
           fxLayout.xs="row"
           fxLayoutGap="34px"
@@ -110,46 +48,35 @@
           </div>
           <div fxLayout="column" fxLayoutGap="34px" fxLayoutGap.xs="4px">
             <div fxLayout="column" fxLayoutGap="12px">
-              <app-h2>Cadastre um município</app-h2>
+              <app-h2>{{ item.title }}</app-h2>
               <p>
-                Cadastre um município - precisamos saber onde as prefeituras
-                publicam seus diários oficiais
+                {{ item.text }}
               </p>
             </div>
             <div fxLayout="row" fxLayoutGap="12px">
-              <button class="censo">Ir para censo</button>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="help-card"
-          fxLayout="column"
-          fxLayout.xs="row"
-          fxLayoutGap="34px"
-          fxLayoutGap.xs="22px"
-        >
-          <div>
-            <mat-icon svgIcon="dev" class="dev-icon"></mat-icon>
-          </div>
-          <div fxLayout="column" fxLayoutGap="34px" fxLayoutGap.xs="4px">
-            <div fxLayout="column" fxLayoutGap="12px">
-              <app-h2>Contribua como desenvolvedor</app-h2>
-              <p>
-                Contribua com código - o Querido Diário é um projeto de código
-                aberto, então qualquer pessoa pode colaborar com novas
-                funcionalidades para a plataforma
-              </p>
-            </div>
-            <div fxLayout="row" fxLayoutGap="12px">
-              <button class="start">Comece por aqui</button>
+              <button *ngFor="let action of item.actions" class="censo">
+                {{ action.text }}
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <app-goals></app-goals>
+
+  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
+    <div fxLayout="column" fxLayoutGap="42px">
+      <div fxLayoutGap="22px" fxLayout="column">
+        <app-h1>Nossas Metas</app-h1>
+        <p>
+          O querido diário está só começando! Temos vários objetivos para o
+          projeto, e você pode nos ajudar a chegar lá:
+        </p>
+      </div>
+      <app-carousel [items]="goals | async"></app-carousel>
+    </div>
+  </section>
+
   <section
     class="bg-white-1 bg-gray-square"
     fxLayoutAlign="center"
@@ -169,52 +96,22 @@
         fxLayoutAlign="space-between"
         fxLayoutGap.xs="16px"
       >
-        <div fxLayout="column" class="project-card" fxLayoutGap="12px">
-          <app-h2> Níveis de acesso </app-h2>
+        <div
+          fxLayout="column"
+          class="project-card"
+          fxLayoutGap="12px"
+          *ngFor="let item of access_levels | async"
+        >
+          <app-h2>{{ item.title }}</app-h2>
           <nav>
             <p>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-              scelerisque ante sollicitudin commodo.
+              {{ item.text }}
             </p>
-            <a routerLink="/acesso">
-              Ler mais
+            <a routerLink="/acesso" *ngFor="let action of item.actions">
+              {{ action.text }}
               <mat-icon
-                svgIcon="right-arrow-white"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div fxLayout="column" class="project-card" fxLayoutGap="12px">
-          <app-h2> Glossário </app-h2>
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo.
-          </p>
-          <nav>
-            <a routerLink="/glossario">
-              Ler mais
-              <mat-icon
-                svgIcon="right-arrow-white"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div fxLayout="column" class="project-card" fxLayoutGap="12px">
-          <app-h2> Como denunciar ou pedir informações </app-h2>
-          <nav>
-            <p>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-              scelerisque ante sollicitudin commodo.
-            </p>
-            <a routerLink="/informacoes">
-              Ler mais
-              <mat-icon
-                svgIcon="right-arrow-white"
-                class="right-arrow-white"
+                svgIcon="{{ item.file }}"
+                class="{{ item.file }}"
               ></mat-icon>
             </a>
           </nav>
@@ -222,6 +119,7 @@
       </div>
     </div>
   </section>
+
   <section
     class="bg-purple-2 bg-purple-square"
     fxLayoutAlign="center"
@@ -253,6 +151,7 @@
       </div>
     </div>
   </section>
+
   <section class="bg-white-1">
     <div class="partners">
       <div

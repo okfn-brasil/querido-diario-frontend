@@ -15,9 +15,23 @@ export interface Gazette {
   file_raw_txt: string;
 }
 
+export interface GazetteQuery {
+  term?: string;
+  territory_id?: string;
+  since?: string;
+  until?: string;
+  sort_by?: string;
+  page?: number;
+}
+
 export interface GazetteResponse {
   total_gazettes: number;
   gazettes: Gazette[];
+}
+
+interface Pagination {
+  size: number;
+  offset: number;
 }
 
 @Injectable({
@@ -26,20 +40,38 @@ export interface GazetteResponse {
 export class GazetteService {
   constructor(private http: HttpClient) {}
 
-  findAll(territoryId: string, params: any): Observable<GazetteResponse> {
-    const { term, since, until } = params;
-    let url = `https://queridodiario.ok.org.br/api/gazettes/${territoryId}?`;
+  pagination(page: number): Pagination {
+    return { size: 10, offset: (page - 1) * 10 };
+  }
+
+  findAll(query: GazetteQuery): Observable<GazetteResponse> {
+    console.log('find by query ', query);
+
+    const { term, territory_id, since, until, sort_by, page } = query;
+    let url = `https://queridodiario.ok.org.br/api/gazettes/${
+      territory_id || ''
+    }?`;
 
     if (term) {
-      url += `keywords=${term}&`
+      url += `keywords=${term}&`;
     }
 
     if (since) {
-      url += `since=${since}&`
+      url += `since=${since}&`;
     }
 
     if (until) {
-      url += `until=${until}&`
+      url += `until=${until}&`;
+    }
+
+    console.log('sort_by ', sort_by);
+    if (sort_by) {
+      url += `sort_by=${sort_by}`; // default
+    }
+
+    if (page && page > 1) {
+      const pagination: Pagination = this.pagination(page);
+      url += `size=${pagination.size}&offset=${pagination.offset}&`;
     }
 
     // @todo pass query string as object to get

@@ -10,6 +10,10 @@ export interface Territory {
   level: string;
 }
 
+interface TerritoryQuery {
+  name: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -21,6 +25,21 @@ export class TerritoryService {
 
 
   constructor(private http: HttpClient) {}
+
+  findAll(query: TerritoryQuery): Observable<Territory[]> {
+    let url = `https://queridodiario.ok.org.br/api/cities/?`;
+    const { name } = query;
+    console.log('name ', name)
+    if (name) {
+      url += `city_name=${name}`
+    }
+    return this.http.get<{ cities: [] }>(url).pipe(
+      map((res: { cities: [] }) => {
+        return res.cities;
+      })
+    );
+
+  }
 
   findByName(name: string): Observable<Territory[]> {
     const url = `https://queridodiario.ok.org.br/api/cities/?city_name=` + name;

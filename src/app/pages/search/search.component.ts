@@ -7,10 +7,10 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { getLevelDescription, termsResult } from 'src/app/data/search';
 import { GazetteResponse, GazetteService } from 'src/app/gazette.service';
 import { City } from 'src/app/interfaces/city';
@@ -36,6 +36,12 @@ interface LevelDescription {
     href: string;
   };
 }
+
+interface Pagination {
+  itemsPerPage: number;
+  currentPage: number;
+  totalItems?: number;
+}
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -44,6 +50,7 @@ interface LevelDescription {
 })
 export class SearchComponent implements OnInit {
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private citiesService: CitiesService,
     private territoryService: TerritoryService,
@@ -62,6 +69,8 @@ export class SearchComponent implements OnInit {
 
   gazetteResponse: GazetteResponse | null = null;
 
+  pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
+
   //@Output() pageChange = new EventEmitter();
   @Output() pageBoundsCorrection = new EventEmitter();
 
@@ -73,64 +82,93 @@ export class SearchComponent implements OnInit {
 
   orderOptions = [
     {
-      value: 'Relevância',
       viewValue: 'Relevância',
+      value: 'relevance',
     },
     {
-      value: 'Mais recentes',
       viewValue: 'Mais recentes',
+      value: 'descending_date',
     },
     {
-      value: 'Mais antigos',
       viewValue: 'Mais antigos',
+      value: 'ascending_date',
     },
   ];
 
   //p: number = 0;
   p: number[] = [];
 
-  page = 1;
-  pageChange(event: any) {
-    this.page = event;
-    this.response = this.findByResults({
-      term: this.term,
-      territoryId: this.territoryId,
-      page: this.page,
+  page: number = 1;
+  sort_by: string = '';
+  pageChange(page: number) {
+    const queryParams = this.route.snapshot.queryParams;
+    this.router.navigate(['/pesquisa'], {
+      queryParams: { ...queryParams, page },
     });
+  }
+
+  nextPage() {
+    console.log('pagination ', this.pagination)
+    this.pageChange(Number(this.pagination.currentPage) + 1);
+  }
+
+  previousPage() {
+    this.pageChange(Number(this.pagination.currentPage) - 1);
+  }
+
+  firstPage() {
+    this.pageChange(1);
+  }
+
+  lastPage() {
+    console.log(
+      'this.gazetteResponse.total_gazettes ',
+      this.gazetteResponse?.total_gazettes
+    );
+    const page =
+      this.gazetteResponse && this.gazetteResponse.total_gazettes / 10;
+    if (page) {
+      this.pageChange(Math.ceil(page));
+    }
   }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      this.territoryService.territory$.subscribe((territory: Territory) => {
-        this.territory = territory;
-        this.levelDescription = getLevelDescription(territory.level);
-        this.gazetteService.findAll(territory.territory_id, params).subscribe((res) => {
-          this.gazetteResponse = res;
-        })
-      });
-      const { term, city } = params;
-      this.territoryService.select(city);
+      this.sort_by = params.sort_by;
 
-      /*
-      this.term = term;
-      this.cityName = city;
-      if (city) {
-        this.city = this.findTerritory(city);
-        this.findTerritory(city).subscribe((city) => {
-          if (city) {
-            const territoryId = city.territory_id;
-            this.territoryId = territoryId;
-            this.response = this.findByResults({
-              term,
-              territoryId,
-              page: this.page,
-            });
-          }
-        });
+      if (params.city) {
+        this.territoryService
+          .findAll({ name: params.city })
+          .subscribe((res) => {
+            const territory = res[0];
+            this.territory = territory;
+            this.levelDescription = getLevelDescription(territory.level);
+
+            this.gazetteService
+              .findAll({ ...params, territory_id: territory.territory_id })
+              .subscribe((res) => {
+                this.gazetteResponse = res;
+                let pagination: Pagination = this.pagination;
+                const totalItems = Math.ceil(res.total_gazettes / 10);
+          console.log('params page ', params.page)
+                pagination = {
+                  ...pagination,
+                  currentPage: params.page,
+                  totalItems,
+                };
+                this.pagination = pagination;
+              });
+          });
       } else {
-        console.log('logging ', term);
-        this.response = this.findByResults({ term, page: this.page });
-      }*/
+        this.gazetteService.findAll(params).subscribe((res) => {
+          this.gazetteResponse = res;
+          let pagination: Pagination = this.pagination;
+          const totalItems = Math.ceil(res.total_gazettes / 10);
+          console.log('params page ', params.page)
+          pagination = { ...pagination, currentPage: params.page, totalItems };
+          this.pagination = pagination;
+        });
+      }
     });
   }
 
@@ -169,6 +207,14 @@ export class SearchComponent implements OnInit {
 
   openFile(link: string) {
     window.open(link);
+  }
+
+  orderChanged(sort_by: string) {
+    const queryParams = this.route.snapshot.queryParams;
+    console.log('queryParams ', queryParams);
+    this.router.navigate(['/pesquisa'], {
+      queryParams: { ...queryParams, sort_by },
+    });
   }
 
   previous() {}
