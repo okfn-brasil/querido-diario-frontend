@@ -1,6 +1,7 @@
 <ng-container [ngSwitch]="element.type">
   <app-h1 *ngSwitchCase="'h1'">{{ element.content }}</app-h1>
   <app-icon *ngSwitchCase="'icon'" [icon]="element"></app-icon>
+  <app-h2 *ngSwitchCase="'h2'">{{ element.content }}</app-h2>
   <p *ngSwitchCase="'text'">
     {{ element.content }}
   </p>
@@ -13,6 +14,8 @@
       [fxLayout]="element.layout"
       [fxLayoutAlign]="element.layoutAlign"
       [fxLayoutGap]="element.gap + 'px'"
+      [appHeight]="element.height"
+      [appWidth]="element.width"
     >
       <ng-container *ngFor="let item of element.content | async">
         <app-content [element]="item"></app-content>

@@ -9,36 +9,27 @@ import {
   HELP_LIST,
   SEARCH_FORM,
 } from 'src/app/data/home';
+import { FOLLOW } from 'src/app/shared/follow';
+import { SUPPORT } from 'src/app/shared/support';
 
-const FOLLOW = {
-  theme: 'bg-purple-1',
+/*const SUPPORT = {
+  theme: 'bg-purple-2',
   type: 'section',
-  gap: 62,
-  layout: 'row',
-  layoutAlign: 'center',
+  gap: 34,
+  layout: 'column',
   content: of([
     {
       type: 'h1',
-      content: 'Acompanhe a evolução do Querido Diário',
+      content: 'Precisamos do seu apoio',
     },
     {
       type: 'list',
-      layout: 'row',
+      layout: 'column',
       layoutAlign: 'space-between',
-      content: of(EVOLUTION_LIST),
-    },
-    {
-      type: 'link',
-      text: 'Conheça os níveis de acesso',
-      link: '/acesso',
-      icon: {
-        file: 'white-arrow',
-        height: 12,
-        width: 12,
-      },
-    },
-  ]),
-};
+      content: of(HELP_LIST)
+    }
+  ])
+}*/
 
 @Component({
   selector: 'app-home',
@@ -51,8 +42,7 @@ export class HomeComponent implements OnInit {
   goals: Observable<any[]> = of(GOAL_LIST);
   access_levels: Observable<any[]> = of(ACCESS_LEVEL_LIST);
   searchForm: Observable<any> = of(SEARCH_FORM);
-  follow: any = FOLLOW;
-  sections: any[] = [FOLLOW]
+  sections: any[] = [FOLLOW, SUPPORT]
 
   constructor(private modal: MatDialog) {}
 
