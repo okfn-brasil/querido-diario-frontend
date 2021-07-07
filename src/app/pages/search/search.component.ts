@@ -108,7 +108,7 @@ export class SearchComponent implements OnInit {
   }
 
   nextPage() {
-    console.log('pagination ', this.pagination)
+    console.log('pagination ', this.pagination);
     this.pageChange(Number(this.pagination.currentPage) + 1);
   }
 
@@ -150,7 +150,7 @@ export class SearchComponent implements OnInit {
                 this.gazetteResponse = res;
                 let pagination: Pagination = this.pagination;
                 const totalItems = Math.ceil(res.total_gazettes / 10);
-          console.log('params page ', params.page)
+                console.log('params page ', params.page);
                 pagination = {
                   ...pagination,
                   currentPage: params.page,
@@ -164,7 +164,7 @@ export class SearchComponent implements OnInit {
           this.gazetteResponse = res;
           let pagination: Pagination = this.pagination;
           const totalItems = Math.ceil(res.total_gazettes / 10);
-          console.log('params page ', params.page)
+          console.log('params page ', params.page);
           pagination = { ...pagination, currentPage: params.page, totalItems };
           this.pagination = pagination;
         });
@@ -218,4 +218,11 @@ export class SearchComponent implements OnInit {
   }
 
   previous() {}
+
+  // @todo export to utils
+  extractUrlDomain(url: string): string {
+    return url
+      .replace(/www.|https:\/\/|http:\/\//g, '')
+      .replace(/(br).*/, 'br');
+  }
 }

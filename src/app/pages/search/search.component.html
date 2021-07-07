@@ -29,30 +29,48 @@
     fxLayout="row"
     *ngIf="!!territory"
   >
-    <div class="container" fxLayout.xs="column" fxLayoutGap.xs="36px">
-      <div fxLayout="row" fxFlex="40%" fxFlex.xs fxLayoutGap="12px">
-        <mat-icon [appHeight]="50" [appWidth]="50" svgIcon="check"></mat-icon>
-        <div fxLayout="column" fxLayoutGap="16px">
-          <p>{{ territory.territory_name }}</p>
-          <span
-            ><p>NÍVEL {{ territory.level }} DE ACESSO</p></span
-          >
+    <div class="container" fxLayout="column" fxLayoutGap.xs="36px" fxLayoutGap="44px">
+      <div fxLayout="row">
+        <div fxLayout="row" fxFlex="40%" fxFlex.xs fxLayoutGap="12px">
+          <mat-icon [appHeight]="50" [appWidth]="50" svgIcon="check"></mat-icon>
+          <div fxLayout="column" fxLayoutGap="16px">
+            <p>{{ territory.territory_name }}</p>
+            <span
+              ><p>NÍVEL {{ territory.level }} DE ACESSO</p></span
+            >
+          </div>
+        </div>
+
+        <div
+          fxLayout="column"
+          fxFlex="60%"
+          fxFlex.xs
+          fxLayoutGap="18px"
+          *ngIf="!!levelDescription"
+        >
+          <p>
+            {{ levelDescription.text }}
+          </p>
+          <button *ngIf="levelDescription.button">
+            {{ levelDescription.button.text }}
+          </button>
         </div>
       </div>
 
-      <div
-        fxLayout="column"
-        fxFlex="60%"
-        fxFlex.xs
-        fxLayoutGap="18px"
-        *ngIf="!!levelDescription"
-      >
-        <p>
-          {{ levelDescription.text }}
-        </p>
-        <button *ngIf="levelDescription.button">
-          {{ levelDescription.button.text }}
-        </button>
+      <div fxLayout="column" fxLayoutGap="42px" *ngIf="gazetteResponse && !gazetteResponse.total_gazettes">
+        <p>Acesse a fonte de publicação para ver os arquivos originais:</p>
+        <div
+          fxLayout="column"
+          class="bg-white-2 result color-purple-1"
+          fxLayoutGap="12px"
+        >
+          <h3>Diários oficiais • {{ territory.territory_name }}</h3>
+          <ng-container *ngFor="let publication_url of territory.publication_urls">
+            <a [href]="publication_url" target="_blank">
+            {{ extractUrlDomain(publication_url) }}
+            </a>
+          </ng-container>
+        </div>
       </div>
     </div>
   </section>
@@ -125,10 +143,7 @@
           </div>
         </pagination-template>
         <div fxLayout="row" fxFlexAlign="center">
-          <a
-            class="pagination-first-page"
-            *ngIf="pagination.currentPage > 1"
-          >
+          <a class="pagination-first-page" *ngIf="pagination.currentPage > 1">
             <mat-icon
               (click)="firstPage()"
               svgIcon="pagination-left-double-arrow"
