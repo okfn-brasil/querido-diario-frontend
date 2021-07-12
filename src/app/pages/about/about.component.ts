@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ABOUT } from 'src/app/components/footer/data';
 import { INFOS } from '../home/data';
-import { HISTORY, PRIVACY, SUCCESS_CASES, WHOWEARE } from './data';
+import { HISTORY, PRIVACY, SUCCESS_CASES, WHOWEARE, ABOUT } from './data';
 
 @Component({
   selector: 'app-about',
@@ -16,6 +15,7 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('ABOUT ', ABOUT)
     this.content$ = of({
       about: ABOUT,
       history: HISTORY,

@@ -68,7 +68,7 @@ export const PRIVACY = {
       text: 'Ler mais',
       icon: 'arrow',
       to: '/doe',
-      style: 'button-primary',
+      style: 'btn-primary',
     },
   ],
 };

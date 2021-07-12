@@ -1,5 +1,5 @@
 export const SUPPORT = {
-  title: 'Apoie',
+  title: 'APOIE',
   actions: [
     {
       text: 'Cadastre um município',
@@ -43,7 +43,7 @@ export const TECH = {
 };
 
 export const ABOUT = {
-  title: 'Sobre',
+  title: 'SOBRE',
   actions: [
     {
       text: 'História',
@@ -68,23 +68,23 @@ export const SOCIAL = {
   actions: [
     {
       file: 'twitter',
-      height: 20,
-      width: 20,
+      height: 36,
+      width: 36,
     },
     {
       file: 'instagram',
-      height: 20,
-      width: 20,
+      height: 36,
+      width: 36,
     },
     {
       file: 'facebook',
-      height: 20,
-      width: 20,
+      height: 36,
+      width: 36,
     },
     {
       file: 'linkedin',
-      height: 20,
-      width: 20,
+      height: 36,
+      width: 36,
     },
   ],
 };

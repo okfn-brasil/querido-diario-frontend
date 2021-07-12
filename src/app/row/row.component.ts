@@ -10,6 +10,9 @@ export class RowComponent implements OnInit {
   @Input()
   gap: number = 0;
 
+  @Input()
+  layoutAlign: string = '';
+
   constructor() { }
 
   ngOnInit(): void {

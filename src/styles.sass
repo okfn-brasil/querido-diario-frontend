@@ -19,8 +19,11 @@ button
 
 .btn-secondary
   background-color: #FFFCBD
-  color: #FFF
   color: #2C1338
+
+.btn-primary, .btn-secondary
+  padding: 10px 23px
+  border-radius: 21px
 
 .mat-h1, .mat-headline, .mat-typography 
   h1
@@ -52,10 +55,18 @@ button
 .dark
   background-color: #2C1338
   color: #FFF
+  a
+    color: #FFF
 
 .light
   background-color: #F3E9E9
-  color: #2C1338
+  
+  p
+    color: #2C1338
+
+  .mat-h2, .mat-title, .mat-typography h2
+    color: #5E3F8E !important
+
 
 .lighter
   background-color: #5E3F8E
@@ -63,6 +74,10 @@ button
     color: #FFF
 
 
+.nav-secondary
+  a
+    color: #FF8500
+    text-decoration: none
 
 
   
@@ -86,11 +101,14 @@ p
 
 span
   p
-    font-size: 14px
-    line-height: 16px
     opacity: 0.5
+    font-family: Lato
+    font-size: rem(14)
+    letter-spacing: 0
+    line-height: rem(16)
 
-.p-secondary
+
+.typo-secondary
   color: #5E3F8E
   font-family: Lato
   font-size: rem(14)
@@ -146,3 +164,11 @@ nav.color-orange-1 a
 .padding-sm-h
   padding-right: rem(20)
   padding-left: rem(20)
+
+.number
+  color: $white2
+  font-family: Lato
+  font-size: 42px
+  font-weight: 900
+  letter-spacing: -0.7px
+  line-height: 33px

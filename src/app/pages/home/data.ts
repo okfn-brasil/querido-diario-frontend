@@ -74,7 +74,7 @@ export const HELP = {
           text: 'Doe',
           icon: 'arrow',
           to: '/doe',
-          style: 'button-primary',
+          style: 'btn-primary',
         },
         {
           text: 'Ver todas as metas',

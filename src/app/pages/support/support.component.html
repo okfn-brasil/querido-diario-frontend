@@ -1,9 +1,11 @@
 <ng-container *ngIf="content$ | async as content">
   <app-container>
-    <app-column>
-      <h1>{{ content.support.title }}</h1>
-      <p>{{ content.support.text }}</p>
-      <app-row>
+    <app-column [gap]="36">
+      <app-column [gap]="24">
+        <h1>{{ content.support.title }}</h1>
+        <p>{{ content.support.text }}</p>
+      </app-column>
+      <app-row [gap]="36" class="nav-secondary">
         <ng-container *ngFor="let action of content.support.actions">
           <a [routerLink]="action.to" [ngClass]="action.style">
             {{ action.text }}
@@ -14,7 +16,7 @@
   </app-container>
 
   <app-container>
-    <app-column>
+    <app-column [gap]="64">
       <h1>{{ content.who_supports.title }}</h1>
       <app-column [gap]="48">
         <ng-container *ngFor="let supporter of content.who_supports.items">

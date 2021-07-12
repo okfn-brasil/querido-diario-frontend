@@ -1,9 +1,11 @@
 <ng-container *ngIf="content$ | async as content">
   <app-container>
-    <app-column>
-      <h1>{{ content.about.title }}</h1>
-      <p>{{ content.about.text }}</p>
-      <app-row>
+    <app-column [gap]="36">
+      <app-column [gap]="16">
+        <h1>{{ content.about.title }}</h1>
+        <p>{{ content.about.text }}</p>
+      </app-column>
+      <app-row [gap]="36" class="nav-secondary">
         <ng-container *ngFor="let action of content.about.actions">
           <a [routerLink]="action.to" [ngClass]="action.style">
             {{ action.text }}
@@ -13,15 +15,16 @@
     </app-column>
   </app-container>
 
-  <app-container [title]="content.history.title">
-    <div [innerHTML]="content.history.text"></div>
+  <app-container theme="light">
+    <app-column [gap]="22">
+      <h1>
+        {{ content.history.title }}
+      </h1>
+      <div [innerHTML]="content.history.text"></div>
+    </app-column>
   </app-container>
 
-  <app-container
-    [title]="content.successCases.title"
-    [gap]="34"
-    theme="light"
-  >
+  <app-container theme="light" [title]="content.successCases.title" [gap]="34">
     <p>{{ content.successCases.text }}</p>
     <app-row [gap]="17">
       <app-column
@@ -37,5 +40,26 @@
         </ng-container>
       </app-column>
     </app-row>
+  </app-container>
+
+  <app-container theme="light">
+    <app-column [gap]="36">
+      <h1>{{ content.whoWeAre.title }}</h1>
+      <div [innerHTML]="content.whoWeAre.text"></div>
+    </app-column>
+  </app-container>
+
+  <app-container theme="light">
+    <app-column [gap]="36">
+      <h1>
+        {{ content.privacy.title }}
+      </h1>
+      <p>{{ content.privacy.text }}</p>
+      <ng-container *ngFor="let action of content.privacy.actions">
+        <button [routerLink]="action.to" [ngClass]="action.style">
+          {{ action.text }}
+        </button>
+      </ng-container>
+    </app-column>
   </app-container>
 </ng-container>

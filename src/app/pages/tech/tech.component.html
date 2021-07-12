@@ -1,8 +1,10 @@
 <app-container *ngIf="tech$ | async as tech">
-  <app-column>
-    <h1>{{ tech.title }}</h1>
-    <p>{{ tech.text }}</p>
-    <app-row>
+  <app-column [gap]="36">
+    <app-column [gap]="16">
+      <h1>{{ tech.title }}</h1>
+      <h3>{{ tech.text }}</h3>
+    </app-column>
+    <app-row [gap]="36" class="nav-secondary">
       <ng-container *ngFor="let action of tech.actions">
         <a [routerLink]="action.to" [ngClass]="action.style">
           {{ action.text }}
@@ -12,19 +14,23 @@
   </app-column>
 </app-container>
 
-<app-container *ngIf="doc$ | async as doc">
-  <app-column>
-    <h1>{{ doc.title }}</h1>
-    <p>{{ doc.text }}</p>
-    <ng-container *ngFor="let action of doc.actions">
-      <a [routerLink]="action.to" [ngClass]="action.style">
-        {{ action.text }}
-      </a>
-    </ng-container>
-  </app-column>
-  <app-column *ngFor="let docText of docTexts$ | async">
-    <h2>{{ docText.title }}</h2>
-    <div [innerHTML]="docText.text"></div>
+<app-container *ngIf="doc$ | async as doc" theme="light">
+  <app-column [gap]="60">
+    <app-column [gap]="40">
+      <h1>{{ doc.title }}</h1>
+      <app-column>
+        <p>{{ doc.text }}</p>
+        <ng-container *ngFor="let action of doc.actions">
+          <a [routerLink]="action.to" [ngClass]="action.style">
+            {{ action.text }}
+          </a>
+        </ng-container>
+      </app-column>
+    </app-column>
+    <app-column *ngFor="let docText of docTexts$ | async" [gap]="42">
+      <h2>{{ docText.title }}</h2>
+      <div [innerHTML]="docText.text"></div>
+    </app-column>
   </app-column>
 </app-container>
 

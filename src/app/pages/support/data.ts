@@ -1,5 +1,4 @@
 import { ANALYSIS, API, TOOLBOX } from '../home/analysis';
-import { CONTRIBUTION } from '../tech/data';
 import { CONTRIBUTORS } from './contributors';
 import { REPOSITORIES } from './repositories';
 

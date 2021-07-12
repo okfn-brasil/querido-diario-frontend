@@ -1,8 +1,10 @@
 <app-container>
-  <app-row>
+  <app-row layoutAlign="space-between">
     <ng-container *ngFor="let section of sections | async">
-      <app-column>
-        <p>{{ section.title }}</p>
+      <app-column [gap]="22">
+        <span
+          ><p>{{ section.title }}</p></span
+        >
         <ng-container *ngFor="let action of section.actions">
           <a [routerLink]="action.to">
             {{ action.text }}
@@ -11,7 +13,9 @@
       </app-column>
     </ng-container>
     <app-column *ngIf="social$ | async as social">
-      <p>{{ social.title }}</p>
+      <span
+        ><p>{{ social.title }}</p></span
+      >
       <app-row>
         <ng-container *ngFor="let icon of social.actions">
           <app-icon [icon]="icon"></app-icon>
@@ -21,13 +25,15 @@
   </app-row>
 </app-container>
 <app-container *ngIf="copyright$ | async as copyright">
-  <app-row>
-    <ng-container *ngFor="let icon of copyright.icons">
-      <app-icon [icon]="icon"></app-icon>
-    </ng-container>
+  <app-row [gap]="32">
+    <app-row [gap]="12">
+      <ng-container *ngFor="let icon of copyright.icons">
+        <app-icon [icon]="icon"></app-icon>
+      </ng-container>
+    </app-row>
     <app-column>
       <ng-container *ngFor="let text of copyright.texts">
-        <p>{{ text }}</p>
+        <span><p>{{ text }}</p></span>
       </ng-container>
     </app-column>
   </app-row>
