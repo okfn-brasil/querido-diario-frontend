@@ -9,8 +9,9 @@ import {
   HELP_LIST,
   SEARCH_FORM,
 } from 'src/app/data/home';
+import { HomeService } from './home.service';
 
-const FOLLOW = {
+/*const FOLLOW = {
   theme: 'bg-purple-1',
   type: 'section',
   gap: 62,
@@ -38,7 +39,7 @@ const FOLLOW = {
       },
     },
   ]),
-};
+};*/
 
 @Component({
   selector: 'app-home',
@@ -46,17 +47,27 @@ const FOLLOW = {
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
-  evolution: Observable<any[]> = of(EVOLUTION_LIST);
-  help: Observable<any[]> = of(HELP_LIST);
+  evolution$: Observable<any> = of(null);
+  help$: Observable<any> = of(null);
+  goals$: Observable<any> = of(null)
+  infos$: Observable<any> = of(null);
+  realization$: Observable<any> = of(null)
+  /*help: Observable<any[]> = of(HELP_LIST);
   goals: Observable<any[]> = of(GOAL_LIST);
   access_levels: Observable<any[]> = of(ACCESS_LEVEL_LIST);
   searchForm: Observable<any> = of(SEARCH_FORM);
   follow: any = FOLLOW;
-  sections: any[] = [FOLLOW]
+  sections: any[] = [];*/
 
-  constructor(private modal: MatDialog) {}
+  constructor(private modal: MatDialog, private homeService: HomeService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.evolution$ = this.homeService.loadEvolution();
+    this.help$ = this.homeService.loadHelp();
+    this.goals$ = this.homeService.loadGoals();
+    this.infos$ = this.homeService.loadInfos();
+    this.realization$ = this.homeService.loadRealization()
+  }
 
   openVideo(): void {
     this.modal.open(VideoModalComponent, {

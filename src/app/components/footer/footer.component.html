@@ -1,80 +1,34 @@
-<footer class="bg-purple-1" fxLayout="column" fxLayoutAlign="space-around">
-  <!-- HERE -->
-  <div class="container" fxLayout="column" fxLayoutGap="88px">
-    <div
-      fxLayout="row"
-      class="container-inner"
-      fxLayout.xs="column"
-      fxLayoutGap.xs="68px"
-      fxLayoutAlign="space-between"
-    >
-      <div fxLayout="column" fxFlex="65%" fxFlex.xs="100%">
-        <div fxLayout="row" fxLayoutAlign="space-between">
-          <nav fxLayout="column" fxFlex.xs="30%">
-            <span><p>APOIE</p></span>
-            <a>Cadastre um município</a>
-            <a href="/apoie#nossas-metas">Nossas Metas</a>
-            <a href="/apoie#quem-apoia">Quem apoia</a>
-            <a routerLink="/sugestao">Envie sua sugestão</a>
-          </nav>
-
-          <nav fxLayout="column" fxFlex.xs="30%">
-            <span><p>TECNOLOGIA</p></span>
-            <a href="/tecnologia#documentacao">Documentação</a>
-            <a href="/tecnologia#contribua">Contrinua com código</a>
-            <a href="/tecnologia#relatios">Relatórios</a>
-            <a>Blog</a>
-          </nav>
-
-          <nav fxLayout="column" fxFlex.xs="30%">
-            <span><p>SOBRE</p></span>
-            <a href="sobre#historia">História</a>
-            <a href="sobre#casos-de-sucesso">Casos de sucesso</a>
-            <a href="sobre#quem-somos">Quem somos</a>
-            <a href="sobre#politica-de-privacidade">Política de privacidade</a>
-          </nav>
-        </div>
-      </div>
-
-      <div fxLayout="column" class="social" fxFlex="25%" fxFlex.xs="100%">
-        <span><p>REDES SOCIAIS</p></span>
-        <div fxLayout="row" fxLayoutGap="12px">
-          <mat-icon [appHeight]='36' [appWidth]='36' svgIcon="twitter"></mat-icon>
-          <mat-icon [appHeight]='36' [appWidth]='36' svgIcon="instagram"></mat-icon>
-          <mat-icon [appHeight]='36' [appWidth]='36' svgIcon="facebook"></mat-icon>
-          <mat-icon [appHeight]='36' [appWidth]='36' svgIcon="linkedin"></mat-icon>
-        </div>
-      </div>
-    </div>
-
-    <div
-      fxLayout="row"
-      fxLayout.xs="column"
-      class="container-inner"
-      fxLayoutAlign="space-between"
-      fxLayoutGap="12px"
-    >
-      <div fxLayout="column">
-        <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign.xs="start">
-          <mat-icon [appHeight]='36' [appWidth]='36' svgIcon="bitmap"></mat-icon>
-          <mat-icon [appHeight]='36' [appWidth]='36' svgIcon="circle-person"></mat-icon>
-        </div>
-      </div>
-
-      <div fxLayout="column">
-        <span
-          ><p>
-            Todo o conteúdo do Querido Diário está disponível sob a licença
-            Creative Commons Atribuição 4.0 Internacional, o que significa que
-            pode ser compartilhado e reutilizado para trabalhos derivados, desde
-            que citada a fonte.
-          </p>
-          <p>
-            Desenvolvedores/as: temos dados abertos e API ♥ Conheça e contribua
-            com o código
-          </p>
-        </span>
-      </div>
-    </div>
-  </div>
-</footer>
+<app-container>
+  <app-row>
+    <ng-container *ngFor="let section of sections | async">
+      <app-column>
+        <p>{{ section.title }}</p>
+        <ng-container *ngFor="let action of section.actions">
+          <a [routerLink]="action.to">
+            {{ action.text }}
+          </a>
+        </ng-container>
+      </app-column>
+    </ng-container>
+    <app-column *ngIf="social$ | async as social">
+      <p>{{ social.title }}</p>
+      <app-row>
+        <ng-container *ngFor="let icon of social.actions">
+          <app-icon [icon]="icon"></app-icon>
+        </ng-container>
+      </app-row>
+    </app-column>
+  </app-row>
+</app-container>
+<app-container *ngIf="copyright$ | async as copyright">
+  <app-row>
+    <ng-container *ngFor="let icon of copyright.icons">
+      <app-icon [icon]="icon"></app-icon>
+    </ng-container>
+    <app-column>
+      <ng-container *ngFor="let text of copyright.texts">
+        <p>{{ text }}</p>
+      </ng-container>
+    </app-column>
+  </app-row>
+</app-container>

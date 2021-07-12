@@ -1,170 +1,26 @@
-<div fxLayout="column">
-  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
-    <div class="container" fxLayout="column"  fxLayoutGap="46px">
-      <div fxLayout="column" fxLayoutGap="16px">
-        <app-h1>Glossário</app-h1>
-        <div fxLayout="row wrap" fxLayoutGap="18px" class="index">
-          <a *ngFor="let char of chars">{{char}}</a>
-        </div>
+<ng-container *ngIf="glossary$ | async as glossary">
+  <app-container theme="light">
+    <h1>{{ glossary.title }}</h1>
+    <app-column [gap]="46">
+      <div fxLayout="row wrap" fxLayoutGap="18px" class="index">
+        <ng-container *ngFor="let action of glossary.actions">
+          <a [routerLink]="action.to">{{ action.text }}</a>
+        </ng-container>
       </div>
-
-      <div>
-        <p>
-          Sentiu falta de algum termo? <a>Entre em contato e envie sua sugestão</a>
-        </p>
-      </div>
-      <div fxLayout="column" fxLayoutGap="60px">
-        <div fxLayout="column" fxLayoutGap="30px">
-          <app-h2>A</app-h2>
-          <div fxLayout="column" fxLayoutGap="42px">
-
-            <div fxLayout="column">
-              <h3>Adjudicação</h3>
-              <p>
-                Procuração dada a uma terceira parte, um agente fiduciário, que passa a ter amplos direitos de liquidar
-                seus ativos para satisfazer as reivindicações de credores. No processo licitatório é a manifestação
-                oficial pela proposta mais vantajosa.
-              </p>
-            </div>
-
-            <div fxLayout="column">
-              <h3>Atos administrativos normativos</h3>
-              <p>
-                São comandados pelo poder executivo, visando à correta aplicação da lei, explicitando a norma legal a
-                ser
-                observada pela administração e administradores. Esses atos expressam em detalhe o mandamento abstrato da
-                lei, e o fazem com a mesma normatividade da regra legislativa. São atos normativos os decretos
-                regulamentares e os regimentos, as resoluções, deliberações e portarias de conteúdo geral. Têm a mesma
-                normatividade da lei e estão sujeitas a controle judicial, isto é, podem ser atacados e invalidados
-                direta
-                e imediatamente por via judicial comum, ou por mandado de segurança, se lesivos de direito individual
-                líquido e certo.
-              </p>
-            </div>
-
-            <div fxLayout="column">
-              <h3>Ação orçamentária</h3>
-              <p>
-                Instrumento que contribui para atender ao objetivo de um programa, podendo ser projeto, atividade ou
-                operação especial.
-              </p>
-            </div>
-
-
-            <div fxLayout="column">
-              <h3>Autarquia</h3>
-              <p>
-                Entidade administrativa autônoma, descentralizada da administração pública, criada por lei, com
-                personalidade jurídica de direito público, patrimônio próprio e atribuições específicas para realizar os
-                fins que a lei lhe determinar.
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-
-        <div fxLayout="column" fxLayoutGap="30px">
-          <app-h2>B</app-h2>
-          <div fxLayout="column" fxLayoutGap="42px">
-
-            <div fxLayout="column">
-              <h3>Adjudicação</h3>
-              <p>
-                Procuração dada a uma terceira parte, um agente fiduciário, que passa a ter amplos direitos de liquidar
-                seus ativos para satisfazer as reivindicações de credores. No processo licitatório é a manifestação
-                oficial pela proposta mais vantajosa.
-              </p>
-            </div>
-
-            <div fxLayout="column">
-              <h3>Atos administrativos normativos</h3>
-              <p>
-                São comandados pelo poder executivo, visando à correta aplicação da lei, explicitando a norma legal a
-                ser
-                observada pela administração e administradores. Esses atos expressam em detalhe o mandamento abstrato da
-                lei, e o fazem com a mesma normatividade da regra legislativa. São atos normativos os decretos
-                regulamentares e os regimentos, as resoluções, deliberações e portarias de conteúdo geral. Têm a mesma
-                normatividade da lei e estão sujeitas a controle judicial, isto é, podem ser atacados e invalidados
-                direta
-                e imediatamente por via judicial comum, ou por mandado de segurança, se lesivos de direito individual
-                líquido e certo.
-              </p>
-            </div>
-
-            <div fxLayout="column">
-              <h3>Ação orçamentária</h3>
-              <p>
-                Instrumento que contribui para atender ao objetivo de um programa, podendo ser projeto, atividade ou
-                operação especial.
-              </p>
-            </div>
-
-
-            <div fxLayout="column">
-              <h3>Autarquia</h3>
-              <p>
-                Entidade administrativa autônoma, descentralizada da administração pública, criada por lei, com
-                personalidade jurídica de direito público, patrimônio próprio e atribuições específicas para realizar os
-                fins que a lei lhe determinar.
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-
-        <div fxLayout="column" fxLayoutGap="30px">
-          <app-h2>C</app-h2>
-          <div fxLayout="column" fxLayoutGap="42px">
-
-            <div fxLayout="column">
-              <h3>Adjudicação</h3>
-              <p>
-                Procuração dada a uma terceira parte, um agente fiduciário, que passa a ter amplos direitos de liquidar
-                seus ativos para satisfazer as reivindicações de credores. No processo licitatório é a manifestação
-                oficial pela proposta mais vantajosa.
-              </p>
-            </div>
-
-            <div fxLayout="column">
-              <h3>Atos administrativos normativos</h3>
-              <p>
-                São comandados pelo poder executivo, visando à correta aplicação da lei, explicitando a norma legal a
-                ser
-                observada pela administração e administradores. Esses atos expressam em detalhe o mandamento abstrato da
-                lei, e o fazem com a mesma normatividade da regra legislativa. São atos normativos os decretos
-                regulamentares e os regimentos, as resoluções, deliberações e portarias de conteúdo geral. Têm a mesma
-                normatividade da lei e estão sujeitas a controle judicial, isto é, podem ser atacados e invalidados
-                direta
-                e imediatamente por via judicial comum, ou por mandado de segurança, se lesivos de direito individual
-                líquido e certo.
-              </p>
-            </div>
-
-            <div fxLayout="column">
-              <h3>Ação orçamentária</h3>
-              <p>
-                Instrumento que contribui para atender ao objetivo de um programa, podendo ser projeto, atividade ou
-                operação especial.
-              </p>
-            </div>
-
-
-            <div fxLayout="column">
-              <h3>Autarquia</h3>
-              <p>
-                Entidade administrativa autônoma, descentralizada da administração pública, criada por lei, com
-                personalidade jurídica de direito público, patrimônio próprio e atribuições específicas para realizar os
-                fins que a lei lhe determinar.
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-</div>
+      <div [innerHTML]="glossary.text"></div>
+      <app-column [gap]="60">
+        <ng-container *ngFor="let item of glossary.items">
+          <h2>{{ item.title }}</h2>
+          <app-column [gap]="42">
+            <ng-container *ngFor="let char of item.items">
+              <app-column>
+                <h3>{{ char.title }}</h3>
+                <div [innerHTML]="char.text"></div>
+              </app-column>
+            </ng-container>
+          </app-column>
+        </ng-container>
+      </app-column>
+    </app-column>
+  </app-container>
+</ng-container>

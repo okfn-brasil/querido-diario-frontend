@@ -1,81 +1,25 @@
-<div fxLayout="column">
-  <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
-    <div class="container" fxLayout="column" fxLayoutGap="62px" fxLayoutGap.xs="52px" fxFlexOffset.xs="0">
-      <div class="container-inner">
-        <app-h1>Níveis de acesso</app-h1>
-        <h3>
-          Cada município possui um nível de acesso no projeto Querido Diário. Conheça cada um:
-        </h3>
-      </div>
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="22px" fxLayoutGap.xs="42px">
-
-        <div fxLayout="column" fxLayoutGap="16px">
-          <div fxLayout="column" fxLayout.xs="row" fxLayoutGap="16px">
-            <mat-icon svgIcon="level-0"></mat-icon>
-            <div fxLayout.xs="column" fxFlex="80%">
-              <h3>Nível 0 de acesso</h3>
-              <p>
-                Não possuímos a fonte de publicação do diário oficial deste município
-              </p>
-              <a>
-                Cadastre um município
+<ng-container *ngIf="accessLevels$ | async as accessLevels">
+  <app-container theme="light">
+    <app-column [gap]="58">
+      <app-column [gap]="16">
+        <h1>{{ accessLevels.title }}</h1>
+        <p>{{ accessLevels.text }}</p>
+      </app-column>
+      <app-row>
+        <ng-container *ngFor="let item of accessLevels.items">
+          <app-column [gap]="16">
+            <app-icon [icon]="item.icon"></app-icon>
+            <h3>{{ item.title }}</h3>
+            <div [innerHTML]="item.text"></div>
+            <ng-container *ngFor="let action of item.actions">
+              <app-row>
+                <a>{{ action.text }}</a>
                 <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div fxLayout="column" fxLayoutGap="16px">
-          <div fxLayout="column" fxLayout.xs="row" fxLayoutGap="16px">
-            <mat-icon svgIcon="pin"></mat-icon>
-            <div fxLayout.xs="column" fxFlex="80%">
-              <h3>Nível 1 de acesso</h3>
-              <p>
-                Possuímos a fonte de publicação do diário oficial deste município
-              </p>
-              <div fxLayout="column" fxLayoutGap="8px">
-                <a>
-                  Doe
-                  <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
-                </a>
-                <a>
-                  Contribua com código
-                  <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div fxLayout="column" fxLayoutGap="16px">
-          <div fxLayout="column" fxLayout.xs="row" fxLayoutGap="16px">
-            <mat-icon svgIcon="search"></mat-icon>
-            <div fxLayout.xs="column" fxFlex="80%">
-              <h3>Nível 2 de acesso</h3>
-              <p>
-                Temos o script para coletar os arquivos e armazená-los em nossa base <br />
-                Precisamos da sua ajuda para xxx
-              </p>
-              <a>
-                Doe
-                <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div fxLayout="column" fxLayoutGap="16px">
-          <div fxLayout="column" fxLayout.xs="row" fxLayoutGap="16px">
-            <mat-icon svgIcon="check"></mat-icon>
-            <div fxLayout.xs="column" fxFlex="80%">
-              <h3>Nível 3 de acesso</h3>
-              <p>
-                O conteúdo dos diários oficiais deste município está disponível na plataforma Querido Diário
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+              </app-row>
+            </ng-container>
+          </app-column>
+        </ng-container>
+      </app-row>
+    </app-column>
+  </app-container>
+</ng-container>

@@ -55,6 +55,12 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { SelectComponent } from './components/select/select.component';
 import { IconComponent } from './components/icon/icon.component';
 import { ContentComponent } from './components/content/content.component';
+import { ContainerComponent } from './container/container.component';
+import { ListComponent } from './list/list.component';
+import { ListItemComponent } from './list-item/list-item.component';
+import { ColumnComponent } from './column/column.component';
+import { RowComponent } from './row/row.component';
+import { ThemeDirective } from './theme.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +92,12 @@ import { ContentComponent } from './components/content/content.component';
     SelectComponent,
     IconComponent,
     ContentComponent,
+    ContainerComponent,
+    ListComponent,
+    ListItemComponent,
+    ColumnComponent,
+    RowComponent,
+    ThemeDirective,
   ],
   imports: [
     BrowserModule,

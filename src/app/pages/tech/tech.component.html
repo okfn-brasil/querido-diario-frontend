@@ -1,408 +1,54 @@
-<div fxLayout="column">
-  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
-    <div class="container">
-      <div class="container-inner" fxLayout="column" fxLayoutGap="16px">
-        <app-h1>Tecnologia</app-h1>
-        <h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          odio neque, interdum vel nunc varius, fringilla viverra risus.
-        </h3>
-        <div></div>
-        <div
-          fxLayout="row"
-          fxLayoutGap="36px"
-          class="nav"
-          fxLayoutGap.xs="92px"
-        >
-          <nav
-            class="color-orange-1"
-            fxLayout.xs="column"
-            fxLayoutGap="36px"
-            fxLayoutGap.xs="16px"
-          >
-            <a href="/tecnologia#documentacao">Documentação</a>
-            <a href="/tecnologia#contribua">Contribua com código</a>
-          </nav>
-          <nav fxLayout.xs="column" class="color-orange-1">
-            <a href="/tecnologia#relatorios">Relatórios</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section
-    class="bg-white-2"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    id="documentacao"
+<app-container *ngIf="tech$ | async as tech">
+  <app-column>
+    <h1>{{ tech.title }}</h1>
+    <p>{{ tech.text }}</p>
+    <app-row>
+      <ng-container *ngFor="let action of tech.actions">
+        <a [routerLink]="action.to" [ngClass]="action.style">
+          {{ action.text }}
+        </a>
+      </ng-container>
+    </app-row>
+  </app-column>
+</app-container>
+
+<app-container *ngIf="doc$ | async as doc">
+  <app-column>
+    <h1>{{ doc.title }}</h1>
+    <p>{{ doc.text }}</p>
+    <ng-container *ngFor="let action of doc.actions">
+      <a [routerLink]="action.to" [ngClass]="action.style">
+        {{ action.text }}
+      </a>
+    </ng-container>
+  </app-column>
+  <app-column *ngFor="let docText of docTexts$ | async">
+    <h2>{{ docText.title }}</h2>
+    <div [innerHTML]="docText.text"></div>
+  </app-column>
+</app-container>
+
+<ng-container *ngIf="reports$ | async as reports">
+  <app-container
+    [title]="reports.title"
+    [gap]="34"
+    theme="light"
+    bg="bg-gray-square"
   >
-    <div class="container">
-      <div
-        class="container-inner color-purple-1 theme-white-2"
-        fxLayout="column"
-        fxLayoutGap="40px"
+    <p>{{ reports.text }}</p>
+    <app-row [gap]="17">
+      <app-column
+        [style.padding]="'42px 30px'"
+        *ngFor="let item of reports.items"
+        [gap]="34"
+        theme="lighter"
       >
-        <app-h1 class="color-purple-1"> Documentação</app-h1>
-        <div fxLayout="column" fxLayoutGap="60px">
-          <div fxLayout="column">
-            <p>
-              Se está chegando aqui agora, vamos te dar algumas dicas para
-              começar. Bem-vinda(o)s!
-            </p>
-            <a routerLink="/sobre">Já sabe o que é o Querido Diário?</a>
-            <a
-              href="https://www.catarse.me/queridodiario-okbr?ref=ctrse_explore_pgsearch&project_id=120548&project_user_id=1384462"
-              >Vídeo do Catarse</a
-            >
-            <a href="/tecnologia#contribua"
-              >Está aprendendo a programar e contribuir para código aberto?
-              Comece por aqui!</a
-            >
-            <a routerLink="/glossario">Glossário do Querido Diário</a>
-            <a href="https://serenata.ai/" target="_blank"
-              >Você já tinha ouvido falar da Operação Serenata de Amor?</a
-            >
-            <a
-              href="https://www.catarse.me/queridodiario-okbr?ref=ctrse_explore_pgsearch&project_id=120548&project_user_id=1384462"
-              target="_blank"
-              >Quer contribuir financeiramente?</a
-            >
-          </div>
-          <div fxLayout="column" fxLayoutGap="34px">
-            <app-h2>Onde pedir ajuda?</app-h2>
-            <p>
-              A comunidade de pessoas envolvidas no Querido Diário é muito
-              receptiva, temos um
-              <a href="https://discord.gg/fsEhQxSWjt" target="_blank"
-                >canal no Discord</a
-              >
-              onde utilizamos para fazer conversas por texto e voz, entre e se
-              apresente! Por lá organizamos para fazer nossa reunião pública e
-              mensal com as pessoas que mantêm o projeto.
-            </p>
-
-            <p>
-              Caso tenha alguma dúvida sobre o projeto e a nossa comunidade você
-              também pode nos mandar um email pelo seguinte endereço:
-              <a href="mailto:contato@serenata.ai">contato@serenata.ai</a>.
-            </p>
-          </div>
-
-          <div fxLayout="column" fxLayoutGap="34px">
-            <app-h2> O escopo do Querido Diário </app-h2>
-
-            <p>
-              O Querido Diário é um projeto de código aberto da
-              <a href="https://www.ok.org.br/" target="_blank"
-                >Open Knowledge Brasil</a
-              >
-              - junto à valiosas contribuições da comunidade - que está usando
-              tecnologia para libertar e centralizar as informações publicadas
-              nos diários oficiais dos municípios, hoje presas em PDFs obscuros
-              de acesso complicado. Todo ato público, para que seja válido no
-              Brasil, deve ser publicado em um diário oficial, ou seja, desde o
-              governo federal, tribunais e até a câmara de vereadores da sua
-              cidade, todos divulgam atos oficiais em arquivos que devem ser
-              acessíveis pela população.
-            </p>
-
-            <p>
-              O escopo atual do projeto está em coletar os atos do poder
-              executivo dos 5.570 municípios brasileiros. É uma iniciativa muito
-              ambiciosa dada a diversidade de desafios e barreiras para se
-              acessar esses dados, desde a falta de padronização até a escassez
-              de recursos de tecnologias que muitos municípios brasileiros
-              possuem para manterem informações públicas acessíveis na internet.
-            </p>
-          </div>
-
-          <div fxLayout="column">
-            <app-h2>Arquitetura</app-h2>
-          </div>
-
-          <div fxLayout="column" fxLayoutGap="34px">
-            <app-h2>Versões</app-h2>
-            <div fxLayout="column">
-              <p>Versão X.Y - Change Log</p>
-              <p>Versão X.X - Change Log</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="bg-purple-1 theme-purple-1"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    id="contribua"
-  >
-    <div class="container">
-      <div class="container-inner" fxLayout="column" fxLayoutGap="40px">
-        <app-h1>Contribua com código</app-h1>
-
-        <div fxLayout="column" fxLayoutGap="60px">
-          <div fxLayout="column" fxLayoutGap="34px">
-            <p>
-              Olá! Quer contribuir para o Querido Diário? Aqui você vai
-              encontrar todas as informações para entender cada parte do
-              projeto. Dessa forma, poderá decidir por onde começar de acordo
-              com o seu interesse e de forma mais confortável.
-            </p>
-
-            <p>
-              Todos os nossos códigos estão no
-              <a href="https://github.com/okfn-brasil" target="_blank">Github da OKBR</a> e
-              estão sob licenças de software explícitas na raíz de cada
-              repositório. Dessa forma, reforçamos que todo o projeto tem seu
-              código fonte aberto para a comunidade.
-            </p>
-
-            <p>
-              A maior parte do desenvolvimento técnico no projeto foi feita por
-              uma comunidade incrível. Essas pessoas trabalharam voluntariamente
-              por anos ajudando a OKBR a chegar na estrutura atual do Querido
-              Diário.
-            </p>
-          </div>
-
-          <div fxLayout="column" fxLayoutGap="34px">
-            <app-h2> Coleta de dados </app-h2>
-            <p>
-              Para entender o Querido Diário, é muito importante saber como
-              funciona a estrutura de coleta de arquivos de diários oficiais.
-              Todos os scripts são desenvolvidos utilizando o framework
-              <a href="https://scrapy.org/" target="_blank">Scrapy</a>,
-              ferramenta muito popular para raspagem de dados. Caso nunca tenha
-              utilizado, o
-              <a
-                href="https://docs.scrapy.org/en/latest/intro/tutorial.html"
-                target="_blank"
-                >tutorial</a
-              >
-              é um ótimo caminho para aprender a fazer seus primeiros scripts de
-              coleta de dados.
-            </p>
-
-            <p>
-              Temos um
-              <a href="https://github.com/okfn-brasil/querido-diario"
-              target="_blank"
-                >repositório direcionado para organizar a coleta de arquivos</a
-              >. Nele, você encontrará arquivos em Python desenvolvidos pela
-              comunidade para cada município, chamamos esses arquivos de spiders
-              (Spider é o termo utilizado para um script de raspagem de dados no
-              Scrapy).
-            </p>
-          </div>
-
-          <div fxLayout="column" fxLayoutGap="34px">
-            <app-h2> Censo </app-h2>
-
-            <p>
-              Antes de alguém conseguir escrever um spider para um município é
-              importante sabermos em qual site os arquivos do diário oficial
-              estão sendo publicados, e isso não é tão simples. Estamos falando
-              de um país com 5.570 municípios que publicam seus atos públicos
-              sem nenhum padrão, dentre eles alguns publicam em sites de
-              associações, empresas privadas ou até mesmo site de outros entes
-              da federação, e tudo isso sem nenhuma gestão de fluxo da
-              informação.
-            </p>
-
-            <p>
-              Por isso, nós criamos uma iniciativa de mapeamento das fontes de
-              publicação, o
-              <a href="https://censo.ok.org.br" target="_blank"> Censo Querido Diário</a>, onde
-              qualquer pessoa pode preencher um formulário e nos enviar a fonte
-              de publicação de diários oficiais de um município.
-            </p>
-
-            <p>
-              Todas as fontes de publicação enviadas são validadas por um time
-              voluntário e estão sendo feitas análises de dados que irão compor
-              relatórios sobre o diagnóstico de como está esse retrato de
-              divulgação de atos públicos no Brasil. Com acesso à base de dados
-              você consegue utilizar a linguagem R e Python para realizar
-              análises exploratórias e contribuir no nosso
-              <a
-                href="https://github.com/okfn-brasil/censo-querido-diario"
-                target="_blank"
-                >repositório do censo.</a
-              >
-            </p>
-          </div>
-
-          <div fxLayout="column" fxLayoutGap="34px">
-            <app-h2> Toolbox </app-h2>
-            <p>
-              O objetivo do
-              <a href="https://github.com/okfn-brasil/querido-diario-toolbox"
-              target="_blank"
-                >Querido Diário Toolbox</a
-              >
-              é fornecer para a comunidade um conjunto de ferramentas que
-              possibilitem a análise e manipulação dos dados extraídos de
-              diários oficiais. Com o toolbox, ampliamos as possibilidades de
-              novos projetos que se utilizem da base de dados e compartilhamos
-              conhecimento acumulado na limpeza e tratamento de dados que o
-              projeto já enfrentou. O toolbox, inclusive, é utilizado
-              internamente pela equipe da OKBR para o tratamento dos diários que
-              são oferecidos na API; ele permite a extração de dados, metadados,
-              limpeza de caracteres irrelevantes e extração de CPF e CNPJ. O
-              toolbox não é, nem nunca será, um projeto concluído: com o apoio
-              da comunidade, vamos sempre adicionar novas ferramentas e
-              disponibilizá-las a todas as pessoas interessadas no projeto!
-            </p>
-          </div>
-
-          <div fxLayout="column" fxLayoutGap="34px">
-            <app-h2> API pública </app-h2>
-
-            <p>
-              A
-              <a href="https://queridodiario.ok.org.br/api/docs" target="_blank"
-                >API pública</a
-              >
-              é uma das camadas principais do projeto, pois permite a divulgação
-              da base de dados de uma forma acessível e automatizável por
-              máquinas, além de promover um acesso direto aos dados para pessoas
-              desenvolvedoras e pesquisadoras. Além disso, a plataforma consome
-              os dados da API para a disponibilização dos dados para o público
-              geral.
-            </p>
-
-            <p>
-              A API foi construída com
-              <a href="https://fastapi.tiangolo.com/" target="_blank"
-                >FastAPI</a
-              >
-              e Python e é integrada ao
-              <a href="https://swagger.io/" target="_blank">Swagger</a> para a
-              obtenção da documentação de forma automática. Você pode contribuir
-              com ideias para a API no repositório oficial.
-            </p>
-
-            <div fxLayout="column" fxLayoutGap="22px">
-              <h3>Front end</h3>
-              <p>xxx</p>
-            </div>
-
-            <div fxLayout="column" fxLayoutGap="18px">
-              <h3>Para começar</h3>
-
-              <div fxLayout="column">
-                <p>Linguagem Python</p>
-                <div fxLayout="row">
-                  <div fxLayout="column" fxFlexOffset="22px">
-                    <a href="https://python.org.br/" target="_blank"
-                      >https://python.org.br/</a
-                    >
-                    <a
-                      href="https://www.pycursos.com/python-para-zumbis/"
-                      target="_blank"
-                      >https://www.pycursos.com/python-para-zumbis/</a
-                    >
-                    <a href="https://escoladedados.org/" target="_blank"
-                      >https://escoladedados.org/</a
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <p>Pandas</p>
-
-              <p>Vídeos do Renne</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="bg-yellow-1"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    id="relatorios"
-  >
-    <div
-      class="container details"
-      fxLayout="column"
-      fxFlexAlign="center"
-      fxLayoutGap="36px"
-      fxLayoutAlign="space-between"
-    >
-      <div fxLayout="column" class="container-inner">
-        <app-h1 class="color-purple-3">Relatórios</app-h1>
-        <p class="color-purple-3">
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus.
-        </p>
-      </div>
-      <div
-        fxLayout="row"
-        fxLayout.xs="column"
-        fxLayoutAlign="space-between"
-        fxLayoutGap="18px"
-      >
-        <div fxLayout="column" class="bg-purple-4 card" fxLayoutGap="16px">
-          <app-h2 class="color-white-2">
-            Nulla vel metus scelerisque ante sollicitudin commodo.
-          </app-h2>
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo.
-          </p>
-          <nav>
-            <a>
-              Acessar
-              <mat-icon
-                svgIcon="right-arrow-white"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div fxLayout="column" class="bg-purple-4 card" fxLayoutGap="16px">
-          <app-h2 class="color-white-2">
-            Nulla vel metus scelerisque ante sollicitudin commodo.
-          </app-h2>
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo.
-          </p>
-          <nav>
-            <a>
-              Acessar
-              <mat-icon
-                svgIcon="right-arrow-white"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div fxLayout="column" class="bg-purple-4 card" fxLayoutGap="16px">
-          <app-h2 class="color-white-2">
-            Nulla vel metus scelerisque ante sollicitudin commodo.
-          </app-h2>
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo.
-          </p>
-          <nav>
-            <a>
-              Acessar
-              <mat-icon
-                svgIcon="right-arrow-white"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.text }}</p>
+        <ng-container *ngFor="let action of item.actions">
+          <a [routerLink]="'/'">{{ action.text }}</a>
+        </ng-container>
+      </app-column>
+    </app-row>
+  </app-container>
+</ng-container>

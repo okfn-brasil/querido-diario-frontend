@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { GLOSSARY } from './data';
 
 @Component({
   selector: 'app-glossary',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./glossary.component.sass']
 })
 export class GlossaryComponent implements OnInit {
+  glossary$: Observable<any> = of(GLOSSARY);
 
   constructor() { }
 

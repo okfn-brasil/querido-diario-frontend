@@ -1,12 +1,12 @@
-<section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
-  <div fxLayout="column" fxLayoutGap="42px">
-    <div fxLayoutGap="22px" fxLayout="column">
-      <app-h1>Nossas Metas</app-h1>
+<ng-container *ngIf="goals$ | async as goals">
+  <app-container>
+    <app-column>
+      <h1>Nossas metas</h1>
       <p>
         O querido diário está só começando! Temos vários objetivos para o
         projeto, e você pode nos ajudar a chegar lá:
       </p>
-    </div>
-    <app-carousel></app-carousel>
-  </div>
-</section>
+    </app-column>
+    <app-carousel [items]="goals"></app-carousel>
+  </app-container>
+</ng-container>

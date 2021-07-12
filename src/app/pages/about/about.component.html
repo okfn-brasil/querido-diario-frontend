@@ -1,364 +1,41 @@
-<div fxLayout="column">
-  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
-    <div class="container" fxLayout="column" fxLayoutGap="16px">
-      <div class="container-inner" fxLayoutGap="44px" fxLayout="column">
-        <div fxLayoutGap="16px" fxLayout="column">
-          <app-h1>Sobre o Querido Diário</app-h1>
-          <p>
-            Conheça o projeto que usa tecnologia para libertar o conteúdos dos
-            diários oficiais dos municípios brasileiros e aproximar os cidadãos
-            das ações de seus governantes
-          </p>
-        </div>
-        <nav fxLayout="row" fxLayoutGap="36px" class="color-orange-1" fxHide.xs>
-          <a href="/sobre#historia">História</a>
-          <a href="/sobre#entenda">Entenda</a>
-          <a href="/sobre#casos-de-sucesso">Casos de sucesso</a>
-          <a href="/sobre#quem-somos">Quem somos</a>
-          <a routerLink="/privacidade">Política de privacidade</a>
-        </nav>
+<ng-container *ngIf="content$ | async as content">
+  <app-container>
+    <app-column>
+      <h1>{{ content.about.title }}</h1>
+      <p>{{ content.about.text }}</p>
+      <app-row>
+        <ng-container *ngFor="let action of content.about.actions">
+          <a [routerLink]="action.to" [ngClass]="action.style">
+            {{ action.text }}
+          </a>
+        </ng-container>
+      </app-row>
+    </app-column>
+  </app-container>
 
-        <div
-          fxLayout="row"
-          fxLayoutGap="38px"
-          class="color-orange-1"
-          fxHide
-          fxHide.xs="false"
-        >
-          <nav fxLayout="column" class="color-orange-1" fxLayoutGap="16px">
-            <a href="/sobre#historia">História</a>
-            <a href="/sobre#casos-de-sucesso">Casos de sucesso</a>
-            <a routerLink="/privacidade">Política de privacidade</a>
-          </nav>
-          <nav fxLayout="column" class="color-orange-1" fxLayoutGap="16px">
-            <a href="/sobre#entenda">Entenda</a>
-            <a href="/sobre#quem-somos">Quem somos</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-container [title]="content.history.title">
+    <div [innerHTML]="content.history.text"></div>
+  </app-container>
 
-  <section
-    class="bg-white-2 theme-white-2"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    id="historia"
+  <app-container
+    [title]="content.successCases.title"
+    [gap]="34"
+    theme="light"
   >
-    <div class="container" fxLayout="column" fxLayoutGap="16px">
-      <div class="container-inner" fxLayout="column" fxLayoutGap="16px">
-        <app-h1>História</app-h1>
-        <div fxLayout="column">
-          <p>
-            O projeto Querido Diário é resultado de uma fusão de duas
-            iniciativas semelhantes que nasceram em momentos distintos.
-          </p>
-
-          <p>
-            A primeira ideia foi concebida pela Open Knowledge Brasil e se
-            chamava
-            <a href="https://github.com/okfn-brasil/queriDO" target="_blank"
-              >"Projeto Nosso Querido Diário Oficial", abreviadamente queriDO</a
-            >. A iniciativa estabeleceu uma metodologia para recuperação da
-            informação registrada nos diários oficiais, a partir dos interesses
-            e metas da comunidade, que seria formada por dois grupos: as pessoas
-            curadoras, que definiriam os "alvos", estabelecendo para quais
-            assuntos e diários oficiais desejam voltar seus olhares; e os
-            experts - pessoas entusiastas de dados abertos e que codificariam os
-            raspadores de dados.
-          </p>
-
-          <p>
-            A segunda ideia veio inspirada no sucesso da
-            <a href="https://serenata.ai/" target="_blank"
-              >Operação Serenata de Amor</a
-            >, que por meio da
-            <a href="https://twitter.com/RosieDaSerenata" target="_blank"
-              >Rosie</a
-            >, uma robô que expõe suspeitas de mal uso de dinheiro público pelos
-            deputados federais, levou inúmeras pessoas no Brasil a pedir uma
-            mesma ferramenta para os seus estados e municípios. Como a operação
-            tinha o foco no Congresso Nacional, os algoritmos se limitavam ao
-            escopo da esfera federal. Então surgiu o projeto Diário Oficial da
-            Serenata, com o objetivo de levar as análises para a esfera
-            municipal.
-          </p>
-
-          <p>
-            Em 2018, quando a Operação Serenata de Amor já estava dentro da
-            estrutura da Open Knowledge Brasil, definiu-se que a base de código
-            do projeto Querido Diário da Serenata seria a oficial e que seria
-            usado o nome Querido Diário, uma adaptação do projeto anterior da
-            OKBR. Inicialmente a iniciativa iria coletar os arquivos de diários
-            oficiais dos municípios e criar mecanismos para analisar a dispensa
-            de licitações, mas essa ideia enfrentou muitos desafios técnicos e
-            não teve um forte engajamento.
-          </p>
-
-          <p>
-            No ano seguinte, decidimos reativar a comunidade para focar em
-            escrever o maior número de raspadores de arquivos possível e
-            aumentar nossa cobertura de municípios no Brasil. O resultado foi
-            fantástico, pois em menos de dois anos saímos de uma cobertura
-            inferior à 100 municípios para alcançar uma cobertura de mais de
-            2.200 municípios.
-          </p>
-
-          <p>
-            No segundo semestre de 2020, conseguimos o nosso primeiro
-            financiamento, por meio de uma chamada do projeto Empatía promovido
-            pela
-            <a href="https://idatosabiertos.org/en/" target="_blank">ILDA</a>. O
-            recurso foi patrocinado pelo Banco Interamericano de Desenvolvimento
-            (BID). Esse apoio nos permitiu dar início ao desenvolvimento da
-            nossa API aberta e também da nossa plataforma de busca.
-          </p>
-
-          <p>
-            A plataforma oficial do Querido Diário foi lançada no primeiro
-            semestre de 2021. Nela, é possível que qualquer pessoa faça buscas
-            por conteúdos por meio de palavras-chave, municípios ou datas.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="bg-purple-2"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    id="entenda"
-  >
-    <div
-      class="container details"
-      fxLayout="column"
-      fxFlexAlign="center"
-      fxLayoutAlign="space-between"
-      fxLayoutGap="32px"
-    >
-      <div class="container-inner">
-        <app-h1>Entenda</app-h1>
-      </div>
-      <div
-        fxLayout="row"
-        fxLayout.xs="column"
-        fxLayoutAlign="space-between"
-        fxLayoutGap="16px"
+    <p>{{ content.successCases.text }}</p>
+    <app-row [gap]="17">
+      <app-column
+        [style.padding]="'42px 30px'"
+        *ngFor="let item of content.successCases.items"
+        [gap]="34"
+        theme="lighter"
       >
-        <div
-          fxLayout="column"
-          class="padding-md-v padding-md-h bg-purple-1"
-          fxLayoutGap="12px"
-        >
-          <app-h2> Níveis de acesso </app-h2>
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo.
-          </p>
-          <nav>
-            <a routerLink="/acesso" class="color-purple-3 bold">
-              Ler mais
-              <mat-icon svgIcon="right-arrow-purple-3"></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div
-          fxLayout="column"
-          class="padding-md-v padding-md-h bg-purple-1"
-          fxLayoutGap="12px"
-        >
-          <app-h2> Glossário </app-h2>
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo.
-          </p>
-          <nav>
-            <a routerLink="/glossario" class="color-purple-3 bold">
-              Ler mais
-              <mat-icon svgIcon="right-arrow-purple-3"></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div
-          fxLayout="column"
-          class="padding-md-v padding-md-h bg-purple-1"
-          fxLayoutGap="12px"
-        >
-          <app-h2> Como denunciar ou pedir informações </app-h2>
-          <p>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-            scelerisque ante sollicitudin commodo.
-          </p>
-          <nav>
-            <a routerLink="/informacoes" class="color-purple-3 bold">
-              Ler mais
-              <mat-icon svgIcon="right-arrow-purple-3"></mat-icon>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="bg-white-2"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    id="casos-de-sucesso"
-  >
-    <div
-      class="container"
-      fxLayout="column"
-      fxLayoutGap="16px"
-      fxLayoutGap.xs="30px"
-    >
-      <div class="container-inner" fxLayoutGap.xs="12px" fxLayout="column">
-        <app-h1>Casos de sucesso</app-h1>
-        <p>
-          Confira reportagens, análises e pesquisas que utilizam o Querido
-          Diário para encontrar informações sobre os atos públicos
-        </p>
-      </div>
-
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="22px">
-        <div
-          fxLayout="column"
-          class="padding-md-v padding-sm-h bg-purple-1"
-          fxLayoutGap="14px"
-        >
-          <span> FONTE | 10/02/2021 </span>
-          <app-h2>
-            Nulla vel metus scelerisque ante sollicitudin commodo.
-          </app-h2>
-          <nav>
-            <a class="color-purple-3 bold">
-              Ler mais
-              <mat-icon
-                svgIcon="right-arrow-purple-3"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div
-          fxLayout="column"
-          class="padding-md-v padding-sm-h bg-purple-1"
-          fxLayoutGap="14px"
-        >
-          <span> FONTE | 10/02/2021 </span>
-          <app-h2>
-            Nulla vel metus scelerisque ante sollicitudin commodo.
-          </app-h2>
-          <nav>
-            <a class="color-purple-3 bold">
-              Ler mais
-              <mat-icon
-                svgIcon="right-arrow-purple-3"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div
-          fxLayout="column"
-          class="padding-md-v padding-sm-h bg-purple-1"
-          fxLayoutGap="14px"
-        >
-          <span> FONTE | 10/02/2021 </span>
-          <app-h2>
-            Nulla vel metus scelerisque ante sollicitudin commodo.
-          </app-h2>
-          <nav>
-            <a class="color-purple-3 bold">
-              Ler mais
-              <mat-icon
-                svgIcon="right-arrow-purple-3"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-
-        <div
-          fxLayout="column"
-          class="padding-md-v padding-sm-h bg-purple-1"
-          fxLayoutGap="14px"
-        >
-          <span> FONTE | 10/02/2021 </span>
-          <app-h2>
-            Nulla vel metus scelerisque ante sollicitudin commodo.
-          </app-h2>
-          <nav>
-            <a class="color-purple-3 bold">
-              Ler mais
-              <mat-icon
-                svgIcon="right-arrow-purple-3"
-                class="right-arrow-white"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="bg-blue-1"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    id="quem-somos"
-  >
-    <div class="container" fxLayout="column">
-      <div class="container-inner" fxLayoutGap="36px" fxLayout="column">
-        <app-h1>Quem somos</app-h1>
-        <p>
-          A OKBR, também conhecida como Rede pelo Conhecimento Livre, é uma
-          organização da sociedade civil sem fins lucrativos e apartidária que
-          atua no país desde 2013. Desenvolvemos e incentivamos o uso de
-          tecnologias cívicas e de dados abertos, realizamos análises de
-          políticas públicas e promovemos o conhecimento livre para tornar a
-          relação entre governo e sociedade mais transparente e participativa.
-        </p>
-
-        <p>
-          Criado em 2018, o Programa Ciência de Dados para Inovação Cívica
-          surgiu no âmbito das atividades da Operação Serenata de Amor, que
-          havia surgido em 2016 por profissionais independentes de diversas
-          áreas (tecnologia, ciências sociais, jornalismo, design etc.). O
-          Programa é responsável pela gestão e manutenção dos projetos Querido
-          Diário, Operação Serenata de Amor, Parlametria, Perfil Político, Justa
-          e Vítimas da Intolerância.
-        </p>
-
-        <p>Saiba mais no site: <a>ok.org.br</a></p>
-      </div>
-    </div>
-  </section>
-
-  <section
-    class="bg-white-2"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    id="politica-de-privacidade"
-  >
-    <div class="container" fxLayout="column" fxLayoutGap="36px">
-      <div class="container-inner" fxLayout="column" fxLayoutGap="44px">
-        <app-h1> Política de Privacidade e Proteção de dados </app-h1>
-
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet
-          ultricies metus. Vestibulum a magna sed enim aliquet dictum. Nunc
-          vulputate pretium eros, non sagittis elit feugiat et. Suspendisse
-          scelerisque dapibus sodales. Praesent gravida massa est
-        </p>
-
-        <button routerLink="/privacidade" class="btn">Leia mais</button>
-      </div>
-    </div>
-  </section>
-</div>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.text }}</p>
+        <ng-container *ngFor="let action of item.actions">
+          <a [routerLink]="'/'">{{ action.text }}</a>
+        </ng-container>
+      </app-column>
+    </app-row>
+  </app-container>
+</ng-container>

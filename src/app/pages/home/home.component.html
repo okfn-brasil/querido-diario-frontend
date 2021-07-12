@@ -1,4 +1,92 @@
-<div fxLayout="column">
+<app-container theme="light">
+  <h1>
+    Explore os diários oficiais dos municípios e fique de olho nas ações dos governos
+  </h1>
+  <app-search-form></app-search-form>
+</app-container>
+<ng-container *ngIf="evolution$ | async as evolution">
+  <app-container [title]="evolution.title" [gap]="34">
+    <app-row>
+      <app-column *ngFor="let item of evolution.items">
+        <app-row [gap]="24">
+          <app-icon [icon]="item.icon"></app-icon>
+          <app-column>
+            <p>{{ item.count }}</p>
+            <p>{{ item.text }}</p>
+          </app-column>
+        </app-row>
+      </app-column>
+    </app-row>
+  </app-container>
+</ng-container>
+
+<ng-container *ngIf="help$ | async as help">
+  <app-container [title]="help.title" [gap]="34">
+    <app-row>
+      <app-column *ngFor="let item of help.items">
+        <app-column [gap]="24">
+          <app-icon [icon]="item.icon"></app-icon>
+          <app-column [appWidth]="380">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+            <app-row>
+              <ng-container *ngFor="let action of item.actions">
+                <button [ngClass]="action.style">
+                  {{ action.text }}
+                </button>
+              </ng-container>
+            </app-row>
+          </app-column>
+        </app-column>
+      </app-column>
+    </app-row>
+  </app-container>
+</ng-container>
+
+<app-goals></app-goals>
+
+<ng-container *ngIf="infos$ | async as infos">
+  <app-container
+    [title]="infos.title"
+    [gap]="34"
+    theme="light"
+    bg="bg-gray-square"
+  >
+    <app-row [gap]="17">
+      <app-column
+        [style.padding]="'42px 30px'"
+        *ngFor="let item of infos.items"
+        [gap]="34"
+        theme="lighter"
+      >
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.text }}</p>
+        <ng-container *ngFor="let action of item.actions">
+          <a [routerLink]="'/'">{{ action.text }}</a>
+        </ng-container>
+      </app-column>
+    </app-row>
+  </app-container>
+</ng-container>
+
+<ng-container *ngIf="realization$ | async as realization">
+  <app-container>
+    <app-row>
+      <ng-container *ngFor="let item of realization">
+        <app-column>
+          <p>{{ item.title }}</p>
+          <app-row [gap]="34">
+            <ng-container *ngFor="let icon of item.icons">
+              <app-icon [icon]="icon"></app-icon>
+            </ng-container>
+          </app-row>
+        </app-column>
+      </ng-container>
+    </app-row>
+  </app-container>
+</ng-container>
+
+<!--<div fxLayout="column">
   <section
     class="explore-section"
     fxLayoutAlign="center"
@@ -19,6 +107,21 @@
   <ng-container *ngFor="let element of sections">
     <app-content [element]="element"></app-content>
   </ng-container>
+
+  <app-container [containerProps]="{ gap: 62 }">
+    <h1>Acompanhe a evolução do Querido Diário</h1>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <ng-container *ngFor="let item of evolution | async">
+        <div fxLayout="row" fxLayoutGap="24px">
+          <app-icon [icon]="item.icon"></app-icon>
+          <div fxLayout="column">
+            <p>{{ item.count }}</p>
+            <p>{{ item.text }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </app-container>
 
   <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
     <div
@@ -186,3 +289,4 @@
     </div>
   </section>
 </div>
+-->

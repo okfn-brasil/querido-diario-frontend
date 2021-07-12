@@ -91,7 +91,7 @@
             [options]="orderOptions"
             [selected]="sort_by"
             (onSelected)="orderChanged($event)"
-            [theme]="'theme-dark'"
+            [theme]="'dark'"
           ></app-select>
         </div>
 
@@ -125,7 +125,7 @@
                 <span class="color-purple-3">{{ gazette.territory_name }}</span>
               </p>
               <app-select
-                [theme]="'theme-light'"
+                [theme]="'light'"
                 (onSelected)="openFile($event)"
                 [options]="[
                   {
