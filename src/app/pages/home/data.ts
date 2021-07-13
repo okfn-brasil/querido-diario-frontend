@@ -223,7 +223,7 @@ export const trajectory = {
 
 export const REALIZATION = [
   {
-    title: 'Realização',
+    title: 'REALIZAÇÃO',
     icons: [
       {
         file: 'logo-OK',
@@ -243,7 +243,7 @@ export const REALIZATION = [
     ],
   },
   {
-    title: 'Apoio',
+    title: 'APOIO',
     icons: [
       { file: 'logo-Ilda', height: 17, width: 52 },
       { file: 'logo-jurema', height: 18, width: 80 },

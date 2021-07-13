@@ -24,7 +24,7 @@
     </app-column>
   </app-container>
 
-  <app-infos></app-infos>
+  <app-infos bg="bg-purple-square"></app-infos>
 
   <app-container theme="light" [title]="content.successCases.title" [gap]="34">
     <p>{{ content.successCases.text }}</p>
@@ -44,10 +44,10 @@
     </app-row>
   </app-container>
 
-  <app-container theme="light">
+  <app-container theme="light" bg="bg-blue-square">
     <app-column [gap]="36">
       <h1>{{ content.whoWeAre.title }}</h1>
-      <div class="typo-inner" [innerHTML]="content.whoWeAre.text"></div>
+      <div class="typo-inner" [style.color]="'#FFF'" [innerHTML]="content.whoWeAre.text"></div>
     </app-column>
   </app-container>
 

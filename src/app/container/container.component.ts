@@ -25,6 +25,9 @@ export class ContainerComponent implements OnInit {
   theme: 'darker' | 'dark-secondary' | 'dark' | 'light' = 'darker';
 
   @Input()
+  containerClass: string = 'container';
+
+  @Input()
   bg?: string;
 
   @Input()

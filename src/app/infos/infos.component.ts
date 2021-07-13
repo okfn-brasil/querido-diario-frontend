@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HomeService } from '../pages/home/home.service';
 
@@ -9,6 +9,9 @@ import { HomeService } from '../pages/home/home.service';
 })
 export class InfosComponent implements OnInit {
   infos$: Observable<any> = of(null)
+
+  @Input()
+  bg: 'bg-gray-square' | 'bg-purple-square' = 'bg-gray-square';
 
   constructor(private homeService: HomeService) { }
 
