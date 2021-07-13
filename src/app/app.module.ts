@@ -61,6 +61,7 @@ import { ListItemComponent } from './list-item/list-item.component';
 import { ColumnComponent } from './column/column.component';
 import { RowComponent } from './row/row.component';
 import { ThemeDirective } from './theme.directive';
+import { InfosComponent } from './infos/infos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +99,7 @@ import { ThemeDirective } from './theme.directive';
     ColumnComponent,
     RowComponent,
     ThemeDirective,
+    InfosComponent,
   ],
   imports: [
     BrowserModule,
