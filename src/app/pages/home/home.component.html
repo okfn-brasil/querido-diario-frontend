@@ -21,8 +21,8 @@
 </ng-container>
 
 <ng-container *ngIf="help$ | async as help">
-  <app-container [title]="help.title" [gap]="34">
-    <app-row>
+  <app-container [title]="help.title" [gap]="34" theme="dark">
+    <app-row layoutAlign="space-between">
       <app-column *ngFor="let item of help.items">
         <app-column [gap]="24">
           <app-icon [icon]="item.icon"></app-icon>
@@ -57,7 +57,7 @@
         [style.padding]="'42px 30px'"
         *ngFor="let item of infos.items"
         [gap]="34"
-        theme="lighter"
+        theme="dark-secondary"
       >
         <h2>{{ item.title }}</h2>
         <p>{{ item.text }}</p>
@@ -70,10 +70,10 @@
 </ng-container>
 
 <ng-container *ngIf="realization$ | async as realization">
-  <app-container>
-    <app-row>
+  <app-container theme="light">
+    <app-row [gap]="122">
       <ng-container *ngFor="let item of realization">
-        <app-column>
+        <app-column [gap]="34">
           <p>{{ item.title }}</p>
           <app-row [gap]="34">
             <ng-container *ngFor="let icon of item.icons">

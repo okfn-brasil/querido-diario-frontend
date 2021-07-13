@@ -10,7 +10,7 @@
           <app-column [gap]="16">
             <app-icon [icon]="item.icon"></app-icon>
             <h3>{{ item.title }}</h3>
-            <div [innerHTML]="item.text"></div>
+            <div class="typo-inner" [innerHTML]="item.text"></div>
             <ng-container *ngFor="let action of item.actions">
               <app-row>
                 <a>{{ action.text }}</a>

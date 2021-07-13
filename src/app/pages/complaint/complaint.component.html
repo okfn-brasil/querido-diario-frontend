@@ -4,7 +4,7 @@
       <h1>{{ complaint.title }}</h1>
       <ng-container *ngFor="let item of complaint.items">
         <h2>{{ item.title }}</h2>
-        <div [innerHTML]="item.text"></div>
+        <div class="typo-inner" [innerHTML]="item.text"></div>
       </ng-container>
     </app-column>
   </app-container>

@@ -27,34 +27,39 @@ export const DOC = {
     {
       text: 'Já sabe o que é o Querido Diário?',
       to: '/sobre',
+      style: 'highlight',
     },
     {
       text: 'Vídeo do Catarse',
       to: 'https://www.catarse.me/queridodiario-okbr?ref=ctrse_explore_pgsearch&project_id=120548&project_user_id=1384462',
+      style: 'highlight',
     },
     {
       text: 'Está aprendendo a programar e contribuir para código aberto? Comece por aqui!',
       to: '/tecnologia#contribua',
+      style: 'highlight',
     },
     {
       text: 'Você já tinha ouvido falar da Operação Serenata de Amor?',
       to: 'https://serenata.ai/',
+      style: 'highlight',
     },
     {
       text: 'Quer contribuir financeiramente?',
       to: 'https://www.catarse.me/queridodiario-okbr?ref=ctrse_explore_pgsearch&project_id=120548&project_user_id=1384462',
+      style: 'highlight',
     },
   ],
 };
 
 export const HELP = {
   title: 'Onde pedir ajuda?',
-  text: 'A comunidade de pessoas envolvidas no Querido Diário é muito \n receptiva, temos um \n<a href="https://discord.gg/fsEhQxSWjt" target="_blank">canal no Discord</a> onde utilizamos para fazer conversas por texto e voz, entre e se apresente! Por lá organizamos para fazer nossa reunião pública e mensal com as pessoas que mantêm o projeto. \nCaso tenha alguma dúvida sobre o projeto e a nossa comunidade vocêtambém pode nos mandar um email pelo seguinte endereço: <a href="mailto:contato@serenata.ai">contato@serenata.ai</a>.',
+  text: 'A comunidade de pessoas envolvidas no Querido Diário é muito \n receptiva, temos um \n<a href="https://discord.gg/fsEhQxSWjt" target="_blank">canal no Discord</a> onde utilizamos para fazer conversas por texto e voz, entre e se apresente! Por lá organizamos para fazer nossa reunião pública e mensal com as pessoas que mantêm o projeto. <br /><br />Caso tenha alguma dúvida sobre o projeto e a nossa comunidade vocêtambém pode nos mandar um email pelo seguinte endereço: <a href="mailto:contato@serenata.ai">contato@serenata.ai</a>.',
 };
 
 export const SCOPE = {
   title: 'O escopo do Querido Diário',
-  text: 'O Querido Diário é um projeto de código aberto da Open Knowledge Brasil - junto à valiosas contribuições da comunidade - que está usando tecnologia para libertar e centralizar as informações publicadas nos diários oficiais dos municípios, hoje presas em PDFs obscuros de acesso complicado. \n\nTodo ato público, para que seja válido no Brasil, deve ser publicado em um diário oficial, ou seja, desde o governo federal, tribunais e até a câmara de vereadores da sua cidade, todos divulgam atos oficiais em arquivos que devem ser acessíveis pela população.\n]nO escopo atual do projeto está em coletar os atos do poder executivo dos 5.570 municípios brasileiros. É uma iniciativa muito ambiciosa dada a diversidade de desafios e barreiras para se acessar esses dados, desde a falta de padronização até a escassez de recursos de tecnologias que muitos municípios brasileiros possuem para manterem informações públicas acessíveis na internet.',
+  text: `O Querido Diário é um projeto de código aberto da Open Knowledge Brasil - junto à valiosas contribuições da comunidade - que está usando tecnologia para libertar e centralizar as informações publicadas nos diários oficiais dos municípios, hoje presas em PDFs obscuros de acesso complicado. <br /><br />Todo ato público, para que seja válido no Brasil, deve ser publicado em um diário oficial, ou seja, desde o governo federal, tribunais e até a câmara de vereadores da sua cidade, todos divulgam atos oficiais em arquivos que devem ser acessíveis pela população.<br /><br />O escopo atual do projeto está em coletar os atos do poder executivo dos 5.570 municípios brasileiros. É uma iniciativa muito ambiciosa dada a diversidade de desafios e barreiras para se acessar esses dados, desde a falta de padronização até a escassez de recursos de tecnologias que muitos municípios brasileiros possuem para manterem informações públicas acessíveis na internet.`,
 };
 
 export const ARCHITECTURE = {
@@ -92,8 +97,7 @@ export const TOOLBOX = {
 
 export const PUBLIC_API = {
   textSecondary: 'API pública',
-  text:
-    'A API pública é uma das camadas principais do projeto, pois permite a divulgação da base de dados de uma forma acessível e automatizável por máquinas, além de promover um acesso direto aos dados para pessoas desenvolvedoras e pesquisadoras. Além disso, a plataforma consome os dados da API para a disponibilização dos dados para o público geral.\n\nA API foi export construída com FastAPI e Python e é integrada ao Swagger para a obtenção da documentação de forma automática. Você pode contribuir com ideias para a API no repositório oficial.',
+  text: 'A API pública é uma das camadas principais do projeto, pois permite a divulgação da base de dados de uma forma acessível e automatizável por máquinas, além de promover um acesso direto aos dados para pessoas desenvolvedoras e pesquisadoras. Além disso, a plataforma consome os dados da API para a disponibilização dos dados para o público geral.\n\nA API foi export construída com FastAPI e Python e é integrada ao Swagger para a obtenção da documentação de forma automática. Você pode contribuir com ideias para a API no repositório oficial.',
 };
 
 export const FRONTEND = {

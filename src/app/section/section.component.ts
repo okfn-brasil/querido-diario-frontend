@@ -23,6 +23,9 @@ export class SectionComponent implements OnInit {
   @Input()
   config: SectionConfig = defaultConfig
 
+  @Input()
+  theme?: string = 'darker'
+
   constructor() { }
 
   ngOnInit(): void {

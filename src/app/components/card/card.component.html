@@ -1,23 +1,15 @@
 <div fxLayout="column" class="goal-card">
-  <mat-icon
-    [appHeight]="item.icon.height"
-    [appWidth]="item.icon.width"
-    svgIcon="{{ item.icon.file }}"
-    class="hand-icon"
-  ></mat-icon>
-  <div fxLayout="column" fxLayoutGap="8px">
+  <app-icon [icon]="item.icon"></app-icon>
+  <div fxLayout="column">
     <app-h2>{{ item.title }}</app-h2>
-    <div fxLayout="column" fxLayoutGap="22px">
+    <div fxLayout="column">
       <p>{{ item.text }}</p>
-      <app-h1 class="lato">{{ item.subTitle }}</app-h1>
+      <h1 class="lato">{{ item.subTitle }}</h1>
     </div>
     <nav *ngFor="let action of item.actions">
       <a class="purple">
-        {{action}} aqui
-        <mat-icon
-          svgIcon="{{action}}"
-          class="right-arrow"
-        ></mat-icon>
+        {{ action.text }}
+        <app-icon [icon]="action.icon"></app-icon>
       </a>
     </nav>
   </div>

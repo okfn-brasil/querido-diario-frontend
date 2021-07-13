@@ -7,7 +7,7 @@
           <a [routerLink]="action.to">{{ action.text }}</a>
         </ng-container>
       </div>
-      <div [innerHTML]="glossary.text"></div>
+      <div class="typo-inner" [innerHTML]="glossary.text"></div>
       <app-column [gap]="60">
         <ng-container *ngFor="let item of glossary.items">
           <h2>{{ item.title }}</h2>
@@ -15,7 +15,7 @@
             <ng-container *ngFor="let char of item.items">
               <app-column>
                 <h3>{{ char.title }}</h3>
-                <div [innerHTML]="char.text"></div>
+                <div class="typo-inner" [innerHTML]="char.text"></div>
               </app-column>
             </ng-container>
           </app-column>

@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SectionComponent } from '../components/section/section.component';
 
 const defaultContainer = {
-  theme: 'dark',
+  theme: 'darker',
   layout: 'column',
   align: 'left',
 };
@@ -18,9 +19,10 @@ interface ContainerProps {
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.sass'],
 })
+
 export class ContainerComponent implements OnInit {
   @Input()
-  theme: 'dark' | 'light' = 'dark';
+  theme: 'darker' | 'dark-secondary' | 'dark' | 'light' = 'darker';
 
   @Input()
   bg?: string;

@@ -29,7 +29,7 @@
     </app-column>
     <app-column *ngFor="let docText of docTexts$ | async" [gap]="42">
       <h2>{{ docText.title }}</h2>
-      <div [innerHTML]="docText.text"></div>
+      <div class="typo-inner" [innerHTML]="docText.text"></div>
     </app-column>
   </app-column>
 </app-container>
@@ -47,7 +47,7 @@
         [style.padding]="'42px 30px'"
         *ngFor="let item of reports.items"
         [gap]="34"
-        theme="lighter"
+        theme="dark-secondary"
       >
         <h2>{{ item.title }}</h2>
         <p>{{ item.text }}</p>

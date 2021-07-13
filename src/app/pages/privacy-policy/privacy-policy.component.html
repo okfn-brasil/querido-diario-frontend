@@ -5,7 +5,7 @@
       <ng-container *ngFor="let item of privacy.items">
         <app-column>
           <h3>{{ item.title }}</h3>
-          <div [innerHTML]="item.text"></div>
+          <div class="typo-inner" [innerHTML]="item.text"></div>
         </app-column>
       </ng-container>
     </app-column>

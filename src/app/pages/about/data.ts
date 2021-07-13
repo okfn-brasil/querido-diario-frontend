@@ -51,6 +51,36 @@ export const SUCCESS_CASES = {
         },
       ],
     },
+    {
+      title: 'FONTE | 10/02/2021',
+      text: 'Nulla vel metus scelerisque ante sollicitudin commodo.',
+      actions: [
+        {
+          text: 'Ler mais',
+          icon: 'right-arrow',
+        },
+      ],
+    },
+    {
+      title: 'FONTE | 10/02/2021',
+      text: 'Nulla vel metus scelerisque ante sollicitudin commodo.',
+      actions: [
+        {
+          text: 'Ler mais',
+          icon: 'right-arrow',
+        },
+      ],
+    },
+    {
+      title: 'FONTE | 10/02/2021',
+      text: 'Nulla vel metus scelerisque ante sollicitudin commodo.',
+      actions: [
+        {
+          text: 'Ler mais',
+          icon: 'right-arrow',
+        },
+      ],
+    },
   ],
 };
 

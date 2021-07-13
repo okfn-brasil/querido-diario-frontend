@@ -20,7 +20,7 @@
       <h1>
         {{ content.history.title }}
       </h1>
-      <div [innerHTML]="content.history.text"></div>
+      <div class="typo-inner" [innerHTML]="content.history.text"></div>
     </app-column>
   </app-container>
 
@@ -31,7 +31,7 @@
         [style.padding]="'42px 30px'"
         *ngFor="let item of content.successCases.items"
         [gap]="34"
-        theme="lighter"
+        theme="dark-secondary"
       >
         <h2>{{ item.title }}</h2>
         <p>{{ item.text }}</p>
@@ -45,7 +45,7 @@
   <app-container theme="light">
     <app-column [gap]="36">
       <h1>{{ content.whoWeAre.title }}</h1>
-      <div [innerHTML]="content.whoWeAre.text"></div>
+      <div class="typo-inner" [innerHTML]="content.whoWeAre.text"></div>
     </app-column>
   </app-container>
 
@@ -56,7 +56,7 @@
       </h1>
       <p>{{ content.privacy.text }}</p>
       <ng-container *ngFor="let action of content.privacy.actions">
-        <button [routerLink]="action.to" [ngClass]="action.style">
+        <button [appHeight]="43" [appWidth]="249" [routerLink]="action.to" [ngClass]="action.style">
           {{ action.text }}
         </button>
       </ng-container>

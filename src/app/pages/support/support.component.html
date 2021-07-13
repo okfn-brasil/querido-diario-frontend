@@ -15,6 +15,8 @@
     </app-column>
   </app-container>
 
+  <app-goals></app-goals>
+
   <app-container>
     <app-column [gap]="64">
       <h1>{{ content.who_supports.title }}</h1>
@@ -29,14 +31,16 @@
                 <a [href]="supporter.action.to">{{ supporter.action.text }}</a>
               </h3>
             </ng-container>
-            <div [innerHTML]="supporter.text"></div>
+            <div class="typo-inner" [innerHTML]="supporter.text"></div>
             <ng-container *ngFor="let icon of supporter.icons">
               <app-icon [icon]="icon"></app-icon>
             </ng-container>
             <app-row>
-              <ng-container *ngFor="let item of supporter.items">
-                <app-column>{{ item }}</app-column>
-              </ng-container>
+              <app-column  *ngFor="let item of supporter.items">
+                <app-column [gap]="36">
+                  <p>{{ item }}</p>
+                </app-column>
+              </app-column>
             </app-row>
           </app-column>
         </ng-container>

@@ -1,13 +1,3 @@
-<section
-  [ngClass]="config.theme"
-  fxLayoutAlign="center"
-  fxLayout="row"
->
-  <div
-    class="container"
-    [fxLayoutAlign]="config.align"
-    [fxLayout]="config.layout"
-    [fxLayoutGap]="config.gap + 'px'"
-  ></div>
+<section [ngClass]="theme" fxLayoutAlign="center" fxLayout="row">
   <ng-content></ng-content>
 </section>

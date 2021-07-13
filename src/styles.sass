@@ -13,6 +13,20 @@ a,
 button
   cursor: pointer
 
+button
+  border: none
+
+a
+  text-decoration: none
+
+.btn-primary, .btn-secondary
+  font-family: Lato
+  font-size: 16px
+  font-weight: bold
+  letter-spacing: 0
+  line-height: 21px
+  text-align: center
+  
 .btn-primary
   background-color: #FF8500
   color: #FFF
@@ -52,37 +66,45 @@ button
     letter-spacing: 0
     line-height: rem(28)
 
-.dark
-  background-color: #2C1338
+.dark, .darker
   color: #FFF
   a
     color: #FFF
 
+.dark
+  background-color: #351E41
+
+.darker
+  background-color: #2C1338
+
 .light
   background-color: #F3E9E9
   
-  p
+  p, a, .typo-inner
     color: #2C1338
 
   .mat-h2, .mat-title, .mat-typography h2
     color: #5E3F8E !important
 
 
-.lighter
+.dark-secondary
   background-color: #5E3F8E
+
+  .mat-h1 h2, .mat-headline h2, .mat-typography h2
+    color: #FFF !important
   a
     color: #FFF
 
+.dark-secondary .mat-h1 h2, .mat-headline h2, .mat-typography h2
+  color: #FFF
+
+.dark-secondary p
+  color: #FFF
 
 .nav-secondary
   a
     color: #FF8500
     text-decoration: none
-
-
-  
-a
-  text-decoration: underline
 
 nav
   a
@@ -92,7 +114,7 @@ h3
   a
     text-decoration: none
 
-p
+p, a
   font-family: Lato
   font-size: 16px
   font-weight: 600
@@ -107,6 +129,15 @@ span
     letter-spacing: 0
     line-height: rem(16)
 
+a.highlight
+  text-decoration: underline
+
+.typo-inner
+  font-family: Lato
+  font-size: 16px
+  font-weight: 600
+  letter-spacing: 0
+  line-height: 28px
 
 .typo-secondary
   color: #5E3F8E
