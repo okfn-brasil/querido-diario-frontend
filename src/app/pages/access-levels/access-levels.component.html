@@ -1,10 +1,12 @@
 <ng-container *ngIf="accessLevels$ | async as accessLevels">
   <app-container theme="light">
     <app-column [gap]="58">
-      <app-column [gap]="16">
-        <h1>{{ accessLevels.title }}</h1>
-        <p>{{ accessLevels.text }}</p>
-      </app-column>
+      <div class="container-inner">
+        <app-column [gap]="16">
+          <h1>{{ accessLevels.title }}</h1>
+          <p>{{ accessLevels.text }}</p>
+        </app-column>
+      </div>
       <app-row>
         <ng-container *ngFor="let item of accessLevels.items">
           <app-column [gap]="16">
@@ -12,7 +14,7 @@
             <h3>{{ item.title }}</h3>
             <div class="typo-inner" [innerHTML]="item.text"></div>
             <ng-container *ngFor="let action of item.actions">
-              <app-row>
+              <app-row class="nav-dark">
                 <a>{{ action.text }}</a>
                 <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
               </app-row>

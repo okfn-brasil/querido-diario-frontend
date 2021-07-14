@@ -18,10 +18,6 @@ const square = (value: number): Sizeable => {
   providedIn: 'root',
 })
 export class HomeService {
-  loadContent() {
-    //return [this.buildEvolution(EVOLUTION_DATA)];
-  }
-
   loadEvolution() {
     const data = EVOLUTION_DATA;
     return of({

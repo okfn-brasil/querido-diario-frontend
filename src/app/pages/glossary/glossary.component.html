@@ -1,28 +1,30 @@
 <ng-container *ngIf="glossary$ | async as glossary">
   <app-container theme="light">
-    <app-column [gap]="20">
-      <h1>{{ glossary.title }}</h1>
-      <app-column [gap]="46">
-        <div fxLayout="row wrap" fxLayoutGap="18px" class="nav-dark">
-          <ng-container *ngFor="let action of glossary.actions">
-            <a [routerLink]="action.to">{{ action.text }}</a>
-          </ng-container>
-        </div>
-        <div class="typo-inner" [innerHTML]="glossary.text"></div>
-        <app-column [gap]="60">
-          <ng-container *ngFor="let item of glossary.items">
-            <h2>{{ item.title }}</h2>
-            <app-column [gap]="42">
-              <ng-container *ngFor="let char of item.items">
-                <app-column [gap]="22">
-                  <h3>{{ char.title }}</h3>
-                  <div class="typo-inner" [innerHTML]="char.text"></div>
-                </app-column>
-              </ng-container>
-            </app-column>
-          </ng-container>
+    <div class="container-inner">
+      <app-column [gap]="20">
+        <h1>{{ glossary.title }}</h1>
+        <app-column [gap]="46">
+          <div fxLayout="row wrap" fxLayoutGap="18px" class="nav-dark">
+            <ng-container *ngFor="let action of glossary.actions">
+              <a [routerLink]="action.to">{{ action.text }}</a>
+            </ng-container>
+          </div>
+          <div class="typo-inner" [innerHTML]="glossary.text"></div>
+          <app-column [gap]="60">
+            <ng-container *ngFor="let item of glossary.items">
+              <h2>{{ item.title }}</h2>
+              <app-column [gap]="42">
+                <ng-container *ngFor="let char of item.items">
+                  <app-column [gap]="22">
+                    <h3>{{ char.title }}</h3>
+                    <div class="typo-inner" [innerHTML]="char.text"></div>
+                  </app-column>
+                </ng-container>
+              </app-column>
+            </ng-container>
+          </app-column>
         </app-column>
       </app-column>
-    </app-column>
+    </div>
   </app-container>
 </ng-container>

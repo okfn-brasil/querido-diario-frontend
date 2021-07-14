@@ -1,50 +1,56 @@
 <ng-container *ngIf="content$ | async as content">
   <app-container>
-    <app-column [gap]="36">
-      <app-column [gap]="24">
-        <h1>{{ content.support.title }}</h1>
-        <p>{{ content.support.text }}</p>
+    <div class="container-inner">
+      <app-column [gap]="36">
+        <app-column [gap]="24">
+          <h1>{{ content.support.title }}</h1>
+          <p>{{ content.support.text }}</p>
+        </app-column>
+        <app-row [gap]="36" class="nav-secondary">
+          <ng-container *ngFor="let action of content.support.actions">
+            <a [routerLink]="action.to" [ngClass]="action.style">
+              {{ action.text }}
+            </a>
+          </ng-container>
+        </app-row>
       </app-column>
-      <app-row [gap]="36" class="nav-secondary">
-        <ng-container *ngFor="let action of content.support.actions">
-          <a [routerLink]="action.to" [ngClass]="action.style">
-            {{ action.text }}
-          </a>
-        </ng-container>
-      </app-row>
-    </app-column>
+    </div>
   </app-container>
 
   <app-goals></app-goals>
 
   <app-container>
-    <app-column [gap]="64">
-      <h1>{{ content.who_supports.title }}</h1>
-      <app-column [gap]="48">
-        <ng-container *ngFor="let supporter of content.who_supports.items">
-          <app-column [gap]="22">
-            <ng-container *ngIf="supporter.title">
-              <h3>{{ supporter.title }}</h3>
-            </ng-container>
-            <ng-container *ngIf="supporter.action">
-              <h3>
-                <a [href]="supporter.action.to">{{ supporter.action.text }}</a>
-              </h3>
-            </ng-container>
-            <div class="typo-inner" [innerHTML]="supporter.text"></div>
-            <ng-container *ngFor="let icon of supporter.icons">
-              <app-icon [icon]="icon"></app-icon>
-            </ng-container>
-            <app-row>
-              <app-column  *ngFor="let item of supporter.items">
-                <app-column [gap]="36">
-                  <p>{{ item }}</p>
+    <div class="container-inner">
+      <app-column [gap]="64">
+        <h1>{{ content.who_supports.title }}</h1>
+        <app-column [gap]="48">
+          <ng-container *ngFor="let supporter of content.who_supports.items">
+            <app-column [gap]="22">
+              <ng-container *ngIf="supporter.title">
+                <h3>{{ supporter.title }}</h3>
+              </ng-container>
+              <ng-container *ngIf="supporter.action">
+                <h3>
+                  <a [href]="supporter.action.to">{{
+                    supporter.action.text
+                  }}</a>
+                </h3>
+              </ng-container>
+              <div class="typo-inner" [innerHTML]="supporter.text"></div>
+              <ng-container *ngFor="let icon of supporter.icons">
+                <app-icon [icon]="icon"></app-icon>
+              </ng-container>
+              <app-row>
+                <app-column *ngFor="let item of supporter.items">
+                  <app-column [gap]="36">
+                    <p>{{ item }}</p>
+                  </app-column>
                 </app-column>
-              </app-column>
-            </app-row>
-          </app-column>
-        </ng-container>
+              </app-row>
+            </app-column>
+          </ng-container>
+        </app-column>
       </app-column>
-    </app-column>
+    </div>
   </app-container>
 </ng-container>

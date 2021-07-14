@@ -1,60 +1,66 @@
 <app-container *ngIf="tech$ | async as tech">
-  <app-column [gap]="36">
-    <app-column [gap]="16">
-      <h1>{{ tech.title }}</h1>
-      <h3>{{ tech.text }}</h3>
-    </app-column>
-    <app-row [gap]="36" class="nav-secondary">
-      <ng-container *ngFor="let action of tech.actions">
-        <a [routerLink]="action.to" [ngClass]="action.style">
-          {{ action.text }}
-        </a>
-      </ng-container>
-    </app-row>
-  </app-column>
-</app-container>
-
-<app-container *ngIf="doc$ | async as doc" theme="light">
-  <app-column [gap]="60">
-    <app-column [gap]="40">
-      <h1>{{ doc.title }}</h1>
-      <app-column>
-        <p>{{ doc.text }}</p>
-        <ng-container *ngFor="let action of doc.actions">
+  <div class="container-inner">
+    <app-column [gap]="36">
+      <app-column [gap]="16">
+        <h1>{{ tech.title }}</h1>
+        <h3>{{ tech.text }}</h3>
+      </app-column>
+      <app-row [gap]="36" class="nav-secondary">
+        <ng-container *ngFor="let action of tech.actions">
           <a [routerLink]="action.to" [ngClass]="action.style">
             {{ action.text }}
           </a>
         </ng-container>
+      </app-row>
+    </app-column>
+  </div>
+</app-container>
+
+<app-container *ngIf="doc$ | async as doc" theme="light">
+  <div class="container-inner">
+    <app-column [gap]="60">
+      <app-column [gap]="40">
+        <h1>{{ doc.title }}</h1>
+        <app-column>
+          <p>{{ doc.text }}</p>
+          <ng-container *ngFor="let action of doc.actions">
+            <a [routerLink]="action.to" [ngClass]="action.style">
+              {{ action.text }}
+            </a>
+          </ng-container>
+        </app-column>
+      </app-column>
+      <app-column *ngFor="let docText of docTexts$ | async" [gap]="42">
+        <h2>{{ docText.title }}</h2>
+        <div class="typo-inner" [innerHTML]="docText.text"></div>
       </app-column>
     </app-column>
-    <app-column *ngFor="let docText of docTexts$ | async" [gap]="42">
-      <h2>{{ docText.title }}</h2>
-      <div class="typo-inner" [innerHTML]="docText.text"></div>
-    </app-column>
-  </app-column>
+  </div>
 </app-container>
 
 <ng-container *ngIf="reports$ | async as reports">
   <app-container
-    [title]="reports.title"
     [gap]="34"
     theme="light"
     bg="bg-gray-square"
   >
-    <p>{{ reports.text }}</p>
-    <app-row [gap]="17">
-      <app-column
-        [style.padding]="'42px 30px'"
-        *ngFor="let item of reports.items"
-        [gap]="34"
-        theme="dark-secondary"
-      >
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.text }}</p>
-        <ng-container *ngFor="let action of item.actions">
-          <a [routerLink]="'/'">{{ action.text }}</a>
-        </ng-container>
-      </app-column>
-    </app-row>
+    <div class="container-inner">
+      <h1>{{reports.title}}</h1>
+      <p>{{ reports.text }}</p>
+      <app-row [gap]="17">
+        <app-column
+          [style.padding]="'42px 30px'"
+          *ngFor="let item of reports.items"
+          [gap]="34"
+          theme="dark-secondary"
+        >
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.text }}</p>
+          <ng-container *ngFor="let action of item.actions">
+            <a [routerLink]="'/'">{{ action.text }}</a>
+          </ng-container>
+        </app-column>
+      </app-row>
+    </div>
   </app-container>
 </ng-container>

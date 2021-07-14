@@ -1,10 +1,8 @@
 <ng-container *ngIf="infos$ | async as infos">
-  <app-container
-    [title]="infos.title"
-    [gap]="34"
-    theme="light"
-    [bg]="bg"
-  >
+  <app-container [gap]="34" theme="light" [bg]="bg">
+    <div class="container-inner">
+      <h1>{{ infos.title }}</h1>
+    </div>
     <app-row [gap]="17">
       <app-column
         [style.padding]="'42px 30px'"

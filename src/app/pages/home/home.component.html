@@ -1,10 +1,13 @@
 <app-container theme="light">
-  <h1>
-    Explore os diários oficiais dos municípios e fique de olho nas ações dos
-    governos
-  </h1>
-  <app-search-form></app-search-form>
+  <div class="container-inner">
+    <h1>
+      Explore os diários oficiais dos municípios e fique de olho nas ações dos
+      governos
+    </h1>
+    <app-search-form></app-search-form>
+  </div>
 </app-container>
+
 <ng-container *ngIf="evolution$ | async as evolution">
   <app-container [title]="evolution.title" [gap]="34">
     <app-row layoutAlign="space-between">
@@ -58,15 +61,17 @@
       <app-icon [icon]="{ file: 'play', height: 50, width: 50 }"></app-icon>
     </a>
     <app-video-modal fxHide></app-video-modal>
-    <app-column [gap]="28">
-      <h1>Conheça a trajetória e os próximos passos do Querido Diário</h1>
-      <app-row>
-        <p>Saiba mais sobre o projeto</p>
-        <app-icon
-          [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
-        ></app-icon>
-      </app-row>
-    </app-column>
+    <div class="container-inner">
+      <app-column [gap]="28">
+        <h1>Conheça a trajetória e os próximos passos do Querido Diário</h1>
+        <app-row>
+          <p>Saiba mais sobre o projeto</p>
+          <app-icon
+            [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
+          ></app-icon>
+        </app-row>
+      </app-column>
+    </div>
   </app-column>
 </app-container>
 

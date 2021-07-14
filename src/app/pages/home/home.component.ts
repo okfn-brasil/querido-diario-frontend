@@ -14,12 +14,6 @@ export class HomeComponent implements OnInit {
   help$: Observable<any> = of(null);
   goals$: Observable<any> = of(null)
   realization$: Observable<any> = of(null)
-  /*help: Observable<any[]> = of(HELP_LIST);
-  goals: Observable<any[]> = of(GOAL_LIST);
-  access_levels: Observable<any[]> = of(ACCESS_LEVEL_LIST);
-  searchForm: Observable<any> = of(SEARCH_FORM);
-  follow: any = FOLLOW;
-  sections: any[] = [];*/
 
   constructor(private modal: MatDialog, private homeService: HomeService) {}
 

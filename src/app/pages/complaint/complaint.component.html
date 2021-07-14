@@ -1,11 +1,13 @@
 <ng-container *ngIf="complaint$ | async as complaint">
   <app-container theme="light">
-    <app-column [gap]="60">
-      <h1>{{ complaint.title }}</h1>
-      <ng-container *ngFor="let item of complaint.items">
-        <h2>{{ item.title }}</h2>
-        <div class="typo-inner" [innerHTML]="item.text"></div>
-      </ng-container>
-    </app-column>
+    <div class="container-inner">
+      <app-column [gap]="60">
+        <h1>{{ complaint.title }}</h1>
+        <ng-container *ngFor="let item of complaint.items">
+          <h2>{{ item.title }}</h2>
+          <div class="typo-inner" [innerHTML]="item.text"></div>
+        </ng-container>
+      </app-column>
+    </div>
   </app-container>
 </ng-container>
