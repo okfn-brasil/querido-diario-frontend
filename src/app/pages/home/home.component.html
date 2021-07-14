@@ -1,11 +1,9 @@
-<app-container theme="light">
-  <div class="container-inner">
-    <h1>
-      Explore os diários oficiais dos municípios e fique de olho nas ações dos
-      governos
-    </h1>
-    <app-search-form></app-search-form>
-  </div>
+<app-container theme="light" [inner]="true">
+  <h1>
+    Explore os diários oficiais dos municípios e fique de olho nas ações dos
+    governos
+  </h1>
+  <app-search-form></app-search-form>
 </app-container>
 
 <ng-container *ngIf="evolution$ | async as evolution">

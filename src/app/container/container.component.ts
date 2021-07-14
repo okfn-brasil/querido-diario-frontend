@@ -42,17 +42,8 @@ export class ContainerComponent implements OnInit {
   @Input()
   layout: string = 'column';
 
-  //container: ContainerProps = defaultContainer;
-
-  //@Input()
-  //containerProps: ContainerProps | null = null;
-
   constructor() {}
 
   ngOnInit(): void {
-    /*if (this.containerProps) {
-      console.log('containerProps ', this.containerProps)
-      this.container = { ...this.container, ...this.containerProps };
-    }*/
   }
 }
