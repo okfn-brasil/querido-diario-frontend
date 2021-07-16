@@ -1,5 +1,5 @@
 <ng-container [ngSwitch]="element.type">
-  <app-h1 *ngSwitchCase="'h1'">{{ element.content }}</app-h1>
+  <h1 *ngSwitchCase="'h1'">{{ element.content }}</h1>
   <app-icon *ngSwitchCase="'icon'" [icon]="element"></app-icon>
   <p *ngSwitchCase="'text'">
     {{ element.content }}

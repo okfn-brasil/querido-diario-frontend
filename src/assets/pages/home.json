@@ -1,0 +1,168 @@
+{
+  "explore": {
+    "title": "Explore os diários oficiais dos municípios e fique de olho nas ações dos governos"
+  },
+  "evolution": {
+    "title": "Acompanhe a evolução do Querido Diário",
+    "items": [
+      {
+        "icon": {
+          "file": "check",
+          "height": 76,
+          "width": 76
+        },
+        "count": 12,
+        "text": "Cidades já na plataforma"
+      },
+      {
+        "count": 12,
+        "icon": {
+          "file": "search",
+          "height": 76,
+          "width": 76
+        },
+        "text": "Cidades já têm robôs para coletar diários"
+      },
+      {
+        "icon": {
+          "file": "pin",
+          "height": 76,
+          "width": 76
+        },
+        "count": 12,
+        "height": 76,
+        "width": 76,
+        "text": "Cidades já foram mapeadas pelo censo"
+      }
+    ]
+  },
+  "help": {
+    "title": "Precisamos do seu apoio",
+    "items": [
+      {
+        "icon": { "file": "document", "height": 56, "width": 40 },
+        "title": "Nossa próxima meta",
+        "text": "Nossa próxima meta",
+        "actions": [
+          {
+            "text": "Doe",
+            "icon": "arrow",
+            "to": "/doe",
+            "style": "btn-primary"
+          },
+          {
+            "text": "Ver todas as metas",
+            "icon": "arrow",
+            "to": "/doe",
+            "style": "btn-secondary"
+          }
+        ]
+      },
+      {
+        "icon": { "file": "document", "height": 56, "width": 40 },
+        "title": "Contribua como desenvolvedor",
+        "text": "Contribua com código - o Querido Diário é um projeto de código aberto, então qualquer pessoa pode colaborar com novas funcionalidades para a plataforma",
+        "actions": [
+          {
+            "text": "Comece por aqui",
+            "icon": "arrow",
+            "to": "/doe",
+            "style": "btn-secondary"
+          }
+        ]
+      },
+      {
+        "icon": { "file": "document", "height": 56, "width": 40 },
+        "title": "Cadastre um município",
+        "text": "Cadastre um município - precisamos saber onde as prefeituras publicam seus diários oficiais",
+        "actions": [
+          {
+            "text": "Doe",
+            "icon": "arrow",
+            "to": "/doe",
+            "style": "btn-secondary"
+          }
+        ]
+      }
+    ]
+  },
+  "goals": {
+    "title": "Nossas Metas",
+    "text": "O querido diário está só começando! Temos vários objetivos para o projeto, e você pode nos ajudar a chegar lá:",
+    "items": [
+      {
+        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
+        "title": "Chegamos aqui",
+        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
+        "money": "R$ 2000"
+      },
+      {
+        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
+        "title": "Chegamos aqui",
+        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
+        "money": "R$ 2000",
+        "actions": [{ "text": "Ir para o catarse", "to": "Catarse" }]
+      },
+      {
+        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
+        "title": "Chegamos aqui",
+        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
+        "money": "R$ 2000"
+      },
+      {
+        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
+        "title": "Chegamos aqui",
+        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
+        "money": "R$ 2000"
+      },
+      {
+        "icon": "ok-hand",
+        "title": "Chegamos aqui",
+        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
+        "money": "R$ 2000"
+      }
+    ]
+  },
+  "infos": {
+    "title": "Entenda",
+    "items": [
+      {
+        "title": "Nível de Acesso",
+        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+      },
+      {
+        "title": "Glossário",
+        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+      },
+      {
+        "title": "Como denunciar ou pedir informações",
+        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+      }
+    ]
+  },
+  "trajectory": {
+    "title": "Conheça a trajetória e próximos passos do Querido Diário",
+    "text": "Saiba mais sobre o projeto"
+  },
+  "realization": [
+    {
+      "title": "REALIZAÇÃO",
+      "icons": [
+        { "file": "logo-OK", "height": 30, "width": 126 },
+        { "file": "logo-serenata", "height": 40, "width": 82 },
+        { "file": "logo-embaixadores", "height": 18, "width": 116 }
+      ]
+    },
+    {
+      "title": "APOIO",
+      "icons": [
+        { "file": "logo-Ilda", "height": 17, "width": 52 },
+        { "file": "logo-jurema", "height": 18, "width": 80 },
+        { "file": "logo-digitalocean", "height": 18, "width": 110 }
+      ]
+    }
+  ]
+}

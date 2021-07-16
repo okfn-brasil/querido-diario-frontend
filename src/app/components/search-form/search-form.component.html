@@ -12,7 +12,7 @@
           [matAutocomplete]="auto"
         />
         <mat-autocomplete #auto="matAutocomplete">
-          <p class="p-secondary autocomplete-title">{{ field.text }}</p>
+          <p class="typo-secondary autocomplete-title">{{ field.text }}</p>
           <div *ngIf="field.options">
             <mat-option
               *ngFor="let option of field.options | async"
@@ -45,7 +45,7 @@
         [matAutocomplete]="auto"
       />
       <mat-autocomplete #auto="matAutocomplete">
-        <p class="p-secondary autocomplete-title">Sugestões de busca</p>
+        <p class="typo-secondary autocomplete-title">Sugestões de busca</p>
         <mat-option
           *ngFor="let option of filteredOptions | async"
           [value]="option"

@@ -1,0 +1,51 @@
+{
+  "support": {
+    "title": "APOIE",
+    "actions": [
+      { "text": "Cadastre um município", "to": "/apoie#nossas-metas" },
+      { "text": "Nossas Metas", "to": "/apoie#nossas-metas" },
+      { "text": "Quem apoia", "to": "/apoie#quem-apoia" },
+      { "text": "Envie sua sugestão", "to": "/sugestao" }
+    ]
+  },
+  "tech": {
+    "title": "TECNOLOGIA",
+    "actions": [
+      { "text": "Documentação", "to": "/tecnologia#documentacao" },
+      { "text": "Contribua com código", "to": "/tecnologia#contribua" },
+      { "text": "Relatórios", "to": "/tecnologia#relatios" },
+      { "text": "Blog", "to": "/blog" }
+    ]
+  },
+  "about": {
+    "title": "SOBRE",
+    "actions": [
+      { "text": "História", "to": "/sobre#historia" },
+      { "text": "Casos de sucesso" },
+      { "text": "Quem somos", "to": "sobre#casos-de-sucesso" },
+      {
+        "text": "Política de privacidade",
+        "to": "/sobre#politica-de-privacidade"
+      }
+    ]
+  },
+  "social": {
+    "title": "REDES SOCIAIS",
+    "actions": [
+      { "file": "twitter", "height": 36, "width": 36 },
+      { "file": "instagram", "height": 36, "width": 36 },
+      { "file": "facebook", "height": 36, "width": 36 },
+      { "file": "linkedin", "height": 36, "width": 36 }
+    ]
+  },
+  "copyright": {
+    "icons": [
+      { "file": "bitmap", "width": 36, "height": 36 },
+      { "file": "circle-person", "width": 36, "height": 36 }
+    ],
+    "texts": [
+      "Todo o conteúdo do Querido Diário está disponível sob a licença Creative Commons Atribuição 4.0 Internacional, o que significa que pode ser compartilhado e reutilizado para trabalhos derivados, desde que citada a fonte.",
+      "Desenvolvedores/as: temos dados abertos e API ♥ Conheça e contribua com o código"
+    ]
+  }
+}

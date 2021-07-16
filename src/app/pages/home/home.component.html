@@ -1,188 +1,85 @@
-<div fxLayout="column">
-  <section
-    class="explore-section"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    class="bg-white-1"
-  >
-    <div class="container">
-      <div fxLayout="column" class="explore" fxLayoutAlign="center">
-        <app-h1 class="purple"
-          >Explore os diários oficiais dos municípios e fique de olho nas ações
-          dos governos
-        </app-h1>
-        <app-search-form [form]="searchForm | async"></app-search-form>
-      </div>
-    </div>
-  </section>
+<ng-container *ngIf="content$ | async as content">
+  <app-container theme="light">
+    <h1>
+      {{ content.explore.title }}
+    </h1>
+    <app-search-form></app-search-form>
+  </app-container>
 
-  <ng-container *ngFor="let element of sections">
-    <app-content [element]="element"></app-content>
-  </ng-container>
-
-  <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
-    <div
-      class="help container"
-      fxFlexAlign="center"
-      fxLayout="column"
-      fxLayoutGap="34px"
-    >
-      <app-h1>Precisamos do seu apoio</app-h1>
-
-      <div
-        fxLayout="row"
-        fxLayout.xs="column"
-        fxLayoutGap.xs="60px"
-        fxLayoutAlign="space-between"
-      >
-        <div
-          class="help-card"
-          *ngFor="let item of help | async"
-          fxLayout="column"
-          fxLayout.xs="row"
-          fxLayoutGap="34px"
-          fxLayoutGap.xs="22px"
-        >
-          <div>
-            <mat-icon svgIcon="document" class="document-icon"></mat-icon>
-          </div>
-          <div fxLayout="column" fxLayoutGap="34px" fxLayoutGap.xs="4px">
-            <div fxLayout="column" fxLayoutGap="12px">
-              <app-h2>{{ item.title }}</app-h2>
-              <p>
-                {{ item.text }}
-              </p>
-            </div>
-            <div fxLayout="row" fxLayoutGap="12px">
-              <button *ngFor="let action of item.actions" class="censo">
+  <app-container [title]="content.evolution.title" [gap]="34">
+    <app-row layoutAlign="space-between">
+      <app-column *ngFor="let item of content.evolution.items">
+        <app-row [gap]="24">
+          <app-icon [icon]="item.icon"></app-icon>
+          <app-column>
+            <p>{{ item.count }}</p>
+            <p>{{ item.text }}</p>
+          </app-column>
+        </app-row>
+      </app-column>
+    </app-row>
+  </app-container>
+  <app-container [title]="content.help.title" [gap]="34" theme="dark">
+    <app-row layoutAlign="space-between">
+      <app-column *ngFor="let item of content.help.items">
+        <app-column [gap]="24">
+          <app-icon [icon]="item.icon"></app-icon>
+          <app-column [appWidth]="380">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+          </app-column>
+          <app-row [gap]="12">
+            <ng-container *ngFor="let action of item.actions">
+              <button [ngClass]="action.style">
                 {{ action.text }}
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            </ng-container>
+          </app-row>
+        </app-column>
+      </app-column>
+    </app-row>
+  </app-container>
 
-  <section class="bg-purple-1" fxLayoutAlign="center" fxLayout="row">
-    <div fxLayout="column" fxLayoutGap="42px">
-      <div fxLayoutGap="22px" fxLayout="column">
-        <app-h1>Nossas Metas</app-h1>
-        <p>
-          O querido diário está só começando! Temos vários objetivos para o
-          projeto, e você pode nos ajudar a chegar lá:
-        </p>
-      </div>
-      <app-carousel [items]="goals | async"></app-carousel>
-    </div>
-  </section>
+  <app-goals></app-goals>
 
-  <section
-    class="bg-white-1 bg-gray-square"
-    fxLayoutAlign="center"
-    fxLayout="row"
-  >
-    <div
-      class="container details"
-      fxLayout="column"
-      fxFlexAlign="center"
-      fxLayoutAlign="space-between"
-    >
-      <app-h1>Entenda</app-h1>
-      <div
-        fxLayout="row"
-        fxLayout.xs="column"
-        class="container-inner"
-        fxLayoutAlign="space-between"
-        fxLayoutGap.xs="16px"
-      >
-        <div
-          fxLayout="column"
-          class="project-card"
-          fxLayoutGap="12px"
-          *ngFor="let item of access_levels | async"
-        >
-          <app-h2>{{ item.title }}</app-h2>
-          <nav>
-            <p>
-              {{ item.text }}
-            </p>
-            <a routerLink="/acesso" *ngFor="let action of item.actions">
-              {{ action.text }}
-              <mat-icon
-                svgIcon="{{ item.file }}"
-                class="{{ item.file }}"
-              ></mat-icon>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
+  <app-infos></app-infos>
 
-  <section
-    class="bg-purple-2 bg-purple-square"
-    fxLayoutAlign="center"
-    fxLayout="column"
-  >
-    <a (click)="openVideo()" class="video" fxLayout="row">
-      <img
-        src="../../../assets/images/video@1x.jpg"
-        srcset="assets/images/video@2x.jpg 2x"
-      />
-      <mat-icon svgIcon="play"></mat-icon>
-    </a>
-    <app-video-modal fxHide></app-video-modal>
-    <div fxLayout="row" class="container">
-      <div class="way" fxLayout="column" fxLayoutAlign="center center">
-        <div fxLayout="column" fxLayoutGap="24px">
-          <app-h1
-            >Conheça a trajetória e os próximos passos do Querido Diário</app-h1
-          >
-          <div fxLayout="row">
+  <app-container containerClass="container-notop" bg="bg-purple-square">
+    <app-column [gap]="100">
+      <a (click)="openVideo()" class="video" fxLayout="row">
+        <img
+          src="../../../assets/images/video@1x.jpg"
+          srcset="assets/images/video@2x.jpg 2x"
+        />
+        <app-icon [icon]="{ file: 'play', height: 50, width: 50 }"></app-icon>
+      </a>
+      <app-video-modal fxHide></app-video-modal>
+      <div class="container-inner">
+        <app-column [gap]="28">
+          <h1>Conheça a trajetória e os próximos passos do Querido Diário</h1>
+          <app-row>
             <p>Saiba mais sobre o projeto</p>
-            <mat-icon
-              svgIcon="white-arrow"
-              style="height: 12px; width: 12px"
-              class="white-arrow"
-            ></mat-icon>
-          </div>
-        </div>
+            <app-icon
+              [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
+            ></app-icon>
+          </app-row>
+        </app-column>
       </div>
-    </div>
-  </section>
+    </app-column>
+  </app-container>
 
-  <section class="bg-white-1">
-    <div class="partners">
-      <div
-        fxLayout="row"
-        fxLayout.xs="column"
-        fxLayoutAlign="space-between"
-        fxLayoutGap.xs="54px"
-      >
-        <div fxLayout="column" fxFlex="50%" fxFlex.xs="100%">
-          <p>REALIZAÇÃO</p>
-          <div fxLayout="row" fxLayoutGap="34px">
-            <mat-icon svgIcon="logo-OK" class="logo-OK"></mat-icon>
-            <mat-icon svgIcon="logo-serenata" class="logo-serenata"></mat-icon>
-            <mat-icon
-              svgIcon="logo-embaixadores"
-              class="logo-embaixadores"
-            ></mat-icon>
-          </div>
-        </div>
-        <div fxLayout="column" fxFlex="50%" fxFlex.xs="100%">
-          <p>APOIO</p>
-          <div fxLayout="row" fxLayoutGap="34px">
-            <mat-icon svgIcon="logo-Ilda" class="logo-Ilda"></mat-icon>
-            <mat-icon svgIcon="logo-jurema" class="logo-jurema"></mat-icon>
-            <mat-icon
-              svgIcon="logo-digitalocean"
-              class="logo-digitalocean"
-            ></mat-icon>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+  <app-container theme="light">
+    <app-row [gap]="122">
+      <ng-container *ngFor="let item of content.realization">
+        <app-column [gap]="34">
+          <p>{{ item.title }}</p>
+          <app-row [gap]="34">
+            <ng-container *ngFor="let icon of item.icons">
+              <app-icon [icon]="icon"></app-icon>
+            </ng-container>
+          </app-row>
+        </app-column>
+      </ng-container>
+    </app-row>
+  </app-container>
+</ng-container>

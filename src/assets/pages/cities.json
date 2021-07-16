@@ -1,0 +1,36 @@
+[
+  {
+    "territory_id": "1302504",
+    "territory_name": "Manacapuru",
+    "state_code": "AM",
+    "publication_urls": [
+      "http://www.diariomunicipal.com.br/aam/pesquisar?busca_avancada[__paper]=1&busca_avancada[entidadeUsuaria]=1120"
+    ],
+    "level": "1"
+  },
+  {
+    "territory_id": "1302553",
+    "territory_name": "Manaquiri",
+    "state_code": "AM",
+    "level": "0"
+  },
+  {
+    "territory_id": "1302603",
+    "territory_name": "Manaus",
+    "state_code": "AM",
+    "publication_urls": ["https://diario.imprensaoficial.am.gov.br/"],
+    "level": "3"
+  },
+  {
+    "territory_id": "2509008",
+    "territory_name": "Manaíra",
+    "state_code": "PB",
+    "level": "0"
+  },
+  {
+    "territory_id": "2609154",
+    "territory_name": "Manari",
+    "state_code": "PE",
+    "level": "0"
+  }
+]

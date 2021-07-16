@@ -1,0 +1,200 @@
+{
+  "support": {
+    "title": "Apoie",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque odio neque, interdum vel nunc varius, fringilla viverra risus.",
+    "actions": [
+      { "text": "Nossas metas", "to": "/doe", "style": "link-secondary" },
+      { "text": "Quem apoia", "to": "/doe", "style": "link-secondary" }
+    ]
+  },
+  "who_supports": {
+    "title": "Quem apoia",
+    "items": [
+      {
+        "title": "Realização",
+        "text": "O Querido Diário é um projeto realizado e desenvolvido pela Open Knowledge Brasil, contando com a colaboração de sua rede de pessoas Embaixadoras de Inovação Cívica e da comunidade em torno da Operação Serenata de Amor.",
+        "icons": [
+          { "file": "logo-OK", "height": 32, "width": 116 },
+          { "file": "logo-serenata", "height": 32, "width": 116 },
+          { "file": "logo-embaixadores", "height": 32, "width": 116 }
+        ]
+      },
+      {
+        "title": "Financiamento do algoritmo de busca",
+        "text": "Em junho de 2020, a Open Knowledge Brasil foi uma das organizações selecionadas pelo projeto EmpatIA, mantido pela Iniciativa Latino-Americana de Dados Abertos (ILDA) e com financiamento do Banco Interamericano de Desenvolvimento (BID). O projeto visa compreender e desenvolver novos conhecimentos sobre a utilização da Inteligência Artificial (IA) na resolução de problemas públicos, e possibilitou o desenvolvimento da primeira versão do algoritmo de busca da plataforma Querido Diário.",
+        "icons": [
+          { "file": "logo-Ilda", "height": 17, "width": 52 },
+          { "file": "logo-Ilda", "height": 17, "width": 52 }
+        ]
+      },
+      {
+        "title": "Desenvolvimento frontend e usabilidade",
+        "text": "A atual versão da plataforma foi desenvolvida com o apoio da Jurema, que é responsável pelo frontend e pelo estudo da experiência das pessoas usuárias.",
+        "icons": [{ "file": "logo-jurema", "height": 18, "width": 80 }]
+      },
+      {
+        "title": "Automatização da raspagem de dados",
+        "text": "O Querido Diário também recebe apoio da Zyte para utilizar sua infraestrutura, possibilitando a automatização do processo de raspagem das informações textuais contidas nos diários oficiais.",
+        "icons": [{ "file": "logo-jurema", "height": 18, "width": 80 }]
+      },
+      {
+        "title": "Armazenamento e hospedagem",
+        "text": "A plataforma está hospedada na DigitalOcean, que é apoiadora de longa data do Querido Diário e da OperaçãoSerenata de Amor.",
+        "icons": [{ "file": "logo-digitalocean", "height": 18, "width": 110 }]
+      },
+      {
+        "title": "comunidade",
+        "text": "Existem várias maneiras de contribuir com o Querido Diário. Se você deseja ajudar o projeto a ir mais longe, acesse nossa campanha de financiamento coletivo no Catarsee consulte as faixas de doação e suas recompensas. Assim, você sejunta às XX pessoas que já nos ajudaram:",
+        "action": {
+          "title": "Repositório de desenvolvimento da Toolbox (processamento de dados)",
+          "to": "/foo"
+        },
+        "items": [
+          "Alan Silva Costa",
+          "Alexandre Vasconcelos",
+          "Álvaro Dornelles Hetzel",
+          "Amanda Lie Kitagava",
+          "Ana Luiza Santos Terra",
+          "Andre Assumpcao",
+          "Augusto Pascutti",
+          "Bruno Englert Moutinho",
+          "Caio Werneck",
+          "Danilo Amaral de OLiveira",
+          "Dreyf Assis Gonçalves",
+          "Eduardo Carvalho Rosa",
+          "Felipe Geremia Nievinski",
+          "Frank Farias Santos",
+          "George Antonio Vilas Boas Santiago",
+          "Gustavo Brondani Schenkel",
+          "Henrique Lorea Leite",
+          "Igor Bandim",
+          "Isadora Queiroz",
+          "José Antônio Ribeiro Vargas",
+          "Jose Guilherme Vanz",
+          "Juliano De Holanda Freitas",
+          "Kelsen Henrique",
+          "Louise Pereira",
+          "Marco Guedes",
+          "Maria Victoria Ferraz",
+          "Mário Rutman",
+          "Mario Santos Silva",
+          "Mércia Maguerroski",
+          "Paulo Costa",
+          "Paulo Henrique Franzon",
+          "Pedro Guedes",
+          "Rafael ROsado Urquhart",
+          "Rafael Toledo",
+          "Renato Rebelo de Moraes",
+          "Ricardo Fernandes de Souza",
+          "Vítor Márcio Paiva de Sousa Baptista",
+          "Natássya Barlate Floro da Silva",
+          "Guilherme R. Storck",
+          "Francisco Goldmeier Tochetto",
+          "Thiago Sant' Helena",
+          "Débora Maria Valverde da Silva",
+          "Murilo Viana",
+          "Vinícius Monteiro"
+        ]
+      },
+      {
+        "action": {
+          "text": "Se você é uma pessoa desenvolvedora interessada em contribuir com o código do projeto, que é aberto e acessível a toda a comunidade, consulte nossos repositórios no Github e junte-se ao time que ajuda o Querido Diário a tomar forma:",
+          "to": "/foo"
+        }
+      },
+      {
+        "title": "Repositório geral do Querido Diário",
+        "action": {
+          "text": "Repositório de desenvolvimento da Toolbox (processamento de dados)",
+          "to": "/foo"
+        },
+        "items": [
+          "José Guilherme Vanz",
+          "Irio Musskopf",
+          "Renne Rocha",
+          "Giovani Sousa Leite",
+          "Eduardo Cuducos",
+          "Antonio Vendramin",
+          "Giulio Carvalho",
+          "Bruno Lellis",
+          "Danilo Jeremias da Silva",
+          "Rodolfo Lottin Pereira",
+          "Victor Torres",
+          "Alan Fachini",
+          "Vitor Baptista",
+          "Pedro Garcias",
+          "Felipe Ruhland",
+          "Helder Geovane Gomes de Lima",
+          "Alvaro Leonel",
+          "Ana Paula Gomes",
+          "Fábio C. Barrionuevo da Luz",
+          "Adorilson Bezerra",
+          "Weibe Moura",
+          "Beothorn",
+          "Anderson Berg",
+          "Bruna Moreira",
+          "Jeferson Alves",
+          "Hugo Leonardo Costa e Silva",
+          "Beothorn",
+          "Anderson Berg",
+          "Bruna Moreira",
+          "Jeferson Alves",
+          "Hugo Leonardo Costa e Silva",
+          "Thiago Curvelo",
+          "Vinicius Artur",
+          "Rodrigo Vieira",
+          "Avelino",
+          "Gustavo De Mari Pereira",
+          "Laerte Pereira",
+          "Camila Fracaro",
+          "Jonathan Schweder",
+          "Gustavo Coelho",
+          "André Angeluci",
+          "Lucas Santos Summer",
+          "Pedro Peixoto",
+          "Rodrigo Chamun",
+          "Enderson Menezes",
+          "Nícolas F. R. A. Prado",
+          "Vinicius Gasparini",
+          "Gabriel Trette",
+          "Paulo Henrique Cuchi",
+          "Chico Venancio",
+          "Daiana Marasquin",
+          "Jonathan Cardoso",
+          "Lucas Rangel Cezimbra",
+          "Gabriel (Gabu) Bellon",
+          "Mohan Sha",
+          "Alexandre Vicenzi",
+          "Rodrigo Lima"
+        ]
+      },
+      {
+        "title": "Repositório de desenvolvimento da API",
+        "items": ["Repositório de desenvolvimento da API "]
+      },
+      {
+        "action": {
+          "text": "Repositório de desenvolvimento da Toolbox (processamento de dados)",
+          "to": "/foo"
+        },
+        "items": ["Andre Assumpcao", "José Guilherme Vanz"]
+      },
+      {
+        "action": {
+          "text": "Censo dos diários oficiais - análises e relatórios",
+          "to": "/foo"
+        },
+        "items": [
+          "Bernardo Chrispim Baron",
+          "Geovane Oliveira de Carvalho",
+          "Ana Cecília Vieira",
+          "Giulio Carvalho",
+          "David Pierre",
+          "Fausto Sá Teles",
+          "Vinicius Antonini",
+          "Ana Paula Gomes"
+        ]
+      }
+    ]
+  }
+}
