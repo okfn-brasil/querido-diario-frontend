@@ -1,15 +1,14 @@
-<app-container theme="light" [inner]="true">
-  <h1>
-    Explore os diários oficiais dos municípios e fique de olho nas ações dos
-    governos
-  </h1>
-  <app-search-form></app-search-form>
-</app-container>
+<ng-container *ngIf="content$ | async as content">
+  <app-container theme="light">
+    <h1>
+      {{ content.explore.title }}
+    </h1>
+    <app-search-form></app-search-form>
+  </app-container>
 
-<ng-container *ngIf="evolution$ | async as evolution">
-  <app-container [title]="evolution.title" [gap]="34">
+  <app-container [title]="content.evolution.title" [gap]="34">
     <app-row layoutAlign="space-between">
-      <app-column *ngFor="let item of evolution.items">
+      <app-column *ngFor="let item of content.evolution.items">
         <app-row [gap]="24">
           <app-icon [icon]="item.icon"></app-icon>
           <app-column>
@@ -20,12 +19,9 @@
       </app-column>
     </app-row>
   </app-container>
-</ng-container>
-
-<ng-container *ngIf="help$ | async as help">
-  <app-container [title]="help.title" [gap]="34" theme="dark">
+  <app-container [title]="content.help.title" [gap]="34" theme="dark">
     <app-row layoutAlign="space-between">
-      <app-column *ngFor="let item of help.items">
+      <app-column *ngFor="let item of content.help.items">
         <app-column [gap]="24">
           <app-icon [icon]="item.icon"></app-icon>
           <app-column [appWidth]="380">
@@ -43,40 +39,38 @@
       </app-column>
     </app-row>
   </app-container>
-</ng-container>
 
-<app-goals></app-goals>
+  <app-goals></app-goals>
 
-<app-infos></app-infos>
+  <app-infos></app-infos>
 
-<app-container containerClass="container-notop" bg="bg-purple-square">
-  <app-column [gap]="100">
-    <a (click)="openVideo()" class="video" fxLayout="row">
-      <img
-        src="../../../assets/images/video@1x.jpg"
-        srcset="assets/images/video@2x.jpg 2x"
-      />
-      <app-icon [icon]="{ file: 'play', height: 50, width: 50 }"></app-icon>
-    </a>
-    <app-video-modal fxHide></app-video-modal>
-    <div class="container-inner">
-      <app-column [gap]="28">
-        <h1>Conheça a trajetória e os próximos passos do Querido Diário</h1>
-        <app-row>
-          <p>Saiba mais sobre o projeto</p>
-          <app-icon
-            [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
-          ></app-icon>
-        </app-row>
-      </app-column>
-    </div>
-  </app-column>
-</app-container>
+  <app-container containerClass="container-notop" bg="bg-purple-square">
+    <app-column [gap]="100">
+      <a (click)="openVideo()" class="video" fxLayout="row">
+        <img
+          src="../../../assets/images/video@1x.jpg"
+          srcset="assets/images/video@2x.jpg 2x"
+        />
+        <app-icon [icon]="{ file: 'play', height: 50, width: 50 }"></app-icon>
+      </a>
+      <app-video-modal fxHide></app-video-modal>
+      <div class="container-inner">
+        <app-column [gap]="28">
+          <h1>Conheça a trajetória e os próximos passos do Querido Diário</h1>
+          <app-row>
+            <p>Saiba mais sobre o projeto</p>
+            <app-icon
+              [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
+            ></app-icon>
+          </app-row>
+        </app-column>
+      </div>
+    </app-column>
+  </app-container>
 
-<ng-container *ngIf="realization$ | async as realization">
   <app-container theme="light">
     <app-row [gap]="122">
-      <ng-container *ngFor="let item of realization">
+      <ng-container *ngFor="let item of content.realization">
         <app-column [gap]="34">
           <p>{{ item.title }}</p>
           <app-row [gap]="34">

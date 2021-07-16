@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { COMPLAINT } from './data';
+import { ContentService } from 'src/app/services/content.service';
 
 @Component({
   selector: 'app-complaint',
@@ -8,11 +8,14 @@ import { COMPLAINT } from './data';
   styleUrls: ['./complaint.component.sass']
 })
 export class ComplaintComponent implements OnInit {
-  complaint$: Observable<any> = of(COMPLAINT);
+  content$: Observable<any> = of(null);
 
-  constructor() { }
+  constructor(
+    private contentService: ContentService
+  ) { }
 
   ngOnInit(): void {
+    this.content$ = this.contentService.find('complaint');
   }
 
 }

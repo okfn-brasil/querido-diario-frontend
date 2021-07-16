@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { PRIVACY } from './data';
+import { ContentService } from 'src/app/services/content.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -8,12 +8,15 @@ import { PRIVACY } from './data';
   styleUrls: ['./privacy-policy.component.sass']
 })
 export class PrivacyPolicyComponent implements OnInit {
-  privacy$: Observable<any> = of(PRIVACY);
+  content$: Observable<any> = of(null);
 
-  constructor() { }
+  constructor(
+    private contentService: ContentService
+  ) {
+  }
 
   ngOnInit(): void {
-    console.log(this.privacy$.toPromise().then((data) => console.log(data)))
+    this.content$ = this.contentService.find('privacy');
   }
 
 }

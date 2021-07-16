@@ -1,20 +1,10 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { ContentService } from 'src/app/services/content.service';
 import {
-  ARCHITECTURE,
-  CENSUS,
-  COLLECT,
-  CONTRIBUTION,
   DOC,
-  FRONTEND,
-  HELP,
-  PUBLIC_API,
   REPORTS,
-  SCOPE,
-  STARTUP,
   TECH,
-  TOOLBOX,
-  VERSIONS,
 } from './data';
 
 @Component({
@@ -28,21 +18,10 @@ export class TechComponent implements OnInit {
   docTexts$: Observable<any[]> = of([]);
   reports$: Observable<any> = of(REPORTS);
 
-  constructor() {}
+  constructor(private contentService: ContentService) {}
+
 
   ngOnInit(): void {
-    this.docTexts$ = of([
-      HELP,
-      SCOPE,
-      ARCHITECTURE,
-      VERSIONS,
-      CONTRIBUTION,
-      COLLECT,
-      CENSUS,
-      TOOLBOX,
-      PUBLIC_API,
-      FRONTEND,
-      STARTUP,
-    ]);
+    this.docTexts$ = this.contentService.find('tech');
   }
 }

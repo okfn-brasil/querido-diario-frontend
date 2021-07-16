@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { VideoModalComponent } from 'src/app/components/video-modal/video-modal.component';
-import { HomeService } from './home.service';
+import { ContentService } from 'src/app/services/content.service';
 
 @Component({
   selector: 'app-home',
@@ -10,18 +10,16 @@ import { HomeService } from './home.service';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
-  evolution$: Observable<any> = of(null);
-  help$: Observable<any> = of(null);
-  goals$: Observable<any> = of(null)
-  realization$: Observable<any> = of(null)
+  content$: Observable<any> = of(null)
 
-  constructor(private modal: MatDialog, private homeService: HomeService) {}
+  constructor(
+    private modal: MatDialog,
+    private contentService: ContentService
+  ) {
+  }
 
   ngOnInit() {
-    this.evolution$ = this.homeService.loadEvolution();
-    this.help$ = this.homeService.loadHelp();
-    this.goals$ = this.homeService.loadGoals();
-    this.realization$ = this.homeService.loadRealization()
+    this.content$ = this.contentService.find('home');
   }
 
   openVideo(): void {

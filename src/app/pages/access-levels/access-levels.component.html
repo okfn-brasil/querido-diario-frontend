@@ -1,14 +1,14 @@
-<ng-container *ngIf="accessLevels$ | async as accessLevels">
+<ng-container *ngIf="content$ | async as content">
   <app-container theme="light">
     <app-column [gap]="58">
       <div class="container-inner">
         <app-column [gap]="16">
-          <h1>{{ accessLevels.title }}</h1>
-          <p>{{ accessLevels.text }}</p>
+          <h1>{{ content.title }}</h1>
+          <p>{{ content.text }}</p>
         </app-column>
       </div>
       <app-row>
-        <ng-container *ngFor="let item of accessLevels.items">
+        <ng-container *ngFor="let item of content.items">
           <app-column [gap]="16">
             <app-icon [icon]="item.icon"></app-icon>
             <h3>{{ item.title }}</h3>

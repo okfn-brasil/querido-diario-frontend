@@ -1,17 +1,17 @@
-<ng-container *ngIf="glossary$ | async as glossary">
+<ng-container *ngIf="content$ | async as content">
   <app-container theme="light">
     <div class="container-inner">
       <app-column [gap]="20">
-        <h1>{{ glossary.title }}</h1>
+        <h1>{{ content.title }}</h1>
         <app-column [gap]="46">
           <div fxLayout="row wrap" fxLayoutGap="18px" class="nav-dark">
-            <ng-container *ngFor="let action of glossary.actions">
+            <ng-container *ngFor="let action of content.actions">
               <a [routerLink]="action.to">{{ action.text }}</a>
             </ng-container>
           </div>
-          <div class="typo-inner" [innerHTML]="glossary.text"></div>
+          <div class="typo-inner" [innerHTML]="content.text"></div>
           <app-column [gap]="60">
-            <ng-container *ngFor="let item of glossary.items">
+            <ng-container *ngFor="let item of content.items">
               <h2>{{ item.title }}</h2>
               <app-column [gap]="42">
                 <ng-container *ngFor="let char of item.items">

@@ -1,9 +1,9 @@
-<ng-container *ngIf="privacy$ | async as privacy">
+<ng-container *ngIf="content$ | async as content">
   <app-container theme="light">
     <div class="container-inner">
       <app-column [gap]="60">
-        <h1>{{ privacy.title }}</h1>
-        <ng-container *ngFor="let item of privacy.items">
+        <h1>{{ content.title }}</h1>
+        <ng-container *ngFor="let item of content.items">
           <app-column [gap]="22">
             <h3>{{ item.title }}</h3>
             <div class="typo-inner" [innerHTML]="item.text"></div>

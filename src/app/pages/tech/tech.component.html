@@ -1,4 +1,4 @@
-<app-container *ngIf="tech$ | async as tech" [inner]="true">
+<app-container *ngIf="tech$ | async as tech" >
     <app-column [gap]="36">
       <app-column [gap]="16">
         <h1>{{ tech.title }}</h1>
@@ -14,7 +14,7 @@
     </app-column>
 </app-container>
 
-<app-container *ngIf="doc$ | async as doc" theme="light" [inner]="true">
+<app-container *ngIf="doc$ | async as doc" theme="light" >
     <app-column [gap]="60">
       <app-column [gap]="40">
         <h1>{{ doc.title }}</h1>

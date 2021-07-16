@@ -12,8 +12,6 @@ export class ThemeDirective {
 
   ngOnInit(): void {
     if (this.theme) {
-      console.log('theme ', this.theme);
-      console.log('element ', this.el);
       this.el.nativeElement.classList.add(this.theme);
     }
   }

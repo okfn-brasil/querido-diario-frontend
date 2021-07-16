@@ -16,11 +16,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 
-import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
@@ -132,19 +132,19 @@ import { InfosComponent } from './infos/infos.component';
 })
 export class AppModule {
   constructor(router: Router, viewportScroller: ViewportScroller) {
-    router.events.pipe(
-      filter((e: Event): e is Scroll => e instanceof Scroll)
-    ).subscribe(e => {
-      if (e.position) {
-        // backward navigation
-        viewportScroller.scrollToPosition(e.position);
-      } else if (e.anchor) {
-        // anchor navigation
-        viewportScroller.scrollToAnchor(e.anchor);
-      } else {
-        // forward navigation
-        viewportScroller.scrollToPosition([0, 0]);
-      }
-    });
+    router.events
+      .pipe(filter((e: Event): e is Scroll => e instanceof Scroll))
+      .subscribe((e) => {
+        if (e.position) {
+          // backward navigation
+          viewportScroller.scrollToPosition(e.position);
+        } else if (e.anchor) {
+          // anchor navigation
+          viewportScroller.scrollToAnchor(e.anchor);
+        } else {
+          // forward navigation
+          viewportScroller.scrollToPosition([0, 0]);
+        }
+      });
   }
 }

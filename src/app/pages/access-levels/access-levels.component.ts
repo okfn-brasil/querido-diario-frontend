@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { ACCESS_LEVELS } from './data';
+import { ContentService } from 'src/app/services/content.service';
 
 @Component({
   selector: 'app-access-levels',
@@ -8,11 +8,12 @@ import { ACCESS_LEVELS } from './data';
   styleUrls: ['./access-levels.component.sass']
 })
 export class AccessLevelsComponent implements OnInit {
-  accessLevels$: Observable<any> = of(ACCESS_LEVELS);
+  content$: Observable<any> = of(null);
 
-  constructor() { }
+  constructor(private contentService: ContentService) {}
 
   ngOnInit(): void {
+    this.content$ = this.contentService.find('access-levels');
   }
 
 }
