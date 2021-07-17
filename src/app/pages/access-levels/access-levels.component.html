@@ -7,18 +7,23 @@
           <p>{{ content.text }}</p>
         </app-column>
       </div>
-      <app-row>
+      <app-row [flex]="true">
         <ng-container *ngFor="let item of content.items">
-          <app-column [gap]="16">
+          <app-column [gap]="16" [flex]="true">
             <app-icon [icon]="item.icon"></app-icon>
-            <h3>{{ item.title }}</h3>
-            <div class="typo-inner" [innerHTML]="item.text"></div>
-            <ng-container *ngFor="let action of item.actions">
-              <app-row class="nav-dark">
-                <a>{{ action.text }}</a>
-                <mat-icon svgIcon="right-arrow" class="right-arrow"></mat-icon>
-              </app-row>
-            </ng-container>
+            <app-column [gap]="16" >
+              <h3>{{ item.title }}</h3>
+              <div class="typo-inner" [innerHTML]="item.text"></div>
+              <ng-container *ngFor="let action of item.actions">
+                <app-row class="nav-dark">
+                  <a>{{ action.text }}</a>
+                  <mat-icon
+                    svgIcon="right-arrow"
+                    class="right-arrow"
+                  ></mat-icon>
+                </app-row>
+              </ng-container>
+            </app-column>
           </app-column>
         </ng-container>
       </app-row>

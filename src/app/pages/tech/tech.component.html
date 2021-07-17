@@ -40,7 +40,7 @@
       <h1>{{ reports.title }}</h1>
       <div class="typo-inner" [innerHTML]="reports.text" [style.color]="'#5E408F'"></div>
     </div>
-    <app-row [gap]="17">
+    <app-row [gap]="17" [flex]="true">
       <app-column
         [style.padding]="'42px 30px'"
         *ngFor="let item of reports.items"

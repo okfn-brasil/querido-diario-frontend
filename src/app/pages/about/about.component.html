@@ -35,7 +35,7 @@
       <h1>{{ content.successCases.title }}</h1>
       <p>{{ content.successCases.text }}</p>
     </div>
-    <app-row [gap]="17">
+    <app-row [gap]="17" [flex]="true">
       <app-column
         [style.padding]="'42px 30px'"
         *ngFor="let item of content.successCases.items"
