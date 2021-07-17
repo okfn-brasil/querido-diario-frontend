@@ -5,25 +5,28 @@
     {
       "icon": { "file": "pin", "height": 50, "width": 50 },
       "title": "Nível 0 de acesso",
-      "text": "Não possuímos a fonte de publicação do diário oficial deste município",
-      "actions": [{ "text": "Cadastre um município" }]
+      "text": "Não possuímos a(s) fonte(s) de publicação do diário oficial deste município mapeada(s). Mas você pode ajudar nesse mapeamento.",
+      "actions": [{ "text": "Cadastre um município", "to": "https://censo.ok.org.br/" }]
     },
     {
       "icon": { "file": "pin", "height": 50, "width": 50 },
       "title": "Nível 1 de acesso",
-      "text": "Possuímos a fonte de publicação do diário oficial deste município",
-      "actions": [{ "text": "Doe" }, { "text": "Contribua com código" }]
+      "text": "Já mapeamos a(s) fonte(s) de publicação do diário oficial deste município. Precisamos da sua ajuda para conseguirmos implementar o script que fará a coleta do arquivos.",
+      "actions": [
+        { "text": "Doe", "to": "https://www.catarse.me/queridodiario-okbr" },
+        { "text": "Contribua com o desenvolvimento", "to": "/tecnologia#contribua" }
+      ]
     },
     {
       "icon": { "file": "pin", "height": 50, "width": 50 },
       "title": "Nível 2 de acesso",
-      "text": "Temos o script para coletar os arquivos e armazená-los em nossa base Precisamos da sua ajuda para xxx",
-      "actions": [{ "text": "Doe" }]
+      "text": "Temos o script para coletar os arquivos e armazená-los em nossa base. Precisamos da sua ajuda para conseguir desbloquear o formato fechado dos arquivos para publicá-lo aberto na plataforma.",
+      "actions": [{ "text": "Doe", "to": "https://www.catarse.me/queridodiario-okbr" }]
     },
     {
       "icon": { "file": "pin", "height": 50, "width": 50 },
       "title": "Nível 3 de acesso",
-      "text": "o conteúdo dos diários oficiais deste município está disponível na plataforma Querido Diário"
+      "text": "O conteúdo dos diários oficiais deste município já está disponível na plataforma do Querido Diário."
     }
   ]
 }
