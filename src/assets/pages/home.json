@@ -15,7 +15,7 @@
         "text": "Cidades já na plataforma"
       },
       {
-        "count": 12,
+        "count": 2226,
         "icon": {
           "file": "search",
           "height": 76,
@@ -29,11 +29,14 @@
           "height": 76,
           "width": 76
         },
-        "count": 12,
+        "count": 597,
         "height": 76,
         "width": 76,
         "text": "Cidades já foram mapeadas pelo censo"
       }
+    ],
+    "actions": [
+      { "text": "Conheça os níveis de acesso", "to": "/acesso" }
     ]
   },
   "help": {
@@ -42,31 +45,31 @@
       {
         "icon": { "file": "document", "height": 56, "width": 40 },
         "title": "Nossa próxima meta",
-        "text": "Nossa próxima meta",
+        "text": "Hoje já poderíamos ter 2226 cidades na plataforma, e você pode nos ajudar a chegar lá",
         "actions": [
           {
             "text": "Doe",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "https://www.catarse.me/queridodiario-okbr",
             "style": "btn-primary"
           },
           {
             "text": "Ver todas as metas",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "/apoie#nossas-metas",
             "style": "btn-secondary"
           }
         ]
       },
       {
         "icon": { "file": "document", "height": 56, "width": 40 },
-        "title": "Contribua como desenvolvedor",
-        "text": "Contribua com código - o Querido Diário é um projeto de código aberto, então qualquer pessoa pode colaborar com novas funcionalidades para a plataforma",
+        "title": "Contribua com o desenvolvimento",
+        "text": "O Querido Diário é um projeto de código aberto, então qualquer pessoa pode colaborar e fazer parte do desenvolvimento do projeto",
         "actions": [
           {
             "text": "Comece por aqui",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "/tecnologia#contribua",
             "style": "btn-secondary"
           }
         ]
@@ -74,12 +77,12 @@
       {
         "icon": { "file": "document", "height": 56, "width": 40 },
         "title": "Cadastre um município",
-        "text": "Cadastre um município - precisamos saber onde as prefeituras publicam seus diários oficiais",
+        "text": "Precisamos saber onde as prefeituras publicam seus diários oficiais",
         "actions": [
           {
-            "text": "Doe",
+            "text": "Cadastre aqui",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "https://censo.ok.org.br/",
             "style": "btn-secondary"
           }
         ]
@@ -88,38 +91,34 @@
   },
   "goals": {
     "title": "Nossas Metas",
-    "text": "O querido diário está só começando! Temos vários objetivos para o projeto, e você pode nos ajudar a chegar lá:",
+    "text": "O Querido Diário está só começando! Temos vários objetivos para o projeto, e você pode nos ajudar a chegar lá.",
     "items": [
       {
         "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
+        "title": "Chegamos aqui!",
         "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
         "money": "R$ 2000"
       },
       {
         "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000",
-        "actions": [{ "text": "Ir para o catarse", "to": "Catarse" }]
+        "title": "Plataforma turbinada!",
+        "text": "+ 100 municípios disponíveis na plataforma e mecanismo de busca mais eficiente.",
+        "money": "R$ 6000",
+        "actions": [{ "text": "Ir para o catarse", "to": "https://www.catarse.me/queridodiario-okbr" }]
       },
       {
         "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
+        "title": "O Brasil é o limite!",
+        "text": "Todas as cidades brasileiras com mais de 100 mil habitantes na plataforma.",
+        "money": "R$ 10000",
+        "actions": [{ "text": "Ir para o catarse", "to": "https://www.catarse.me/queridodiario-okbr" }]
       },
       {
         "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
-      },
-      {
-        "icon": "ok-hand",
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
+        "title": "Busca inteligente!",
+        "text": "Cruzamentos com bases de dados relevantes e sistema de recomendação de conteúdo.",
+        "money": "R$ 14000",
+        "actions": [{ "text": "Ir para o catarse", "to": "https://www.catarse.me/queridodiario-okbr" }]
       }
     ]
   },
@@ -127,25 +126,27 @@
     "title": "Entenda",
     "items": [
       {
-        "title": "Nível de Acesso",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "title": "Níveis de Acesso",
+        "text": "Cada município possui um nível de acesso no projeto Querido Diário. Conheça cada um deles.",
+        "actions": [{ "text": "Ler mais", "to": "/acesso", "icon": "right-arrow" }]
       },
       {
         "title": "Glossário",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "text": "Veja os termos que mais aparecem nos textos dos diários oficiais e entenda o que significam.",
+        "actions": [{ "text": "Ler mais", "to": "/glossario",  "icon": "right-arrow" }]
       },
       {
         "title": "Como denunciar ou pedir informações",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "text": "Encontrou uma informação suspeita ou precisa de mais detalhes sobre alguma publicação do diário oficial? Saiba como fazer.",
+        "actions": [{ "text": "Ler mais", "to": "/informacoes",  "icon": "right-arrow" }]
       }
     ]
   },
   "trajectory": {
     "title": "Conheça a trajetória e próximos passos do Querido Diário",
-    "text": "Saiba mais sobre o projeto"
+    "actions": [
+      { "text": "Saiba mais sobre o projeto", "to": "/sobre" }
+    ]
   },
   "realization": [
     {
