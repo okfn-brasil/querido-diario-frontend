@@ -9,14 +9,14 @@
       "subTitle": "R$ 2.000"
     },
     {
-      "icon": { "file": "computer", "height": 120, "width": 116 },
+      "icon": { "file": "computer-person", "height": 120, "width": 116 },
       "title": "Plataforma turbinada!",
       "text": "+ 100 municípios disponíveis na plataforma e mecanismo de busca mais eficiente.",
       "subTitle": "R$ 10.000",
       "actions": [
         {
           "text": "Ir para o Catarse",
-          "icon": { "file": "right-arrow" }
+          "icon": { "file": "right-arrow", "height": 12, "width": 12 }
         }
       ]
     },
@@ -28,7 +28,7 @@
       "actions": [
         {
           "text": "Ir para o Catarse",
-          "icon": { "file": "right-arrow" }
+          "icon": { "file": "right-arrow", "height": 12, "width": 12 }
         }
       ]
     },
@@ -40,7 +40,7 @@
       "actions": [
         {
           "text": "Ir para o Catarse",
-          "icon": { "file": "right-arrow" }
+          "icon": { "file": "right-arrow", "height": 12, "width": 12 }
         }
       ]
     }

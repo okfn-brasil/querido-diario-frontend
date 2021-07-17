@@ -13,6 +13,8 @@ export class RowComponent implements OnInit {
 
   @Input() layoutAlign: string = '';
 
+  @Input() gapXs: number = 0;
+
   layout: string = 'row';
 
   constructor() {}
@@ -25,6 +27,9 @@ export class RowComponent implements OnInit {
 
     if (this.flex && viewportWidth < BREAKPOINT) {
       layout = 'column';
+      if (this.gapXs > 0) {
+        this.gap = this.gapXs;
+      }
     }
 
     this.layout = layout;

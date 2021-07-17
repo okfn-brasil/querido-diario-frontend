@@ -1,26 +1,41 @@
-<app-container *ngIf="content$ as content" [gap]="86">
+<app-container *ngIf="navigation$ as content" [gap]="86">
   <app-row layoutAlign="space-between">
     <ng-container *ngFor="let section of content | async">
-      <app-column [gap]="12">
+      <app-column [gap]="12" [gapXs]="16">
         <span
           ><p>{{ section.title }}</p></span
         >
-        <ng-container *ngIf="section.actions">
-          <ng-container *ngFor="let action of section.actions">
-            <a [routerLink]="action.to" [fragment]="action.fragment">
-              {{ action.text }}
-            </a>
-          </ng-container>
-        </ng-container>
-        <ng-container *ngIf="section.icons">
-          <app-row>
-            <ng-container *ngFor="let icon of section.icons">
-              <app-icon [icon]="icon"></app-icon>
-            </ng-container>
-          </app-row>
+        <ng-container *ngFor="let action of section.actions">
+          <a [routerLink]="action.to" [fragment]="action.fragment">
+            {{ action.text }}
+          </a>
         </ng-container>
       </app-column>
     </ng-container>
+    <app-column fxHide.xs *ngIf="social$ | async as social">
+      <app-column [gap]="12">
+        <span>
+          <p>{{ social.title }}</p>
+        </span>
+        <app-row>
+          <ng-container *ngFor="let icon of social.icons">
+            <app-icon [icon]="icon"></app-icon>
+          </ng-container>
+        </app-row>
+      </app-column>
+    </app-column>
+  </app-row>
+  <app-row fxHide fxHide.xs="false"  *ngIf="social$ | async as social">
+    <app-column [gap]="12">
+      <span>
+        <p>{{ social.title }}</p>
+      </span>
+      <app-row>
+        <ng-container *ngFor="let icon of social.icons">
+          <app-icon [icon]="icon"></app-icon>
+        </ng-container>
+      </app-row>
+    </app-column>
   </app-row>
   <app-row [gap]="32" [flex]="true" *ngIf="copyright$ | async as copyright">
     <app-row [gap]="12">

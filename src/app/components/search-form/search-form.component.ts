@@ -1,13 +1,11 @@
 import {
   Component,
   ElementRef,
-  EventEmitter,
   Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from 'moment';
 import { Observable, of } from 'rxjs';

@@ -1,0 +1,9 @@
+{
+  "title": "REDES SOCIAIS",
+  "icons": [
+    { "file": "twitter", "height": 36, "width": 36 },
+    { "file": "instagram", "height": 36, "width": 36 },
+    { "file": "facebook", "height": 36, "width": 36 },
+    { "file": "linkedin", "height": 36, "width": 36 }
+  ]
+}

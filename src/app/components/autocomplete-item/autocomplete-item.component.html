@@ -1,12 +1,12 @@
 <div fxLayout="row">
-  <mat-icon
-    class="example-option-img"
+  <app-icon
+    *ngIf="icon"
     fxFlexAlign="center"
-    matPrefix
-    svgIcon="gray-pin"
-  ></mat-icon>
+    [icon]="icon"
+  >
+  </app-icon>
   <div fxLayout="column">
-    <span>{{ textPrimary }}</span>
-    <small>{{ textSecondary }}</small>
+    <span>{{ title }}</span>
+    <small>{{ text }}</small>
   </div>
 </div>

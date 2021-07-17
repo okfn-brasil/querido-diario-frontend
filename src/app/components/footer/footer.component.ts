@@ -9,12 +9,14 @@ import { ContentService } from 'src/app/services/content.service';
 })
 export class FooterComponent  implements OnInit {
   copyright$: Observable<any> = of(null)
-  content$: Observable<any> = of(null)
+  navigation$: Observable<any> = of(null)
+  social$: Observable<any> = of(null)
 
   constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.content$ = this.contentService.find('footer');
-    this.copyright$ = this.contentService.find('copyright');
+    this.navigation$ = this.contentService.find('footer/navigation');
+    this.copyright$ = this.contentService.find('footer/copyright');
+    this.social$ = this.contentService.find('footer/social');
   }
 }

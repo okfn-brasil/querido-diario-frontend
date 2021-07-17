@@ -10,10 +10,10 @@
     </app-container>
 
     <app-container [gap]="34">
-      <h1>{{content.evolution.title}}</h1>
+      <h1>{{ content.evolution.title }}</h1>
       <app-row layoutAlign="space-between">
         <app-column *ngFor="let item of content.evolution.items">
-          <app-row [gap]="24" [flex]="true" [appFlexWidth]="120">
+          <app-row [gap]="24" [flex]="true" [appFlexHeight]="172" [appFlexWidth]="120" layoutAlign="left">
             <app-icon [icon]="item.icon"></app-icon>
             <app-column>
               <p>{{ item.count }}</p>
@@ -23,14 +23,15 @@
         </app-column>
       </app-row>
     </app-container>
+
     <app-container [gap]="34" theme="dark">
-      <h1>{{content.help.title}}</h1>
+      <h1>{{ content.help.title }}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="60">
-        <app-column *ngFor="let item of content.help.items">
+        <app-column [appWidth]="380" fxFill.xs *ngFor="let item of content.help.items">
           <app-column [gap]="24" [flex]="true">
             <app-icon [icon]="item.icon"></app-icon>
-            <app-column>
-              <app-column [gap]="16" [appWidth]="380">
+            <app-column [gap]="36" [gapXs]="16">
+              <app-column [gap]="16" appFlexWidth>
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.text }}</p>
               </app-column>
@@ -48,13 +49,13 @@
     </app-container>
 
     <app-goals></app-goals>
-
     <app-infos></app-infos>
 
     <app-container containerClass="container-notop" bg="bg-purple-square">
-      <app-column [gap]="100">
+      <div fxLayout="column" fxLayoutGap="100px" fxLayoutGap.xs="0">
         <a (click)="openVideo()" class="video" fxLayout="row">
           <img
+            fxFill
             src="../../../assets/images/video@1x.jpg"
             srcset="assets/images/video@2x.jpg 2x"
           />
@@ -72,11 +73,11 @@
             </app-row>
           </app-column>
         </div>
-      </app-column>
+      </div>
     </app-container>
 
     <app-container theme="light">
-      <app-row [gap]="122" [flex]="true">
+      <app-row [gap]="122" [gapXs]="16" [flex]="true">
         <ng-container *ngFor="let item of content.realization">
           <app-column [gap]="34">
             <p>{{ item.title }}</p>

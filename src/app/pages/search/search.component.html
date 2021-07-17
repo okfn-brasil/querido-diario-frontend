@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <div fxLayout="column" fxLayoutGap="42px" *ngIf="gazetteResponse && !gazetteResponse.total_gazettes">
+      <div fxLayout="column" fxLayoutGap="42px" *ngIf="territory.publication_urls && gazetteResponse && !gazetteResponse.total_gazettes">
         <p>Acesse a fonte de publicação para ver os arquivos originais:</p>
         <div
           fxLayout="column"

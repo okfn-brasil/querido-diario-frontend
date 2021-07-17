@@ -1,39 +1,5 @@
 <form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px" fxLayoutGap.xs="0">
-  <!-- <div *ngFor="let field of form.fields">
-    <div fxLayout="row">
-      <mat-form-field appearance="fill" class="search-input">
-        <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
-        <mat-label>{{ field.label }}</mat-label>
-        <input
-          class="{{ field.icon }}"
-          #termField
-          matInput
-          [formControl]="termControl"
-          [matAutocomplete]="auto"
-        />
-        <mat-autocomplete #auto="matAutocomplete">
-          <p class="typo-secondary autocomplete-title">{{ field.text }}</p>
-          <div *ngIf="field.options">
-            <mat-option
-              *ngFor="let option of field.options | async"
-              [value]="option"
-            >
-              <div fxLayout="row" class="autocomplete">
-                <mat-icon
-                  fxFlexAlign="center"
-                  matPrefix
-                  svgIcon="money"
-                ></mat-icon>
-                <p>{{ option }}</p>
-              </div>
-            </mat-option>
-          </div>
-        </mat-autocomplete>
-      </mat-form-field>
-    </div>
-  </div> -->
-
-  <div fxLayout="row">
+  <app-row>
     <mat-form-field appearance="fill" class="search-input">
       <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
       <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
@@ -44,24 +10,26 @@
         [formControl]="termControl"
         [matAutocomplete]="auto"
       />
-      <mat-autocomplete #auto="matAutocomplete">
+      <mat-autocomplete class="light" #auto="matAutocomplete">
         <p class="typo-secondary autocomplete-title">Sugestões de busca</p>
         <mat-option
           *ngFor="let option of filteredOptions | async"
           [value]="option"
         >
           <div fxLayout="row" class="autocomplete">
-            <mat-icon fxFlexAlign="center" matPrefix svgIcon="money"></mat-icon>
-            <p>{{ option }}</p>
+            <app-autocomplete-item [title]="option"></app-autocomplete-item>
+            <!--<app-icon
+              [icon]="{ file: 'money', height: 10, width: 10 }"
+            ></app-icon>-->
           </div>
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
-  </div>
+  </app-row>
 
-  <div fxLayout="row" fxLayoutGap="16px">
+  <app-row [flex]="true" [gap]="16">
     <mat-form-field appearance="fill" class="city-input">
-      <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
+      <mat-icon matPrefix svgIcon="pin-gray"></mat-icon>
       <mat-label>Municípios</mat-label>
       <input
         class="city"
@@ -71,15 +39,16 @@
         [matAutocomplete]="cityInput"
       />
 
-      <mat-autocomplete #cityInput="matAutocomplete">
+      <mat-autocomplete class="light" #cityInput="matAutocomplete">
         <mat-option
           *ngFor="let option of territories | async"
           [value]="option.territory_name"
         >
           <div fxLayout="row" class="autocomplete">
             <app-autocomplete-item
-              [textPrimary]="option.territory_name"
-              [textSecondary]="'NÍVEL ' + option.level + ' DE ABERTURA'"
+              [icon]="{ file: 'pin-gray', height: 28, width: 28 }"
+              [title]="option.territory_name"
+              [text]="'NÍVEL ' + option.level + ' DE ABERTURA'"
             ></app-autocomplete-item>
           </div>
         </mat-option>
@@ -91,6 +60,6 @@
       (onRangeSelected)="onRangeSelected($event)"
       class="period-input"
     ></app-date-picker-range>
-  </div>
+  </app-row>
   <button (click)="search()" class="btn">Pesquisar</button>
 </form>

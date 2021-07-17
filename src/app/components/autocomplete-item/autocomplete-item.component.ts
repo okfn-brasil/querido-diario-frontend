@@ -1,5 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+interface Icon {
+  file: string;
+  height: number;
+  width: number;
+}
+
 @Component({
   selector: 'app-autocomplete-item',
   templateUrl: './autocomplete-item.component.html',
@@ -8,13 +14,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AutocompleteItemComponent implements OnInit {
 
   @Input()
-  textPrimary: string = '';
+  title: string = '';
 
   @Input()
-  textSecondary: string = '';
+  text: string = '';
 
   @Input()
-  icon: string = '';
+  icon?: Icon;
 
 
   constructor() { }

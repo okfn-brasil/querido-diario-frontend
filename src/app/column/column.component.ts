@@ -9,6 +9,7 @@ const BREAKPOINT = 768;
 export class ColumnComponent implements OnInit {
   @Input() gap: number = 0;
   @Input() flex: boolean = false;
+  @Input() gapXs: number = 0;
 
   layout: string = 'column';
 
@@ -22,6 +23,12 @@ export class ColumnComponent implements OnInit {
 
     if (this.flex && viewportWidth < BREAKPOINT) {
       layout = 'row';
+
+
+    }
+
+    if (viewportWidth < BREAKPOINT && this.gapXs > 0) {
+      this.gap = this.gapXs;
     }
 
     this.layout = layout;
