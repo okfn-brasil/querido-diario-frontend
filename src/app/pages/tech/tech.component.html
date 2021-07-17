@@ -1,20 +1,23 @@
-<app-container *ngIf="tech$ | async as tech" >
+<app-container *ngIf="navigation$ | async as navigation">
+  <div class="container-inner">
     <app-column [gap]="36">
       <app-column [gap]="16">
-        <h1>{{ tech.title }}</h1>
-        <h3>{{ tech.text }}</h3>
+        <h1>{{ navigation.title }}</h1>
+        <h3>{{ navigation.text }}</h3>
       </app-column>
       <app-row [gap]="36" class="nav-secondary">
-        <ng-container *ngFor="let action of tech.actions">
+        <ng-container *ngFor="let action of navigation.actions">
           <a [routerLink]="action.to" [ngClass]="action.style">
             {{ action.text }}
           </a>
         </ng-container>
       </app-row>
     </app-column>
+  </div>
 </app-container>
 
-<app-container *ngIf="doc$ | async as doc" theme="light" >
+<app-container *ngIf="documentationIndex$ | async as doc" theme="light">
+  <div class="container-inner">
     <app-column [gap]="60">
       <app-column [gap]="40">
         <h1>{{ doc.title }}</h1>
@@ -27,18 +30,26 @@
           </ng-container>
         </app-column>
       </app-column>
-      <app-column *ngFor="let docText of docTexts$ | async" [gap]="42">
-        <h2>{{ docText.title }}</h2>
-        <div class="typo-inner" [innerHTML]="docText.text"></div>
+      <app-column
+        *ngFor="let documentation of documentations$ | async"
+        [gap]="42"
+      >
+        <h2>{{ documentation.title }}</h2>
+        <div class="typo-inner" [innerHTML]="documentation.text"></div>
       </app-column>
     </app-column>
+  </div>
 </app-container>
 
 <ng-container *ngIf="reports$ | async as reports">
   <app-container [gap]="34" theme="light" bg="bg-yellow-square">
     <div class="container-inner">
       <h1>{{ reports.title }}</h1>
-      <div class="typo-inner" [innerHTML]="reports.text" [style.color]="'#5E408F'"></div>
+      <div
+        class="typo-inner"
+        [innerHTML]="reports.text"
+        [style.color]="'#5E408F'"
+      ></div>
     </div>
     <app-row [gap]="17" [flex]="true">
       <app-column

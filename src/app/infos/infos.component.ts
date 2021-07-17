@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HomeService } from '../pages/home/home.service';
+import { ContentService } from '../services/content.service';
 
 @Component({
   selector: 'app-infos',
@@ -19,10 +19,10 @@ export class InfosComponent implements OnInit {
   @Input()
   bg: 'bg-gray-square' | 'bg-purple-square' = 'bg-gray-square';
 
-  constructor(private homeService: HomeService) { }
+  constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.infos$ = this.homeService.loadInfos();
+    this.infos$ = this.contentService.find('home/infos.json')
   }
 
 }

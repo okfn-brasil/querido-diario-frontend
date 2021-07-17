@@ -1,13 +1,13 @@
-<ng-container *ngIf="content$ | async as content">
+<ng-container *ngIf="navigation$ | async as navigation">
   <app-container>
     <div class="container-inner">
       <app-column [gap]="36">
         <app-column [gap]="24">
-          <h1>{{ content.support.title }}</h1>
-          <p>{{ content.support.text }}</p>
+          <h1>{{ navigation.title }}</h1>
+          <p>{{ navigation.text }}</p>
         </app-column>
         <app-row [gap]="36" class="nav-secondary">
-          <ng-container *ngFor="let action of content.support.actions">
+          <ng-container *ngFor="let action of navigation.actions">
             <a [routerLink]="action.to" [ngClass]="action.style">
               {{ action.text }}
             </a>
@@ -19,12 +19,12 @@
 
   <app-goals></app-goals>
 
-  <app-container>
+  <app-container *ngIf="content$ | async as content">
     <div class="container-inner">
       <app-column [gap]="64">
-        <h1>{{ content.who_supports.title }}</h1>
+        <h1>{{ content.title }}</h1>
         <app-column [gap]="48">
-          <ng-container *ngFor="let supporter of content.who_supports.items">
+          <ng-container *ngFor="let supporter of content.items">
             <app-column [gap]="22">
               <ng-container *ngIf="supporter.title">
                 <h3>{{ supporter.title }}</h3>

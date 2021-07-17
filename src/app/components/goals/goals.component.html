@@ -1,16 +1,15 @@
-<ng-container *ngIf="goals$ | async as goals">
-  <app-container fxHide>
+<ng-container *ngIf="content$ | async as content">
+  <app-container>
     <app-column [gap]="48">
       <app-column [gap]="22">
         <div class="container-inner">
-          <h1>Nossas metas</h1>
+          <h1>{{content.title}}</h1>
           <p>
-            O querido diário está só começando! Temos vários objetivos para o
-            projeto, e você pode nos ajudar a chegar lá:
+            {{content.text}}
           </p>
         </div>
       </app-column>
-      <app-carousel [items]="goals"></app-carousel>
+      <app-carousel [items]="content.items"></app-carousel>
     </app-column>
   </app-container>
 </ng-container>

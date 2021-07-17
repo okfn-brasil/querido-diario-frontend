@@ -25,8 +25,10 @@ export class ContainerComponent implements OnInit {
   @Input()
   layout: string = 'column';
 
+
   constructor() {}
 
   ngOnInit(): void {
+
   }
 }

@@ -1,0 +1,16 @@
+{
+  "title": "Apoie",
+  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque odio neque, interdum vel nunc varius, fringilla viverra risus.",
+  "actions": [
+    {
+      "text": "Nossas metas",
+      "to": "/doe",
+      "style": "link-secondary"
+    },
+    {
+      "text": "Quem apoia",
+      "to": "/doe",
+      "style": "link-secondary"
+    }
+  ]
+}

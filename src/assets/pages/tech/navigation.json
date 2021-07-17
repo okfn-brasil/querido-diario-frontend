@@ -1,0 +1,21 @@
+{
+  "title": "Tecnologia",
+  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque odio neque, interdum vel nunc varius, fringilla viverra risus.",
+  "actions": [
+    {
+      "text": "Doe",
+      "to": "/doe",
+      "style": "link-secondary"
+    },
+    {
+      "text": "Contribua com código",
+      "to": "/doe",
+      "style": "link-secondary"
+    },
+    {
+      "text": "Relatórios",
+      "to": "/doe",
+      "style": "link-secondary"
+    }
+  ]
+}

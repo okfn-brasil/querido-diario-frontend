@@ -1,0 +1,39 @@
+{
+  "title": "Relatórios",
+  "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus.",
+  "items": [
+    {
+      "title": "Nulla vel metus scelerisque ante sollicitudin commodo.",
+      "text": "Praesent scelerisque, leo quis venenatis ultricies, nisl quam bibendum ex, id dapibus sapien ipsum a nibh.",
+      "actions": [
+        {
+          "text": "Ler mais",
+          "icon": "right-arrow",
+          "to": "/add-link"
+        }
+      ]
+    },
+    {
+      "title": "Nulla vel metus scelerisque ante sollicitudin commodo.",
+      "text": "Praesent scelerisque, leo quis venenatis ultricies, nisl quam bibendum ex, id dapibus sapien ipsum a nibh.",
+      "actions": [
+        {
+          "text": "Ler mais",
+          "icon": "right-arrow",
+          "to": "/add-link"
+        }
+      ]
+    },
+    {
+      "title": "Nulla vel metus scelerisque ante sollicitudin commodo.",
+      "text": "Praesent scelerisque, leo quis venenatis ultricies, nisl quam bibendum ex, id dapibus sapien ipsum a nibh.",
+      "actions": [
+        {
+          "text": "Ler mais",
+          "icon": "right-arrow",
+          "to": "/add-link"
+        }
+      ]
+    }
+  ]
+}

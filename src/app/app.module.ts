@@ -37,8 +37,6 @@ import { TechComponent } from './pages/tech/tech.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 import { GlossaryComponent } from './pages/glossary/glossary.component';
 import { SearchComponent } from './pages/search/search.component';
-import { H1Component } from './components/h1/h1.component';
-import { H2Component } from './components/h2/h2.component';
 import { Event, Router, Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
@@ -86,8 +84,6 @@ import { FlexHeightDirective } from './directives/flex-height.directive';
     SuggestionComponent,
     GlossaryComponent,
     SearchComponent,
-    H1Component,
-    H2Component,
     VideoModalComponent,
     DatePickerRangeComponent,
     AutocompleteItemComponent,
