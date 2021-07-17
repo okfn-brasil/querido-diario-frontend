@@ -1,13 +1,16 @@
 <app-column>
   <ng-container *ngIf="content$ | async as content">
     <app-container theme="light">
-      <h1>
-        {{ content.explore.title }}
-      </h1>
-      <app-search-form></app-search-form>
+      <div class="container-inner">
+        <h1>
+          {{ content.explore.title }}
+        </h1>
+        <app-search-form></app-search-form>
+      </div>
     </app-container>
 
-    <app-container [title]="content.evolution.title" [gap]="34">
+    <app-container [gap]="34">
+      <h1>{{content.evolution.title}}</h1>
       <app-row layoutAlign="space-between">
         <app-column *ngFor="let item of content.evolution.items">
           <app-row [gap]="24" [flex]="true" [appFlexWidth]="120">
@@ -20,7 +23,8 @@
         </app-column>
       </app-row>
     </app-container>
-    <app-container [title]="content.help.title" [gap]="34" theme="dark">
+    <app-container [gap]="34" theme="dark">
+      <h1>{{content.help.title}}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="60">
         <app-column *ngFor="let item of content.help.items">
           <app-column [gap]="24" [flex]="true">

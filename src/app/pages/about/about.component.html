@@ -39,14 +39,17 @@
       <app-column
         [style.padding]="'42px 30px'"
         *ngFor="let item of content.successCases.items"
-        [gap]="34"
-        theme="dark-secondary"
+        [gap]="14"
+        theme="darker"
       >
-        <h2>{{ item.title }}</h2>
+        <span>
+          <p [style.lineHeight]="0">{{ item.title }}</p>
+        </span>
         <p>{{ item.text }}</p>
-        <ng-container *ngFor="let action of item.actions">
+        <span *ngFor="let action of item.actions">
           <a [routerLink]="'/'">{{ action.text }}</a>
-        </ng-container>
+          <app-icon [icon]="icon"></app-icon>
+        </span>
       </app-column>
     </app-row>
   </app-container>
@@ -56,10 +59,17 @@
       <app-column [gap]="36">
         <h1>{{ content.whoWeAre.title }}</h1>
         <div
+          *ngFor="let text of content.whoWeAre.texts"
           class="typo-inner"
           [style.color]="'#FFF'"
-          [innerHTML]="content.whoWeAre.text"
+          [innerHTML]="text"
         ></div>
+        <ng-container *ngFor="let action of content.whoWeAre.actions">
+          <a [routerLink]="action.to">
+            {{ action.text }}
+            <span class="highlight">{{ action.link }}</span>
+          </a>
+        </ng-container>
       </app-column>
     </div>
   </app-container>

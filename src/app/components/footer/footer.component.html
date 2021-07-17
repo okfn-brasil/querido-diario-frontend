@@ -1,4 +1,4 @@
-<app-container *ngIf="content$ as content">
+<app-container *ngIf="content$ as content" [gap]="86">
   <app-row layoutAlign="space-between">
     <ng-container *ngFor="let section of content | async">
       <app-column [gap]="12">
@@ -22,9 +22,7 @@
       </app-column>
     </ng-container>
   </app-row>
-</app-container>
-<app-container *ngIf="copyright$ | async as copyright">
-  <app-row [gap]="32" [flex]="true">
+  <app-row [gap]="32" [flex]="true" *ngIf="copyright$ | async as copyright">
     <app-row [gap]="12">
       <ng-container *ngFor="let icon of copyright.icons">
         <app-icon [icon]="icon"></app-icon>

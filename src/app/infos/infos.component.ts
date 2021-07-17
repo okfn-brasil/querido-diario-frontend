@@ -10,6 +10,12 @@ import { HomeService } from '../pages/home/home.service';
 export class InfosComponent implements OnInit {
   infos$: Observable<any> = of(null)
 
+  icon = {
+    file: 'right-arrow-white',
+    height: 12,
+    width: 12,
+  }
+
   @Input()
   bg: 'bg-gray-square' | 'bg-purple-square' = 'bg-gray-square';
 

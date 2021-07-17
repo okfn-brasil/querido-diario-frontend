@@ -46,7 +46,17 @@
   },
   "whoWeAre": {
     "title": "Quem somos",
-    "text": "A OKBR, também conhecida como Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos e apartidária que atua no país desde 2013. Desenvolvemos e incentivamos o uso de tecnologias cívicas e de dados abertos, realizamos análises de políticas públicas e promovemos o conhecimento livre para tornar a relação entre governo e sociedade mais transparente e participativa.Criado em 2018, o Programa Ciência de Dados para Inovação Cívica surgiu no âmbito das atividades da Operação Serenata de Amor, que havia surgido em 2016 por profissionais independentes de diversas áreas (tecnologia, ciências sociais, jornalismo, design etc.). O Programa é responsável pela gestão e manutenção dos projetos Querido Diário, Operação Serenata de Amor, Parlametria, Perfil Político, Justa e Vítimas da Intolerância.Saiba mais no site: ok.org.br"
+    "texts": [
+      "A OKBR, também conhecida como Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos e apartidária que atua no país desde 2013.  Desenvolvemos e incentivamos o uso de tecnologias cívicas e de dados abertos, realizamos análises de políticas públicas e promovemos o conhecimento livre para tornar a relação entre governo e sociedade mais transparente e participativa.",
+      "Criado em 2018, o Programa Ciência de Dados para Inovação Cívica surgiu no âmbito das atividades da Operação Serenata de Amor, que havia surgido em 2016 por profissionais independentes de diversas áreas (tecnologia, ciências sociais, jornalismo, design etc.).  O Programa é responsável pela gestão e manutenção dos projetos Querido Diário, Operação Serenata de Amor, Parlametria, Perfil Político, Justa e Vítimas da Intolerância.`, Saiba mais no site: ok.org.br"
+    ],
+    "actions": [
+      {
+        "text": "Saiba mais em:",
+        "to": "saiba-mais",
+        "link": "ok.org.br"
+      }
+    ]
   },
   "privacy": {
     "title": "Política de Privacidade e Proteção de dados",

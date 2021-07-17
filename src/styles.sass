@@ -78,17 +78,29 @@ a
 .dark
   background-color: #351E41
 
-.darker
-  background-color: #2C1338
 
 .light
   background-color: #F3E9E9
+  color: #2C1338
   
   p, a, .typo-inner
     color: #2C1338
-
+  
   .mat-h2, .mat-title, .mat-typography h2
     color: #5E3F8E !important
+
+.darker
+  background-color: #2C1338
+  
+  p, a, .typo-inner
+    color: #FFF
+
+  .mat-h2, .mat-title, .mat-typography h2
+    color: #F3E9E9
+
+  span 
+    a
+      color: #966BE8
 
 
 .dark-secondary
@@ -99,11 +111,12 @@ a
   a
     color: #FFF
 
-.dark-secondary .mat-h1 h2, .mat-headline h2, .mat-typography h2
+
+  .mat-h1 h2, .mat-headline h2, .mat-typography h2
   color: #FFF
 
-.dark-secondary p
-  color: #FFF
+  p
+    color: #FFF
 
 .nav-secondary
   a
@@ -140,6 +153,10 @@ span
 
 a.highlight
   text-decoration: underline
+  
+.highlight
+  text-decoration: underline
+
 
 .typo-inner
   font-family: Lato
