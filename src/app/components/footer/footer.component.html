@@ -24,7 +24,7 @@
   </app-row>
 </app-container>
 <app-container *ngIf="copyright$ | async as copyright">
-  <app-row [gap]="32">
+  <app-row [gap]="32" [flex]="true">
     <app-row [gap]="12">
       <ng-container *ngFor="let icon of copyright.icons">
         <app-icon [icon]="icon"></app-icon>

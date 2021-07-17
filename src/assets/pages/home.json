@@ -9,7 +9,11 @@
         "icon": {
           "file": "check",
           "height": 76,
-          "width": 76
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
         },
         "count": 12,
         "text": "Cidades já na plataforma"
@@ -19,7 +23,11 @@
         "icon": {
           "file": "search",
           "height": 76,
-          "width": 76
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
         },
         "text": "Cidades já têm robôs para coletar diários"
       },
@@ -27,7 +35,11 @@
         "icon": {
           "file": "pin",
           "height": 76,
-          "width": 76
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
         },
         "count": 12,
         "height": 76,

@@ -48,8 +48,7 @@ import { AutocompleteItemComponent } from './components/autocomplete-item/autoco
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
-import { HeightDirective } from './directives/height.directive';
-import { WidthDirective } from './directives/width.directive';
+
 import { GoalsComponent } from './components/goals/goals.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { SelectComponent } from './components/select/select.component';
@@ -60,8 +59,17 @@ import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ColumnComponent } from './column/column.component';
 import { RowComponent } from './row/row.component';
-import { ThemeDirective } from './theme.directive';
+
 import { InfosComponent } from './infos/infos.component';
+
+
+/* custom directives */
+import { ThemeDirective } from './theme.directive';
+import { HeightDirective } from './directives/height.directive';
+import { WidthDirective } from './directives/width.directive';
+import { FlexWidthDirective } from './directives/flex-width.directive';
+import { FlexHeightDirective } from './directives/flex-height.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +108,8 @@ import { InfosComponent } from './infos/infos.component';
     RowComponent,
     ThemeDirective,
     InfosComponent,
+    FlexWidthDirective,
+    FlexHeightDirective,
   ],
   imports: [
     BrowserModule,
