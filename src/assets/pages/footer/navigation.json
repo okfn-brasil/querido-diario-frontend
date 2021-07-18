@@ -4,8 +4,7 @@
     "actions": [
       {
         "text": "Cadastre um município",
-        "to": "/apoie",
-        "fragment": "nossas-metas"
+        "to": "https://censo.ok.org.br/"
       },
       { "text": "Nossas Metas", "to": "/apoie", "fragment": "nossas-metas" },
       { "text": "Quem apoia", "to": "/apoie", "fragment": "quem-apoia" },
@@ -25,8 +24,7 @@
         "to": "/tecnologia",
         "fragment": "contribua"
       },
-      { "text": "Relatórios", "to": "/tecnologia", "fragment": "relatorios" },
-      { "text": "Blog", "to": "/blog" }
+      { "text": "Relatórios", "to": "/tecnologia", "fragment": "relatorios" }
     ]
   },
   {
@@ -35,14 +33,13 @@
       { "text": "História", "to": "/sobre", "fragment": "historia" },
       {
         "text": "Casos de sucesso",
-        "to": "sobre",
+        "to": "/sobre",
         "fragment": "casos-de-sucesso"
       },
       { "text": "Quem somos", "to": "sobre#casos-de-sucesso" },
       {
         "text": "Política de privacidade",
-        "to": "/sobre",
-        "fragment": "#politica-de-privacidade"
+        "to": "/privacidade"
       }
     ]
   }

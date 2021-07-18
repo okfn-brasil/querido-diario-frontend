@@ -34,16 +34,6 @@ export class SupportComponent implements OnInit {
 
   ngOnInit(): void {
     this.navigation$ = this.contentService.find('support/navigation');
-
-    this.contentService.find('support/community').subscribe((data: any) => {
-      const items = data.items.map((section: any) => ({
-        title: section.title,
-        text: section.text,
-        items: spliceIntoChunks(section.items || [], 5),
-      }));
-      const foo = { ...data, items: items };
-      console.log('foo: ', foo);
-      this.content$ = of(foo);
-    });
+    this.content$ = this.contentService.find('support/community')
   }
 }

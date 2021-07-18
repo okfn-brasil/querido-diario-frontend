@@ -4,7 +4,7 @@
     <h2>{{ item.title }}</h2>
     <div fxLayout="column">
       <p>{{ item.text }}</p>
-      <h1 class="money">{{ item.subTitle }}</h1>
+      <h1 [ngClass]="(span)? 'money-span' : 'money'">{{ item.subTitle }}-{{span}}</h1>
     </div>
     <nav *ngFor="let action of item.actions" class="nav-dark">
       <a>

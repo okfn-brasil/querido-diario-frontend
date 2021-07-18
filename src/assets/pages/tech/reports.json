@@ -1,37 +1,16 @@
 {
   "title": "Relatórios",
-  "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus.",
+  "text": "Publicações que detalham as tecnologias utilizadas no Querido Diário",
   "items": [
     {
-      "title": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-      "text": "Praesent scelerisque, leo quis venenatis ultricies, nisl quam bibendum ex, id dapibus sapien ipsum a nibh.",
+      "title": "1º Relatório Técnico de Atividades",
+      "text": "Um detalhamento dos aspectos técnicos da primeira fase do Querido Diário.",
       "actions": [
         {
           "text": "Ler mais",
           "icon": "right-arrow",
-          "to": "/add-link"
-        }
-      ]
-    },
-    {
-      "title": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-      "text": "Praesent scelerisque, leo quis venenatis ultricies, nisl quam bibendum ex, id dapibus sapien ipsum a nibh.",
-      "actions": [
-        {
-          "text": "Ler mais",
-          "icon": "right-arrow",
-          "to": "/add-link"
-        }
-      ]
-    },
-    {
-      "title": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-      "text": "Praesent scelerisque, leo quis venenatis ultricies, nisl quam bibendum ex, id dapibus sapien ipsum a nibh.",
-      "actions": [
-        {
-          "text": "Ler mais",
-          "icon": "right-arrow",
-          "to": "/add-link"
+          "to": "https://www.ok.org.br/wp-content/uploads/2021/07/Querido-Diario-1o-Relatorio-Tecnico-de-Atividades.pdf",
+          "target": "_blank"
         }
       ]
     }

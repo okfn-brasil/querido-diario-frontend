@@ -8,7 +8,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { getLevelDescription, termsResult } from 'src/app/data/search';
 import { GazetteResponse, GazetteService } from 'src/app/gazette.service';
 import { City } from 'src/app/interfaces/city';

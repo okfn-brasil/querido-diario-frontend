@@ -23,14 +23,14 @@
         <h1>
           {{ content.history.title }}
         </h1>
-        <div class="typo-inner" [innerHTML]="content.history.text"></div>
+        <div *ngFor="let text of content.history.texts" class="typo-inner" [innerHTML]="text"></div>
       </app-column>
     </div>
   </app-container>
 
   <app-infos bg="bg-purple-square"></app-infos>
 
-  <app-container theme="light" [gap]="34">
+<!--  <app-container theme="light" [gap]="34">
     <div class="container-inner">
       <h1>{{ content.successCases.title }}</h1>
       <p>{{ content.successCases.text }}</p>
@@ -53,6 +53,7 @@
       </app-column>
     </app-row>
   </app-container>
+-->
 
   <app-container theme="light" bg="bg-blue-square">
     <div class="container-inner">
@@ -65,7 +66,7 @@
           [innerHTML]="text"
         ></div>
         <ng-container *ngFor="let action of content.whoWeAre.actions">
-          <a [routerLink]="action.to">
+          <a [href]="action.to" target="_blank" [style.color]="'#FFF'">
             {{ action.text }}
             <span class="highlight">{{ action.link }}</span>
           </a>

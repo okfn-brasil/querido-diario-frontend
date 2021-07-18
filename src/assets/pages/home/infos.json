@@ -3,31 +3,34 @@
   "items": [
     {
       "title": "Nível de Acesso",
-      "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
+      "text": "Cada município possui um nível de acesso no projeto Querido Diário. Conheça cada um deles.",
       "actions": [
         {
           "text": "Ler mais",
-          "icon": "right-arrow"
+          "icon": "right-arrow",
+          "to": "/acesso"
         }
       ]
     },
     {
       "title": "Glossário",
-      "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
+      "text": "Veja os termos que mais aparecem nos textos dos diários oficiais e entenda o que significam.",
       "actions": [
         {
           "text": "Ler mais",
-          "icon": "right-arrow"
+          "icon": "right-arrow",
+          "to": "/glossario"
         }
       ]
     },
     {
       "title": "Como denunciar ou pedir informações",
-      "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
+      "text": "Encontrou uma informação suspeita ou precisa de mais detalhes sobre alguma publicação do diário oficial? Saiba como fazer.",
       "actions": [
         {
           "text": "Ler mais",
-          "icon": "right-arrow"
+          "icon": "right-arrow",
+          "to": "/informacoes"
         }
       ]
     }

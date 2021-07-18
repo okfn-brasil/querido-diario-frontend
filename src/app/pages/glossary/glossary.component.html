@@ -24,6 +24,18 @@
             </ng-container>
           </app-column>
         </app-column>
+
+        <app-column [gap]="32">
+          <ng-container *ngFor="let text of content.navigation.texts">
+            <div class="typo-inner" [innerHTML]="text"></div>
+          </ng-container>
+          <h3>{{ content.navigation.title }}</h3>
+          <app-column>
+            <ng-container *ngFor="let action of content.navigation.actions">
+              <a [href]="action.to">{{ action.text }}</a>
+            </ng-container>
+          </app-column>
+        </app-column>
       </app-column>
     </div>
   </app-container>

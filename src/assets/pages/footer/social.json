@@ -1,9 +1,33 @@
 {
   "title": "REDES SOCIAIS",
   "icons": [
-    { "file": "twitter", "height": 36, "width": 36 },
-    { "file": "instagram", "height": 36, "width": 36 },
-    { "file": "facebook", "height": 36, "width": 36 },
-    { "file": "linkedin", "height": 36, "width": 36 }
+    {
+      "file": "twitter",
+      "height": 36,
+      "width": 36,
+      "to": "https://twitter.com/okfnbr/",
+      "target": "_blank"
+    },
+    {
+      "file": "instagram",
+      "height": 36,
+      "width": 36,
+      "to": "https://www.instagram.com/openknowledgebrasil/",
+      "target": "_blank"
+    },
+    {
+      "file": "facebook",
+      "height": 36,
+      "width": 36,
+      "to": "https://www.facebook.com/OpenKnowledgeBrasil",
+      "target": "_blank"
+    },
+    {
+      "file": "linkedin",
+      "height": 36,
+      "width": 36,
+      "to": "https://br.linkedin.com/company/open-knowledge-brasil",
+      "target": "_blank"
+    }
   ]
 }

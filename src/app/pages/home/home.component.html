@@ -13,7 +13,13 @@
       <h1>{{ content.evolution.title }}</h1>
       <app-row layoutAlign="space-between">
         <app-column *ngFor="let item of content.evolution.items">
-          <app-row [gap]="24" [flex]="true" [appFlexHeight]="172" [appFlexWidth]="120" layoutAlign="left">
+          <app-row
+            [gap]="24"
+            [flex]="true"
+            [appFlexHeight]="172"
+            [appFlexWidth]="120"
+            layoutAlign="left"
+          >
             <app-icon [icon]="item.icon"></app-icon>
             <app-column>
               <p>{{ item.count }}</p>
@@ -22,12 +28,27 @@
           </app-row>
         </app-column>
       </app-row>
+      <ng-container *ngFor="let action of content.evolution.actions">
+        <app-row [gap]="12">
+          <a [routerLink]="action.to">
+            {{ action.text }}
+          </a>
+          <app-icon
+            [icon]="{ file: 'right-arrow-white', height: 12, width: 12 }"
+          >
+          </app-icon>
+        </app-row>
+      </ng-container>
     </app-container>
 
     <app-container [gap]="34" theme="dark">
       <h1>{{ content.help.title }}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="60">
-        <app-column [appWidth]="380" fxFill.xs *ngFor="let item of content.help.items">
+        <app-column
+          [appWidth]="380"
+          fxFill.xs
+          *ngFor="let item of content.help.items"
+        >
           <app-column [gap]="24" [flex]="true">
             <app-icon [icon]="item.icon"></app-icon>
             <app-column [gap]="36" [gapXs]="16">
@@ -48,7 +69,10 @@
       </app-row>
     </app-container>
 
-    <app-goals></app-goals>
+    <app-container>
+      <app-goals></app-goals>
+    </app-container>
+
     <app-infos></app-infos>
 
     <app-container containerClass="container-notop" bg="bg-purple-square">
@@ -64,9 +88,11 @@
         <app-video-modal fxHide></app-video-modal>
         <div class="container-inner">
           <app-column [gap]="28">
-            <h1>Conheça a trajetória e os próximos passos do Querido Diário</h1>
-            <app-row>
-              <p>Saiba mais sobre o projeto</p>
+            <h1>{{ content.trajectory.title }}</h1>
+            <app-row *ngFor="let action of content.trajectory.actions">
+              <a [routerLink]="action.to">
+                {{ action.text }}
+              </a>
               <app-icon
                 [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
               ></app-icon>

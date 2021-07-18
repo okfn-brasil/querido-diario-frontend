@@ -17,7 +17,9 @@
     </div>
   </app-container>
 
-  <app-goals></app-goals>
+  <app-container theme="dark-secondary">
+    <app-goals></app-goals>
+  </app-container>
 
   <app-container *ngIf="content$ | async as content">
     <div class="container-inner">
@@ -30,20 +32,18 @@
                 <h3>{{ supporter.title }}</h3>
               </ng-container>
               <ng-container *ngIf="supporter.action">
-                <h3>
-                  <a [href]="supporter.action.to">{{
-                    supporter.action.text
-                  }}</a>
-                </h3>
+                <a [href]="supporter.action.to">
+                  <h3>{{ supporter.action.text }}</h3>
+                </a>
               </ng-container>
               <div class="typo-inner" [innerHTML]="supporter.text"></div>
               <ng-container *ngFor="let icon of supporter.icons">
                 <app-icon [icon]="icon"></app-icon>
               </ng-container>
-              <app-row>
-                <app-column *ngFor="let item of supporter.items">
+              <app-row [gap]="22">
+                <app-column *ngFor="let list of supporter.items">
                   <app-column [gap]="36">
-                    <p>{{ item }}</p>
+                    <p *ngFor="let name of list">{{ name }}</p>
                   </app-column>
                 </app-column>
               </app-row>

@@ -35,7 +35,9 @@
         [gap]="42"
       >
         <h2>{{ documentation.title }}</h2>
-        <div class="typo-inner" [innerHTML]="documentation.text"></div>
+        <ng-container *ngFor="let text of documentation.texts">
+          <div class="typo-inner" [innerHTML]="text"></div>
+        </ng-container>
       </app-column>
     </app-column>
   </div>
@@ -57,6 +59,8 @@
         *ngFor="let item of reports.items"
         [gap]="34"
         theme="dark-secondary"
+        [appWidth]="382"       
+        fxFill.xs
       >
         <h2>{{ item.title }}</h2>
         <p>{{ item.text }}</p>

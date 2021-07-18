@@ -12,7 +12,7 @@
         <p>{{ item.text }}</p>
         <ng-container *ngFor="let action of item.actions">
           <app-row [gap]="6">
-            <a [routerLink]="'/'">{{ action.text }}</a>
+            <a [routerLink]="action.to">{{ action.text }}</a>
             <app-icon [icon]="icon"></app-icon>
           </app-row>
         </ng-container>

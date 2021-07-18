@@ -15,6 +15,8 @@ export const Icons: string[] = [
   'logo-serenata',
   'logo-OK',
   'logo-digitalocean',
+  'gift',
+  'frame',
   'bitmap',
   'circle-person',
   'twitter',

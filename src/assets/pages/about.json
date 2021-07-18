@@ -16,7 +16,15 @@
   },
   "history": {
     "title": "História",
-    "text": "O projeto Querido Diário é resultado de uma fusão de duas iniciativas semelhantes que nasceram em momentos distintos. \n    A primeira ideia foi concebida pela Open Knowledge Brasil e se chamava \"Projeto Nosso Querido Diário Oficial\", abreviadamente queriDO. A iniciativa estabeleceu uma metodologia para recuperação da informação registrada nos diários oficiais, a partir dos interesses e metas da comunidade, que seria formada por dois grupos: as pessoas curadoras, que definiriam os \"alvos\", estabelecendo para quais assuntos e diários oficiais desejam voltar seus olhares; e os experts - pessoas entusiastas de dados abertos e que codificariam os raspadores de dados. A segunda ideia veio inspirada no sucesso da Operação Serenata de Amor, que por meio da Rosie, uma robô que expõe suspeitas de mal uso de dinheiro público pelos deputados federais, levou inúmeras pessoas no Brasil a pedir uma mesma ferramenta para os seus estados e municípios. Como a operação tinha o foco no Congresso Nacional, os algoritmos se limitavam ao escopo da esfera federal. Então surgiu o projeto Diário Oficial da Serenata, com o objetivo de levar as análises para a esfera municipal.Em 2018, quando a Operação Serenata de Amor já estava dentro da estrutura da Open Knowledge Brasil, definiu-se que a base de código do projeto Querido Diário da Serenata seria a oficial e que seria usado o nome Querido Diário, uma adaptação do projeto anterior da OKBR. Inicialmente a iniciativa iria coletar os arquivos de diários oficiais dos municípios e criar mecanismos para analisar a dispensa de licitações, mas essa ideia enfrentou muitos desafios técnicos e não teve um forte engajamento.No ano seguinte, decidimos reativar a comunidade para focar em escrever o maior número de raspadores de arquivos possível e aumentar nossa cobertura de municípios no Brasil. O resultado foi fantástico, pois em menos de dois anos saímos de uma cobertura inferior à 100 municípios para alcançar uma cobertura de mais de 2.200 municípios.No segundo semestre de 2020, conseguimos o nosso primeiro financiamento, por meio de uma chamada do projeto Empatía promovido pela ILDA. O recurso foi patrocinado pelo Banco Interamericano de Desenvolvimento (BID). Esse apoio nos permitiu dar início ao desenvolvimento da nossa API aberta e também da nossa plataforma de busca.A plataforma oficial do Querido Diário foi lançada no primeiro semestre de 2021. Nela, é possível que qualquer pessoa faça buscas por conteúdos por meio de palavras-chave, municípios ou datas."
+    "texts": [
+      "O projeto Querido Diário é resultado de uma fusão de duas iniciativas semelhantes que nasceram em momentos distintos.",
+      "A primeira ideia foi concebida pela Open Knowledge Brasil e se chamava <a href='https://github.com/okfn-brasil/queriDO)'>\"Projeto Nosso Querido Diário Oficial\", abreviadamente queriDO</a>. A iniciativa estabeleceu uma metodologia para recuperação da informação registrada nos diários oficiais, a partir dos interesses e metas da comunidade, que seria formada por dois grupos: as pessoas curadoras, que definiriam os \"alvos\", estabelecendo para quais assuntos e diários oficiais desejam voltar seus olhares; e os experts - pessoas entusiastas de dados abertos e que codificariam os raspadores de dados.",
+      "A segunda ideia veio inspirada no sucesso da <a href='https://serenata.ai/' target'_blank'>Operação Serenata de Amor</a>, que por meio da <a href='https://twitter.com/RosieDaSerenata' target'_blank'>Rosie</a>, uma robô que expõe suspeitas de mal uso de dinheiro público pelos deputados federais, levou inúmeras pessoas no Brasil a pedir uma mesma ferramenta para os seus estados e municípios. Como a operação tinha o foco no Congresso Nacional, os algoritmos se limitavam ao escopo da esfera federal. Então surgiu o projeto Diário Oficial da Serenata, com o objetivo de levar as análises para a esfera municipal.",
+      "Em 2018, quando a Operação Serenata de Amor já estava dentro da estrutura da Open Knowledge Brasil, definiu-se que a base de código do projeto Querido Diário da Serenata seria a oficial e que seria usado o nome Querido Diário, uma adaptação do projeto anterior da OKBR. Inicialmente a iniciativa iria coletar os arquivos de diários oficiais dos municípios e criar mecanismos para analisar a dispensa de licitações, mas essa ideia enfrentou muitos desafios técnicos e não teve um forte engajamento.",
+      "No ano seguinte, decidimos reativar a comunidade para focar em escrever o maior número de raspadores de arquivos possível e aumentar nossa cobertura de municípios no Brasil. O resultado foi fantástico, pois em menos de dois anos saímos de uma cobertura inferior à 100 municípios para alcançar uma cobertura de mais de 2.200 municípios.",
+      "No segundo semestre de 2020, conseguimos o nosso primeiro financiamento, por meio de uma chamada do projeto Empatía promovido pela <a href='https://idatosabiertos.org/en/' target='_blank'>ILDA</a>. O recurso foi patrocinado pelo Banco Interamericano de Desenvolvimento (BID). Esse apoio nos permitiu dar início ao desenvolvimento da nossa API aberta e também da nossa plataforma de busca.",
+      "A plataforma oficial do Querido Diário foi lançada no dia 20 de julho de 2021. Nela, é possível que qualquer pessoa faça buscas por conteúdos por meio de palavras-chave, municípios ou datas."
+    ]
   },
   "successCases": {
     "title": "Casos de sucesso",
@@ -47,25 +55,25 @@
   "whoWeAre": {
     "title": "Quem somos",
     "texts": [
-      "A OKBR, também conhecida como Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos e apartidária que atua no país desde 2013.  Desenvolvemos e incentivamos o uso de tecnologias cívicas e de dados abertos, realizamos análises de políticas públicas e promovemos o conhecimento livre para tornar a relação entre governo e sociedade mais transparente e participativa.",
-      "Criado em 2018, o Programa Ciência de Dados para Inovação Cívica surgiu no âmbito das atividades da Operação Serenata de Amor, que havia surgido em 2016 por profissionais independentes de diversas áreas (tecnologia, ciências sociais, jornalismo, design etc.).  O Programa é responsável pela gestão e manutenção dos projetos Querido Diário, Operação Serenata de Amor, Parlametria, Perfil Político, Justa e Vítimas da Intolerância.`, Saiba mais no site: ok.org.br"
+      "A OKBR, também conhecida como Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos e apartidária que atua no país desde 2013. Desenvolvemos e incentivamos o uso de tecnologias cívicas e de dados abertos, realizamos análises de políticas públicas e promovemos o conhecimento livre para tornar a relação entre governo e sociedade mais transparente e participativa.",
+      "Criado em 2018, o Programa Ciência de Dados para Inovação Cívica surgiu no âmbito das atividades da Operação Serenata de Amor, que havia surgido em 2016 por profissionais independentes de diversas áreas (tecnologia, ciências sociais, jornalismo, design etc.). O Programa é responsável pela gestão e manutenção dos projetos Querido Diário, Operação Serenata de Amor, Parlametria, Perfil Político, Justa e Vítimas da Intolerância. "
     ],
     "actions": [
       {
         "text": "Saiba mais em:",
-        "to": "saiba-mais",
+        "to": "http://ok.org.br",
         "link": "ok.org.br"
       }
     ]
   },
   "privacy": {
-    "title": "Política de Privacidade e Proteção de dados",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet ultricies metus. Vestibulum a magna sed enim aliquet dictum. Nunc vulputate pretium eros, non sagittis elit feugiat et. Suspendisse scelerisque dapibus sodales. Praesent gravida massa est",
+    "title": "Termos de uso e política de privacidade",
+    "text": "O Querido Diário tem por objetivo facilitar o acesso da sociedade a dados públicos e todo o processamento é feito para garantir a integridade das informações tais como foram originalmente publicadas pelo órgão. Além disso, trabalhamos para que este seja um ambiente seguro e que respeite a privacidade em sua navegação. Conheça aqui os detalhes dos termos de uso e da política de privacidade desta plataforma.",
     "actions": [
       {
         "text": "Ler mais",
         "icon": "arrow",
-        "to": "/doe",
+        "to": "/privacidade",
         "style": "btn-primary"
       }
     ]

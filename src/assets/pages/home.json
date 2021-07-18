@@ -19,7 +19,7 @@
         "text": "Cidades já na plataforma"
       },
       {
-        "count": 12,
+        "count": 2226,
         "icon": {
           "file": "search",
           "height": 76,
@@ -41,10 +41,16 @@
             "width": 50
           }
         },
-        "count": 12,
+        "count": 597,
         "height": 76,
         "width": 76,
         "text": "Cidades já foram mapeadas pelo censo"
+      }
+    ],
+    "actions": [
+      {
+        "text": "Conheça os níveis de acesso",
+        "to": "/acesso"
       }
     ]
   },
@@ -52,86 +58,51 @@
     "title": "Precisamos do seu apoio",
     "items": [
       {
-        "icon": { "file": "document", "height": 56, "width": 40 },
+        "icon": { "file": "gift", "height": 56, "width": 40 },
         "title": "Nossa próxima meta",
-        "text": "Nossa próxima meta",
+        "text": "Hoje, já poderíamos ter 2226 cidades na plataforma e você pode nos ajudar a chegar lá",
         "actions": [
           {
             "text": "Doe",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "https://www.catarse.me/queridodiario-okbr",
             "style": "btn-primary"
           },
           {
             "text": "Ver todas as metas",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "/apoie",
+            "fragment": "nossas-metas",
             "style": "btn-secondary"
           }
         ]
       },
       {
         "icon": { "file": "document", "height": 56, "width": 40 },
-        "title": "Contribua como desenvolvedor",
+        "title": "Contribua com o desenvolvimento",
         "text": "Contribua com código - o Querido Diário é um projeto de código aberto, então qualquer pessoa pode colaborar com novas funcionalidades para a plataforma",
         "actions": [
           {
             "text": "Comece por aqui",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "/tecnologia",
+            "fragment": "contribua",
             "style": "btn-secondary"
           }
         ]
       },
       {
-        "icon": { "file": "document", "height": 56, "width": 40 },
+        "icon": { "file": "frame", "height": 56, "width": 40 },
         "title": "Cadastre um município",
-        "text": "Cadastre um município - precisamos saber onde as prefeituras publicam seus diários oficiais",
+        "text": "Precisamos saber onde as prefeituras publicam seus diários oficiais",
         "actions": [
           {
-            "text": "Doe",
+            "text": "Comece por aqui",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "https://censo.ok.org.br/",
             "style": "btn-secondary"
           }
         ]
-      }
-    ]
-  },
-  "goals": {
-    "title": "Nossas Metas",
-    "text": "O querido diário está só começando! Temos vários objetivos para o projeto, e você pode nos ajudar a chegar lá:",
-    "items": [
-      {
-        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
-      },
-      {
-        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000",
-        "actions": [{ "text": "Ir para o catarse", "to": "Catarse" }]
-      },
-      {
-        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
-      },
-      {
-        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
-      },
-      {
-        "icon": "ok-hand",
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
       }
     ]
   },
@@ -157,7 +128,12 @@
   },
   "trajectory": {
     "title": "Conheça a trajetória e próximos passos do Querido Diário",
-    "text": "Saiba mais sobre o projeto"
+    "actions": [
+      {
+        "text": "Saiba mais sobre o projeto",
+        "to": "/sobre"
+      }
+    ]
   },
   "realization": [
     {

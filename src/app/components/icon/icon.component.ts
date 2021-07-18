@@ -3,6 +3,8 @@ interface Icon {
   file: string;
   height: number;
   width: number;
+  to?: string;
+  target?: string;
   xs?: {
     height: number;
     width: number;

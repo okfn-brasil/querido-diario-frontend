@@ -3,7 +3,7 @@
   "items": [
     {
       "title": "Realização",
-      "text": "O Querido Diário é um projeto realizado e desenvolvido pela Open Knowledge Brasil, contando com a colaboração de sua rede de pessoas Embaixadoras de Inovação Cívica e da comunidade em torno da Operação Serenata de Amor.",
+      "text": "O Querido Diário é um projeto realizado e desenvolvido <a href='https://www.ok.org.br/' target='_blank'> pela Open Knowledge Brasil</a>, contando com a colaboração de sua <a href='https://embaixadoras.ok.org.br/' target='_blank'>rede de pessoas Embaixadoras de Inovação Cívica</a> e da comunidade em torno da <a href='https://serenata.ai/'>Operação Serenata de Amor.</a>",
       "icons": [
         {
           "file": "logo-OK",
@@ -24,7 +24,7 @@
     },
     {
       "title": "Financiamento do algoritmo de busca",
-      "text": "Em junho de 2020, a Open Knowledge Brasil foi uma das organizações selecionadas pelo projeto EmpatIA, mantido pela Iniciativa Latino-Americana de Dados Abertos (ILDA) e com financiamento do Banco Interamericano de Desenvolvimento (BID). O projeto visa compreender e desenvolver novos conhecimentos sobre a utilização da Inteligência Artificial (IA) na resolução de problemas públicos, e possibilitou o desenvolvimento da primeira versão do algoritmo de busca da plataforma Querido Diário.",
+      "text": "Em junho de 2020, a Open Knowledge Brasil foi uma das organizações selecionadas pelo projeto <a href='https://empatia.la/' target='_blank'>EmpatIA</a>, mantido pela <a href='https://idatosabiertos.org/' target='_blank'>Iniciativa Latino-Americana de Dados Abertos (ILDA)</a> e com financiamento do Banco Interamericano de Desenvolvimento (BID). O projeto visa compreender e desenvolver novos conhecimentos sobre a utilização da Inteligência Artificial (IA) na resolução de problemas públicos, e possibilitou o desenvolvimento da primeira versão do algoritmo de busca da plataforma Querido Diário.",
       "icons": [
         {
           "file": "logo-Ilda",
@@ -51,7 +51,7 @@
     },
     {
       "title": "Automatização da raspagem de dados",
-      "text": "O Querido Diário também recebe apoio da <a href=\"https://www.zyte.com/\" target=\"_blank\">Zyte</a> para utilizar sua infraestrutura, possibilitando a automatização do processo de raspagem das informações textuais contidas nos diários oficiais.",
+      "text": "O Querido Diário também recebe apoio da <a href='https://www.zyte.com/' target='_blank'>Zyte</a> para utilizar sua infraestrutura, possibilitando a automatização do processo de raspagem das informações textuais contidas nos diários oficiais. ",
       "icons": [
         {
           "file": "logo-jurema",
@@ -72,156 +72,173 @@
       ]
     },
     {
-      "title": "comunidade",
-      "text": "Existem várias maneiras de contribuir com o Querido Diário. Se você deseja ajudar o projeto a ir mais longe, <a href=\"https://www.catarse.me/queridodiario-okbr\" target=\"_blank\" >acesse nossa campanha de financiamento coletivo no Catarse</a>e consulte as faixas de doação e suas recompensas. Assim, você sejunta às XX pessoas que já nos ajudaram:",
+      "title": "Comunidade",
+      "text": "Existem várias maneiras de contribuir com o Querido Diário. Se você deseja ajudar o projeto a ir mais longe, <a href=\"https://www.catarse.me/queridodiario-okbr\" target=\"_blank\" >acesse nossa campanha de financiamento coletivo no Catarse</a>e consulte as faixas de doação e suas recompensas. Assim, você sejunta às 43 pessoas que já nos ajudaram:",
+      "items": [
+        [
+          "Alan Silva Costa",
+          "Alexandre Vasconcelos",
+          "Álvaro Dornelles Hetzel",
+          "Amanda Lie Kitagava",
+          "Ana Luiza Santos Terra",
+          "Andre Assumpcao",
+          "Augusto Pascutti",
+          "Bruno Englert Moutinho",
+          "Caio Werneck",
+          "Danilo Amaral de OLiveira"
+        ],
+        [
+          "Dreyf Assis Gonçalves",
+          "Eduardo Carvalho Rosa",
+          "Felipe Geremia Nievinski",
+          "Frank Farias Santos",
+          "George Antonio Vilas Boas Santiago",
+          "Gustavo Brondani Schenkel",
+          "Henrique Lorea Leite",
+          "Igor Bandim"
+        ],
+        [
+          "Isadora Queiroz",
+          "José Antônio Ribeiro Vargas",
+          "Jose Guilherme Vanz",
+          "Juliano De Holanda Freitas",
+          "Kelsen Henrique",
+          "Louise Pereira",
+          "Marco Guedes",
+          "Maria Victoria Ferraz",
+          "Mário Rutman"
+        ],
+        [
+          "Mario Santos Silva",
+          "Mércia Maguerroski",
+          "Paulo Costa",
+          "Paulo Henrique Franzon",
+          "Pedro Guedes",
+          "Rafael ROsado Urquhart",
+          "Rafael Toledo",
+          "Renato Rebelo de Moraes",
+          "Ricardo Fernandes de Souza"
+        ],
+        [
+          "Vítor Márcio Paiva de Sousa Baptista",
+          "Natássya Barlate Floro da Silva",
+          "Guilherme R. Storck",
+          "Francisco Goldmeier Tochetto",
+          "Thiago Sant' Helena",
+          "Débora Maria Valverde da Silva",
+          "Murilo Viana"
+        ]
+      ]
+    },
+    {
+      "title": "Se você é uma pessoa desenvolvedora interessada em contribuir com o código do projeto, que é aberto e acessível a toda a comunidade, consulte nossos repositórios no Github e junte-se ao time que ajuda o Querido Diário a tomar forma:"
+    },
+    {
       "action": {
-        "title": "Repositório de desenvolvimento da Toolbox (processamento de dados)",
-        "to": "/foo"
+        "text": "Repositório de raspadores do Querido Diário",
+        "to": "https://github.com/okfn-brasil/querido-diario"
       },
       "items": [
-        "Alan Silva Costa",
-        "Alexandre Vasconcelos",
-        "Álvaro Dornelles Hetzel",
-        "Amanda Lie Kitagava",
-        "Ana Luiza Santos Terra",
-        "Andre Assumpcao",
-        "Augusto Pascutti",
-        "Bruno Englert Moutinho",
-        "Caio Werneck",
-        "Danilo Amaral de OLiveira",
-        "Dreyf Assis Gonçalves",
-        "Eduardo Carvalho Rosa",
-        "Felipe Geremia Nievinski",
-        "Frank Farias Santos",
-        "George Antonio Vilas Boas Santiago",
-        "Gustavo Brondani Schenkel",
-        "Henrique Lorea Leite",
-        "Igor Bandim",
-        "Isadora Queiroz",
-        "José Antônio Ribeiro Vargas",
-        "Jose Guilherme Vanz",
-        "Juliano De Holanda Freitas",
-        "Kelsen Henrique",
-        "Louise Pereira",
-        "Marco Guedes",
-        "Maria Victoria Ferraz",
-        "Mário Rutman",
-        "Mario Santos Silva",
-        "Mércia Maguerroski",
-        "Paulo Costa",
-        "Paulo Henrique Franzon",
-        "Pedro Guedes",
-        "Rafael ROsado Urquhart",
-        "Rafael Toledo",
-        "Renato Rebelo de Moraes",
-        "Ricardo Fernandes de Souza",
-        "Vítor Márcio Paiva de Sousa Baptista",
-        "Natássya Barlate Floro da Silva",
-        "Guilherme R. Storck",
-        "Francisco Goldmeier Tochetto",
-        "Thiago Sant' Helena",
-        "Débora Maria Valverde da Silva",
-        "Murilo Viana",
-        "Vinícius Monteiro"
+        [
+          "José Guilherme Vanz",
+          "Irio Musskopf",
+          "Renne Rocha",
+          "Giovani Sousa Leite",
+          "Eduardo Cuducos",
+          "Antonio Vendramin",
+          "Giulio Carvalho",
+          "Bruno Lellis",
+          "Danilo Jeremias da Silva",
+          "Rodolfo Lottin Pereira",
+          "Victor Torres",
+          "Alan Fachini"
+        ],
+        [
+          "Vitor Baptista",
+          "Pedro Garcias",
+          "Felipe Ruhland",
+          "Helder Geovane Gomes de Lima",
+          "Alvaro Leonel",
+          "Ana Paula Gomes",
+          "Fábio C. Barrionuevo da Luz",
+          "Adorilson Bezerra",
+          "Weibe Moura",
+          "Beothorn",
+          "Anderson Berg"
+        ],
+        [
+          "Bruna Moreira",
+          "Jeferson Alves",
+          "Hugo Leonardo Costa e Silva",
+          "Thiago Curvelo",
+          "Vinicius Artur",
+          "Rodrigo Vieira"
+        ],
+        [
+          "Avelino",
+          "Gustavo De Mari Pereira",
+          "Laerte Pereira",
+          "Camila Fracaro",
+          "Jonathan Schweder",
+          "Gustavo Coelho",
+          "André Angeluci",
+          "Lucas Santos Summer",
+          "Pedro Peixoto",
+          "Rodrigo Chamun",
+          "Enderson Menezes",
+          "Nícolas F. R. A. Prado"
+        ],
+        [
+          "Vinicius Gasparini",
+          "Gabriel Trette",
+          "Paulo Henrique Cuchi",
+          "Chico Venancio",
+          "Daiana Marasquin",
+          "Jonathan Cardoso",
+          "Lucas Rangel Cezimbra",
+          "Gabriel (Gabu) Bellon",
+          "Mohan Sha",
+          "Alexandre Vicenzi",
+          "Rodrigo Lima"
+        ]
       ]
     },
     {
       "action": {
-        "text": "Se você é uma pessoa desenvolvedora interessada em contribuir com o código do projeto, que é aberto e acessível a toda a comunidade, consulte nossos repositórios no Github e junte-se ao time que ajuda o Querido Diário a tomar forma:",
-        "to": "/foo"
-      }
-    },
-    {
-      "title": "Repositório geral do Querido Diário",
-      "action": {
-        "text": "Repositório de desenvolvimento da Toolbox (processamento de dados)",
-        "to": "/foo"
+        "text": "Repositório de desenvolvimento da API",
+        "to": "https://github.com/okfn-brasil/querido-diario-api"
       },
       "items": [
-        "José Guilherme Vanz",
-        "Irio Musskopf",
-        "Renne Rocha",
-        "Giovani Sousa Leite",
-        "Eduardo Cuducos",
-        "Antonio Vendramin",
-        "Giulio Carvalho",
-        "Bruno Lellis",
-        "Danilo Jeremias da Silva",
-        "Rodolfo Lottin Pereira",
-        "Victor Torres",
-        "Alan Fachini",
-        "Vitor Baptista",
-        "Pedro Garcias",
-        "Felipe Ruhland",
-        "Helder Geovane Gomes de Lima",
-        "Alvaro Leonel",
-        "Ana Paula Gomes",
-        "Fábio C. Barrionuevo da Luz",
-        "Adorilson Bezerra",
-        "Weibe Moura",
-        "Beothorn",
-        "Anderson Berg",
-        "Bruna Moreira",
-        "Jeferson Alves",
-        "Hugo Leonardo Costa e Silva",
-        "Beothorn",
-        "Anderson Berg",
-        "Bruna Moreira",
-        "Jeferson Alves",
-        "Hugo Leonardo Costa e Silva",
-        "Thiago Curvelo",
-        "Vinicius Artur",
-        "Rodrigo Vieira",
-        "Avelino",
-        "Gustavo De Mari Pereira",
-        "Laerte Pereira",
-        "Camila Fracaro",
-        "Jonathan Schweder",
-        "Gustavo Coelho",
-        "André Angeluci",
-        "Lucas Santos Summer",
-        "Pedro Peixoto",
-        "Rodrigo Chamun",
-        "Enderson Menezes",
-        "Nícolas F. R. A. Prado",
-        "Vinicius Gasparini",
-        "Gabriel Trette",
-        "Paulo Henrique Cuchi",
-        "Chico Venancio",
-        "Daiana Marasquin",
-        "Jonathan Cardoso",
-        "Lucas Rangel Cezimbra",
-        "Gabriel (Gabu) Bellon",
-        "Mohan Sha",
-        "Alexandre Vicenzi",
-        "Rodrigo Lima"
+        ["André Formento", "Eduardo Cuducos"],
+        ["Giulio Carvalho", "Jonathan Schweder"],
+        ["José Guilherme Vanz"]
       ]
     },
     {
-      "title": "Repositório de desenvolvimento da API",
-      "items": ["Repositório de desenvolvimento da API"]
+      "action": {
+        "text": "Repositório de desenvolvimento do processamento de dados",
+        "to": "https://github.com/okfn-brasil/querido-diario-data-processing"
+      },
+      "items": [["José Guilherme Vanz"], ["Eduardo Coducos"]]
     },
     {
       "action": {
-        "text": "Repositório de desenvolvimento da Toolbox (processamento de dados)",
-        "to": "/foo"
+        "text": "Repositório de desenvolvimento da toolbox (caixa de ferramentas) do Querido Diário",
+        "to": "https://github.com/okfn-brasil/querido-diario-toolbox"
       },
-      "items": ["Andre Assumpcao", "José Guilherme Vanz"]
+      "items": [["Andre Assumpcao"], ["José Guilherme Vanz"], ["Mário Sérgio"]]
     },
     {
       "action": {
         "text": "Censo dos diários oficiais - análises e relatórios",
-        "to": "/foo"
+        "to": "https://github.com/okfn-brasil/censo-querido-diario/"
       },
       "items": [
-        "Bernardo Chrispim Baron",
-        "Geovane Oliveira de Carvalho",
-        "Ana Cecília Vieira",
-        "Giulio Carvalho",
-        "David Pierre",
-        "Fausto Sá Teles",
-        "Vinicius Antonini",
-        "Ana Paula Gomes"
+        ["Bernardo Chrispim Baron", "Geovane Oliveira de Carvalho"],
+        ["Ana Cecília Vieira", "Giulio Carvalho"],
+        ["David Pierre", "Fausto Sá Teles"],
+        ["Vinicius Antonini"],
+        ["Ana Paula Gomes"]
       ]
     }
   ]
