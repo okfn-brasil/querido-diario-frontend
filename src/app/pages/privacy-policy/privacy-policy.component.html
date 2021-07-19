@@ -5,7 +5,7 @@
         <h1>{{ content.title }}</h1>
         <ng-container *ngFor="let item of content.items">
           <app-column [gap]="22">
-            <h3>{{ item.title }}</h3>
+            <h2>{{ item.title }}</h2>
             <div class="typo-inner" [innerHTML]="item.text"></div>
           </app-column>
         </ng-container>

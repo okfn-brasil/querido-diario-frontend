@@ -9,11 +9,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { findLevel, Level } from 'src/app/data/levels';
-import { GazetteResponse, GazetteService } from 'src/app/gazette.service';
+import {
+  Gazette,
+  GazetteResponse,
+  GazetteService,
+} from 'src/app/gazette.service';
 import { City } from 'src/app/interfaces/city';
-import { CitiesService } from 'src/app/services/cities.service';
 import { TerritoryService, Territory } from 'src/app/territory.service';
-import { Icon } from 'src/app/types/icon';
 interface SearchResult {
   text: string;
   city: string;
@@ -41,16 +43,6 @@ interface Pagination {
   totalItems?: number;
 }
 
-interface TerritoryLevel {
-  level: number;
-  icon: Icon;
-  description: string;
-  actions: {
-    to: string;
-    text: string;
-  }[];
-}
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -61,7 +53,6 @@ export class SearchComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private citiesService: CitiesService,
     private territoryService: TerritoryService,
     private gazetteService: GazetteService
   ) {}
@@ -82,7 +73,7 @@ export class SearchComponent implements OnInit {
 
   pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
 
-  level$: Observable<Level| null> = of(null);
+  level$: Observable<Level | null> = of(null);
 
   //@Output() pageChange = new EventEmitter();
   @Output() pageBoundsCorrection = new EventEmitter();
@@ -185,7 +176,6 @@ export class SearchComponent implements OnInit {
 
   orderChanged(sort_by: string) {
     const queryParams = this.route.snapshot.queryParams;
-    console.log('queryParams ', queryParams);
     this.router.navigate(['/pesquisa'], {
       queryParams: { ...queryParams, sort_by },
     });

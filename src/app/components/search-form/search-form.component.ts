@@ -122,6 +122,10 @@ export class SearchFormComponent implements OnInit {
     );
   }
 
+  displayFn(territory: Territory): string {
+    return territory && territory.territory_name ? territory.territory_name : '';
+  }
+
   private findTerritory(value: string): Observable<Territory[]> {
     const filterValue = value.toLowerCase();
     return this.territoryService

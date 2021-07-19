@@ -45,8 +45,6 @@ export class GazetteService {
   }
 
   findAll(query: GazetteQuery): Observable<GazetteResponse> {
-    console.log('find by query ', query);
-
     const { term, territory_id, since, until, sort_by, page } = query;
     let url = `https://queridodiario.ok.org.br/api/gazettes/${
       territory_id || ''
@@ -64,7 +62,6 @@ export class GazetteService {
       url += `until=${until}&`;
     }
 
-    console.log('sort_by ', sort_by);
     if (sort_by) {
       url += `sort_by=${sort_by}`; // default
     }

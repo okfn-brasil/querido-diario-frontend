@@ -55,7 +55,7 @@
         <div fxLayout="column" fxFlex="60%" fxFlex.xs fxLayoutGap="18px">
           <ng-container *ngFor="let text of level.descriptions">
             <div
-              class="typo-inner"
+              class="typo-inner dark highlight"
               [innerHTML]="text"
               [style.color]="'#FFF'"
             ></div>
@@ -88,13 +88,15 @@
           fxLayoutGap="12px"
         >
           <h3>Diários oficiais • {{ territory.territory_name }}</h3>
-          <ng-container
-            *ngFor="let publication_url of territory.publication_urls"
-          >
-            <a [href]="publication_url" target="_blank">
-              {{ extractUrlDomain(publication_url) }}
-            </a>
-          </ng-container>
+          <nav class="nav-dark">
+            <ng-container
+              *ngFor="let publication_url of territory.publication_urls"
+            >
+              <a class="nav-dark" [href]="publication_url" target="_blank">
+                {{ extractUrlDomain(publication_url) }}
+              </a>
+            </ng-container>
+          </nav>
         </div>
       </div>
     </div>
@@ -144,7 +146,7 @@
               fxLayout.xs="column"
               fxLayoutAlign="space-between"
             >
-              <p>
+              <p [style.paddingTop]="'16px'">
                 {{ gazette.date }} •
                 <span class="color-purple-3">{{ gazette.territory_name }}</span>
               </p>
@@ -153,7 +155,7 @@
                 (onSelected)="openFile($event)"
                 [options]="[
                   {
-                    value: 'http://path/to/text',
+                    value: gazette.file_raw_txt,
                     viewValue: 'Baixar txt'
                   },
                   {

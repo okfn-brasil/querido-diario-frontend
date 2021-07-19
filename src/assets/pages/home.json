@@ -71,7 +71,7 @@
           {
             "text": "Ver todas as metas",
             "icon": "arrow",
-            "to": "/apoie",
+            "route": "/apoie",
             "fragment": "nossas-metas",
             "style": "btn-secondary"
           }
@@ -85,7 +85,7 @@
           {
             "text": "Comece por aqui",
             "icon": "arrow",
-            "to": "/tecnologia",
+            "route": "/tecnologia",
             "fragment": "contribua",
             "style": "btn-secondary"
           }

@@ -29,7 +29,6 @@ export class TerritoryService {
   findAll(query: TerritoryQuery): Observable<Territory[]> {
     let url = `https://queridodiario.ok.org.br/api/cities/?`;
     const { name } = query;
-    console.log('name ', name)
     if (name) {
       url += `city_name=${name}`
     }
@@ -43,7 +42,6 @@ export class TerritoryService {
 
   findByName(name: string): Observable<Territory[]> {
     const url = `https://queridodiario.ok.org.br/api/cities/?city_name=` + name;
-    console.log('url ', url)
 
     return this.http.get<{ cities: [] }>(url).pipe(
       map((res: { cities: [] }) => {
@@ -57,7 +55,6 @@ export class TerritoryService {
     this.findByName(filterValue).subscribe((data: Territory[]) => {
       const currentTerritory = data[0];
       this.territory.next(currentTerritory)
-      //console.log('current territory ', this.currentTerritory)
     });
   }
 }

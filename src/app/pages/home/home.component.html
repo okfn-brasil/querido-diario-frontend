@@ -58,9 +58,12 @@
               </app-column>
               <app-row [gap]="12">
                 <ng-container *ngFor="let action of item.actions">
-                  <button [ngClass]="action.style">
+                  <a *ngIf="action.to" [ngClass]="action.style" [href]="action.to" target="_blank">
                     {{ action.text }}
-                  </button>
+                  </a>
+                  <a *ngIf="action.route" [ngClass]="action.style" [routerLink]="action.route">
+                    {{ action.text }}
+                  </a>
                 </ng-container>
               </app-row>
             </app-column>
