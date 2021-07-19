@@ -61,7 +61,7 @@
                   <a *ngIf="action.to" [ngClass]="action.style" [href]="action.to" target="_blank">
                     {{ action.text }}
                   </a>
-                  <a *ngIf="action.route" [ngClass]="action.style" [routerLink]="action.route">
+                  <a *ngIf="action.route" [ngClass]="action.style" [routerLink]="action.route" [fragment]="action.fragment">
                     {{ action.text }}
                   </a>
                 </ng-container>
