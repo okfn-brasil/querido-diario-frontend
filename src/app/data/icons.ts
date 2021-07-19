@@ -38,6 +38,7 @@ export const Icons: string[] = [
   'clock',
   'search-gray',
   'level-0',
+  'level-1',
   'money',
   'pin-gray',
   'calendar-gray',

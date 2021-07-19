@@ -13,9 +13,7 @@
   >
     <!--     this.territoryService.select(city) -->
     <div class="container" fxLayout="column" fxLayoutGap="18px">
-      <h2>
-        Sua pesquisa não encontrou nenhum conteúdo correspondente
-      </h2>
+      <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
       <p>
         Confira a grafia das palavras, tentes outros termos ou palavras mais
         genéricas
@@ -29,10 +27,23 @@
     fxLayout="row"
     *ngIf="!!territory"
   >
-    <div class="container" fxLayout="column" fxLayoutGap.xs="36px" fxLayoutGap="44px">
+    <div
+      class="container"
+      *ngIf="level$ | async as level"
+      fxLayout="column"
+      fxLayoutGap.xs="36px"
+      fxLayoutGap="44px"
+    >
       <div fxLayout="row">
         <div fxLayout="row" fxFlex="40%" fxFlex.xs fxLayoutGap="12px">
-          <mat-icon [appHeight]="50" [appWidth]="50" svgIcon="check"></mat-icon>
+          <app-icon
+            [icon]="{
+              file: level.icon,
+              height: 50,
+              width: 50
+            }"
+          >
+          </app-icon>
           <div fxLayout="column" fxLayoutGap="16px">
             <p>{{ territory.territory_name }}</p>
             <span
@@ -41,23 +52,31 @@
           </div>
         </div>
 
-        <div
-          fxLayout="column"
-          fxFlex="60%"
-          fxFlex.xs
-          fxLayoutGap="18px"
-          *ngIf="!!levelDescription"
-        >
-          <p>
-            {{ levelDescription.text }}
-          </p>
-          <button *ngIf="levelDescription.button">
-            {{ levelDescription.button.text }}
-          </button>
+        <div fxLayout="column" fxFlex="60%" fxFlex.xs fxLayoutGap="18px">
+          <ng-container *ngFor="let text of level.descriptions">
+            <div class="typo-inner" [innerHTML]="text" [style.color]="'#FFF'"></div>
+          </ng-container>
+          <ng-container *ngFor="let action of level.actions">
+            <a
+              class="btn-primary"
+              [href]="action.to"
+              [target]="action.target || '_self'"
+            >
+              {{ action.text }}
+            </a>
+          </ng-container>
         </div>
       </div>
 
-      <div fxLayout="column" fxLayoutGap="42px" *ngIf="territory.publication_urls && gazetteResponse && !gazetteResponse.total_gazettes">
+      <div
+        fxLayout="column"
+        fxLayoutGap="42px"
+        *ngIf="
+          territory.publication_urls &&
+          gazetteResponse &&
+          !gazetteResponse.total_gazettes
+        "
+      >
         <p>Acesse a fonte de publicação para ver os arquivos originais:</p>
         <div
           fxLayout="column"
@@ -65,9 +84,11 @@
           fxLayoutGap="12px"
         >
           <h3>Diários oficiais • {{ territory.territory_name }}</h3>
-          <ng-container *ngFor="let publication_url of territory.publication_urls">
+          <ng-container
+            *ngFor="let publication_url of territory.publication_urls"
+          >
             <a [href]="publication_url" target="_blank">
-            {{ extractUrlDomain(publication_url) }}
+              {{ extractUrlDomain(publication_url) }}
             </a>
           </ng-container>
         </div>
@@ -78,14 +99,13 @@
   <div *ngIf="gazetteResponse && gazetteResponse.total_gazettes">
     <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
       <div class="container" fxLayout="column" fxLayoutGap="42px">
-        <p>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-          scelerisque ante sollicitudin commodo.
-        </p>
+        <ng-container *ngIf="level$ | async as level">
+          <ng-container *ngFor="let text of level.texts">
+            <p>{{text}}</p>
+          </ng-container>
+        </ng-container>
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <h2
-            >{{ gazetteResponse.total_gazettes }} resultados encontrados</h2
-          >
+          <h2>{{ gazetteResponse.total_gazettes }} resultados encontrados</h2>
           <app-select
             [title]="'ORDENAR POR'"
             [options]="orderOptions"

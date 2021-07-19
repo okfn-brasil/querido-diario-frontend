@@ -106,26 +106,6 @@
       }
     ]
   },
-  "infos": {
-    "title": "Entenda",
-    "items": [
-      {
-        "title": "Nível de Acesso",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
-      },
-      {
-        "title": "Glossário",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
-      },
-      {
-        "title": "Como denunciar ou pedir informações",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
-      }
-    ]
-  },
   "trajectory": {
     "title": "Conheça a trajetória e próximos passos do Querido Diário",
     "actions": [
