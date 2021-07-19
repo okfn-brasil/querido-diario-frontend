@@ -6,9 +6,9 @@
         "text": "Cadastre um município",
         "to": "https://censo.ok.org.br/"
       },
-      { "text": "Nossas Metas", "to": "/apoie", "fragment": "nossas-metas" },
-      { "text": "Quem apoia", "to": "/apoie", "fragment": "quem-apoia" },
-      { "text": "Envie sua sugestão", "to": "/sugestao" }
+      { "text": "Nossas Metas", "route": "/apoie", "fragment": "nossas-metas" },
+      { "text": "Quem apoia", "route": "/apoie", "fragment": "quem-apoia" },
+      { "text": "Envie sua sugestão", "route": "/sugestao" }
     ]
   },
   {
@@ -16,30 +16,30 @@
     "actions": [
       {
         "text": "Documentação",
-        "to": "/tecnologia",
+        "route": "/tecnologia",
         "fragment": "documentacao"
       },
       {
         "text": "Contribua com código",
-        "to": "/tecnologia",
+        "route": "/tecnologia",
         "fragment": "contribua"
       },
-      { "text": "Relatórios", "to": "/tecnologia", "fragment": "relatorios" }
+      { "text": "Relatórios", "route": "/tecnologia", "fragment": "relatorios" }
     ]
   },
   {
     "title": "SOBRE",
     "actions": [
-      { "text": "História", "to": "/sobre", "fragment": "historia" },
+      { "text": "História", "route": "/sobre", "fragment": "historia" },
       {
         "text": "Casos de sucesso",
-        "to": "/sobre",
+        "route": "/sobre",
         "fragment": "casos-de-sucesso"
       },
-      { "text": "Quem somos", "to": "sobre#casos-de-sucesso" },
+      { "text": "Quem somos", "route": "sobre", "fragment": "quem somos" },
       {
         "text": "Política de privacidade",
-        "to": "/privacidade"
+        "route": "/privacidade"
       }
     ]
   }

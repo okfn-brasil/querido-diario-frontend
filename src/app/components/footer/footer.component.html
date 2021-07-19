@@ -6,7 +6,10 @@
           ><p>{{ section.title }}</p></span
         >
         <ng-container *ngFor="let action of section.actions">
-          <a [routerLink]="action.to" [fragment]="action.fragment">
+          <a *ngIf="action.to" [href]="action.to" target="_blank">
+            {{ action.text }}
+          </a>
+          <a *ngIf="action.route" [routerLink]="action.route" [fragment]="action.fragment">
             {{ action.text }}
           </a>
         </ng-container>

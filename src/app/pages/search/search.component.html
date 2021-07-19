@@ -44,17 +44,21 @@
             }"
           >
           </app-icon>
-          <div fxLayout="column" fxLayoutGap="16px">
-            <p>{{ territory.territory_name }}</p>
-            <span
-              ><p>NÍVEL {{ territory.level }} DE ACESSO</p></span
-            >
+          <div fxLayout="column">
+            <p [style.lineHeight]="'13px'">{{ territory.territory_name }}</p>
+            <span>
+              <p>{{ level.title.toUpperCase() }}</p>
+            </span>
           </div>
         </div>
 
         <div fxLayout="column" fxFlex="60%" fxFlex.xs fxLayoutGap="18px">
           <ng-container *ngFor="let text of level.descriptions">
-            <div class="typo-inner" [innerHTML]="text" [style.color]="'#FFF'"></div>
+            <div
+              class="typo-inner"
+              [innerHTML]="text"
+              [style.color]="'#FFF'"
+            ></div>
           </ng-container>
           <ng-container *ngFor="let action of level.actions">
             <a
@@ -101,7 +105,7 @@
       <div class="container" fxLayout="column" fxLayoutGap="42px">
         <ng-container *ngIf="level$ | async as level">
           <ng-container *ngFor="let text of level.texts">
-            <p>{{text}}</p>
+            <p>{{ text }}</p>
           </ng-container>
         </ng-container>
         <div fxLayout="row" fxLayoutAlign="space-between">

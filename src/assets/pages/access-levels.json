@@ -3,25 +3,49 @@
   "text": "Cada município possui um nível de acesso no projeto Querido Diário. Conheça cada um:",
   "items": [
     {
-      "icon": { "file": "pin", "height": 50, "width": 50 },
+      "icon": { "file": "level-1", "height": 50, "width": 50 },
       "title": "Nível 0 de acesso",
       "text": "Não possuímos a fonte de publicação do diário oficial deste município",
-      "actions": [{ "text": "Cadastre um município" }]
+      "actions": [
+        {
+          "text": "Cadastre esse município",
+          "to": "https://censo.ok.org.br/",
+          "target": "_blank"
+        }
+      ]
     },
     {
-      "icon": { "file": "pin", "height": 50, "width": 50 },
+      "icon": { "file": "level-1", "height": 50, "width": 50 },
       "title": "Nível 1 de acesso",
       "text": "Possuímos a fonte de publicação do diário oficial deste município",
-      "actions": [{ "text": "Doe" }, { "text": "Contribua com código" }]
+      "actions": [
+        {
+          "text": "Doe",
+          "to": "https://www.catarse.me/queridodiario-okbr",
+          "target": "_blank"
+        },
+        {
+          "text": "Contribua com código",
+          "route": "/tecnologia",
+          "fragment": "contribua",
+          "target": "_blank"
+        }
+      ]
     },
     {
-      "icon": { "file": "pin", "height": 50, "width": 50 },
+      "icon": { "file": "level-1", "height": 50, "width": 50 },
       "title": "Nível 2 de acesso",
       "text": "Temos o script para coletar os arquivos e armazená-los em nossa base Precisamos da sua ajuda para xxx",
-      "actions": [{ "text": "Doe" }]
+      "actions": [
+        {
+          "text": "Doe",
+          "to": "https://www.catarse.me/queridodiario-okbr",
+          "target": "_blank"
+        }
+      ]
     },
     {
-      "icon": { "file": "pin", "height": 50, "width": 50 },
+      "icon": { "file": "level-1", "height": 50, "width": 50 },
       "title": "Nível 3 de acesso",
       "text": "o conteúdo dos diários oficiais deste município está disponível na plataforma Querido Diário"
     }
