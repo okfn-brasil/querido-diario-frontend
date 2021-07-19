@@ -3,9 +3,9 @@
   "text": "Cada município possui um nível de acesso no projeto Querido Diário. Conheça cada um:",
   "items": [
     {
-      "icon": { "file": "level-1", "height": 50, "width": 50 },
+      "icon": { "file": "level-0", "height": 50, "width": 50 },
       "title": "Nível 0 de acesso",
-      "text": "Não possuímos a fonte de publicação do diário oficial deste município",
+      "texts": ["Não possuímos a fonte de publicação do diário oficial deste município"],
       "actions": [
         {
           "text": "Cadastre esse município",
@@ -17,7 +17,7 @@
     {
       "icon": { "file": "level-1", "height": 50, "width": 50 },
       "title": "Nível 1 de acesso",
-      "text": "Possuímos a fonte de publicação do diário oficial deste município",
+      "texts": ["Possuímos a fonte de publicação do diário oficial deste município"],
       "actions": [
         {
           "text": "Doe",
@@ -33,9 +33,11 @@
       ]
     },
     {
-      "icon": { "file": "level-1", "height": 50, "width": 50 },
+      "icon": { "file": "level-2", "height": 50, "width": 50 },
       "title": "Nível 2 de acesso",
-      "text": "Temos o script para coletar os arquivos e armazená-los em nossa base Precisamos da sua ajuda para xxx",
+      "texts": ["Temos o script para coletar os arquivos e armazená-los em nossa base.",
+        "Precisamos da sua ajuda para conseguir desbloquear o formato fechado dos arquivos para publicá-lo aberto na plataforma."
+      ],
       "actions": [
         {
           "text": "Doe",
@@ -45,9 +47,9 @@
       ]
     },
     {
-      "icon": { "file": "level-1", "height": 50, "width": 50 },
+      "icon": { "file": "level-3", "height": 50, "width": 50 },
       "title": "Nível 3 de acesso",
-      "text": "o conteúdo dos diários oficiais deste município está disponível na plataforma Querido Diário"
+      "texts": ["o conteúdo dos diários oficiais deste município está disponível na plataforma Querido Diário"]
     }
   ]
 }

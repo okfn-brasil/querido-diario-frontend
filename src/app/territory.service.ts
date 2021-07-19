@@ -55,6 +55,6 @@ export class TerritoryService {
     this.findByName(filterValue).subscribe((data: Territory[]) => {
       const currentTerritory = data[0];
       this.territory.next(currentTerritory)
-    });
+    }).unsubscribe();
   }
 }

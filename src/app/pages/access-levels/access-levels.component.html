@@ -9,22 +9,33 @@
       </div>
       <app-row [flex]="true" [gap]="22" [gapXs]="32">
         <ng-container *ngFor="let item of content.items">
-          <app-column [gap]="16"  fxFlex="25%" [flex]="true">
+          <app-column [gap]="16" fxFlex="25%" [flex]="true">
             <app-icon [icon]="item.icon"></app-icon>
             <app-column [gap]="16">
               <h3>{{ item.title }}</h3>
-              <div class="typo-inner" [innerHTML]="item.text"></div>
+              <ng-container *ngFor="let text of item.texts">
+                <div class="typo-inner" [innerHTML]="text"></div>
+              </ng-container>
               <ng-container *ngFor="let action of item.actions">
                 <app-row class="nav-dark">
-                  <a *ngIf="action.to" [href]="action.to" [target]="action.target || 'self'">
+                  <a
+                    *ngIf="action.to"
+                    [href]="action.to"
+                    [target]="action.target || 'self'"
+                  >
                     {{ action.text }}
                   </a>
-                  <a *ngIf="action.route" [routerLink]="action.route" [fragment]="action.fragment">
+                  <a
+                    *ngIf="action.route"
+                    [routerLink]="action.route"
+                    [fragment]="action.fragment"
+                  >
                     {{ action.text }}
                   </a>
                   <mat-icon
                     [appHeight]="12"
                     [appWidth]="12"
+                    [style.marginTop]="'12px'"
                     svgIcon="right-arrow"
                     class="right-arrow"
                   ></mat-icon>

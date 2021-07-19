@@ -50,17 +50,6 @@
       ]
     },
     {
-      "title": "Automatização da raspagem de dados",
-      "text": "O Querido Diário também recebe apoio da <a href='https://www.zyte.com/' target='_blank'>Zyte</a> para utilizar sua infraestrutura, possibilitando a automatização do processo de raspagem das informações textuais contidas nos diários oficiais. ",
-      "icons": [
-        {
-          "file": "logo-jurema",
-          "height": 18,
-          "width": 80
-        }
-      ]
-    },
-    {
       "title": "Armazenamento e hospedagem",
       "text": "A plataforma está hospedada na <a href=\"https://www.digitalocean.com/\" target=\"_blank\">DigitalOcean</a>, que é apoiadora de longa data do Querido Diário e da OperaçãoSerenata de Amor.",
       "icons": [

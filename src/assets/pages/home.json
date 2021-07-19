@@ -129,6 +129,7 @@
       "icons": [
         { "file": "logo-Ilda", "height": 17, "width": 52 },
         { "file": "logo-jurema", "height": 18, "width": 80 },
+        { "file": "empatia", "height": 16, "width": 87 },
         { "file": "logo-digitalocean", "height": 18, "width": 110 }
       ]
     }

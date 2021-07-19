@@ -1,14 +1,8 @@
-import {
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from 'moment';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
 import { City } from 'src/app/interfaces/city';
 import { TerritoryService } from 'src/app/territory.service';
@@ -52,6 +46,8 @@ export class SearchFormComponent implements OnInit {
   since: string = '';
   until: string = '';
 
+  subscriptions: Subscription[] = [];
+
   constructor(
     private territoryService: TerritoryService,
     private router: Router,
@@ -75,11 +71,13 @@ export class SearchFormComponent implements OnInit {
       })
     );
 
-    this.route.queryParams.subscribe((params) => {
-      const { term, city } = params;
-      this.termControl.setValue(term);
-      this.cityControl.setValue(city);
-    });
+    this.subscriptions.push(
+      this.route.queryParams.subscribe((params) => {
+        const { term, city } = params;
+        this.termControl.setValue(term);
+        this.cityControl.setValue(city);
+      })
+    );
   }
 
   search(): void {
@@ -123,7 +121,9 @@ export class SearchFormComponent implements OnInit {
   }
 
   displayFn(territory: Territory): string {
-    return territory && territory.territory_name ? territory.territory_name : '';
+    return territory && territory.territory_name
+      ? territory.territory_name
+      : '';
   }
 
   private findTerritory(value: string): Observable<Territory[]> {
@@ -131,5 +131,11 @@ export class SearchFormComponent implements OnInit {
     return this.territoryService
       .findByName(filterValue)
       .pipe(map((result) => result));
+  }
+
+  ngOnDestroy() {
+    for (let subscriptions of this.subscriptions) {
+      subscriptions.unsubscribe();
+    }
   }
 }

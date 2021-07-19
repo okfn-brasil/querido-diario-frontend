@@ -11,7 +11,7 @@
         [matAutocomplete]="auto"
       />
       <mat-autocomplete class="light" #auto="matAutocomplete">
-        <p class="typo-secondary autocomplete-title">Sugestões de busca</p>
+        <p class="typo-secondary autocomplete-title" [style.marginLeft]="'16px'">Sugestões de busca</p>
         <mat-option
           *ngFor="let option of filteredOptions | async"
           [value]="option"

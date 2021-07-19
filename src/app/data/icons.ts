@@ -39,6 +39,8 @@ export const Icons: string[] = [
   'search-gray',
   'level-0',
   'level-1',
+  'level-2',
+  'level-3',
   'money',
   'pin-gray',
   'calendar-gray',
@@ -46,4 +48,6 @@ export const Icons: string[] = [
   'pagination-right-double-arrow',
   'pagination-left-single-arrow',
   'pagination-right-single-arrow',
+  'empatia',
+  'cc'
 ];

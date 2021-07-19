@@ -23,7 +23,7 @@
         <h1>
           {{ content.history.title }}
         </h1>
-        <div *ngFor="let text of content.history.texts" class="typo-inner" [innerHTML]="text"></div>
+        <div *ngFor="let text of content.history.texts" class="typo-inner highlight" [innerHTML]="text"></div>
       </app-column>
     </div>
   </app-container>
@@ -61,15 +61,15 @@
         <h1>{{ content.whoWeAre.title }}</h1>
         <div
           *ngFor="let text of content.whoWeAre.texts"
-          class="typo-inner"
+          class="typo-inner highlight"
           [style.color]="'#FFF'"
           [innerHTML]="text"
         ></div>
         <ng-container *ngFor="let action of content.whoWeAre.actions">
-          <a [href]="action.to" target="_blank" [style.color]="'#FFF'">
+          <p [style.color]="'#FFF'" class='highlight'>
             {{ action.text }}
-            <span class="highlight">{{ action.link }}</span>
-          </a>
+            <a [href]="action.to" [style.color]="'#FFF'" target="_blank">{{ action.link }}</a>
+          </p>
         </ng-container>
       </app-column>
     </div>

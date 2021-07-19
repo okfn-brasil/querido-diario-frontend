@@ -11,6 +11,7 @@ import {
 } from '@angular/material/core';
 import { ActivatedRoute } from '@angular/router';
 import moment, { Moment } from 'moment';
+import { Subscription } from 'rxjs';
 
 export const MY_FORMATS = {
   parse: {
@@ -45,17 +46,19 @@ export class DatePickerRangeComponent implements OnInit {
   }>();
   range: FormGroup = new FormGroup({});
 
-  constructor(
-    private route: ActivatedRoute,
-  ) {}
+  subscriptions: Subscription[] = [];
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      this.range = new FormGroup({
-        start: new FormControl(params.since),
-        end: new FormControl(params.until),
-      });
-    });
+    this.subscriptions.push(
+      this.route.queryParams.subscribe((params) => {
+        this.range = new FormGroup({
+          start: new FormControl(params.since),
+          end: new FormControl(params.until),
+        });
+      })
+    );
   }
 
   selectedChange(event: any) {
@@ -79,5 +82,11 @@ export class DatePickerRangeComponent implements OnInit {
       output = moment(date); //.format('DD/MM/YYYY');
     }
     return output;
+  }
+
+  ngOnDestroy() {
+    for (let subscriptions of this.subscriptions) {
+      subscriptions.unsubscribe();
+    }
   }
 }
