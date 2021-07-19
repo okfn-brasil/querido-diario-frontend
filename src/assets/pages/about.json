@@ -5,7 +5,6 @@
     "actions": [
       { "text": "História", "to": "/doe", "style": "link-secondary" },
       { "text": "Entenda", "to": "/doe", "style": "link-secondary" },
-      { "text": "Casos de sucesso", "to": "/doe", "style": "link-secondary" },
       { "text": "Quem somos", "to": "/doe", "style": "link-secondary" },
       {
         "text": "Política de privacidade",
