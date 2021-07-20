@@ -17,6 +17,13 @@
     "title": "Arquitetura",
     "texts": [
       "O projeto conta com diversos sistemas para que o diário publicado no site do órgão publicador chegue aqui de forma aberta e que torne acessível a interação com essa base de dados. A imagem abaixo ilustra superficialmente como as peças interagem para termos esse fluxo de dados completo:"
+    ],
+    "images": [
+      {
+        "src": "../../../assets/images/arch.png",
+        "height": "612px",
+        "heightXs": "306px"
+      }
     ]
   },
   {

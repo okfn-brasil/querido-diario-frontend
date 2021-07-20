@@ -46,6 +46,10 @@
         <ng-container *ngFor="let text of documentation.texts">
           <div class="typo-inner highlight" [innerHTML]="text"></div>
         </ng-container>
+
+        <ng-container *ngFor="let img of documentation.images">
+          <img [src]="img.src" [appHeight]="img.height" [appFlexHeight]= "img.appHeightXs" />
+        </ng-container>
       </app-column>
     </app-column>
   </div>
