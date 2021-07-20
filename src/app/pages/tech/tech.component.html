@@ -77,7 +77,7 @@
         <h2>{{ item.title }}</h2>
         <p>{{ item.text }}</p>
         <ng-container *ngFor="let action of item.actions">
-          <a [routerLink]="'/'">{{ action.text }}</a>
+            <a href="{{ action.to }}" target='blank'>{{ action.text }}</a>
         </ng-container>
       </app-column>
     </app-row>
