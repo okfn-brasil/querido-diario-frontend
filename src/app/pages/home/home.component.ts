@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.content$ = this.contentService.find('home');
+   this.content$ = this.contentService.find('home');
   }
 
   openVideo(): void {

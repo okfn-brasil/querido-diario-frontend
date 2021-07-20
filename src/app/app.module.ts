@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 
@@ -59,7 +60,6 @@ import { ColumnComponent } from './column/column.component';
 import { RowComponent } from './row/row.component';
 
 import { InfosComponent } from './infos/infos.component';
-
 
 /* custom directives */
 import { ThemeDirective } from './theme.directive';
@@ -125,6 +125,7 @@ import { FlexHeightDirective } from './directives/flex-height.directive';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
 
     HttpClientModule,
     FlexLayoutModule,

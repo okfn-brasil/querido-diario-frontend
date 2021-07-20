@@ -9,6 +9,9 @@ html
   padding: 0
   margin: 0
 
+body
+  background: #2C1338
+
 a,
 button
   cursor: pointer
@@ -18,6 +21,16 @@ button
 
 a
   text-decoration: none
+
+mat-spinner 
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 5
+
+.mat-spinner circle 
+  stroke: #ff8500
 
 .container-inner
   padding: 0 rem(100)

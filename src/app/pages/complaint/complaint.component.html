@@ -1,4 +1,9 @@
-<ng-container *ngIf="content$ | async as content">
+<ng-template #loading>
+  <app-container theme="light" fxFill>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </app-container>
+</ng-template>
+<ng-container *ngIf="content$ | async as content; else loading">
   <app-container theme="light">
     <div class="container-inner">
       <app-column [gap]="60">

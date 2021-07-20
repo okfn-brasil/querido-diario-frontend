@@ -1,5 +1,10 @@
 <app-column>
-  <ng-container *ngIf="content$ | async as content">
+  <ng-template #loading>
+    <app-container theme="light" fxFill>
+      <mat-spinner *ngIf="loading"></mat-spinner>
+    </app-container>
+  </ng-template>
+  <ng-container *ngIf="content$ | async as content; else loading">
     <app-container theme="light">
       <div class="container-inner">
         <h1>
@@ -58,10 +63,20 @@
               </app-column>
               <app-row [gap]="12">
                 <ng-container *ngFor="let action of item.actions">
-                  <a *ngIf="action.to" [ngClass]="action.style" [href]="action.to" target="_blank">
+                  <a
+                    *ngIf="action.to"
+                    [ngClass]="action.style"
+                    [href]="action.to"
+                    target="_blank"
+                  >
                     {{ action.text }}
                   </a>
-                  <a *ngIf="action.route" [ngClass]="action.style" [routerLink]="action.route" [fragment]="action.fragment">
+                  <a
+                    *ngIf="action.route"
+                    [ngClass]="action.style"
+                    [routerLink]="action.route"
+                    [fragment]="action.fragment"
+                  >
                     {{ action.text }}
                   </a>
                 </ng-container>

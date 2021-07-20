@@ -1,4 +1,9 @@
-<app-container *ngIf="navigation$ | async as navigation">
+<ng-template #loading>
+  <app-container theme="light" fxFill>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </app-container>
+</ng-template>
+<app-container *ngIf="navigation$ | async as navigation; else loading">
   <div class="container-inner">
     <app-column [gap]="36">
       <app-column [gap]="16">
