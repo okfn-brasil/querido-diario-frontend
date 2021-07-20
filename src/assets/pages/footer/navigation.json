@@ -31,11 +31,6 @@
     "title": "SOBRE",
     "actions": [
       { "text": "História", "route": "/sobre", "fragment": "historia" },
-      {
-        "text": "Casos de sucesso",
-        "route": "/sobre",
-        "fragment": "casos-de-sucesso"
-      },
       { "text": "Quem somos", "route": "sobre", "fragment": "quem somos" },
       {
         "text": "Política de privacidade",

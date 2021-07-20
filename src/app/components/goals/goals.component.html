@@ -1,5 +1,5 @@
-<ng-container *ngIf="content$ | async as content">
-  <app-column [gap]="48" [gapXs]="12">
+<app-column [gap]="48" [gapXs]="12" id="nossas-metas">
+  <ng-container *ngIf="content$ | async as content">
     <app-column [gap]="22">
       <div class="container-inner">
         <h1>{{ content.title }}</h1>
@@ -16,5 +16,5 @@
         </ng-container>
       </app-column>
     </div>
-  </app-column>
-</ng-container>
+  </ng-container>
+</app-column>

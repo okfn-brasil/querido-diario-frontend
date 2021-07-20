@@ -4,17 +4,19 @@
   "actions": [
     {
       "text": "Doe",
-      "to": "/doe",
+      "to": "https://www.catarse.me/queridodiario-okbr",
       "style": "link-secondary"
     },
     {
-      "text": "Contribua com código",
-      "to": "/doe",
+      "text": "Documentação",
+      "route": "/tecnologia",
+      "fragment": "documentacao",
       "style": "link-secondary"
     },
     {
       "text": "Relatórios",
-      "to": "/doe",
+      "route": "/tecnologia",
+      "fragment": "relatorios",
       "style": "link-secondary"
     }
   ]

@@ -3,12 +3,13 @@
     "title": "Sobre o Querido Diário",
     "text": "Conheça o projeto que usa tecnologia para libertar o conteúdos dos diários oficiais dos municípios brasileiros e aproximar os cidadãos das ações de seus governantes",
     "actions": [
-      { "text": "História", "to": "/doe", "style": "link-secondary" },
-      { "text": "Entenda", "to": "/doe", "style": "link-secondary" },
-      { "text": "Quem somos", "to": "/doe", "style": "link-secondary" },
+      { "text": "História", "route": "/sobre", "fragment": "historia", "style": "link-secondary" },
+      { "text": "Entenda", "route": "/sobre", "fragment": "entenda", "style": "link-secondary" },
+      { "text": "Quem somos", "route": "/sobre", "fragment": "quem-somos", "style": "link-secondary" },
       {
         "text": "Política de privacidade",
-        "to": "/doe",
+        "route": "/sobre",
+        "fragment": "privacidade",
         "style": "link-secondary"
       }
     ]

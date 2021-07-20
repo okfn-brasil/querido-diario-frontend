@@ -13,7 +13,11 @@
         </app-column>
         <app-row [gap]="36" class="nav-secondary">
           <ng-container *ngFor="let action of content.about.actions">
-            <a [routerLink]="action.to" [ngClass]="action.style">
+            <a
+              [routerLink]="action.route"
+              [fragment]="action.fragment"
+              [ngClass]="action.style"
+            >
               {{ action.text }}
             </a>
           </ng-container>
@@ -21,19 +25,26 @@
       </app-column>
     </div>
   </app-container>
+</ng-container>
 
-  <app-container theme="light">
+<app-container theme="light" id="historia">
+  <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="22">
         <h1>
           {{ content.history.title }}
         </h1>
-        <div *ngFor="let text of content.history.texts" class="typo-inner highlight" [innerHTML]="text"></div>
+        <div
+          *ngFor="let text of content.history.texts"
+          class="typo-inner highlight"
+          [innerHTML]="text"
+        ></div>
       </app-column>
     </div>
-  </app-container>
+  </ng-container>
+</app-container>
 
-  <app-infos bg="bg-purple-square"></app-infos>
+<app-infos bg="bg-purple-square"></app-infos>
 
 <!--  <app-container theme="light" [gap]="34">
     <div class="container-inner">
@@ -60,7 +71,8 @@
   </app-container>
 -->
 
-  <app-container theme="light" bg="bg-blue-square">
+<app-container theme="light" bg="bg-blue-square" id="quem-somos">
+  <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="36">
         <h1>{{ content.whoWeAre.title }}</h1>
@@ -71,16 +83,20 @@
           [innerHTML]="text"
         ></div>
         <ng-container *ngFor="let action of content.whoWeAre.actions">
-          <p [style.color]="'#FFF'" class='highlight'>
+          <p [style.color]="'#FFF'" class="highlight">
             {{ action.text }}
-            <a [href]="action.to" [style.color]="'#FFF'" target="_blank">{{ action.link }}</a>
+            <a [href]="action.to" [style.color]="'#FFF'" target="_blank">{{
+              action.link
+            }}</a>
           </p>
         </ng-container>
       </app-column>
     </div>
-  </app-container>
+  </ng-container>
+</app-container>
 
-  <app-container theme="light">
+<app-container theme="light" id="privacidade">
+  <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="36">
         <h1>
@@ -99,5 +115,5 @@
         </ng-container>
       </app-column>
     </div>
-  </app-container>
-</ng-container>
+  </ng-container>
+</app-container>

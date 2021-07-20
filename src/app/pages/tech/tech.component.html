@@ -12,7 +12,10 @@
       </app-column>
       <app-row [gap]="36" class="nav-secondary">
         <ng-container *ngFor="let action of navigation.actions">
-          <a [routerLink]="action.to" [ngClass]="action.style">
+          <a [href]="action.to" target="_blank" [ngClass]="action.style" *ngIf="action.to">
+            {{ action.text }}
+          </a>
+          <a [routerLink]="action.route" [fragment]="action.fragment" [ngClass]="action.style" *ngIf="action.route">
             {{ action.text }}
           </a>
         </ng-container>
@@ -21,7 +24,7 @@
   </div>
 </app-container>
 
-<app-container *ngIf="documentationIndex$ | async as doc" theme="light">
+<app-container *ngIf="documentationIndex$ | async as doc" theme="light" id="documentacao">
   <div class="container-inner">
     <app-column [gap]="60">
       <app-column [gap]="40">
@@ -41,19 +44,19 @@
       >
         <h2>{{ documentation.title }}</h2>
         <ng-container *ngFor="let text of documentation.texts">
-          <div class="typo-inner" [innerHTML]="text"></div>
+          <div class="typo-inner highlight" [innerHTML]="text"></div>
         </ng-container>
       </app-column>
     </app-column>
   </div>
 </app-container>
 
-<ng-container *ngIf="reports$ | async as reports">
-  <app-container [gap]="34" theme="light" bg="bg-yellow-lines">
+<app-container [gap]="34" theme="light" bg="bg-yellow-lines" id="relatorios">
+  <ng-container *ngIf="reports$ | async as reports">
     <div class="container-inner">
       <h1>{{ reports.title }}</h1>
       <div
-        class="typo-inner"
+        class="typo-inner highlight"
         [innerHTML]="reports.text"
         [style.color]="'#5E408F'"
       ></div>
@@ -64,7 +67,7 @@
         *ngFor="let item of reports.items"
         [gap]="34"
         theme="dark-secondary"
-        [appWidth]="382"       
+        [appWidth]="382"
         fxFill.xs
       >
         <h2>{{ item.title }}</h2>
@@ -74,5 +77,5 @@
         </ng-container>
       </app-column>
     </app-row>
-  </app-container>
-</ng-container>
+  </ng-container>
+</app-container>

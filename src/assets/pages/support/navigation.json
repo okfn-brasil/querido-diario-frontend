@@ -4,12 +4,14 @@
   "actions": [
     {
       "text": "Nossas metas",
-      "to": "/doe",
+      "route": "/apoie",
+      "fragment": "nossas-metas",
       "style": "link-secondary"
     },
     {
       "text": "Quem apoia",
-      "to": "/doe",
+      "route": "/apoie",
+      "fragment": "quem-apoia",
       "style": "link-secondary"
     }
   ]

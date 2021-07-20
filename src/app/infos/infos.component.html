@@ -1,5 +1,5 @@
-<ng-container *ngIf="infos$ | async as infos">
-  <app-container [gap]="34" theme="light" [bg]="bg">
+<app-container [gap]="34" theme="dark" [bg]="bg" id="entenda">
+  <ng-container *ngIf="infos$ | async as infos">
     <h1>{{ infos.title }}</h1>
     <app-row [gap]="17" [flex]="true">
       <app-column
@@ -18,5 +18,5 @@
         </ng-container>
       </app-column>
     </app-row>
-  </app-container>
-</ng-container>
+  </ng-container>
+</app-container>
