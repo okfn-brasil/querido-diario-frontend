@@ -9,10 +9,10 @@
       "subTitle": "R$ 2.000"
     },
     {
-      "icon": { "file": "computer-person", "height": 120, "width": 116 },
-      "title": "Plataforma turbinada!",
-      "text": "+ 100 municípios disponíveis na plataforma e mecanismo de busca mais eficiente.",
-      "subTitle": "R$ 10.000",
+      "icon": { "file": "project", "height": 128, "width": 108 },
+      "title": "O Brasil é o limite!",
+      "text": "Todas as cidades brasileiras com mais de 100 mil habitantes na plataforma.",
+      "subTitle": "R$ 6.000",
       "actions": [
         {
           "text": "Ir para o Catarse",
@@ -21,10 +21,10 @@
       ]
     },
     {
-      "icon": { "file": "project", "height": 128, "width": 108 },
-      "title": "O Brasil é o limite!",
-      "text": "Todas as cidades brasileiras com mais de 100 mil habitantes na plataforma.",
-      "subTitle": "R$ 6.000",
+      "icon": { "file": "computer-person", "height": 120, "width": 116 },
+      "title": "Plataforma turbinada!",
+      "text": "+ 100 municípios disponíveis na plataforma e mecanismo de busca mais eficiente.",
+      "subTitle": "R$ 10.000",
       "actions": [
         {
           "text": "Ir para o Catarse",

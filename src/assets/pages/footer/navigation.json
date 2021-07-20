@@ -6,7 +6,7 @@
         "text": "Cadastre um município",
         "to": "https://censo.ok.org.br/"
       },
-      { "text": "Nossas Metas", "route": "/apoie", "fragment": "nossas-metas" },
+      { "text": "Nossas metas", "route": "/apoie", "fragment": "nossas-metas" },
       { "text": "Quem apoia", "route": "/apoie", "fragment": "quem-apoia" },
       { "text": "Envie sua sugestão", "route": "/sugestao" }
     ]
@@ -20,7 +20,7 @@
         "fragment": "documentacao"
       },
       {
-        "text": "Contribua com código",
+        "text": "Contribua com o desenvolvimento",
         "route": "/tecnologia",
         "fragment": "contribua"
       },
@@ -33,7 +33,7 @@
       { "text": "História", "route": "/sobre", "fragment": "historia" },
       { "text": "Quem somos", "route": "sobre", "fragment": "quem somos" },
       {
-        "text": "Política de privacidade",
+        "text": "Termos de uso e política de privacidade",
         "route": "/privacidade"
       }
     ]
