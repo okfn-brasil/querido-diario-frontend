@@ -202,6 +202,10 @@ export class SearchComponent implements OnInit {
       .replace(/(br).*/, 'br');
   }
 
+  formatText(text: string): string {
+    return text.replace('\n', '<br />')
+  }
+
   ngOnDestroy() {
     for (let subscriptions of this.subscriptions) {
       subscriptions.unsubscribe();

@@ -71,8 +71,6 @@ export class GazetteService {
       url += `size=${pagination.size}&offset=${pagination.offset}&`;
     }
 
-    // @todo pass query string as object to get
-    console.log('url ', url);
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {
         return res;

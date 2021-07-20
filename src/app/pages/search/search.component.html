@@ -137,9 +137,9 @@
             class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px"
           >
-            <p *ngFor="let highlight_text of gazette.highlight_texts">
-              {{ highlight_text }}
-            </p>
+            <ng-container *ngFor="let text of gazette.highlight_texts">
+              <div [innerHTML]="formatText(text)" class="typo-inner"></div>
+            </ng-container>
             <div
               fxLayout="row"
               fxLayout.xs="column"
