@@ -4,7 +4,6 @@ import {
   Input,
   OnInit,
   Output,
-  ViewEncapsulation,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -13,9 +12,6 @@ interface Option {
   viewValue: string;
 }
 
-interface Options {
-  options: Option[];
-}
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
@@ -29,7 +25,7 @@ export class SelectComponent implements OnInit {
   title: string | undefined = undefined;
 
   @Input()
-  theme: string = 'theme-light';
+  style: 'primary' | 'secondary' = 'primary';
 
   @Output() onSelected = new EventEmitter<string>();
 
