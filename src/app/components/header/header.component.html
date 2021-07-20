@@ -6,9 +6,9 @@
         <a routerLink="/" #explore>Explore</a>
         <a routerLink="/tecnologia">Tecnologia</a>
         <a routerLink="/sobre">Sobre o querido diário</a>
-        <a fxLayout="center" (click)="openNotifications()">
+        <!--<a fxLayout="center" (click)="openNotifications()">
           <mat-icon svgIcon="notification" class="bell"></mat-icon>
-        </a>
+        </a>-->
         <button routerLink="/apoie" class="btn">Apoie</button>
       </nav>
       <a (click)="openDialog()" id="support" fxHide fxHide.xs="false">
@@ -16,6 +16,6 @@
       </a>
     </div>
     <app-modal fxHide> </app-modal>
-    <app-notifications fxHide></app-notifications>
+    <!--<app-notifications fxHide></app-notifications>-->
   </header>
 </app-row>
