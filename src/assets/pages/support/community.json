@@ -3,62 +3,19 @@
   "items": [
     {
       "title": "Realização",
-      "text": "O Querido Diário é um projeto realizado e desenvolvido <a href='https://www.ok.org.br/' target='_blank'> pela Open Knowledge Brasil</a>, contando com a colaboração de sua <a href='https://embaixadoras.ok.org.br/' target='_blank'>rede de pessoas Embaixadoras de Inovação Cívica</a> e da comunidade em torno da <a href='https://serenata.ai/'>Operação Serenata de Amor.</a>",
-      "icons": [
-        {
-          "file": "logo-OK",
-          "height": 32,
-          "width": 116
-        },
-        {
-          "file": "logo-serenata",
-          "height": 32,
-          "width": 116
-        },
-        {
-          "file": "logo-embaixadores",
-          "height": 32,
-          "width": 116
-        }
-      ]
+      "text": "O Querido Diário é um projeto realizado e desenvolvido <a href='https://www.ok.org.br/' target='_blank'> pela Open Knowledge Brasil</a>, contando com a colaboração de sua <a href='https://embaixadoras.ok.org.br/' target='_blank'>rede de pessoas Embaixadoras de Inovação Cívica</a> e da comunidade em torno da <a href='https://serenata.ai/'>Operação Serenata de Amor.</a>"
     },
     {
       "title": "Financiamento do algoritmo de busca",
-      "text": "Em junho de 2020, a Open Knowledge Brasil foi uma das organizações selecionadas pelo projeto <a href='https://empatia.la/' target='_blank'>EmpatIA</a>, mantido pela <a href='https://idatosabiertos.org/' target='_blank'>Iniciativa Latino-Americana de Dados Abertos (ILDA)</a> e com financiamento do Banco Interamericano de Desenvolvimento (BID). O projeto visa compreender e desenvolver novos conhecimentos sobre a utilização da Inteligência Artificial (IA) na resolução de problemas públicos, e possibilitou o desenvolvimento da primeira versão do algoritmo de busca da plataforma Querido Diário.",
-      "icons": [
-        {
-          "file": "logo-Ilda",
-          "height": 17,
-          "width": 52
-        },
-        {
-          "file": "logo-Ilda",
-          "height": 17,
-          "width": 52
-        }
-      ]
+      "text": "Em junho de 2020, a Open Knowledge Brasil foi uma das organizações selecionadas pelo projeto <a href='https://empatia.la/' target='_blank'>EmpatIA</a>, mantido pela <a href='https://idatosabiertos.org/' target='_blank'>Iniciativa Latino-Americana de Dados Abertos (ILDA)</a> e com financiamento do Banco Interamericano de Desenvolvimento (BID). O projeto visa compreender e desenvolver novos conhecimentos sobre a utilização da Inteligência Artificial (IA) na resolução de problemas públicos, e possibilitou o desenvolvimento da primeira versão do algoritmo de busca da plataforma Querido Diário."
     },
     {
       "title": "Desenvolvimento frontend e usabilidade",
-      "text": "A atual versão da plataforma foi desenvolvida com o apoio da Jurema, que é responsável pelo frontend e pelo estudo da experiência das pessoas usuárias.",
-      "icons": [
-        {
-          "file": "logo-jurema",
-          "height": 18,
-          "width": 80
-        }
-      ]
+      "text": "A atual versão da plataforma foi desenvolvida com o apoio da Jurema, que é responsável pelo frontend e pelo estudo da experiência das pessoas usuárias."
     },
     {
       "title": "Armazenamento e hospedagem",
-      "text": "A plataforma está hospedada na <a href=\"https://www.digitalocean.com/\" target=\"_blank\">DigitalOcean</a>, que é apoiadora de longa data do Querido Diário e da OperaçãoSerenata de Amor.",
-      "icons": [
-        {
-          "file": "logo-digitalocean",
-          "height": 18,
-          "width": 110
-        }
-      ]
+      "text": "A plataforma está hospedada na <a href=\"https://www.digitalocean.com/\" target=\"_blank\">DigitalOcean</a>, que é apoiadora de longa data do Querido Diário e da OperaçãoSerenata de Amor."
     },
     {
       "title": "Comunidade",
