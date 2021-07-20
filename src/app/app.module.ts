@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 
@@ -37,8 +38,6 @@ import { TechComponent } from './pages/tech/tech.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 import { GlossaryComponent } from './pages/glossary/glossary.component';
 import { SearchComponent } from './pages/search/search.component';
-import { H1Component } from './components/h1/h1.component';
-import { H2Component } from './components/h2/h2.component';
 import { Event, Router, Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
@@ -48,8 +47,7 @@ import { AutocompleteItemComponent } from './components/autocomplete-item/autoco
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
-import { HeightDirective } from './directives/height.directive';
-import { WidthDirective } from './directives/width.directive';
+
 import { GoalsComponent } from './components/goals/goals.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { SelectComponent } from './components/select/select.component';
@@ -60,8 +58,16 @@ import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ColumnComponent } from './column/column.component';
 import { RowComponent } from './row/row.component';
-import { ThemeDirective } from './theme.directive';
+
 import { InfosComponent } from './infos/infos.component';
+
+/* custom directives */
+import { ThemeDirective } from './theme.directive';
+import { HeightDirective } from './directives/height.directive';
+import { WidthDirective } from './directives/width.directive';
+import { FlexWidthDirective } from './directives/flex-width.directive';
+import { FlexHeightDirective } from './directives/flex-height.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,8 +84,6 @@ import { InfosComponent } from './infos/infos.component';
     SuggestionComponent,
     GlossaryComponent,
     SearchComponent,
-    H1Component,
-    H2Component,
     VideoModalComponent,
     DatePickerRangeComponent,
     AutocompleteItemComponent,
@@ -100,6 +104,8 @@ import { InfosComponent } from './infos/infos.component';
     RowComponent,
     ThemeDirective,
     InfosComponent,
+    FlexWidthDirective,
+    FlexHeightDirective,
   ],
   imports: [
     BrowserModule,
@@ -119,6 +125,7 @@ import { InfosComponent } from './infos/infos.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
 
     HttpClientModule,
     FlexLayoutModule,

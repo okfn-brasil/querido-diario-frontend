@@ -17,7 +17,7 @@
     <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="desk_Home" transform="translate(-111.000000, -2649.000000)">
             <rect fill="#FFFFFF" x="0" y="0" width="1220" height="4208"></rect>
-            <g id="entenda" transform="translate(-93.923954, 2308.000000)">
+            <g transform="translate(-93.923954, 2308.000000)">
                 <rect id="Mask" fill="#F3E9E9" transform="translate(703.923954, 273.000000) scale(1, -1) translate(-703.923954, -273.000000) " x="93.9239544" y="0" width="1220" height="546"></rect>
                 <g filter="url(#filter-1)" id="1.-assets/patterns/document-copy-2" opacity="0.3">
                     <g transform="translate(0.000000, 215.000000)">

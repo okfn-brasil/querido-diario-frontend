@@ -1,22 +1,28 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HomeService } from '../pages/home/home.service';
+import { ContentService } from '../services/content.service';
 
 @Component({
   selector: 'app-infos',
   templateUrl: './infos.component.html',
-  styleUrls: ['./infos.component.sass']
+  styleUrls: ['./infos.component.sass'],
 })
 export class InfosComponent implements OnInit {
-  infos$: Observable<any> = of(null)
+  infos$: Observable<any> = of(null);
+
+  icon = {
+    file: 'right-arrow-white',
+    height: 12,
+    width: 12,
+  };
 
   @Input()
   bg: 'bg-gray-square' | 'bg-purple-square' = 'bg-gray-square';
+  theme: 'darker' | 'dark-secondary' | 'dark' | 'light' = 'darker';
 
-  constructor(private homeService: HomeService) { }
+  constructor(private contentService: ContentService) {}
 
   ngOnInit(): void {
-    this.infos$ = this.homeService.loadInfos();
+    this.infos$ = this.contentService.find('home/infos');
   }
-
 }

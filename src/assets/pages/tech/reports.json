@@ -1,0 +1,18 @@
+{
+  "title": "Relatórios",
+  "text": "Publicações que detalham as tecnologias utilizadas no Querido Diário",
+  "items": [
+    {
+      "title": "1º Relatório Técnico de Atividades",
+      "text": "Um detalhamento dos aspectos técnicos da primeira fase do Querido Diário.",
+      "actions": [
+        {
+          "text": "Ler mais",
+          "icon": "right-arrow",
+          "to": "https://www.ok.org.br/wp-content/uploads/2021/07/Querido-Diario-1o-Relatorio-Tecnico-de-Atividades.pdf",
+          "target": "_blank"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Apoie",
+  "text": "O Querido Diário é um projeto totalmente colaborativo e você pode colaborar de diversas maneiras, confira a seguir.",
+  "actions": [
+    {
+      "text": "Nossas metas",
+      "route": "/apoie",
+      "fragment": "nossas-metas",
+      "style": "link-secondary"
+    },
+    {
+      "text": "Quem apoia",
+      "route": "/apoie",
+      "fragment": "quem-apoia",
+      "style": "link-secondary"
+    }
+  ]
+}

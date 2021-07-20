@@ -1,9 +1,9 @@
 <carousel [cellsToShow]="4" [width]="1200" [height]="585" [arrowsOutside]="true" [dots]="true">
   <div
     class="carousel-cell"
-    *ngFor="let item of items"
+    *ngFor="let item of items; index as i"
     style="width: 17.375rem"
   >
-    <app-card [item]="item"></app-card>
+    <app-card [item]="item" [first]="i === 0"></app-card>
   </div>
 </carousel>

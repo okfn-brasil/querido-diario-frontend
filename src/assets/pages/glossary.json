@@ -1,30 +1,127 @@
 {
   "title": "Glossário",
+  "navigation": {
+    "title": "Fontes:",
+    "texts": [
+      "Este glossário foi elaborado coletivamente e contou com a colaboração fundamental da jornalista Rosângela Lofti e do cientista de dados André Assumpção.",
+      "Sentiu falta de algum termo? Envie sua sugestão para contato@serenata.ai"
+    ],
+    "actions": [
+      {
+        "text": "Portal de Compras Públicas",
+        "to": "https://www.portaldecompraspublicas.com.br/18/Glossario "
+      },
+      {
+        "text": "Portal do Planalto - Legislação",
+        "to": "http://www4.planalto.gov.br/legislacao/ "
+      },
+      {
+        "text": "Procuradoria da República no Espírito Santo - Glossário de Termos Jurídicos",
+        "to": "http://www.mpf.mp.br/es/sala-de-imprensa/glossario-de-termos-juridicos "
+      },
+      {
+        "text": "Portal do Servidor (Governo Federal)- Glossário e Siglas",
+        "to": "https://www.gov.br/servidor/pt-br/acesso-a-informacao/gestao-de-pessoas/manual-de-procedimentos/manual-de-provimento/glossario-e-siglas "
+      }
+    ]
+  },
   "actions": [
-    { "text": "A", "to": "/glossario/A" },
-    { "text": "B", "to": "/glossario/B" },
-    { "text": "C", "to": "/glossario/C" },
-    { "text": "D", "to": "/glossario/D" },
-    { "text": "E", "to": "/glossario/E" },
-    { "text": "F", "to": "/glossario/F" },
-    { "text": "G", "to": "/glossario/G" },
-    { "text": "H", "to": "/glossario/H" },
-    { "text": "I", "to": "/glossario/I" },
-    { "text": "J", "to": "/glossario/J" },
-    { "text": "K", "to": "/glossario/K" },
-    { "text": "L", "to": "/glossario/L" },
-    { "text": "M", "to": "/glossario/M" },
-    { "text": "N", "to": "/glossario/N" },
-    { "text": "O", "to": "/glossario/O" },
-    { "text": "P", "to": "/glossario/P" },
-    { "text": "Q", "to": "/glossario/Q" },
-    { "text": "R", "to": "/glossario/R" },
-    { "text": "S", "to": "/glossario/S" },
-    { "text": "T", "to": "/glossario/T" },
-    { "text": "V", "to": "/glossario/V" },
-    { "text": "X", "to": "/glossario/X" },
-    { "text": "Y", "to": "/glossario/Y" },
-    { "text": "Z", "to": "/glossario/Z" }
+    {
+      "text": "A",
+      "to": "/glossario/A"
+    },
+    {
+      "text": "B",
+      "to": "/glossario/B"
+    },
+    {
+      "text": "C",
+      "to": "/glossario/C"
+    },
+    {
+      "text": "D",
+      "to": "/glossario/D"
+    },
+    {
+      "text": "E",
+      "to": "/glossario/E"
+    },
+    {
+      "text": "F",
+      "to": "/glossario/F"
+    },
+    {
+      "text": "G",
+      "to": "/glossario/G"
+    },
+    {
+      "text": "H",
+      "to": "/glossario/H"
+    },
+    {
+      "text": "I",
+      "to": "/glossario/I"
+    },
+    {
+      "text": "J",
+      "to": "/glossario/J"
+    },
+    {
+      "text": "K",
+      "to": "/glossario/K"
+    },
+    {
+      "text": "L",
+      "to": "/glossario/L"
+    },
+    {
+      "text": "M",
+      "to": "/glossario/M"
+    },
+    {
+      "text": "N",
+      "to": "/glossario/N"
+    },
+    {
+      "text": "O",
+      "to": "/glossario/O"
+    },
+    {
+      "text": "P",
+      "to": "/glossario/P"
+    },
+    {
+      "text": "Q",
+      "to": "/glossario/Q"
+    },
+    {
+      "text": "R",
+      "to": "/glossario/R"
+    },
+    {
+      "text": "S",
+      "to": "/glossario/S"
+    },
+    {
+      "text": "T",
+      "to": "/glossario/T"
+    },
+    {
+      "text": "V",
+      "to": "/glossario/V"
+    },
+    {
+      "text": "X",
+      "to": "/glossario/X"
+    },
+    {
+      "text": "Y",
+      "to": "/glossario/Y"
+    },
+    {
+      "text": "Z",
+      "to": "/glossario/Z"
+    }
   ],
   "text": "Sentiu falta de algum termo? Entre em contato e envie sua sugestão",
   "items": [
@@ -32,20 +129,20 @@
       "title": "A",
       "items": [
         {
-          "title": "Adjudicação",
-          "text": "Procuração dada a uma terceira parte, um agente fiduciário, que passa a ter amplos direitos de liquidar seus ativos para satisfazer as reivindicações de credores. No processo licitatório é a manifestação oficial pela proposta mais vantajosa."
+          "text": "Procuração dada a uma terceira parte, um agente fiduciário, que passa a ter amplos direitos de liquidar seus ativos para satisfazer as reivindicações de credores. No processo licitatório é a manifestação oficial pela proposta mais vantajosa",
+          "title": "Adjudicação"
         },
         {
-          "title": "Atos administrativos normativos",
-          "text": "São comandados pelo poder executivo, visando à correta aplicação da lei, explicitando a norma legal a ser observada pela administração e administradores. Esses atos expressam em detalhe o mandamento abstrato da lei, e o fazem com a mesma normatividade da regra legislativa. São atos normativos os decretos regulamentares e os regimentos, as resoluções, deliberações e portarias de conteúdo geral. Têm a mesma normatividade da lei e estão sujeitas a controle judicial, isto é, podem ser atacados e invalidados direta e imediatamente por via judicial comum, ou por mandado de segurança, se lesivos de direito individual líquido e certo."
+          "text": "São comandados pelo poder executivo, visando à correta aplicação da lei, explicitando a norma legal a ser observada pela administração e administradores. Esses atos expressam em detalhe o mandamento abstrato da lei, e o fazem com a mesma normatividade da regra legislativa. São atos normativos os decretos regulamentares e os regimentos, as resoluções, deliberações e portarias de conteúdo geral. Têm a mesma normatividade da lei e estão sujeitas a controle judicial, isto é, podem ser atacados e invalidados direta e imediatamente por via judicial comum, ou por mandado de segurança, se lesivos de direito individual líquido e certo.",
+          "title": "Atos administrativos normativos"
         },
         {
-          "title": "Ação orçamentária",
-          "text": "Instrumento que contribui para atender ao objetivo de um programa, podendo ser projeto, atividade ou operação especial."
+          "text": "Instrumento que contribui para atender ao objetivo de um programa, podendo ser projeto, atividade ou operação especial",
+          "title": "Ação orçamentária"
         },
         {
-          "title": "Autarquia",
-          "text": "Entidade administrativa autônoma, descentralizada da administração pública, criada por lei, com personalidade jurídica de direito público, patrimônio próprio e atribuições específicas para realizar os fins que a lei lhe determinar."
+          "text": "Entidade administrativa autônoma, descentralizada da administração pública, criada por lei, com personalidade jurídica de direito público, patrimônio próprio e atribuições específicas para realizar os fins que a lei lhe determinar.",
+          "title": "Autarquia"
         }
       ]
     },
@@ -53,20 +150,12 @@
       "title": "B",
       "items": [
         {
-          "title": "Adjudicação",
-          "text": "Procuração dada a uma terceira parte, um agente fiduciário, que passa a ter amplos direitos de liquidar seus ativos para satisfazer as reivindicações de credores. No processo licitatório é a manifestação oficial pela proposta mais vantajosa."
+          "text": "Demonstrativo contábil das receitas e despesas orçamentárias, bem como os recebimentos e os pagamentos de natureza extra-orçamentária, somado aos saldos em espécie provenientes do exercício anterior, os transferidos para o exercício seguinte. A estrutura do balanço financeiro permite verificar receita e despesa, o resultado financeiro do exercício, bem como o saldo em espécie que se transfere para o exercício seguinte, saldo esse que pode ser positivo (superávit) ou zero (equilíbrio).",
+          "title": "Balanço financeiro"
         },
         {
-          "title": "Atos administrativos normativos",
-          "text": "São comandados pelo poder executivo, visando à correta aplicação da lei, explicitando a norma legal a ser observada pela administração e administradores. Esses atos expressam em detalhe o mandamento abstrato da lei, e o fazem com a mesma normatividade da regra legislativa. São atos normativos os decretos regulamentares e os regimentos, as resoluções, deliberações e portarias de conteúdo geral. Têm a mesma normatividade da lei e estão sujeitas a controle judicial, isto é, podem ser atacados e invalidados direta e imediatamente por via judicial comum, ou por mandado de segurança, se lesivos de direito individual líquido e certo."
-        },
-        {
-          "title": "Ação orçamentária",
-          "text": "Instrumento que contribui para atender ao objetivo de um programa, podendo ser projeto, atividade ou operação especial."
-        },
-        {
-          "title": "Autarquia",
-          "text": "Entidade administrativa autônoma, descentralizada da administração pública, criada por lei, com personalidade jurídica de direito público, patrimônio próprio e atribuições específicas para realizar os fins que a lei lhe determinar."
+          "text": "Demonstrativo contábil das receitas e despesas previstas na lei orçamentária com as realizadas. A partir da comparação entre o previsto e o realizado é possível constatar a ocorrência de superávit, déficit ou equilíbrio orçamentário.",
+          "title": "Balanço orçamentário"
         }
       ]
     },
@@ -74,22 +163,342 @@
       "title": "C",
       "items": [
         {
-          "title": "Adjudicação",
-          "text": "Procuração dada a uma terceira parte, um agente fiduciário, que passa a ter amplos direitos de liquidar seus ativos para satisfazer as reivindicações de credores. No processo licitatório é a manifestação oficial pela proposta mais vantajosa."
+          "text": "Ordens escritas, de caráter uniforme, expedidas a determinados funcionários ou agentes administrativos no exercício de suas funções, ou do desempenho de certas atribuições em circunstâncias especiais.",
+          "title": "Circular"
         },
         {
-          "title": "Atos administrativos normativos",
-          "text": "São comandados pelo poder executivo, visando à correta aplicação da lei, explicitando a norma legal a ser observada pela administração e administradores. Esses atos expressam em detalhe o mandamento abstrato da lei, e o fazem com a mesma normatividade da regra legislativa. São atos normativos os decretos regulamentares e os regimentos, as resoluções, deliberações e portarias de conteúdo geral. Têm a mesma normatividade da lei e estão sujeitas a controle judicial, isto é, podem ser atacados e invalidados direta e imediatamente por via judicial comum, ou por mandado de segurança, se lesivos de direito individual líquido e certo."
+          "text": "Acordo ou ajuste em que as partes tenham interesses diversos, normalmente opostos, transferindo entre si algum direito ou se sujeitando a alguma obrigação.",
+          "title": "Contrato"
         },
         {
-          "title": "Ação orçamentária",
-          "text": "Instrumento que contribui para atender ao objetivo de um programa, podendo ser projeto, atividade ou operação especial."
+          "text": "Instrumento que disciplina a transferência de recursos financeiros de dotações consignadas nos orçamentos fiscal e da seguridade social da união a um órgão ou entidade da administração pública federal, direta ou indireta para órgão ou entidade da administração pública estadual, distrital ou municipal, direta ou indireta, ou entidade privada sem fins lucrativos não abrangida pela Lei nº 13.019/2014, visando à execução de programa de governo que envolva a realização de projeto, atividade, serviço ou evento, ou a aquisição de bens, de interesse recíproco, em regime de mútua cooperação.",
+          "title": "Convênio"
         },
         {
-          "title": "Autarquia",
-          "text": "Entidade administrativa autônoma, descentralizada da administração pública, criada por lei, com personalidade jurídica de direito público, patrimônio próprio e atribuições específicas para realizar os fins que a lei lhe determinar."
+          "text": "Instrumento de ajuste orçamentário para autorização de despesas não computadas ou insuficientemente dotadas na lei orçamentária.",
+          "title": "Créditos adicionais"
+        },
+        {
+          "text": "Agrupamento da despesa por categorias para facilitar e padronizar as informações. Pela classificação é possível visualizar o orçamento por poder, por função de governo, por subfunção, por programa e por categoria econômica.",
+          "title": "Classificação da despesa pública"
+        },
+        {
+          "text": "Limitação que atinge as programações aprovadas na LOA em razão da avaliação que o Governo faz periodicamente sobre o comportamento geral das receitas e despesas públicas, considerando a meta fiscal anual, prevista na LDO.",
+          "title": "Contingenciamento"
+        },
+        {
+          "text": "Crédito adicional destinado a incluir despesas no orçamento para as quais não haja dotação orçamentária específica, autorizado por lei.",
+          "title": "Crédito Especial"
+        },
+        {
+          "text": "Crédito adicional destinado a reforço de dotação orçamentária, sendo autorizado por lei. A Constituição permite que a LOA contenha autorização para a abertura de créditos suplementares, com limites.",
+          "title": "Crédito Suplementar"
+        },
+        {
+          "text": "Modalidade de licitação (Lei nº 8.666/93",
+          "title": "Concorrência"
+        },
+        {
+          "text": "Modalidade de licitação (Lei nº 8.666/93",
+          "title": "Concurso"
+        },
+        {
+          "text": "A cotação é um procedimento simplificado adotado para compras de pequeno valor, que são dispensadas de licitação.",
+          "title": "Cotação de preços"
+        },
+        {
+          "text": "Modalidade de licitação (Lei nº 8.666/93, revogada em 1º de abril de 2021) \"entre interessados do ramo pertinente ao seu objeto, cadastrados ou não, escolhidos e convidados em número mínimo de 3 (três) pela unidade administrativa, a qual afixará, em local apropriado, cópia do instrumento convocatório e o estenderá aos demais cadastrados na correspondente especialidade que manifestarem seu interesse com antecedência de até 24 (vinte e quatro) horas da apresentação das propostas\" (art 22, § 3º, Lei nº 8.666/93).",
+          "title": "Convite"
         }
       ]
+    },
+    {
+      "title": "D",
+      "items": [
+        {
+          "text": "Todo ato ou resolução de um órgão do poder público competente, com força obrigatória, destinado a assegurar ou promover a boa ordem política, social, jurídica, administrativa, ou a reconhecer, proclamar e atribuir um direito, estabelecido em lei. Outra definição: os atos pelo qual o chefe do governo determina a observância de uma regra legal, cuja execução é de competência do poder executivo, por fim, qualquer sentença proferida por autoridade judiciária.",
+          "title": "Decreto"
+        },
+        {
+          "text": "São todos os atos praticados no curso de um processo ou de um procedimento que não possuem conteúdo decisório. Os despachos apenas ordenam a realização de determinadas providências, para dar seguimento ao feito.",
+          "title": "Despacho"
+        },
+        {
+          "text": "Modalidade de contratação direta, mediante licitação dispensada ou licitação dispensável. Até 31 de março de 2021, eram dispensadas as licitações conforme o art. 24 da Lei nº 8.666/93. A partir de 1º de abril de 2021, são dispensadas licitações conforme o art. 75 da Lei nº 14.133/21.",
+          "title": "Dispensa de licitação"
+        },
+        {
+          "text": "Despesa pública que depende de autorização legislativa para sua realização, por meio da LOA ou de créditos adicionais. É o conjunto de dispêndios realizados pelos entes públicos, tais como despesas de pessoal, custeio, manutenção e ampliação dos serviços públicos prestados à sociedade.",
+          "title": "Despesa orçamentária"
+        },
+        {
+          "text": "Valor inicial constante da lei orçamentária sancionada pelo Presidente.",
+          "title": "Dotação inicial"
+        },
+        {
+          "text": "É o valor monetário autorizado, consignado na lei do orçamento (LOA) para atender uma determinada programação orçamentária.",
+          "title": "Dotação orçamentária"
+        },
+        {
+          "text": "Gastos para a produção ou geração de novos bens ou serviços que integrarão o patrimônio público, ou seja, que contribuem diretamente para a formação ou aquisição de um bem de capital. São exemplos: execução de obras e compra de instalações, equipamentos e títulos representativos do capital de empresas ou de entidades de qualquer natureza.",
+          "title": "Despesa de capital"
+        },
+        {
+          "text": "Gastos com manutenção de serviços anteriormente criados, inclusive os destinados a atender a obras de conservação e adaptação de bens imóveis.",
+          "title": "Despesa de custeio"
+        },
+        {
+          "text": "Despesa que a União tem a obrigação legal ou contratual de realizar. Os maiores grupos de despesas obrigatórias são serviço da dívida, pessoal e encargos sociais e os benefícios da previdência social.",
+          "title": "Despesa obrigatória"
+        },
+        {
+          "text": "Modalidade de licitação introduzida pela Lei nº 14.133/21. Caracteriza-se pelo diálogo da Administração Pública com \"licitantes previamente selecionados mediante critérios objetivos, com o intuito de desenvolver uma ou mais alternativas capazes de atender às suas necessidades, devendo os licitantes apresentar proposta final após o encerramento dos diálogos\" (art 6º, parágrafo XLII, Lei nº 14.133/21).",
+          "title": "Diálogo competitivo"
+        }
+      ]
+    },
+    {
+      "title": "E",
+      "items": [
+        {
+          "text": "Meio através do qual os membros do Poder Legislativo (individualmente ou através de órgãos colegiados como Comissões ou Bancadas) atuam sobre o projeto de lei orçamentária anual apresentado pelo Poder Executivo, acrescendo, suprimindo ou modificando itens. As emendas ao projeto de lei orçamentária anual, como proposições legislativas recebem detalhada regulamentação por parte dos regimentos internos das diferentes instituições legislativas e respectivas normas internas complementares que tratam do processo legislativo.",
+          "title": "Emenda"
+        },
+        {
+          "text": "Inclusão, exclusão ou modificação em rubrica, ou valores da previsão de receita do projeto de lei orçamentária.",
+          "title": "Emendas à receita"
+        },
+        {
+          "text": "Inclusão, exclusão ou modificação em rubrica, ou valores da autorização de despesas do projeto de lei orçamentária.",
+          "title": "Emendas à despesa"
+        },
+        {
+          "text": "Relativas a modificações na parte inicial do projeto de lei que contém o texto da mesma não incluindo a especificação de receitas e despesas que constituem o cerne da lei orçamentária.",
+          "title": "Emendas de texto"
+        },
+        {
+          "text": "Um dos estágios da despesa. Funciona como garantia ao credor do ente público de que existe o crédito necessário para a liquidação de um compromisso assumido.",
+          "title": "Empenho da despesa"
+        },
+        {
+          "text": "Documento através do qual a instituição compradora estabelece todas as condições da licitação que será realizada e divulga todas as características do bem ou serviço que será adquirido.",
+          "title": "Edital"
+        },
+        {
+          "text": "Utilização dos créditos consignados no orçamento do ente público e nos créditos adicionais, visando à realização das missões atribuídas às unidades orçamentárias.",
+          "title": "Execução orçamentária"
+        },
+        {
+          "text": "Desligamento do servidor de um cargo efetivo.",
+          "title": "Exoneração"
+        }
+      ]
+    },
+    {
+      "title": "F",
+      "items": [
+        {
+          "text": "Classificação da receita segundo a destinação legal dos recursos arrecadados. As fontes de recursos são agrupamentos de naturezas de receitas, atendendo a uma determinada regra de destinação legal, e servem para indicar como são financiadas as despesas orçamentárias. Entende-se por fonte de recursos a origem ou a procedência dos recursos que devem ser gastos com uma determinada finalidade. É necessário, portanto, individualizar esses recursos de modo a evidenciar sua aplicação segundo a determinação legal. A classificação por fontes é estabelecida, no orçamento federal, pela Portaria SOF nº 1, de 19 de fevereiro de 2001 (D.O.U. 20.02.2001).",
+          "title": "Fonte de recursos"
+        },
+        {
+          "text": "Maior nível de agregação das diversas áreas de atuação do setor público. Está relacionada com a missão institucional fundamental do órgão executor, por exemplo, cultura, educação, saúde ou defesa.",
+          "title": "Função"
+        }
+      ]
+    },
+    {
+      "title": "G",
+      "items": []
+    },
+    {
+      "title": "H",
+      "items": [
+        {
+          "text": "Ato que certifica que os atos praticados anteriormente foram justos.",
+          "title": "Homologação"
+        }
+      ]
+    },
+    {
+      "title": "I",
+      "items": [
+        {
+          "text": "Modalidade de contratação pública (Lei nº 8.666/93 e Lei nº 14.133/21) que desobriga a administração de realizar o procedimento licitatório, por inviabilidade de competição. Se não há competidores, não é necessária a licitação. As contratações mais comuns são aquelas em que a administração só encontra um fornecedor ou o representante comercial é exclusivo.",
+          "title": "Inexigibilidade de licitação"
+        },
+        {
+          "text": "Contestação, combate a argumentos ou a um ato, dentro de um processo, apresentando as razões.",
+          "title": "Impugnação"
+        },
+        {
+          "text": "ou regulamentares, são atos administrativos expedidos pelos Ministros de Estado para a execução das leis, decretos e regulamentos (CF, art. 87, parágrafo único, II), mas são também utilizadas por outros órgãos superiores para o mesmo fim.",
+          "title": "Instruções normativas"
+        }
+      ]
+    },
+    {
+      "title": "J",
+      "items": []
+    },
+    {
+      "title": "L",
+      "items": [
+        {
+          "text": "A Lei de Diretrizes Orçamentárias antecede e orienta a elaboração da Lei Orçamentária. A LDO estima, para o ano seguinte, o crescimento do PIB, a inflação, a taxa de câmbio, o valor do salário mínimo, o valor das renúncias tributárias e a margem de expansão das despesas obrigatórias, ou seja, aquelas que estão baseadas na Constituição ou em leis sem que seja possível reduzi-las por ato exclusivo do presidente da República. Indica, ainda, alterações na legislação tributária, na política salarial e na contratação de novos servidores, entre outras variáveis. Função muito importante da LDO é fixar a meta de resultado primário para o ano seguinte. A meta de resultado primário é fixada com base no cálculo de tudo que o Governo arrecada menos o que gasta, sem considerar as receitas financeiras e as despesas relacionadas à dívida (juros e amortizações). Estabelecida após avaliação do cenário macroeconômico para o ano seguinte, considerando parâmetros como taxa de juros, taxa de câmbio, crescimento econômico e o resultado que deve ser atingido para manter a relação dívida/PIB adequado para o país. No orçamento estão todas as políticas públicas.",
+          "title": "Lei de Diretrizes Orçamentárias (LDO)"
+        },
+        {
+          "text": "Elaborada pelo executivo segundo as diretrizes aprovadas na LDO e conforme o previsto no PPA. A LOA estabelece a previsão de despesas e receitas para o exercício seguinte, sendo encaminhada anualmente ao Congresso Nacional até 31 de agosto.",
+          "title": "Lei Orçamentária Anual (LOA)"
+        },
+        {
+          "text": "Lei Complementar 101/2000. Define as responsabilidades e deveres do administrador público em relação aos orçamentos da união, dos estados e dos municípios, bem como os limites de gastos com pessoal, proibindo a criação de despesas de duração continuada sem uma fonte segura de receitas. Introduziu restrições orçamentárias na legislação brasileira e criou a disciplina fiscal para os três poderes: executivo, legislativo e judiciário. É uma lei importante para o controle social.",
+          "title": "Lei de Responsabilidade Fiscal (LRF)"
+        },
+        {
+          "text": "A Lei da Transparência alterou a redação da LRF no quesito de transparência da gestão fiscal. O texto determina que sejam disponibilizadas, em tempo real, informações pormenorizadas sobre a execução orçamentária e financeira da União, estados (incluindo o Distrito Federal) e dos municípios.",
+          "title": "Lei da Transparência (Lei Complementar 131/2009)"
+        },
+        {
+          "text": "Modalidade de licitação (Lei nº 8.666/93 (revogada) e Lei nº 14.133/21) entre quaisquer interessados para a venda de bens inservíveis para a administração ou de produtos legalmente apreendidos, a quem oferecer maior lance, igual ou superior ao da avaliação.",
+          "title": "Leilão"
+        },
+        {
+          "text": "Processo pelo qual o poder público adquire bens e/ou serviços destinados à sua manutenção e expansão. São modalidades de licitação: convite, tomada de preços, concorrência pública, leilão e concurso público. (Lei nº 8.666/93)",
+          "title": "Licitação"
+        },
+        {
+          "text": "Regulamenta o art. 37, inciso XXI, da Constituição Federal e institui normas para licitações e contratos da administração pública direta e indireta. Toda a administração pública está sujeita a essa regra: a união, estados, municípios. Na administração indireta inclui as autarquias, fundações públicas, empresas públicas, sociedades de economia mista e subsidiárias em todas as três esferas de governo.",
+          "title": "Lei de Licitações (Lei nº 8.666/93)"
+        },
+        {
+          "text": "Substitui a Lei nº 8.666/93 e disciplina novas modalidades de limitação, requerimentos e prazos. Entrou em vigor dia 1º de abril de 2021.",
+          "title": "Nova Lei de Licitações (Lei nº 14.133/21)"
+        },
+        {
+          "text": "Um dos estágios da despesa. É a verificação do implemento de condição, ou seja, verificação objetiva do cumprimento contratual.",
+          "title": "Liquidação"
+        }
+      ]
+    },
+    {
+      "title": "M",
+      "items": []
+    },
+    {
+      "title": "N",
+      "items": [
+        {
+          "text": "ato administrativo que indica uma pessoa para provimento originário de um cargo público vago.",
+          "title": "Nomeação"
+        }
+      ]
+    },
+    {
+      "title": "O",
+      "items": [
+        {
+          "text": "Instrumento pelo qual o governo estima as receitas e fixa as despesas para poder controlar as finanças públicas e executar as ações governamentais, ensejando o objetivo estatal do bem comum. No modelo brasileiro, compreende a elaboração e execução de três leis – o plano plurianual (PPA), as diretrizes orçamentárias (LDO) e o orçamento anual (LOA) – que, em conjunto, materializam o planejamento e a execução das políticas públicas federais.",
+          "title": "Orçamento Público"
+        }
+      ]
+    },
+    {
+      "title": "P",
+      "items": [
+        {
+          "text": "Pode ser entendida como o ajuste firmado entre Administração Pública e a iniciativa privada, tendo por objeto a implantação e a oferta de empreendimento destinado à fruição direta ou indireta da coletividade, incumbindo-se a iniciativa privada da sua estruturação, financiamento, execução, conservação e operação, durante todo o prazo estipulado para a parceria, e cumprindo ao Poder Público assegurar as condições de exploração e remuneração pelo parceiro privado, nos termos do que for ajustado, e respeitada a parcela de risco assumida por uma e outra das partes.",
+          "title": "Parceria público-privada (PPP)"
+        },
+        {
+          "text": "É a manifestação do Ministério Público em uma ação, por meio da qual ele diz sua opinião sobre o pedido do autor, com base no que a lei dispõe sobre aquele assunto. O parecer do Ministério Público não obriga o juiz a proferir sentença segundo a posição do órgão.",
+          "title": "Parecer"
+        },
+        {
+          "text": "complexo de normas legais e diretrizes técnicas para o desenvolvimento global e constante do Município, sobre os aspectos físico, social, econômico e administrativo, desejado pela comunidade local. Devem suas normas legais e diretrizes técnicas se vincularem aos objetivos dos planos dos diversos escalões do governo em que se insere o Município. O Plano Diretor é o instrumento básico da política de desenvolvimento e de expansão urbana elaborado pelo Executivo Municipal e aprovado, sob a forma de lei, pela Câmara Municipal, sendo  no mínimo de abrangência municipal, devendo preferencialmente integrar-se aos objetivos dos planos regional, estadual e nacional.",
+          "title": "Plano Diretor"
+        },
+        {
+          "text": "É o documento de planejamento do governo para um período de quatro anos que abrange o segundo, o terceiro e o quarto ano do mandato do governante eleito e o primeiro ano do governo seguinte, para garantir a continuidade de ações de um governo para o outro. Contém o programa de trabalho do governo e o detalhamento dos dispêndios que serão realizados. É encaminhado ao Congresso Nacional pelo Presidente da República até o dia 31 de agosto do primeiro ano do mandato. O PPA atual abrange o período 2020 a 2023 e o próximo corresponderá ao quadriênio 2024 a 2027.",
+          "title": "Plano plurianual (PPA)"
+        },
+        {
+          "text": "Um projeto de lei ou uma proposta de lei é um conjunto de normas que deve submeter-se à tramitação num órgão legislativo com o objetivo de se efetivar através de uma lei. Os projetos de lei são feitos por membros do próprio órgão legislativo. Já as propostas de lei são feitas pelo poder executivo.",
+          "title": "Projeto de Lei (PL)"
+        },
+        {
+          "text": "Instrumento de organização da ação governamental visando à concretização dos objetos pretendidos, sendo mensurado por indicadores estabelecidos no plano plurianual.",
+          "title": "Programa"
+        },
+        {
+          "text": "Ato administrativo emanado pelos chefes de órgãos públicos aos seus  subordinados, determinando a realização de atos gerais ou especiais, com caráter interno ou externo. Tem como objetivo dar instruções específicas aos seus destinatários.",
+          "title": "Portaria"
+        },
+        {
+          "text": "Modalidade de licitação em que a disputa pelo fornecimento de bens ou serviços comuns é feita em sessão pública, com a utilização de recursos de tecnologia da informação. O oferecimento de propostas e lances é feito exclusivamente pela internet.",
+          "title": "Pregão Eletrônico"
+        }
+      ]
+    },
+    {
+      "title": "Q",
+      "items": []
+    },
+    {
+      "title": "R",
+      "items": [
+        {
+          "text": "Dotação global não especificamente destinada a determinado órgão, unidade orçamentária, programa ou categoria econômica, cujos recursos serão utilizados para abertura de créditos adicionais.",
+          "title": "Reserva de Contingência"
+        },
+        {
+          "text": "Despesas empenhadas, mas não pagas, até 31 de dezembro, distinguindo-se as processadas (despesas empenhadas e liquidadas) das não processadas (despesas empenhadas e aguardando a liquidação).",
+          "title": "Restos a Pagar"
+        }
+      ]
+    },
+    {
+      "title": "S",
+      "items": []
+    },
+    {
+      "title": "T",
+      "items": [
+        {
+          "text": "Instrumento elaborado com a finalidade de alterar itens de contratos, convênios ou acordos firmados pela administração pública.",
+          "title": "Termo Aditivo"
+        },
+        {
+          "text": "Modalidade de licitação realizada entre interessados previamente cadastrados, observada a necessária qualificação.",
+          "title": "Tomada de Preços"
+        }
+      ]
+    },
+    {
+      "title": "U",
+      "items": []
+    },
+    {
+      "title": "V",
+      "items": [
+        {
+          "text": "Tem relação ao primeiro estágio da despesa orçamentária, sendo o valor que o Estado reservou para efetuar um pagamento planejado. O empenho ocorre logo após a assinatura do contrato para prestação de serviço público ou fornecimento de um bem ao Poder Público.",
+          "title": "Valor Empenhado"
+        },
+        {
+          "text": "Após a liquidação (segundo estágio da despesa orçamentária), o valor referente à execução do serviço é estimado, considerando-o liquidado com esta verificação e autorização para o pagamento.",
+          "title": "Valor Liquidado"
+        },
+        {
+          "text": "É o último estágio da despesa pública. O valor é considerado pago quando o fornecedor, de fato, receber o pagamento do Estado pela emissão de cheque ou ordem bancária em favor do contratado.",
+          "title": "Valor Pago"
+        }
+      ]
+    },
+    {
+      "title": "Z",
+      "items": []
     }
   ]
 }

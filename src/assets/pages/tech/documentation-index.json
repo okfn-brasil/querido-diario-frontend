@@ -1,0 +1,31 @@
+{
+  "title": "Documentação",
+  "text": "Se está chegando aqui agora, vamos te dar algumas dicas para começar. Bem-vinda(o)s!",
+  "actions": [
+    {
+      "text": "Já sabe o que é o Querido Diário?",
+      "to": "/sobre",
+      "style": "highlight"
+    },
+    {
+      "text": "Vídeo do Catarse",
+      "to": "https://www.catarse.me/queridodiario-okbr?ref=ctrse_explore_pgsearch&project_id=120548&project_user_id=1384462",
+      "style": "highlight"
+    },
+    {
+      "text": "Está aprendendo a programar e contribuir para código aberto? Comece por aqui!",
+      "to": "/tecnologia#contribua",
+      "style": "highlight"
+    },
+    {
+      "text": "Você já tinha ouvido falar da Operação Serenata de Amor?",
+      "to": "https://serenata.ai/",
+      "style": "highlight"
+    },
+    {
+      "text": "Quer contribuir financeiramente?",
+      "to": "https://www.catarse.me/queridodiario-okbr?ref=ctrse_explore_pgsearch&project_id=120548&project_user_id=1384462",
+      "style": "highlight"
+    }
+  ]
+}

@@ -7,12 +7,14 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
-import { Observable, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
-import { getLevelDescription, termsResult } from 'src/app/data/search';
-import { GazetteResponse, GazetteService } from 'src/app/gazette.service';
+import { Observable, of, Subscription } from 'rxjs';
+import { findLevel, Level } from 'src/app/data/levels';
+import {
+  Gazette,
+  GazetteResponse,
+  GazetteService,
+} from 'src/app/gazette.service';
 import { City } from 'src/app/interfaces/city';
-import { CitiesService } from 'src/app/services/cities.service';
 import { TerritoryService, Territory } from 'src/app/territory.service';
 interface SearchResult {
   text: string;
@@ -40,6 +42,7 @@ interface Pagination {
   currentPage: number;
   totalItems?: number;
 }
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -50,7 +53,6 @@ export class SearchComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private citiesService: CitiesService,
     private territoryService: TerritoryService,
     private gazetteService: GazetteService
   ) {}
@@ -63,11 +65,17 @@ export class SearchComponent implements OnInit {
   city: Observable<City | null> = new Observable();
   levelDescription: LevelDescription | undefined = undefined;
 
+  levelIcon: string | null = null;
+
   territory: Territory | null = null;
 
   gazetteResponse: GazetteResponse | null = null;
 
   pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
+
+  level$: Observable<Level | null> = of(null);
+
+  subscriptions: Subscription[] = [];
 
   //@Output() pageChange = new EventEmitter();
   @Output() pageBoundsCorrection = new EventEmitter();
@@ -106,7 +114,6 @@ export class SearchComponent implements OnInit {
   }
 
   nextPage() {
-    console.log('pagination ', this.pagination);
     this.pageChange(Number(this.pagination.currentPage) + 1);
   }
 
@@ -119,10 +126,6 @@ export class SearchComponent implements OnInit {
   }
 
   lastPage() {
-    console.log(
-      'this.gazetteResponse.total_gazettes ',
-      this.gazetteResponse?.total_gazettes
-    );
     const page =
       this.gazetteResponse && this.gazetteResponse.total_gazettes / 10;
     if (page) {
@@ -135,72 +138,48 @@ export class SearchComponent implements OnInit {
       this.sort_by = params.sort_by;
 
       if (params.city) {
-        this.territoryService
-          .findAll({ name: params.city })
-          .subscribe((res) => {
-            const territory = res[0];
-            this.territory = territory;
-            this.levelDescription = getLevelDescription(territory.level);
+        this.subscriptions.push(
+          this.territoryService
+            .findAll({ name: params.city })
+            .subscribe((res) => {
+              const territory = res[0];
+              this.territory = territory;
+              this.level$ = of(findLevel(parseInt(territory.level)));
+              this.levelIcon = `level-${territory.level}`;
 
-            this.gazetteService
-              .findAll({ ...params, territory_id: territory.territory_id })
-              .subscribe((res) => {
-                this.gazetteResponse = res;
-                let pagination: Pagination = this.pagination;
-                const totalItems = Math.ceil(res.total_gazettes / 10);
-                console.log('params page ', params.page);
-                pagination = {
-                  ...pagination,
-                  currentPage: params.page,
-                  totalItems,
-                };
-                this.pagination = pagination;
-              });
-          });
+              this.subscriptions.push(
+                this.gazetteService
+                  .findAll({ ...params, territory_id: territory.territory_id })
+                  .subscribe((res) => {
+                    this.gazetteResponse = res;
+                    let pagination: Pagination = this.pagination;
+                    const totalItems = Math.ceil(res.total_gazettes / 10);
+                    pagination = {
+                      ...pagination,
+                      currentPage: params.page,
+                      totalItems,
+                    };
+                    this.pagination = pagination;
+                  })
+              );
+            })
+        );
       } else {
-        this.gazetteService.findAll(params).subscribe((res) => {
-          this.gazetteResponse = res;
-          let pagination: Pagination = this.pagination;
-          const totalItems = Math.ceil(res.total_gazettes / 10);
-          console.log('params page ', params.page);
-          pagination = { ...pagination, currentPage: params.page, totalItems };
-          this.pagination = pagination;
-        });
+        this.subscriptions.push(
+          this.gazetteService.findAll(params).subscribe((res) => {
+            this.gazetteResponse = res;
+            let pagination: Pagination = this.pagination;
+            const totalItems = Math.ceil(res.total_gazettes / 10);
+            pagination = {
+              ...pagination,
+              currentPage: params.page,
+              totalItems,
+            };
+            this.pagination = pagination;
+          })
+        );
       }
     });
-  }
-
-  private findTerritory(value: string): Observable<City | null> {
-    const filterValue = value.toLowerCase();
-    return this.citiesService
-      .findOne(filterValue)
-      .pipe(map((result) => result));
-  }
-
-  findByResults(options: {
-    term?: string;
-    territoryId?: string;
-    page: number;
-  }): Observable<SearchResponse> {
-    let results = [] as SearchResult[];
-    const { term, territoryId, page } = options;
-    console.log('term ', term);
-    if (term && territoryId) {
-      results = termsResult.filter(
-        (result) =>
-          result.text.indexOf(term) > -1 && result.territoryId == territoryId
-      );
-    } else if (term) {
-      results = termsResult.filter((result) => result.text.indexOf(term) > -1);
-    } else if (territoryId) {
-      results = termsResult.filter(
-        (result) => result.territoryId == territoryId
-      );
-    }
-    const count = results.length;
-    results = results.slice(page - 1, page + 3);
-
-    return of({ count, results });
   }
 
   openFile(link: string) {
@@ -209,7 +188,6 @@ export class SearchComponent implements OnInit {
 
   orderChanged(sort_by: string) {
     const queryParams = this.route.snapshot.queryParams;
-    console.log('queryParams ', queryParams);
     this.router.navigate(['/pesquisa'], {
       queryParams: { ...queryParams, sort_by },
     });
@@ -222,5 +200,15 @@ export class SearchComponent implements OnInit {
     return url
       .replace(/www.|https:\/\/|http:\/\//g, '')
       .replace(/(br).*/, 'br');
+  }
+
+  formatText(text: string): string {
+    return text.replace('\n', '<br />')
+  }
+
+  ngOnDestroy() {
+    for (let subscriptions of this.subscriptions) {
+      subscriptions.unsubscribe();
+    }
   }
 }

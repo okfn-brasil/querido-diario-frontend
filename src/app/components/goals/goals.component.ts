@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { GOAL_LIST } from 'src/app/data/home';
+import { ContentService } from 'src/app/services/content.service';
 
 @Component({
   selector: 'app-goals',
   templateUrl: './goals.component.html',
-  styleUrls: ['./goals.component.sass']
+  styleUrls: ['./goals.component.sass'],
 })
 export class GoalsComponent implements OnInit {
-  goals$: Observable<any> = of(GOAL_LIST)
+  content$: Observable<any> = of(null);
 
-  constructor() { }
+  constructor(private contentService: ContentService) {}
 
   ngOnInit(): void {
+    this.content$ = this.contentService.find('our-goals');
   }
-
 }

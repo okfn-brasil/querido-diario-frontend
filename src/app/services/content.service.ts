@@ -14,13 +14,8 @@ export class ContentService {
   find(pageName: string): Observable<any> {
     return this.http.get(`/assets/pages/${pageName}.json`).pipe(
       map((data) => {
-        console.log(data)
         return data;
       })
     );
   }
 }
-
-/*
-ComponentConfigService
-*/

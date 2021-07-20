@@ -1,39 +1,56 @@
-<app-container>
+<app-container *ngIf="navigation$ as content" [gap]="86">
   <app-row layoutAlign="space-between">
-    <ng-container *ngFor="let section of sections | async">
-      <app-column [gap]="12">
+    <ng-container *ngFor="let section of content | async">
+      <app-column [gap]="12" [gapXs]="16">
         <span
           ><p>{{ section.title }}</p></span
         >
         <ng-container *ngFor="let action of section.actions">
-          <a [routerLink]="action.to">
+          <a *ngIf="action.to" [href]="action.to" target="_blank">
+            {{ action.text }}
+          </a>
+          <a *ngIf="action.route" [routerLink]="action.route" [fragment]="action.fragment">
             {{ action.text }}
           </a>
         </ng-container>
       </app-column>
     </ng-container>
-    <app-column *ngIf="social$ | async as social">
-      <span
-        ><p>{{ social.title }}</p></span
-      >
+    <app-column fxHide.xs *ngIf="social$ | async as social">
+      <app-column [gap]="12">
+        <span>
+          <p>{{ social.title }}</p>
+        </span>
+        <app-row>
+          <ng-container *ngFor="let icon of social.icons">
+            <app-icon [icon]="icon"></app-icon>
+          </ng-container>
+        </app-row>
+      </app-column>
+    </app-column>
+  </app-row>
+  <app-row fxHide fxHide.xs="false"  *ngIf="social$ | async as social">
+    <app-column [gap]="12">
+      <span>
+        <p>{{ social.title }}</p>
+      </span>
       <app-row>
-        <ng-container *ngFor="let icon of social.actions">
+        <ng-container *ngFor="let icon of social.icons">
           <app-icon [icon]="icon"></app-icon>
         </ng-container>
       </app-row>
     </app-column>
   </app-row>
-</app-container>
-<app-container *ngIf="copyright$ | async as copyright">
-  <app-row [gap]="32">
-    <app-row [gap]="12">
+  <app-row [gap]="32" [flex]="true" *ngIf="copyright$ | async as copyright">
+    <!--<app-row [gap]="12">
       <ng-container *ngFor="let icon of copyright.icons">
         <app-icon [icon]="icon"></app-icon>
       </ng-container>
-    </app-row>
+    </app-row>-->
     <app-column>
       <ng-container *ngFor="let text of copyright.texts">
-        <span><p>{{ text }}</p></span>
+        <span>
+          <p>{{ text }}</p>
+        </span>
       </ng-container>
     </app-column>
   </app-row>

@@ -9,17 +9,25 @@
         "icon": {
           "file": "check",
           "height": 76,
-          "width": 76
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
         },
         "count": 12,
         "text": "Cidades já na plataforma"
       },
       {
-        "count": 12,
+        "count": 2226,
         "icon": {
           "file": "search",
           "height": 76,
-          "width": 76
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
         },
         "text": "Cidades já têm robôs para coletar diários"
       },
@@ -27,12 +35,22 @@
         "icon": {
           "file": "pin",
           "height": 76,
-          "width": 76
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
         },
-        "count": 12,
+        "count": 597,
         "height": 76,
         "width": 76,
         "text": "Cidades já foram mapeadas pelo censo"
+      }
+    ],
+    "actions": [
+      {
+        "text": "Conheça os níveis de acesso",
+        "to": "/acesso"
       }
     ]
   },
@@ -40,118 +58,68 @@
     "title": "Precisamos do seu apoio",
     "items": [
       {
-        "icon": { "file": "document", "height": 56, "width": 40 },
+        "icon": { "file": "gift", "height": 56, "width": 40 },
         "title": "Nossa próxima meta",
-        "text": "Nossa próxima meta",
+        "text": "Hoje, já poderíamos ter 2226 cidades na plataforma e você pode nos ajudar a chegar lá",
         "actions": [
           {
             "text": "Doe",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "https://www.catarse.me/queridodiario-okbr",
             "style": "btn-primary"
           },
           {
             "text": "Ver todas as metas",
             "icon": "arrow",
-            "to": "/doe",
+            "route": "/apoie",
+            "fragment": "nossas-metas",
             "style": "btn-secondary"
           }
         ]
       },
       {
         "icon": { "file": "document", "height": 56, "width": 40 },
-        "title": "Contribua como desenvolvedor",
+        "title": "Contribua com o desenvolvimento",
         "text": "Contribua com código - o Querido Diário é um projeto de código aberto, então qualquer pessoa pode colaborar com novas funcionalidades para a plataforma",
         "actions": [
           {
             "text": "Comece por aqui",
             "icon": "arrow",
-            "to": "/doe",
+            "route": "/tecnologia",
+            "fragment": "contribua",
             "style": "btn-secondary"
           }
         ]
       },
       {
-        "icon": { "file": "document", "height": 56, "width": 40 },
+        "icon": { "file": "frame", "height": 56, "width": 40 },
         "title": "Cadastre um município",
-        "text": "Cadastre um município - precisamos saber onde as prefeituras publicam seus diários oficiais",
+        "text": "Precisamos saber onde as prefeituras publicam seus diários oficiais",
         "actions": [
           {
-            "text": "Doe",
+            "text": "Comece por aqui",
             "icon": "arrow",
-            "to": "/doe",
+            "to": "https://censo.ok.org.br/",
             "style": "btn-secondary"
           }
         ]
-      }
-    ]
-  },
-  "goals": {
-    "title": "Nossas Metas",
-    "text": "O querido diário está só começando! Temos vários objetivos para o projeto, e você pode nos ajudar a chegar lá:",
-    "items": [
-      {
-        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
-      },
-      {
-        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000",
-        "actions": [{ "text": "Ir para o catarse", "to": "Catarse" }]
-      },
-      {
-        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
-      },
-      {
-        "icon": { "file": "ok-hand", "height": 120, "width": 73 },
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
-      },
-      {
-        "icon": "ok-hand",
-        "title": "Chegamos aqui",
-        "text": "Já construímos toda a infraestrutura e libertamos 12 capitais.",
-        "money": "R$ 2000"
-      }
-    ]
-  },
-  "infos": {
-    "title": "Entenda",
-    "items": [
-      {
-        "title": "Nível de Acesso",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
-      },
-      {
-        "title": "Glossário",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
-      },
-      {
-        "title": "Como denunciar ou pedir informações",
-        "text": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
       }
     ]
   },
   "trajectory": {
     "title": "Conheça a trajetória e próximos passos do Querido Diário",
-    "text": "Saiba mais sobre o projeto"
+    "actions": [
+      {
+        "text": "Saiba mais sobre o projeto",
+        "to": "/sobre"
+      }
+    ]
   },
   "realization": [
     {
       "title": "REALIZAÇÃO",
       "icons": [
-        { "file": "logo-OK", "height": 30, "width": 126 },
+        { "file": "logo-OK", "height": 30, "width": 106 },
         { "file": "logo-serenata", "height": 40, "width": 82 },
         { "file": "logo-embaixadores", "height": 18, "width": 116 }
       ]
@@ -161,6 +129,7 @@
       "icons": [
         { "file": "logo-Ilda", "height": 17, "width": 52 },
         { "file": "logo-jurema", "height": 18, "width": 80 },
+        { "file": "empatia", "height": 16, "width": 87 },
         { "file": "logo-digitalocean", "height": 18, "width": 110 }
       ]
     }

@@ -1,21 +1,20 @@
 <ng-container *ngIf="infos$ | async as infos">
-  <app-container [gap]="34" theme="light" [bg]="bg">
-    <div class="container-inner">
-      <h1>{{ infos.title }}</h1>
-    </div>
-    <app-row [gap]="17">
-      <app-column
-        [style.padding]="'42px 30px'"
-        *ngFor="let item of infos.items"
-        [gap]="34"
-        theme="dark-secondary"
-      >
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.text }}</p>
-        <ng-container *ngFor="let action of item.actions">
-          <a [routerLink]="'/'">{{ action.text }}</a>
-        </ng-container>
-      </app-column>
-    </app-row>
-  </app-container>
+  <h1>{{ infos.title }}</h1>
+  <app-row [gap]="17" [flex]="true">
+    <app-column
+      [style.padding]="'42px 30px'"
+      *ngFor="let item of infos.items"
+      [gap]="34"
+      theme="dark-secondary"
+    >
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.text }}</p>
+      <ng-container *ngFor="let action of item.actions">
+        <app-row [gap]="6">
+          <a [routerLink]="action.to">{{ action.text }}</a>
+          <app-icon [icon]="icon"></app-icon>
+        </app-row>
+      </ng-container>
+    </app-column>
+  </app-row>
 </ng-container>
