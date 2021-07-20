@@ -18,6 +18,7 @@ export class InfosComponent implements OnInit {
 
   @Input()
   bg: 'bg-gray-square' | 'bg-purple-square' = 'bg-gray-square';
+  theme: 'darker' | 'dark-secondary' | 'dark' | 'light' = 'darker';
 
   constructor(private contentService: ContentService) {}
 

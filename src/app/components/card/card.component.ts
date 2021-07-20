@@ -9,7 +9,7 @@ export class CardComponent implements OnInit {
 
   @Input() item: any
 
-  @Input() span: number = 10;
+  @Input() first: boolean = false;
   
   constructor() { }
 

@@ -12,7 +12,7 @@
     <div fxHide fxHide.xs="false">
       <app-column [gap]="16">
         <ng-container *ngFor="let item of content.items; index as i">
-          <app-card [item]="item" [span]="i"></app-card>
+          <app-card [item]="item" [first]="i === 0"></app-card>
         </ng-container>
       </app-column>
     </div>

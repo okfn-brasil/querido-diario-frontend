@@ -41,11 +41,11 @@
     </app-column>
   </app-row>
   <app-row [gap]="32" [flex]="true" *ngIf="copyright$ | async as copyright">
-    <app-row [gap]="12">
+    <!--<app-row [gap]="12">
       <ng-container *ngFor="let icon of copyright.icons">
         <app-icon [icon]="icon"></app-icon>
       </ng-container>
-    </app-row>
+    </app-row>-->
     <app-column>
       <ng-container *ngFor="let text of copyright.texts">
         <span>
