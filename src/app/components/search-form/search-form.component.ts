@@ -37,7 +37,7 @@ export class SearchFormComponent implements OnInit {
   filteredOptions: Observable<string[]> = new Observable();
 
   cityControl = new FormControl();
-  territories: Observable<City[]> = new Observable();
+  territories: Observable<Territory[]> = of([]);
 
   @ViewChild('cityField') cityField!: ElementRef;
   @ViewChild('termField') termField!: ElementRef;
@@ -45,6 +45,8 @@ export class SearchFormComponent implements OnInit {
 
   since: string = '';
   until: string = '';
+
+  territory: Territory | null = null;
 
   subscriptions: Subscription[] = [];
 
@@ -57,7 +59,7 @@ export class SearchFormComponent implements OnInit {
   ngOnInit(): void {
     this.filteredOptions = this.termControl.valueChanges.pipe(
       startWith(''),
-      map((value) => this._filter(value))
+      map((value) => this._filterTerms(value))
     );
 
     this.territories = this.cityControl.valueChanges.pipe(
@@ -69,6 +71,11 @@ export class SearchFormComponent implements OnInit {
           return of([]);
         }
       })
+      /*
+        startWith(''),
+        map(value => typeof value === 'string' ? value : value.territory_name),
+        map(name => name ? this.findTerritory(name) : this.options.slice())
+        */
     );
 
     this.subscriptions.push(
@@ -84,12 +91,10 @@ export class SearchFormComponent implements OnInit {
     let queryParams = {};
     const city = this.cityField.nativeElement.value;
 
-    console.log('city ', city);
-
     const term = this.termField.nativeElement.value;
 
-    if (city) {
-      queryParams = { ...queryParams, city };
+    if (this.territory) {
+      queryParams = { ...queryParams, city: this.territory.territory_id };
     }
 
     if (term) {
@@ -112,7 +117,10 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  private _filter(value: string): string[] {
+  private _filterTerms(value: string): string[] {
+    if (!value) {
+      return []
+    }
     const filterValue = value.toLowerCase();
 
     return this.options.filter((option) =>
@@ -126,11 +134,19 @@ export class SearchFormComponent implements OnInit {
       : '';
   }
 
-  private findTerritory(value: string): Observable<Territory[]> {
-    const filterValue = value.toLowerCase();
-    return this.territoryService
-      .findByName(filterValue)
-      .pipe(map((result) => result));
+  private findTerritory(value: any): Observable<Territory[]> {
+    if (typeof value === 'string') {
+      const filterValue = value.toLowerCase();
+      return this.territoryService
+        .findByName(filterValue)
+        .pipe(map((result) => result));
+    } else {
+      const filterValue = value.territory_name.toLowerCase();
+      this.territory = value;
+      return this.territoryService
+        .findByName(filterValue)
+        .pipe(map((result) => result));
+    }
   }
 
   ngOnDestroy() {

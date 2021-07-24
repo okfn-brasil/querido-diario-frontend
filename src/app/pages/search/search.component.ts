@@ -140,9 +140,9 @@ export class SearchComponent implements OnInit {
       if (params.city) {
         this.subscriptions.push(
           this.territoryService
-            .findAll({ name: params.city })
+            .findOne({ territoryId: params.city })
             .subscribe((res) => {
-              const territory = res[0];
+              const territory = res;
               this.territory = territory;
               this.level$ = of(findLevel(parseInt(territory.level)));
               this.levelIcon = `level-${territory.level}`;

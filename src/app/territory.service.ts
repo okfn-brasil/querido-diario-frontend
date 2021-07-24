@@ -20,9 +20,8 @@ interface TerritoryQuery {
 export class TerritoryService {
   public currentTerritory: Territory | undefined = undefined;
 
-  private territory =  new Subject<Territory>();
+  private territory = new Subject<Territory>();
   territory$ = this.territory.asObservable();
-
 
   constructor(private http: HttpClient) {}
 
@@ -30,14 +29,22 @@ export class TerritoryService {
     let url = `https://queridodiario.ok.org.br/api/cities/?`;
     const { name } = query;
     if (name) {
-      url += `city_name=${name}`
+      url += `city_name=${name}`;
     }
     return this.http.get<{ cities: [] }>(url).pipe(
       map((res: { cities: [] }) => {
         return res.cities;
       })
     );
+  }
 
+  findOne(params: { territoryId: string }): Observable<Territory> {
+    const url = `https://queridodiario.ok.org.br/api/cities/${params.territoryId}`
+    return this.http.get<{ city: Territory }>(url).pipe(
+      map((res: { city: Territory }) => {
+        return res.city
+      })
+    );
   }
 
   findByName(name: string): Observable<Territory[]> {
@@ -52,9 +59,11 @@ export class TerritoryService {
 
   select(territoryName: string): void {
     const filterValue = territoryName.toLowerCase();
-    this.findByName(filterValue).subscribe((data: Territory[]) => {
-      const currentTerritory = data[0];
-      this.territory.next(currentTerritory)
-    }).unsubscribe();
+    this.findByName(filterValue)
+      .subscribe((data: Territory[]) => {
+        const currentTerritory = data[0];
+        this.territory.next(currentTerritory);
+      })
+      .unsubscribe();
   }
 }

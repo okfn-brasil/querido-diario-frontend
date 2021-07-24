@@ -39,10 +39,10 @@
         [matAutocomplete]="cityInput"
       />
 
-      <mat-autocomplete class="light" #cityInput="matAutocomplete">
+      <mat-autocomplete class="light" #cityInput="matAutocomplete" [displayWith]="displayFn">
         <mat-option
           *ngFor="let option of territories | async"
-          [value]="option.territory_name"
+          [value]="option"
         >
           <div fxLayout="row" class="autocomplete">
             <app-autocomplete-item
