@@ -12,10 +12,20 @@
       </app-column>
       <app-row [gap]="36" class="nav-secondary">
         <ng-container *ngFor="let action of navigation.actions">
-          <a [href]="action.to" target="_blank" [ngClass]="action.style" *ngIf="action.to">
+          <a
+            [href]="action.to"
+            target="_blank"
+            [ngClass]="action.style"
+            *ngIf="action.to"
+          >
             {{ action.text }}
           </a>
-          <a [routerLink]="action.route" [fragment]="action.fragment" [ngClass]="action.style" *ngIf="action.route">
+          <a
+            [routerLink]="action.route"
+            [fragment]="action.fragment"
+            [ngClass]="action.style"
+            *ngIf="action.route"
+          >
             {{ action.text }}
           </a>
         </ng-container>
@@ -24,7 +34,11 @@
   </div>
 </app-container>
 
-<app-container *ngIf="documentationIndex$ | async as doc" theme="light" id="documentacao">
+<app-container
+  *ngIf="documentationIndex$ | async as doc"
+  theme="light"
+  id="documentacao"
+>
   <div class="container-inner">
     <app-column [gap]="60">
       <app-column [gap]="40">
@@ -48,7 +62,11 @@
         </ng-container>
 
         <ng-container *ngFor="let img of documentation.images">
-          <img [src]="img.src" [appHeight]="img.height" [appFlexHeight]= "img.appHeightXs" />
+          <img
+            [src]="img.src"
+            [appHeight]="img.height"
+            [appFlexHeight]="img.appHeightXs"
+          />
         </ng-container>
       </app-column>
     </app-column>
