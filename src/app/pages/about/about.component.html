@@ -11,7 +11,7 @@
           <h1>{{ content.about.title }}</h1>
           <p>{{ content.about.text }}</p>
         </app-column>
-        <app-row [gap]="36" class="nav-secondary">
+        <app-row [gap]="36" class="nav-secondary" fxHide.xs>
           <ng-container *ngFor="let action of content.about.actions">
             <a
               [routerLink]="action.route"
@@ -21,6 +21,33 @@
               {{ action.text }}
             </a>
           </ng-container>
+        </app-row>
+
+        <app-row fxHide [fxHide.xs]="false" [gap]="36">
+          <app-column class="nav-secondary">
+            <ng-container
+              *ngFor="let action of content.about.actions.slice(0, 2)"
+            >
+              <a
+                [routerLink]="action.route"
+                [fragment]="action.fragment"
+                [ngClass]="action.style"
+              >
+                {{ action.text }}
+              </a>
+            </ng-container>
+          </app-column>
+          <app-column class="nav-secondary">
+            <ng-container *ngFor="let action of content.about.actions.slice(2)">
+              <a
+                [routerLink]="action.route"
+                [fragment]="action.fragment"
+                [ngClass]="action.style"
+              >
+                {{ action.text }}
+              </a>
+            </ng-container>
+          </app-column>
         </app-row>
       </app-column>
     </div>
