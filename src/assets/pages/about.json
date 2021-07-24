@@ -68,10 +68,10 @@
   },
   "privacy": {
     "title": "Termos de uso e política de privacidade",
-    "text": "O Querido Diário tem por objetivo facilitar o acesso da sociedade a dados públicos e todo o processamento é feito para garantir a integridade das informações tais como foram originalmente publicadas pelo órgão. Além disso, trabalhamos para que este seja um ambiente seguro e que respeite a privacidade em sua navegação. Conheça aqui os detalhes dos termos de uso e da política de privacidade desta plataforma.",
+    "text": "O Querido Diário tem por objetivo facilitar o acesso da sociedade a dados públicos e todo o processamento é feito para garantir a integridade das informações tais como foram originalmente publicadas pelos órgãos públicos. Além disso, trabalhamos para que este seja um ambiente seguro e que respeite a privacidade em sua navegação. Conheça aqui os detalhes dos termos de uso e da política de privacidade desta plataforma.",
     "actions": [
       {
-        "text": "Ler mais",
+        "text": "Leia mais",
         "icon": "arrow",
         "to": "/privacidade",
         "style": "btn-primary"

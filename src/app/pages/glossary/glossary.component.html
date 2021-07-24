@@ -11,13 +11,13 @@
         <app-column [gap]="46">
           <div fxLayout="row wrap" fxLayoutGap="18px" class="nav-dark">
             <ng-container *ngFor="let action of content.actions">
-              <a [routerLink]="action.to">{{ action.text }}</a>
+              <a routerLink="/glossario" [fragment]="action.text">{{ action.text }}</a>
             </ng-container>
           </div>
-          <div class="typo-inner" [innerHTML]="content.text"></div>
+          <div class="typo-inner highlight" [innerHTML]="content.text"></div>
           <app-column [gap]="60">
             <ng-container *ngFor="let item of content.items">
-              <h2>{{ item.title }}</h2>
+              <h2 [id]="item.title">{{ item.title }}</h2>
               <app-column [gap]="42">
                 <ng-container *ngFor="let char of item.items">
                   <app-column [gap]="22">
@@ -35,9 +35,9 @@
             <div class="typo-inner" [innerHTML]="text"></div>
           </ng-container>
           <h3>{{ content.navigation.title }}</h3>
-          <app-column>
+          <app-column class="highlight">
             <ng-container *ngFor="let action of content.navigation.actions">
-              <a [href]="action.to">{{ action.text }}</a>
+              <a [href]="action.to" target="_blank">{{ action.text }}</a>
             </ng-container>
           </app-column>
         </app-column>

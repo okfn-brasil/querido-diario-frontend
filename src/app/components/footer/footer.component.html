@@ -9,7 +9,11 @@
           <a *ngIf="action.to" [href]="action.to" target="_blank">
             {{ action.text }}
           </a>
-          <a *ngIf="action.route" [routerLink]="action.route" [fragment]="action.fragment">
+          <a
+            *ngIf="action.route"
+            [routerLink]="action.route"
+            [fragment]="action.fragment"
+          >
             {{ action.text }}
           </a>
         </ng-container>
@@ -28,7 +32,7 @@
       </app-column>
     </app-column>
   </app-row>
-  <app-row fxHide fxHide.xs="false"  *ngIf="social$ | async as social">
+  <app-row fxHide fxHide.xs="false" *ngIf="social$ | async as social">
     <app-column [gap]="12">
       <span>
         <p>{{ social.title }}</p>
@@ -48,9 +52,7 @@
     </app-row>-->
     <app-column>
       <ng-container *ngFor="let text of copyright.texts">
-        <span>
-          <p>{{ text }}</p>
-        </span>
+        <div [innerHTML]="text" class="highlight copyright"></div>
       </ng-container>
     </app-column>
   </app-row>

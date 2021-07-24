@@ -123,7 +123,7 @@
       "to": "/glossario/Z"
     }
   ],
-  "text": "Sentiu falta de algum termo? Entre em contato e envie sua sugestão",
+  "text": "Sentiu falta de algum termo? <a href=\"/sugestao\">Entre em contato e envie sua sugestão</a>",
   "items": [
     {
       "title": "A",
