@@ -26,8 +26,8 @@
             layoutAlign="left"
           >
             <app-icon [icon]="item.icon"></app-icon>
-            <app-column>
-              <p>{{ item.count }}</p>
+            <app-column [gap]="16">
+              <span class="number">{{ item.count }}</span>
               <p>{{ item.text }}</p>
             </app-column>
           </app-row>
@@ -92,7 +92,7 @@
     </app-container>
 
     <app-container [gap]="34" theme="light" bg="bg-gray-square" id="entenda">
-      <app-infos></app-infos>
+      <app-infos theme="light"></app-infos>
     </app-container>
 
     <app-container containerClass="container-notop" bg="bg-purple-square">

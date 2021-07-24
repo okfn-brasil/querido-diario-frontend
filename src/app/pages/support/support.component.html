@@ -55,7 +55,7 @@
                     <h3>{{ supporter.action.text }}</h3>
                   </a>
                 </ng-container>
-                <div class="typo-inner" [innerHTML]="supporter.text"></div>
+                <div class="typo-inner highlight" [innerHTML]="supporter.text"></div>
                 <ng-container *ngFor="let icon of supporter.icons">
                   <app-icon [icon]="icon"></app-icon>
                 </ng-container>
