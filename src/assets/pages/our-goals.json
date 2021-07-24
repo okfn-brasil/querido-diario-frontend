@@ -15,6 +15,7 @@
       "subTitle": "R$ 10.000",
       "actions": [
         {
+          "to": "https://www.catarse.me/queridodiario-okbr",
           "text": "Ir para o Catarse",
           "icon": { "file": "right-arrow", "height": 12, "width": 12 }
         }
@@ -27,6 +28,7 @@
       "subTitle": "R$ 6.000",
       "actions": [
         {
+          "to": "https://www.catarse.me/queridodiario-okbr",
           "text": "Ir para o Catarse",
           "icon": { "file": "right-arrow", "height": 12, "width": 12 }
         }
@@ -39,6 +41,7 @@
       "subTitle": "R$ 14.000",
       "actions": [
         {
+          "to": "https://www.catarse.me/queridodiario-okbr",
           "text": "Ir para o Catarse",
           "icon": { "file": "right-arrow", "height": 12, "width": 12 }
         }
