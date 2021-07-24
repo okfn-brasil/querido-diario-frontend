@@ -11,7 +11,6 @@
     fxLayout="row"
     *ngIf="!territory && gazetteResponse && gazetteResponse.total_gazettes == 0"
   >
-    <!--     this.territoryService.select(city) -->
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
       <p>
@@ -109,6 +108,11 @@
           <ng-container *ngFor="let text of level.texts">
             <p>{{ text }}</p>
           </ng-container>
+        </ng-container>
+        <ng-container *ngIf="!territory && gazetteResponse && gazetteResponse.total_gazettes > 0">
+          <p>
+            Abaixo, estão os resultados encontrados nos diários dos municípios que já conseguimos disponibilizar em formato aberto! Assim você consegue realizar a busca nos documentos de um jeito fácil.
+          </p>
         </ng-container>
         <div fxLayout="row" fxLayoutAlign="space-between">
           <h2>{{ gazetteResponse.total_gazettes }} resultados encontrados</h2>
