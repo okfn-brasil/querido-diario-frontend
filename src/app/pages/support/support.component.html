@@ -62,7 +62,9 @@
                 <app-row [gap]="22">
                   <app-column *ngFor="let list of supporter.items">
                     <app-column [gap]="36">
+                      <ng-container>
                       <p *ngFor="let name of list">{{ name }}</p>
+                      </ng-container>
                     </app-column>
                   </app-column>
                 </app-row>

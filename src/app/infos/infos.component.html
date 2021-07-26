@@ -1,5 +1,7 @@
 <ng-container *ngIf="infos$ | async as infos">
-  <h1>{{ infos.title }}</h1>
+  <div class="container-inner">
+    <h1>{{ infos.title }}</h1>
+  </div>
   <app-row [gap]="17" [flex]="true">
     <app-column
       [style.padding]="'42px 30px'"

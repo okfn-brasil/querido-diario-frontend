@@ -105,7 +105,7 @@ export class SearchComponent implements OnInit {
   p: number[] = [];
 
   page: number = 1;
-  sort_by: string = '';
+  sort_by: string = 'relevance';
   pageChange(page: number) {
     const queryParams = this.route.snapshot.queryParams;
     this.router.navigate(['/pesquisa'], {
@@ -135,7 +135,9 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      this.sort_by = params.sort_by;
+      if (params.sort_by) {
+        this.sort_by = params.sort_by;
+      }
 
       if (params.city) {
         this.subscriptions.push(
@@ -203,7 +205,7 @@ export class SearchComponent implements OnInit {
   }
 
   formatText(text: string): string {
-    return text.replace('\n', '<br />')
+    return text.replace('\n', '<br />');
   }
 
   ngOnDestroy() {
