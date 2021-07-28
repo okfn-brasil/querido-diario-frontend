@@ -156,16 +156,7 @@
               <app-select
                 [style]="'secondary'"
                 (onSelected)="openFile($event)"
-                [options]="[
-                  {
-                    value: gazette.file_raw_txt,
-                    viewValue: 'Baixar txt'
-                  },
-                  {
-                    value: gazette.url,
-                    viewValue: 'Baixar arquivo original'
-                  }
-                ]"
+                [options]="gazette.downloads"
                 [label]="'Baixar diário oficial'"
               ></app-select>
             </div>

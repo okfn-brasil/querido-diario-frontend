@@ -3,6 +3,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+enum DownloadsLabels {
+  TXT = 'Baixar txt',
+  ORIGINAL = 'Baixar arquivo original',
+}
+
+interface Download {
+  value: string;
+  viewValue: DownloadsLabels,
+}
 export interface Gazette {
   territory_id: string;
   date: string;
@@ -12,7 +21,8 @@ export interface Gazette {
   highlight_texts: string[];
   edition: string;
   is_extra_edition: boolean;
-  file_raw_txt: string;
+  file_raw_txt?: string;
+  downloads: Download[]
 }
 
 export interface GazetteQuery {
@@ -44,6 +54,21 @@ export class GazetteService {
     return { size: 10, offset: (page - 1) * 10 };
   }
 
+  resolveGazetteDownloads(gazette: Gazette): Gazette {
+    const downloads: Download[] = [];
+    if (gazette.file_raw_txt) {
+      downloads.push({ value: gazette.file_raw_txt, viewValue: DownloadsLabels.TXT })
+    }
+    downloads.push({ value: gazette.url, viewValue: DownloadsLabels.ORIGINAL })
+
+    return { ...gazette, downloads }
+  }
+
+  resolveGazettes(res: GazetteResponse): GazetteResponse {
+    const gazettes = res.gazettes.map((gazette: Gazette) => this.resolveGazetteDownloads(gazette))
+    return { ...res, gazettes }
+  }
+
   findAll(query: GazetteQuery): Observable<GazetteResponse> {
     const { term, territory_id, since, until, sort_by, page } = query;
     let url = `https://queridodiario.ok.org.br/api/gazettes/${
@@ -73,7 +98,7 @@ export class GazetteService {
 
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {
-        return res;
+        return this.resolveGazettes(res);
       })
     );
   }
