@@ -1,14 +1,19 @@
-<div fxLayoutAlign="center center" fxLayout="column" fxFlexFill fxLayoutGap="34px" class="main">
+<div
+  fxLayoutAlign="center center"
+  fxLayout="column"
+  fxFlexFill
+  fxLayoutGap="34px"
+  class="main"
+>
   <mat-dialog-actions>
     <div class="container" fxLayout="row" fxLayoutAlign="flex-end">
-      <button>
-        <mat-icon
-          aria-label="Fechar"
-          aria-hidden="false"
-          mat-dialog-close
-          svgIcon="close-white"
-          class="close"
-        ></mat-icon>
+      <button
+        mat-icon-button
+        aria-label="Fechar"
+        aria-hidden="false"
+        mat-dialog-close
+      >
+        <app-icon [icon]="icon"> </app-icon>
       </button>
     </div>
   </mat-dialog-actions>

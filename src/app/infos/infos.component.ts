@@ -21,8 +21,9 @@ export class InfosComponent implements OnInit {
 
   @Input()
   theme: 'darker' | 'dark-secondary' | 'dark' | 'light' = 'darker';
-  
-  themeCard: "darker" | "dark-secondary" | "dark" | "light" | null = 'dark-secondary';
+
+  themeCard: 'darker' | 'dark-secondary' | 'dark' | 'light' | null =
+    'dark-secondary';
   navTheme: string = '';
 
   constructor(private contentService: ContentService) {}
@@ -30,12 +31,9 @@ export class InfosComponent implements OnInit {
   ngOnInit(): void {
     this.infos$ = this.contentService.find('home/infos');
 
-    console.log('this.theme ', this.theme)
     if (this.theme === 'darker') {
-      console.log('inside if')
       this.themeCard = 'darker';
       this.navTheme = 'nav-dark';
-      console.log('theme card ', this.themeCard)
     }
   }
 }

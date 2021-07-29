@@ -67,6 +67,7 @@ import { HeightDirective } from './directives/height.directive';
 import { WidthDirective } from './directives/width.directive';
 import { FlexWidthDirective } from './directives/flex-width.directive';
 import { FlexHeightDirective } from './directives/flex-height.directive';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -126,6 +127,7 @@ import { FlexHeightDirective } from './directives/flex-height.directive';
     MatNativeDateModule,
     MatSelectModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
 
     HttpClientModule,
     FlexLayoutModule,
