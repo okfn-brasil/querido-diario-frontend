@@ -39,7 +39,8 @@
             {{ action.text }}
           </a>
           <app-icon
-            [icon]="{ file: 'right-arrow-white', height: 12, width: 12 }"
+            class="center"
+            [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
           >
           </app-icon>
         </app-row>
@@ -110,11 +111,12 @@
         <div class="container-inner">
           <app-column [gap]="28">
             <h1>{{ content.trajectory.title }}</h1>
-            <app-row *ngFor="let action of content.trajectory.actions">
+            <app-row *ngFor="let action of content.trajectory.actions" [gap]="8">
               <a [routerLink]="action.to">
                 {{ action.text }}
               </a>
               <app-icon
+                class='center'
                 [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
               ></app-icon>
             </app-row>

@@ -10,11 +10,20 @@ import { ContentService } from '../services/content.service';
 export class InfosComponent implements OnInit {
   infos$: Observable<any> = of(null);
 
-  icon = {
-    file: 'right-arrow-white',
+  iconDarker = {
+    file: 'white-arrow',
     height: 12,
     width: 12,
   };
+
+
+  iconDark = {
+    file: 'white-arrow-secondary',
+    height: 12,
+    width: 12,
+  };
+
+  icon = this.iconDark;
 
   @Input()
   bg: 'bg-gray-square' | 'bg-purple-square' = 'bg-gray-square';
@@ -34,6 +43,7 @@ export class InfosComponent implements OnInit {
     if (this.theme === 'darker') {
       this.themeCard = 'darker';
       this.navTheme = 'nav-dark';
+      this.icon = this.iconDarker;
     }
   }
 }

@@ -14,7 +14,7 @@
       <ng-container *ngFor="let action of item.actions">
         <app-row [gap]="6" [ngClass]="navTheme">
           <a [routerLink]="action.to">{{ action.text }}</a>
-          <app-icon [icon]="icon"></app-icon>
+          <app-icon class='center' [icon]="icon"></app-icon>
         </app-row>
       </ng-container>
     </app-column>

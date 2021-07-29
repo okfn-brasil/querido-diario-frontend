@@ -32,6 +32,7 @@ export const Icons: string[] = [
   'search-form',
   'play',
   'white-arrow',
+  'white-arrow-secondary',
   'bars',
   'close',
   'close-white',
