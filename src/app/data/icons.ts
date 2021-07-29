@@ -49,5 +49,12 @@ export const Icons: string[] = [
   'pagination-left-single-arrow',
   'pagination-right-single-arrow',
   'empatia',
-  'cc'
+  'cc',
+  'OK',
+	'digital_ocean',
+	'embaixadores',
+	'jurema',
+	'logo_Ilda',
+	'logo_empatia',
+	'operacao_serenata',
 ];

@@ -55,15 +55,20 @@
                     <h3>{{ supporter.action.text }}</h3>
                   </a>
                 </ng-container>
-                <div class="typo-inner highlight" [innerHTML]="supporter.text"></div>
-                <ng-container *ngFor="let icon of supporter.icons">
-                  <app-icon [icon]="icon"></app-icon>
-                </ng-container>
+                <div
+                  class="typo-inner highlight"
+                  [innerHTML]="supporter.text"
+                ></div>
+                <app-row [gap]="32">
+                  <ng-container *ngFor="let icon of supporter.icons">
+                    <app-icon [icon]="icon"></app-icon>
+                  </ng-container>
+                </app-row>
                 <app-row [gap]="22">
                   <app-column *ngFor="let list of supporter.items">
                     <app-column [gap]="36">
                       <ng-container>
-                      <p *ngFor="let name of list">{{ name }}</p>
+                        <p *ngFor="let name of list">{{ name }}</p>
                       </ng-container>
                     </app-column>
                   </app-column>
