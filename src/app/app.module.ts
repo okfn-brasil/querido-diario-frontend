@@ -148,8 +148,12 @@ export class AppModule {
           // backward navigation
           viewportScroller.scrollToPosition(e.position);
         } else if (e.anchor) {
-          // anchor navigation
-          viewportScroller.scrollToAnchor(e.anchor);
+          const anchor = e.anchor;
+          // not the best approach
+          setTimeout(() => {
+            // anchor navigation
+            viewportScroller.scrollToAnchor(anchor);
+          }, 1000);
         } else {
           // forward navigation
           viewportScroller.scrollToPosition([0, 0]);
