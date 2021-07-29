@@ -1,4 +1,4 @@
-<carousel [cellsToShow]="4" [width]="1200" [height]="585" [arrowsOutside]="true" [dots]="true">
+<carousel [cellsToShow]="itemsToShow" [width]="1200" [height]="485" [arrowsOutside]="showControls" [arrows]="showControls" [dots]="showControls">
   <div
     class="carousel-cell"
     *ngFor="let item of items; index as i"
