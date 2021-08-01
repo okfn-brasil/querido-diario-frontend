@@ -4,16 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from 'moment';
 import { Observable, of, Subscription } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
-import { City } from 'src/app/interfaces/city';
-import { TerritoryService } from 'src/app/territory.service';
-
-interface Territory {
-  territory_id: string;
-  territory_name: string;
-  state_code: string;
-  publication_urls: string[];
-  level: string;
-}
+import { Territory, TerritoryService } from 'src/app/territory.service';
 
 @Component({
   selector: 'app-search-form',
