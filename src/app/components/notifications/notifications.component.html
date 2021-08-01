@@ -20,13 +20,12 @@
               {{ notification.content }}
             </p>
             <div fxLayout="row" fxLayoutGap="6px">
-              <mat-icon
-                svgIcon="clock"
-                [appHeight]="18"
-                [appWidth]="18"
-              ></mat-icon>
+              <app-icon
+                class="center"
+                [icon]="{ file: 'clock', height: 18, width: 18 }"
+              ></app-icon>
               <span>
-                <p>
+                <p class='date'>
                   {{ notification.updatedAt }}
                 </p>
               </span>
