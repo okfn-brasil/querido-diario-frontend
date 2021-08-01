@@ -4,7 +4,7 @@
   "actions": [
     {
       "text": "Já sabe o que é o Querido Diário?",
-      "to": "/sobre",
+      "route": "/sobre",
       "style": "highlight"
     },
     {
@@ -14,8 +14,9 @@
     },
     {
       "text": "Está aprendendo a programar e contribuir para código aberto? Comece por aqui!",
-      "to": "/tecnologia#contribua",
-      "style": "highlight"
+      "route": "/tecnologia",
+      "style": "highlight",
+      "fragment": "contribua-com-código"
     },
     {
       "text": "Você já tinha ouvido falar da Operação Serenata de Amor?",

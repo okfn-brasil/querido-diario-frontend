@@ -9,7 +9,7 @@
     <nav *ngFor="let action of item.actions" class="nav-dark">
       <a [href]="action.to" target="_blank" style="text-decoration: none;">
         {{ action.text }}
-        <app-icon [icon]="action.icon"></app-icon>
+        <app-icon class='center' [icon]="action.icon"></app-icon>
       </a>
     </nav>
   </div>

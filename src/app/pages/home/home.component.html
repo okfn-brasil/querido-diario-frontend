@@ -34,7 +34,7 @@
         </app-column>
       </app-row>
       <ng-container *ngFor="let action of content.evolution.actions">
-        <app-row [gap]="12">
+        <app-row [gap]="6">
           <a [routerLink]="action.to">
             {{ action.text }}
           </a>

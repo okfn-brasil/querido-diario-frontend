@@ -40,7 +40,7 @@
     },
     {
       "title": "Desenvolvimento frontend e usabilidade",
-      "text": "A atual versão da plataforma foi desenvolvida com o apoio da Jurema, que é responsável pelo frontend e pelo estudo da experiência das pessoas usuárias.",
+      "text": "A atual versão da plataforma foi desenvolvida com o apoio da <a href='https://jurema.la' target='_blank'>Jurema</a>, que é responsável pelo frontend e pelo estudo da experiência das pessoas usuárias.",
       "icons": [
         {
           "file": "jurema",
@@ -62,7 +62,7 @@
     },
     {
       "title": "Comunidade",
-      "text": "Existem várias maneiras de contribuir com o Querido Diário. Se você deseja ajudar o projeto a ir mais longe, <a href=\"https://www.catarse.me/queridodiario-okbr\" target=\"_blank\" >acesse nossa campanha de financiamento coletivo no Catarse</a>e consulte as faixas de doação e suas recompensas. Assim, você sejunta às 43 pessoas que já nos ajudaram:",
+      "text": "Existem várias maneiras de contribuir com o Querido Diário. Se você deseja ajudar o projeto a ir mais longe, <a href=\"https://www.catarse.me/queridodiario-okbr\" target=\"_blank\" >acesse nossa campanha de financiamento coletivo no Catarse</a> e consulte as faixas de doação e suas recompensas. Assim, você sejunta às 43 pessoas que já nos ajudaram:",
       "items": [
         [
           "Alan Silva Costa",
@@ -231,7 +231,7 @@
         "text": "Repositório de desenvolvimento da API",
         "to": "https://github.com/okfn-brasil/querido-diario-api"
       },
-      "items": [["André Formento", "Giulio Carvalho", "Jonathan Schweder"]]
+      "items": [["André Formento"], ["Giulio Carvalho"], ["Jonathan Schweder"], ["José Guilherme Vanz"]]
     },
     {
       "action": {

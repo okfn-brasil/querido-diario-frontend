@@ -51,7 +51,7 @@
                   <h3>{{ supporter.title }}</h3>
                 </ng-container>
                 <ng-container *ngIf="supporter.action">
-                  <a [href]="supporter.action.to">
+                  <a [href]="supporter.action.to" class='highlight'>
                     <h3>{{ supporter.action.text }}</h3>
                   </a>
                 </ng-container>

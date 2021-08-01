@@ -86,7 +86,7 @@
             "text": "Comece por aqui",
             "icon": "arrow",
             "route": "/tecnologia",
-            "fragment": "contribua",
+            "fragment": "contribua-com-código",
             "style": "btn-secondary"
           }
         ]

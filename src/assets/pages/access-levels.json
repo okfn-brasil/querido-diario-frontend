@@ -27,7 +27,7 @@
         {
           "text": "Contribua com código",
           "route": "/tecnologia",
-          "fragment": "contribua",
+          "fragment": "contribua-com-código",
           "target": "_blank"
         }
       ]

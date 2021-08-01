@@ -46,7 +46,10 @@
         <app-column>
           <p>{{ doc.text }}</p>
           <ng-container *ngFor="let action of doc.actions">
-            <a [routerLink]="action.to" [ngClass]="action.style">
+            <a *ngIf="action.to" [href]="action.to" [ngClass]="action.style" target="_blank">
+              {{ action.text }}
+            </a>
+            <a *ngIf="action.route" [routerLink]="action.route" [fragment]="action.fragment" [ngClass]="action.style">
               {{ action.text }}
             </a>
           </ng-container>
@@ -56,7 +59,7 @@
         *ngFor="let documentation of documentations$ | async"
         [gap]="42"
       >
-        <h2>{{ documentation.title }}</h2>
+        <h2 [id]="documentation.title.toLowerCase().replaceAll(' ', '-')">{{ documentation.title }}</h2>
         <ng-container *ngFor="let text of documentation.texts">
           <div class="typo-inner highlight" [innerHTML]="text"></div>
         </ng-container>

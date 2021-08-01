@@ -22,7 +22,7 @@
       {
         "text": "Contribua com o desenvolvimento",
         "route": "/tecnologia",
-        "fragment": "contribua"
+        "fragment": "contribua-com-código"
       },
       { "text": "Relatórios", "route": "/tecnologia", "fragment": "relatorios" }
     ]
@@ -31,7 +31,7 @@
     "title": "SOBRE",
     "actions": [
       { "text": "História", "route": "/sobre", "fragment": "historia" },
-      { "text": "Quem somos", "route": "sobre", "fragment": "quem somos" },
+      { "text": "Quem somos", "route": "sobre", "fragment": "quem-somos" },
       {
         "text": "Termos de uso e política de privacidade",
         "route": "/privacidade"
