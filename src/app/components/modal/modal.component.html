@@ -3,14 +3,10 @@
     <div fxLayout="row" fxLayoutAlign="space-between">
       <mat-icon svgIcon="logo" class="logo"></mat-icon>
       <div fxLayoutAlign="flex-end" fxLayoutGap="16px">
-        <a>
-          <mat-icon
-            svgIcon="notification"
-            (click)="openNotifications()"
-            class="bell"
-          ></mat-icon>
+        <a (click)="openNotifications()">
+          <app-icon [icon]="notificationIcon"></app-icon>
         </a>
-        <button>
+        <button class='close-btn'>
           <mat-icon
             aria-label="Fechar Menu"
             aria-hidden="false"

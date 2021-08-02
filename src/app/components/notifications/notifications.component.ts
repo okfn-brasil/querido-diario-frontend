@@ -1,48 +1,33 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import moment, { Moment } from 'moment';
+import moment from 'moment';
+import { Observable, of } from 'rxjs';
+import { ContentService } from 'src/app/services/content.service';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
   styleUrls: ['./notifications.component.sass'],
-  encapsulation: ViewEncapsulation.None 
+  encapsulation: ViewEncapsulation.None,
 })
 export class NotificationsComponent implements OnInit {
-  constructor() {}
+  constructor(private contentService: ContentService) {}
 
-  notifications = [
-    {
-      title: 'Nova atualização',
-      content:
-        'Nulla mattis risus at rutrum imperdiet. Sed sed nibh tortor. Aliquam ultricies elit eu fringilla ullamcorper.',
-      updatedAt: this.formatDate('2021/07/31'),
-      isNew: true,
-    },
-    {
-      title: 'Nova atualização',
-      content:
-        'Nulla mattis risus at rutrum imperdiet. Sed sed nibh tortor. Aliquam ultricies elit eu fringilla ullamcorper.',
-      updatedAt: this.formatDate('2021/07/31'),
-      isNew: true,
-    },
-    {
-      title: 'Nova atualização',
-      content:
-        'Nulla mattis risus at rutrum imperdiet. Sed sed nibh tortor. Aliquam ultricies elit eu fringilla ullamcorper.',
-      updatedAt: this.formatDate('2021/07/31'),
-      isNew: false,
-    },
-  ];
+  content$: Observable<any> = of(null);
 
-  payload = {
-    hasNew: true,
-    notifications: this.notifications,
+  ngOnInit(): void {
+    this.contentService.find('notifications').subscribe((content: any) => {
+      this.content$ = of({
+        ...content,
+        list: content.list.map((notification: any) => ({
+          ...notification,
+          updatedAt: this.formatDate(notification.updatedAt),
+        })),
+      });
+    });
   }
 
-  ngOnInit(): void {}
-
   formatDate(date: string) {
-    const _date = new Date(date)
-    return moment(_date).locale("pt-br").fromNow().toUpperCase(); 
+    const _date = new Date(date);
+    return moment(_date).locale('pt-br').fromNow().toUpperCase();
   }
 }

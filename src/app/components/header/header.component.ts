@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable, of } from 'rxjs';
+import { ContentService } from 'src/app/services/content.service';
+import { Icon } from 'src/app/types/icon';
 import { ModalComponent } from '../modal/modal.component';
 import { NotificationsComponent } from '../notifications/notifications.component';
 
@@ -11,9 +14,24 @@ import { NotificationsComponent } from '../notifications/notifications.component
 export class HeaderComponent implements OnInit {
   @ViewChild('explore') explore!: ElementRef;
 
-  constructor(private modal: MatDialog) {}
+  constructor(
+    private modal: MatDialog,
+    private contentService: ContentService
+  ) {}
 
-  ngOnInit(): void {}
+  notificationIcon: Icon = {
+    file: 'bell',
+    height: 36,
+    width: 36,
+  };
+
+  ngOnInit(): void {
+    this.contentService.find('notifications').subscribe((content: any) => {
+      if (content.hasNew) {
+        this.notificationIcon = { ...this.notificationIcon, file: 'bell-span' };
+      }
+    });
+  }
 
   openDialog(): void {
     this.modal.open(ModalComponent, {
@@ -31,7 +49,7 @@ export class HeaderComponent implements OnInit {
       backdropClass: 'bg-transparent',
       position: {
         top: '40px',
-        left: left + 'px'
+        left: left + 'px',
       },
     });
   }

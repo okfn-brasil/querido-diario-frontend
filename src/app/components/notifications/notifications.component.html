@@ -1,37 +1,45 @@
 <div class="notifications-container" fxLayoutGap="32px" fxLayout="column">
-  <mat-dialog-content>
+  <ng-template #loading>
+    <app-container theme="light" fxFill>
+      <mat-spinner *ngIf="loading"></mat-spinner>
+    </app-container>
+  </ng-template>
+
+  <mat-dialog-content *ngIf="content$ | async as content; else loading">
     <div fxLayout="column" fxLayoutAlign="space-between" fxFlexFill>
       <div class="notifications-inner" fxLayout="column">
         <div class="triangule" fxHide.xs></div>
-        <div
-          class="bg-purple-2 notifications"
-          fxLayoutGap="16px"
-          fxLayout="column"
-        >
+        <ng-container *ngIf="content.list">
           <div
-            *ngFor="let notification of notifications"
-            class="bg-white-2 notifications"
-            fxLayoutGap="22px"
+            class="bg-purple-2 notifications"
+            fxLayoutGap="16px"
+            fxLayout="column"
           >
-            <p>
-              {{ notification.title }}
-            </p>
-            <p>
-              {{ notification.content }}
-            </p>
-            <div fxLayout="row" fxLayoutGap="6px">
-              <app-icon
-                class="center"
-                [icon]="{ file: 'clock', height: 18, width: 18 }"
-              ></app-icon>
-              <span>
-                <p class='date'>
-                  {{ notification.updatedAt }}
-                </p>
-              </span>
+            <div
+              *ngFor="let notification of content.list"
+              class="bg-white-2 notifications"
+              fxLayoutGap="22px"
+            >
+              <p>
+                {{ notification.title }}
+              </p>
+              <p>
+                {{ notification.content }}
+              </p>
+              <div fxLayout="row" fxLayoutGap="6px">
+                <app-icon
+                  class="center"
+                  [icon]="{ file: 'clock', height: 18, width: 18 }"
+                ></app-icon>
+                <span>
+                  <p class="date">
+                    {{ notification.updatedAt }}
+                  </p>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
+        </ng-container>
       </div>
     </div>
   </mat-dialog-content>

@@ -7,7 +7,7 @@
         <a routerLink="/tecnologia">Tecnologia</a>
         <a routerLink="/sobre">Sobre o querido diário</a>
         <a fxLayout="center" (click)="openNotifications()">
-          <mat-icon svgIcon="notification" class="bell"></mat-icon>
+          <app-icon [icon]="notificationIcon"></app-icon>
         </a>
         <button routerLink="/apoie" class="btn">Apoie</button>
       </nav>
