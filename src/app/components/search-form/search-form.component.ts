@@ -120,8 +120,8 @@ export class SearchFormComponent implements OnInit {
   }
 
   displayFn(territory: Territory): string {
-    return territory && territory.territory_name
-      ? territory.territory_name
+    return territory && territory.territory_label
+      ? territory.territory_label
       : '';
   }
 

@@ -8,6 +8,7 @@ export interface Territory {
   state_code: string;
   publication_urls: string[];
   level: string;
+  territory_label: string;
 }
 
 interface TerritoryQuery {
@@ -33,7 +34,7 @@ export class TerritoryService {
     }
     return this.http.get<{ cities: [] }>(url).pipe(
       map((res: { cities: [] }) => {
-        return res.cities;
+        return res.cities.map((territory) => this.appendState(territory) );
       })
     );
   }
@@ -42,7 +43,7 @@ export class TerritoryService {
     const url = `https://queridodiario.ok.org.br/api/cities/${params.territoryId}`
     return this.http.get<{ city: Territory }>(url).pipe(
       map((res: { city: Territory }) => {
-        return res.city
+        return this.appendState(res.city)
       })
     );
   }
@@ -52,7 +53,7 @@ export class TerritoryService {
 
     return this.http.get<{ cities: [] }>(url).pipe(
       map((res: { cities: [] }) => {
-        return res.cities;
+        return res.cities.map((territory) => this.appendState(territory) );
       })
     );
   }
@@ -65,5 +66,9 @@ export class TerritoryService {
         this.territory.next(currentTerritory);
       })
       .unsubscribe();
+  }
+
+  appendState(territory: Territory): Territory {
+    return { ...territory, territory_label: `${territory.territory_name} (${territory.state_code})`}
   }
 }
