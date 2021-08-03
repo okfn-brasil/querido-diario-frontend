@@ -87,13 +87,28 @@
           fxLayoutGap="12px"
         >
           <h3>Diários oficiais • {{ territory.territory_name }}</h3>
-          <nav class="nav-dark">
+          <nav class="nav-dark" *ngIf="territory.publication_urls.length === 1">
             <ng-container
               *ngFor="let publication_url of territory.publication_urls"
             >
               <a class="nav-dark" [href]="publication_url" target="_blank">
                 {{ extractUrlDomain(publication_url) }}
               </a>
+            </ng-container>
+          </nav>
+          <nav class="nav-dark" *ngIf="territory.publication_urls.length > 1">
+            <ng-container
+              *ngFor="
+                let publication_url of territory.publication_urls;
+                index as i
+              "
+            >
+              <a class="nav-dark" [href]="publication_url" target="_blank">
+                Fonte {{ i + 1 }}
+              </a>
+              <ng-container *ngIf="i < territory.publication_urls.length - 1">
+                <span>•</span>
+              </ng-container>
             </ng-container>
           </nav>
         </div>
@@ -109,9 +124,15 @@
             <p>{{ text }}</p>
           </ng-container>
         </ng-container>
-        <ng-container *ngIf="!territory && gazetteResponse && gazetteResponse.total_gazettes > 0">
+        <ng-container
+          *ngIf="
+            !territory && gazetteResponse && gazetteResponse.total_gazettes > 0
+          "
+        >
           <p>
-            Abaixo, estão os resultados encontrados nos diários dos municípios que já conseguimos disponibilizar em formato aberto! Assim você consegue realizar a busca nos documentos de um jeito fácil.
+            Abaixo, estão os resultados encontrados nos diários dos municípios
+            que já conseguimos disponibilizar em formato aberto! Assim você
+            consegue realizar a busca nos documentos de um jeito fácil.
           </p>
         </ng-container>
         <div fxLayout="row" fxLayoutAlign="space-between">
@@ -151,7 +172,11 @@
             >
               <p [style.paddingTop]="'16px'">
                 {{ gazette.date }} •
-                <a [href]="gazette.url" target="_blank"><span class="color-purple-3">{{gazette.territory_name }}</span></a>
+                <a [href]="gazette.url" target="_blank"
+                  ><span class="color-purple-3">{{
+                    gazette.territory_name
+                  }}</span></a
+                >
               </p>
               <app-select
                 [style]="'secondary'"
