@@ -1,30 +1,30 @@
 <div fxLayout="column">
   <section class="bg-purple-4" fxLayoutAlign="center" fxLayout="row">
     <div class="container" fxLayout="column" fxLayoutGap="26px">
-      <div fxLayoutGap="12px">
-        <h1>Envie sua sugestão</h1>
-        <p>
-          Tem sugestões de melhoria da plataforma ou ideias de funcionalidades?
-          Entre em contato conosco através do email <a href="mailto:contato@serenata.ai">contato@serenata.ai</a> e
-          ficaremos muito felizes em ler o que você tem a dizer!
-        </p>
-      </div>
+      <p *ngIf="error">{{error}}</p>
 
-      <!--<form fxLayout="column" fxLayout.xs="column" fxLayoutGap="16px" fxLayoutGap.xs="30px">
-        <mat-form-field appearance="fill" class="search-input">
+      <form
+        fxLayout="column"
+        fxLayout.xs="column"
+        fxLayoutGap="16px"
+        fxLayoutGap.xs="30px"
+        [formGroup]="suggestionForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <mat-form-field appearance="fill" class="search-input" ngDefaultControl>
           <mat-label>Qual é seu nome?</mat-label>
-          <input matInput>
+          <input matInput formControlName="name"/>
         </mat-form-field>
         <mat-form-field appearance="fill" class="city-input">
           <mat-label>E seu e-mail?</mat-label>
-          <input matInput>
+          <input matInput formControlName="email_address">
         </mat-form-field>
         <mat-form-field appearance="fill" class="period-input">
           <mat-label>Como podemos melhorar?</mat-label>
-          <input matInput>
+          <input matInput formControlName="content">
         </mat-form-field>
-        <button class='btn'>Enviar sugestão</button>
-      </form>-->
+        <button class="btn">Enviar sugestão</button>
+      </form>
     </div>
   </section>
 </div>

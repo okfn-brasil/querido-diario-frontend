@@ -68,6 +68,7 @@ import { WidthDirective } from './directives/width.directive';
 import { FlexWidthDirective } from './directives/flex-width.directive';
 import { FlexHeightDirective } from './directives/flex-height.directive';
 import { MatButtonModule } from '@angular/material/button';
+import { FormSentComponent } from './components/form-sent/form-sent.component';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { MatButtonModule } from '@angular/material/button';
     InfosComponent,
     FlexWidthDirective,
     FlexHeightDirective,
+    FormSentComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ export const Icons: string[] = [
   'pin',
   'document',
   'check',
+  'gray-check',
   'box',
   'project',
   'computer-person',

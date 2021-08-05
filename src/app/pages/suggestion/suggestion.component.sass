@@ -1,8 +1,20 @@
 @import '../../../assets/_variables.sass'
 @import '../../../assets/_tools.sass'
 
+::ng-deep .mat-form-field-underline::before
+  background-color: $white1 !important
+
+mat-label
+  color: #F3E9E9 !important
+  opacity: 0.5
+  font-family: Lato
+  font-size: 20px
+  font-weight: 600
+  letter-spacing: 0
+  line-height: 19px
+
 a
-  color: #FFF
+  color: $white1
   text-decoration: underline
 
 .container
@@ -10,7 +22,7 @@ a
   padding: rem(80) 0
 
 mat-label
-  color: $white1
+  color: yellow
 
 button
   height: rem(42)
