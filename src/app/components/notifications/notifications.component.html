@@ -9,12 +9,22 @@
     <div fxLayout="column" fxLayoutAlign="space-between" fxFlexFill>
       <div class="notifications-inner" fxLayout="column">
         <div class="triangule" fxHide.xs></div>
-        <ng-container *ngIf="content.list">
+        <div
+          class="bg-purple-2 notifications"
+          fxLayoutGap="16px"
+          fxLayout="column"
+        >
           <div
-            class="bg-purple-2 notifications"
-            fxLayoutGap="16px"
-            fxLayout="column"
+            *ngIf="!content.list.length"
+            class="bg-white-2 notifications"
+            fxLayoutGap="22px"
+            fxFill
           >
+            <p class='no-notifications'>
+              {{ content.noNotificationsText }}
+            </p>
+          </div>
+          <ng-container *ngIf="content.list.length">
             <div
               *ngFor="let notification of content.list"
               class="bg-white-2 notifications"
@@ -38,8 +48,8 @@
                 </span>
               </div>
             </div>
-          </div>
-        </ng-container>
+          </ng-container>
+        </div>
       </div>
     </div>
   </mat-dialog-content>

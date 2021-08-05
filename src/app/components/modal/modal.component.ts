@@ -23,7 +23,7 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.contentService.find('notifications').subscribe((content: any) => {
-      if (content.hasNew) {
+      if (content.list.length) {
         this.notificationIcon = { ...this.notificationIcon, file: 'bell-span' };
       }
     });

@@ -1,23 +1,4 @@
 {
-  "hasNew": true,
-  "list": [
-    {
-      "title": "Nova atualização",
-      "content": "Nulla mattis risus at rutrum imperdiet. Sed sed nibh tortor. Aliquam ultricies elit eu fringilla ullamcorper.",
-      "updatedAt": "2021/07/31",
-      "isNew": true
-    },
-    {
-      "title": "Nova atualização",
-      "content": "Nulla mattis risus at rutrum imperdiet. Sed sed nibh tortor. Aliquam ultricies elit eu fringilla ullamcorper.",
-      "updatedAt": "2021/07/31",
-      "isNew": true
-    },
-    {
-      "title": "Nova atualização",
-      "content": "Nulla mattis risus at rutrum imperdiet. Sed sed nibh tortor. Aliquam ultricies elit eu fringilla ullamcorper.",
-      "updatedAt": "2021/07/31",
-      "isNew": false
-    }
-  ]
+  "noNotificationsText": "Ainda não há notificações",
+  "list": []
 }
