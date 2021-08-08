@@ -1,7 +1,15 @@
 <div fxLayout="column">
   <section class="bg-purple-4" fxLayoutAlign="center" fxLayout="row">
     <div class="container" fxLayout="column" fxLayoutGap="26px">
-      <p *ngIf="error">{{error}}</p>
+      <div fxLayoutGap="12px">
+        <h1>Envie sua sugestão</h1>
+        <p>
+          Tem sugestões de melhoria da plataforma ou ideias de funcionalidades?
+          Preencha os campos abaixo e nos envie sua mensagem!
+        </p>
+      </div>
+
+      <p *ngIf="error">{{ error }}</p>
 
       <form
         fxLayout="column"
@@ -13,15 +21,15 @@
       >
         <mat-form-field appearance="fill" class="search-input" ngDefaultControl>
           <mat-label>Qual é seu nome?</mat-label>
-          <input matInput formControlName="name"/>
+          <input matInput formControlName="name" />
         </mat-form-field>
         <mat-form-field appearance="fill" class="city-input">
           <mat-label>E seu e-mail?</mat-label>
-          <input matInput formControlName="email_address">
+          <input matInput formControlName="email_address" />
         </mat-form-field>
         <mat-form-field appearance="fill" class="period-input">
           <mat-label>Como podemos melhorar?</mat-label>
-          <input matInput formControlName="content">
+          <textarea rows="7" matInput formControlName="content"></textarea>
         </mat-form-field>
         <button class="btn">Enviar sugestão</button>
       </form>
