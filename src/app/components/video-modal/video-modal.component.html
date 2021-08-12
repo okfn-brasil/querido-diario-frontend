@@ -13,7 +13,10 @@
         aria-hidden="false"
         mat-dialog-close
       >
-        <app-icon [icon]="icon"> </app-icon>
+        <img
+          [src]="img.src"
+          [appHeight]="img.height"
+        />
       </button>
     </div>
   </mat-dialog-actions>

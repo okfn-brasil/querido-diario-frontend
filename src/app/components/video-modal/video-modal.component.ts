@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-modal.component.sass'],
 })
 export class VideoModalComponent implements OnInit {
-  icon = {
-    file: 'close-white',
+  img = {
+    src: '../../../assets/images/close.png',
     width: 50,
     height: 50,
   };
