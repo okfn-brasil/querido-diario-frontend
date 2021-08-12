@@ -80,20 +80,25 @@ export class SearchFormComponent implements OnInit {
 
   search(): void {
     let queryParams = {};
-    const city = this.cityField.nativeElement.value;
-
     const term = this.termField.nativeElement.value;
+    const cityName = this.cityField.nativeElement.value;
 
-    if (this.territory) {
+    if (this.territory && cityName) {
       queryParams = { ...queryParams, city: this.territory.territory_id };
+    } else {
+      queryParams = { ...queryParams, city: null };
     }
 
     if (term) {
       queryParams = { ...queryParams, term };
+    } else {
+      queryParams = { ...queryParams, term: null };
     }
 
     if (this.since && this.until) {
       queryParams = { ...queryParams, since: this.since, until: this.until };
+    } else {
+      queryParams = { ...queryParams, since: null, until: null };
     }
 
     this.router.navigate(['/pesquisa'], { queryParams });
@@ -126,6 +131,10 @@ export class SearchFormComponent implements OnInit {
   }
 
   private findTerritory(value: any): Observable<Territory[]> {
+    if (!value) {
+      this.territory = null;
+      return of([])
+    }
     if (typeof value === 'string') {
       const filterValue = value.toLowerCase();
       return this.territoryService
