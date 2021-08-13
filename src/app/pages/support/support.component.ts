@@ -2,25 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ContentService } from 'src/app/services/content.service';
 
-const spliceIntoChunks = (items: any[], chunkSize: number) => {
-  const n = 5;
-  const _line: string[] = [];
-  const result = [_line, _line, _line, _line, _line];
-
-  const wordsPerLine = Math.ceil(items.length / 5);
-
-  for (let line = 0; line < n; line++) {
-    for (let i = 0; i < wordsPerLine; i++) {
-      const index = i + line * wordsPerLine;
-      const value = items[index + 5];
-      if (!value) continue; //avoid adding "undefined" values
-      result[line].push(value);
-    }
-  }
-
-  return result;
-};
-
 @Component({
   selector: 'app-support',
   templateUrl: './support.component.html',
