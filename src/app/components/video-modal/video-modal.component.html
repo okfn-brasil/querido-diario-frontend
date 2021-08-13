@@ -7,17 +7,14 @@
 >
   <mat-dialog-actions>
     <div class="container" fxLayout="row" fxLayoutAlign="flex-end">
-      <button
-        mat-icon-button
+      <img
+        class="close"
         aria-label="Fechar"
         aria-hidden="false"
         mat-dialog-close
-      >
-        <img
-          [src]="img.src"
-          [appHeight]="img.height"
-        />
-      </button>
+        [src]="img.src"
+        [appHeight]="img.height"
+      />
     </div>
   </mat-dialog-actions>
   <mat-dialog-content style="height: 100%">
