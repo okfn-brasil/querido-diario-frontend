@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from 'moment';
 import { Observable, of, Subscription } from 'rxjs';
-import { map, startWith, switchMap } from 'rxjs/operators';
+import { map, startWith, switchMap, take } from 'rxjs/operators';
 import { Territory, TerritoryService } from 'src/app/territory.service';
 
 @Component({
@@ -62,18 +62,20 @@ export class SearchFormComponent implements OnInit {
           return of([]);
         }
       })
-      /*
-        startWith(''),
-        map(value => typeof value === 'string' ? value : value.territory_name),
-        map(name => name ? this.findTerritory(name) : this.options.slice())
-        */
     );
 
     this.subscriptions.push(
       this.route.queryParams.subscribe((params) => {
         const { term, city } = params;
         this.termControl.setValue(term);
-        this.cityControl.setValue(city);
+        if (city) {
+          this.territoryService
+            .findOne({ territoryId: city })
+            .pipe(take(1))
+            .subscribe((res) => {
+              this.cityControl.setValue(res);
+            });
+        }
       })
     );
   }
@@ -115,7 +117,7 @@ export class SearchFormComponent implements OnInit {
 
   private _filterTerms(value: string): string[] {
     if (!value) {
-      return []
+      return [];
     }
     const filterValue = value.toLowerCase();
 
@@ -133,7 +135,7 @@ export class SearchFormComponent implements OnInit {
   private findTerritory(value: any): Observable<Territory[]> {
     if (!value) {
       this.territory = null;
-      return of([])
+      return of([]);
     }
     if (typeof value === 'string') {
       const filterValue = value.toLowerCase();
