@@ -88,7 +88,7 @@ export class GazetteService {
     }
 
     if (sort_by) {
-      url += `sort_by=${sort_by}`; // default
+      url += `sort_by=${sort_by}&`;
     }
 
     if (page && page > 1) {
