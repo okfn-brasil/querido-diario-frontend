@@ -18,10 +18,6 @@
     letter-spacing: 0
     line-height: 28px
 
-.territory-icon
-  height: 50px !important
-  width: 50px !important
-
 section
   padding: rem(80) 0
 
@@ -38,10 +34,6 @@ section
     letter-spacing: 0
     line-height: 28px
 
-mat-icon
-  height: 50px
-  width: 50px
-
 .btn-primary
   height: 42px
   width: 304px
@@ -50,7 +42,12 @@ mat-icon
   border: none
   color: $white1
 
-pagination-controls
+::ng-deep
+  mat-icon
+  height: 50px
+  width: 50px
+
+  pagination-controls
   margin: 0 16px
 
 @media only screen and (max-width: 768px)
@@ -66,73 +63,74 @@ pagination-controls
   .container
     padding: 0 rem(16)
 
-.ngx-pagination
-  display: flex
-  justify-content: center
+::ng-deep
+  .ngx-pagination
+    display: flex
+    justify-content: center
 
-.ngx-pagination li
-  height: 41px
-  width: 41px
-  text-align: center
+  .ngx-pagination li
+    height: 41px
+    width: 41px
+    text-align: center
 
-  a
-    &:hover
-      background-color: transparent
+    a
+      &:hover
+        background-color: transparent
+        opacity: 1
+
+    span
+      color: gray !important
+      opacity: 0.5
+      color: #F3E9E9
+      font-family: Lato
+      font-size: 16px
+      font-weight: 600
+      letter-spacing: 0
+      line-height: 29px
+
+  .ngx-pagination .current
+    background-color: transparent !important
+    height: 41px
+    width: 41px
+    border: 1px solid #FF8500
+    border-radius: 20px
+    text-align: center
+    span
+      color: #F3E9E9
       opacity: 1
 
-  span
-    color: gray !important
-    opacity: 0.5
-    color: #F3E9E9
-    font-family: Lato
-    font-size: 16px
-    font-weight: 600
-    letter-spacing: 0
-    line-height: 29px
+  .pagination-previous, .pagination-next a, .ngx-pagination a, .ngx-pagination button, .ngx-pagination .disabled
+    font-size: 26px
+    color: #F3E9E9 !important
+    height: 41px
+    width: 41px
 
-.ngx-pagination .current
-  background-color: transparent !important
-  height: 41px
-  width: 41px
-  border: 1px solid #FF8500
-  border-radius: 20px
-  text-align: center
-  span
-    color: #F3E9E9
-    opacity: 1
+  .pagination-previous, .ngx-pagination .disabled, .pagination-next
+    border: 1px solid #F3E9E9
+    border-radius: 20px !important
 
-.pagination-previous, .pagination-next a, .ngx-pagination a, .ngx-pagination button, .ngx-pagination .disabled
-  font-size: 26px
-  color: #F3E9E9 !important
-  height: 41px
-  width: 41px
+  .pagination-previous, .pagination-next
+    display: none !important
 
-.pagination-previous, .ngx-pagination .disabled, .pagination-next
-  border: 1px solid #F3E9E9
-  border-radius: 20px !important
+  .ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before,
+  .ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after
+    margin: 5px 0 0 0 !important
 
-.pagination-previous, .pagination-next
-  display: none !important
+  .ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before
+    content: '‹' !important
 
-.ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before,
-.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after
-  margin: 5px 0 0 0 !important
+  .ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after
+    content: '›'!important
 
-.ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before
-  content: '‹' !important
-
-.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after
-  content: '›'!important
-
-.pagination-first-page, .pagination-last-page
-  box-sizing: border-box
-  height: 41px
-  width: 41px
-  border: 1px solid #5E3F8E
-  border-radius: 20px
-  text-decoration: none
-  text-align: center
-  line-height: 36px
-  font-weight: 100
-  font-size: 30px
-
+  .pagination-first-page, .pagination-last-page
+    box-sizing: border-box
+    height: 41px
+    width: 41px
+    border: 1px solid #5E3F8E
+    border-radius: 20px
+    text-decoration: none
+    text-align: center
+    line-height: 36px
+    font-weight: 100
+    font-size: 30px
+    margin: 0 2px

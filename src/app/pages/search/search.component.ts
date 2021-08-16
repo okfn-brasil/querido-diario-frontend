@@ -3,15 +3,13 @@ import {
   EventEmitter,
   OnInit,
   Output,
-  ViewEncapsulation,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
-import { Observable, of, Subscription } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { findLevel, Level } from 'src/app/data/levels';
 import {
-  Gazette,
   GazetteResponse,
   GazetteService,
 } from 'src/app/gazette.service';
