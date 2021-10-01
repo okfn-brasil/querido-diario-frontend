@@ -3,7 +3,7 @@
     "title": "Onde pedir ajuda?",
     "texts": [
       "A comunidade de pessoas envolvidas no Querido Diário é muito receptiva, temos um <a href='https://discord.gg/nDc9p4drm4' target='_blank'>canal no Discord</a> onde trocamos ideias e dúvidas sobre nossos projetos. Entre e se apresente! Por lá, organizamos reuniões periódicas com as pessoas que mantêm o projeto.",
-      "Caso tenha alguma dúvida sobre o projeto e a nossa comunidade, você também pode nos enviar um email pelo seguinte endereço: <a href='mailto:contato@serenata.ai'>contato@serenata.ai<a/>."
+      "Caso tenha alguma dúvida sobre o projeto e a nossa comunidade, você também pode nos enviar um email pelo seguinte endereço: <a href='mailto:contato@serenata.ai'>contato@serenata.ai</a>."
     ]
   },
   {
@@ -50,8 +50,8 @@
     "title": "Censo",
     "texts": [
       "Antes de alguém conseguir escrever um spider para um município é importante sabermos em qual site os arquivos do diário oficial estão sendo publicados, e isso não é tão simples. Estamos falando de um país com 5.570 municípios que publicam seus atos públicos sem nenhum padrão, dentre eles alguns publicam em sites de associações, empresas privadas ou até mesmo site de outros entes da federação, e tudo isso sem nenhuma gestão de fluxo da informação.",
-      "Por isso, nós criamos uma iniciativa de mapeamento das fontes de publicação, o <a href='https://censo.ok.org.br' target='_blank'>Censo Querido Diário<a/>, onde qualquer pessoa pode preencher um formulário e nos enviar a fonte de publicação de diários oficiais de um município.",
-      "Todas as fontes de publicação enviadas são validadas por um time voluntário e estão sendo feitas análises de dados que irão compor relatórios sobre o diagnóstico de como está esse retrato de divulgação de atos públicos no Brasil. Com acesso à base de dados você consegue utilizar a linguagem R e Python para realizar análises exploratórias e contribuir no nosso <a href='https://github.com/okfn-brasil/censo-querido-diario' target='_blank'>repositório do censo<a/>."
+      "Por isso, nós criamos uma iniciativa de mapeamento das fontes de publicação, o <a href='https://censo.ok.org.br' target='_blank'>Censo Querido Diário</a>, onde qualquer pessoa pode preencher um formulário e nos enviar a fonte de publicação de diários oficiais de um município.",
+      "Todas as fontes de publicação enviadas são validadas por um time voluntário e estão sendo feitas análises de dados que irão compor relatórios sobre o diagnóstico de como está esse retrato de divulgação de atos públicos no Brasil. Com acesso à base de dados você consegue utilizar a linguagem R e Python para realizar análises exploratórias e contribuir no nosso <a href='https://github.com/okfn-brasil/censo-querido-diario' target='_blank'>repositório do censo</a>."
     ]
   },
   {
@@ -71,7 +71,7 @@
     "title": "Front end",
     "texts": [
       "O front end é este que vos fala. Esta plataforma de busca é uma interface visual de interação com a API pública e também uma ferramenta de difusão de conhecimento e incentivo ao uso de diários oficiais.",
-      "O seu desenvolvimento é principalmente feito em Angular com Typescript, com responsividade para dispositivos móveis em primeiro lugar. Se te interessou contribuir, o <a href='https://github.com/okfn-brasil/querido-diario-frontend' target='_blank'>repositório oficial<a/> também é aberto."
+      "O seu desenvolvimento é principalmente feito em Angular com Typescript, com responsividade para dispositivos móveis em primeiro lugar. Se te interessou contribuir, o <a href='https://github.com/okfn-brasil/querido-diario-frontend' target='_blank'>repositório oficial</a> também é aberto."
     ]
   }
 ]
