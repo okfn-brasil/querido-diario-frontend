@@ -37,7 +37,7 @@
   {
     "title": "Processamento de dados",
     "texts": [
-      "Esta etapa é essencial pois é aqui que acontece a mágica de transformar dados fechados em abertos e conectar outras etapas do nosso fluxo de dados. <a href='kfn-brasil/querido-diario-data-processing' target='_blank'>No repositório</a> você encontrará várias tecnologias como: <a href='https://tika.apache.org/' target='_blank'>Apache Tika</a> para extrair texto de documentos de vários formatos, <a href='https://www.elastic.co/' target='_blank'>elasticsearch</a> para interagir com o indexador de texto dos documentos, <a href='https://www.postgresql.org/' target='_blank'>postgresql</a> para interagir com os dados extraídos das spiders e muito Python puro."
+      "Esta etapa é essencial pois é aqui que acontece a mágica de transformar dados fechados em abertos e conectar outras etapas do nosso fluxo de dados. <a href='https://github.com/okfn-brasil/querido-diario-data-processing/' target='_blank'>No repositório</a> você encontrará várias tecnologias como: <a href='https://tika.apache.org/' target='_blank'>Apache Tika</a> para extrair texto de documentos de vários formatos, <a href='https://www.elastic.co/' target='_blank'>elasticsearch</a> para interagir com o indexador de texto dos documentos, <a href='https://www.postgresql.org/' target='_blank'>postgresql</a> para interagir com os dados extraídos das spiders e muito Python puro."
     ]
   },
   {
