@@ -21,7 +21,9 @@
               <app-column [gap]="42">
                 <ng-container *ngFor="let char of item.items">
                   <app-column [gap]="22">
-                    <h3>{{ char.title }}</h3>
+                    <a routerLink="/glossario" [fragment]="char.title">
+                      <h3 [id]="char.title">{{ char.title }}</h3>
+                    </a>
                     <div class="typo-inner" [innerHTML]="char.text"></div>
                   </app-column>
                 </ng-container>
