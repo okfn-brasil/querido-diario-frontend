@@ -1,4 +1,26 @@
 {
-  "noNotificationsText": "Ainda não há notificações",
-  "list": []
+   "list": [{
+    "title": "Nova atualização!",
+    "content": "A cidade de Cuiabá (MT) foi adicionada à plataforma!",
+    "updatedAt": "2021/10/20",
+    "isNew": true
+  },
+  {
+    "title": "Nova atualização!",
+    "content": "A cidade de Belo Horizonte (MG) foi adicionada à plataforma!",
+    "updatedAt": "2021/10/20",
+    "isNew": true
+  },
+  {
+    "title": "Nova atualização!",
+    "content": "A cidade de Belém (PA) foi adicionada à plataforma!",
+    "updatedAt": "2021/10/20",
+    "isNew": true
+  },
+  {
+    "title": "Nova atualização!",
+    "content": "A cidade de Feira de Santana (BA) foi adicionada à plataforma!",
+    "updatedAt": "2021/10/20",
+    "isNew": true
+  }]
 }
