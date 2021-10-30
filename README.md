@@ -1,5 +1,10 @@
 # Frontend da Plataforma de Busca do Querido Diário
 
+______________________________________
+
+_[Click here](languages/en-US/README.md) to read this article in english._
+______________________________________
+
 Este repositório contém todos os recursos necessários para montar o *frontend*
 da [Plataforma de Busca do Querido Diário](https://queridodiario.ok.org.br/).
 Se desejar contribuir, sua colaboração é muito bem vinda!

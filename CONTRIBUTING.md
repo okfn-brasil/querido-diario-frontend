@@ -1,5 +1,10 @@
 # Colaborando
 
+______________________________________
+
+_[Click here](languages/en-US/CONTRIBUTING.md) to read this article in english._
+______________________________________
+
 *Tenha em mente que este projeto possui um
 [Código de Conduta de Colaboração](CODE_OF_CONDUCT.md). Ao participar deste
 projeto, você concorda em aderir aos termos especificados nele.*
