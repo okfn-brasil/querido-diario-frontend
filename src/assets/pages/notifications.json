@@ -1,26 +1,56 @@
 {
-   "list": [{
+  "list": [{
+    "title": "Nova atualização!",
+    "content": "A cidade de Brasilia (DF) foi adicionada à plataforma!",
+    "updatedAt": "2022/03/25",
+    "isNew": true
+  },
+  {
+    "title": "Nova atualização!",
+    "content": "A cidade de Recife (PE) foi adicionada à plataforma!",
+    "updatedAt": "2022/03/25",
+    "isNew": true
+  },
+  {
+    "title": "Nova atualização!",
+    "content": "A cidade de Caxias (MA) foi adicionada à plataforma!",
+    "updatedAt": "2022/03/25",
+    "isNew": true
+  },
+  {
+    "title": "Nova atualização!",
+    "content": "A cidade de Jaboatão dos Guararapes (PE) foi adicionada à plataforma!",
+    "updatedAt": "2022/03/25",
+    "isNew": true
+  },
+  {
+    "title": "Nova atualização!",
+    "content": "A cidade de Sumaré (SP) foi adicionada à plataforma!",
+    "updatedAt": "2022/03/25",
+    "isNew": true
+  },
+  {
     "title": "Nova atualização!",
     "content": "A cidade de Cuiabá (MT) foi adicionada à plataforma!",
     "updatedAt": "2021/10/20",
-    "isNew": true
+    "isNew": false
   },
   {
     "title": "Nova atualização!",
     "content": "A cidade de Belo Horizonte (MG) foi adicionada à plataforma!",
     "updatedAt": "2021/10/20",
-    "isNew": true
+    "isNew": false
   },
   {
     "title": "Nova atualização!",
     "content": "A cidade de Belém (PA) foi adicionada à plataforma!",
     "updatedAt": "2021/10/20",
-    "isNew": true
+    "isNew": false
   },
   {
     "title": "Nova atualização!",
     "content": "A cidade de Feira de Santana (BA) foi adicionada à plataforma!",
     "updatedAt": "2021/10/20",
-    "isNew": true
+    "isNew": false
   }]
 }

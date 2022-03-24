@@ -15,11 +15,11 @@
             "width": 50
           }
         },
-        "count": 16,
+        "count": 21,
         "text": "Cidades já na plataforma"
       },
       {
-        "count": 2226,
+        "count": 2420,
         "icon": {
           "file": "search",
           "height": 76,
@@ -41,7 +41,7 @@
             "width": 50
           }
         },
-        "count": 597,
+        "count": 600,
         "height": 76,
         "width": 76,
         "text": "Cidades já foram mapeadas pelo censo"
@@ -60,7 +60,7 @@
       {
         "icon": { "file": "gift", "height": 56, "width": 40 },
         "title": "Nossa próxima meta",
-        "text": "Hoje, já poderíamos ter 2226 cidades na plataforma e você pode nos ajudar a chegar lá",
+        "text": "Hoje, já poderíamos ter 2420 cidades na plataforma e você pode nos ajudar a chegar lá",
         "actions": [
           {
             "text": "Doe",
