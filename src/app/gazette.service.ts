@@ -76,7 +76,7 @@ export class GazetteService {
     }?`;
 
     if (term) {
-      url += `keywords=${term}&pre_tags=%3Cb%3E&post_tags=%3C%2Fb%3E&fragment_size=500&`;
+      url += `querystring=${term}&pre_tags=%3Cb%3E&post_tags=%3C%2Fb%3E&fragment_size=500&`;
     }
 
     if (since) {
