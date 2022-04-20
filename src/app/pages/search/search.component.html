@@ -195,7 +195,12 @@
                 <a [href]="gazette.url" target="_blank"
                   ><span class="color-purple-3">{{
                     gazette.territory_name
-                  }}</span></a
+                  }}                  
+                  ({{
+                    gazette.state_code
+                  }})
+                </span>
+                </a
                 >
               </p>
               <app-select
