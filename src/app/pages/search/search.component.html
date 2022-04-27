@@ -9,13 +9,13 @@
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="!territory && gazetteResponse && gazetteResponse.total_gazettes == 0"
+    *ngIf="gazetteResponse && gazetteResponse.total_gazettes == 0"
   >
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
       <p>
-        Confira a grafia das palavras, tentes outros termos ou palavras mais
-        genéricas
+        Confira a grafia das palavras, tente outros termos ou palavras mais
+        genéricas.
       </p>
     </div>
   </section>
