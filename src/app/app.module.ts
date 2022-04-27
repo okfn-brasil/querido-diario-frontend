@@ -48,6 +48,8 @@ import { AutocompleteItemComponent } from './components/autocomplete-item/autoco
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardComponent } from './components/card/card.component';
+import { AvailableCitiesComponent } from './pages/available-cities/available-cities.component';
+
 
 import { GoalsComponent } from './components/goals/goals.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
@@ -111,6 +113,7 @@ import { FormSentComponent } from './components/form-sent/form-sent.component';
     FlexWidthDirective,
     FlexHeightDirective,
     FormSentComponent,
+    AvailableCitiesComponent,
   ],
   imports: [
     BrowserModule,
