@@ -1,38 +1,43 @@
 {
-    "title": "Cidades disponíveis",
-    "items": [
-     {
-        "text": "Atualmente, o Querido Diário possui os seguintes municípios no <a href='/acesso'>nível 3 de acesso</a>, ou seja, com o conteúdo de seus diários oficiais disponíveis na plataforma:",
-        "items": [
-          [
-            "Belém (PA)",
-            "Belo Horizonte (MG)",
-            "Boa Vista (RR)",
-            "Brasília (DF)",
-            "Caxias (MA)",
-            "Campo Grande (MS)",
-            "Cuiabá (MT)"
-          ],
-          [
-            "Feira de Santana (BA)",
-            "Florianópolis (SC)",
-            "Goiânia (GO)",
-            "Jaboatão dos Guararapes (PE)",
-            "João Pessoa (PB)",
-            "Maceió (AL)",
-            "Manaus (AM)"
-          ],
-          [
-            "Natal (RN)",                
-            "Palmas (TO)",                
-            "Rio de Janeiro (RJ)",                 
-            "Recife (PE)",                
-            "Salvador (BA)",                
-            "Sumaré (SP)", 
-            "Teresina (PI)"
-          ]
+  "title": "Cidades disponíveis",
+  "items": [
+    {
+      "text": "Atualmente, o Querido Diário possui os seguintes municípios no <a href='/acesso'>nível 3 de acesso</a>, ou seja, com o conteúdo de seus diários oficiais disponíveis na plataforma:",
+      "items": [
+        [
+          "Araguaína (TO)",
+          "Belém (PA)",
+          "Belo Horizonte (MG)",
+          "Boa Vista (RR)",
+          "Brasília (DF)",
+          "Caxias (MA)",
+          "Campo Grande (MS)",
+          "Cuiabá (MT)",
+          "Curitiba (PR)"
+        ],
+        [
+          "Feira de Santana (BA)",
+          "Florianópolis (SC)",
+          "Goiânia (GO)",
+          "Jaboatão dos Guararapes (PE)",
+          "João Pessoa (PB)",
+          "Jundiaí (SP)",
+          "Maceió (AL)",
+          "Manaus (AM)",
+          "Mossoró (RN)"
+        ],
+        [
+          "Natal (RN)",
+          "Palmas (TO)",
+          "Petrolina (PE)",
+          "Porto Alegre (RS)",
+          "Rio de Janeiro (RJ)",
+          "Recife (PE)",
+          "Salvador (BA)",
+          "Sumaré (SP)",
+          "Teresina (PI)"
         ]
-      }     
-    ]
-  }
-  
+      ]
+    }
+  ]
+}
