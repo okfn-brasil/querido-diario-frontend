@@ -11,6 +11,7 @@ import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 import { SupportComponent } from './pages/support/support.component';
 import { TechComponent } from './pages/tech/tech.component';
 import { PostComponent } from './pages/post/post.component';
+import { AvailableCitiesComponent } from './pages/available-cities/available-cities.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'sugestao', component: SuggestionComponent },
   { path: 'glossario', component: GlossaryComponent },
   { path: 'pesquisa', component: SearchComponent },
-  { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent }
+  { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent },
+  { path: 'cidades-disponiveis', component: AvailableCitiesComponent }
 ];
 
 @NgModule({

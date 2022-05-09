@@ -47,7 +47,11 @@
         "text": "Cidades já foram mapeadas pelo censo"
       }
     ],
-    "actions": [
+    "actions": [      
+      {
+        "text": "Confira as cidades disponíveis",
+        "to": "/cidades-disponiveis"
+      },
       {
         "text": "Conheça os níveis de acesso",
         "to": "/acesso"
