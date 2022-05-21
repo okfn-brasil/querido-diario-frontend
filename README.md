@@ -19,17 +19,10 @@ Com estes programas instalados, vamos instalar as dependências com o yarn:
 $ yarn
 ```
 
-Após instaladas, devemos instalar a cli do [Angular](https://angular.io/) com o
-comando:
-
-```sh
-$ npm install -g @angular/cli
-```
-
 E com isso, podemos servir o projeto em ambiente local com o comando:
 
 ```sh
-$ ng serve
+$ yarn ng serve
 ```
 
 ## Colaborando
