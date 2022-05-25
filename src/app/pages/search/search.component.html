@@ -162,7 +162,7 @@
             class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px"
           >
-            <ng-container *ngFor="let text of gazette.highlight_texts">
+            <ng-container *ngFor="let text of gazette.excerpts">
               <div [innerHTML]="formatText(text)" class="typo-inner"></div>
             </ng-container>
             <div

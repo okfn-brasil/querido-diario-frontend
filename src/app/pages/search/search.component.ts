@@ -108,7 +108,7 @@ export class SearchComponent implements OnInit {
   }
 
   nextPage() {
-    this.pageChange(Number(this.pagination.currentPage) + 1);
+    this.pageChange(Number(this.pagination.currentPage || 1) + 1);
   }
 
   previousPage() {

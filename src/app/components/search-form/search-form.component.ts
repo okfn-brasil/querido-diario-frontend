@@ -138,6 +138,9 @@ export class SearchFormComponent implements OnInit {
       return of([]);
     }
     if (typeof value === 'string') {
+      if (value.length <= 1) {
+        return of([]);
+      }
       const filterValue = value.toLowerCase();
       return this.territoryService
         .findByName(filterValue)

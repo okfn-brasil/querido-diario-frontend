@@ -18,10 +18,10 @@ export interface Gazette {
   url: string;
   territory_name: string;
   state_code: string;
-  highlight_texts: string[];
+  excerpts: string[];
   edition: string;
   is_extra_edition: boolean;
-  file_raw_txt?: string;
+  txt_url?: string;
   downloads: Download[]
 }
 
@@ -56,8 +56,8 @@ export class GazetteService {
 
   resolveGazetteDownloads(gazette: Gazette): Gazette {
     const downloads: Download[] = [];
-    if (gazette.file_raw_txt) {
-      downloads.push({ value: gazette.file_raw_txt, viewValue: DownloadsLabels.TXT })
+    if (gazette.txt_url) {
+      downloads.push({ value: gazette.txt_url, viewValue: DownloadsLabels.TXT })
     }
     downloads.push({ value: gazette.url, viewValue: DownloadsLabels.ORIGINAL })
 
@@ -71,12 +71,14 @@ export class GazetteService {
 
   findAll(query: GazetteQuery): Observable<GazetteResponse> {
     const { term, territory_id, since, until, sort_by, page } = query;
-    let url = `https://queridodiario.ok.org.br/api/gazettes/${
-      territory_id || ''
-    }?`;
+    let url = `https://queridodiario.ok.org.br/api/gazettes?`;
+
+    if (territory_id) {
+      url += `territory_ids=${territory_id}&`;
+    }
 
     if (term) {
-      url += `querystring=${term}&pre_tags=%3Cb%3E&post_tags=%3C%2Fb%3E&fragment_size=500&`;
+      url += `querystring=${term}&pre_tags=%3Cb%3E&post_tags=%3C%2Fb%3E&excerpt_size=500&number_of_excerpts=1&`;
     }
 
     if (since) {
