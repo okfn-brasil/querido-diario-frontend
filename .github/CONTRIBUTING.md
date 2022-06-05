@@ -32,11 +32,6 @@ Temos também um [fórum de discussões](https://github.com/okfn-brasil/querido-
 
 E uma [comunidade no Discord](https://bit.ly/discord-ok), se você desejar tirar dúvidas mais rápidas ou conversar com pessoas que também tem esse interesse pelos projetos de inovação cívica da Open Knowledge Brasil.
 
-### *Setup*
-
-Leia o [arquivo README](README.md) para fazer o *setup* do ambiente de
-desenvolvimento do projeto.
-
 # Mantendo
 
 ## Responsabilidades de uma pessoa mantenedora do Querido Diário
