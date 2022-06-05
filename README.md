@@ -1,3 +1,9 @@
+**Português (BR)** | [English (US)](.github/README-en-US.md)
+
+<p align="center">
+  <img alt="Querido Diário" src="./.github/images/querido-diario-logo.png" width="200">
+</p>
+
 # Frontend da Plataforma de Busca do Querido Diário
 
 Este repositório contém todos os recursos necessários para montar o *frontend*
