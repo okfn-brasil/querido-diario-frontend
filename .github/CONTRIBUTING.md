@@ -22,15 +22,15 @@ O Querido Diário possui vários repositórios de código para você contribuir:
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Censo](https://github.com/okfn-brasil/censo-querido-diario)
 
-## Como colaborar
+## Como contribuir
 
-Se você nunca contribuiu com um projeto de código aberto ou não está
-familiarizado com este projeto, existem tarefas indicadas para pessoas como
-você. Elas são etiquetadas como
-["good first issues"](https://github.com/okfn-brasil/querido-diario-frontend/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
-Se alguma te interessar, antes de começar, você pode deixar comentários para
-tirar qualquer dúvida relevante ou então deixar um aviso de que você irá
-trabalhar naquela tarefa.
+Caso você ainda não tenha contribuido com um projeto de código aberto ou não está familiarizado com este projeto, existem tarefas indicadas para pessoas como você na aba [*Issues*](https://github.com/okfn-brasil/querido-diario-comunidade/issues), etiquetadas como [`good first issues`](https://github.com/okfn-brasil/querido-diario-comunidade/issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue") (boas primeiras tarefas).
+
+Em alguma te interessando, antes de começar, você pode deixar comentários para tirar qualquer dúvida relevante e então deixar um aviso de que você irá trabalhar naquela tarefa.
+
+Temos também um [fórum de discussões](https://github.com/okfn-brasil/querido-diario-comunidade/discussions), onde você pode contribuir com as ideias relacionadas ao projeto.
+
+E uma [comunidade no Discord](https://bit.ly/discord-ok), se você desejar tirar dúvidas mais rápidas ou conversar com pessoas que também tem esse interesse pelos projetos de inovação cívica da Open Knowledge Brasil.
 
 ### *Setup*
 
