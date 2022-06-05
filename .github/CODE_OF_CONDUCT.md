@@ -1,3 +1,5 @@
+**Português (BR)** | [English (US)](CODE_OF_CONDUCT-en-US.md)
+
 # Código de Conduta de Colaboração
 
 ## Nossa promessa
