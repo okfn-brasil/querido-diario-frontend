@@ -8,6 +8,20 @@ Para garantir que a nossa comunidade seja acolhedora para todas as pessoas, leia
 
 Ao participar deste projeto, você concorda em aderir aos termos nele especificados.
 
+## Onde contribuir
+
+O Querido Diário possui vários repositórios de código para você contribuir:
+
+- [Documentação e Comunidade](https://github.com/okfn-brasil/querido-diario-comunidade)
+- [Raspadores](https://github.com/okfn-brasil/querido-diario)
+- [Toolbox](https://github.com/okfn-brasil/querido-diario-toolbox)
+- [Infraestrutura](https://github.com/okfn-brasil/querido-diario-infra)
+- [Frontend](https://github.com/okfn-brasil/querido-diario-frontend)
+- [Data Processing](https://github.com/okfn-brasil/querido-diario-data-processing)
+- [API](https://github.com/okfn-brasil/querido-diario-api)
+- [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
+- [Censo](https://github.com/okfn-brasil/censo-querido-diario)
+
 ## Como colaborar
 
 Se você nunca contribuiu com um projeto de código aberto ou não está
