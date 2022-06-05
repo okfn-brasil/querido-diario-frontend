@@ -27,3 +27,7 @@ Related repositories:
 </p>
 
 The [Open Knowledge Brasil](https://ok.org.br/), the Network for Free Knowledge, is a non-profit civil society organization dedicated to the promotion of **information**, **wisdom** and **transparency**. All work produced by the network is freely available.
+
+# Licence
+
+Code licenced under [MIT License](../LICENSE.md).

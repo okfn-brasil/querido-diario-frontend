@@ -77,3 +77,7 @@ Este projeto é mantido pela Open Knowledge Foundation Brasil, graças ao apoio 
 </p>
 
 A [Open Knowledge Brasil](https://ok.org.br/), a Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos voltada à promoção da **informação**, **sabedoria** e **transparência**. Todo o trabalho produzido pela rede está disponível livremente.
+
+# Licença
+
+Código licenciado sob a [Licença MIT](LICENSE.md).
