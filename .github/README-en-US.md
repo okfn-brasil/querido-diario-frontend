@@ -18,3 +18,12 @@ Related repositories:
 - [API](https://github.com/okfn-brasil/querido-diario-api)
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Census](https://github.com/okfn-brasil/censo-querido-diario)
+
+# Open Knowledge Brasil
+<p>
+  <a href="https://twitter.com/intent/follow?screen_name=okfnbr" target="_blank">
+    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/okfnbr?label=%40okfnbr&style=social">
+  </a>
+</p>
+
+The [Open Knowledge Brasil](https://ok.org.br/), the Network for Free Knowledge, is a non-profit civil society organization dedicated to the promotion of **information**, **wisdom** and **transparency**. All work produced by the network is freely available.

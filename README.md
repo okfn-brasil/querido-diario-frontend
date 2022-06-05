@@ -68,3 +68,12 @@ dedicados a este e outros projetos da rede.
 
 Este projeto é mantido pela Open Knowledge Foundation Brasil, graças ao apoio de
 [diversas pessoas e organizações](https://queridodiario.ok.org.br/apoie#quem-apoia).
+
+# Open Knowledge Brasil
+<p>
+  <a href="https://twitter.com/intent/follow?screen_name=okfnbr" target="_blank">
+    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/okfnbr?label=%40okfnbr&style=social">
+  </a>
+</p>
+
+A [Open Knowledge Brasil](https://ok.org.br/), a Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos voltada à promoção da **informação**, **sabedoria** e **transparência**. Todo o trabalho produzido pela rede está disponível livremente.
