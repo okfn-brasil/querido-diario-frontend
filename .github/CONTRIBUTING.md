@@ -1,3 +1,5 @@
+**Português (BR)** | [English (US)](CONTRIBUTING-en-US.md)
+
 # Colaborando
 
 *Tenha em mente que este projeto possui um
