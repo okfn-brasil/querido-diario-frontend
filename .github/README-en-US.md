@@ -27,6 +27,10 @@ Related repositories:
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Census](https://github.com/okfn-brasil/censo-querido-diario)
 
+# Acknowledgment
+
+This project is maintained by Open Knowledge Brasil thanks to the support of [many people and organizations](https://queridodiario.ok.org.br/apoie#quem-apoia).
+
 # Open Knowledge Brasil
 <p>
   <a href="https://twitter.com/intent/follow?screen_name=okfnbr" target="_blank">

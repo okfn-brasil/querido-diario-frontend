@@ -63,10 +63,9 @@ Querido Diário possui um
 se você se sentir mais confortável em interagir por lá. Visite os canais
 dedicados a este e outros projetos da rede.
 
-## Agradecimentos
+# Agradecimentos
 
-Este projeto é mantido pela Open Knowledge Foundation Brasil, graças ao apoio de
-[diversas pessoas e organizações](https://queridodiario.ok.org.br/apoie#quem-apoia).
+Este projeto é mantido pela Open Knowledge Foundation Brasil, graças ao apoio de [diversas pessoas e organizações](https://queridodiario.ok.org.br/apoie#quem-apoia).
 
 # Open Knowledge Brasil
 <p>
