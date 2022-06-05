@@ -10,6 +10,19 @@ Este repositório contém todos os recursos necessários para montar o *frontend
 da [Plataforma de Busca do Querido Diário](https://queridodiario.ok.org.br/).
 Se desejar contribuir, sua colaboração é muito bem vinda!
 
+# Querido Diário
+
+Repositórios relacionados:
+- [Documentação e Comunidade](https://github.com/okfn-brasil/querido-diario-comunidade)
+- [Raspadores](https://github.com/okfn-brasil/querido-diario)
+- [Toolbox](https://github.com/okfn-brasil/querido-diario-toolbox)
+- [Infraestrutura](https://github.com/okfn-brasil/querido-diario-infra)
+- [Frontend](https://github.com/okfn-brasil/querido-diario-frontend)
+- [Data Processing](https://github.com/okfn-brasil/querido-diario-data-processing)
+- [API](https://github.com/okfn-brasil/querido-diario-api)
+- [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
+- [Censo](https://github.com/okfn-brasil/censo-querido-diario)
+
 ## *Setup* do ambiente de desenvolvimento
 
 Para executar o projeto, é necessário ter o [node.js](https://nodejs.org/) na
