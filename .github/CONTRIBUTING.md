@@ -1,10 +1,12 @@
 **Português (BR)** | [English (US)](CONTRIBUTING-en-US.md)
 
-# Colaborando
+# Contribuindo
 
-*Tenha em mente que este projeto possui um
-[Código de Conduta de Colaboração](CODE_OF_CONDUCT.md). Ao participar deste
-projeto, você concorda em aderir aos termos especificados nele.*
+## Código de Conduta
+
+Para garantir que a nossa comunidade seja acolhedora para todas as pessoas, leia e siga o nosso [Código de Conduta](CODE_OF_CONDUCT.md).
+
+Ao participar deste projeto, você concorda em aderir aos termos nele especificados.
 
 ## Como colaborar
 
