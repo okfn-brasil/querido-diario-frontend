@@ -6,6 +6,12 @@
 
 # Frontend (Web)
 
+# Contributing
+
+Thanks for considering contributing to *Querido Diário*! :tada:
+
+You can find how to do it in our [Contribution Guide](CONTRIBUTING-en-US.md).
+
 # *Querido Diário*
 
 Related repositories:

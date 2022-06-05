@@ -8,7 +8,12 @@
 
 Este repositório contém todos os recursos necessários para montar o *frontend*
 da [Plataforma de Busca do Querido Diário](https://queridodiario.ok.org.br/).
-Se desejar contribuir, sua colaboração é muito bem vinda!
+
+# Contribuição
+
+Agradecemos por considerar contribuir com o Querido Diário! :tada:
+
+Você encontra como fazê-lo em nosso [Guia de Contribuição](.github/CONTRIBUTING.md).
 
 # Querido Diário
 
@@ -50,11 +55,6 @@ E com isso, podemos servir o projeto em ambiente local com o comando:
 ```sh
 $ ng serve
 ```
-
-## Colaborando
-
-Se tiver interesse em colaborar com o projeto, veja o documento
-[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Participando da comunidade
 
