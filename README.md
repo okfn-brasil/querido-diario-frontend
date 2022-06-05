@@ -48,14 +48,6 @@ E com isso, podemos servir o projeto em ambiente local com o comando:
 $ yarn ng serve
 ```
 
-## Participando da comunidade
-
-Além da interação pelos repositórios, que também é muito bem vinda, o
-Querido Diário possui um
-[fórum de discussões no Discord da Open Knowledge Brasil](https://discord.com/invite/nDc9p4drm4)
-se você se sentir mais confortável em interagir por lá. Visite os canais
-dedicados a este e outros projetos da rede.
-
 # Agradecimentos
 
 Este projeto é mantido pela Open Knowledge Foundation Brasil, graças ao apoio de [diversas pessoas e organizações](https://queridodiario.ok.org.br/apoie#quem-apoia).
