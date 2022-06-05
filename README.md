@@ -27,14 +27,14 @@ Repositórios relacionados:
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Censo](https://github.com/okfn-brasil/censo-querido-diario)
 
-## *Setup* do ambiente de desenvolvimento
+# Instalando
 
-Para executar o projeto, é necessário ter o [node.js](https://nodejs.org/) na
+Para executar o projeto, é necessário ter o [Node.js](https://nodejs.org/) na
 versão especificada na seção `"engines"` do
 [arquivo `package.json`](package.json). É recomendado o uso de algum
 gerenciador de versão do node, como o [nvm](https://github.com/nvm-sh/nvm).
 
-Além do node, também é necessário o [yarn](https://yarnpkg.com/) instalado.
+Além do Node.js, também é necessário o [yarn](https://yarnpkg.com/) instalado.
 
 Com estes programas instalados, vamos instalar as dependências com o yarn:
 
@@ -42,17 +42,10 @@ Com estes programas instalados, vamos instalar as dependências com o yarn:
 $ yarn
 ```
 
-Após instaladas, devemos instalar a cli do [Angular](https://angular.io/) com o
-comando:
-
-```sh
-$ npm install -g @angular/cli
-```
-
 E com isso, podemos servir o projeto em ambiente local com o comando:
 
 ```sh
-$ ng serve
+$ yarn ng serve
 ```
 
 ## Participando da comunidade

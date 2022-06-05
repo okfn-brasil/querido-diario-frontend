@@ -27,6 +27,24 @@ Related repositories:
 - [API Wrapper](https://github.com/okfn-brasil/querido-diario-api-wrapper)
 - [Census](https://github.com/okfn-brasil/censo-querido-diario)
 
+# Installing
+
+In order to run the project is necessary to have [Node.js](https://nodejs.org/) version specified in the `"engines"` section of [arquivo `package.json`](package.json). It is recommended to use a Node.js version manager, like [nvm](https://github.com/nvm-sh/nvm).
+
+Besides Node.js it is also necessary having [yarn](https://yarnpkg.com/).
+
+With these installed we will install the dependencies with yarn:
+
+```sh
+$ yarn
+```
+
+And with that we can serve the project in a local environment:
+
+```sh
+$ yarn ng serve
+```
+
 # Acknowledgment
 
 This project is maintained by Open Knowledge Brasil thanks to the support of [many people and organizations](https://queridodiario.ok.org.br/apoie#quem-apoia).
