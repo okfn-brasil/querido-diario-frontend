@@ -37,22 +37,11 @@ E uma [comunidade no Discord](https://bit.ly/discord-ok), se você desejar tirar
 Leia o [arquivo README](README.md) para fazer o *setup* do ambiente de
 desenvolvimento do projeto.
 
-## Guia para pessoas mantenedoras
+# Mantendo
 
-Esta seção é dedicada a pessoas mantenedoras já que revisão de código e
-organização do repositório são parte do processo de colaboração, todas os guias
-de revisão de código são de interesse público para todos na comunidade.
+## Responsabilidades de uma pessoa mantenedora do Querido Diário
 
-### Responsabilidade de uma pessoa mantenedora do Querido Diário:
-
-- Respeitar o [código de conduta](CODE_OF_CONDUCT.md) e garantir que as pessoas
-  tenham um ambiente seguro e livre de assédio. E que qualquer vítima de
-  infração do código de conduta tenha um canal de ajuda;
-- Sempre justificar uma sugestão de acordo com as práticas já adotadas no
-  projeto, legibilidade e simplicidade. É essencial que um projeto cívico tenha
-  uma estrutura tão simples quanto possível para iniciantes;
+- Respeitar o [código de conduta](CODE_OF_CONDUCT.md) e garantir que as pessoas tenham um ambiente seguro e acolhedor e que qualquer vítima de infração desse termo tenha um canal de ajuda;
+- Sempre justificar uma sugestão de acordo com as práticas já adotadas no projeto, legibilidade e simplicidade. É essencial que um projeto cívico tenha uma estrutura tão simples quanto possível para iniciantes;
 - O projeto deve ser testado antes de um *Pull Request* ser mesclado;
-- Se um *Pull Request* tiver muitos *commits* e as mensagens não forem claras,
-  use a opção *Squash and Merge* ao mesclar. Se a disciplina de gerenciamento
-  de histórico de versão for boa, isto não é necessário.
-
+- Caso um *Pull Request* tenha muitos *commits* e as mensagens não forem claras, use a opção *Squash and Merge* ao mesclar. Em a disciplina de gerenciamento de histórico de versão sendo boa, isso não será necessário.

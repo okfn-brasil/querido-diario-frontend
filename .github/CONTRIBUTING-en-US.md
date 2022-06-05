@@ -31,3 +31,12 @@ If any of those interest you, before starting, you can leave comments to ask any
 We also have a [discussion forum](https://github.com/okfn-brasil/querido-diario-comunidade/discussions) where you can contribute ideas related to the project.
 
 And a [community on Discord](https://bit.ly/discord-ok), if you want to ask questions faster or talk to people who are also interested in Open Knowledge Brasil's civic innovation projects.
+
+# Maintaining
+
+## Responsibilities of a *Querido Diário* maintainer
+
+- Respect the [code of conduct](CODE_OF_CONDUCT-en-US.md) and ensure that people have a safe and welcoming environment and that any victim of violation of this term has a channel of help;
+- Always justify a suggestion according to the practices already adopted in the project, legibility and simplicity. It is essential that a civic project have as simple a structure as possible for beginners;
+- The project must be tested before a Pull Request is merged;
+- If a Pull Request has too many commits and the messages are unclear, use the "Squash and Merge" option when merging. If the discipline of version history management is good, this won't be necessary.
