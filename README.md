@@ -4,10 +4,9 @@
   <img alt="Querido Diário" src="./.github/images/querido-diario-logo.png" width="200">
 </p>
 
-# Frontend da Plataforma de Busca do Querido Diário
+# Frontend (Web)
 
-Este repositório contém todos os recursos necessários para montar o *frontend*
-da [Plataforma de Busca do Querido Diário](https://queridodiario.ok.org.br/).
+Repositório com os recursos necessários para o site do [Querido Diário](https://queridodiario.ok.org.br/).
 
 # Contribuição
 

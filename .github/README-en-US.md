@@ -6,6 +6,8 @@
 
 # Frontend (Web)
 
+Respository with the necessary resources for the [Querido Diário](https://queridodiario.ok.org.br/) website.
+
 # Contributing
 
 Thanks for considering contributing to *Querido Diário*! :tada:
