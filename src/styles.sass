@@ -1,35 +1,24 @@
+@import "tailwindcss/base"
+@import "tailwindcss/components"
+@import "tailwindcss/utilities"
+
 @import './assets/_variables.sass'
 @import './assets/_tools.sass'
 
 html
   scroll-behavior: smooth
 
-*
-  box-sizing: border-box
-  padding: 0
-  margin: 0
-
 body
   background: #2C1338
 
-a,
-button
-  cursor: pointer
-
-button
-  border: none
-
-a
-  text-decoration: none
-
-mat-spinner 
+mat-spinner
   position: absolute
   top: 50%
   left: 50%
   transform: translate(-50%, -50%)
   z-index: 5
 
-.mat-spinner circle 
+.mat-spinner circle
   stroke: #ff8500
 
 .container-inner
@@ -42,7 +31,7 @@ mat-spinner
   letter-spacing: 0
   line-height: 21px
   text-align: center
-  
+
 .btn-primary
   background-color: #FF8500
   color: #FFF
@@ -55,7 +44,7 @@ mat-spinner
   padding: 10px 23px
   border-radius: 21px
 
-.mat-h1, .mat-headline, .mat-typography 
+.mat-h1, .mat-headline, .mat-typography
   h1
     font-family: "Baloo"
     font-size: rem(36)
@@ -95,26 +84,26 @@ mat-spinner
 .light
   background-color: #F3E9E9
   color: #5E3F8E !important
-  
+
   p, a, .typo-inner
     color: #2C1338
-  
+
   h1
     color: #2C1338 !important
-  
+
   .mat-h2, .mat-title, .mat-typography h2
     color: #5E3F8E !important
 
 .darker
   background-color: #2C1338
-  
+
   p, a, .typo-inner
     color: #FFF
 
   .mat-h2, .mat-title, .mat-typography h2
     color: #F3E9E9
 
-  span 
+  span
     a
       color: #966BE8
 
@@ -169,7 +158,7 @@ span
 
 a.highlight
   text-decoration: underline
-  
+
 .highlight
   a
     text-decoration: underline
