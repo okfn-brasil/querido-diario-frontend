@@ -15,7 +15,7 @@
             "width": 50
           }
         },
-        "count": 27,
+        "count": 30,
         "text": "Cidades já na plataforma"
       },
       {
@@ -47,7 +47,7 @@
         "text": "Cidades já foram mapeadas pelo censo"
       }
     ],
-    "actions": [      
+    "actions": [
       {
         "text": "Confira as cidades disponíveis",
         "to": "/cidades-disponiveis"
