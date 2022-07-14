@@ -124,9 +124,9 @@
             <p>{{ text }}</p>
           </ng-container>
         </ng-container>
-        <ng-container
+ <!-- <ng-container
           *ngIf="
-            !territory && gazetteResponse && gazetteResponse.total_gazettes > 0
+            !territory && gazetteResponse && gazetteResponse.total_gazettes > 0 
           "
         >
           <p>
@@ -135,6 +135,26 @@
             consegue realizar a busca nos documentos de um jeito fácil.
           </p>
         </ng-container>
+    -->
+
+    <div *ngIf="
+    !territory && gazetteResponse && gazetteResponse.total_gazettes < 10000 ; 
+    
+    else elseBlock">
+    <p>
+      Abaixo, estão os resultados encontrados nos diários dos municípios
+    que já conseguimos disponibilizar em formato aberto! Assim você
+    consegue realizar a busca nos documentos de um jeito fácil.
+    </p>
+  </div>
+
+    <ng-template #elseBlock>
+      <p>
+        Encontramos mais de 10000 resultados para a sua busca nos municípios
+      que já conseguimos disponibilizar em formato aberto! Tente digitar termos mais específicos 
+      ou usar mais de um termo para otimizar sua pesquisa.
+      </p></ng-template>
+
         <div fxLayout="row" fxLayoutAlign="space-between">
           <h2>{{ gazetteResponse.total_gazettes }} resultados encontrados</h2>
           <app-select
