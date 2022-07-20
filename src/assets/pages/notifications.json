@@ -2,20 +2,38 @@
   "list": [
     {
       "title": "Nova atualização!",
-      "content": "A cidade de Nova Iguaçu (RJ) foi adicionada à plataforma!",
-      "updatedAt": "2022/07/15",
+      "content": "A cidade de Guarulhos (SP) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Vila Velha (ES) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
       "isNew": true
     },
     {
       "title": "Nova atualização!",
       "content": "A cidade de Sobral (CE) foi adicionada à plataforma!",
-      "updatedAt": "2022/07/15",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Nova Iguaçu (RJ) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Uberaba (MG) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
       "isNew": true
     },
     {
       "title": "Nova atualização!",
       "content": "A cidade de Londrina (PR) foi adicionada à plataforma!",
-      "updatedAt": "2022/07/15",
+      "updatedAt": "2022/07/20",
       "isNew": true
     },
     {
