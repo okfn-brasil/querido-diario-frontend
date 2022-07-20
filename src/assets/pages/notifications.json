@@ -2,39 +2,45 @@
   "list": [
     {
       "title": "Nova atualização!",
-      "content": "A cidade de Porto Alegre (RS) foi adicionada à plataforma!",
-      "updatedAt": "2022/05/10",
+      "content": "A cidade de Guarulhos (SP) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
       "isNew": true
     },
     {
       "title": "Nova atualização!",
-      "content": "A cidade de Curitiba (PR) foi adicionada à plataforma!",
-      "updatedAt": "2022/05/10",
+      "content": "A cidade de Vila Velha (ES) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
       "isNew": true
     },
     {
       "title": "Nova atualização!",
-      "content": "A cidade de Araguaína (TO) foi adicionada à plataforma!",
-      "updatedAt": "2022/05/10",
+      "content": "A cidade de Sobral (CE) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
       "isNew": true
     },
     {
       "title": "Nova atualização!",
-      "content": "A cidade de Jundiaí (SP) foi adicionada à plataforma!",
-      "updatedAt": "2022/05/10",
+      "content": "A cidade de Nova Iguaçu (RJ) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
       "isNew": true
     },
     {
       "title": "Nova atualização!",
-      "content": "A cidade de Petrolina (PE) foi adicionada à plataforma!",
-      "updatedAt": "2022/05/10",
+      "content": "A cidade de Uberaba (MG) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
       "isNew": true
     },
     {
       "title": "Nova atualização!",
-      "content": "A cidade de Mossoró (RN) foi adicionada à plataforma!",
-      "updatedAt": "2022/05/10",
+      "content": "A cidade de Londrina (PR) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
       "isNew": true
+    },
+    {
+      "title": "Novas 6 cidades!",
+      "content": "As cidades de Porto Alegre (RS), Curitiba (PR), Araguaína (TO), Jundiaí (SP), Petrolina (PE) e Mossoró (RN) foram adicionadas à plataforma!",
+      "updatedAt": "2022/03/25",
+      "isNew": false
     },
     {
       "title": "Novas 6 cidades!",
