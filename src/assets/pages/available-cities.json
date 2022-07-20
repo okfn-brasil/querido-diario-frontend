@@ -13,23 +13,24 @@
           "Caxias (MA)",
           "Campo Grande (MS)",
           "Cuiabá (MT)",
-          "Curitiba (PR)"
-        ],
-        [
+          "Curitiba (PR)",
           "Feira de Santana (BA)",
           "Florianópolis (SC)",
+        ],
+        [
           "Goiânia (GO)",
+          "Guarulhos (SP)",
           "Jaboatão dos Guararapes (PE)",
           "João Pessoa (PB)",
           "Jundiaí (SP)",
           "Londrina (PR)",
           "Maceió (AL)",
           "Manaus (AM)",
-          "Mossoró (RN)"
-        ],
-        [
+          "Mossoró (RN)",
           "Natal (RN)",
           "Nova Iguaçu (RJ)",
+        ],
+        [
           "Palmas (TO)",
           "Petrolina (PE)",
           "Porto Alegre (RS)",
@@ -38,7 +39,9 @@
           "Salvador (BA)",
           "Sobral (CE)",
           "Sumaré (SP)",
-          "Teresina (PI)"
+          "Teresina (PI)",
+          "Uberaba (MG)",
+          "Vila Velha (ES)"
         ]
       ]
     }
