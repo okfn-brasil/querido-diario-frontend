@@ -71,32 +71,33 @@ export class GazetteService {
 
   findAll(query: GazetteQuery): Observable<GazetteResponse> {
     const { term, territory_id, since, until, sort_by, page } = query;
-    let url = `https://queridodiario.ok.org.br/api/gazettes?`;
+    let queryParams = {};
 
     if (territory_id) {
-      url += `territory_ids=${territory_id}&`;
+      queryParams = { ...queryParams, territory_id: territory_id };
     }
 
     if (term) {
-      url += `querystring=${term}&pre_tags=%3Cb%3E&post_tags=%3C%2Fb%3E&excerpt_size=500&number_of_excerpts=1&`;
+      queryParams = { ...queryParams, querystring: term, pre_tags: '<b>', post_tags: '</b>', excerpt_size: 500, number_of_excerpts: 1 }
     }
 
     if (since) {
-      url += `since=${since}&`;
+      queryParams = { ...queryParams, since: since };
     }
 
     if (until) {
-      url += `until=${until}&`;
+      queryParams = { ...queryParams, until: until };
     }
 
     if (sort_by) {
-      url += `sort_by=${sort_by}&`;
+      queryParams = { ...queryParams, sort_by: sort_by };
     }
 
-    if (page && page > 1) {
-      const pagination: Pagination = this.pagination(page);
-      url += `size=${pagination.size}&offset=${pagination.offset}&`;
-    }
+    const pagination: Pagination = this.pagination(page || 1);
+    queryParams = { ...queryParams, size: pagination.size, offset: pagination.offset };
+
+    const encoded_qs = new URLSearchParams(queryParams).toString();
+    const url = `https://queridodiario.ok.org.br/api/gazettes?${encoded_qs}`;
 
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {
