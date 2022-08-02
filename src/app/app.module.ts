@@ -38,6 +38,7 @@ import { TechComponent } from './pages/tech/tech.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 import { GlossaryComponent } from './pages/glossary/glossary.component';
 import { PostComponent } from './pages/post/post.component';
+import { SearchTutorialComponent } from './pages/search-tutorial/search-tutorial.component';
 import { SearchComponent } from './pages/search/search.component';
 import { Event, Router, Scroll } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
@@ -89,6 +90,7 @@ import { FormSentComponent } from './components/form-sent/form-sent.component';
     SuggestionComponent,
     GlossaryComponent,
     PostComponent,
+    SearchTutorialComponent,
     SearchComponent,
     VideoModalComponent,
     DatePickerRangeComponent,
