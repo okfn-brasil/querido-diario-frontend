@@ -1,0 +1,58 @@
+@import 'src/assets/_tools.sass'
+@import 'src/assets/_variables.sass'
+
+.container
+  width: 1220px
+  padding: rem(84) 0
+
+.container-inner
+  width: 1220px
+  padding: rem(84) 100
+
+.container-notop
+  width: 1220px
+  padding: 0 0 rem(84) 0
+
+.bg-gray-square
+  background-image: url('/assets/images/gray-squares@2x.jpg')
+  background-repeat-y: no-repeat
+  background-position: bottom
+  background-size: 100% 100%
+  
+.bg-purple-square
+  background-image: url('/assets/images/purple-squares@2x.jpg')
+  background-repeat-y: no-repeat
+  background-position: bottom
+  background-size: 100% 85%
+  color: #FFF
+
+.bg-dark-lines
+  background-image: url('/assets/images/bg-dark-lines.png')
+  background-repeat-y: no-repeat
+  background-position: bottom
+  background-size: 115% 6.5%
+
+.bg-yellow-lines
+  background-image: url('/assets/images/bg-yellow-lines.png')
+  background-color: #FFFCBD
+  background-repeat-y: no-repeat
+  background-position: bottom
+  background-size: 116% 48%
+  background-position-y: rem(314)
+
+.bg-blue-square
+  background-color: #3E7EAD
+  color: #FFF
+
+.bg-yellow-square
+  background-color: #FFFCBD
+  color: #5E408F
+
+@media only screen and (max-width: 768px)
+  .container
+    width: 100%
+    padding: rem(48) rem(16)
+
+  .container-notop
+    padding: 0 0 rem(48) 0
+    width: 100%

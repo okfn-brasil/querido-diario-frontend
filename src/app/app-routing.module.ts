@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './pages/about/about.component';
-import { AccessLevelsComponent } from './pages/access-levels/access-levels.component';
-import { ComplaintComponent } from './pages/complaint/complaint.component';
-import { GlossaryComponent } from './pages/glossary/glossary.component';
-import { HomeComponent } from './pages/home/home.component';
-import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
-import { SearchComponent } from './pages/search/search.component';
-import { SuggestionComponent } from './pages/suggestion/suggestion.component';
-import { SupportComponent } from './pages/support/support.component';
-import { TechComponent } from './pages/tech/tech.component';
-import { PostComponent } from './pages/post/post.component';
-import { AvailableCitiesComponent } from './pages/available-cities/available-cities.component';
-import { SearchTutorialComponent } from './pages/search-tutorial/search-tutorial.component';
+import { AboutComponent } from './modules/pages/about/about.component';
+import { AccessLevelsComponent } from './modules/pages/access-levels/access-levels.component';
+import { AvailableCitiesComponent } from './modules/pages/available-cities/available-cities.component';
+import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
+import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
+import { HomeComponent } from './modules/pages/home/home.component';
+import { PostComponent } from './modules/pages/post/post.component';
+import { PrivacyPolicyComponent } from './modules/pages/privacy-policy/privacy-policy.component';
+import { SearchComponent } from './modules/pages/search/search.component';
+import { SearchTutorialComponent } from './modules/pages/search-tutorial/search-tutorial.component';
+import { SuggestionComponent } from './modules/pages/suggestion/suggestion.component';
+import { SupportComponent } from './modules/pages/support/support.component';
+import { TechComponent } from './modules/pages/tech/tech.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
