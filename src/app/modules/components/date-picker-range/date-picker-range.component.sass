@@ -1,0 +1,26 @@
+@import 'src/assets/_tools.sass'
+@import 'src/assets/_variables.sass'
+
+:host
+  mat-icon
+    margin-right: rem(6)
+    height: rem(28)
+    width: rem(28)
+
+  mat-form-field
+    width: 100%
+
+  .mat-form-field-appearance-fill .mat-form-field-infix
+    padding: 0
+
+  input
+    font-size: 9px
+
+  .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button
+    width: auto
+  
+  .mat-form-field
+    line-height: unset !important
+  
+  .mat-form-field-flex
+    flex-direction: row-reverse !important
