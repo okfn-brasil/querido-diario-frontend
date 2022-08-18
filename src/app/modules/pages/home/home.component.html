@@ -25,7 +25,7 @@
             [appFlexWidth]="120"
             layoutAlign="left"
           >
-            <app-icon [icon]="item.icon"></app-icon>
+            <app-icon [icon]="item.icon" class="evolution-icon"></app-icon>
             <app-column [gap]="16">
               <span class="number">{{ item.count }}</span>
               <p>{{ item.text }}</p>
@@ -34,7 +34,7 @@
         </app-column>
       </app-row>
       <ng-container *ngFor="let action of content.evolution.actions">
-        <app-row [gap]="6">
+        <app-row class="evolution-link" [gap]="6">
           <a [routerLink]="action.to">
             {{ action.text }}
           </a>
@@ -57,8 +57,8 @@
         >
           <app-column [gap]="24" [flex]="true">
             <app-icon [icon]="item.icon"></app-icon>
-            <app-column [gap]="36" [gapXs]="2">
-              <app-column [gap]="16" appFlexWidth>
+            <app-column class="help-text-area" [gap]="36" [gapXs]="2">
+              <app-column class="help-text" [gap]="16" appFlexWidth>
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.text }}</p>
               </app-column>
@@ -130,7 +130,7 @@
         <ng-container *ngFor="let item of content.realization">
           <app-column [gap]="34">
             <p>{{ item.title }}</p>
-            <div fxLayout="row wrap" fxLayoutGap="34px grid">
+            <app-row wrap="wrap" [gap]="34">
               <ng-container *ngFor="let icon of item.icons">
                 <app-icon [icon]="icon"></app-icon>
               </ng-container>

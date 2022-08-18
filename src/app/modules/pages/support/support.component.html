@@ -59,19 +59,15 @@
                   class="typo-inner highlight"
                   [innerHTML]="supporter.text"
                 ></div>
-                <app-row [gap]="32">
+                <app-row wrap="wrap" [gap]="32">
                   <ng-container *ngFor="let icon of supporter.icons">
-                    <app-icon [icon]="icon"></app-icon>
+                    <app-icon [icon]="icon" class="supporter-icon"></app-icon>
                   </ng-container>
                 </app-row>
-                <app-row [gap]="22">
-                  <app-column *ngFor="let list of supporter.items">
-                    <app-column [gap]="36">
-                      <ng-container>
-                        <p *ngFor="let name of list">{{ name }}</p>
-                      </ng-container>
-                    </app-column>
-                  </app-column>
+                <app-row wrap="wrap" [gap]="22" >
+                  <ng-container *ngFor="let list of supporter.items">
+                    <p *ngFor="let name of list" class="support-item">{{ name }}</p>
+                  </ng-container>
                 </app-row>
               </app-column>
             </ng-container>
