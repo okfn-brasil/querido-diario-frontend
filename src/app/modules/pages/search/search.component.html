@@ -192,7 +192,7 @@
             </div>
           </div>
         </pagination-template>
-        <div fxLayout="row" fxFlexAlign="center">
+        <div fxLayout="row" fxFlexAlign="center" class="pagination-area">
           <a class="pagination-first-page" *ngIf="pagination.currentPage > 1">
             <mat-icon
               (click)="firstPage()"
@@ -206,10 +206,21 @@
             ></mat-icon>
           </a>
           <pagination-controls
+            class="pagination-mobile"
+            (pageChange)="pageChange($event)"
+            [maxSize]="5"
+            previousLabel=""
+            nextLabel=""
+            [responsive]="false"
+          >
+          </pagination-controls>
+
+          <pagination-controls
+            class="pagination-desktop"
             (pageChange)="pageChange($event)"
             previousLabel=""
             nextLabel=""
-            [responsive]="true"
+            [responsive]="false"
           >
           </pagination-controls>
           <a

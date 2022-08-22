@@ -1,9 +1,9 @@
 <app-container *ngIf="navigation$ as content" [gap]="86">
-  <app-row layoutAlign="space-between">
+  <app-row wrap="wrap" layoutAlign="space-between">
     <ng-container *ngFor="let section of content | async">
-      <app-column [gap]="12" [gapXs]="16">
+      <app-column [gap]="12" class="footer-links">
         <span
-          ><p>{{ section.title }}</p></span
+          ><p class="links-title">{{ section.title }}</p></span
         >
         <ng-container *ngFor="let action of section.actions">
           <a *ngIf="action.to" [href]="action.to" target="_blank">
@@ -32,12 +32,12 @@
       </app-column>
     </app-column>
   </app-row>
-  <app-row fxHide fxHide.xs="false" *ngIf="social$ | async as social">
+  <app-row class="social-row" fxHide fxHide.xs="false" *ngIf="social$ | async as social">
     <app-column [gap]="12">
       <span>
         <p>{{ social.title }}</p>
       </span>
-      <app-row>
+      <app-row class="social-icons-row">
         <ng-container *ngFor="let icon of social.icons">
           <app-icon [icon]="icon"></app-icon>
         </ng-container>

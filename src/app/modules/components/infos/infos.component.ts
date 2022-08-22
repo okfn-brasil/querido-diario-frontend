@@ -8,6 +8,7 @@ import { ContentService } from 'src/app/services/content/content.service';
   styleUrls: ['./infos.component.sass'],
 })
 export class InfosComponent implements OnInit {
+  @Input() page: string = '';
   infos$: Observable<any> = of(null);
 
   iconDarker = {

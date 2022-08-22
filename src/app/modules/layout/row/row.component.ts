@@ -10,6 +10,7 @@ const BREAKPOINT = 768;
 export class RowComponent implements OnInit {
   @Input() gap: number = 0;
   @Input() flex: boolean = false;
+  @Input() wrap: string = '';
 
   @Input() layoutAlign: string = '';
 
@@ -20,6 +21,7 @@ export class RowComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    console.log(this.wrap)
     const viewportWidth =
       document.documentElement.clientWidth || window.innerWidth;
 
