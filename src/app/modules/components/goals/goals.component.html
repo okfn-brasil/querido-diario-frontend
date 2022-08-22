@@ -1,0 +1,20 @@
+<app-column [gap]="48" [gapXs]="12" id="nossas-metas">
+  <ng-container *ngIf="content$ | async as content">
+    <app-column [gap]="22">
+      <div class="container-inner">
+        <h1>{{ content.title }}</h1>
+        <p>
+          {{ content.text }}
+        </p>
+      </div>
+    </app-column>
+    <app-carousel fxHide.xs [items]="content.items"></app-carousel>
+    <div fxHide fxHide.xs="false">
+      <app-column [gap]="16">
+        <ng-container *ngFor="let item of content.items; index as i">
+          <app-card [item]="item" [first]="i === 0"></app-card>
+        </ng-container>
+      </app-column>
+    </div>
+  </ng-container>
+</app-column>

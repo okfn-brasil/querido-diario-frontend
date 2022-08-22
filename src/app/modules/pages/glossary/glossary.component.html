@@ -1,0 +1,49 @@
+<ng-template #loading>
+  <app-container theme="light" fxFill>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </app-container>
+</ng-template>
+<ng-container *ngIf="content$ | async as content; else loading">
+  <app-container theme="light">
+    <div class="container-inner">
+      <app-column [gap]="20">
+        <h1>{{ content.title }}</h1>
+        <app-column [gap]="46">
+          <div fxLayout="row wrap" fxLayoutGap="18px" class="nav-dark">
+            <ng-container *ngFor="let action of content.actions">
+              <a routerLink="/glossario" [fragment]="action.text">{{ action.text }}</a>
+            </ng-container>
+          </div>
+          <div class="typo-inner highlight" [innerHTML]="content.text"></div>
+          <app-column [gap]="60">
+            <ng-container *ngFor="let item of content.items">
+              <h2 [id]="item.title">{{ item.title }}</h2>
+              <app-column [gap]="42">
+                <ng-container *ngFor="let char of item.items">
+                  <app-column [gap]="22">
+                    <a routerLink="/glossario" [fragment]="char.title">
+                      <h3 [id]="char.title">{{ char.title }}</h3>
+                    </a>
+                    <div class="typo-inner" [innerHTML]="char.text"></div>
+                  </app-column>
+                </ng-container>
+              </app-column>
+            </ng-container>
+          </app-column>
+        </app-column>
+
+        <app-column [gap]="32">
+          <ng-container *ngFor="let text of content.navigation.texts">
+            <div class="typo-inner" [innerHTML]="text"></div>
+          </ng-container>
+          <h3>{{ content.navigation.title }}</h3>
+          <app-column class="highlight">
+            <ng-container *ngFor="let action of content.navigation.actions">
+              <a [href]="action.to" target="_blank">{{ action.text }}</a>
+            </ng-container>
+          </app-column>
+        </app-column>
+      </app-column>
+    </div>
+  </app-container>
+</ng-container>

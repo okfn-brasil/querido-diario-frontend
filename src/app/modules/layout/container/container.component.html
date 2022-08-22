@@ -1,0 +1,10 @@
+<section [ngClass]="theme + ' ' + bg" fxLayoutAlign="center" fxLayout="row">
+  <div
+    [ngClass]="containerClass"
+    [fxLayoutAlign]="align"
+    [fxLayout]="layout"
+    [fxLayoutGap]="gap + 'px'"
+  >
+    <ng-content></ng-content>
+  </div>
+</section>

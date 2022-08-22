@@ -26,7 +26,6 @@ export const Icons: string[] = [
   'right-arrow-purple',
   'right-arrow-purple-3',
   'logo',
-  'notification',
   'search-form',
   'play',
   'white-arrow',

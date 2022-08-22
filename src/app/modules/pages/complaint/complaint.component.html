@@ -1,0 +1,18 @@
+<ng-template #loading>
+  <app-container theme="light" fxFill>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </app-container>
+</ng-template>
+<ng-container *ngIf="content$ | async as content; else loading">
+  <app-container theme="light">
+    <div class="container-inner">
+      <app-column [gap]="60">
+        <h1>{{ content.title }}</h1>
+        <ng-container *ngFor="let item of content.items">
+          <h2>{{ item.title }}</h2>
+          <div class="typo-inner" [innerHTML]="item.text"></div>
+        </ng-container>
+      </app-column>
+    </div>
+  </app-container>
+</ng-container>

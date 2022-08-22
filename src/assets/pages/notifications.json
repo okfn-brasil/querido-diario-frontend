@@ -1,0 +1,64 @@
+{
+  "list": [
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Guarulhos (SP) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Vila Velha (ES) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Sobral (CE) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Nova Iguaçu (RJ) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Uberaba (MG) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Nova atualização!",
+      "content": "A cidade de Londrina (PR) foi adicionada à plataforma!",
+      "updatedAt": "2022/07/20",
+      "isNew": true
+    },
+    {
+      "title": "Novas 6 cidades!",
+      "content": "As cidades de Porto Alegre (RS), Curitiba (PR), Araguaína (TO), Jundiaí (SP), Petrolina (PE) e Mossoró (RN) foram adicionadas à plataforma!",
+      "updatedAt": "2022/03/25",
+      "isNew": false
+    },
+    {
+      "title": "Novas 6 cidades!",
+      "content": "As cidades de Brasilia (DF), Recife (PE), Caxias (MA), Jaboatão dos Guararapes (PE) e Sumaré (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2022/03/25",
+      "isNew": false
+    },
+    {
+      "title": "Novas 4 cidades!",
+      "content": "As cidades de Belém (PA), Belo Horizonte (MG), Cuiabá (MT) e Feira de Santana (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2021/10/20",
+      "isNew": false
+    },
+    {
+      "title": "A plataforma do Querido Diário foi lançada com 12 capitais!",
+      "content": "As cidades de Boa Vista (RR), Campo Grande (MS), Florianópolis (SC), Goiânia (GO), João Pessoa (PB), Maceió (AL), Manaus (AM), Natal (RN), Palmas (TO), Rio de Janeiro (RJ), Salvador (BA) e Teresina (PI) já estão disponíveis para consulta!",
+      "updatedAt": "2021/07/20",
+      "isNew": false
+    }
+  ]
+}

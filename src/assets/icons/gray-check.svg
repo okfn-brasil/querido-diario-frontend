@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="66px" viewBox="0 0 66 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>AF6AA625-2237-466D-95F8-0EB27CC8FE30</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.172549 0 0 0 0 0.074510 0 0 0 0 0.219608 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Envie-sua-sugestão" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desk_envie-sua-sugestão-sucesso" transform="translate(-471.000000, -330.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1220" height="1264"></rect>
+            <g id="Group-3-Copy-2" transform="translate(0.000000, 54.000000)">
+                <rect id="Rectangle-Copy" fill="#5E3F8E" transform="translate(610.000000, 371.000000) scale(1, -1) translate(-610.000000, -371.000000) " x="0" y="0" width="1220" height="742"></rect>
+                <g id="Group-14-Copy" transform="translate(320.000000, 79.000000)">
+                    <g id="form-control-lg" transform="translate(0.000000, 220.000000)">
+                        <path d="M0,10.0088711 C0,4.48112423 4.47184978,0 10.0038649,0 L568.996135,0 C574.521117,0 579,4.48521396 579,10.0088711 L579,60 L0,60 L0,10.0088711 Z" id="form-control"></path>
+                    </g>
+                </g>
+            </g>
+            <rect id="bg-copy-2" fill="#2C1338" opacity="0.7" x="0" y="0" width="1220" height="1264"></rect>
+            <g id="Card-width-link-Copy-3" transform="translate(419.000000, 257.000000)">
+                <rect id="card" fill="#F3E9E9" x="0" y="0" width="382" height="360"></rect>
+                <g id="1.-assets/icon/nivel/3" transform="translate(30.000000, 51.000000)">
+                    <circle id="Oval" stroke="#2C1338" cx="55" cy="55" r="54.5"></circle>
+                    <g id="check" transform="translate(22.000000, 22.000000)" filter="url(#filter-1)">
+                        <g transform="translate(12.833333, 18.333333)">
+                            <path d="M14.7454354,29.3333333 C14.2156865,29.3333333 13.6859376,29.131685 13.2823736,28.7302728 L0.607051306,16.1221626 C-0.202350435,15.3174538 -0.202350435,14.0163507 0.607051306,13.2116419 C1.41607414,12.4069331 2.72377332,12.4069331 3.53317506,13.2116419 L14.7454354,24.3641149 L38.6337758,0.603531648 C39.4427986,-0.201177216 40.7504978,-0.201177216 41.5598995,0.603531648 C42.3689224,1.4086174 42.3689224,2.70934352 41.5598995,3.51442927 L16.2088762,28.7302728 C15.8053122,29.131685 15.2751843,29.3333333 14.7454354,29.3333333 Z" id="Path" fill="#000000" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

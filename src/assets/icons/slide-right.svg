@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1. assets/icon/nivel/3</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.952941 0 0 0 0 0.913725 0 0 0 0 0.913725 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="desk_Home-1920" transform="translate(-1399.000000, -2198.000000)">
+            <g id="Group-14-Copy-2" transform="translate(0.000000, 1523.000000)">
+                <g id="Group-3" transform="translate(470.000000, 675.000000)">
+                    <g id="Group" transform="translate(929.000000, 0.000000)">
+                        <circle id="Oval" stroke="#F3E9E9" cx="25" cy="25" r="24.5"></circle>
+                        <g transform="translate(10.000000, 10.000000)" id="1.-assets/icon/long-arrow" filter="url(#filter-1)">
+                            <g id="Group" transform="translate(15.000000, 15.000000) scale(-1, 1) translate(-15.000000, -15.000000) translate(1.666667, 10.000000)" fill="#000000" fill-rule="nonzero">
+                                <path d="M5.42097842,0.967476001 C5.5021746,1.05896466 5.54701597,1.17704436 5.54701597,1.29936768 L5.54685729,4.16631871 L26.6666667,4.16666667 L26.6666667,5.83333333 L5.54685729,5.83331871 L5.54701597,9.05397319 C5.54701597,9.33011556 5.32315834,9.55397319 5.04701597,9.55397319 C4.92231155,9.55397319 4.8021081,9.50737293 4.70999077,9.42331587 L0.812292784,5.86666646 C0.404328123,5.4943987 0.375390061,4.86189536 0.747657815,4.4539307 C0.771311651,4.42800869 0.796313578,4.40334973 0.822559826,4.38005619 L4.71512429,0.925405226 C4.92165805,0.742106514 5.23767971,0.760942242 5.42097842,0.967476001 Z" id="Combined-Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

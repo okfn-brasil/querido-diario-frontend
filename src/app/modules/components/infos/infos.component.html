@@ -1,0 +1,22 @@
+<ng-container *ngIf="infos$ | async as infos">
+  <div class="container-inner">
+    <h1>{{ infos.title }}</h1>
+  </div>
+  <app-row [gap]="17" [flex]="true">
+    <app-column
+      [style.padding]="'42px 30px'"
+      *ngFor="let item of infos.items"
+      [gap]="34"
+      [theme]="themeCard"
+    >
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.text }}</p>
+      <ng-container *ngFor="let action of item.actions">
+        <app-row [gap]="6" [ngClass]="navTheme">
+          <a [routerLink]="action.to">{{ action.text }}</a>
+          <app-icon class='center' [icon]="icon"></app-icon>
+        </app-row>
+      </ng-container>
+    </app-column>
+  </app-row>
+</ng-container>

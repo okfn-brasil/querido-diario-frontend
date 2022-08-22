@@ -9,6 +9,9 @@ html
   padding: 0
   margin: 0
 
+body
+  background: #2C1338
+
 a,
 button
   cursor: pointer
@@ -18,6 +21,16 @@ button
 
 a
   text-decoration: none
+
+mat-spinner 
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 5
+
+.mat-spinner circle 
+  stroke: #ff8500
 
 .container-inner
   padding: 0 rem(100)
@@ -36,7 +49,7 @@ a
 
 .btn-secondary
   background-color: #FFFCBD
-  color: #2C1338
+  color: #2C1338 !important
 
 .btn-primary, .btn-secondary
   padding: 10px 23px
@@ -62,7 +75,7 @@ a
     font-family: Lato
     font-weight: 600
     letter-spacing: 0
-    line-height: rem(19)
+    line-height: rem(22)
 
   p
     font-size: rem(16)
@@ -78,17 +91,32 @@ a
 .dark
   background-color: #351E41
 
-.darker
-  background-color: #2C1338
 
 .light
   background-color: #F3E9E9
+  color: #5E3F8E !important
   
   p, a, .typo-inner
     color: #2C1338
-
+  
+  h1
+    color: #2C1338 !important
+  
   .mat-h2, .mat-title, .mat-typography h2
     color: #5E3F8E !important
+
+.darker
+  background-color: #2C1338
+  
+  p, a, .typo-inner
+    color: #FFF
+
+  .mat-h2, .mat-title, .mat-typography h2
+    color: #F3E9E9
+
+  span 
+    a
+      color: #966BE8
 
 
 .dark-secondary
@@ -99,11 +127,12 @@ a
   a
     color: #FFF
 
-.dark-secondary .mat-h1 h2, .mat-headline h2, .mat-typography h2
+
+  .mat-h1 h2, .mat-headline h2, .mat-typography h2
   color: #FFF
 
-.dark-secondary p
-  color: #FFF
+  p
+    color: #FFF
 
 .nav-secondary
   a
@@ -140,6 +169,11 @@ span
 
 a.highlight
   text-decoration: underline
+  
+.highlight
+  a
+    text-decoration: underline
+
 
 .typo-inner
   font-family: Lato
@@ -212,3 +246,8 @@ nav.color-orange-1 a
   font-weight: 900
   letter-spacing: -0.7px
   line-height: 33px
+
+@media only screen and (max-width: 768px)
+  .container-inner
+    width: 100%
+    padding: rem(48) rem(16)

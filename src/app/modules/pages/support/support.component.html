@@ -1,0 +1,83 @@
+<ng-template #loading>
+  <app-container theme="light" fxFill>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </app-container>
+</ng-template>
+<ng-container *ngIf="navigation$ | async as navigation; else loading">
+  <app-container>
+    <div class="container-inner">
+      <app-column [gap]="36">
+        <app-column [gap]="24">
+          <h1>{{ navigation.title }}</h1>
+          <p>{{ navigation.text }}</p>
+        </app-column>
+        <app-row [gap]="36" class="nav-secondary">
+          <ng-container *ngFor="let action of navigation.actions">
+            <a
+              [href]="action.to"
+              target="_blank"
+              [ngClass]="action.style"
+              *ngIf="action.to"
+            >
+              {{ action.text }}
+            </a>
+            <a
+              [routerLink]="action.route"
+              [fragment]="action.fragment"
+              [ngClass]="action.style"
+              *ngIf="action.route"
+            >
+              {{ action.text }}
+            </a>
+          </ng-container>
+        </app-row>
+      </app-column>
+    </div>
+  </app-container>
+
+  <app-container theme="dark-secondary">
+    <app-goals></app-goals>
+  </app-container>
+
+  <app-container theme="dark" bg="bg-dark-lines" id="quem-apoia">
+    <ng-container *ngIf="content$ | async as content; else loading">
+      <div class="container-inner">
+        <app-column [gap]="64">
+          <h1>{{ content.title }}</h1>
+          <app-column [gap]="48">
+            <ng-container *ngFor="let supporter of content.items">
+              <app-column [gap]="22">
+                <ng-container *ngIf="supporter.title">
+                  <h3>{{ supporter.title }}</h3>
+                </ng-container>
+                <ng-container *ngIf="supporter.action">
+                  <a [href]="supporter.action.to" class='highlight'>
+                    <h3>{{ supporter.action.text }}</h3>
+                  </a>
+                </ng-container>
+                <div
+                  class="typo-inner highlight"
+                  [innerHTML]="supporter.text"
+                ></div>
+                <app-row [gap]="32">
+                  <ng-container *ngFor="let icon of supporter.icons">
+                    <app-icon [icon]="icon"></app-icon>
+                  </ng-container>
+                </app-row>
+                <app-row [gap]="22">
+                  <app-column *ngFor="let list of supporter.items">
+                    <app-column [gap]="36">
+                      <ng-container>
+                        <p *ngFor="let name of list">{{ name }}</p>
+                      </ng-container>
+                    </app-column>
+                  </app-column>
+                </app-row>
+              </app-column>
+            </ng-container>
+          </app-column>
+        </app-column>
+      </div>
+    </ng-container>
+  </app-container>
+</ng-container>
