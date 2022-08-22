@@ -18,6 +18,11 @@
       "route": "/tecnologia",
       "fragment": "relatorios",
       "style": "link-secondary"
+    },
+    {
+      "text": "Busca Avançada",
+      "route": "/busca-avancada",
+      "style": "link-secondary"
     }
   ]
 }
