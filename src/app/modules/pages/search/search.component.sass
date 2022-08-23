@@ -27,6 +27,10 @@ section
 .result
   padding: rem(46) rem(100)
 
+  @media only screen and (max-width: 768px) 
+    padding: rem(46) rem(10)
+    margin-top: 32px
+
   p
     color: #2C1338
     font-family: Lato
@@ -50,9 +54,21 @@ section
   pagination-controls
   margin: 0 16px
 
+.pagination-mobile
+  display: none
+
 @media only screen and (max-width: 768px)
   :host
     overflow-x: hidden
+
+  .pagination-area
+    transform: scale(0.8)
+
+  .pagination-mobile
+    display: block
+    
+  .pagination-desktop
+    display: none
 
   section, .container
     width: 100%
@@ -69,8 +85,8 @@ section
     justify-content: center
 
   .ngx-pagination li
-    height: 41px
-    width: 41px
+    min-height: 41px
+    min-width: 41px
     text-align: center
 
     a
@@ -90,8 +106,8 @@ section
 
   .ngx-pagination .current
     background-color: transparent !important
-    height: 41px
-    width: 41px
+    min-height: 41px
+    min-width: 41px
     border: 1px solid #FF8500
     border-radius: 20px
     text-align: center
@@ -102,8 +118,8 @@ section
   .pagination-previous, .pagination-next a, .ngx-pagination a, .ngx-pagination button, .ngx-pagination .disabled
     font-size: 26px
     color: #F3E9E9 !important
-    height: 41px
-    width: 41px
+    min-height: 41px
+    min-width: 41px
 
   .pagination-previous, .ngx-pagination .disabled, .pagination-next
     border: 1px solid #F3E9E9
