@@ -94,7 +94,7 @@
       <p class="success-case-text">{{ item.text }}</p>
       <span *ngFor="let action of item.actions">
         <a [routerLink]="'/'">{{ action.text }}</a>
-        <app-icon [icon]="icon"></app-icon>
+        <app-icon class="success-case-icon" [icon]="icon"></app-icon>
       </span>
     </app-column>
   </app-row>
