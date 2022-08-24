@@ -23,10 +23,9 @@
           </ng-container>
         </app-row>
 
-        <app-row fxHide [fxHide.xs]="false" [gap]="36">
-          <app-column class="nav-secondary">
+        <app-row fxHide [fxHide.xs]="false" wrap="wrap" [gap]="36">
             <ng-container
-              *ngFor="let action of content.about.actions.slice(0, 2)"
+              *ngFor="let action of content.about.actions"
             >
               <a
                 [routerLink]="action.route"
@@ -36,18 +35,6 @@
                 {{ action.text }}
               </a>
             </ng-container>
-          </app-column>
-          <app-column class="nav-secondary">
-            <ng-container *ngFor="let action of content.about.actions.slice(2)">
-              <a
-                [routerLink]="action.route"
-                [fragment]="action.fragment"
-                [ngClass]="action.style"
-              >
-                {{ action.text }}
-              </a>
-            </ng-container>
-          </app-column>
         </app-row>
       </app-column>
     </div>
@@ -75,7 +62,7 @@
   <app-infos page="about"></app-infos>
 </app-container>
 
-<app-container theme="light" [gap]="34" *ngIf="content$ | async as content; else loading">
+<app-container theme="light" id="casos" [gap]="34" *ngIf="content$ | async as content; else loading">
   <div class="container-inner success-case-area-title">
     <h1>{{ content.successCases.title }}</h1>
     <p>{{ content.successCases.text }}</p>
@@ -93,8 +80,8 @@
       </span>
       <p class="success-case-text">{{ item.text }}</p>
       <span *ngFor="let action of item.actions">
-        <a [routerLink]="'/'">{{ action.text }}</a>
-        <app-icon [icon]="icon"></app-icon>
+        <a [routerLink]="action.link">{{ action.text }}</a>
+        <app-icon class="success-case-icon" [icon]="icon"></app-icon>
       </span>
     </app-column>
   </app-row>

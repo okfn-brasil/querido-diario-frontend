@@ -5,6 +5,7 @@
     "actions": [
       { "text": "História", "route": "/sobre", "fragment": "historia", "style": "link-secondary" },
       { "text": "Entenda", "route": "/sobre", "fragment": "entenda", "style": "link-secondary" },
+      { "text": "Casos de sucesso", "route": "/sobre", "fragment": "casos", "style": "link-secondary" },
       { "text": "Quem somos", "route": "/sobre", "fragment": "quem-somos", "style": "link-secondary" },
       {
         "text": "Política de privacidade",
@@ -28,27 +29,52 @@
   },
   "successCases": {
     "title": "Casos de sucesso",
-    "text": "Confira reportagens, análises e pesquisas que utilizam o Querido Diário para encontrar informações sobre os atos públicos",
+    "text": "Confira reportagens, análises e pesquisas que utilizam o Querido Diário para encontrar informações sobre os atos públicos.",
     "items": [
       {
-        "title": "FONTE | 10/02/2021",
-        "text": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "title": "OKBR | 17/08/2021",
+        "text": "Medidas contraditórias e falta de direcionamento: a história do 2º colapso da saúde de Manaus contada pelo Diário Oficial.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://ok.org.br/noticia/medidas-contraditorias-e-falta-de-direcionamento-a-historia-do-2o-colapso-da-saude-de-manaus-contada-pelo-diario-oficial/ " }]
       },
       {
-        "title": "FONTE | 10/02/2021",
-        "text": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "title": "Abaré Jornalismo | 23/08/2021",
+        "text": "Câmara mantém suspensa norma que define debate de gênero nas escolas de Manaus.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://www.abare.jor.br/post/debate-de-g%C3%AAnero-nas-escolas" }]
       },
       {
-        "title": "FONTE | 10/02/2021",
-        "text": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "title": "Portal Catarinas | 10/09/2021",
+        "text": "Prefeitura de Florianópolis abandona obra para acolhimento de mulheres e jovens em vulnerabilidade.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://catarinas.info/prefeitura-de-florianopolis-abandona-obra-para-acolhimento-de-mulheres-e-jovens-em-vulnerabilidade/" }]
       },
       {
-        "title": "FONTE | 10/02/2021",
-        "text": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "title": "data_labe |  20/09/2021",
+        "text": "Por que tem tanto lixo nas ruas da Maré?",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://datalabe.org/por-que-tem-tanto-lixo-nas-ruas-da-mare/" }]
+      },
+      {
+        "title": "Correio Nagô | 07/10/2021",
+        "text": "A invisibilidade da cultura negra e periférica na capital baiana.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://correionago.com.br/a-invisibilidade-da-cultura-negra-e-periferica-na-capital-baiana/" }]
+      },
+      {
+        "title": "Querido Diário | 21/11/2021",
+        "text": "O que os diários oficiais contam sobre a LGPD nos municípios.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://queridodiario.ok.org.br/conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios" }]
+      },
+      {
+        "title": "Agência Tatu | 29/07/2022",
+        "text": "Apenas 15% das cidadanias honorárias de Maceió são de mulheres.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://www.agenciatatu.com.br/noticia/apenas-15-das-cidadanias-honorarias-de-maceio-sao-de-mulheres/" }]
+      },
+      {
+        "title": "Paraíba Feminina | 05/08/2022",
+        "text": "Isenção para empresas, 3ª tarifa mais cara do Nordeste e serviço precário: a situação do transporte público em João Pessoa",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://paraibafeminina.com.br/2022/08/05/isencao-para-empresas-3a-tarifa-mais-cara-do-nordeste-e-servico-precario-a-situacao-do-transporte-publico-em-joao-pessoa/" }]
+      },
+      {
+        "title": "Retruco | 09/08/2022",
+        "text": "No Recife, investimentos na Primeira Infância não incluem os profissionais da área.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://www.retruco.com.br/post/no-recife-investimentos-na-primeira-inf%C3%A2ncia-n%C3%A3o-incluem-os-profissionais-da-%C3%A1rea" }]
       }
     ]
   },
