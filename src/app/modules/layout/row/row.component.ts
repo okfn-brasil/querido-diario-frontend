@@ -21,7 +21,6 @@ export class RowComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.wrap)
     const viewportWidth =
       document.documentElement.clientWidth || window.innerWidth;
 

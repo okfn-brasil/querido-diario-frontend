@@ -72,6 +72,9 @@ import { HeaderComponent } from './modules/components/header/header.component';
 import { GoalsComponent } from './modules/components/goals/goals.component';
 import { IconComponent } from './modules/components/icon/icon.component';
 import { FormSentComponent } from './modules/components/form-sent/form-sent.component';
+import { HomeEducacaoComponent } from './modules/pages/area-education/home/home.component';
+import { CarouselEducacaoComponent } from './modules/pages/area-education/home/carousel/carousel.component';
+import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +118,9 @@ import { FormSentComponent } from './modules/components/form-sent/form-sent.comp
     FlexHeightDirective,
     FormSentComponent,
     AvailableCitiesComponent,
+    HomeEducacaoComponent,
+    CarouselEducacaoComponent,
+    CnpjComponent,
   ],
   imports: [
     BrowserModule,

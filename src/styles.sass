@@ -107,6 +107,19 @@ mat-spinner
     a
       color: #966BE8
 
+.dark-tertiary
+  background-color: rgba(45, 33, 69, 1)
+  color: #fff
+  
+  p, a, .typo-inner
+    color: #FFF
+
+  .mat-h2, .mat-title, .mat-typography h2
+    color: #F3E9E9
+
+  span 
+    a
+      color: #966BE8
 
 .dark-secondary
   background-color: #5E3F8E
@@ -245,3 +258,55 @@ mat-icon
   .container-inner
     width: 100%
     padding: rem(48) rem(16)
+
+// education-area
+  
+.orange-text
+  color: rgba(255, 132, 1, 1)
+
+.btne-primary
+  border-radius: rem(40)
+  background-color: #ff8500
+  color: #fff
+  font-family: Lato
+  font-size: rem(20)
+  border: none
+  padding: rem(21) rem(40)
+
+  @media only screen and (max-width: 768px)
+    font-size: rem(16)
+    padding: rem(16) rem(24)
+
+.container-education
+  display: flex
+  justify-content: center
+  .content
+    width: 1220px
+    padding: rem(80) rem(16)
+    @media only screen and (max-width: 768px)
+      padding: 0 !important
+
+@media only screen and (max-width: 768px)
+  .container-education
+    width: 100%
+    padding: rem(48) rem(16)
+
+.education-support
+  p
+    font-weight: bold
+    color: #5e3f8d
+
+  .container
+    padding: rem(60) rem(16)!important
+    @media only screen and (max-width: 768px)
+      padding: rem(40) rem(16) !important
+
+.desktop
+  display: none
+  
+@media only screen and (min-width: 768px)
+  .desktop
+    display: block
+
+  .mobile
+    display: none

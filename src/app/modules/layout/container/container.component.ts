@@ -8,7 +8,7 @@ const BREAKPOINT = 768;
 })
 export class ContainerComponent implements OnInit {
   @Input()
-  theme: 'darker' | 'dark-secondary' | 'dark' | 'light' = 'darker';
+  theme: 'darker' | 'dark-secondary' | 'dark-tertiary' | 'dark' | 'light' = 'darker';
 
   @Input()
   containerClass: string = 'container';
