@@ -8,15 +8,15 @@
       "style": "link-secondary"
     },
     {
-      "text": "Documentação",
+      "text": "Acompanhamento",
       "route": "/tecnologia",
-      "fragment": "documentacao",
+      "fragment": "acompanhamento",
       "style": "link-secondary"
     },
     {
-      "text": "Relatórios",
+      "text": "Documentação",
       "route": "/tecnologia",
-      "fragment": "relatorios",
+      "fragment": "documentacao",
       "style": "link-secondary"
     },
     {
