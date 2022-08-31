@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './modules/pages/about/about.component';
 import { AccessLevelsComponent } from './modules/pages/access-levels/access-levels.component';
+import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.component';
+import { HomeEducacaoComponent } from './modules/pages/area-education/home/home.component';
 import { AvailableCitiesComponent } from './modules/pages/available-cities/available-cities.component';
 import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
@@ -26,7 +28,10 @@ const routes: Routes = [
   { path: 'glossario', component: GlossaryComponent },
   { path: 'pesquisa', component: SearchComponent },
   { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent },
-  { path: 'cidades-disponiveis', component: AvailableCitiesComponent }
+  { path: 'cidades-disponiveis', component: AvailableCitiesComponent },
+  //area educação
+  { path: 'educacao', component: HomeEducacaoComponent },
+  { path: 'educacao/cnpj/:id', component: CnpjComponent },
 ];
 
 @NgModule({

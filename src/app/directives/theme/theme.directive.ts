@@ -5,7 +5,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
 })
 export class ThemeDirective {
   @Input()
-  theme: 'darker' | 'dark-secondary' | 'dark' | 'light' | null = null;
+  theme: 'darker' | 'dark-secondary' | 'dark-tertiary' | 'dark' | 'light' | null = null;
 
 
   constructor(private el: ElementRef) {}

@@ -1,0 +1,170 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.home
+  background-color: white
+
+.banner .content, .section-content
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  .banner-content, .container-content
+    width: 45%
+
+    h2
+      line-height: rem(43)
+
+    h1
+      font-size: rem(56)
+      margin-bottom: rem(16)
+      line-height: rem(67)
+
+
+  .banner-img, .container-img
+    width: 50%
+    height: rem(464)
+
+    img
+      max-width: 100%
+      max-height: 100%
+
+.sub-title
+  font-size: rem(18)
+  line-height: rem(25)
+  margin-bottom: rem(32)
+
+h2
+  font-size: rem(36)
+  font-family: "Baloo"
+  padding-bottom: rem(16)
+
+.container-content
+  p
+    margin-bottom: rem(8)
+    text-transform: uppercase
+
+
+.about 
+  background-color: rgba(79, 57, 121, 1)
+  .container-img
+    width: 35%
+
+  .container-content
+    p, h2
+      color: #fff
+
+@media only screen and (max-width: 768px)
+  .section-content .container-img 
+    width: 100%
+    height: unset
+    margin-bottom: rem(24)
+
+  .full-width-mobile
+    width: 100%
+
+  .banner .content .banner-content
+    h1
+      margin-top: rem(16)
+      font-size: rem(28)
+      line-height: rem(33)
+      color: rgba(94, 64, 143, 1)
+
+    p
+      font-size: rem(14)
+      line-height: rem(19)
+
+  .banner .content, .section-content
+    display: block
+  
+    .banner-content, .container-content
+      width: 100%
+    
+    .banner-img
+      width: 100%
+      max-height: rem(300)
+
+  h2
+    font-size: rem(28)
+    line-height: rem(33) !important
+
+  .sub-title
+    font-size: rem(14)
+
+  .realization-icon
+    margin-top: 20px
+
+  p
+    font-size: rem(14)
+    line-height: rem(19)
+    letter-spacing: 1.2px
+
+.reports-section
+  background-color: #2c1338
+  color: #fff
+
+.about-section
+  background-color: rgba(45, 33, 69, 1)
+  color: #fff
+
+.about-section, .reports-section
+  display: flex
+  justify-content: center
+  overflow: hidden
+  position: relative
+
+  &::after, &::before
+    position: absolute
+    content: ''
+    height: 100%
+    width: 15%
+    left: calc(100vw - 15%)
+    top: 0
+    z-index: 99
+    background: linear-gradient(270deg, rgba(45,33,69,1) 0%, rgba(19,19,19,0) 100%)
+
+    @media only screen and (max-width: 1570px)
+      width: 5%
+      left: calc(100vw - 5%)
+
+    @media only screen and (max-width: 768px)
+      display: none
+
+  &::before
+    left: unset
+    right: calc(100vw - 15%)
+    background: linear-gradient(90deg, rgba(45,33,69,1) 0%, rgba(19,19,19,0) 100%)
+
+    @media only screen and (max-width: 1570px)
+      left: unset
+      right: calc(100vw - 5%)
+  
+  h2
+    margin-bottom: 0
+
+  p
+    max-width: 80%
+  
+  @media only screen and (max-width: 768px)
+    h2
+      padding-bottom: rem(8)
+
+    p
+      margin-bottom: rem(16)
+      max-width: 100%
+
+
+.reports-section
+  &::after
+    background: linear-gradient(270deg, #2c1338 0%, rgba(19,19,19,0) 100%)
+
+  &::before
+    background: linear-gradient(90deg, #2c1338 0%, rgba(19,19,19,0) 100%)
+.container-carousel
+  max-width: rem(1220)
+  width: 100%
+  padding: rem(80) rem(16)
+
+  @media only screen and (max-width: 768px)
+    padding: rem(40) rem(16)
+
