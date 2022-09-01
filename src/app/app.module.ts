@@ -75,6 +75,8 @@ import { FormSentComponent } from './modules/components/form-sent/form-sent.comp
 import { HomeEducacaoComponent } from './modules/pages/area-education/home/home.component';
 import { CarouselEducacaoComponent } from './modules/pages/area-education/home/carousel/carousel.component';
 import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.component';
+import { InfoCnpjComponent } from './modules/pages/area-education/cnpj/info-cnpj/info-cnpj.component';
+import { PartnerComponent } from './modules/pages/area-education/cnpj/partner/partner.component';
 
 @NgModule({
   declarations: [
@@ -121,6 +123,8 @@ import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.componen
     HomeEducacaoComponent,
     CarouselEducacaoComponent,
     CnpjComponent,
+    InfoCnpjComponent,
+    PartnerComponent
   ],
   imports: [
     BrowserModule,
