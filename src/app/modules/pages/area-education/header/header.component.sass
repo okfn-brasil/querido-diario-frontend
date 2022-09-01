@@ -1,0 +1,85 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+  
+.edu-header
+  background-color: rgba(94, 64, 143, 1)
+  color: #fff
+  padding: rem(16)
+  font-family: Lato
+
+  .title
+    font-family: Baloo
+    font-size: rem(22)
+    line-height: rem(26)
+    margin-right: rem(8)
+
+  .content
+    padding: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .links
+      display: flex
+      align-items: center
+
+.link
+  margin-left: rem(32)
+  letter-spacing: rem(1.1)
+
+.login-button
+  color: rgba(44, 19, 56, 1)
+  background-color: rgba(234, 217, 242, 1)
+  padding: rem(8) rem(24)
+  border-radius: rem(30)
+  font-weight: bold
+  text-align: center
+
+.suspended-menu
+  display: none
+
+@media only screen and (max-width: 960px)
+  .desktop
+    display: none
+
+  .suspended-menu
+    display: block
+    position: absolute
+    padding: rem(20)
+    top: 100%
+    left: 0
+    width: 100%
+    background-color: rgba(79, 57, 121, 1)
+
+    .link
+      margin: rem(20)
+      margin-top: 0
+      text-align: center
+      
+
+  .mobile
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  .edu-header
+    padding: rem(20)
+    position: relative
+
+  .menu
+    width: rem(18)
+    cursor: pointer
+
+    div
+      background-color: #fff
+      height: rem(2)
+      width: 100%
+      margin-bottom: rem(3)
+
+      &:last-of-type
+        margin: 0
+
+  .title
+    font-family: Baloo
+    font-size: rem(18)
+    line-height: rem(18)

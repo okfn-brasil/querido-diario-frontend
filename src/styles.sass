@@ -261,6 +261,47 @@ mat-icon
 
 // education-area
   
+.edu-input
+  position: relative
+
+  img
+    position: absolute
+    right: 0
+    bottom: rem(42)
+    z-index: 99
+    cursor: pointer
+    
+    &:hover
+      opacity: 0.8
+
+  input[name="password"]
+    padding-right: rem(30)
+
+  label
+    position: absolute
+    left: 0
+    top: rem(12)
+    transition: 0.3s
+    color: rgba(94, 64, 143, 0.5)
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label
+    transform: translate(-4px, -24px) scale(0.8)
+
+  input
+    width: 100%
+    border: none
+    border-bottom: 1px solid rgba(52, 51, 52, 0.2)
+    padding: rem(14) 0
+    font-size: rem(14)
+    line-height: rem(19)
+    margin-bottom: rem(25)
+    &::placeholder
+      opacity: 0
+
+    &:focus
+      outline: none
+
 .orange-text
   color: rgba(255, 132, 1, 1)
 

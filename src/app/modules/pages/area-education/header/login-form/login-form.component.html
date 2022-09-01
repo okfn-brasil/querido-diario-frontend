@@ -1,0 +1,34 @@
+<div class="form-area" *ngIf="showForm">
+  <div *ngIf="loading" class="loading-area">
+    <mat-spinner></mat-spinner>
+  </div>
+  <form class="form" (submit)="onSubmit()" [formGroup]="formGroup">
+    <div class="close-icon" (click)="onClickClose()">
+      <img src="assets/images/education/close.png" alt="fechar" />
+    </div>
+    <div class="content-form">
+      <div class="title">Acesse sua conta</div>
+      <div class="sub-title">Lorem ipsum sit amet consectetur</div>
+      <div class="inputs">
+      <div class="edu-input">
+        <input class="edu-input" name="email" formControlName="email" required type="email" placeholder="e-mail"/>
+        <label>E-mail</label>
+      </div>
+      <div class="edu-input">
+        <img src="assets/images/education/view-pass.png" alt="ver senha/esconder senha" (click)="onClickShowPass()"/>
+        <input class="edu-input" name="password" formControlName="password" required [type]="showPass ? 'text' : 'password'" placeholder="senha"/>
+        <label>Senha</label>
+      </div>
+
+      </div>
+      <div class="error-message" *ngIf="!!errorMessage">{{errorMessage}}</div>
+      <input class="submit" [disabled]="formGroup.invalid" type="submit" value="Continuar">
+      <a><div class="forgot-link">Esqueci minha senha</div></a>
+      <div class="create-account">
+        Não possui uma conta?
+        <br class="mobile" />
+        <a class="link">Faça o cadastro</a>
+      </div>
+    </div>
+  </form>
+</div>
