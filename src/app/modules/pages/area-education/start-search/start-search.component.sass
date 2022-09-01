@@ -1,0 +1,55 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.start-search
+  background-color: #f3e9e9
+  min-height: calc(100vh - 60px)
+  text-align: center
+
+  .container-education
+    height: calc(100vh - 60px)
+    align-items: center
+
+  .content
+    display: flex
+    justify-content: center
+    width: 100%
+    max-width: rem(450)
+    flex-wrap: wrap
+
+  .image
+    max-width: rem(377)
+    img 
+      width: 100%
+
+    @media only screen and (max-width: 768px)
+    max-width: rem(277)
+   
+
+  .title
+    font-family: Baloo
+    font-size: rem(36)
+    line-height: rem(43)
+    margin-top: rem(8)
+    margin-bottom: rem(8)
+
+    @media only screen and (max-width: 768px)
+      margin-top: rem(24)
+      font-size: rem(22)
+      line-height: rem(26)
+      padding: rem(0) rem(16)
+
+  .sub-title
+    font-size: rem(18)
+    line-height: rem(25)
+    color: #495057
+    margin-bottom: rem(53)
+    @media only screen and (max-width: 768px)
+      margin-bottom: rem(150)
+      padding: rem(0) rem(16)
+      font-size: rem(16)
+      line-height: rem(22)
+
+  .btne-primary
+    @media only screen and (max-width: 768px)
+      width: calc(100vw - 64px)

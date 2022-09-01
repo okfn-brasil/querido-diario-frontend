@@ -78,6 +78,7 @@ import { InfoCnpjComponent } from './modules/pages/area-education/cnpj/info-cnpj
 import { PartnerComponent } from './modules/pages/area-education/cnpj/partner/partner.component';
 import { HeaderEducationComponent } from './modules/pages/area-education/header/header.component';
 import { LoginFormComponent } from './modules/pages/area-education/header/login-form/login-form.component';
+import { StartSearchComponent } from './modules/pages/area-education/start-search/start-search.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +128,7 @@ import { LoginFormComponent } from './modules/pages/area-education/header/login-
     PartnerComponent,
     HeaderEducationComponent,
     LoginFormComponent,
+    StartSearchComponent,
   ],
   imports: [
     BrowserModule,

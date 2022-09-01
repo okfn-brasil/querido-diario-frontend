@@ -4,6 +4,7 @@ import { AboutComponent } from './modules/pages/about/about.component';
 import { AccessLevelsComponent } from './modules/pages/access-levels/access-levels.component';
 import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.component';
 import { HomeEducacaoComponent } from './modules/pages/area-education/home/home.component';
+import { StartSearchComponent } from './modules/pages/area-education/start-search/start-search.component';
 import { AvailableCitiesComponent } from './modules/pages/available-cities/available-cities.component';
 import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   //area educação
   { path: 'educacao', component: HomeEducacaoComponent },
   { path: 'educacao/cnpj/:id', component: CnpjComponent },
+  { path: 'educacao/comece', component: StartSearchComponent },
 ];
 
 @NgModule({
