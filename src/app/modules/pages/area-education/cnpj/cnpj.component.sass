@@ -1,0 +1,86 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+:host
+  background-color: #f3e9e9
+  font-family: Lato
+
+.error
+  text-align: center
+  font-size: rem(20)
+  color: #b80a0a
+
+.cnpj-page
+  .cnpj-header
+    position: relative
+
+  .small-text
+    font-size: rem(16)
+    line-height: rem(22)
+    text-transform: uppercase
+    color: #6A7784
+    margin-bottom: rem(24)
+
+  .h2-class
+    font-weight: bold
+    font-size: rem(36)
+    line-height: rem(43)
+    color: rgba(94, 64, 143, 1)
+    margin-bottom: rem(8)
+    font-family: Baloo
+
+  .h3-class
+    font-weight: bold
+    font-size: rem(22)
+    line-height: rem(26)
+    color: #495057
+    margin-bottom: rem(40)
+    font-family: Baloo
+
+  .search-button
+    position: absolute
+    right: 0
+    bottom: 0
+    padding: rem(14) rem(24)
+    font-size: rem(16)
+    line-height: rem(19)
+
+    @media only screen and (max-width: 768px)
+      position: relative
+
+  .cnpj-info-section
+    display: flex
+    justify-content: space-between
+
+    @media only screen and (max-width: 768px)
+      display: block
+
+    .info-column
+      width: calc(50% - 20px)
+
+      @media only screen and (max-width: 768px)
+        width: 100%
+
+    .info-title
+      font-size: rem(18)
+      line-height: rem(25)
+      font-family: Lato
+      color: black  
+      font-weight: bold
+      margin-top: rem(40)
+
+  .partners
+    margin-top: rem(80)
+
+    .h3-class
+      color: black
+      margin-bottom: rem(40)
+      
+@keyframes increaseHeight
+  0%
+    max-height: 0
+  
+
+  100%
+    max-height: 2000px
+  

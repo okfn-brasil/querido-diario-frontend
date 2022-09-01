@@ -1,1 +1,83 @@
-<p>cnpj works!</p>
+<div class="container-education">
+  <div class="cnpj-page content">
+    <ng-template #loading>
+      <mat-spinner *ngIf="loading"></mat-spinner>
+    </ng-template>
+    <ng-template #error>
+      <div class="error">Ocorreu um erro ao buscar os dados dest CNPJ</div>
+    </ng-template>
+    <ng-container *ngIf="!hasError; else error">
+      <ng-container *ngIf="cnpj && cnpj.razao_social; else loading">
+        <ng-container *ngIf="content$ | async as content; else loading">
+          <div class='cnpj-header'>
+            <div>
+              <div class='small-text'>{{content.cnpjTitle}}</div>
+              <div class='h2-class'>{{cnpj.cnpj_completo}}</div>
+              <div class='h3-class'>{{cnpj.razao_social}}</div>
+            </div>
+            <div>
+              <a class="search-button btne-primary" [href]="">
+                {{content.search}}
+              </a>
+            </div>
+          </div>
+
+          <div class='cnpj-info-section'>
+            <div class='info-column'>
+              <div class='info-block'>
+                <div class='info-title'>{{content.situation}}</div>
+                <app-info-cnpj infoName='Situação Cadastral' [infoText]="cnpj.situacao_cadastral"></app-info-cnpj>
+                <app-info-cnpj infoName='Data da Situação Cadastral' [infoText]="cnpj.data_situacao_cadastral"></app-info-cnpj>
+              </div>
+
+              <div class='info-block'>
+                <div class='info-title'>{{content.geralInfo}}</div>
+                <app-info-cnpj infoName='Nome fantasia' [infoText]="cnpj.nome_fantasia"></app-info-cnpj>
+                <app-info-cnpj infoName='Data de abertura' [infoText]="cnpj.data_inicio_atividade"></app-info-cnpj>
+                <app-info-cnpj infoName='Porte' [infoText]="cnpj.porte"></app-info-cnpj>
+                <app-info-cnpj infoName='Matriz ou filial' [infoText]="cnpj.identificador_matriz_filial"></app-info-cnpj>
+                <app-info-cnpj infoName='Qualificação do responsável' [infoText]="cnpj.qualificacao_do_responsavel"></app-info-cnpj>
+                <app-info-cnpj infoName='Capital social' [infoText]="cnpj.capital_social"></app-info-cnpj>
+                <app-info-cnpj infoName='Ente federativo responsável' [infoText]="cnpj.ente_federativo_responsavel"></app-info-cnpj>
+                <app-info-cnpj infoName='Simples nacional' [infoText]="cnpj.opcao_pelo_simples"></app-info-cnpj>
+                <app-info-cnpj infoName='Código e descrição da atividade econômica principal' [infoText]="cnpj.cnae"></app-info-cnpj>
+                <app-info-cnpj infoName='Código e descrição das atividades secundárias' [infoText]="cnpj.cnae_fiscal_secundario ? cnpj.cnae_fiscal_secundario.split(';').join('\n\n') : ''"></app-info-cnpj>
+                <app-info-cnpj infoName='Código e endereço da natureza jurídica' [infoText]="cnpj.natureza_juridica"></app-info-cnpj>
+              </div>
+            </div>
+            <div class='info-column'>
+              <div class='info-block'>
+                <div class='info-title'>{{content.address}}</div>
+                <app-info-cnpj infoName='Logradouro' [infoText]="cnpj.logradouro"></app-info-cnpj>
+                <app-info-cnpj infoName='Número' [infoText]="cnpj.numero"></app-info-cnpj>
+                <app-info-cnpj infoName='Complemento' [infoText]="cnpj.complemento"></app-info-cnpj>
+                <app-info-cnpj infoName='Bairro/Distrito' [infoText]="cnpj.bairro"></app-info-cnpj>
+                <app-info-cnpj infoName='CEP' [infoText]="cnpj.cep"></app-info-cnpj>
+                <app-info-cnpj infoName='Município, UF e país' 
+                [infoText]="(cnpj.municipio || '') + (cnpj.municipio ? ', ' : '') + 
+                (cnpj.uf || '') + (cnpj.uf ? ', ' : '') 
+                + (cnpj.pais || '')"></app-info-cnpj>
+                <app-info-cnpj infoName='Telefone 1' [infoText]="cnpj.ddd_telefone_1"></app-info-cnpj>
+                <app-info-cnpj infoName='Telefone 2' [infoText]="cnpj.ddd_telefone_2"></app-info-cnpj>
+                <app-info-cnpj infoName='E-mail' [infoText]="cnpj.correio_eletronico"></app-info-cnpj>
+                <app-info-cnpj infoName='Situação especial' [infoText]="cnpj.situacao_especial"></app-info-cnpj>
+                <app-info-cnpj infoName='Data da situação especial' [infoText]="cnpj.data_situacao_especial"></app-info-cnpj>
+              </div>
+            </div>
+          </div>
+
+          <div class='partners' *ngIf="partners && partners.length">
+              <div>
+                <div class='h3-class'>{{content.partners}}</div>
+                <div class='partners-list'>
+                  <div *ngFor="let partner of partners; let i = index">
+                    <app-partner [name]="partner['Razão Social']" [data]="partner"></app-partner>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
