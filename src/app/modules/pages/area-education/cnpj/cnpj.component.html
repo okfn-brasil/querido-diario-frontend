@@ -1,10 +1,11 @@
+<edu-header></edu-header>
 <div class="container-education">
   <div class="cnpj-page content">
     <ng-template #loading>
       <mat-spinner *ngIf="loading"></mat-spinner>
     </ng-template>
     <ng-template #error>
-      <div class="error">Ocorreu um erro ao buscar os dados dest CNPJ</div>
+      <div class="error">Ocorreu um erro ao buscar os dados deste CNPJ</div>
     </ng-template>
     <ng-container *ngIf="!hasError; else error">
       <ng-container *ngIf="cnpj && cnpj.razao_social; else loading">
