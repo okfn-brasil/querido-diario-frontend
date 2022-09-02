@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { tokenKeys } from '../utils';
 
 @Component({
   selector: 'edu-header',
@@ -8,10 +10,25 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderEducationComponent implements OnInit {
   mobileMenuOpen = false;
   showForm = false;
+  isLoggedIn = !!localStorage.getItem(tokenKeys.token);
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.queryParams
+      .subscribe(params => {
+        if(params.login) {
+          this.openForm();
+        }
+      }
+    );
+
+  }
+
+  onLogged() {
+    this.isLoggedIn = true;
   }
 
   onClickMenu() {

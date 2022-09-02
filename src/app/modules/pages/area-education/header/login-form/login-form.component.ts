@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login/login.service';
+import { tokenKeys } from '../../utils';
 
 @Component({
   selector: 'edu-login-form',
@@ -9,14 +11,16 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginFormComponent implements OnInit {
   @Input() showForm = false;
-  @Output() onHideForm: EventEmitter<boolean> = new EventEmitter();;
+  @Output() onHideForm: EventEmitter<boolean> = new EventEmitter();
+  @Output() onLoggedIn: EventEmitter<boolean> = new EventEmitter();
   formGroup: FormGroup = {} as FormGroup;
   loading = false;
   showPass = false;
   errorMessage = '';
 
   constructor(
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -39,12 +43,14 @@ export class LoginFormComponent implements OnInit {
     this.loading = true;
     this.loginService.login(this.formGroup.value).subscribe(response => {
       this.loading = false;
+      localStorage.setItem(tokenKeys.token, response.access);
+      localStorage.setItem(tokenKeys.refresh, response.refresh);
+      this.onLoggedIn.emit();
       this.onClickClose();
-      // TO DO LOGAR COM STORE E TOKEN
-
+      this.router.navigate([], {queryParams: {}});
     }, () => {
       this.loading = false;
-      this.errorMessage = 'Ocorreu um erro ao tentar logar, verifique suas credenciais e tente novamente.'
+      this.errorMessage = 'Ocorreu um erro ao tentar logar, verifique suas credenciais e tente novamente.';
     })
   }
 
