@@ -34,8 +34,8 @@ export class SearchFormComponent implements OnInit {
   @ViewChild('termField') termField!: ElementRef;
   @ViewChild('periodField') periodField!: ElementRef;
 
-  since: string = '';
-  until: string = '';
+  published_since: string = '';
+  published_until: string = '';
 
   territory: Territory | null = null;
 
@@ -97,10 +97,10 @@ export class SearchFormComponent implements OnInit {
       queryParams = { ...queryParams, term: null };
     }
 
-    if (this.since && this.until) {
-      queryParams = { ...queryParams, since: this.since, until: this.until };
+    if (this.published_since && this.published_until) {
+      queryParams = { ...queryParams, published_since: this.published_since, published_until: this.published_until };
     } else {
-      queryParams = { ...queryParams, since: null, until: null };
+      queryParams = { ...queryParams, published_since: null, published_until: null };
     }
 
     this.router.navigate(['/pesquisa'], { queryParams });
@@ -108,10 +108,10 @@ export class SearchFormComponent implements OnInit {
 
   onRangeSelected(range: { start: Moment; end: Moment }) {
     if (range.start) {
-      this.since = range.start.format('YYYY-MM-DD');
+      this.published_since = range.start.format('YYYY-MM-DD');
     }
     if (range.end) {
-      this.until = range.end.format('YYYY-MM-DD');
+      this.published_until = range.end.format('YYYY-MM-DD');
     }
   }
 
