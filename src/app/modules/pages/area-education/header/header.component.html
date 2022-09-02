@@ -1,23 +1,23 @@
 <div class='edu-header'>
-  <edu-login-form [showForm]="showForm" (onHideForm)="onCloseLoginModal($event)"></edu-login-form>
+  <edu-login-form [showForm]="showForm" (onLoggedIn)="onLogged()" (onHideForm)="onCloseLoginModal($event)"></edu-login-form>
   <div class="desktop">
     <div class="container-education">
       <div class="content">
         <div class="links">
-          <a><div class="title">Tecnologias da Educação</div></a>
+          <a routerLink="/educacao"><div class="title">Tecnologias da Educação</div></a>
           <a><div class="link">Relatórios</div></a>
           <a><div class="link">Sobre</div></a>
           <a><div class="link">Estudos de caso</div></a>
           <a><div class="link">Busca</div></a>
         </div>
 
-        <a (click)="openForm()"><div class="login-button">Login / Cadastre-se</div></a>
+        <a (click)="openForm()" *ngIf="!isLoggedIn"><div class="login-button">Login / Cadastre-se</div></a>
       </div>
     </div>
   </div>
 
   <div class="mobile">
-    <a><div class="title">Educação</div></a>
+    <a routerLink="/educacao"><div class="title">Educação</div></a>
 
     <div class="menu" (click)="onClickMenu()">
       <div></div>
@@ -30,7 +30,7 @@
       <a><div class="link">Sobre</div></a>
       <a><div class="link">Estudos de caso</div></a>
       <a><div class="link">Busca</div></a>
-      <a (click)="openForm()"><div class="login-button">Login / Cadastre-se</div></a>
+      <a (click)="openForm()" *ngIf="!isLoggedIn"><div class="login-button">Login / Cadastre-se</div></a>
     </div>
   </div>
 </div>

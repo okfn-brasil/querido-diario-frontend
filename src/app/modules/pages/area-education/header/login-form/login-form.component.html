@@ -11,13 +11,13 @@
       <div class="sub-title">Lorem ipsum sit amet consectetur</div>
       <div class="inputs">
       <div class="edu-input">
-        <input class="edu-input" name="email" formControlName="email" required type="email" placeholder="e-mail"/>
-        <label>E-mail</label>
+        <input id="email" class="edu-input" name="email" formControlName="email" required type="email" placeholder="e-mail"/>
+        <label for="email">E-mail</label>
       </div>
       <div class="edu-input">
         <img src="assets/images/education/view-pass.png" alt="ver senha/esconder senha" (click)="onClickShowPass()"/>
-        <input class="edu-input" name="password" formControlName="password" required [type]="showPass ? 'text' : 'password'" placeholder="senha"/>
-        <label>Senha</label>
+        <input id="pass" class="edu-input" name="password" formControlName="password" required [type]="showPass ? 'text' : 'password'" placeholder="senha"/>
+        <label for="pass">Senha</label>
       </div>
 
       </div>
@@ -25,9 +25,7 @@
       <input class="submit" [disabled]="formGroup.invalid" type="submit" value="Continuar">
       <a><div class="forgot-link">Esqueci minha senha</div></a>
       <div class="create-account">
-        Não possui uma conta?
-        <br class="mobile" />
-        <a class="link">Faça o cadastro</a>
+        Não possui uma conta?  <br class="mobile" /> <a routerLink="/educacao/cadastrar" class="link">Faça o cadastro</a>
       </div>
     </div>
   </form>

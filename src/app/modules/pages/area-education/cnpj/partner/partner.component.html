@@ -4,9 +4,11 @@
     {{name}}
   </div>
     <div *ngIf="isOpen" class='partner-infos-items'>
-      <div class='partner-info-item' *ngFor="let key of keys">
-        <div class='info-name'>{{key}}</div>
-        <div *ngIf="data && key" class='info-text'>{{data[key]}}</div>
+      <div *ngFor="let key of keys">
+        <div class='partner-info-item' *ngIf="data && data[key]">
+          <div class='info-name'>{{key}}</div>
+          <div class='info-text'>{{data[key]}}</div>
+        </div>
       </div>
   </div>
 </div>

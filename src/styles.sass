@@ -297,17 +297,26 @@ mat-icon
     color: rgba(94, 64, 143, 0.5)
 
   input:focus + label,
-  input:not(:placeholder-shown) + label
-    transform: translate(-4px, -24px) scale(0.8)
+  input:not(:placeholder-shown) + label,
+  select:focus + label,
+  select.ng-valid + label
+    transform: translate(-4px, -20px) scale(0.8)
 
-  input
+  input.second-type:focus + label,
+  input.second-type:not(:placeholder-shown) + label,
+  select.second-type:focus + label,
+  select.second-type.ng-valid + label
+    transform: translate(-8px, -20px) scale(0.8)
+
+  input, select
+    background: transparent
     width: 100%
     border: none
     border-bottom: 1px solid rgba(52, 51, 52, 0.2)
     padding: rem(14) 0
     font-size: rem(14)
     line-height: rem(19)
-    margin-bottom: rem(25)
+    margin-bottom: rem(32)
     &::placeholder
       opacity: 0
 

@@ -23,7 +23,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalComponent } from './modules/components/modal/modal.component';
 import { FooterComponent } from './modules/components/footer/footer.component';
@@ -79,6 +79,8 @@ import { PartnerComponent } from './modules/pages/area-education/cnpj/partner/pa
 import { HeaderEducationComponent } from './modules/pages/area-education/header/header.component';
 import { LoginFormComponent } from './modules/pages/area-education/header/login-form/login-form.component';
 import { StartSearchComponent } from './modules/pages/area-education/start-search/start-search.component';
+import { SignupComponent } from './modules/pages/area-education/signup/signup.component';
+import { AuthInterceptor } from './services/interceptor';
 
 @NgModule({
   declarations: [
@@ -129,6 +131,7 @@ import { StartSearchComponent } from './modules/pages/area-education/start-searc
     HeaderEducationComponent,
     LoginFormComponent,
     StartSearchComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -158,7 +161,7 @@ import { StartSearchComponent } from './modules/pages/area-education/start-searc
 
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
   bootstrap: [AppComponent],
 })
 export class AppModule {
