@@ -21,6 +21,10 @@ export interface Gazette {
   downloads: Download[]
 }
 
+export interface Theme {
+  [key: string]: boolean | null;
+}
+
 export interface GazetteQuery {
   term?: string;
   territory_id?: string;

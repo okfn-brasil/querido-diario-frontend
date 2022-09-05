@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { UserModel } from 'src/app/interfaces/account';
+import { LoginService } from 'src/app/services/login/login.service';
+import { UserQuery } from 'src/app/stores/user/user.query';
+import { UserService } from 'src/app/stores/user/user.service';
 import { tokenKeys } from '../utils';
 
 @Component({
@@ -10,10 +14,14 @@ import { tokenKeys } from '../utils';
 export class HeaderEducationComponent implements OnInit {
   mobileMenuOpen = false;
   showForm = false;
-  isLoggedIn = !!localStorage.getItem(tokenKeys.token);
+  isLoggedIn = true;
+  userData: UserModel = {};
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private loginService: LoginService,
+    private userService: UserService,
+    private userQuery: UserQuery,
   ) { }
 
   ngOnInit(): void {
@@ -25,6 +33,22 @@ export class HeaderEducationComponent implements OnInit {
       }
     );
 
+    this.userQuery.userData$.subscribe(userData => {
+      this.userData = userData;
+      if(!userData.full_name) {
+        this.getUserInfo();
+      } else {
+        this.isLoggedIn = true;
+      }
+    });
+  }
+
+  getUserInfo() {
+    if(localStorage.getItem(tokenKeys.token)) {
+      this.loginService.getUserData().subscribe(response => {
+        this.userService.setUserInfo(response);
+      });
+    }
   }
 
   onLogged() {

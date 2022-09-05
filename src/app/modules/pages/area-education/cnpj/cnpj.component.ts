@@ -6,7 +6,7 @@ import { CnpjService } from 'src/app/services/cnpj/cnpj.service';
 import { ContentService } from 'src/app/services/content/content.service';
 
 @Component({
-  selector: 'app-cnpj',
+  selector: 'edu-cnpj',
   templateUrl: './cnpj.component.html',
   styleUrls: ['./cnpj.component.sass']
 })

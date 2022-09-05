@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignUpService } from 'src/app/services/signup/signup.service';
+import { UserService } from 'src/app/stores/user/user.service';
 import { tokenKeys } from '../utils';
 
 interface ErrorsModel {
@@ -14,7 +15,7 @@ interface ErrorsModel {
 }
 
 @Component({
-  selector: 'app-signup',
+  selector: 'edu-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.sass']
 })
@@ -42,7 +43,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private signUpService: SignUpService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -153,6 +155,7 @@ export class SignupComponent implements OnInit {
     this.formGroup.disable();
     this.signUpService.post(this.formGroup.value).subscribe(response => {
       this.loading = false;
+      this.userService.setUserInfo(response);
       localStorage.setItem(tokenKeys.token, response.jwt.access);
       localStorage.setItem(tokenKeys.refresh, response.jwt.refresh);
       this.router.navigate(['/educacao/comece']);

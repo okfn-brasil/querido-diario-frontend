@@ -1,0 +1,27 @@
+<div class="search-page">
+  <div class="search-header">
+    <div class="flex">
+      <div class="edu-input">
+        <input [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Encontre um..."/>
+        <img src="assets/images/education/search.png" alt="buscar" />
+      </div>
+      <button (click)="onChangeQuery()" class="btne-primary">Buscar</button>
+    </div>
+    <div class="advanced">Busca avançada <img src="assets/icons/right-arrow-white.svg" alt="buscar" /></div>
+  </div>
+
+  <div class="search-area">
+    <div class="filters">
+      <edu-filters [filters]="filters" (changeFilters)="onChangeFilters($event)"></edu-filters>
+    </div>
+    <div class="results">
+      <div class="empty">
+        <div class="empty-content">
+          <img src="assets/images/education/busca.png" alt="buscar" />
+          <div class="text">Busque por palavras-chave ou utilize os filtros para encontrar resultados</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

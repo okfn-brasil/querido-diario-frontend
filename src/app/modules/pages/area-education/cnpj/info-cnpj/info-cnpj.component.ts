@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-info-cnpj',
+  selector: 'edu-info-cnpj',
   templateUrl: './info-cnpj.component.html',
   styleUrls: ['./info-cnpj.component.sass']
 })

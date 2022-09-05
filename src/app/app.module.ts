@@ -82,6 +82,11 @@ import { LoginFormComponent } from './modules/pages/area-education/header/login-
 import { StartSearchComponent } from './modules/pages/area-education/start-search/start-search.component';
 import { SignupComponent } from './modules/pages/area-education/signup/signup.component';
 import { AuthInterceptor } from './services/interceptor';
+import { EducationFiltersComponent } from './modules/pages/area-education/search/filters/filters.component';
+import { SearchEducationComponent } from './modules/pages/area-education/search/search.component';
+import { ThemesFilterComponent } from './modules/pages/area-education/search/filters/themes-filter/themes-filter.component';
+import { PeriodFilterComponent } from './modules/pages/area-education/search/filters/period-filter/period-filter.component';
+import { CityFilterComponent } from './modules/pages/area-education/search/filters/city-filter/city-filter.component';
 
 @NgModule({
   declarations: [
@@ -134,6 +139,11 @@ import { AuthInterceptor } from './services/interceptor';
     LoginFormComponent,
     StartSearchComponent,
     SignupComponent,
+    SearchEducationComponent,
+    EducationFiltersComponent,
+    ThemesFilterComponent,
+    PeriodFilterComponent,
+    CityFilterComponent,
   ],
   imports: [
     BrowserModule,

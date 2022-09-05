@@ -1,0 +1,45 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+:host
+  font-family: Lato
+
+.tabs
+  display: flex
+
+  .tab
+    font-size: rem(16)
+    line-height: rem(22)
+    padding-bottom: rem(8)
+    margin-right: rem(16)
+    cursor: pointer
+    border-bottom: rem(4) solid #34333433
+
+    &.active
+      border-bottom: rem(4) solid #594189
+
+.periods
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+  .period
+    font-size: rem(16)
+    line-height: rem(16)
+    padding: rem(16)
+    border: 1px solid rgba(52, 51, 52, 1)
+    border-radius: rem(8)
+    margin-top: rem(20)
+    cursor: pointer
+
+    &.big
+      padding: rem(16) rem(45)
+
+    &.active
+      background-color: #FF8500
+      border: 1px solid #FF8500
+      color: #fff
+
+
+.period-input-edu
+  margin-top: rem(20)

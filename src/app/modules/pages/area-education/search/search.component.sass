@@ -1,0 +1,98 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+  
+.search-header
+  padding: rem(56) 50% rem(56) 20%
+  background-color: #4F3979
+  color: #fff
+  letter-spacing: rem(1.1)
+  background-image: url('/assets/images/education/busca-bg.png')
+  background-repeat: no-repeat
+  background-position: 70% 10%
+  background-size: rem(350)
+  font-family: Lato
+
+.flex
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.btne-primary
+  width: rem(100)
+  height: rem(46)
+  padding: rem(16) rem(24)
+  font-size: rem(16)
+  line-height: rem(14)
+
+.edu-input
+  width: calc(100% - 108px)
+  input
+    letter-spacing: rem(1.1)
+    font-size: rem(18)
+    padding-left: rem(32)
+    color: #fff
+    border-bottom: 1px solid #fff
+    margin-bottom: rem(18)
+
+    &::placeholder
+      opacity: 1
+      color: #fff
+
+  img
+    right: unset
+    left: 0
+    top: rem(11)
+    width: rem(24)
+  
+.advanced
+  cursor: pointer
+  img
+    padding-left: rem(5)
+    transform: translateY(rem(1))
+
+.search-area
+  display: flex
+  font-family: Lato
+  
+  .filters
+    background-color: #F3E9E9
+    width: rem(400)
+    padding: rem(40)
+
+    @media only screen and (max-width: 768px)
+      display: none
+
+  .results
+    width: calc(100vw - 400px)
+    padding: rem(40) 10%
+    background-color: #2D2145
+    min-height: 100vh
+    @media only screen and (max-width: 768px)
+      width: 100vw
+
+  .empty
+    width: 100%
+    display: flex
+    justify-content: center
+    padding-top: 20vh
+
+  .empty-content
+    width: rem(400)
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+    img
+      width: rem(100)
+      margin-bottom: rem(40)
+
+    .text
+      color: #fff
+      font-family: Baloo
+      font-size: rem(22)
+      line-height: rem(26)
+      width: 100%
+      text-align: center
+
+    

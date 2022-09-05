@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CNPJPartner } from 'src/app/interfaces/cnpj';
 
 @Component({
-  selector: 'app-partner',
+  selector: 'edu-partner',
   templateUrl: './partner.component.html',
   styleUrls: ['./partner.component.sass']
 })
