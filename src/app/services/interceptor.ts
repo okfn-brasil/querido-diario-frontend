@@ -52,7 +52,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   handleResponseError(err: HttpErrorResponse, request?: HttpRequest<any>, next?: HttpHandler): Observable<any> {
     const refreshToken = localStorage.getItem(tokenKeys.refresh);
-    if (err.status === 401 && next && request && location.href.includes('educacao') && refreshToken) {
+    if (err.status === 401 && next && request && location.href.includes('educacao') && refreshToken && !request.url.includes('refresh')) {
       return this.refreshToken(refreshToken as string).pipe(
         switchMap(response => {
           localStorage.setItem(tokenKeys.token, (response as RefreshResponse).access);

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login/login.service';
+import { UserService } from 'src/app/stores/user/user.service';
 import { tokenKeys } from '../../utils';
 
 @Component({
@@ -20,6 +21,7 @@ export class LoginFormComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
+    private userService: UserService,
     private router: Router
   ) { }
 
@@ -43,6 +45,7 @@ export class LoginFormComponent implements OnInit {
     this.loading = true;
     this.loginService.login(this.formGroup.value).subscribe(response => {
       this.loading = false;
+      this.userService.setUserInfo(response);
       localStorage.setItem(tokenKeys.token, response.access);
       localStorage.setItem(tokenKeys.refresh, response.refresh);
       this.onLoggedIn.emit();

@@ -15,4 +15,8 @@ export class LoginService {
     };
     return this.http.post(`https://staging.diariodoclima.jurema.la/api/token/`, newForm);
   }
+
+  getUserData() {
+    return this.http.get(`https://staging.diariodoclima.jurema.la/api/accounts/users/me`);
+  }
 }

@@ -8,7 +8,7 @@
           <a><div class="link">Relatórios</div></a>
           <a><div class="link">Sobre</div></a>
           <a><div class="link">Estudos de caso</div></a>
-          <a><div class="link">Busca</div></a>
+          <a routerLink="/educacao/busca"><div class="link">Busca</div></a>
         </div>
 
         <a (click)="openForm()" *ngIf="!isLoggedIn"><div class="login-button">Login / Cadastre-se</div></a>
@@ -29,7 +29,7 @@
       <a><div class="link">Relatórios</div></a>
       <a><div class="link">Sobre</div></a>
       <a><div class="link">Estudos de caso</div></a>
-      <a><div class="link">Busca</div></a>
+      <a routerLink="/educacao/busca"><div class="link">Busca</div></a>
       <a (click)="openForm()" *ngIf="!isLoggedIn"><div class="login-button">Login / Cadastre-se</div></a>
     </div>
   </div>
