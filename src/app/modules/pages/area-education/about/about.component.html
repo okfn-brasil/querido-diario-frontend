@@ -1,0 +1,68 @@
+<edu-header></edu-header>
+<div class="about-education">
+  <app-column class="about-education-area">
+    <ng-template #loading>
+      <app-container fxFill>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+      </app-container>
+    </ng-template>
+    <ng-container *ngIf="content$ | async as content; else loading">
+      <div class="banner container-education">
+        <div class="content">
+          <div class="banner-img desktop">
+            <img src="assets/images/education/typing.png" alt="digitando" />
+          </div>
+          <div class="banner-content">
+            <h2>sobre o quero diário educação</h2>
+            <div class="banner-img mobile">
+              <img src="assets/images/education/typing.png" alt="digitando" />
+            </div>
+            <h1>
+              {{ content.title }}
+            </h1>
+            <p class="sub-title">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis diam vel nisl aliquet aliquam. Donec dignissim massa et erat semper, eu condimentum eros cursus. Etiam convallis sollicitudin faucibus.
+            </p>
+          </div>
+        </div>
+      </div> 
+
+      <div class="objective container-education">
+        <div class="content">
+          <img class="mobile" src="assets/images/education/walking-dog.png" alt="passeando com cachorro" />
+          <div class="title">
+            Nosso propósito é facilitar o acesso a dados sobre o clima para proteger o meio ambiente
+          </div>
+          <img class="desktop" src="assets/images/education/walking-dog.png" alt="passeando com cachorro" />
+        </div>
+      </div>
+
+      <div class="support container-education">
+        <div class="content">
+          <div class="text">
+            <div class="title">Contamos com seu apoio!</div>
+            <div class="subtitle">Você pode se tornar um assinante. Assim, você recebe os benefícios de ser PRO e ainda ajuda o Diário do Clima a abrir os dados de novas cidades e desenvolver novas ferramentas!</div>
+          </div>
+          <button class="btne-primary">Quero assinar</button>
+        </div>
+      </div>
+
+      <div class="education-support">
+        <app-container theme="light">
+          <app-row [gap]="122" [gapXs]="16" [flex]="true">
+            <ng-container *ngFor="let item of content.realization">
+              <app-column [gap]="14">
+                <p>{{ item.title }}</p>
+                <app-row wrap="wrap" [gap]="14">
+                  <ng-container *ngFor="let icon of item.icons">
+                    <app-icon class="realization-icon" [icon]="icon"></app-icon>
+                  </ng-container>
+                </app-row>
+              </app-column>
+            </ng-container>
+          </app-row>
+        </app-container>
+      </div>
+    </ng-container>
+  </app-column>
+</div>

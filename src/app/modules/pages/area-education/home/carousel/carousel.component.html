@@ -1,8 +1,8 @@
 <div class="carousel">
-  <div class="desktop">
+  <div>
     <div class="carousel-items">
-      <div class="button-nav next" (click)="onClickNext()"><img src="assets/images/education/carousel-arrow.png" alt="próximo" /></div>
-      <div class="button-nav prev" (click)="onClickPrev()"><img src="assets/images/education/carousel-arrow.png" alt="anterior" /></div>
+      <div class="button-nav next desktop" (click)="onClickNext()"><img src="assets/images/education/carousel-arrow.png" alt="próximo" /></div>
+      <div class="button-nav prev desktop" (click)="onClickPrev()"><img src="assets/images/education/carousel-arrow.png" alt="anterior" /></div>
       <div class="scroll-area" [ngStyle]="{'width': 'calc((288px * ' + items.length + ') + 24px)', transform: 'translateX(calc(-292px * '+ currPosition +'))'}">
         <div *ngFor="let item of items" class="carousel-item">
           <div class="title">{{item.title}}</div>
@@ -16,24 +16,6 @@
           </a>
         </div>
       </div>
-    </div>
-  </div>
-  
-  <div class="mobile">
-    <div class="mobile-items">
-      <div class="mobile-item" *ngFor="let item of items.slice(0, mobileSize)">
-        <div class="title">{{item.title}}</div>
-          <div class="date">{{item.date}}</div>
-          <a [href]="item.link">
-            Ler mais 
-              <app-icon
-              class='center'
-              [icon]="{ file: 'white-arrow', height: 10, width: 10 }"
-            ></app-icon>
-          </a>
-      </div>
-      <button *ngIf="items.length > mobileSize" (click)="loadMore()" class="btne-primary">Carregar mais</button>
-      <button *ngIf="!(items.length > mobileSize)" (click)="loadLess()" class="btne-primary">Mostrar Menos</button>
     </div>
   </div>
 </div>

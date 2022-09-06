@@ -22,7 +22,7 @@ import { MY_FORMATS } from 'src/app/modules/components/date-picker-range/date-pi
 })
 export class PeriodFilterComponent implements OnInit {
   @Input() initialValue = {
-    since: '',
+    published_since: '',
     until: '',
     period: 0,
   };
@@ -37,13 +37,13 @@ export class PeriodFilterComponent implements OnInit {
   ngOnInit(): void {
     if(this.initialValue.period) {
       this.period = Number(this.initialValue.period);
-    } else if(this.initialValue.since) {
+    } else if(this.initialValue.published_since) {
       this.activeTab = 1;
       this.period = 0;
     }
 
     this.range = new FormGroup({
-      start: new FormControl(new Date(this.initialValue.since) || ''),
+      start: new FormControl(new Date(this.initialValue.published_since) || ''),
       end: new FormControl(new Date(this.initialValue.until) || ''),
     });
   }
@@ -62,12 +62,12 @@ export class PeriodFilterComponent implements OnInit {
     } else {
       sinceDate = new Date('01/01/1000');
     }
-    this.changeDates.emit({since: `${sinceDate.getFullYear()}/${formatMonth(sinceDate.getMonth() + 1)}/${formatMonth(sinceDate.getDate())}`, period: period, until: ''} as GazetteFilters)
+    this.changeDates.emit({published_since: `${sinceDate.getFullYear()}/${formatMonth(sinceDate.getMonth() + 1)}/${formatMonth(sinceDate.getDate())}`, period: period, until: ''} as GazetteFilters)
   }
 
   onRangeSelected() {
     this.changeDates.emit({
-      since: this.range.controls.start.value.format('YYYY/MM/DD'), 
+      published_since: this.range.controls.start.value.format('YYYY/MM/DD'), 
       until: this.range.controls.end.value.format('YYYY/MM/DD'), 
       period: 0
     } as GazetteFilters)

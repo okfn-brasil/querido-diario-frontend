@@ -14,4 +14,8 @@ export class UserService {
     const newUserData = { ...this.store.getValue().userData, ...userData };
     this.store.update({ userData: newUserData });
   }
+
+  resetUser(){
+    this.store.reset();
+  }
 }

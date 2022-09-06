@@ -1,33 +1,30 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { Theme } from 'src/app/interfaces/gazette';
-import { EducationGazettesService } from 'src/app/services/education-gazettes/education-gazettes.service';
 
 @Component({
   selector: 'edu-themes-filter',
   templateUrl: './themes-filter.component.html',
   styleUrls: ['./themes-filter.component.sass']
 })
-export class ThemesFilterComponent implements OnInit {
+export class ThemesFilterComponent implements OnChanges {
   selectedThemes: Theme = {};
   showMoreThemes = false;
-  themes: string[] = [];
+  @Input() themes: string[] = [];
   @Input() initialThemes: string[] = [];
   @Output() themesChange: EventEmitter<string[]> = new EventEmitter();
   
   constructor(
-    private searchService: EducationGazettesService,
   ) { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    if(this.initialThemes && !Array.isArray(this.initialThemes)) {
+      this.initialThemes = [this.initialThemes]
+    }
     if(this.initialThemes && this.initialThemes.length) {
       this.initialThemes.forEach(theme => {
         this.selectedThemes[theme] = true;
       });
     }
-
-    this.searchService.getThemes().subscribe(results => {
-      this.themes = results as string[];
-    });
   }
 
   selectTheme(theme: string) {

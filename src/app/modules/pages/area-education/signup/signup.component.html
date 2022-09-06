@@ -8,6 +8,9 @@
         <div *ngIf="!!errorMessage" class="submit-error">{{errorMessage}}</div>
         <div *ngIf="!step">
           <div class="title">Crie uma conta para começar a buscar no <span>Querido Diário Educação</span></div>
+          <div class="sign-up-image mobile">
+            <img src="assets/images/education/signup.png" alt="cadastro"/>
+          </div>
           <div class="edu-input">
             <input id="name" class="second-type" name="name" formControlName="name" placeholder="Nome"/>
             <label for="name">Nome Completo</label>
@@ -67,10 +70,11 @@
         </div>
 
         <div class="space" *ngIf="step"></div>
+        <hr class="mobile" />
         <button class="btne-primary">Continuar</button>
-        <hr />
+        <hr class="desktop" />
         <div class="terms-text">Ao se cadastrar, você está aceitando os nossos
-
+          <br class="mobile"/>
           <span><a>Termos e condições</a></span>
           <span class="contact"><a>Fale conosco</a></span>
         </div>
@@ -82,7 +86,7 @@
           <span><a routerLink="/educacao" [queryParams]="{login: 'open'}">Faça o login</a></span>
         </div>
       </form>
-      <div class="sign-up-image">
+      <div class="sign-up-image desktop">
         <img src="assets/images/education/signup.png" alt="cadastro"/>
       </div>
     </div>

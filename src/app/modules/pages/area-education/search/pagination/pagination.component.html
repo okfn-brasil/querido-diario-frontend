@@ -1,0 +1,41 @@
+<div class='pagination'>
+  <div>
+    <div class='pagination-container'>
+      <div
+        class="arrow"
+        [ngClass]="currentPage ? 'arrow-area-class' : 'arrow-area-disabled-class'" 
+        (click)="firstPage()"
+      >
+        <img src="assets/icons/pagination-left-double-arrow.svg" alt="seta" />
+      </div>
+      <div 
+        class="arrow desktop"
+        [ngClass]="currentPage ? 'arrow-area-class' : 'arrow-area-disabled-class'" 
+        (click)="previousPage()"
+      >
+        <img src="assets/icons/pagination-left-single-arrow.svg" alt="seta" />
+      </div>
+      <div class="numbers">
+        <ng-container *ngFor="let page of pages()" >
+          <span [class.active]="page === currentPage" class="page-number" *ngIf="page !== undefined" (click)="onClickPage(page)">
+            {{page === null ? '...' : page + 1}}
+          </span>
+        </ng-container>
+      </div>
+      <div 
+        class="arrow desktop"
+        [ngClass]="currentPage < ((listSize / itemsPerPage) - 1) ? 'arrow-area-class' : 'arrow-area-disabled-class'" 
+        (click)="nextPage()"
+      >
+        <img src="assets/icons/pagination-right-single-arrow.svg" alt="seta" />
+      </div>
+      <div 
+        class="arrow"
+        [ngClass]="currentPage < ((listSize / itemsPerPage) - 1) ? 'arrow-area-class' : 'arrow-area-disabled-class'" 
+        (click)="lastPage()"
+      >
+        <img src="assets/icons/pagination-right-double-arrow.svg" alt="seta" />
+      </div>
+    </div>
+  </div>
+</div>
