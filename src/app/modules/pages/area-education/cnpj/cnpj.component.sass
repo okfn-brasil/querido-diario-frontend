@@ -13,6 +13,8 @@
 .cnpj-page
   .cnpj-header
     position: relative
+    @media only screen and (max-width: 768px)
+      padding-bottom: rem(40)
 
   .small-text
     font-size: rem(16)
@@ -20,6 +22,11 @@
     text-transform: uppercase
     color: #6A7784
     margin-bottom: rem(24)
+    
+    @media only screen and (max-width: 768px)
+      font-size: rem(14)
+      line-height: rem(19)
+      margin-bottom: rem(16)
 
   .h2-class
     font-weight: bold
@@ -28,6 +35,10 @@
     color: rgba(94, 64, 143, 1)
     margin-bottom: rem(8)
     font-family: Baloo
+    
+    @media only screen and (max-width: 768px)
+      font-size: rem(22)
+      line-height: rem(26)
 
   .h3-class
     font-weight: bold
@@ -36,6 +47,8 @@
     color: #495057
     margin-bottom: rem(40)
     font-family: Baloo
+    @media only screen and (max-width: 768px)
+      margin-bottom: rem(24)
 
   .search-button
     position: absolute

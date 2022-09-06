@@ -6,10 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class EducationGazettesService {
   currentUrl = 'querido_diario/';
+  itemsPerPage = 4;
   constructor(private http: HttpClient) {}
 
   getAllGazettes(filters: any, currPage: number) {
-    return this.http.get(`https://staging.diariodoclima.jurema.la/api/` + this.currentUrl + 'gazettes/?size=4&');
+    return this.http.get(`https://staging.diariodoclima.jurema.la/api/` + this.currentUrl + `gazettes/?size=${this.itemsPerPage}&offset=${currPage * this.itemsPerPage}&` + filters);
   }
   
   getEntities() {

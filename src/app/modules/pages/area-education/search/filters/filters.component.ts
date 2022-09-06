@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { City } from 'src/app/interfaces/city';
 import { GazetteFilters } from 'src/app/interfaces/education-gazettes';
 import { EducationGazettesService } from 'src/app/services/education-gazettes/education-gazettes.service';
 
@@ -9,11 +10,13 @@ import { EducationGazettesService } from 'src/app/services/education-gazettes/ed
   styleUrls: ['./filters.component.sass']
 })
 export class EducationFiltersComponent implements OnInit {
+  @Input() apiThemes: string[] = [];
+  @Input() apiCities: City[] = [];
   entities: string[] = [];
   themes: string[] = [];
   locations: string[] = [];
   dates = {
-    since: '',
+    published_since: '',
     until: '',
     period: 0,
   };
@@ -44,7 +47,7 @@ export class EducationFiltersComponent implements OnInit {
     this.dates = {
       period: this.filters.period || 0,
       until: this.filters.until ? this.filters.until.toString() : '',
-      since: this.filters.since ? this.filters.since.toString() : '',
+      published_since: this.filters.published_since ? this.filters.published_since.toString() : '',
     };
   }
 
@@ -54,14 +57,14 @@ export class EducationFiltersComponent implements OnInit {
       entities: this.formGroup.controls.entities.value ? [this.formGroup.controls.entities.value] : null,
       local: this.locations,
       until: this.filters.until,
-      since: this.filters.since,
+      published_since: this.filters.published_since,
       period: this.filters.period,
     } as GazetteFilters);
   }
 
   onChangeDates(dates: GazetteFilters) {
     this.filters.until = dates.until? dates.until.toString() : '';
-    this.filters.since = dates.since? dates.since.toString() : '';
+    this.filters.published_since = dates.published_since? dates.published_since.toString() : '';
     this.filters.period = dates.period || 0;
     this.onChangeFilters();
   }

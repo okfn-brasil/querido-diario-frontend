@@ -9,6 +9,8 @@
     display: flex
     flex-wrap: no-wrap
     justify-content: space-between
+    @media only screen and (max-width: 768px)
+      display: block
 
   .title
     font-family: Baloo
@@ -29,6 +31,8 @@
 
   form
     width: 45%
+    @media only screen and (max-width: 768px)
+      width: 100%
 
   .space
     padding: rem(6)
@@ -36,6 +40,9 @@
   .sign-up-image
     width: 52%
     height: unset
+    @media only screen and (max-width: 768px)
+      width: 100%
+      margin-bottom: rem(35)
 
     img
       width: 100%
@@ -66,16 +73,33 @@
           background-color: #15b115
 
   .btne-primary
+    @media only screen and (max-width: 768px)
+      width: 100%
 
   hr
     margin: rem(16) 0
     border: 1px solid rgba(208, 207, 207, 1)
     border-bottom: 0
 
+
+  hr.mobile
+    margin-bottom: rem(24)
+
+  .terms-text
+    @media only screen and (max-width: 768px)
+      margin-top: rem(24)
+
+  .login-link
+     @media only screen and (max-width: 768px)
+        margin-top: rem(24)
+
   .login-link, .terms-text
     font-size: rem(12)
     line-height: rem(19)
     color: rgba(52, 51, 52, 1)
+    
+    @media only screen and (max-width: 768px)
+      text-align: center
 
     span a
       font-size: rem(12)

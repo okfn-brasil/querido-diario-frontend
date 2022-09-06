@@ -4,6 +4,7 @@
 .carousel-items
   width: 100%
   position: relative
+  font-family: Lato
 
   .button-nav
     position: absolute
@@ -37,10 +38,6 @@
     position: relative
     font-family: Lato
 
-.btne-primary
-  width: 100%
-  margin-top: rem(16)
-
 .title
   font-size: rem(18)
   line-height: rem(25)
@@ -61,29 +58,33 @@ a
   app-icon
     margin-left: rem(8)
 
-.mobile-items
-  .mobile-item
-    margin-top: rem(8)
-    border-radius: 4px 4px 24px 4px
-    padding: rem(16)
-    width: 100%
-    position: relative
-    font-family: Lato
+@media only screen and (max-width: 768px)
+  .carousel-items
+    overflow: auto
+    
+    .carousel-item
+      margin-top: rem(8)
+      border-radius: 4px 4px 24px 4px
+      padding: rem(16)
+      width: 100%
+      position: relative
+      font-family: Lato
+      height: unset
 
-    .title
-      font-size: rem(16)
-      line-height: rem(19)
+      .title
+        font-size: rem(16)
+        line-height: rem(19)
 
-    .date
-      font-size: rem(12)
-      line-height: rem(14)
-      padding-bottom: rem(48)
+      .date
+        font-size: rem(12)
+        line-height: rem(14)
+        padding-bottom: rem(48)
 
-    a
-      right: rem(16)
-      bottom: rem(16)
+      a
+        right: rem(16)
+        bottom: rem(16)
 
-.mobile-item, .carousel-item
+.carousel-item
   &:nth-child(1n+1) 
     background-color: rgba(89, 65, 137, 1)
 

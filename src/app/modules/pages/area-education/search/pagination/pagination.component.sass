@@ -1,0 +1,50 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.pagination 
+  position: relative
+  margin-top: 24px
+
+  .pagination-container
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+
+.arrow
+  border: 1px solid #5E3F8E
+  border-radius: 50%
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: rem(4)
+  margin: 0 rem(4)
+
+  &.desktop
+    @media only screen and (max-width: 768px)
+      display: none
+
+.numbers
+  margin: 0 rem(5)
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  @media only screen and (max-width: 768px)
+    margin: 0 rem(2)
+
+.page-number
+  color: #948395
+  font-size: rem(14)
+  padding: rem(8) rem(14)
+  border-radius: rem(20)
+  cursor: pointer
+  font-weight: bold
+  font-family: Lato
+  
+  @media only screen and (max-width: 768px)
+    padding: rem(4) rem(10)
+
+  &.active
+    color: #fff
+    border: 1px solid #FF8500

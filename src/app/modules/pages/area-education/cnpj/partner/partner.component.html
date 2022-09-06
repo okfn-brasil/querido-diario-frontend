@@ -4,11 +4,11 @@
     {{name}}
   </div>
     <div *ngIf="isOpen" class='partner-infos-items'>
-      <div *ngFor="let key of keys">
+      <ng-container *ngFor="let key of keys">
         <div class='partner-info-item' *ngIf="data && data[key]">
           <div class='info-name'>{{key}}</div>
           <div class='info-text'>{{data[key]}}</div>
         </div>
-      </div>
+      </ng-container>
   </div>
 </div>

@@ -4,6 +4,12 @@ export interface GazetteResponse {
   total_excerpts: number;
 }
 
+export enum OrderFilter {
+  relevance = 'relevance',
+  descending_date = 'descending_date',
+  ascending_date = 'ascending_date',
+}
+
 export interface GazetteModel {
   date: string;
   edition: string;
@@ -25,7 +31,7 @@ export interface GazetteFilters {
   sort_by: string | undefined;
   size: number;
   until?: string | Date;
-  since?: string | Date;
+  published_since?: string | Date;
   local?: string[];
   subthemes?: string[];
   entities?: string[] | string;
@@ -44,7 +50,7 @@ export const parseGazettes = (gazettes: GazetteModel[], query: string) => {
       const cnpjIndex = textFragment.indexOf('</~~~>');
       if (cnpjIndex > 0) {
         const cnpj = textFragment.slice(0, cnpjIndex).trim();
-        newText += `<a href='/cnpjs/${removeSpecialChars(cnpj).replace(/b/g, '')}'>${textFragment}`;
+        newText += `<a class="education-gazette-link" href='/educacao/cnpj/${removeSpecialChars(cnpj).replace(/b/g, '')}'>${textFragment}`;
       } else {
         newText += textFragment;
       }

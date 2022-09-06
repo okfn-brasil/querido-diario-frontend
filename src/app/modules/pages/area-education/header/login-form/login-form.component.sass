@@ -60,6 +60,8 @@
       line-height: rem(25)
       color: #495057
       margin-bottom: rem(40)
+      @media only screen and (max-width: 960px)
+        margin-bottom: rem(65)
 
     .submit
       color: #fff
@@ -71,6 +73,11 @@
       font-size: rem(20)
       margin: rem(15) 0 rem(40) 0
       cursor: pointer
+      @media only screen and (max-width: 960px)
+        padding: rem(16) 0
+        font-size: rem(16)
+        font-weight: bold
+        margin-bottom: rem(16)
 
       &:disabled
         opacity: 0.4
@@ -85,6 +92,10 @@
 
     .create-account
       margin-bottom: rem(21)
+
+      .link
+        @media only screen and (max-width: 960px)
+          margin-left: rem(5)
 
     .create-account, .forgot-link, .link
       text-align: center

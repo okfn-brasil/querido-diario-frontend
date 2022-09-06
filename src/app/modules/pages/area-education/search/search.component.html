@@ -1,27 +1,69 @@
+<edu-header></edu-header>
 <div class="search-page">
   <div class="search-header">
     <div class="flex">
       <div class="edu-input">
-        <input [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Encontre um..."/>
+        <input class="desktop" [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Encontre um..."/>
+        <input (keyup)="onChangeQuery()" class="mobile" [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Encontre um..."/>
         <img src="assets/images/education/search.png" alt="buscar" />
       </div>
       <button (click)="onChangeQuery()" class="btne-primary">Buscar</button>
     </div>
     <div class="advanced">Busca avançada <img src="assets/icons/right-arrow-white.svg" alt="buscar" /></div>
+    <div class="mobile ">
+      <div class="mobile-buttons">
+        <button (click)="openFilters()" class="open-filters">Filtros</button>
+        <button class="create-alert">Criar alerta</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="filters mobile" *ngIf="showMobileFilters">
+    <div class="filters-header">
+      <img (click)="closeFilters()" src="assets/icons/close-icon.svg" alt="buscar" />
+      <div (click)="closeFilters()" class="title">Filtros</div>
+    </div>
+    <div class="filters-fields">
+      <edu-filters [apiThemes]="themes" [apiCities]="cities" [filters]="filters" (changeFilters)="onChangeFilters($event)"></edu-filters>
+    </div>
   </div>
 
   <div class="search-area">
     <div class="filters">
-      <edu-filters [filters]="filters" (changeFilters)="onChangeFilters($event)"></edu-filters>
+      <edu-filters [apiThemes]="themes" [apiCities]="cities" [filters]="filters" (changeFilters)="onChangeFilters($event)"></edu-filters>
     </div>
     <div class="results">
-      <div class="empty">
+      <div class="loading-search" *ngIf="isLoading">
+        <mat-spinner></mat-spinner>
+      </div> 
+      <div class="empty" *ngIf="!isLoading && !hasSearched">
         <div class="empty-content">
           <img src="assets/images/education/busca.png" alt="buscar" />
           <div class="text">Busque por palavras-chave ou utilize os filtros para encontrar resultados</div>
         </div>
       </div>
 
+      <div class="items" *ngIf="totalItems && hasSearched">
+        <div class="results-header">
+          <div class="flex result-flex">
+            <div class="result-count">{{totalItems}} resultados encontrados</div>
+            <div class="select-order">
+              <select [(ngModel)]="order" (change)="onChangeOrder()">
+                <option *ngFor="let option of orderList" [value]="option.value">{{option.label}}</option>
+              </select>
+            </div>
+          </div>
+          <button class="create-alert desktop">Criar alerta</button>
+        </div>
+        <edu-search-item *ngFor="let item of results[listPageIntern]" [gazette]="item"></edu-search-item>
+        <edu-pagination [listSize]="totalItems" [currentPage]="currPage" (changePage)="onChangePage($event)"></edu-pagination>
+      </div>
+
+      <div class="empty" *ngIf="!isLoading && hasSearched && !totalItems">
+        <div class="empty-content">
+          <div class="text">Não foram encontrados resultados para sua busca.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

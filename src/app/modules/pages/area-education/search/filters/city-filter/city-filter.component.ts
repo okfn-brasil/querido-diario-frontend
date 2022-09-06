@@ -1,14 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { City } from 'src/app/interfaces/city';
-import { CitiesService } from 'src/app/services/cities/cities.service';
 
 @Component({
   selector: 'edu-city-filter',
   templateUrl: './city-filter.component.html',
   styleUrls: ['./city-filter.component.sass']
 })
-export class CityFilterComponent implements OnInit {
-  cities: City[] = [];
+export class CityFilterComponent implements OnChanges {
+  @Input() cities: City[] = [];
   selectedCities: City[] = [];
   showPlaceholder = true;
   query = '';
@@ -16,7 +15,6 @@ export class CityFilterComponent implements OnInit {
   @Output() changeLocations: EventEmitter<string[]> = new EventEmitter();
 
   constructor(
-    private citiesService: CitiesService,
   ) { }
 
   getText() {
@@ -77,13 +75,9 @@ export class CityFilterComponent implements OnInit {
     return [];
   }
 
-  ngOnInit(): void {
-    this.citiesService.getAll().subscribe(cities => {
-      this.cities = cities.cities as City[];
-      console.log(this.initialValue)
-      if(this.initialValue && this.initialValue.length) {
-        this.selectedCities = this.cities.filter(city => this.initialValue.includes(city.territory_id))
-      }
-    });
+  ngOnChanges(): void {
+    if(this.initialValue && this.initialValue.length) {
+      this.selectedCities = this.cities.filter(city => this.initialValue.includes(city.territory_id))
+    }
   }
 }

@@ -87,6 +87,9 @@ import { SearchEducationComponent } from './modules/pages/area-education/search/
 import { ThemesFilterComponent } from './modules/pages/area-education/search/filters/themes-filter/themes-filter.component';
 import { PeriodFilterComponent } from './modules/pages/area-education/search/filters/period-filter/period-filter.component';
 import { CityFilterComponent } from './modules/pages/area-education/search/filters/city-filter/city-filter.component';
+import { AboutEducationComponent } from './modules/pages/area-education/about/about.component';
+import { ItemEducationComponent } from './modules/pages/area-education/search/item/item.component';
+import { EduPaginationComponent } from './modules/pages/area-education/search/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -144,6 +147,9 @@ import { CityFilterComponent } from './modules/pages/area-education/search/filte
     ThemesFilterComponent,
     PeriodFilterComponent,
     CityFilterComponent,
+    AboutEducationComponent,
+    ItemEducationComponent,
+    EduPaginationComponent,
   ],
   imports: [
     BrowserModule,

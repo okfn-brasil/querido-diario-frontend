@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserModel } from 'src/app/interfaces/account';
 import { LoginService } from 'src/app/services/login/login.service';
 import { UserQuery } from 'src/app/stores/user/user.query';
@@ -14,11 +14,12 @@ import { tokenKeys } from '../utils';
 export class HeaderEducationComponent implements OnInit {
   mobileMenuOpen = false;
   showForm = false;
-  isLoggedIn = true;
+  isLoggedIn = false;
   userData: UserModel = {};
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private loginService: LoginService,
     private userService: UserService,
     private userQuery: UserQuery,
@@ -51,6 +52,15 @@ export class HeaderEducationComponent implements OnInit {
     }
   }
 
+  onClickLogout() {
+    localStorage.removeItem(tokenKeys.token);
+    localStorage.removeItem(tokenKeys.refresh);
+    this.mobileMenuOpen = false;
+    this.isLoggedIn = false;
+    this.userService.resetUser();
+    this.router.navigate(['/educacao'], {queryParams: {login: 'open'}});
+  }
+
   onLogged() {
     this.isLoggedIn = true;
   }
@@ -64,6 +74,7 @@ export class HeaderEducationComponent implements OnInit {
   }
 
   openForm() {
+    this.mobileMenuOpen = false;
     this.showForm = true;
   }
 }
