@@ -12,7 +12,6 @@ import { tokenKeys } from '../utils';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderEducationComponent implements OnInit {
-  mobileMenuOpen = false;
   showForm = false;
   isLoggedIn = false;
   userData: UserModel = {};
@@ -42,6 +41,10 @@ export class HeaderEducationComponent implements OnInit {
         this.isLoggedIn = true;
       }
     });
+
+    this.userQuery.loginFormOpen$.subscribe(isOpen => {
+      this.showForm = isOpen;
+    });
   }
 
   getUserInfo() {
@@ -55,7 +58,6 @@ export class HeaderEducationComponent implements OnInit {
   onClickLogout() {
     localStorage.removeItem(tokenKeys.token);
     localStorage.removeItem(tokenKeys.refresh);
-    this.mobileMenuOpen = false;
     this.isLoggedIn = false;
     this.userService.resetUser();
     this.router.navigate(['/educacao'], {queryParams: {login: 'open'}});
@@ -65,16 +67,11 @@ export class HeaderEducationComponent implements OnInit {
     this.isLoggedIn = true;
   }
 
-  onClickMenu() {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
-  }
-
   onCloseLoginModal(value: boolean) {
-    this.showForm = value;
+    this.userService.setLoginFormOpen(value);
   }
 
   openForm() {
-    this.mobileMenuOpen = false;
-    this.showForm = true;
+    this.userService.setLoginFormOpen(true);
   }
 }

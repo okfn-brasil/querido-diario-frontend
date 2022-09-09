@@ -9,6 +9,7 @@ import { Theme } from 'src/app/interfaces/gazette';
 export class ThemesFilterComponent implements OnChanges {
   selectedThemes: Theme = {};
   showMoreThemes = false;
+  @Input() isModal = false;
   @Input() themes: string[] = [];
   @Input() initialThemes: string[] = [];
   @Output() themesChange: EventEmitter<string[]> = new EventEmitter();

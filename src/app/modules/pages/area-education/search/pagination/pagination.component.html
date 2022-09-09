@@ -1,15 +1,15 @@
-<div class='pagination'>
+<div class='pagination' [class.inverted]="inverted">
   <div>
     <div class='pagination-container'>
       <div
-        class="arrow"
+        class="arrow desktop"
         [ngClass]="currentPage ? 'arrow-area-class' : 'arrow-area-disabled-class'" 
         (click)="firstPage()"
       >
         <img src="assets/icons/pagination-left-double-arrow.svg" alt="seta" />
       </div>
       <div 
-        class="arrow desktop"
+        class="arrow"
         [ngClass]="currentPage ? 'arrow-area-class' : 'arrow-area-disabled-class'" 
         (click)="previousPage()"
       >
@@ -23,14 +23,14 @@
         </ng-container>
       </div>
       <div 
-        class="arrow desktop"
+        class="arrow"
         [ngClass]="currentPage < ((listSize / itemsPerPage) - 1) ? 'arrow-area-class' : 'arrow-area-disabled-class'" 
         (click)="nextPage()"
       >
         <img src="assets/icons/pagination-right-single-arrow.svg" alt="seta" />
       </div>
       <div 
-        class="arrow"
+        class="arrow desktop"
         [ngClass]="currentPage < ((listSize / itemsPerPage) - 1) ? 'arrow-area-class' : 'arrow-area-disabled-class'" 
         (click)="lastPage()"
       >

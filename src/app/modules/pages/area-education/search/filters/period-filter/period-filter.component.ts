@@ -62,13 +62,13 @@ export class PeriodFilterComponent implements OnInit {
     } else {
       sinceDate = new Date('01/01/1000');
     }
-    this.changeDates.emit({published_since: `${sinceDate.getFullYear()}/${formatMonth(sinceDate.getMonth() + 1)}/${formatMonth(sinceDate.getDate())}`, period: period, until: ''} as GazetteFilters)
+    this.changeDates.emit({published_since: `${sinceDate.getFullYear()}-${formatMonth(sinceDate.getMonth() + 1)}-${formatMonth(sinceDate.getDate())}`, period: period, until: ''} as GazetteFilters)
   }
 
   onRangeSelected() {
     this.changeDates.emit({
-      published_since: this.range.controls.start.value.format('YYYY/MM/DD'), 
-      until: this.range.controls.end.value.format('YYYY/MM/DD'), 
+      published_since: this.range.controls.start.value.format('YYYY-MM-DD'), 
+      until: this.range.controls.end.value.format('YYYY-MM-DD'), 
       period: 0
     } as GazetteFilters)
   }

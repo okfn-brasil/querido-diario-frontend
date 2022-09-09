@@ -11,7 +11,7 @@ export class CitiesService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.http.get(`${API}/cities?evels=3`).pipe(
+    return this.http.get(`${API}/cities?levels=3`).pipe(
       map((data) => {
         return data;
       })

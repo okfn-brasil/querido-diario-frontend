@@ -51,9 +51,6 @@
     font-weight: bold
     border-radius: rem(30)
 
-.suspended-menu
-  display: none
-
 a
   color: #fff
 
@@ -61,68 +58,11 @@ a
   .desktop
     display: none
 
+  .mobile
+    display: block
+
   .edu-header
     .title
       font-family: Baloo
       font-size: rem(18)
       line-height: rem(18)
-
-  .suspended-menu
-    display: block
-    position: absolute
-    top: 100%
-    left: 0
-    width: 100%
-    background-color: #4F3979
-    z-index: 9999
-
-    .link
-      padding: rem(20) rem(24)
-      margin: 0
-      line-height: rem(16)
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1)
-
-      &:last-of-type
-        border-bottom: 0
-
-      img
-        float: right
-        padding-top: rem(3)
-        width: rem(10)
-
-    .user-name, .logout, .login
-      background-color: rgba(234, 217, 242, 1)
-      color: rgba(52, 51, 52, 1)
-      
-      border-top: 1px solid rgba(52, 51, 52, 0.2)
-
-      img
-        filter: brightness(0)
-
-    .user-name
-      font-size: rem(16)
-      font-weight: bold
-      border-top: 0
-      
-
-  .mobile
-    display: flex
-    align-items: center
-    justify-content: space-between
-
-  .edu-header
-    padding: rem(20)
-    position: relative
-
-  .menu
-    width: rem(18)
-    cursor: pointer
-
-    div
-      background-color: #fff
-      height: rem(2)
-      width: 100%
-      margin-bottom: rem(3)
-
-      &:last-of-type
-        margin: 0

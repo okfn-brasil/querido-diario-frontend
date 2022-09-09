@@ -9,6 +9,7 @@ export class EduPaginationComponent implements OnInit {
   @Input() listSize: number = 0;
   @Input() itemsPerPage: number = 4;
   @Input() currentPage: number = 0;
+  @Input() inverted = false;
   @Output() changePage : EventEmitter<number> = new EventEmitter();
 
   constructor() { }

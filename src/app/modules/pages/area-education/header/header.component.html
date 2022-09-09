@@ -11,7 +11,7 @@
         </div>
 
         <div class="logged" *ngIf="userData.full_name">
-          <div class="logged-link">Meus alertas</div>
+          <a routerLink="/educacao/alertas"><div class="logged-link">Meus alertas</div></a>
           <div class="user-name">Olá, {{userData.full_name.split(' ')[0]}}</div>
         </div>
         <a (click)="openForm()" *ngIf="!isLoggedIn"><div class="login-button">Login / Cadastre-se</div></a>
@@ -21,22 +21,5 @@
 
   <div class="mobile">
     <a routerLink="/educacao"><div class="title">Tecnologias da Educação</div></a>
-
-    <div class="menu" (click)="onClickMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <div class="suspended-menu" *ngIf="mobileMenuOpen">
-      <div *ngIf="userData.full_name" class="user-name link">Olá, {{userData.full_name.split(' ')[0]}}</div>
-      <a *ngIf="userData.full_name"><div class="link logout">Meus alertas <img src="assets/icons/right-arrow-white.svg" alt="acessar" /></div></a>
-      <a *ngIf="userData.full_name"><div (click)="onClickLogout()" class="link logout">Logout <img src="assets/icons/right-arrow-white.svg" alt="acessar" /></div></a>
-      <a *ngIf="!userData.full_name"><div (click)="openForm()" class="link login">Login / Cadastre-se <img src="assets/icons/right-arrow-white.svg" alt="acessar" /></div></a>
-      
-      <a routerLink="/educacao/sobre"><div class="link">Sobre <img src="assets/icons/right-arrow-white.svg" alt="acessar" /></div></a>
-      <a><div class="link">Estudos de caso <img src="assets/icons/right-arrow-white.svg" alt="acessar" /></div></a>
-      <a routerLink="/educacao/busca"><div class="link">Busca <img src="assets/icons/right-arrow-white.svg" alt="acessar" /></div></a>
-    </div>
   </div>
 </div>

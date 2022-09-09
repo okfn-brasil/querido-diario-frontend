@@ -4,6 +4,7 @@ import { UserModel } from 'src/app/interfaces/account';
 
 export interface UserState {
   userData: UserModel;
+  loginFormOpen: boolean;
 }
 
 @Injectable({ providedIn: 'root' })

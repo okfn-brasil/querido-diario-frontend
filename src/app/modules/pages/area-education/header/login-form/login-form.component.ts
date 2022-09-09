@@ -45,9 +45,9 @@ export class LoginFormComponent implements OnInit {
     this.loading = true;
     this.loginService.login(this.formGroup.value).subscribe(response => {
       this.loading = false;
-      this.userService.setUserInfo(response);
       localStorage.setItem(tokenKeys.token, response.access);
       localStorage.setItem(tokenKeys.refresh, response.refresh);
+      this.setUserInfo();
       this.onLoggedIn.emit();
       this.onClickClose();
       this.router.navigate([], {queryParams: {}});
@@ -55,6 +55,12 @@ export class LoginFormComponent implements OnInit {
       this.loading = false;
       this.errorMessage = 'Ocorreu um erro ao tentar logar, verifique suas credenciais e tente novamente.';
     })
+  }
+
+  setUserInfo() {
+    this.loginService.getUserData().subscribe(response => {
+      this.userService.setUserInfo(response);
+    });
   }
 
 }

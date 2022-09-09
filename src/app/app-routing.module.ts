@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './modules/pages/about/about.component';
 import { AccessLevelsComponent } from './modules/pages/access-levels/access-levels.component';
 import { AboutEducationComponent } from './modules/pages/area-education/about/about.component';
+import { AlertsComponent } from './modules/pages/area-education/alerts/alerts.component';
 import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.component';
 import { HomeEducacaoComponent } from './modules/pages/area-education/home/home.component';
 import { SearchEducationComponent } from './modules/pages/area-education/search/search.component';
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'educacao/cadastrar', component: SignupComponent },
   { path: 'educacao/busca', component: SearchEducationComponent },
   { path: 'educacao/sobre', component: AboutEducationComponent },
+  { path: 'educacao/alertas', component: AlertsComponent },
 ];
 
 @NgModule({

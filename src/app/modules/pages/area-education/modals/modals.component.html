@@ -1,0 +1,11 @@
+<div class="modal-area">
+  <div class="modal-content">
+    <div class="header" (click)="onClickClose()">
+      <img src="assets/icons/close-icon.svg" alt="fechar" />
+      <div class="title" *ngIf="title">{{title}}</div>
+    </div>
+    <div class="body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
