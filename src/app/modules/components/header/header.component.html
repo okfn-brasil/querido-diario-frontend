@@ -1,4 +1,4 @@
-<app-row>
+<app-row class="row-header">
   <header fxLayout="row">
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
@@ -22,16 +22,6 @@
 
 
 <div class="suspended-menu" *ngIf="mobileMenuOpen" (click)="onClickLink()">
-  <header fxLayout="row">
-    <div class="container">
-      <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
-      <a (click)="openDialog()" id="support" fxHide fxHide.xs="false">
-        <mat-icon svgIcon="bars" class="bars"></mat-icon>
-      </a>
-    </div>
-    <app-modal fxHide> </app-modal>
-    <app-notifications fxHide></app-notifications>
-  </header>
   <a routerLink="/" #explore><div class="link bg-white">
     Explore
   </div></a>
@@ -42,7 +32,7 @@
     Sobre o querido diário 
   </div></a>
 
-  <div class="link divider">Tecnologias da Educação</div>
+  <a routerLink="/educacao/"><div class="link divider">Tecnologias da Educação</div></a>
   <div *ngIf="userData.full_name" class="user-name link">
     Olá, {{userData.full_name.split(' ')[0]}}
   </div>
