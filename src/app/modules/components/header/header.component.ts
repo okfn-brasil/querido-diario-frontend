@@ -51,7 +51,11 @@ export class HeaderComponent implements OnInit {
 
   openForm() {
     this.mobileMenuOpen = false;
-    this.userService.setLoginFormOpen(true);
+    if(location.href.includes('educacao')) {
+      this.userService.setLoginFormOpen(true);
+    } else {
+      this.router.navigate(['/educacao'], {queryParams: {login: 'open'}});
+    }
   }
 
   onClickLink() {
