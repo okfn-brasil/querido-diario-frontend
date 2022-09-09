@@ -15,6 +15,10 @@ export class UserService {
     this.store.update({ userData: newUserData });
   }
 
+  setLoginFormOpen(value: boolean) {
+    this.store.update({ loginFormOpen: value });
+  }
+
   resetUser(){
     this.store.reset();
   }

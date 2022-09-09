@@ -12,6 +12,7 @@ import { EducationGazettesService } from 'src/app/services/education-gazettes/ed
 export class EducationFiltersComponent implements OnInit {
   @Input() apiThemes: string[] = [];
   @Input() apiCities: City[] = [];
+  @Input() isModal = false;
   entities: string[] = [];
   themes: string[] = [];
   locations: string[] = [];
@@ -52,9 +53,17 @@ export class EducationFiltersComponent implements OnInit {
   }
 
   onChangeFilters() {
+    let entitie;
+
+    if(this.formGroup.controls.entities.value) {
+      entitie = Array.isArray(this.formGroup.controls.entities.value) ? 
+      this.formGroup.controls.entities.value 
+      : [this.formGroup.controls.entities.value];
+    }
+
     this.changeFilters.emit({
       subthemes: this.themes,
-      entities: this.formGroup.controls.entities.value ? [this.formGroup.controls.entities.value] : null,
+      entities: entitie ? entitie : null,
       local: this.locations,
       until: this.filters.until,
       published_since: this.filters.published_since,

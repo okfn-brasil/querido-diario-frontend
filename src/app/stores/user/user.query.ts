@@ -11,4 +11,5 @@ export class UserQuery extends Query<UserState> {
   }
 
   userData$ = this.select('userData');
+  loginFormOpen$ = this.select('loginFormOpen');
 }

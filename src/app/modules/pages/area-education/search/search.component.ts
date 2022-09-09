@@ -33,6 +33,7 @@ export class SearchEducationComponent implements OnInit {
   listPageIntern = 0;
   themes: string[] = [];
   cities: City[] = [];
+  isOpenAlertModal = false;
 
   constructor(
     private searchService: EducationGazettesService,
@@ -61,6 +62,12 @@ export class SearchEducationComponent implements OnInit {
     this.onChangeFilters(this.filters);
   }
 
+  onEnter(event?: KeyboardEvent) {
+    if(event && event.key === 'Enter') {
+      this.onChangeFilters(this.filters);
+    }
+  }
+
   onChangeOrder() {
     this.onChangeFilters(this.filters);
   }
@@ -74,6 +81,10 @@ export class SearchEducationComponent implements OnInit {
       const nResponse = response as GazetteResponse;
       this.totalItems = nResponse.total_excerpts;
       this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.query as string);
+    }, () => {
+      this.isLoading = false;
+      this.totalItems = 0;
+      this.hasSearched = true;
     });
   }
 
@@ -142,5 +153,13 @@ export class SearchEducationComponent implements OnInit {
     setTimeout(() => {
       this.showMobileFilters = true;
     }, 10);
+  }
+
+  onCloseCreate() {
+    this.isOpenAlertModal = false;
+  }
+
+  onOpenCreateAlert() {
+    this.isOpenAlertModal = true;
   }
 }

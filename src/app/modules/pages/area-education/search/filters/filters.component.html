@@ -1,11 +1,11 @@
-<form class="filters-area" [formGroup]="formGroup">
+<form class="filters-area" [formGroup]="formGroup" [class.in-modal]="isModal">
   <div class="field">
     <div class="title">Município</div>
     <div class="label">Digite um local</div>
     <edu-city-filter [cities]="apiCities" [initialValue]="locations" (changeLocations)="onChangeLocations($event)"></edu-city-filter>
   </div>
 
-  <div class="field">
+  <div class="field" *ngIf="!isModal">
     <div class="title">Período de tempo</div>
     <edu-period-filter [initialValue]="dates" (changeDates)="onChangeDates($event)"></edu-period-filter>
   </div>
@@ -13,7 +13,7 @@
   <div class="field">
     <div class="title theme">Tema</div>
     <div class="sub-title">Aqui uma descrição breve do que são e de como funcionam os temas</div>
-    <edu-themes-filter [themes]="apiThemes" [initialThemes]="themes" (themesChange)="onChangeThemes($event)"></edu-themes-filter>
+    <edu-themes-filter [isModal]="isModal" [themes]="apiThemes" [initialThemes]="themes" (themesChange)="onChangeThemes($event)"></edu-themes-filter>
   </div>
 
   <div class="field">

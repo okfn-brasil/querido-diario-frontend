@@ -10,6 +10,7 @@ html
 
 body
   background: #2C1338
+  position: relative
 
 mat-spinner
   position: absolute
@@ -260,6 +261,30 @@ mat-icon
     padding: rem(48) rem(16)
 
 // education-area
+
+.loading-area-edu
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  display: flex
+  background-color: rgba(0,0,0, 0.5)
+  z-index: 999
+
+.modal-education-buttons
+  .btne-primary
+    font-size: rem(16)
+    font-weight: bold
+    padding: rem(16) rem(24)
+
+    &.purple
+      margin-left: rem(16)
+      background-color: rgba(234, 217, 242, 1)
+      color: rgba(44, 19, 56, 1)
+      @media only screen and (max-width: 768px)
+        margin-left: 0
+        margin-top: rem(8)
 
 a.education-gazette-link
   color: #000

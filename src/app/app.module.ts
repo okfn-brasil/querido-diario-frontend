@@ -90,6 +90,11 @@ import { CityFilterComponent } from './modules/pages/area-education/search/filte
 import { AboutEducationComponent } from './modules/pages/area-education/about/about.component';
 import { ItemEducationComponent } from './modules/pages/area-education/search/item/item.component';
 import { EduPaginationComponent } from './modules/pages/area-education/search/pagination/pagination.component';
+import { AlertModalComponent } from './modules/pages/area-education/alerts/alert-modal/alert-modal.component';
+import { AlertsComponent } from './modules/pages/area-education/alerts/alerts.component';
+import { AlertItemComponent } from './modules/pages/area-education/alerts/alert-item/alert-item.component';
+import { ModalsComponent } from './modules/pages/area-education/modals/modals.component';
+import { EditEmailComponent } from './modules/pages/area-education/alerts/edit-email/edit-email.component';
 
 @NgModule({
   declarations: [
@@ -150,6 +155,11 @@ import { EduPaginationComponent } from './modules/pages/area-education/search/pa
     AboutEducationComponent,
     ItemEducationComponent,
     EduPaginationComponent,
+    AlertModalComponent,
+    AlertsComponent,
+    AlertItemComponent,
+    ModalsComponent,
+    EditEmailComponent,
   ],
   imports: [
     BrowserModule,
