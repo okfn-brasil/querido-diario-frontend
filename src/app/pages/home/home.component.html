@@ -126,15 +126,15 @@
     </app-container>
 
     <app-container theme="light">
-      <app-row [gap]="122" [gapXs]="16" [flex]="true">
+      <app-row [gap]="70" [gapXs]="16" [flex]="true">
         <ng-container *ngFor="let item of content.realization">
           <app-column [gap]="34">
             <p>{{ item.title }}</p>
-            <app-row [gap]="34">
+            <div fxLayout="row wrap" fxLayoutGap="34px grid">
               <ng-container *ngFor="let icon of item.icons">
                 <app-icon [icon]="icon"></app-icon>
               </ng-container>
-            </app-row>
+            </div>
           </app-column>
         </ng-container>
       </app-row>

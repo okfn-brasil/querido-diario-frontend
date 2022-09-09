@@ -32,7 +32,7 @@
           "width": 52
         },
         {
-          "file": "logo_empatia",
+          "file": "empatia",
           "height": 16,
           "width": 87
         }
@@ -51,12 +51,33 @@
     },
     {
       "title": "Armazenamento e hospedagem",
-      "text": "A plataforma está hospedada na <a href=\"https://www.digitalocean.com/\" target=\"_blank\">DigitalOcean</a>, que é apoiadora de longa data do Querido Diário e da OperaçãoSerenata de Amor.",
+      "text": "A plataforma está hospedada na <a href=\"https://www.digitalocean.com/\" target=\"_blank\">DigitalOcean</a>, que é apoiadora de longa data do Querido Diário e da Operação Serenata de Amor.",
       "icons": [
         {
           "file": "digital_ocean",
           "height": 18,
           "width": 110
+        }
+      ]
+    },
+    {
+      "title": "Parceria com universidades",
+      "text": "Com o apoio da <a href=\"https://pcdas.icict.fiocruz.br/\" target=\"_blank\">PCDaS</a>, o Querido Diário conseguiu organizar sua primeira <a href=\"https://ok.org.br/noticia/querido-diario-nas-universidades/\" target=\"_blank\">parceria com universidades</a>, aproximando os desafios do projeto ao estudo e à pesquisa desenvolvida no Brasil.",
+      "icons": [
+        {
+          "file": "fiocruz",
+          "height": 40,
+          "width": 116
+        },
+        {
+          "file": "icict",
+          "height": 40,
+          "width": 116
+        },
+        {
+          "file": "pcdas",
+          "height": 40,
+          "width": 72
         }
       ]
     },

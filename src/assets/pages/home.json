@@ -132,9 +132,12 @@
       "title": "APOIO",
       "icons": [
         { "file": "logo-Ilda", "to": "https://idatosabiertos.org/", "target": "_blank", "height": 17, "width": 52 },
-        { "file": "empatia", "to": "https://www.empatia.la/", "target": "_blank", "height": 16, "width": 87 },
+        { "file": "logo_empatia", "to": "https://www.empatia.la/", "target": "_blank", "height": 16, "width": 87 },
         { "file": "logo-jurema", "to": "https://www.jurema.la/", "target": "_blank", "height": 18, "width": 80 },
-        { "file": "logo-digitalocean", "to": "https://www.digitalocean.com/", "target": "_blank", "height": 18, "width": 110 }
+        { "file": "logo-digitalocean", "to": "https://www.digitalocean.com/", "target": "_blank", "height": 18, "width": 110},
+        { "file": "logo-fiocruz", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
+        { "file": "logo-icict", "to": "hhttps://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
+        { "file": "logo-pcdas", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 72 }
       ]
     }
   ]
