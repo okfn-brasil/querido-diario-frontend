@@ -1,0 +1,19 @@
+<app-blog-header></app-blog-header>
+<edu-modals *ngIf="showCategoriesModal" class="blog-modal" (onClose)="closeModal()" title="Categorias" (click)="closeModal()">
+  <app-blog-categories></app-blog-categories>
+</edu-modals>
+<div (click)="openCategoriesModal()" class="categories-link mobile" >
+  Categorias
+</div>
+<div class="container-education">
+  <div class="content">
+    
+    <div class="list">
+      <app-blog-post *ngFor="let post of posts" [postData]="post"></app-blog-post>
+    </div>
+
+    <div class="categories desktop">
+      <app-blog-categories></app-blog-categories>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,28 @@
+<app-blog-header></app-blog-header>
+<edu-modals *ngIf="showCategoriesModal" class="blog-modal" (onClose)="closeModal()" title="Categorias" (click)="closeModal()">
+  <app-blog-categories></app-blog-categories>
+</edu-modals>
+<edu-modals *ngIf="showRelatedModal" class="blog-modal" (onClose)="closeModal()" title="Relacionados" (click)="closeModal()">
+  <app-blog-relateds></app-blog-relateds>
+</edu-modals>
+<div class="container-education">
+  <div class="content">
+    
+    <div class="list">
+      <app-blog-post [postData]="post" [isFullPage]="true"></app-blog-post>
+    </div>
+
+    <div class="categories desktop">
+      <app-blog-relateds></app-blog-relateds>
+      <div class="space"></div>
+      <app-blog-categories></app-blog-categories>
+    </div>
+  </div>
+</div>
+
+<div (click)="openRelatedModal()" class="categories-link mobile" >
+  Relacionados
+</div>
+<div (click)="openCategoriesModal()" class="categories-link mobile" >
+  Categorias
+</div>

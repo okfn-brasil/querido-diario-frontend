@@ -10,6 +10,8 @@ import { SearchEducationComponent } from './modules/pages/area-education/search/
 import { SignupComponent } from './modules/pages/area-education/signup/signup.component';
 import { StartSearchComponent } from './modules/pages/area-education/start-search/start-search.component';
 import { AvailableCitiesComponent } from './modules/pages/available-cities/available-cities.component';
+import { BlogListComponent } from './modules/pages/blog/blog-list/blog-list.component';
+import { BlogPostDetailComponent } from './modules/pages/blog/blog-post-detail/blog-post-detail.component';
 import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
 import { HomeComponent } from './modules/pages/home/home.component';
@@ -36,6 +38,9 @@ const routes: Routes = [
   { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent },
   { path: 'cidades-disponiveis', component: AvailableCitiesComponent },
   { path: 'tecnologia/busca-avancada', component: SearchTutorialComponent },
+  { path: 'blog', component: BlogListComponent },
+  { path: 'blog/:id', component: BlogListComponent },
+  { path: 'blog/post/:id', component: BlogPostDetailComponent },
   //area educação
   { path: 'educacao', component: HomeEducacaoComponent },
   { path: 'educacao/cnpj/:id', component: CnpjComponent },
