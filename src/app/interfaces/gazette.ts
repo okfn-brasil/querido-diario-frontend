@@ -27,7 +27,7 @@ export interface Theme {
 
 export interface GazetteQuery {
   term?: string;
-  territory_id?: string;
+  territory_id?: string | string[];
   since?: string;
   until?: string;
   sort_by?: string;

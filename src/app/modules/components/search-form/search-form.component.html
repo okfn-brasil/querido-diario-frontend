@@ -32,33 +32,14 @@
   </app-row>
 
   <app-row [flex]="true" [gap]="16">
-    <mat-form-field appearance="fill" class="city-input">
-      <mat-icon matPrefix svgIcon="pin-gray"></mat-icon>
-      <mat-label>Município</mat-label>
-      <input
-        class="city"
-        #cityField
-        matInput
-        [formControl]="cityControl"
-        [matAutocomplete]="cityInput"
-      />
-
-      <mat-autocomplete
-        class="light"
-        #cityInput="matAutocomplete"
-        [displayWith]="displayFn"
-      >
-        <mat-option *ngFor="let option of territories | async" [value]="option">
-          <div fxLayout="row" class="autocomplete">
-            <app-autocomplete-item
-              [icon]="{ file: 'pin-gray', height: 28, width: 28 }"
-              [title]="option.territory_label"
-              [text]="'NÍVEL ' + option.level + ' DE ABERTURA'"
-            ></app-autocomplete-item>
-          </div>
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
+    <edu-city-filter 
+      *ngIf="territories && territories.length" 
+      [initialValue]="territory" 
+      label="Município" 
+      class="city-input" 
+      [cities]="territories" 
+      (changeLocations)="onChangeLocation($event)">
+    </edu-city-filter>
 
     <app-date-picker-range
       #periodField

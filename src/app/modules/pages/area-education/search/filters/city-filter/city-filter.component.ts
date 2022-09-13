@@ -8,6 +8,7 @@ import { City } from 'src/app/interfaces/city';
 })
 export class CityFilterComponent implements OnChanges {
   @Input() cities: City[] = [];
+  @Input() label: string = 'Novo local...';
   selectedCities: City[] = [];
   showPlaceholder = true;
   query = '';
