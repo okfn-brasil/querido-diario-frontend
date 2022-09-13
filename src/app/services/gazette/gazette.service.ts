@@ -32,9 +32,14 @@ export class GazetteService {
   findAll(query: GazetteQuery): Observable<GazetteResponse> {
     const { term, territory_id, published_since, published_until, sort_by, page } = query;
     let queryParams = {};
+    let territoryQuery = '';
 
-    if (territory_id) {
+    if (territory_id && !Array.isArray(territory_id)) {
       queryParams = { ...queryParams, territory_ids: territory_id };
+    } else if(territory_id && territory_id.length){
+      (territory_id as string[]).forEach(id => {
+        territoryQuery += '&territory_ids=' + id;
+      });
     }
 
     if (term) {
@@ -57,7 +62,7 @@ export class GazetteService {
     queryParams = { ...queryParams, size: pagination.size, offset: pagination.offset };
 
     const encodedQueryString = new URLSearchParams(queryParams).toString();
-    const url = new URL(`/api/gazettes?${encodedQueryString}`, `https://queridodiario.ok.org.br`).toString();
+    const url = new URL(`/api/gazettes?${encodedQueryString}${territoryQuery}`, `https://queridodiario.ok.org.br`).toString();
 
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {

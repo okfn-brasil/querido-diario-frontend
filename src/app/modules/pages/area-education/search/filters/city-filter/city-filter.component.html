@@ -5,7 +5,7 @@
     <div class="editable" (focus)="onHidePlaceholder()" contenteditable="true" id="location-filter-educacao" (keyup)="getText()" (click)="onHidePlaceholder()" (blur)="onShowPlaceholder()">
       
     </div>
-    <div class="new-place" *ngIf="showPlaceholder">Novo local...</div>
+    <div class="new-place" *ngIf="showPlaceholder">{{label}}</div>
   </div>
 
   <div class="dropdown" (click)="stopPropagation($event)">
