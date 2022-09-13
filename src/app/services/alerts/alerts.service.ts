@@ -16,7 +16,6 @@ export class AlertsService {
       sub_themes: filters.subthemes && filters.subthemes.length? filters.subthemes : undefined,
       gov_entities: filters.entities && filters.entities.length? filters.entities : undefined,
     }
-    console.log(newFilters)
     return this.http.post(`https://staging.diariodoclima.jurema.la/api/alerts/`, newFilters);
   }
 
