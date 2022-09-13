@@ -43,7 +43,6 @@ export class HeaderEducationComponent implements OnInit {
     });
 
     this.userQuery.loginFormOpen$.subscribe(isOpen => {
-      console.log(isOpen)
       this.showForm = isOpen;
     });
   }

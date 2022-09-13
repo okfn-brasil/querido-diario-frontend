@@ -111,7 +111,6 @@ export class SearchComponent implements OnInit {
       }
 
       if (params.city) {
-        console.log(params.city)
         this.territoryService
           .findOne({ territoryId: Array.isArray(params.city) ? params.city[0] : params.city })
           .pipe(take(1))
