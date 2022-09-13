@@ -1,0 +1,92 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+$blackFont: rgba(52, 51, 52, 1)
+
+.post
+  background-color: #fff
+  margin-bottom: rem(24)
+  padding: rem(40)
+  font-family: Lato
+  position: relative
+  @media only screen and (max-width: 768px)
+    margin-bottom: rem(8)
+    padding: rem(20) rem(16)
+
+  .category
+    font-size: rem(12)
+    text-transform: uppercase
+    color: $blackFont
+    line-height: rem(16)
+    margin-bottom: rem(8)
+
+  .title
+    font-size: rem(28)
+    line-height: rem(33)
+    color: $blackFont
+    margin-bottom: rem(8)
+    font-family: Baloo
+    @media only screen and (max-width: 768px)
+      font-size: rem(22)
+      line-height: rem(26)
+
+  .post-content
+    font-size: rem(16)
+    line-height: rem(22)
+    color: $blackFont
+    margin-top: rem(8)
+    &:not(.full-page)
+      text-overflow: ellipsis
+      overflow: hidden
+      display: -webkit-box
+      -webkit-line-clamp: 6
+      -webkit-box-orient: vertical
+      @media only screen and (max-width: 768px)
+        -webkit-line-clamp: 2
+
+    @media only screen and (max-width: 768px)
+      font-size: rem(14)
+      line-height: rem(19)
+
+  .banner
+    height: rem(233)
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    @media only screen and (max-width: 768px)
+      height: rem(120)
+
+  .date
+    font-size: rem(12)
+    line-height: rem(16)
+    color: $blackFont
+    padding-top: rem(27)
+
+    &.full-page-date
+      padding-top: 0
+      padding-bottom: rem(8)
+
+  a
+    color: rgba(44, 19, 56, 1)
+    position: absolute
+    bottom: rem(40)
+    right: rem(58)
+    font-size: rem(16)
+    line-height: rem(16)
+    font-weight: bold
+
+    &::after
+      content: ''
+      position: absolute
+      right: rem(-20)
+      top: rem(6)
+      width: 0
+      height: 0
+      border-left: 4.5px solid transparent
+      border-right: 4.5px solid transparent
+      border-top: 4.5px solid rgba(44, 19, 56, 1)
+      transform: rotate(-90deg)
+    
+    @media only screen and (max-width: 768px)
+      bottom: rem(20)
+      right: rem(34)

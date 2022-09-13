@@ -94,6 +94,12 @@ import { AlertsComponent } from './modules/pages/area-education/alerts/alerts.co
 import { AlertItemComponent } from './modules/pages/area-education/alerts/alert-item/alert-item.component';
 import { ModalsComponent } from './modules/pages/area-education/modals/modals.component';
 import { EditEmailComponent } from './modules/pages/area-education/alerts/edit-email/edit-email.component';
+import { BlogListComponent } from './modules/pages/blog/blog-list/blog-list.component';
+import { BlogCategoriesComponent } from './modules/pages/blog/blog-categories/blog-categories.component';
+import { BlogPostComponent } from './modules/pages/blog/blog-post/blog-post.component';
+import { BlogPostDetailComponent } from './modules/pages/blog/blog-post-detail/blog-post-detail.component';
+import { BlogRelatedsComponent } from './modules/pages/blog/blog-relateds/blog-relateds.component';
+import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-header.component';
 
 @NgModule({
   declarations: [
@@ -158,6 +164,12 @@ import { EditEmailComponent } from './modules/pages/area-education/alerts/edit-e
     AlertItemComponent,
     ModalsComponent,
     EditEmailComponent,
+    BlogListComponent,
+    BlogCategoriesComponent,
+    BlogPostComponent,
+    BlogPostDetailComponent,
+    BlogRelatedsComponent,
+    BlogHeaderComponent,
   ],
   imports: [
     BrowserModule,

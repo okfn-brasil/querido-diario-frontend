@@ -1,0 +1,72 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.related
+  background-color: #fff
+  padding: rem(40)
+  @media only screen and (max-width: 768px)
+    padding: 0
+
+  .title
+    font-family: Baloo
+    font-size: rem(22)
+    line-height: rem(26)
+    margin-bottom: rem(16)
+
+  .related-item
+    color: rgba(101, 74, 156, 1)
+    padding: rem(16) 0
+    font-family: Lato
+    font-size: rem(16)
+    line-height: rem(22)
+    font-weight: 700
+    text-transform: capitalize
+    border-bottom: 1px solid rgba(243, 233, 233, 1)
+    position: relative
+    @media only screen and (max-width: 768px)
+      padding: rem(16)
+
+  .post-title
+    font-size: rem(16)
+    line-height: rem(22)
+    color: rgba(101, 74, 156, 1)
+    margin-bottom: rem(4)
+    max-width: 90%
+
+  .post-date
+    font-size: rem(12)
+    line-height: rem(18)
+    color: rgba(52, 51, 52, 1)
+    font-weight: 500
+
+  .has-arrow::after
+    content: ''
+    position: absolute
+    right: rem(0)
+    top: calc(50% - 2.25px)
+    width: 0
+    height: 0
+    border-left: 4.5px solid transparent
+    border-right: 4.5px solid transparent
+    border-top: 4.5px solid rgba(101, 74, 156, 1)
+    transform: rotate(-90deg)
+    @media only screen and (max-width: 768px)
+      right: rem(16)
+
+  
+  .see-more
+    position: relative
+    font-size: rem(16)
+    line-height: rem(16)
+    color: rgba(44, 19, 56, 1)
+    font-family: Lato
+    font-weight: bold
+    margin-top: rem(20)
+    @media only screen and (max-width: 768px)
+      margin-left: rem(16)
+
+    &::after
+      border-top: 4.5px solid rgba(44, 19, 56, 1)
+      right: unset
+      margin-left: rem(10)
+      
