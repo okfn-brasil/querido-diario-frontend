@@ -9,6 +9,7 @@ import { City } from 'src/app/interfaces/city';
 export class CityFilterComponent implements OnChanges {
   @Input() cities: City[] = [];
   @Input() label: string = 'Novo local...';
+  isLoading = true;
   selectedCities: City[] = [];
   showPlaceholder = true;
   query = '';
@@ -71,12 +72,17 @@ export class CityFilterComponent implements OnChanges {
 
   getCitiesList() {
     if(this.cities && this.cities.length) {
-      return this.cities.filter(city => !!city.territory_name.toLowerCase().includes(this.query.toLowerCase()) && this.query.length >= 3);
+      return this.cities.filter(city =>  city.territory_name.toLowerCase().includes(this.query.toLowerCase().trim()) && this.query.length >= 3);
     }
     return [];
   }
 
   ngOnChanges(): void {
+    console.log(this.cities)
+    if(this.cities && this.cities.length) {
+      this.isLoading = false;
+    }
+
     if(this.initialValue && this.initialValue.length) {
       this.selectedCities = this.cities.filter(city => this.initialValue.includes(city.territory_id))
     }

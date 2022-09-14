@@ -1,4 +1,4 @@
-<div class="location-search" (click)="focusOnInput()" *ngIf="cities && cities.length">
+<div class="location-search" (click)="focusOnInput()">
   <div (click)="removeCity(city, $event)" class="tag" *ngFor="let city of selectedCities">{{city.territory_name}} <img src="assets/images/education/close.png" alt="fechar" /></div>
   
   <div class="text-area">
@@ -8,7 +8,14 @@
     <div class="new-place" *ngIf="showPlaceholder">{{label}}</div>
   </div>
 
-  <div class="dropdown" (click)="stopPropagation($event)">
+  <div class="dropdown" (click)="stopPropagation($event)" >
     <div class="option" *ngFor="let city of getCitiesList()" (click)="addCity(city)">{{city.territory_name}}</div>
+    <div class="loading-options" *ngIf="isLoading && query.length > 2">
+      <mat-spinner ></mat-spinner>
+    </div>
+
+    <div class="empty-result" *ngIf="query.length > 2 && !getCitiesList().length && !isLoading">
+      Nenhum resultado encontrado para sua busca
+    </div>
   </div>
 </div>
