@@ -32,8 +32,7 @@
   </app-row>
 
   <app-row [flex]="true" [gap]="16">
-    <edu-city-filter 
-      *ngIf="territories && territories.length" 
+    <edu-city-filter
       [initialValue]="territory" 
       label="Município" 
       class="city-input" 
