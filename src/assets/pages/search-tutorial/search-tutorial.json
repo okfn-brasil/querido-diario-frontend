@@ -7,7 +7,7 @@
           "text": "A sintaxe <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html' target='_blank'>simple query string</a> do Elasticsearch foi implementada para aperfeiçoamento de pesquisa na base de dados textuais dos Diários Oficiais. Este mecanismo funciona com o uso de caracteres como operadores de busca a fim de aprimorar os resultados."
         },
         {
-          "text": "<b>Ao executar uma busca, cada documento da base de publicações é verificado e é retornado caso seja correspondido com a busca desejada. Porém, apenas o melhor trecho (ou excerto) do documento é mostrado como resultado. Este excerto pode não conter a busca completa por limitação do espaço de exibição. Com operadores de busca mais complexos, o excerto pode não ser nem exibido já que deixa de ficar claro qual seria o melhor trecho para mostrar. Em qualquer um desses casos, os Diários Oficiais listados como resultados da busca estão corretos. </b>"
+          "text": "<b>Ao executar uma busca, cada documento da base de publicações é verificado e retornado caso corresponda com o critério desejado. Porém, apenas o melhor trecho (ou excerto) do documento é mostrado como resultado. Este excerto pode não conter a busca completa por limitação do espaço de exibição. Com operadores de busca mais complexos, o excerto pode não ser nem exibido já que deixa de ficar claro qual seria o melhor trecho para mostrar. Em qualquer um desses casos, os Diários Oficiais listados como resultados da busca estão corretos. </b>"
         },
         {
           "text": "Conheça operadores da busca avançada, seus efeitos e alguns exemplos:"
