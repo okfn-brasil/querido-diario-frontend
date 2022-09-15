@@ -20,6 +20,11 @@
         "fragment": "documentacao"
       },
       {
+        "text": "Busca avançada",
+        "route": "/tecnologia/busca-avancada",
+        "fragment": "busca-avancada"
+      },
+      {
         "text": "Contribua com o desenvolvimento",
         "route": "/tecnologia",
         "fragment": "contribua-com-código"

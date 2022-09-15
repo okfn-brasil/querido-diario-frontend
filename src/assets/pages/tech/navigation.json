@@ -21,7 +21,7 @@
     },
     {
       "text": "Busca Avançada",
-      "route": "/busca-avancada",
+      "route": "/tecnologia/busca-avancada",
       "style": "link-secondary"
     }
   ]
