@@ -23,7 +23,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ModalComponent } from './modules/components/modal/modal.component';
 import { FooterComponent } from './modules/components/footer/footer.component';
@@ -71,6 +71,35 @@ import { HeaderComponent } from './modules/components/header/header.component';
 import { GoalsComponent } from './modules/components/goals/goals.component';
 import { IconComponent } from './modules/components/icon/icon.component';
 import { FormSentComponent } from './modules/components/form-sent/form-sent.component';
+import { HomeEducacaoComponent } from './modules/pages/area-education/home/home.component';
+import { CarouselEducacaoComponent } from './modules/pages/area-education/home/carousel/carousel.component';
+import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.component';
+import { InfoCnpjComponent } from './modules/pages/area-education/cnpj/info-cnpj/info-cnpj.component';
+import { PartnerComponent } from './modules/pages/area-education/cnpj/partner/partner.component';
+import { HeaderEducationComponent } from './modules/pages/area-education/header/header.component';
+import { LoginFormComponent } from './modules/pages/area-education/header/login-form/login-form.component';
+import { StartSearchComponent } from './modules/pages/area-education/start-search/start-search.component';
+import { SignupComponent } from './modules/pages/area-education/signup/signup.component';
+import { AuthInterceptor } from './services/interceptor';
+import { EducationFiltersComponent } from './modules/pages/area-education/search/filters/filters.component';
+import { SearchEducationComponent } from './modules/pages/area-education/search/search.component';
+import { ThemesFilterComponent } from './modules/pages/area-education/search/filters/themes-filter/themes-filter.component';
+import { PeriodFilterComponent } from './modules/pages/area-education/search/filters/period-filter/period-filter.component';
+import { CityFilterComponent } from './modules/pages/area-education/search/filters/city-filter/city-filter.component';
+import { AboutEducationComponent } from './modules/pages/area-education/about/about.component';
+import { ItemEducationComponent } from './modules/pages/area-education/search/item/item.component';
+import { EduPaginationComponent } from './modules/pages/area-education/search/pagination/pagination.component';
+import { AlertModalComponent } from './modules/pages/area-education/alerts/alert-modal/alert-modal.component';
+import { AlertsComponent } from './modules/pages/area-education/alerts/alerts.component';
+import { AlertItemComponent } from './modules/pages/area-education/alerts/alert-item/alert-item.component';
+import { ModalsComponent } from './modules/pages/area-education/modals/modals.component';
+import { EditEmailComponent } from './modules/pages/area-education/alerts/edit-email/edit-email.component';
+import { BlogListComponent } from './modules/pages/blog/blog-list/blog-list.component';
+import { BlogCategoriesComponent } from './modules/pages/blog/blog-categories/blog-categories.component';
+import { BlogPostComponent } from './modules/pages/blog/blog-post/blog-post.component';
+import { BlogPostDetailComponent } from './modules/pages/blog/blog-post-detail/blog-post-detail.component';
+import { BlogRelatedsComponent } from './modules/pages/blog/blog-relateds/blog-relateds.component';
+import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-header.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +142,34 @@ import { FormSentComponent } from './modules/components/form-sent/form-sent.comp
     FlexHeightDirective,
     FormSentComponent,
     AvailableCitiesComponent,
+    HomeEducacaoComponent,
+    CarouselEducacaoComponent,
+    CnpjComponent,
+    InfoCnpjComponent,
+    PartnerComponent,
+    HeaderEducationComponent,
+    LoginFormComponent,
+    StartSearchComponent,
+    SignupComponent,
+    SearchEducationComponent,
+    EducationFiltersComponent,
+    ThemesFilterComponent,
+    PeriodFilterComponent,
+    CityFilterComponent,
+    AboutEducationComponent,
+    ItemEducationComponent,
+    EduPaginationComponent,
+    AlertModalComponent,
+    AlertsComponent,
+    AlertItemComponent,
+    ModalsComponent,
+    EditEmailComponent,
+    BlogListComponent,
+    BlogCategoriesComponent,
+    BlogPostComponent,
+    BlogPostDetailComponent,
+    BlogRelatedsComponent,
+    BlogHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -142,7 +199,7 @@ import { FormSentComponent } from './modules/components/form-sent/form-sent.comp
 
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },],
   bootstrap: [AppComponent],
 })
 export class AppModule {

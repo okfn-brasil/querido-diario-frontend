@@ -1,0 +1,73 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.search-item 
+  margin-top: 24px
+  padding: rem(40)
+  background-color: #fff
+  font-family: Lato
+
+  .search-item-desc 
+    font-size: rem(16)
+    line-height: rem(22)
+    color: #212429
+    word-break: break-word
+    white-space: pre-wrap
+    
+  .search-item-date 
+    margin-top: rem(16)
+    font-size: rem(16) 
+    line-height: rem(22) 
+    color: #6A7784
+
+    span 
+      color: #654A9C
+
+  .flex
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    align-items: center
+    
+  .hyper-link
+    color: #654A9C
+    font-weight: bold
+    font-size: rem(16) 
+    line-height: rem(16) 
+
+  .download-link 
+    position: relative
+    margin-top: rem(16) 
+    margin-right: rem(30)
+    cursor: pointer
+  
+  .arrow-link 
+    position: absolute
+    right: -20px
+    top: 6px
+    width: 0
+    height: 0
+    border-left: 6px solid transparent
+    border-right: 6px solid transparent
+    border-top: 7px solid #654A9C
+  
+
+  .tooltip 
+    position: absolute
+    background-color: #fff
+    width: 60px
+    border: 1px solid #654A9C
+    right: -40px
+
+    a:focus 
+      outline: none
+    
+
+    .tooltip-link 
+      font-size: 14px
+      padding: 10px
+      color: #6A7784
+      text-align: center
+
+      &:hover 
+        background-color: #dadada

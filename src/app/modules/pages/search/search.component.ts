@@ -112,7 +112,7 @@ export class SearchComponent implements OnInit {
 
       if (params.city) {
         this.territoryService
-          .findOne({ territoryId: params.city })
+          .findOne({ territoryId: Array.isArray(params.city) ? params.city[0] : params.city })
           .pipe(take(1))
           .subscribe((res) => {
             const territory = res;
@@ -121,7 +121,7 @@ export class SearchComponent implements OnInit {
             this.levelIcon = `level-${territory.level}`;
 
             this.gazetteService
-              .findAll({ ...params, territory_id: territory.territory_id })
+              .findAll({ ...params, territory_id: params.city })
               .pipe(take(1))
               .subscribe((res) => {
                 this.gazetteResponse = res;

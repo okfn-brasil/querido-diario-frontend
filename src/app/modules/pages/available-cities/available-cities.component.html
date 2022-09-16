@@ -1,9 +1,5 @@
-<ng-template #loading >
-    <app-container theme="light" fxFill>
-        <mat-spinner *ngIf="loading"></mat-spinner>
-    </app-container>
-</ng-template>
-<ng-container *ngIf="content$ | async as content; else loading"> 
+
+<ng-container *ngIf="content$ | async as content"> 
     <app-container theme="light">
         <div class="container-inner" [style.paddingTOP]="'0px'">
             <app-column [gap]="10">
@@ -20,7 +16,7 @@
                           <app-column *ngFor="let list of content.items">
                             <app-column [gap]="16" [style.paddingRight]="'20px'">
                               <ng-container>
-                                <p *ngFor="let name of list">{{ name }}</p>
+                                <p *ngFor="let city of cities">{{ city.territory_name }} ({{city.state_code}})</p>
                               </ng-container>
                             </app-column>
                           </app-column>
@@ -32,3 +28,6 @@
         </div>
     </app-container>
 </ng-container>
+<app-container *ngIf="loading" theme="light" fxFill>
+  <mat-spinner></mat-spinner>
+</app-container>

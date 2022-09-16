@@ -1,0 +1,43 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.field
+  margin-bottom: rem(64)
+  font-family: Lato
+  
+  @media only screen and (max-width: 768px)
+    margin-bottom: rem(26)
+
+  .label
+    font-size: rem(12)
+    line-height: rem(16)
+    margin-bottom: rem(8)
+
+  .title
+    font-family: Baloo
+    font-size: rem(22)
+    line-height: rem(26)
+    margin-bottom: rem(16)
+
+    &.theme
+      margin-bottom: rem(8)
+  
+  .sub-title
+    font-size: rem(14)
+    line-height: rem(19) 
+    margin-bottom: rem(8)
+
+.in-modal
+  .field
+    border-bottom: 1px solid rgba(243, 233, 233, 1)
+    padding-bottom: rem(24)
+    margin-bottom: rem(24)
+
+    &:last-of-type
+      margin-bottom: 0
+      border-bottom: 0
+      padding: 0
+
+      select
+        margin-bottom: 0
+

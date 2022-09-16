@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from 'moment';
 import { Observable, of, Subscription } from 'rxjs';
 import { map, startWith, switchMap, take } from 'rxjs/operators';
-import { Territory } from 'src/app/interfaces/territory';
+import { City } from 'src/app/interfaces/city';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 
 @Component({
@@ -29,16 +29,16 @@ export class SearchFormComponent implements OnInit {
   filteredOptions: Observable<string[]> = new Observable();
 
   cityControl = new FormControl();
-  territories: Observable<Territory[]> = of([]);
+  territories: Observable<City[]> = of([]);
 
   @ViewChild('cityField') cityField!: ElementRef;
   @ViewChild('termField') termField!: ElementRef;
   @ViewChild('periodField') periodField!: ElementRef;
 
-  since: string = '';
-  until: string = '';
+  published_since: string = '';
+  published_until: string = '';
 
-  territory: Territory | null = null;
+  territory: City | null = null;
 
   subscriptions: Subscription[] = [];
 
@@ -98,10 +98,10 @@ export class SearchFormComponent implements OnInit {
       queryParams = { ...queryParams, term: null };
     }
 
-    if (this.since && this.until) {
-      queryParams = { ...queryParams, since: this.since, until: this.until };
+    if (this.published_since && this.published_until) {
+      queryParams = { ...queryParams, published_since: this.published_since, published_until: this.published_until };
     } else {
-      queryParams = { ...queryParams, since: null, until: null };
+      queryParams = { ...queryParams, published_since: null, published_until: null };
     }
 
     this.router.navigate(['/pesquisa'], { queryParams });
@@ -109,10 +109,10 @@ export class SearchFormComponent implements OnInit {
 
   onRangeSelected(range: { start: Moment; end: Moment }) {
     if (range.start) {
-      this.since = range.start.format('YYYY-MM-DD');
+      this.published_since = range.start.format('YYYY-MM-DD');
     }
     if (range.end) {
-      this.until = range.end.format('YYYY-MM-DD');
+      this.published_until = range.end.format('YYYY-MM-DD');
     }
   }
 
@@ -127,13 +127,13 @@ export class SearchFormComponent implements OnInit {
     );
   }
 
-  displayFn(territory: Territory): string {
+  displayFn(territory: City): string {
     return territory && territory.territory_label
       ? territory.territory_label
       : '';
   }
 
-  private findTerritory(value: any): Observable<Territory[]> {
+  private findTerritory(value: any): Observable<City[]> {
     if (!value) {
       this.territory = null;
       return of([]);
@@ -161,3 +161,4 @@ export class SearchFormComponent implements OnInit {
     }
   }
 }
+

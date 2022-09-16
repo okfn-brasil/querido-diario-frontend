@@ -1,9 +1,13 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { UserModel } from 'src/app/interfaces/account';
 import { IconType } from 'src/app/interfaces/icon';
 import { NotificationsComponent } from 'src/app/modules/components/notifications/notifications.component';
 import { ContentService } from 'src/app/services/content/content.service';
-import { ModalComponent } from '../modal/modal.component';
+import { UserQuery } from 'src/app/stores/user/user.query';
+import { UserService } from 'src/app/stores/user/user.service';
+import { tokenKeys } from '../../pages/area-education/utils';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +16,15 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('explore') explore!: ElementRef;
+  mobileMenuOpen = false;
+  userData: UserModel = {};
 
   constructor(
+    private userQuery: UserQuery,
     private modal: MatDialog,
-    private contentService: ContentService
+    private contentService: ContentService,
+    private userService: UserService,
+    private router: Router,
   ) {}
 
   notificationIcon: IconType = {
@@ -30,14 +39,36 @@ export class HeaderComponent implements OnInit {
         this.notificationIcon = { ...this.notificationIcon, file: 'bell-span' };
       }
     });
+
+    this.userQuery.userData$.subscribe(userData => {
+      this.userData = userData;
+    });
   }
 
   openDialog(): void {
-    this.modal.open(ModalComponent, {
-      width: '100%',
-      height: '100%',
-      maxWidth: '100%',
-    });
+   this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  openForm() {
+    this.mobileMenuOpen = false;
+    if(location.href.includes('educacao')) {
+      this.userService.setLoginFormOpen(true);
+    } else {
+      this.router.navigate(['/educacao'], {queryParams: {login: 'open'}});
+    }
+  }
+
+  onClickLink() {
+    setTimeout(() => {
+      this.mobileMenuOpen = false;
+    }, 120);
+  }
+
+  onClickLogout() {
+    localStorage.removeItem(tokenKeys.token);
+    localStorage.removeItem(tokenKeys.refresh);
+    this.userService.resetUser();
+    this.router.navigate(['/educacao'], {queryParams: {login: 'open'}});
   }
 
   openNotifications(): void {

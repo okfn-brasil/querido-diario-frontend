@@ -1,0 +1,15 @@
+<div class="loading-area-edu" *ngIf="isLoading">
+  <mat-spinner ></mat-spinner>
+</div>
+<div class="label">
+  Edite o e-mail para recebimento dos novos alertas. 
+  <br/><br/>
+  O seu e-mail de cadastro continuará sendo <b>{{currentEmail}}</b>.
+</div>
+<div class="edu-input">
+  <input [(ngModel)]="email" id="email" name="email" placeholder="E-mail"/>
+  <label for="email">E-mail</label>
+</div>
+<button class="btne-primary" (click)="submit()" [disabled]="!email">Salvar e-mail de alerta</button>
+<div class="error" *ngIf="invalid">O e-mail inserido é invalido.</div>
+<div class="error" *ngIf="error">Ocorreu um erro ao atualizar seu e-mail para alertas, por favor, tente novamente.</div>

@@ -11,6 +11,7 @@ html
 
 body
   background: #2C1338
+  position: relative
 
 a,
 button
@@ -118,6 +119,19 @@ mat-spinner
     a
       color: #966BE8
 
+.dark-tertiary
+  background-color: rgba(45, 33, 69, 1)
+  color: #fff
+  
+  p, a, .typo-inner
+    color: #FFF
+
+  .mat-h2, .mat-title, .mat-typography h2
+    color: #F3E9E9
+
+  span 
+    a
+      color: #966BE8
 
 .dark-secondary
   background-color: #5E3F8E
@@ -256,3 +270,156 @@ mat-icon
   .container-inner
     width: 100%
     padding: rem(48) rem(16)
+
+// blog
+.blog-modal .modal-area
+  .body
+    padding: 0 !important
+
+.list .post
+  .post-content, .post-content p
+    font-size: rem(16)
+    line-height: rem(22)
+    color: rgba(52, 51, 52, 1)
+    margin-top: rem(8)
+    @media only screen and (max-width: 768px)
+      font-size: rem(14)
+      line-height: rem(19)
+
+
+// education-area
+
+.loading-area-edu
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  display: flex
+  background-color: rgba(0,0,0, 0.5)
+  z-index: 999
+
+.modal-education-buttons
+  .btne-primary
+    font-size: rem(16)
+    font-weight: bold
+    padding: rem(16) rem(24)
+
+    &.purple
+      margin-left: rem(16)
+      background-color: rgba(234, 217, 242, 1)
+      color: rgba(44, 19, 56, 1)
+      @media only screen and (max-width: 768px)
+        margin-left: 0
+        margin-top: rem(8)
+
+a.education-gazette-link
+  color: #000
+  text-decoration: underline
+
+.search-page .search-area
+  .mat-form-field-flex
+    background: #f3e9e9
+
+  .mat-form-field-prefix
+    transform: translateX(rem(-5))
+  
+.edu-input
+  position: relative
+
+  img
+    position: absolute
+    right: 0
+    bottom: rem(42)
+    z-index: 99
+    cursor: pointer
+    
+    &:hover
+      opacity: 0.8
+
+  input[name="password"]
+    padding-right: rem(30)
+
+  label
+    position: absolute
+    left: 0
+    top: rem(12)
+    transition: 0.3s
+    color: rgba(94, 64, 143, 0.5)
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label,
+  select:focus + label,
+  select.ng-valid + label
+    transform: translate(-4px, -20px) scale(0.8)
+
+  input.second-type:focus + label,
+  input.second-type:not(:placeholder-shown) + label,
+  select.second-type:focus + label,
+  select.second-type.ng-valid + label
+    transform: translate(-8px, -20px) scale(0.8)
+
+  input, select
+    background: transparent
+    width: 100%
+    border: none
+    border-bottom: 1px solid rgba(52, 51, 52, 0.2)
+    padding: rem(14) 0
+    font-size: rem(14)
+    line-height: rem(19)
+    margin-bottom: rem(32)
+    &::placeholder
+      opacity: 0
+
+    &:focus
+      outline: none
+
+.orange-text
+  color: rgba(255, 132, 1, 1)
+
+.btne-primary
+  border-radius: rem(40)
+  background-color: #ff8500
+  color: #fff
+  font-family: Lato
+  font-size: rem(20)
+  border: none
+  padding: rem(21) rem(40)
+
+  @media only screen and (max-width: 768px)
+    font-size: rem(16)
+    padding: rem(16) rem(24)
+
+.container-education
+  display: flex
+  justify-content: center
+  .content
+    width: 1220px
+    padding: rem(80) rem(16)
+    @media only screen and (max-width: 768px)
+      padding: 0 !important
+
+@media only screen and (max-width: 768px)
+  .container-education
+    width: 100%
+    padding: rem(48) rem(16)
+
+.education-support
+  p
+    font-weight: bold
+    color: #5e3f8d
+
+  .container
+    padding: rem(60) rem(16)!important
+    @media only screen and (max-width: 768px)
+      padding: rem(40) rem(16) !important
+
+.desktop
+  display: none
+  
+@media only screen and (min-width: 768px)
+  .desktop
+    display: block
+
+  .mobile
+    display: none

@@ -1,0 +1,68 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+  
+.edu-header
+  background-color: rgba(94, 64, 143, 1)
+  color: #fff
+  padding: rem(16)
+  font-family: Lato
+
+  .title
+    font-family: Baloo
+    font-size: rem(22)
+    line-height: rem(26)
+    margin-right: rem(8)
+
+  .content
+    padding: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .links
+      display: flex
+      align-items: center
+
+.link
+  margin-left: rem(32)
+  letter-spacing: rem(1.1)
+
+.login-button
+  color: rgba(44, 19, 56, 1)
+  background-color: rgba(234, 217, 242, 1)
+  padding: rem(8) rem(24)
+  border-radius: rem(30)
+  font-weight: bold
+  text-align: center
+
+.logged
+  display: flex
+  flex-wrap: wrap
+  font-size: rem(16)
+  line-height: rem(16)
+  font-family: Lato
+  align-items: center
+
+  .user-name
+    margin-left: rem(40)
+    padding: rem(12) rem(24)
+    background-color: rgba(234, 217, 242, 1)
+    color: #2C1338
+    font-weight: bold
+    border-radius: rem(30)
+
+a
+  color: #fff
+
+@media only screen and (max-width: 960px)
+  .desktop
+    display: none
+
+  .mobile
+    display: block
+
+  .edu-header
+    .title
+      font-family: Baloo
+      font-size: rem(18)
+      line-height: rem(18)

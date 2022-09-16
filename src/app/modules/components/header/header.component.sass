@@ -46,6 +46,101 @@ header
   height: rem(36)
   width: rem(118)
   align-self: center
+
+.suspended-menu
+  display: none
+
+@media only screen and (max-width: 960px)
+  :host
+    position: sticky
+    top: -1px
+    left: 0
+    z-index: 999
+
+  .suspended-menu
+    display: block
+    position: fixed
+    top: rem(53)
+    left: 0
+    width: 100%
+    background-color: #4F3979
+    z-index: 999
+    font-family: Lato
+    max-height: 100vh
+    overflow-y: auto
+    box-shadow: -1px 14px 16px 0px #18181861
+
+    a
+      color: #fff
+
+    .link
+      padding: rem(20) rem(24)
+      margin: 0
+      line-height: rem(16)
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+      width: 100%
+      position: relative
+
+      &.divider
+        font-family: Baloo
+        color: #fff
+        font-size: rem(18)
+
+      &.divider, &.user-name
+        &::after
+          display: none
+
+      &.bg-white
+        background-color: #fff
+        color: #000
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+
+        &::after
+          filter: brightness(0)
+
+      &::after
+        content: ''
+        position: absolute
+        right: rem(24)
+        top: calc(50% - 5px)
+        width: rem(5)
+        height: rem(10)
+        background-image: url('/assets/icons/right-arrow-white.svg')
+        background-position: center
+
+    .user-name, .logged-link, .login
+      background-color: rgba(89, 65, 137, 1)
+      color: #fff
+      
+      border-top: 1px solid rgba(52, 51, 52, 0.2)
+
+    .user-name
+      font-size: rem(16)
+      font-weight: bold
+      border-top: 0
+      
+  .mobile
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  .edu-header
+    padding: rem(20)
+    position: relative
+
+  .menu
+    width: rem(18)
+    cursor: pointer
+
+    div
+      background-color: #fff
+      height: rem(2)
+      width: 100%
+      margin-bottom: rem(3)
+
+      &:last-of-type
+        margin: 0
+
   
 @media only screen and (max-width: 768px) 
   header 

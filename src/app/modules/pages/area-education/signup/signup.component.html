@@ -1,0 +1,94 @@
+<div class="sign-up-page">
+  <div *ngIf="loading" class="loading-area">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="container-education">
+    <div class="content">
+      <form (submit)="onSubmit()" [formGroup]="formGroup" (click)="onClickForm()">
+        <div *ngIf="!!errorMessage" class="submit-error">{{errorMessage}}</div>
+        <div *ngIf="!step">
+          <div class="title">Crie uma conta para começar a buscar no <span>Querido Diário Educação</span></div>
+          <div class="sign-up-image mobile">
+            <img src="assets/images/education/signup.png" alt="cadastro"/>
+          </div>
+          <div class="edu-input">
+            <input id="name" class="second-type" name="name" formControlName="name" placeholder="Nome"/>
+            <label for="name">Nome Completo</label>
+            <div class="input-error" *ngIf="errors.name">Deve possuir no mínimo 8 caracteres</div>
+          </div>
+
+          <div class="edu-input">
+            <input id="email" name="email" formControlName="email" placeholder="E-mail"/>
+            <label for="email">E-mail</label>
+            <div class="email-loading" *ngIf="emailLoading">
+              <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div class="input-error" *ngIf="errors.email">O e-mail inserido é invalido!</div>
+            <div class="input-error" *ngIf="emailExists">O e-mail inserido já existe!</div>
+          </div>
+
+          <div class="edu-input">
+            <img src="assets/images/education/view-pass.png" alt="ver senha/esconder senha" (click)="onClickShowPass()"/>
+            <input id="pass" name="password" formControlName="password" [type]="showPass ? 'text' : 'password'" placeholder="senha"/>
+            <label for="pass">Senha</label>
+          </div>
+          <div class="checklist">
+            <div class="item" [ngClass]="validations.minLength ? 'checked': ''">Ter 8 ou mais caracteres</div>
+            <div class="item" [ngClass]="validations.lettersAndNumbers ? 'checked': ''">Conter letras e números</div>
+            <div class="item" [ngClass]="validations.specials ? 'checked': ''">Conter caracteres especiais (*,!.&%$#@)</div>
+            <div class="item" [ngClass]="validations.uppercase ? 'checked': ''">Conter uma letra maiúscula</div>
+          </div>
+        </div>
+
+        <div *ngIf="step">
+          <div class="title second-step-title">Boas-vindas</div>
+          <div class="sub-title">Queremos te conhecer um pouco melhor! Complete seu cadastro</div>
+
+          <div class="inputs">
+            <div class="edu-input">
+              <select id="area" class="second-type" name="area" formControlName="area" placeholder="Area de atuação">
+                <option>Area 1</option>
+              </select>
+              <label for="area">Area de atuação</label>
+              <div class="input-error" *ngIf="errors.area">Campo obrigatório!</div>
+            </div>
+  
+            <div class="edu-input">
+              <select id="state" name="state" formControlName="state" placeholder="Estado">
+                <option *ngFor="let state of stateList" [value]="state">{{state}}</option>
+              </select>
+              <label for="state">Estado</label>
+              <div class="input-error" *ngIf="errors.state">Campo obrigatório!</div>
+            </div>
+
+            <div class="edu-input">
+              <input id="city" name="city" formControlName="city" placeholder="Cidade"/>
+              <label for="city">Cidade</label>
+              <div class="input-error" *ngIf="errors.city">Deve possuir no mínimo 8 caracteres</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space" *ngIf="step"></div>
+        <hr class="mobile" />
+        <button class="btne-primary">Continuar</button>
+        <hr class="desktop" />
+        <div class="terms-text">Ao se cadastrar, você está aceitando os nossos
+          <br class="mobile"/>
+          <span><a>Termos e condições</a></span>
+          <span class="contact"><a>Fale conosco</a></span>
+        </div>
+        
+        <hr *ngIf="!step" />
+
+        <div class="login-link" *ngIf="!step">
+          Já possui uma conta?
+          <span><a routerLink="/educacao" [queryParams]="{login: 'open'}">Faça o login</a></span>
+        </div>
+      </form>
+      <div class="sign-up-image desktop">
+        <img src="assets/images/education/signup.png" alt="cadastro"/>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.carousel-items
+  width: 100%
+  position: relative
+  font-family: Lato
+
+  .button-nav
+    position: absolute
+    width: rem(50)
+    height: rem(50)
+    top: rem(-80)
+    right: rem(40)
+    border-radius: 50%
+    cursor: pointer
+    transition: 0.4s
+    &:hover
+      transform: scale(1.1)
+
+    &.prev
+      right: rem(106)
+      transform: rotate(-180deg)
+      &:hover
+        transform: scale(1.1) rotate(-180deg)
+
+  .scroll-area
+    display: flex
+    transition: 0.5s
+
+  .carousel-item
+    margin-right: rem(24)
+    height: rem(292)
+    margin-top: rem(8)
+    border-radius: 4px 4px 24px 4px
+    padding: rem(24)
+    width: rem(288)
+    position: relative
+    font-family: Lato
+
+.title
+  font-size: rem(18)
+  line-height: rem(25)
+  margin-bottom: rem(4)
+  font-weight: bold
+  letter-spacing: rem(1.2)
+
+.date
+  font-size: rem(14)
+  line-height: rem(19)
+
+a
+  position: absolute
+  right: rem(24)
+  bottom: rem(24)
+  color: #fff
+
+  app-icon
+    margin-left: rem(8)
+
+@media only screen and (max-width: 768px)
+  .scroll-area
+    transform: none !important
+  .carousel-items
+    overflow: auto
+    
+    .carousel-item
+      margin-top: rem(8)
+      border-radius: 4px 4px 24px 4px
+      padding: rem(16)
+      width: 100%
+      position: relative
+      font-family: Lato
+      height: unset
+
+      .title
+        font-size: rem(16)
+        line-height: rem(19)
+
+      .date
+        font-size: rem(12)
+        line-height: rem(14)
+        padding-bottom: rem(48)
+
+      a
+        right: rem(16)
+        bottom: rem(16)
+
+.carousel-item
+  &:nth-child(1n+1) 
+    background-color: rgba(89, 65, 137, 1)
+
+  &:nth-child(2n+1) 
+    background-color: rgba(79, 57, 121, 1)
+
+  &:nth-child(3n+1) 
+    background-color: rgba(67, 49, 104, 1)
+
+  &:nth-child(4n+1) 
+    background-color: #342553
+
+  &:nth-child(5n+1) 
+    background-color: #2d1f49
+
+  &:first-of-type 
+    background-color: rgba(101, 74, 156, 1)

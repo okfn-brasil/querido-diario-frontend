@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { API } from 'src/app/constants';
 import { Suggestion } from 'src/app/interfaces/suggestion';
-
-// @todo extract to config
-const API = 'https://queridodiario.ok.org.br/api';
 
 @Injectable({
   providedIn: 'root',

@@ -1,0 +1,231 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+  
+.search-header
+  padding: rem(56) 50% rem(56) 20%
+  background-color: #4F3979
+  color: #fff
+  letter-spacing: rem(1.1)
+  background-image: url('/assets/images/education/busca-bg.png')
+  background-repeat: no-repeat
+  background-position: 70% 10%
+  background-size: rem(350)
+  font-family: Lato
+  @media only screen and (max-width: 768px)
+    background-image: none
+    padding: rem(40) rem(20)
+
+.flex
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+
+.btne-primary
+  width: rem(100)
+  height: rem(46)
+  padding: rem(16) rem(24)
+  font-size: rem(16)
+  line-height: rem(14)
+  @media only screen and (max-width: 768px)
+    display: none
+
+.edu-input
+  width: calc(100% - 108px)
+  @media only screen and (max-width: 768px)
+    width: 100%
+  input
+    letter-spacing: rem(1.1)
+    font-size: rem(18)
+    padding-left: rem(32)
+    color: #fff
+    border-bottom: 1px solid #fff
+    margin-bottom: rem(18)
+
+    &::placeholder
+      opacity: 1
+      color: #fff
+
+  img
+    right: unset
+    left: 0
+    top: rem(11)
+    width: rem(24)
+  
+.advanced
+  cursor: pointer
+  img
+    padding-left: rem(5)
+    transform: translateY(rem(1))
+
+.filters.mobile
+  position: fixed
+  width: 100vw
+  height: 100vh
+  overflow-y: auto
+  top: 0
+  left: 0
+  background-color: #fff
+  z-index: 99999
+
+  .filters-header
+    padding: rem(20)
+    display: flex
+    align-items: center
+    font-family: Lato
+    position: relative
+    img
+      width: rem(12)
+
+    .title
+      color: #000
+      font-weight: bold
+      font-family: baloo
+      font-size: rem(18)
+      line-height: rem(18)
+      margin-left: rem(14)
+
+    .clear
+      font-size: rem(14)
+      line-height: rem(14)
+      position: absolute
+      color: #fff
+      right: rem(20)
+
+
+  .filters-fields
+    padding: rem(16) rem(20)
+
+.search-area
+  display: flex
+  font-family: Lato
+  
+  .filters
+    background-color: #F3E9E9
+    width: rem(400)
+    padding: rem(40)
+
+    @media only screen and (max-width: 768px)
+      display: none
+
+  .results
+    width: calc(100vw - 400px)
+    padding: rem(40) 10%
+    background-color: #2D2145
+    min-height: 100vh
+    position: relative
+    @media only screen and (max-width: 768px)
+      width: 100vw
+      padding: rem(40) rem(20)
+
+    .loading-search
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      display: flex
+      background-color: rgba(0,0,0, 0.2)
+
+  .empty
+    width: 100%
+    display: flex
+    justify-content: center
+    padding-top: 20vh
+    @media only screen and (max-width: 768px)
+      padding-top: 10vh
+
+  .empty-content
+    width: rem(400)
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+    img
+      width: rem(100)
+      margin-bottom: rem(40)
+      @media only screen and (max-width: 768px)
+        width: rem(65)
+
+    .text
+      color: #fff
+      font-family: Baloo
+      font-size: rem(22)
+      line-height: rem(26)
+      width: 100%
+      text-align: center
+
+.result-count
+  color: #fff
+  font-family: Baloo
+  font-size: rem(28)
+  line-height: rem(33)
+  @media only screen and (max-width: 768px)
+    width: 100%
+
+.create-alert, .open-filters
+  background-color: rgba(234, 217, 242, 1)
+  font-size: rem(16)
+  line-height: rem(16)
+  padding: rem(16) rem(24)
+  border-radius: rem(30)
+  font-weight: bold
+  
+  @media only screen and (max-width: 768px)
+    width: 48%
+
+.mobile-buttons
+  margin-top: rem(24)
+  display: flex
+  justify-content: space-between
+
+  .open-filters
+    background-color: #FF8500
+    color: #fff
+
+select
+  background-color: transparent
+  border: none
+  outline: none
+  color: #fff
+  font-family: Lato
+  font-size: rem(16)
+  line-height: rem(16)
+  -moz-appearance: none
+  -webkit-appearance: none
+  padding-right: rem(28)
+  cursor: pointer
+
+  option
+    color: #000
+
+.result-flex
+  margin-bottom: rem(16)
+
+.select-order
+  position: relative
+  cursor: pointer
+  
+  @media only screen and (max-width: 768px)
+    margin-top: rem(28)
+    margin-bottom: rem(4)
+
+  &::after
+    position: absolute
+    content: ''
+    right: 0
+    top: 6px
+    width: 0
+    height: 0
+    border-left: 6px solid transparent
+    border-right: 6px solid transparent
+    border-top: 6px solid #fff
+  
+.items
+  padding-bottom: rem(30)
+
+.apply-filters
+  display: block
+  width: unset
+  font-weight: bold

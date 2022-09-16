@@ -1,0 +1,24 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+:host
+  font-family: Lato
+
+.label
+  font-size: rem(16)
+  line-height: rem(22)
+  margin-bottom: rem(24)
+  margin-top: rem(8)
+
+.btne-primary
+  font-size: rem(16)
+  line-height: rem(16)
+  padding: rem(14) rem(24)
+  margin-top: rem(-15)
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
+
+.error
+  margin-top: rem(15)
+  color: red

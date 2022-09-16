@@ -1,0 +1,28 @@
+<form class="filters-area" [formGroup]="formGroup" [class.in-modal]="isModal">
+  <div class="field">
+    <div class="title">Município</div>
+    <div class="label">Digite um local</div>
+    <edu-city-filter [cities]="apiCities" [initialValue]="locations" (changeLocations)="onChangeLocations($event)"></edu-city-filter>
+  </div>
+
+  <div class="field" *ngIf="!isModal">
+    <div class="title">Período de tempo</div>
+    <edu-period-filter [initialValue]="dates" (changeDates)="onChangeDates($event)"></edu-period-filter>
+  </div>
+
+  <div class="field">
+    <div class="title theme">Tema</div>
+    <div class="sub-title">Aqui uma descrição breve do que são e de como funcionam os temas</div>
+    <edu-themes-filter [isModal]="isModal" [themes]="apiThemes" [initialThemes]="themes" (themesChange)="onChangeThemes($event)"></edu-themes-filter>
+  </div>
+
+  <div class="field">
+    <div class="title">Entes do governo</div>
+    <div class="edu-input">
+      <select id="entities" name="entities" formControlName="entities" placeholder="entities">
+        <option value="" selected>Selecione uma opção</option>
+        <option *ngFor="let entity of entities" [value]="entity">{{entity}}</option>
+      </select>
+    </div>
+  </div>
+</form>

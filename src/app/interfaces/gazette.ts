@@ -21,9 +21,13 @@ export interface Gazette {
   downloads: Download[]
 }
 
+export interface Theme {
+  [key: string]: boolean | null;
+}
+
 export interface GazetteQuery {
   term?: string;
-  territory_id?: string;
+  territory_id?: string | string[];
   since?: string;
   until?: string;
   sort_by?: string;
