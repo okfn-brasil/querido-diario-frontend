@@ -21,8 +21,7 @@
       },
       {
         "text": "Busca avançada",
-        "route": "/tecnologia/busca-avancada",
-        "fragment": "busca-avancada"
+        "route": "/tecnologia/busca-avancada"
       },
       {
         "text": "Contribua com o desenvolvimento",
