@@ -10,7 +10,7 @@ export class CnpjService {
   constructor(private http: HttpClient) {}
 
   getCnpj(id: string) {
-    return this.http.get<CNPJResponse>(`https://staging.diariodoclima.jurema.la/api/querido_diario/cnpjs/${id}`).pipe(
+    return this.http.get<CNPJResponse>(`https://api.queridodiario.jurema.la/api/querido_diario/cnpjs/${id}`).pipe(
       map((res: CNPJResponse) => {
         return res as CNPJResponse;
       })
@@ -18,7 +18,7 @@ export class CnpjService {
   }
 
   getCnpjPartners(id: string) {
-    return this.http.get<CNPJPartnerResponse>(`https://staging.diariodoclima.jurema.la/api/querido_diario/cnpjs/${id}/partners`).pipe(
+    return this.http.get<CNPJPartnerResponse>(`https://api.queridodiario.jurema.la/api/querido_diario/cnpjs/${id}/partners`).pipe(
       map((res: CNPJPartnerResponse) => {
         return res as CNPJPartnerResponse;
       })

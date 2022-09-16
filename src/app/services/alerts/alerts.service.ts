@@ -16,14 +16,14 @@ export class AlertsService {
       sub_themes: filters.subthemes && filters.subthemes.length? filters.subthemes : undefined,
       gov_entities: filters.entities && filters.entities.length? filters.entities : undefined,
     }
-    return this.http.post(`https://staging.diariodoclima.jurema.la/api/alerts/`, newFilters);
+    return this.http.post(`https://api.queridodiario.jurema.la/api/alerts/`, newFilters);
   }
 
   getAlerts(page: number) {
-    return this.http.get(`https://staging.diariodoclima.jurema.la/api/alerts?limit=${this.itemsPerPage}&offset=${page * this.itemsPerPage}`);
+    return this.http.get(`https://api.queridodiario.jurema.la/api/alerts?limit=${this.itemsPerPage}&offset=${page * this.itemsPerPage}`);
   }
 
   deleteAlert(id: string) { 
-    return this.http.delete(`https://staging.diariodoclima.jurema.la/api/alerts/${id}`);
+    return this.http.delete(`https://api.queridodiario.jurema.la/api/alerts/${id}`);
   }
 }

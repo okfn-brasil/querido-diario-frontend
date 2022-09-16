@@ -25,7 +25,7 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {}
 
   refreshToken(token: string) {
-    return this.http.post('https://staging.diariodoclima.jurema.la/api/token/refresh/', {
+    return this.http.post('https://api.queridodiario.jurema.la/api/token/refresh/', {
       refresh: token
     });
   }

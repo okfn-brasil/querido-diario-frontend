@@ -19,7 +19,7 @@ export class SignUpService {
       sector: form.area,
       gender: "M" // remover
     };
-    return this.http.post<RegistrationResponse>(`https://staging.diariodoclima.jurema.la/api/accounts/users/`, newForm).pipe(
+    return this.http.post<RegistrationResponse>(`https://api.queridodiario.jurema.la/api/accounts/users/`, newForm).pipe(
       map((res: RegistrationResponse) => {
         return res as RegistrationResponse;
       })
@@ -27,7 +27,7 @@ export class SignUpService {
   }
 
   checkEmail(email: string) {
-    return this.http.get<RegistrationResponse>(`https://staging.diariodoclima.jurema.la/api/accounts/users/email/${email}/`).pipe(
+    return this.http.get<RegistrationResponse>(`https://api.queridodiario.jurema.la/api/accounts/users/email/${email}/`).pipe(
       map((res: RegistrationResponse) => {
         return res as RegistrationResponse;
       })
