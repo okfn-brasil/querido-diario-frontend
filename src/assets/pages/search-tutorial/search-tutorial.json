@@ -29,7 +29,7 @@
           ]
         },
         {
-          "text": "Também conhecido como “operador OR”, funciona usando o símbolo de barra vertical ( | ) para buscar um termo ou outro em toda extensão do diário. Experimente <a href='https://queridodiario.ok.org.br/pesquisa?term=despacho%20%7C%20dispensa&since=2022-01-01&until=2022-07-31' target='_blank'>ver aqui</a> os resultados da busca por <b>despacho | dispensa</b> e repare como são de trechos que tem pelo menos uma das palavras em seu conteúdo."
+          "text": "Também conhecido como “operador OR”, funciona usando o símbolo de barra vertical ( | ) para buscar um termo ou outro em toda extensão do diário. Experimente <a href='/pesquisa?term=despacho%20%7C%20dispensa&since=2022-01-01&until=2022-07-31' target='_blank'>ver aqui</a> os resultados da busca por <b>despacho | dispensa</b> e repare como são de trechos que tem pelo menos uma das palavras em seu conteúdo."
         },
         {
           "text": "<i>Atenção: Este é o operador padrão no Querido Diário. Se você não explicitar qual operador quer utilizar, a ferramenta vai sempre adotá-lo.</i>"
@@ -51,7 +51,7 @@
           ]
         },
         {
-          "text": "Também conhecido como “operador AND”, funciona usando o símbolo de adição ( + ) para buscar um termo e outro em toda a extensão do diário. Um exemplo de busca é <b>compra + computadores</b> disponível <a href='https://queridodiario.ok.org.br/pesquisa?term=compra%20%2B%20computadores&since=2022-01-01&until=2022-07-31' target='_blank'>aqui</a>, cujos resultados são de diários que contêm ambos termos. "
+          "text": "Também conhecido como “operador AND”, funciona usando o símbolo de adição ( + ) para buscar um termo e outro em toda a extensão do diário. Um exemplo de busca é <b>compra + computadores</b> disponível <a href='/pesquisa?term=compra%20%2B%20computadores&since=2022-01-01&until=2022-07-31' target='_blank'>aqui</a>, cujos resultados são de diários que contêm ambos termos. "
         }
       ]
     },
@@ -70,7 +70,7 @@
           ]
         },
         {
-          "text": "É um comando de busca que usa os símbolos +- para negar o termo à direita. Buscar por <b>ivermectina +-pandemia</b> é buscar diários que contém o termo “ivermectina” e, adicionalmente, não contém o termo “pandemia” por toda sua extensão. Confira esta busca <a href='https://queridodiario.ok.org.br/pesquisa?term=ivermectina%20%2B-pandemia&since=2022-01-01&until=2022-07-31' target='_blank'>aqui</a>."
+          "text": "É um comando de busca que usa os símbolos +- para negar o termo à direita. Buscar por <b>ivermectina +-pandemia</b> é buscar diários que contém o termo “ivermectina” e, adicionalmente, não contém o termo “pandemia” por toda sua extensão. Confira esta busca <a href='/pesquisa?term=ivermectina%20%2B-pandemia&since=2022-01-01&until=2022-07-31' target='_blank'>aqui</a>."
         },
         {
           "text": "<i>Observação: para a busca funcionar corretamente, não devemos adicionar um espaço entre o símbolo de negação (-) e o termo negado.</i>"
@@ -92,10 +92,10 @@
           ]
         },
         {
-          "text": "Esta busca funciona com uma frase entre aspas (“ ”) para busca exata do conteúdo, como em <b>“lei de acesso à informação”</b>. Verifique <a href='https://queridodiario.ok.org.br/pesquisa?term=%22lei%20de%20acesso%20a%20informa%C3%A7%C3%A3o%22&since=2022-01-01&until=2022-07-31' target='_blank'>um exemplo</a> e repare que o que foi buscado corresponde exatamente ao que está entre aspas, as mesmas palavras na mesma ordem."
+          "text": "Esta busca funciona com uma frase entre aspas (“ ”) para busca exata do conteúdo, como em <b>“lei de acesso à informação”</b>. Verifique <a href='/pesquisa?term=%22lei%20de%20acesso%20a%20informa%C3%A7%C3%A3o%22&since=2022-01-01&until=2022-07-31' target='_blank'>um exemplo</a> e repare que o que foi buscado corresponde exatamente ao que está entre aspas, as mesmas palavras na mesma ordem."
         },
         {
-          "text": "<i>Observação: note a importância de se utilizar as aspas, já que o formato de busca sem aspas também funciona no projeto. Se sua pesquisa for <b>lei de acesso à informação</b> (sem aspas), na prática, o que está sendo buscado é: lei (ou) de (ou) acesso (ou) à (ou) informação. Compare <a href='https://queridodiario.ok.org.br/pesquisa?term=lei%20de%20acesso%20a%20informa%C3%A7%C3%A3o&since=2022-01-01&until=2022-07-31' target='_blank'>aqui</a> como os resultados dela são diferentes da busca exata.</i>"
+          "text": "<i>Observação: note a importância de se utilizar as aspas, já que o formato de busca sem aspas também funciona no projeto. Se sua pesquisa for <b>lei de acesso à informação</b> (sem aspas), na prática, o que está sendo buscado é: lei (ou) de (ou) acesso (ou) à (ou) informação. Compare <a href='/pesquisa?term=lei%20de%20acesso%20a%20informa%C3%A7%C3%A3o&since=2022-01-01&until=2022-07-31' target='_blank'>aqui</a> como os resultados dela são diferentes da busca exata.</i>"
         }
       ]
     }, 
@@ -114,7 +114,7 @@
           ]
         },
         {
-          "text": "Esta operação utiliza o símbolo de asterisco ( * ) para buscar por prefixo. Serve para quando o objetivo é achar palavras derivadas de um mesmo radical. Confira <a href='https://queridodiario.ok.org.br/pesquisa?term=democr*&since=2022-01-01&until=2022-07-31' target='_blank'>aqui</a> como a pesquisa por <b>democr*</b> trás resultados com <b>democr</b>acia, <b>democr</b>ático, <b>democr</b>ata, <b>democr</b>atização, etc."
+          "text": "Esta operação utiliza o símbolo de asterisco ( * ) para buscar por prefixo. Serve para quando o objetivo é achar palavras derivadas de um mesmo radical. Confira <a href='/pesquisa?term=democr*&since=2022-01-01&until=2022-07-31' target='_blank'>aqui</a> como a pesquisa por <b>democr*</b> trás resultados com <b>democr</b>acia, <b>democr</b>ático, <b>democr</b>ata, <b>democr</b>atização, etc."
         }
       ]
     }, 
@@ -133,7 +133,7 @@
           ]
         },
         {
-          "text": "Funciona utilizando o símbolo til seguido por um número (~N) para distância de edição de termo, ou seja, qual o limite de modificações de caracteres uma palavra precisa para se transformar em outra. Um <a href='https://queridodiario.ok.org.br/pesquisa?term=assento~3&since=2022-01-01&until=2022-07-31' target='_blank'>exemplo</a> é os resultados da pesquisa por <b>assento~3</b> que incluem termos como <i>acento</i>, <i>assunto</i>, <i>assentado</i>; todos eles distando até 3 alterações da palavra buscada."
+          "text": "Funciona utilizando o símbolo til seguido por um número (~N) para distância de edição de termo, ou seja, qual o limite de modificações de caracteres uma palavra precisa para se transformar em outra. Um <a href='/pesquisa?term=assento~3&since=2022-01-01&until=2022-07-31' target='_blank'>exemplo</a> é os resultados da pesquisa por <b>assento~3</b> que incluem termos como <i>acento</i>, <i>assunto</i>, <i>assentado</i>; todos eles distando até 3 alterações da palavra buscada."
         },
         {
           "text": "<i>Observação: Outra forma de entender essa busca, é pensar em erros de digitação no diário, já que são produzidos por pessoas: a intenção era registrar certa palavra, mas acabou saindo outra, muito próxima.</i>"
@@ -155,7 +155,7 @@
           ]
         },
         {
-          "text": "Funciona usando uma frase entre aspas seguida de um til e um valor (“ “~N) indicando a busca como distância máxima entre palavras da frase. O que será buscado são diários que têm os termos entre aspas próximos entre si até N palavras. Ao buscar, <a href='https://queridodiario.ok.org.br/pesquisa?term=%22vazamento%20dados%22~50&since=2022-01-01&until=2022-07-31' target='_blank'>por exemplo</a>, <b>“vazamento dados”~50</b> o que está sendo buscado são trechos de diários que tenham essas duas palavras separadas, por no máximo, 50 outras palavras."
+          "text": "Funciona usando uma frase entre aspas seguida de um til e um valor (“ “~N) indicando a busca como distância máxima entre palavras da frase. O que será buscado são diários que têm os termos entre aspas próximos entre si até N palavras. Ao buscar, <a href='/pesquisa?term=%22vazamento%20dados%22~50&since=2022-01-01&until=2022-07-31' target='_blank'>por exemplo</a>, <b>“vazamento dados”~50</b> o que está sendo buscado são trechos de diários que tenham essas duas palavras separadas, por no máximo, 50 outras palavras."
         },
         {
           "text": "<i>Dica: A busca por distância máxima entre palavras é especialmente interessante no contexto do Querido Diário: ela garante que o conteúdo buscado esteja próximo e não disperso por todo o texto do diário.</i>"
@@ -183,7 +183,7 @@
           "text": "Os parênteses como operadores indicam precedência e são usados para forçar a ordem da busca. No geral, só fazem sentido quando a busca a ser feita se complexifica, combinando outros operadores."
         },
         {
-          "text": "Com <a href='https://queridodiario.ok.org.br/pesquisa?term=balan%C3%A7o%20%2B%20(financeiro%20%7C%20or%C3%A7ament%C3%A1rio)&since=2022-01-01&until=2022-07-31' target='_blank'>este exemplo</a>, você pode conferir o que está sendo buscado quando se tenta <b>balanço + (financeiro | orçamentário)</b>. Ao adicionar os parênteses, a busca é forçada a acontecer em certa ordem: primeiro executa o comando entre parênteses e então passa a executar o resto. Neste caso, busca pelos termos “financeiro” ou “orçamentário” primeiro e, de seu resultado, seleciona apenas os casos que também tem “balanço”. "
+          "text": "Com <a href='/pesquisa?term=balan%C3%A7o%20%2B%20(financeiro%20%7C%20or%C3%A7ament%C3%A1rio)&since=2022-01-01&until=2022-07-31' target='_blank'>este exemplo</a>, você pode conferir o que está sendo buscado quando se tenta <b>balanço + (financeiro | orçamentário)</b>. Ao adicionar os parênteses, a busca é forçada a acontecer em certa ordem: primeiro executa o comando entre parênteses e então passa a executar o resto. Neste caso, busca pelos termos “financeiro” ou “orçamentário” primeiro e, de seu resultado, seleciona apenas os casos que também tem “balanço”. "
         }
       ]
     }  
