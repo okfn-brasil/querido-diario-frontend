@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'pesquisa', component: SearchComponent },
   { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent },
   { path: 'cidades-disponiveis', component: AvailableCitiesComponent },
-  { path: '/tecnologia/busca-avancada', component: SearchTutorialComponent }
+  { path: 'tecnologia/busca-avancada', component: SearchTutorialComponent }
 ];
 
 @NgModule({
