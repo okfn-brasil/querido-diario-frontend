@@ -14,14 +14,14 @@ export class LoginService {
       email: form.email,
       password: form.password,
     };
-    return this.http.post(`https://staging.diariodoclima.jurema.la/api/token/`, newForm);
+    return this.http.post(`https://api.queridodiario.jurema.la/api/token/`, newForm);
   }
 
   getUserData() {
-    return this.http.get(`https://staging.diariodoclima.jurema.la/api/accounts/users/me`);
+    return this.http.get(`https://api.queridodiario.jurema.la/api/accounts/users/me`);
   }
 
   updateUserData(userData: UserModel) {
-    return this.http.patch(`https://staging.diariodoclima.jurema.la/api/accounts/users/me/`, userData);
+    return this.http.patch(`https://api.queridodiario.jurema.la/api/accounts/users/me/`, userData);
   }
 }

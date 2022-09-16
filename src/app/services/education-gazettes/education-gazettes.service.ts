@@ -10,19 +10,19 @@ export class EducationGazettesService {
   constructor(private http: HttpClient) {}
 
   getAllGazettes(filters: any, currPage: number) {
-    return this.http.get(`https://staging.diariodoclima.jurema.la/api/` + this.currentUrl + `gazettes/?size=${this.itemsPerPage}&offset=${currPage * this.itemsPerPage}&` + filters);
+    return this.http.get(`https://api.queridodiario.jurema.la/api/` + this.currentUrl + `gazettes/?size=${this.itemsPerPage}&offset=${currPage * this.itemsPerPage}&` + filters);
   }
   
   getEntities() {
-    return this.http.get(`https://staging.diariodoclima.jurema.la/api/` + this.currentUrl + 'entities/');
+    return this.http.get(`https://api.queridodiario.jurema.la/api/` + this.currentUrl + 'entities/');
   }
 
   getThemes() {
-    return this.http.get(`https://staging.diariodoclima.jurema.la/api/` + this.currentUrl + 'subthemes/');
+    return this.http.get(`https://api.queridodiario.jurema.la/api/` + this.currentUrl + 'subthemes/');
   }
 
   getAllCities() {
-    return this.http.get('https://staging.diariodoclima.jurema.la/api/cities?evels=3');
+    return this.http.get('https://api.queridodiario.jurema.la/api/cities?evels=3');
   }
 }
 
