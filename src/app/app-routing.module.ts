@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'pesquisa', component: SearchComponent },
   { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent },
   { path: 'cidades-disponiveis', component: AvailableCitiesComponent },
-  { path: 'blog', component: BlogListComponent },
+  /*{ path: 'blog', component: BlogListComponent },
   { path: 'blog/:id', component: BlogListComponent },
   { path: 'blog/post/:id', component: BlogPostDetailComponent },
   //area educação
@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'educacao/cadastrar', component: SignupComponent },
   { path: 'educacao/busca', component: SearchEducationComponent },
   { path: 'educacao/sobre', component: AboutEducationComponent },
-  { path: 'educacao/alertas', component: AlertsComponent },
+  { path: 'educacao/alertas', component: AlertsComponent },*/
 ];
 
 @NgModule({
