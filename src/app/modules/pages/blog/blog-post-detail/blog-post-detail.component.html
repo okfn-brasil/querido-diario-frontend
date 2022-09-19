@@ -9,18 +9,17 @@
   <div class="content">
     
     <div class="list">
-      <app-blog-post [postData]="post" [isFullPage]="true"></app-blog-post>
+      <app-blog-post [postData]="post" [isFullPage]="true" *ngIf="post && post.id"></app-blog-post>
     </div>
 
     <div class="categories desktop">
-      <app-blog-relateds></app-blog-relateds>
-      <div class="space"></div>
+      <app-blog-relateds *ngIf="post" [category]="post.category" [posts]="postsRelated"></app-blog-relateds>
       <app-blog-categories></app-blog-categories>
     </div>
   </div>
 </div>
 
-<div (click)="openRelatedModal()" class="categories-link mobile" >
+<div (click)="openRelatedModal()" class="categories-link mobile" *ngIf="postsRelated && postsRelated.length" >
   Relacionados
 </div>
 <div (click)="openCategoriesModal()" class="categories-link mobile" >

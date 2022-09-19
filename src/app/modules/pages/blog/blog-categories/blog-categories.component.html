@@ -1,4 +1,5 @@
 <div class="categories">
   <div class="title desktop">Categorias</div>
   <a *ngFor="let category of categories" [routerLink]="'/blog/' + category"><div class="category" >{{category}}</div></a>
+  <a [routerLink]="'/blog/'"><div class="category" >Todas as categorias</div></a>
 </div>

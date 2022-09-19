@@ -9,7 +9,8 @@
   <div class="content">
     
     <div class="list">
-      <app-blog-post *ngFor="let post of posts" [postData]="post"></app-blog-post>
+      <app-blog-post *ngFor="let post of posts.slice(0 + ((currPage - 1) * 4), 4 * currPage)" [postData]="post"></app-blog-post>
+      <edu-pagination *ngIf="totalItems >= 5" [inverted]="true" [itemsPerPage]="4" [listSize]="totalItems" [currentPage]="currPage - 1" (changePage)="onChangePage($event)"></edu-pagination>
     </div>
 
     <div class="categories desktop">
