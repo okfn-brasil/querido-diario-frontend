@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { BlogPost, mockPosts } from 'src/app/interfaces/blog';
-import { getMonth } from '../utils';
+import { Component, Input, OnInit } from '@angular/core';
+import { BlogPost } from 'src/app/interfaces/blog';
 
 @Component({
   selector: 'app-blog-relateds',
@@ -8,17 +7,10 @@ import { getMonth } from '../utils';
   styleUrls: ['./blog-relateds.component.sass']
 })
 export class BlogRelatedsComponent implements OnInit {
-  posts: BlogPost[] = mockPosts.slice(0, 4);
+  @Input() posts: BlogPost[] = [];
+  @Input() category: string = '';
   constructor() { }
 
   ngOnInit(): void {
-    this.posts = this.posts.map(post => {
-      const newDate = new Date(post.date);
-      const parsedDate = `${newDate.getDate()}, ${getMonth(newDate.getMonth())}, ${newDate.getFullYear()}`;
-      return {
-        ...post,
-        date: parsedDate,
-      };
-    });
   }
 }
