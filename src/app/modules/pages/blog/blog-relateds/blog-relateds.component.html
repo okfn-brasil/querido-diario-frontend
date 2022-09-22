@@ -1,12 +1,14 @@
-<div class="related">
+<div class="related" *ngIf="posts && posts.length">
   <div class="title desktop">Relacionados</div>
   <a *ngFor="let post of posts" [routerLink]="'/blog/post/' + post.id"><div class="related-item has-arrow" >
     <div class="post-title">{{post.title}}</div>
     <div class="post-date">{{post.date}}</div>
   </div></a>
-  <a>
+  <a [routerLink]="'/blog/' + category">
     <div class="see-more has-arrow">
       Ver todos
     </div>
   </a>
 </div>
+
+<div class="space" *ngIf="posts && posts.length"></div>
