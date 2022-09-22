@@ -78,7 +78,6 @@ export class CityFilterComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log(this.cities)
     if(this.cities && this.cities.length) {
       this.isLoading = false;
     }
