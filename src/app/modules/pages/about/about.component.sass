@@ -1,32 +1,20 @@
-.success-case
-  width: calc((100%/4) - 17px)
-  margin-top: 10px
-
-  .success-case-title
-    font-size: 14px
-    color: #F3E9E9
-
-  .success-case-text
-    font-size: 24px
-    line-height: 23px
-    font-weight: bold
-
-  @media only screen and (max-width: 768px) 
-    width: 100%
-    margin-right: 0 !important
-    margin-top: 10px
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
 
 .success-case-area-title
   @media only screen and (max-width: 768px) 
-    padding: 0
-
-
-.success-case-icon 
-  margin-left: 8px
-
-.link-secondary
-  color: #FF8500
+    padding-top: 0
+  
+.success-cases-overflow
+  overflow: hidden
+  padding-bottom: rem(100)
   
   @media only screen and (max-width: 768px) 
-    margin-top: 8px
+    padding-bottom: 0
+    margin-top: rem(-50)
+  
+  @media only screen and (max-width: 768px)
+    overflow-x: auto
+    overflow-y: hidden
+    max-width: 100%
 

@@ -1,9 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { IconType } from 'src/app/interfaces/icon';
 
 interface itemsModel {
-  title: string;
-  link: string;
-  date: string;
+  title?: string;
+  link?: string;
+  date?: string;
+  text?: string;
+  actions?: [{
+    text?: string;
+    link?: string;
+  }];
 }
 
 @Component({
@@ -11,10 +17,18 @@ interface itemsModel {
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.sass'],
 })
-export class CarouselEducacaoComponent implements OnInit {
+export class CarouselEducacaoComponent implements OnChanges {
   @Input() items: itemsModel[] = [];
+  @Input() type = 'default';
   currPosition = 0;
   mobileSize = 4;
+  pages: number[] = [];
+
+  icon: IconType = {
+    file: 'right-arrow-purple',
+    height: 12,
+    width: 12
+  }
 
   constructor() {
   }
@@ -31,6 +45,10 @@ export class CarouselEducacaoComponent implements OnInit {
     }
   }
 
+  onClickCircle(page: number) {
+    this.currPosition = page;
+  }
+
   loadMore() {
     this.mobileSize += 4;
   }
@@ -39,6 +57,10 @@ export class CarouselEducacaoComponent implements OnInit {
     this.mobileSize -= 4;
   }
 
-  ngOnInit() {
+  ngOnChanges(): void {
+    this.pages = [];
+    for(let i = 0; i < this.items.length - 1; i++ ) {
+      this.pages.push(i);
+    }
   }
 }
