@@ -21,6 +21,7 @@ export class AvailableCitiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.content$ = this.contentService.find('available-cities'); 
+    console.log(this.content$)
 
     this.citiesService.getAll().subscribe(response => {
       this.loading = false;
