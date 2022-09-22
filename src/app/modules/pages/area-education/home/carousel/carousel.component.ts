@@ -46,7 +46,8 @@ export class CarouselEducacaoComponent implements OnChanges {
   }
 
   onClickCircle(page: number) {
-    this.currPosition = page;
+    const newPosition = page * 4;
+    this.currPosition = newPosition === this.items.length - 1? newPosition - 1: newPosition;
   }
 
   loadMore() {
@@ -59,8 +60,13 @@ export class CarouselEducacaoComponent implements OnChanges {
 
   ngOnChanges(): void {
     this.pages = [];
-    for(let i = 0; i < this.items.length - 1; i++ ) {
+    for(let i = 0; i < Math.ceil(this.items.length / 3); i++ ) {
       this.pages.push(i);
     }
+  }
+
+  checkDotActive(page: number) {
+    const pageResult = (Math.ceil(this.currPosition / 3) - 1);
+    return page === (pageResult === -1? 0 : pageResult)
   }
 }

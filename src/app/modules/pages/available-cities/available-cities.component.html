@@ -7,7 +7,7 @@
                 <p class="cities-text" [innerHtml]="content.text"></p>
                 <app-column>
                   <div class="cities-flex">
-                    <ng-container *ngFor="let content of content.items">
+                    <ng-container>
                       <div class="avaliable-city" *ngFor="let city of cities">{{ city.territory_name }} ({{city.state_code}})</div>
                     </ng-container>
                   </div>
