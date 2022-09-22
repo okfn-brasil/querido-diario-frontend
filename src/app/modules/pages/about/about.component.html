@@ -68,22 +68,9 @@
     <p>{{ content.successCases.text }}</p>
   </div>
   <app-row [gap]="17" wrap="wrap" [flex]="true">
-    <app-column
-      class="success-case"
-      [style.padding]="'42px 30px'"
-      *ngFor="let item of content.successCases.items"
-      [gap]="14"
-      theme="darker"
-    >
-      <span>
-        <p [style.lineHeight]="0" class="success-case-title">{{ item.title }}</p>
-      </span>
-      <p class="success-case-text">{{ item.text }}</p>
-      <span *ngFor="let action of item.actions">
-        <a target="_blank" [href]="action.link">{{ action.text }}</a>
-        <app-icon class="success-case-icon" [icon]="icon"></app-icon>
-      </span>
-    </app-column>
+    <div class="success-cases-overflow">
+      <edu-carousel [type]="'second-type'" [items]="content.successCases.items"></edu-carousel>
+    </div>
   </app-row>
 </app-container>
 
