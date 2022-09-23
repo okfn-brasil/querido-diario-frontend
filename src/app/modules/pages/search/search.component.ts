@@ -38,11 +38,12 @@ export class SearchComponent implements OnInit {
   response: Observable<SearchResponse> = new Observable();
   city: Observable<City | null> = new Observable();
   levelDescription: LevelDescription | undefined = undefined;
-  citiesParam: string[] = [];
+  cities: string[] = [];
+  levels: number[] = [];
 
   levelIcon: string | null = null;
 
-  territory: Territory | null = null;
+  territories: Territory[] = [];
 
   gazetteResponse: GazetteResponse | null = null;
 
@@ -111,53 +112,45 @@ export class SearchComponent implements OnInit {
         this.sort_by = params.sort_by;
       }
 
+      this.levels = [];
+      this.territories = [];
       if (params.city) {
-        this.citiesParam = Array.isArray(params.city) ? params.city : [params.city];
-        console.log(this.citiesParam)
-        this.territoryService
-          .findOne({ territoryId: Array.isArray(params.city) ? params.city[0] : params.city })
-          .pipe(take(1))
-          .subscribe((res) => {
-            const territory = res;
-            this.territory = territory;
-            this.level$ = of(findLevel(parseInt(territory.level)));
-            this.levelIcon = `level-${territory.level}`;
-
-            this.gazetteService
-              .findAll({ ...params, territory_id: params.city })
-              .pipe(take(1))
-              .subscribe((res) => {
-                this.gazetteResponse = res;
-                let pagination: Pagination = this.pagination;
-                const totalItems = Math.ceil(res.total_gazettes / 10);
-                pagination = {
-                  ...pagination,
-                  currentPage: params.page,
-                  totalItems,
-                };
-                this.pagination = pagination;
-              });
-          });
-      } else {
-        this.territory = null;
-        this.level$ = of(null);
-
-        this.gazetteService
-          .findAll(params)
-          .pipe(take(1))
-          .subscribe((res) => {
-            this.gazetteResponse = res;
-            let pagination: Pagination = this.pagination;
-            const totalItems = Math.ceil(res.total_gazettes / 10);
-            pagination = {
-              ...pagination,
-              currentPage: params.page,
-              totalItems,
-            };
-            this.pagination = pagination;
-          });
+        this.cities = Array.isArray(params.city) ? params.city : [params.city];
+        this.getCities();
       }
+      this.gazetteService
+        .findAll({ ...params, territory_id: params.city })
+        .pipe(take(1))
+        .subscribe((res) => {
+          this.gazetteResponse = res;
+          let pagination: Pagination = this.pagination;
+          const totalItems = Math.ceil(res.total_gazettes / 10);
+          pagination = {
+            ...pagination,
+            currentPage: params.page,
+            totalItems,
+          };
+          this.pagination = pagination;
+        }, () => {
+          this.gazetteResponse = {total_gazettes: 0} as GazetteResponse;
+        });
     });
+  }
+
+  getCities() {
+    this.cities.forEach(city => {
+      this.territoryService
+      .findOne({ territoryId: city })
+      .pipe(take(1))
+      .subscribe((res) => {
+        this.territories.push(res);
+        const level = parseInt(res.level);
+        if(!this.levels.includes(level)) {
+          this.levels.push(level);
+        }
+      });
+    })
+    
   }
 
   openFile(link: string) {
