@@ -42,7 +42,6 @@ export class CarouselEducacaoComponent implements OnChanges {
 
   onClickNext() {
     if(this.currPosition < this.items.length - this.itemsPerPage) {
-
       if(this.type === 'second-type') {
         this.currPosition = this.currPosition + this.itemsPerPage;
       } else {
@@ -53,10 +52,8 @@ export class CarouselEducacaoComponent implements OnChanges {
 
   onClickPrev() {
     if(this.currPosition > 0) {
-
       if(this.type === 'second-type') {
         this.currPosition = this.currPosition - this.itemsPerPage;
-        console.log(this.currPosition)
       } else {
         this.currPosition--;
       }
