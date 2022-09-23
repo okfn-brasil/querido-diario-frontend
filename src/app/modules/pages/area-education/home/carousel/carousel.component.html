@@ -6,8 +6,14 @@
           <div class="page-circle" (click)="onClickCircle(page)" *ngFor="let page of pages" [class.active]="checkDotActive(page)"></div>
         </div>
       </div>
-      <div class="button-nav next desktop" [class.second-type]="type === 'second-type'" (click)="onClickNext()"><img src="assets/images/education/carousel-arrow.png" alt="próximo" /></div>
-      <div class="button-nav prev desktop" [class.second-type]="type === 'second-type'" (click)="onClickPrev()"><img src="assets/images/education/carousel-arrow.png" alt="anterior" /></div>
+      <div class="button-nav next desktop" [class.second-type]="type === 'second-type'" (click)="onClickNext()">
+        <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="próximo" />
+        <img *ngIf="type === 'second-type'" src="assets/images/education/carousel-arrow-purple.png" alt="próximo" />
+      </div>
+      <div class="button-nav prev desktop" [class.second-type]="type === 'second-type'" (click)="onClickPrev()">
+        <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="anterior" />
+        <img *ngIf="type === 'second-type'" src="assets/images/education/carousel-arrow-purple.png" alt="anterior" />
+      </div>
       <div *ngIf="type === 'default'" class="scroll-area" [ngStyle]="{'width': 'calc((288px * ' + items.length + ') + 24px)', transform: 'translateX(calc(-292px * '+ currPosition +'))'}">
         <div *ngFor="let item of items" class="carousel-item">
           <div class="title">{{item.title}}</div>
