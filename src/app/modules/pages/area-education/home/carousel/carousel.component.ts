@@ -41,7 +41,6 @@ export class CarouselEducacaoComponent implements OnChanges {
   }
 
   onClickNext() {
-    console.log(this.currPosition)
     if(this.currPosition < this.items.length - this.itemsPerPage) {
 
       if(this.type === 'second-type') {
