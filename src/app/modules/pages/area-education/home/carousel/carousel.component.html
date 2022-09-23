@@ -3,7 +3,7 @@
     <div class="carousel-items" [class.default-items]="type === 'default'">
       <div class="pages-circle" *ngIf="type === 'second-type'">
         <div class="flex-pages">
-          <div class="page-circle" (click)="onClickCircle(page)" *ngFor="let page of pages" [class.active]="page === currPosition"></div>
+          <div class="page-circle" (click)="onClickCircle(page)" *ngFor="let page of pages" [class.active]="checkDotActive(page)"></div>
         </div>
       </div>
       <div class="button-nav next desktop" [class.second-type]="type === 'second-type'" (click)="onClickNext()"><img src="assets/images/education/carousel-arrow.png" alt="próximo" /></div>
