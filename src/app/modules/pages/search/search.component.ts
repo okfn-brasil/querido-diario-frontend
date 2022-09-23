@@ -38,6 +38,7 @@ export class SearchComponent implements OnInit {
   response: Observable<SearchResponse> = new Observable();
   city: Observable<City | null> = new Observable();
   levelDescription: LevelDescription | undefined = undefined;
+  citiesParam: string[] = [];
 
   levelIcon: string | null = null;
 
@@ -111,6 +112,8 @@ export class SearchComponent implements OnInit {
       }
 
       if (params.city) {
+        this.citiesParam = Array.isArray(params.city) ? params.city : [params.city];
+        console.log(this.citiesParam)
         this.territoryService
           .findOne({ territoryId: Array.isArray(params.city) ? params.city[0] : params.city })
           .pipe(take(1))
