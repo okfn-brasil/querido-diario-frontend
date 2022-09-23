@@ -6,6 +6,12 @@
   </section>
 
   <section
+    class="bg-purple-2 cities-result"
+  >
+    <app-cities-search-result></app-cities-search-result>
+  </section>
+
+  <section
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
@@ -21,7 +27,7 @@
   </section>
 
   <div *ngIf="gazetteResponse && gazetteResponse.total_gazettes">
-    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
+    <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
       <div class="container" fxLayout="column" fxLayoutGap="42px">
         <ng-container *ngIf="level$ | async as level">
           <ng-container *ngFor="let text of level.texts">
