@@ -4,26 +4,14 @@
         <div class="container-inner" [style.paddingTOP]="'0px'">
             <app-column [gap]="10">
                 <h1>{{ content.title }}</h1>
-                <p>{{ content.text }}</p>
-                <app-column [gap]="48">
-                    <ng-container *ngFor="let content of content.items">
-                      <app-column [gap]="22">
-                        <div
-                          class="typo-inner highlight"
-                          [innerHTML]="content.text"
-                        ></div>
-                        <app-row [gap]="22">
-                          <app-column *ngFor="let list of content.items">
-                            <app-column [gap]="16" [style.paddingRight]="'20px'">
-                              <ng-container>
-                                <p *ngFor="let city of cities">{{ city.territory_name }} ({{city.state_code}})</p>
-                              </ng-container>
-                            </app-column>
-                          </app-column>
-                        </app-row>
-                      </app-column>
+                <p class="cities-text" [innerHtml]="content.text"></p>
+                <app-column>
+                  <div class="cities-flex">
+                    <ng-container>
+                      <div class="avaliable-city" *ngFor="let city of cities">{{ city.territory_name }} ({{city.state_code}})</div>
                     </ng-container>
-                  </app-column>
+                  </div>
+                </app-column>
             </app-column>
         </div>
     </app-container>

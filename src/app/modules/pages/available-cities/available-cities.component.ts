@@ -20,7 +20,7 @@ export class AvailableCitiesComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.content$ = this.contentService.find('available-cities'); 
+    this.content$ = this.contentService.find('available-cities');
 
     this.citiesService.getAll().subscribe(response => {
       this.loading = false;
