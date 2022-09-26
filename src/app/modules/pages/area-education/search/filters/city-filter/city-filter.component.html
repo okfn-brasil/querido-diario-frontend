@@ -10,11 +10,11 @@
 
   <div class="dropdown" (click)="stopPropagation($event)" >
     <div class="option" *ngFor="let city of getCitiesList()" (click)="addCity(city)">{{city.territory_name}}</div>
-    <div class="loading-options" *ngIf="isLoading && query.length > 2">
+    <div class="loading-options" *ngIf="isLoading && query.length > 2 || loadingCities">
       <mat-spinner ></mat-spinner>
     </div>
 
-    <div class="empty-result" *ngIf="query.length > 2 && !getCitiesList().length && !isLoading">
+    <div class="empty-result" *ngIf="query.length > 2 && !getCitiesList().length && !isLoading && !loadingCities">
       Nenhum resultado encontrado para sua busca
     </div>
   </div>

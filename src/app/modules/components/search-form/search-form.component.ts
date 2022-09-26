@@ -30,7 +30,10 @@ export class SearchFormComponent implements OnInit {
 
   cityControl = new FormControl();
   territories: Territory[] = [];
+  selectedCities: Territory[] = [];
   territory: string[] = [];
+  cityListToInput: Territory[] = [];
+  loadingCities = false;
 
   @ViewChild('cityField') cityField!: ElementRef;
   @ViewChild('termField') termField!: ElementRef;
@@ -53,17 +56,46 @@ export class SearchFormComponent implements OnInit {
       map((value) => this._filterTerms(value))
     );
 
-    this.territoryService.findByName('').subscribe(response => {
-      this.territories = response;
-    });
-
     this.subscriptions.push(
       this.route.queryParams.subscribe((params) => {
         const { term, city } = params;
         this.territory = city;
+        this.selectedCities = [];
+        if(city) {
+          if(Array.isArray(city)) {
+            city.forEach(currCity => {
+              this.findCityById(currCity);
+            })
+          } else {
+            this.findCityById(city);
+          }
+        }
+        
         this.termControl.setValue(term);
+
       })
     );
+  }
+
+  getCityList() {
+    const selectedIds = this.selectedCities.map(city => city.territory_id);
+    return [...this.territories.filter(city => !selectedIds.includes(city.territory_id)) ,...this.selectedCities]
+  }
+
+  findCities(query: string) {
+    if(query && query.length >= 3) {
+      this.loadingCities = true;
+      this.territoryService.findByName(query).subscribe(response => {
+        this.territories = response;
+        this.loadingCities = false;
+      });
+    }
+  }
+
+  findCityById(id: string) {
+    this.territoryService.findOne({territoryId: id}).subscribe(response => {
+      this.selectedCities.push(response);
+    });
   }
 
   search(): void {

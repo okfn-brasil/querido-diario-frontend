@@ -6,16 +6,17 @@
   </section>
 
   <section
+    *ngIf="levels && levels.length"
     class="bg-purple-2 cities-result"
   >
-    <app-cities-search-result></app-cities-search-result>
+    <app-cities-search-result [levels]="levels" [territories]="territories"></app-cities-search-result>
   </section>
 
   <section
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="!territory && gazetteResponse && gazetteResponse.total_gazettes == 0"
+    *ngIf="gazetteResponse && gazetteResponse.total_gazettes == 0"
   >
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
@@ -35,9 +36,7 @@
           </ng-container>
         </ng-container>
         <ng-container
-          *ngIf="
-            !territory && gazetteResponse && gazetteResponse.total_gazettes > 0
-          "
+          *ngIf="gazetteResponse && gazetteResponse.total_gazettes > 0"
         >
           <p>
             Abaixo, estão os resultados encontrados nos diários dos municípios

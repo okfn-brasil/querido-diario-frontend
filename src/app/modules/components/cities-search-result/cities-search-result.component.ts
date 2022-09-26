@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Territory } from 'src/app/interfaces/territory';
 
 @Component({
   selector: 'app-cities-search-result',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cities-search-result.component.sass']
 })
 export class CitiesSearchResultComponent implements OnInit {
-  levels = [1, 2, 3];
+  @Input() levels: number[] = [];
+  @Input() territories: Territory[] = [];
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getCities(level: number){
+    return this.territories.filter(city=> city.level === level.toString())
   }
 
 }

@@ -9,12 +9,14 @@ import { City } from 'src/app/interfaces/city';
 export class CityFilterComponent implements OnChanges {
   @Input() cities: City[] = [];
   @Input() label: string = 'Novo local...';
+  @Input() loadingCities = false;
   isLoading = true;
   selectedCities: City[] = [];
   showPlaceholder = true;
   query = '';
   @Input() initialValue: string[] = [];
   @Output() changeLocations: EventEmitter<string[]> = new EventEmitter();
+  @Output() changeQuery: EventEmitter<string> = new EventEmitter();
 
   constructor(
   ) { }
@@ -22,6 +24,7 @@ export class CityFilterComponent implements OnChanges {
   getText() {
     const text = document.getElementById('location-filter-educacao')?.textContent;
     this.query = text as string;
+    this.changeQuery.emit(this.query);
   }
 
   onShowPlaceholder() {

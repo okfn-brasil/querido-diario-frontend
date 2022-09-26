@@ -1,19 +1,19 @@
 <div class="container-education">
   <div class="content">
     <div class="levels">
-      <div class="level" *ngIf="levels.includes(1)" [style]="{width: 'calc((100%/' + levels.length + ') - 40px)'}">
+      <div class="level" *ngIf="levels.length && levels.includes(1)" [style]="{width: 'calc((100%/' + levels.length + ') - 40px)'}">
         <div class="level-icon"><img src="/assets/icons/pin.svg"/></div>
         <div class="level-title">Nível 1 de acesso</div>
         <div class="level-text">O Querido Diário possui a fonte de publicação do diário oficial desta cidade, mas ainda não consegue coletar os arquivos. Doe e nos ajude a disponibilizar informações de mais cidades na plataforma.</div>
         <div class="cities level-1">
-          <div class="city" *ngFor="let city of ['Matãozinho (CE)', 'São Félix do Xingu (PA)']">
-            <span class="city-name">{{city}}</span>
-            <a><div class="city-link">Ir para site</div></a>
+          <div class="city" *ngFor="let city of getCities(1)">
+            <span class="city-name">{{city.territory_label}}</span>
+            <a [href]="city.publication_urls[0]"><div class="city-link">Ir para site</div></a>
           </div>
         </div>
       </div>
 
-      <div class="level" *ngIf="levels.includes(2)" [style]="{width: 'calc((100%/' + levels.length + ') - 40px)'}">
+      <div class="level" *ngIf="levels.length && levels.includes(2)" [style]="{width: 'calc((100%/' + levels.length + ') - 40px)'}">
         <div class="level-icon"><img src="/assets/icons/search.svg"/></div>
         <div class="level-title">Nível 2 de acesso</div>
         <div class="level-text">
@@ -21,21 +21,21 @@
           Precisamos da sua ajuda para conseguir desbloquear o formato fechado dos arquivos para publicá-lo aberto na plataforma.
         </div>
         <div class="cities level-2">
-          <div class="city" *ngFor="let city of ['Matãozinho (CE)', 'São Félix do Xingu (PA)']">
-            <span class="city-name">{{city}}</span>
-            <a><div class="city-link">Ir para site</div></a>
+          <div class="city" *ngFor="let city of getCities(2)">
+            <span class="city-name">{{city.territory_label}}</span>
+            <a [href]="city.publication_urls[0]"><div class="city-link">Ir para site</div></a>
           </div>
         </div>
       </div>
 
-      <div class="level" *ngIf="levels.includes(3)" [style]="{width: 'calc((100%/' + levels.length + ') - 40px)'}">
+      <div class="level" *ngIf="levels.length && levels.includes(3)" [style]="{width: 'calc((100%/' + levels.length + ') - 40px)'}">
         <div class="level-icon"><img src="/assets/icons/check.svg"/></div>
         <div class="level-title">Nível 3 de acesso</div>
         <div class="level-text">O Querido Diário possui a fonte de publicação do diário oficial desta cidade, mas ainda não consegue coletar os arquivos. Doe e nos ajude a disponibilizar informações de mais cidades na plataforma.</div>
         <div class="cities level-3">
-          <div class="city" *ngFor="let city of ['Matãozinho (CE)', 'São Félix do Xingu (PA)']">
-            <span class="city-name">{{city}}</span>
-            <a><div class="city-link">Ir para site</div></a>
+          <div class="city" *ngFor="let city of getCities(3)">
+            <span class="city-name">{{city.territory_label}}</span>
+            <a [href]="city.publication_urls[0]"><div class="city-link">Ir para site</div></a>
           </div>
         </div>
       </div>

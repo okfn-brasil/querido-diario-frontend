@@ -34,9 +34,11 @@
   <app-row [flex]="true" [gap]="16">
     <edu-city-filter
       [initialValue]="territory" 
+      [loadingCities]="loadingCities"
       label="Município" 
       class="city-input" 
-      [cities]="territories" 
+      [cities]="getCityList()" 
+      (changeQuery)="findCities($event)"
       (changeLocations)="onChangeLocation($event)">
     </edu-city-filter>
 
