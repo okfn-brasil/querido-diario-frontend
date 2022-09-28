@@ -85,7 +85,7 @@ export class SearchFormComponent implements OnInit {
   findCities(query: string) {
     if(query && query.length >= 3) {
       this.loadingCities = true;
-      this.territoryService.findByName(query).subscribe(response => {
+      this.territoryService.findByName(query.trim()).subscribe(response => {
         this.territories = response;
         this.loadingCities = false;
       });

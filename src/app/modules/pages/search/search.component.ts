@@ -144,7 +144,10 @@ export class SearchComponent implements OnInit {
       .pipe(take(1))
       .subscribe((res) => {
         this.territories.push(res);
-        this.levels.push(parseInt(res.level));
+        const level = parseInt(res.level);
+        if(!this.levels.includes(level)) {
+          this.levels.push(level);
+        }
       });
     })
     
