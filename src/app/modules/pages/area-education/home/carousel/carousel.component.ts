@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, HostListener, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IconType } from 'src/app/interfaces/icon';
 
 interface itemsModel {
@@ -23,6 +23,7 @@ export class CarouselEducacaoComponent implements OnChanges {
   currPosition = 0;
   mobileSize = 4;
   pages: number[] = [];
+  itemsPerPage = 4;
 
   icon: IconType = {
     file: 'right-arrow-purple',
@@ -30,24 +31,38 @@ export class CarouselEducacaoComponent implements OnChanges {
     width: 12
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.currPosition = 0;
+    this.itemsPerPage = window.innerWidth > 1100 ? 4 : 3;
+  }
+
   constructor() {
   }
 
   onClickNext() {
-    if(this.currPosition < this.items.length - 2) {
-      this.currPosition++;
+    if(this.currPosition < this.items.length - this.itemsPerPage) {
+      if(this.type === 'second-type') {
+        this.currPosition = this.currPosition + this.itemsPerPage;
+      } else {
+        this.currPosition++;
+      }
     }
   }
 
   onClickPrev() {
     if(this.currPosition > 0) {
-      this.currPosition--;
+      if(this.type === 'second-type') {
+        this.currPosition = this.currPosition - this.itemsPerPage;
+      } else {
+        this.currPosition--;
+      }
     }
   }
 
   onClickCircle(page: number) {
-    const newPosition = page * 4;
-    this.currPosition = newPosition === this.items.length - 1? newPosition - 1: newPosition;
+    const newPosition = page * this.itemsPerPage;
+    this.currPosition = newPosition;
   }
 
   loadMore() {
@@ -59,14 +74,15 @@ export class CarouselEducacaoComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
+    this.onResize();
     this.pages = [];
-    for(let i = 0; i < Math.ceil(this.items.length / 3); i++ ) {
+    for(let i = 0; i < Math.ceil(this.items.length / this.itemsPerPage); i++ ) {
       this.pages.push(i);
     }
   }
 
   checkDotActive(page: number) {
-    const pageResult = (Math.ceil(this.currPosition / 3) - 1);
+    const pageResult = (Math.ceil(this.currPosition / this.itemsPerPage));
     return page === (pageResult === -1? 0 : pageResult)
   }
 }
