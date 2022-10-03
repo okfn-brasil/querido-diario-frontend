@@ -12,7 +12,7 @@ import { SupportComponent } from './pages/support/support.component';
 import { TechComponent } from './pages/tech/tech.component';
 import { PostComponent } from './pages/post/post.component';
 import { AvailableCitiesComponent } from './pages/available-cities/available-cities.component';
-
+import { SearchTutorialComponent } from './pages/search-tutorial/search-tutorial.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,7 +26,8 @@ const routes: Routes = [
   { path: 'glossario', component: GlossaryComponent },
   { path: 'pesquisa', component: SearchComponent },
   { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent },
-  { path: 'cidades-disponiveis', component: AvailableCitiesComponent }
+  { path: 'cidades-disponiveis', component: AvailableCitiesComponent },
+  { path: 'tecnologia/busca-avancada', component: SearchTutorialComponent }
 ];
 
 @NgModule({

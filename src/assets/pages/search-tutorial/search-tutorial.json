@@ -1,0 +1,193 @@
+{
+  "title": "Busca avançada nos diários",
+  "items": [
+    {
+      "texts": [
+        {
+          "text": "A sintaxe <a href='https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html' target='_blank'>simple query string</a> do Elasticsearch foi implementada para aperfeiçoamento de pesquisa na base de dados textuais dos Diários Oficiais. Este mecanismo funciona com o uso de caracteres como operadores de busca a fim de aprimorar os resultados."
+        },
+        {
+          "text": "<b>Ao executar uma busca, cada documento da base de publicações é verificado e retornado caso corresponda com o critério desejado. Porém, apenas o melhor trecho (ou excerto) do documento é mostrado como resultado. Este excerto pode não conter a busca completa por limitação do espaço de exibição. Com operadores de busca mais complexos, o excerto pode não ser nem exibido já que deixa de ficar claro qual seria o melhor trecho para mostrar. Em qualquer um desses casos, os Diários Oficiais listados como resultados da busca estão corretos. </b>"
+        },
+        {
+          "text": "Conheça operadores da busca avançada, seus efeitos e alguns exemplos:"
+        }
+      ]
+    },
+    {
+      "title": "Operador \"OU\" ",
+      "texts": [
+        {
+          "images": [
+            {
+              "src": "../../../assets/images/posts/imagem5-operador-ou.png",
+              "height": "",
+              "heightXs": "",
+              "width": "",
+              "widthXs": ""
+            }
+          ]
+        },
+        {
+          "text": "Também conhecido como “operador OR”, funciona usando o símbolo de barra vertical ( | ) para buscar um termo ou outro em toda extensão do diário. Experimente <a href='/pesquisa?term=despacho%20%7C%20dispensa&since=2022-01-01&until=2022-07-31' target='_blank'>ver os resultados da busca por <b>despacho | dispensa</b></a> e repare como são de trechos que tem pelo menos uma das palavras em seu conteúdo."
+        },
+        {
+          "text": "<i>Atenção: Este é o operador padrão no Querido Diário. Se você não explicitar qual operador quer utilizar, a ferramenta vai sempre adotá-lo.</i>"
+        }
+      ]
+    },
+    {
+      "title": "Operador \"E\" ",
+      "texts": [
+        {
+          "images": [
+            {
+              "src": "../../../assets/images/posts/imagem6-operador-and.png",
+              "height": "",
+              "heightXs": "",
+              "width": "",
+              "widthXs": ""
+            }
+          ]
+        },
+        {
+          "text": "Também conhecido como “operador AND”, funciona usando o símbolo de adição ( + ) para buscar um termo e outro em toda a extensão do diário. Veja <a href='/pesquisa?term=compra%20%2B%20computadores&since=2022-01-01&until=2022-07-31' target='_blank'>este exemplo de busca por <b>compra + computadores</b></a>, cujos resultados são de diários que contêm ambos termos. "
+        }
+      ]
+    },
+    {
+      "title": "Operador de Negação",
+      "texts": [
+        {
+          "images": [
+            {
+              "src": "../../../assets/images/posts/imagem7-operador-negacao.png",
+              "height": "",
+              "heightXs": "",
+              "width": "",
+              "widthXs": ""
+            }
+          ]
+        },
+        {
+          "text": "É um comando de busca que usa os símbolos +- para negar o termo à direita. Buscar por <b>ivermectina +-pandemia</b> é buscar diários que contém o termo “ivermectina” e, adicionalmente, não contém o termo “pandemia” por toda sua extensão. <a href='/pesquisa?term=ivermectina%20%2B-pandemia&since=2022-01-01&until=2022-07-31' target='_blank'>Confira esta busca com o operador de negação</a>."
+        },
+        {
+          "text": "<i>Observação: para a busca funcionar corretamente, não devemos adicionar um espaço entre o símbolo de negação (-) e o termo negado.</i>"
+        }
+      ]
+    }, 
+    {
+      "title": "Operador de Busca Exata",
+      "texts": [
+        {
+          "images": [
+            {
+              "src": "../../../assets/images/posts/imagem8-operador-busca-exata.png",
+              "height": "",
+              "heightXs": "",
+              "width": "",
+              "widthXs": ""
+            }
+          ]
+        },
+        {
+          "text": "Esta busca funciona com uma frase entre aspas (“ ”) para busca exata do conteúdo, como em <b>“lei de acesso à informação”</b>. Verifique <a href='/pesquisa?term=%22lei%20de%20acesso%20a%20informa%C3%A7%C3%A3o%22&since=2022-01-01&until=2022-07-31' target='_blank'>este exemplo de busca exata</a> e repare que o que foi buscado corresponde exatamente ao que está entre aspas, as mesmas palavras na mesma ordem."
+        },
+        {
+          "text": "<i>Observação: note a importância de se utilizar as aspas, já que o formato de busca sem aspas também funciona no projeto. Se sua pesquisa for <b>lei de acesso à informação</b> (sem aspas), na prática, o que está sendo buscado é: lei (ou) de (ou) acesso (ou) à (ou) informação. Veja <a href='/pesquisa?term=lei%20de%20acesso%20a%20informa%C3%A7%C3%A3o&since=2022-01-01&until=2022-07-31' target='_blank'>este exemplo de busca sem aspas</a> e compare como os resultados dela são diferentes da busca exata.</i>"
+        }
+      ]
+    }, 
+    {
+      "title": "Operador de Busca por Prefixo",
+      "texts": [
+        {
+          "images": [
+            {
+              "src": "../../../assets/images/posts/imagem9-operador-prefixo.png",
+              "height": "",
+              "heightXs": "",
+              "width": "",
+              "widthXs": ""
+            }
+          ]
+        },
+        {
+          "text": "Esta operação utiliza o símbolo de asterisco ( * ) para buscar por prefixo. Serve para quando o objetivo é achar palavras derivadas de um mesmo radical. Confira <a href='/pesquisa?term=democr*&since=2022-01-01&until=2022-07-31' target='_blank'> como a pesquisa por <b>democr*</b></a> trás resultados com <b>democr</b>acia, <b>democr</b>ático, <b>democr</b>ata, <b>democr</b>atização, etc."
+        }
+      ]
+    }, 
+    {
+      "title": "Operador de Edição de Termo",
+      "texts": [
+        {
+          "images": [
+            {
+              "src": "../../../assets/images/posts/imagem10-operador-edicao.png",
+              "height": "",
+              "heightXs": "",
+              "width": "",
+              "widthXs": ""
+            }
+          ]
+        },
+        {
+          "text": "Funciona utilizando o símbolo til seguido por um número (~N) para distância de edição de termo, ou seja, qual o limite de modificações de caracteres uma palavra precisa para se transformar em outra. Um <a href='/pesquisa?term=assento~3&since=2022-01-01&until=2022-07-31' target='_blank'>exemplo é a pesquisa por <b>assento~3</b></a> que inclue termos como <i>acento</i>, <i>assunto</i>, <i>assentado</i>; todos eles distando até 3 alterações da palavra buscada."
+        },
+        {
+          "text": "<i>Observação: Outra forma de entender essa busca no contexto dos diários é pensar em erros de digitação já que são produzidos por pessoas: a intenção era escrever certa palavra, mas acabou saindo outra, muito próxima.</i>"
+        }
+      ]
+    }, 
+    {
+      "title": "Operador de Distância entre termos",
+      "texts": [
+        {
+          "images": [
+            {
+              "src": "../../../assets/images/posts/imagem11-operador-distancia.png",
+              "height": "",
+              "heightXs": "",
+              "width": "",
+              "widthXs": ""
+            }
+          ]
+        },
+        {
+          "text": "Funciona usando uma frase entre aspas seguida de um til e um valor (“ “~N) indicando a busca como distância máxima entre palavras da frase. O que será buscado são diários que têm os termos entre aspas próximos entre si até N palavras. <a href='/pesquisa?term=%22vazamento%20dados%22~50&since=2022-01-01&until=2022-07-31' target='_blank'>Ao buscar por <b>“vazamento dados”~50</b></a> o que está sendo buscado são trechos de diários que tenham essas duas palavras separadas, por no máximo, 50 outras palavras."
+        },
+        {
+          "text": "<i>Dica: A busca por distância máxima entre palavras é especialmente interessante no contexto do Querido Diário: ela garante que o conteúdo buscado esteja próximo e não disperso por todo o texto do diário.</i>"
+        },
+        {
+          "text": "<i>Observação: note que os operadores <b>~N</b> servem para dois tipos de busca: quando associados a apenas um termo ou quando estão associados a uma frase entre aspas, funcionando de forma completamente diferente. Tenha atenção em seu uso.</i>"
+        }
+      ]
+    }, 
+    {
+      "title": "Operador de Precedência",
+      "texts": [
+        {
+          "images": [
+            {
+              "src": "../../../assets/images/posts/imagem12-operador-precedencia.png",
+              "height": "",
+              "heightXs": "",
+              "width": "",
+              "widthXs": ""
+            }
+          ]
+        },
+        {
+          "text": "Os parênteses como operadores indicam precedência e são usados para forçar a ordem da busca. No geral, só fazem sentido quando a busca a ser feita se complexifica, combinando outros operadores."
+        },
+        {
+          "text": "Você pode conferir <a href='/pesquisa?term=balan%C3%A7o%20%2B%20(financeiro%20%7C%20or%C3%A7ament%C3%A1rio)&since=2022-01-01&until=2022-07-31' target='_blank'>esta busca por <b>balanço + (financeiro | orçamentário)</b></a>. Ao adicionar os parênteses, a busca é forçada a acontecer em certa ordem: primeiro executa o comando entre parênteses e então passa a executar o resto. Neste caso, busca pelos termos “financeiro” ou “orçamentário” primeiro e, de seu resultado, seleciona apenas os casos que também tem “balanço”. "
+        }
+      ]
+    }  
+  ]
+}
+
+
