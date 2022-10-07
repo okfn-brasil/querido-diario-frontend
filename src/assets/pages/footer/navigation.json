@@ -15,6 +15,11 @@
     "title": "TECNOLOGIA",
     "actions": [
       {
+        "text": "Acompanhamento",
+        "route": "/tecnologia",
+        "fragment": "acompanhamento"
+      },
+      {
         "text": "Documentação",
         "route": "/tecnologia",
         "fragment": "documentacao"
@@ -27,8 +32,7 @@
         "text": "Contribua com o desenvolvimento",
         "route": "/tecnologia",
         "fragment": "contribua-com-código"
-      },
-      { "text": "Relatórios", "route": "/tecnologia", "fragment": "relatorios" }
+      }
     ]
   },
   {
