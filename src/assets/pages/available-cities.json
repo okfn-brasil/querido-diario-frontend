@@ -5,6 +5,7 @@
       "text": "Atualmente, o Querido Diário possui os seguintes municípios no <a href='/acesso'>nível 3 de acesso</a>, ou seja, com o conteúdo de seus diários oficiais disponíveis na plataforma:",
       "items": [
         [
+          "Aparecida de Goiânia (GO)",
           "Araguaína (TO)",
           "Belém (PA)",
           "Belo Horizonte (MG)",
@@ -12,6 +13,7 @@
           "Brasília (DF)",
           "Caxias (MA)",
           "Campo Grande (MS)",
+          "Contagem (MG)",
           "Cuiabá (MT)",
           "Curitiba (PR)",
           "Feira de Santana (BA)",
@@ -28,20 +30,23 @@
           "Manaus (AM)",
           "Mossoró (RN)",
           "Natal (RN)",
-          "Nova Iguaçu (RJ)"
-        ],
-        [
+          "Nova Iguaçu (RJ)",
           "Palmas (TO)",
-          "Petrolina (PE)",
+          "Petrolina (PE)"
+        ],
+        [          
           "Porto Alegre (RS)",
           "Rio de Janeiro (RJ)",
           "Recife (PE)",
           "Salvador (BA)",
+          "Serra (ES)",
           "Sobral (CE)",
           "Sumaré (SP)",
           "Teresina (PI)",
           "Uberaba (MG)",
-          "Vila Velha (ES)"
+          "Valinhos (SP)",
+          "Vila Velha (ES)",
+          "Vinhedo (SP)"
         ]
       ]
     }
