@@ -31,10 +31,10 @@
           "Mossoró (RN)",
           "Natal (RN)",
           "Nova Iguaçu (RJ)",
-          "Palmas (TO)"
+          "Palmas (TO)",
+          "Petrolina (PE)"
         ],
-        [
-          "Petrolina (PE)",
+        [          
           "Porto Alegre (RS)",
           "Rio de Janeiro (RJ)",
           "Recife (PE)",
@@ -45,8 +45,8 @@
           "Teresina (PI)",
           "Uberaba (MG)",
           "Valinhos (SP)",
-          "Vinhedo (SP)",
-          "Vila Velha (ES)"
+          "Vila Velha (ES)",
+          "Vinhedo (SP)"
         ]
       ]
     }
