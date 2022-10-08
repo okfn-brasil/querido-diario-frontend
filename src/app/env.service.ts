@@ -10,7 +10,7 @@ export class EnvService {
   public envFileLoaded = false
 
   // Max size of Querido Diário API results (THEMED_EXCERPT_FRAGMENT_SIZE)
-  public qdApiSearchResultMaxSize = 3
+  public qdApiSearchResultMaxSize = 10000
 
   constructor() { }
 }
