@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
+
+import { EnvService } from 'src/app/env.service';
 import { findLevel, Level } from 'src/app/data/levels';
 import {
   GazetteResponse,
@@ -15,6 +17,7 @@ import {
 } from 'src/app/gazette.service';
 import { City } from 'src/app/interfaces/city';
 import { TerritoryService, Territory } from 'src/app/territory.service';
+
 interface SearchResult {
   text: string;
   city: string;
@@ -49,6 +52,7 @@ interface Pagination {
 })
 export class SearchComponent implements OnInit {
   constructor(
+    private env: EnvService,
     private router: Router,
     private route: ActivatedRoute,
     private territoryService: TerritoryService,
