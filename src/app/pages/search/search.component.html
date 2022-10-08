@@ -124,7 +124,7 @@
             <p>{{ text }}</p>
           </ng-container>
         </ng-container>
-        <!-- <ng-container
+        <ng-container
           *ngIf="
             !territory && gazetteResponse && gazetteResponse.total_gazettes > 0
           "
@@ -134,38 +134,20 @@
             que já conseguimos disponibilizar em formato aberto! Assim você
             consegue realizar a busca nos documentos de um jeito fácil.
           </p>
-        </ng-container>-->
-
-        <div
-          *ngIf="
-            !territory &&
-              gazetteResponse &&
-              gazetteResponse.total_gazettes < 10000;
-            else elseBlock
-          "
-        >
-          <p>
-            Abaixo, estão os resultados encontrados nos diários dos municípios
-            que já conseguimos disponibilizar em formato aberto! Assim você
-            consegue realizar a busca nos documentos de um jeito fácil.
-          </p>
-        </div>
-
-        <ng-template #elseBlock>
-          <p>
-            Encontramos mais de 10000 resultados para a sua busca nos municípios
-            que já conseguimos disponibilizar em formato aberto! Tente digitar
-            termos mais específicos ou usar mais de um termo para otimizar sua
-            pesquisa.
-          </p>
-        </ng-template>
+        </ng-container>
 
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <h2>{{ gazetteResponse.total_gazettes }} resultados encontrados</h2>
+          <div>
+            <h2>{{ gazetteResponse.total_gazettes }}<span *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;">*</span> resultados encontrados</h2>
+            <em *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;" class="text-xs text-neutral-400">
+              *A quantidade de resultados atingiu o limite da pesquisa. Tente digitar um termo mais específico ou usar mais de um para otimizar sua busca.
+            </em>
+          </div>
           <app-select
             [title]="'ORDENAR POR'"
             [options]="orderOptions"
             [selected]="sort_by"
+            class="text-white"
             (onSelected)="orderChanged($event)"
           ></app-select>
         </div>
