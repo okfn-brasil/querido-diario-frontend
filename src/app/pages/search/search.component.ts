@@ -62,6 +62,7 @@ export class SearchComponent implements OnInit {
   territoryId: string | undefined = undefined;
   cityName: string | null = null;
   foundResult: boolean = false;
+  searchResultMaxSize: number = this.env.qdApiSearchResultMaxSize;
   response: Observable<SearchResponse> = new Observable();
   city: Observable<City | null> = new Observable();
   levelDescription: LevelDescription | undefined = undefined;
