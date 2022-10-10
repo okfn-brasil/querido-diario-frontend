@@ -1,0 +1,16 @@
+name: ❓ Dúvida
+description: Tire qualquer dúvida que tenha sobre este repositório
+labels: [question]
+body:
+- type: markdown
+  attributes:
+    value: |
+      Para ajuda em tempo real, convidamos você a participar da nossa [comunidade no Discord](https://discord.com/invite/mxHGPq8rdY).
+
+      Caso prefira enviar por aqui, use o campo abaixo.
+- type: textarea
+  attributes:
+    label: Dúvida
+    description: Descreva a sua dúvida com o máximo de informações.
+  validations:
+    required: true
