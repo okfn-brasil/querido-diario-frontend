@@ -1,0 +1,16 @@
+name: ✨ Melhoria ou nova funcionalidade
+description: Sugira uma ideia para o projeto
+labels: [enhancement]
+body:
+- type: markdown
+  attributes:
+    value: |
+      Agradecemos por sugerir esta ideia! 💡
+
+      Conte-nos mais sobre ela abaixo.
+- type: textarea
+  attributes:
+    label: Descrição
+    description: Descreva de forma detalhada a sua sugestão, citando referências, anexando imagens etc.
+  validations:
+    required: true
