@@ -100,6 +100,9 @@ import { BlogPostComponent } from './modules/pages/blog/blog-post/blog-post.comp
 import { BlogPostDetailComponent } from './modules/pages/blog/blog-post-detail/blog-post-detail.component';
 import { BlogRelatedsComponent } from './modules/pages/blog/blog-relateds/blog-relateds.component';
 import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-header.component';
+import { ReportDetailComponent } from './modules/pages/area-education/report-detail/report-detail.component';
+import { PdfJsViewerModule } from 'ng2-pdfjs-viewer';
+import { CitiesSearchResultComponent } from './modules/components/cities-search-result/cities-search-result.component';
 
 @NgModule({
   declarations: [
@@ -170,12 +173,14 @@ import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-heade
     BlogPostDetailComponent,
     BlogRelatedsComponent,
     BlogHeaderComponent,
+    ReportDetailComponent,
+    CitiesSearchResultComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    PdfJsViewerModule,
     MatGridListModule,
     MatMenuModule,
     MatFormFieldModule,

@@ -6,10 +6,17 @@
   </section>
 
   <section
+    *ngIf="levels && levels.length"
+    class="bg-purple-2 cities-result"
+  >
+    <app-cities-search-result [levels]="levels" [territories]="territories"></app-cities-search-result>
+  </section>
+
+  <section
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="!territory && gazetteResponse && gazetteResponse.total_gazettes == 0"
+    *ngIf="gazetteResponse && gazetteResponse.total_gazettes == 0"
   >
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
@@ -20,104 +27,8 @@
     </div>
   </section>
 
-  <section
-    class="bg-purple-2"
-    fxLayoutAlign="center"
-    fxLayout="row"
-    *ngIf="!!territory"
-  >
-    <div
-      class="container"
-      *ngIf="level$ | async as level"
-      fxLayout="column"
-      fxLayoutGap.xs="36px"
-      fxLayoutGap="44px"
-    >
-      <div fxLayout="row">
-        <div fxLayout="row" fxFlex="40%" fxFlex.xs fxLayoutGap="12px">
-          <app-icon
-            [icon]="{
-              file: level.icon,
-              height: 50,
-              width: 50
-            }"
-          >
-          </app-icon>
-          <div fxLayout="column">
-            <p [style.lineHeight]="'13px'">{{ territory.territory_label }}</p>
-            <span>
-              <p>{{ level.title.toUpperCase() }}</p>
-            </span>
-          </div>
-        </div>
-
-        <div fxLayout="column" fxFlex="60%" fxFlex.xs fxLayoutGap="18px">
-          <ng-container *ngFor="let text of level.descriptions">
-            <div
-              class="typo-inner dark highlight"
-              [innerHTML]="text"
-              [style.color]="'#FFF'"
-            ></div>
-          </ng-container>
-          <ng-container *ngFor="let action of level.actions">
-            <a
-              class="btn-primary"
-              [href]="action.to"
-              [target]="action.target || '_self'"
-            >
-              {{ action.text }}
-            </a>
-          </ng-container>
-        </div>
-      </div>
-
-      <div
-        fxLayout="column"
-        fxLayoutGap="42px"
-        *ngIf="
-          territory.publication_urls &&
-          gazetteResponse &&
-          !gazetteResponse.total_gazettes
-        "
-      >
-        <p>Acesse a fonte de publicação para ver os arquivos originais:</p>
-        <div
-          fxLayout="column"
-          class="bg-white-2 result color-purple-1"
-          fxLayoutGap="12px"
-        >
-          <h3>Diários oficiais • {{ territory.territory_name }}</h3>
-          <nav class="nav-dark" *ngIf="territory.publication_urls.length === 1">
-            <ng-container
-              *ngFor="let publication_url of territory.publication_urls"
-            >
-              <a class="nav-dark" [href]="publication_url" target="_blank">
-                {{ extractUrlDomain(publication_url) }}
-              </a>
-            </ng-container>
-          </nav>
-          <nav class="nav-dark" *ngIf="territory.publication_urls.length > 1">
-            <ng-container
-              *ngFor="
-                let publication_url of territory.publication_urls;
-                index as i
-              "
-            >
-              <a class="nav-dark" [href]="publication_url" target="_blank">
-                Fonte {{ i + 1 }}
-              </a>
-              <ng-container *ngIf="i < territory.publication_urls.length - 1">
-                <span>•</span>
-              </ng-container>
-            </ng-container>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <div *ngIf="gazetteResponse && gazetteResponse.total_gazettes">
-    <section class="bg-purple-2" fxLayoutAlign="center" fxLayout="row">
+    <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
       <div class="container" fxLayout="column" fxLayoutGap="42px">
         <ng-container *ngIf="level$ | async as level">
           <ng-container *ngFor="let text of level.texts">
@@ -125,9 +36,7 @@
           </ng-container>
         </ng-container>
         <ng-container
-          *ngIf="
-            !territory && gazetteResponse && gazetteResponse.total_gazettes > 0
-          "
+          *ngIf="gazetteResponse && gazetteResponse.total_gazettes > 0"
         >
           <p>
             Abaixo, estão os resultados encontrados nos diários dos municípios

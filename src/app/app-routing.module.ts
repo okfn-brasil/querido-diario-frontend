@@ -6,6 +6,7 @@ import { AboutEducationComponent } from './modules/pages/area-education/about/ab
 import { AlertsComponent } from './modules/pages/area-education/alerts/alerts.component';
 import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.component';
 import { HomeEducacaoComponent } from './modules/pages/area-education/home/home.component';
+import { ReportDetailComponent } from './modules/pages/area-education/report-detail/report-detail.component';
 import { SearchEducationComponent } from './modules/pages/area-education/search/search.component';
 import { SignupComponent } from './modules/pages/area-education/signup/signup.component';
 import { StartSearchComponent } from './modules/pages/area-education/start-search/start-search.component';
@@ -36,7 +37,7 @@ const routes: Routes = [
   { path: 'pesquisa', component: SearchComponent },
   { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent },
   { path: 'cidades-disponiveis', component: AvailableCitiesComponent },
-  /*{ path: 'blog', component: BlogListComponent },
+  { path: 'blog', component: BlogListComponent },
   { path: 'blog/:id', component: BlogListComponent },
   { path: 'blog/post/:id', component: BlogPostDetailComponent },
   //area educação
@@ -46,7 +47,8 @@ const routes: Routes = [
   { path: 'educacao/cadastrar', component: SignupComponent },
   { path: 'educacao/busca', component: SearchEducationComponent },
   { path: 'educacao/sobre', component: AboutEducationComponent },
-  { path: 'educacao/alertas', component: AlertsComponent },*/
+  { path: 'educacao/alertas', component: AlertsComponent },
+  { path: 'educacao/relatorio/:id', component: ReportDetailComponent },
 ];
 
 @NgModule({
