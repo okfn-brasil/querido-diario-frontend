@@ -103,6 +103,7 @@ import { BlogRelatedsComponent } from './modules/pages/blog/blog-relateds/blog-r
 import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-header.component';
 import { ReportDetailComponent } from './modules/pages/area-education/report-detail/report-detail.component';
 import { CitiesSearchResultComponent } from './modules/components/cities-search-result/cities-search-result.component';
+import { AdvancedModalComponent } from './modules/pages/area-education/search/advanced-modal/advanced-modal.component';
 
 @NgModule({
   declarations: [
@@ -176,6 +177,7 @@ import { CitiesSearchResultComponent } from './modules/components/cities-search-
     BlogHeaderComponent,
     ReportDetailComponent,
     CitiesSearchResultComponent,
+    AdvancedModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,18 @@
 <edu-header></edu-header>
 <edu-alert-modal [hasEditEmail]="true" (close)="onCloseCreate()" (created)="onCloseCreate()" *ngIf="isOpenAlertModal"></edu-alert-modal>
+<edu-advanced-modal (close)="onCloseAdvanced()" *ngIf="isOpenAdvanced"></edu-advanced-modal>
+
 <div class="search-page">
   <div class="search-header">
     <div class="flex">
       <div class="edu-input">
         <input (keyup)="onEnter($event)" class="desktop" [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Encontre um..."/>
-        <input (keyup)="onChangeQuery()" class="mobile" [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Encontre um..."/>
-        <img src="assets/images/education/search.png" alt="buscar" />
+        <input (keyup)="onChangeQuery()" class="mobile" [(ngModel)]="querystring" id="querystringMobile" name="querystring" placeholder="Encontre um..."/>
+        <img class="search-ico" src="assets/images/education/education-search.svg" alt="buscar" />
       </div>
       <button (click)="onChangeQuery()" class="btne-primary">Buscar</button>
     </div>
-    <div class="advanced">Busca avançada <img src="assets/icons/right-arrow-white.svg" alt="buscar" /></div>
+    <div class="advanced" (click)="onOpenAdvanced()">Busca avançada <img src="assets/icons/right-arrow-white.svg" alt="buscar" /></div>
     <div class="mobile ">
       <div class="mobile-buttons">
         <button (click)="openFilters()" class="open-filters">Filtros</button>

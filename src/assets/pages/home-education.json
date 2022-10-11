@@ -10,27 +10,39 @@
     "reportsArray": [
       {
         "title": "Relatórios U",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": "/educacao/relatorio/"
       },
       {
         "title": "Relatórios X",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": "/educacao/relatorio/"
       },
       {
         "title": "Relatórios Y",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": "/educacao/relatorio/"
       },
       {
         "title": "Relatórios Z",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": "/educacao/relatorio/"
       },
       {
         "title": "Relatórios A",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": "/educacao/relatorio/"
       },
       {
         "title": "Relatórios B",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": "/educacao/relatorio/"
       }
     ]
   },
@@ -40,23 +52,33 @@
     "casesArray": [
       {
         "title": "Estudo de caso U",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": ""
       },
       {
         "title": "Estudo de caso X",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": ""
       },
       {
         "title": "Estudo de caso Y",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": ""
       },
       {
         "title": "Estudo de caso Z",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": ""
       },
       {
         "title": "Estudo de caso A",
-        "date": "DD / MM / AAAA"
+        "date": "DD / MM / AAAA",
+        "id": 1,
+        "link": ""
       }
     ]
   },

@@ -6,11 +6,11 @@
           <div class="page-circle" (click)="onClickCircle(page)" *ngFor="let page of pages" [class.active]="checkDotActive(page)"></div>
         </div>
       </div>
-      <div class="button-nav next desktop" [class.second-type]="type === 'second-type'" (click)="onClickNext()">
+      <div class="button-nav next desktop" [class.second-type]="type === 'second-type'"  [class.abled]="currPosition < items.length - itemsPerPage" (click)="onClickNext()">
         <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="próximo" />
         <img *ngIf="type === 'second-type'" src="assets/images/education/carousel-arrow-purple.png" alt="próximo" />
       </div>
-      <div class="button-nav prev desktop" [class.second-type]="type === 'second-type'" (click)="onClickPrev()">
+      <div class="button-nav prev desktop" [class.second-type]="type === 'second-type'" [class.abled]="currPosition > 0" (click)="onClickPrev()">
         <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="anterior" />
         <img *ngIf="type === 'second-type'" src="assets/images/education/carousel-arrow-purple.png" alt="anterior" />
       </div>
@@ -18,7 +18,7 @@
         <div *ngFor="let item of items" class="carousel-item">
           <div class="title">{{item.title}}</div>
           <div class="date">{{item.date}}</div>
-          <a [href]="item.link">
+          <a [href]="item.link + '' + item.id">
             Ler mais 
               <app-icon
               class='center'

@@ -1,0 +1,59 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+  
+.modal-area
+  width: 100vw
+  height: 100vh
+  position: fixed
+  top: 0
+  left: 0
+  background-color: rgba(0,0,0, 0.3)
+  display: flex
+  align-items: center
+  justify-content: center
+  font-family: Lato
+  z-index: 9999
+
+  .modal
+    background-color: #fff
+    max-height: 80%
+    overflow-y: auto
+    width: 40%
+    @media only screen and (max-width: 768px)
+      width: 100%
+      height: 100%
+      max-height: 100%
+
+.title-area
+  display: flex
+  flex-wrap: wrap
+  cursor: pointer
+  align-items: center
+  padding: rem(24)
+
+  .title
+    font-size: rem(22)
+    line-height: rem(26)
+    margin-left: rem(22)
+    font-family: Baloo
+
+.advanced-item
+  padding: rem(24)
+  border-top: 1px solid rgba(243, 233, 233, 1)
+  font-family: Lato
+  color: rgba(52, 51, 52, 1)
+
+  .advanced-title
+    font-size: rem(16)
+    line-height: rem(22)
+
+  .advanced-desc
+    font-size: rem(14)
+    line-height: rem(19)
+    margin-top: rem(16)
+
+  .advanced-example
+    color: rgba(101, 74, 156, 1)
+    font-size: rem(14)
+    line-height: rem(19)
+    margin-top: rem(4)
