@@ -16,6 +16,6 @@ export class AboutEducationComponent implements OnInit {
   }
 
   ngOnInit() {
-   this.content$ = this.contentService.find('home-education');
+   this.content$ = this.contentService.find('about-education');
   }
 }

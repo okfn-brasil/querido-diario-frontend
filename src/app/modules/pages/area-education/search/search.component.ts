@@ -34,6 +34,7 @@ export class SearchEducationComponent implements OnInit {
   themes: string[] = [];
   cities: City[] = [];
   isOpenAlertModal = false;
+  isOpenAdvanced = false;
 
   constructor(
     private searchService: EducationGazettesService,
@@ -161,5 +162,13 @@ export class SearchEducationComponent implements OnInit {
 
   onOpenCreateAlert() {
     this.isOpenAlertModal = true;
+  }
+
+  onCloseAdvanced() {
+    this.isOpenAdvanced = false;
+  }
+
+  onOpenAdvanced() {
+    this.isOpenAdvanced = true;
   }
 }

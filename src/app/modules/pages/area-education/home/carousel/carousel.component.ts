@@ -2,6 +2,7 @@ import { Component, HostListener, Input, OnChanges, OnInit, SimpleChanges } from
 import { IconType } from 'src/app/interfaces/icon';
 
 interface itemsModel {
+  id?: number;
   title?: string;
   link?: string;
   date?: string;
@@ -65,15 +66,8 @@ export class CarouselEducacaoComponent implements OnChanges {
     this.currPosition = newPosition;
   }
 
-  loadMore() {
-    this.mobileSize += 4;
-  }
-
-  loadLess() {
-    this.mobileSize -= 4;
-  }
-
   ngOnChanges(): void {
+    console.log(this.items)
     this.onResize();
     this.pages = [];
     for(let i = 0; i < Math.ceil(this.items.length / this.itemsPerPage); i++ ) {

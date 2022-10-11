@@ -1,0 +1,29 @@
+{
+  "aboutTitle": "sobre o quero diário educação",
+  "title": "Nós estamos aqui para promover transparência",
+  "subtitle": "Nunc tempus, est auctor in. Consectetur dapibus quis enim sed sociis blandit. Ac quis dictumst orci odio leo vitae ac eget aliquam. Congue eleifend fermentum, morbi nunc. Mattis aliquet tortor quam a nam. Urna, purus vel non tellus leo duis vulputate id. In aliquam nunc, mattis gravida. Faucibus orci posuere hac aliquam.",
+  "objective": "Nosso propósito é facilitar o acesso a dados sobre o clima para proteger o meio ambiente",
+  "objectiveInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis diam vel nisl aliquet aliquam. Donec dignissim massa et erat semper, eu condimentum eros cursus. Etiam convallis sollicitudin faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis diam vel nisl aliquet aliquam. Donec dignissim massa et erat semper, eu condimentum eros cursus. Etiam convallis sollicitudin faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis diam vel nisl aliquet aliquam. Donec dignissim massa et erat semper, eu condimentum eros cursus. Etiam convallis sollicitudin faucibus.",
+  "supportTitle": "Contamos com seu apoio!",
+  "supportText": "Você pode se tornar um assinante. Assim, você recebe os benefícios de ser PRO e ainda ajuda o Diário do Clima a abrir os dados de novas cidades e desenvolver novas ferramentas!",
+  "supportButton": "APOIE",
+  "realization": [
+    {
+      "title": "REALIZAÇÃO",
+      "icons": [
+        { "file": "logo-OK", "to": "https://ok.org.br/", "target": "_blank", "height": 30, "width": 106 },
+        { "file": "logo-serenata", "to": "https://serenata.ai/", "target": "_blank", "height": 40, "width": 82 },
+        { "file": "logo-embaixadores", "to": "https://embaixadoras.ok.org.br/", "target": "_blank", "height": 18, "width": 116 }
+      ]
+    },
+    {
+      "title": "APOIO",
+      "icons": [
+        { "file": "logo-Ilda", "to": "https://idatosabiertos.org/", "target": "_blank", "height": 17, "width": 52 },
+        { "file": "empatia", "to": "https://www.empatia.la/", "target": "_blank", "height": 16, "width": 87 },
+        { "file": "logo-jurema", "to": "https://www.jurema.la/", "target": "_blank", "height": 18, "width": 80 },
+        { "file": "logo-digitalocean", "to": "https://www.digitalocean.com/", "target": "_blank", "height": 18, "width": 110 }
+      ]
+    }
+  ]
+}

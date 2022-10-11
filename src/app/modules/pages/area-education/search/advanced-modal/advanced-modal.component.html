@@ -1,0 +1,15 @@
+<div class="modal-area" (click)="onClickClose()">
+  <div class="modal" (click)="stopPropagation($event)">
+    <div class="title-area" (click)="onClickClose()">
+      <img src="assets/icons/close-icon.svg" alt="fechar" />
+      <div class="title">Dicas de busca avançada</div>
+    </div>
+
+    <div class="advanced-item" *ngFor="let item of items">
+      <div class="advanced-title">{{item.title}}</div>
+      <div class="advanced-desc" *ngIf="item.desc">{{item.desc}}</div>
+      <div class="advanced-example" *ngIf="item.ex">{{item.ex}}</div>
+    </div>
+
+  </div>
+</div>
