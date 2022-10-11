@@ -6168,11 +6168,6 @@
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
 
-"next-tick@^1.1.0":
-  "integrity" "sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ=="
-  "resolved" "https://registry.npmjs.org/next-tick/-/next-tick-1.1.0.tgz"
-  "version" "1.1.0"
-
 "ngx-pagination@^5.1.0":
   "version" "5.1.1"
 
