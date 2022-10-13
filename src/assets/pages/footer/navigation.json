@@ -36,6 +36,7 @@
     "actions": [
       { "text": "História", "route": "/sobre", "fragment": "historia" },
       { "text": "Quem somos", "route": "sobre", "fragment": "quem-somos" },
+      { "text": "Nossos objetivos", "route": "sobre", "fragment": "objetivos" },
       {
         "text": "Termos de uso e política de privacidade",
         "route": "/privacidade"
