@@ -3,9 +3,30 @@
     "title": "Sobre o Querido Diário",
     "text": "Conheça o projeto que usa tecnologia para libertar o conteúdos dos diários oficiais dos municípios brasileiros e aproximar os cidadãos das ações de seus governantes",
     "actions": [
-      { "text": "História", "route": "/sobre", "fragment": "historia", "style": "link-secondary" },
-      { "text": "Entenda", "route": "/sobre", "fragment": "entenda", "style": "link-secondary" },
-      { "text": "Quem somos", "route": "/sobre", "fragment": "quem-somos", "style": "link-secondary" },
+      {
+        "text": "História",
+        "route": "/sobre",
+        "fragment": "historia",
+        "style": "link-secondary"
+      },
+      {
+        "text": "Entenda",
+        "route": "/sobre",
+        "fragment": "entenda",
+        "style": "link-secondary"
+      },
+      {
+        "text": "Quem somos",
+        "route": "/sobre",
+        "fragment": "quem-somos",
+        "style": "link-secondary"
+      },
+      {
+        "text": "Nossos objetivos",
+        "route": "/sobre",
+        "fragment": "objetivos",
+        "style": "link-secondary"
+      },
       {
         "text": "Política de privacidade",
         "route": "/sobre",
@@ -33,22 +54,42 @@
       {
         "title": "FONTE | 10/02/2021",
         "text": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "actions": [
+          {
+            "text": "Ler mais",
+            "icon": "right-arrow"
+          }
+        ]
       },
       {
         "title": "FONTE | 10/02/2021",
         "text": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "actions": [
+          {
+            "text": "Ler mais",
+            "icon": "right-arrow"
+          }
+        ]
       },
       {
         "title": "FONTE | 10/02/2021",
         "text": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "actions": [
+          {
+            "text": "Ler mais",
+            "icon": "right-arrow"
+          }
+        ]
       },
       {
         "title": "FONTE | 10/02/2021",
         "text": "Nulla vel metus scelerisque ante sollicitudin commodo.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow" }]
+        "actions": [
+          {
+            "text": "Ler mais",
+            "icon": "right-arrow"
+          }
+        ]
       }
     ]
   },
@@ -64,6 +105,19 @@
         "to": "http://ok.org.br",
         "link": "ok.org.br"
       }
+    ]
+  },
+  "objectives": {
+    "title": "Nossos objetivos",
+    "texts": [
+      "Nosso primeiro objetivo é manter a comunidade que torna o Querido Diário possível. Realizaremos eventos, sprints e lives de capacitação e fomento à colaboração. Seguiremos desenvolvendo novos robôs \"raspadores\" para os diários oficiais dos municípios (já temos mais de 300!) e divulgaremos um censo com o diagnóstico do atual nível de transparência de todas as publicações das cidades brasileiras.",
+      "Também vamos manter a plataforma funcionando, é claro. No lançamento feito em julho/2021, tínhamos 12 capitais brasileiras disponíveis para consulta, além de uma API para utilização do público desenvolvedor de tecnologias. Essa plataforma será incrementada ao longo do tempo, de acordo com as demandas identificadas nos diferentes grupos de pessoas usuárias da plataforma (jornalistas, pesquisadoras, integrantes de organizações da sociedade civil, gestoras públicas etc.).",
+      "Pretendemos fornecer acesso a mais 100 cidades brasileiras na plataforma e na API do Querido Diário. Esta meta cobre os custos de integração dos raspadores e também do armazenamento do enorme volume de dados coletados.",
+      "Além de integrarmos as 326 cidades brasileiras com mais de 100 mil habitantes, a plataforma passará a contar com novas funcionalidades por meio da aplicação de algoritmos de inteligência artificial. Os modelos de processamento de linguagem natural, classificação de publicações e sistemas de recomendação irão conectar e dar sentido aos dados públicos, possibilitando a criação de relatórios analíticos e de um mecanismo de alerta para palavras-chave, por exemplo.",
+      "Vamos promover uma campanha de conscientização e suporte às pessoas das gestões públicas, que são quem de fato produz e divulga as informações de nosso interesse.",
+      "Nosso último objetivo é cruzar os dados dos diários oficiais com outras bases públicas (Receita Federal e TSE, por exemplo) e criar algoritmos de classificação que possam identificar suspeitas como: favorecimento de empresas em licitações,compras e contratações sob valores muito altos, nomeações de pessoas investigadas para cargos públicos, privilégios para candidatos às eleições e (até) casos de nepotismo",
+      "Nossa curadoria também ficará mais inteligente e possibilitará a divulgação de relatórios e alertas mais completos e com muito mais valor para a democracia.",
+      "Por fim, queremos propor aos municípios um modelo padronizado de plataforma para a publicação de diários oficiais a partir da nossa experiência nas etapas anteriores, influenciando positivamente a gestão pública e levando mais tecnologia para os setores que aplicam nosso dinheiro."
     ]
   },
   "privacy": {
