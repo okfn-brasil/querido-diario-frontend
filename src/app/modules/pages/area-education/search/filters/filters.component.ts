@@ -41,7 +41,6 @@ export class EducationFiltersComponent implements OnInit {
     this.formGroup.valueChanges.subscribe(() => {
       this.onChangeFilters();
     });
-
     this.themes = this.filters.subthemes as string[];
     this.locations = this.filters.local as string[];
     this.formGroup.controls.entities.setValue(this.filters.entities || '');
