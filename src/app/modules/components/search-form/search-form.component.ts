@@ -51,6 +51,7 @@ export class SearchFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.findCities();
     this.filteredOptions = this.termControl.valueChanges.pipe(
       startWith(''),
       map((value) => this._filterTerms(value))
@@ -82,10 +83,10 @@ export class SearchFormComponent implements OnInit {
     return [...this.territories.filter(city => !selectedIds.includes(city.territory_id)) ,...this.selectedCities]
   }
 
-  findCities(query: string) {
-    if(query && query.length >= 3) {
+  findCities() {
+    if(!this.loadingCities && !this.territories.length) {
       this.loadingCities = true;
-      this.territoryService.findByName(query.trim()).subscribe(response => {
+      this.territoryService.findByName('').subscribe(response => {
         this.territories = response;
         this.loadingCities = false;
       });
