@@ -2,7 +2,7 @@
   <div class="field">
     <div class="title">Município</div>
     <div class="label">Digite um local</div>
-    <edu-city-filter [cities]="apiCities" [initialValue]="locations" (changeLocations)="onChangeLocations($event)"></edu-city-filter>
+    <edu-city-filter [showAll]="true" [cities]="apiCities" [initialValue]="locations" (changeLocations)="onChangeLocations($event)"></edu-city-filter>
   </div>
 
   <div class="field" *ngIf="!isModal">
@@ -17,7 +17,7 @@
   </div>
 
   <div class="field">
-    <div class="title">Entes do governo</div>
+    <div class="title">Atores envolvidos</div>
     <div class="edu-input">
       <select id="entities" name="entities" formControlName="entities" placeholder="entities">
         <option value="" selected>Selecione uma opção</option>

@@ -10,6 +10,8 @@ export class CityFilterComponent implements OnChanges {
   @Input() cities: City[] = [];
   @Input() label: string = 'Novo local...';
   @Input() loadingCities = false;
+  @Input() showAll = false;
+  showDropdown = false;
   isLoading = true;
   selectedCities: City[] = [];
   showPlaceholder = true;
@@ -54,11 +56,16 @@ export class CityFilterComponent implements OnChanges {
     this.changeLocations.emit(this.selectedCities.map(city => city.territory_id))
   }
 
+  focusOutInput() {
+    this.showDropdown = false;
+  }
+
   focusOnInput() {
     let container = document.getElementById('location-filter-educacao')
     if(container) {
       container.focus();
     }
+    this.showDropdown = true;
   }
 
   resetInput() {
@@ -75,7 +82,7 @@ export class CityFilterComponent implements OnChanges {
 
   getCitiesList() {
     if(this.cities && this.cities.length) {
-      return this.cities.filter(city =>  city.territory_name.toLowerCase().includes(this.query.toLowerCase().trim()) && this.query.length >= 3);
+      return this.cities.filter(city =>  city.territory_name.toLowerCase().includes(this.query.toLowerCase().trim()) && (this.query.length >= 3 || this.showAll));
     }
     return [];
   }

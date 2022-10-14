@@ -47,7 +47,6 @@ export class HeaderComponent implements OnInit {
     });
 
     this.router.events.subscribe(event => {
-      console.log(this.urlsHide, this.router.url)
       if(this.urlsHide.includes(this.router.url)) {
         this.hideMenu = true;
       } else {

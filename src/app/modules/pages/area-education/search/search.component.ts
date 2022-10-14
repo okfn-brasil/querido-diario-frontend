@@ -51,7 +51,7 @@ export class SearchEducationComponent implements OnInit {
         subthemes: params.subthemes,
         period: params.period,
         until: params.until,
-        published_since: params.since,
+        published_since: params.published_since,
         local: params.local,
         sort_by: this.order,
       } as GazetteFilters;

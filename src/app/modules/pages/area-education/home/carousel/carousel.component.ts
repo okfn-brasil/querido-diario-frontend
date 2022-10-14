@@ -67,7 +67,6 @@ export class CarouselEducacaoComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log(this.items)
     this.onResize();
     this.pages = [];
     for(let i = 0; i < Math.ceil(this.items.length / this.itemsPerPage); i++ ) {
