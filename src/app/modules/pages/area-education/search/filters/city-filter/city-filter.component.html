@@ -1,4 +1,4 @@
-<div class="location-search" (click)="focusOnInput()">
+<div class="location-search" (click)="focusOnInput()" (mouseleave)="focusOutInput()">
   <div (click)="removeCity(city, $event)" class="tag" *ngFor="let city of selectedCities">{{city.territory_name}} <img src="assets/images/education/close.png" alt="fechar" /></div>
   
   <div class="text-area">
@@ -8,7 +8,7 @@
     <div class="new-place" *ngIf="showPlaceholder">{{label}}</div>
   </div>
 
-  <div class="dropdown" (click)="stopPropagation($event)" >
+  <div class="dropdown" (click)="stopPropagation($event)" *ngIf="showDropdown">
     <div class="option" *ngFor="let city of getCitiesList()" (click)="addCity(city)">{{city.territory_name}}</div>
     <div class="loading-options" *ngIf="isLoading && query.length > 2 || loadingCities">
       <mat-spinner ></mat-spinner>

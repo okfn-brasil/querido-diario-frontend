@@ -2,7 +2,7 @@
   <header fxLayout="row">
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
-      <nav fxHide.xs fxLayoutGap="32px">
+      <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
         <a routerLink="/" #explore>Explore</a>
         <a routerLink="/tecnologia">Tecnologia</a>
         <a routerLink="/sobre">Sobre o querido diário</a>
@@ -13,7 +13,7 @@
         </a>
         <button routerLink="/apoie" class="btn">Apoie</button>
       </nav>
-      <a (click)="openDialog()" id="support" fxHide fxHide.xs="false">
+      <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
         <mat-icon svgIcon="bars" class="bars"></mat-icon>
       </a>
     </div>

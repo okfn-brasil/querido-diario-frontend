@@ -18,6 +18,8 @@ export class HeaderComponent implements OnInit {
   @ViewChild('explore') explore!: ElementRef;
   mobileMenuOpen = false;
   userData: UserModel = {};
+  urlsHide = ['/educacao/cadastrar'];
+  hideMenu = false;
 
   constructor(
     private userQuery: UserQuery,
@@ -43,6 +45,14 @@ export class HeaderComponent implements OnInit {
     this.userQuery.userData$.subscribe(userData => {
       this.userData = userData;
     });
+
+    this.router.events.subscribe(event => {
+      if(this.urlsHide.includes(this.router.url)) {
+        this.hideMenu = true;
+      } else {
+        this.hideMenu = false;
+      }
+    })
   }
 
   openDialog(): void {

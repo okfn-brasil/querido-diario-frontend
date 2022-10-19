@@ -54,7 +54,11 @@ export class AlertModalComponent implements OnInit {
   }
 
   onChangeFilters(filters: GazetteFilters) {
-    this.filters = filters;
+    this.filters = {
+      entities: filters.entities && filters.entities[0] ? filters.entities : [],
+      local: filters.local,
+      subthemes: filters.subthemes
+    } as GazetteFilters;
     if(filters.local && filters.local.length) {
       this.selectedCities = this.cities
         .filter(city => filters.local?.includes(city.territory_id))

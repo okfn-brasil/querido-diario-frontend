@@ -34,6 +34,7 @@ export class SearchEducationComponent implements OnInit {
   themes: string[] = [];
   cities: City[] = [];
   isOpenAlertModal = false;
+  isOpenAdvanced = false;
 
   constructor(
     private searchService: EducationGazettesService,
@@ -50,7 +51,7 @@ export class SearchEducationComponent implements OnInit {
         subthemes: params.subthemes,
         period: params.period,
         until: params.until,
-        published_since: params.since,
+        published_since: params.published_since,
         local: params.local,
         sort_by: this.order,
       } as GazetteFilters;
@@ -161,5 +162,13 @@ export class SearchEducationComponent implements OnInit {
 
   onOpenCreateAlert() {
     this.isOpenAlertModal = true;
+  }
+
+  onCloseAdvanced() {
+    this.isOpenAdvanced = false;
+  }
+
+  onOpenAdvanced() {
+    this.isOpenAdvanced = true;
   }
 }

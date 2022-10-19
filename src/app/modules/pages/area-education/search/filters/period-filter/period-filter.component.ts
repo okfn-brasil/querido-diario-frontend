@@ -36,7 +36,7 @@ export class PeriodFilterComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.initialValue.period) {
-      this.period = Number(this.initialValue.period);
+      this.setPeriod(Number(this.initialValue.period))
     } else if(this.initialValue.published_since) {
       this.activeTab = 1;
       this.period = 0;
