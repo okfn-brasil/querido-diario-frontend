@@ -8,7 +8,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { findLevel } from 'src/app/data/levels';
 import {
   GazetteService,
 } from 'src/app/services/gazette/gazette.service';

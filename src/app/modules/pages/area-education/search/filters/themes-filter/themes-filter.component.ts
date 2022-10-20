@@ -38,8 +38,11 @@ export class ThemesFilterComponent implements OnChanges {
   }
 
   getThemes() {
-    return this.themes.sort((itemA: string, itemB: string) => {
-    return (!!this.selectedThemes[itemA] === !!this.selectedThemes[itemB])? 0 : this.selectedThemes[itemA]? -1 : 1})
+    return this.themes.sort((a,b) => {
+      return a.localeCompare(b);
+    }).sort((itemA: string, itemB: string) => {
+      return (!!this.selectedThemes[itemA] === !!this.selectedThemes[itemB])? 0 : this.selectedThemes[itemA]? -1 : 1
+    })
       .slice(0, this.showMoreThemes ? this.themes.length + 1 : 6);
   }
 }

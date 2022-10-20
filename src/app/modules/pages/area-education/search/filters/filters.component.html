@@ -1,4 +1,4 @@
-<form class="filters-area" [formGroup]="formGroup" [class.in-modal]="isModal">
+<form class="filters-area" [class.in-modal]="isModal">
   <div class="field">
     <div class="title">Município</div>
     <div class="label">Digite um local</div>
@@ -19,10 +19,7 @@
   <div class="field">
     <div class="title">Atores envolvidos</div>
     <div class="edu-input">
-      <select id="entities" name="entities" formControlName="entities" placeholder="entities">
-        <option value="" selected>Selecione uma opção</option>
-        <option *ngFor="let entity of entities" [value]="entity">{{entity}}</option>
-      </select>
+      <edu-themes-filter [isModal]="isModal" [themes]="apiEntities" [initialThemes]="entities" (themesChange)="onChangeEntities($event)"></edu-themes-filter>
     </div>
   </div>
 </form>

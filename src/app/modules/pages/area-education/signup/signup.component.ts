@@ -156,6 +156,7 @@ export class SignupComponent implements OnInit {
     this.signUpService.post(this.formGroup.value).subscribe(response => {
       this.loading = false;
       this.userService.setUserInfo(response);
+      this.userService.setLoginFormOpen(false);
       localStorage.setItem(tokenKeys.token, response.jwt.access);
       localStorage.setItem(tokenKeys.refresh, response.jwt.refresh);
       this.router.navigate(['/educacao/comece']);
