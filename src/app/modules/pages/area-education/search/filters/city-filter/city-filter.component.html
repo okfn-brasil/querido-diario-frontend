@@ -9,7 +9,9 @@
   </div>
 
   <div class="dropdown" (click)="stopPropagation($event)" *ngIf="showDropdown">
-    <div class="option" *ngFor="let city of getCitiesList()" (click)="addCity(city)">{{city.territory_name}}</div>
+    <ng-container *ngIf="!loadingCities">
+      <div class="option" *ngFor="let city of getCitiesList()" (click)="addCity(city)">{{city.territory_name}}</div>
+    </ng-container>
     <div class="loading-options" *ngIf="isLoading && query.length > 2 || loadingCities">
       <mat-spinner ></mat-spinner>
     </div>
