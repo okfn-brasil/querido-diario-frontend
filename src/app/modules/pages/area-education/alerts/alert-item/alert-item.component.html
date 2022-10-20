@@ -15,7 +15,7 @@
       
       <div class='filter-item'>
         <img src='/assets/icons/ente.svg' alt='icone de ente governamental' />
-        {{alert.gov_entities && alert.gov_entities.length ?  alert.gov_entities[0] : 'Nenhum ente do governo selecionado'}}
+        {{alert.gov_entities && alert.gov_entities.length ?  alert.gov_entities.join(', ') : 'Nenhum ente do governo selecionado'}}
       </div> 
     </div> 
   </div> 
