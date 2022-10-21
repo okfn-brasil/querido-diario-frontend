@@ -32,8 +32,8 @@ export interface GazetteFilters {
   size: number;
   until?: string | Date;
   published_since?: string | Date;
-  scrapted_until: string | Date;
-  scraped_since: string | Date;
+  scraped_until: string;
+  scraped_since: string;
   local?: string[];
   subthemes?: string[];
   entities?: string[] | string;

@@ -3,6 +3,11 @@ import { City } from 'src/app/interfaces/city';
 import { GazetteFilters } from 'src/app/interfaces/education-gazettes';
 import { EducationGazettesService } from 'src/app/services/education-gazettes/education-gazettes.service';
 
+interface DatesAlert {
+  scraped_until: string;
+  scraped_since: string;
+}
+
 @Component({
   selector: 'edu-filters',
   templateUrl: './filters.component.html',
@@ -21,6 +26,7 @@ export class EducationFiltersComponent implements OnInit {
     until: '',
     period: 0,
   };
+  datesAlert: DatesAlert = {} as DatesAlert;
   @Input() filters: GazetteFilters = {} as GazetteFilters;
   @Output() changeFilters: EventEmitter<GazetteFilters> = new EventEmitter();
 
@@ -41,19 +47,26 @@ export class EducationFiltersComponent implements OnInit {
       until: this.filters.until ? this.filters.until.toString() : '',
       published_since: this.filters.published_since ? this.filters.published_since.toString() : '',
     };
+
+    this.datesAlert = {
+      scraped_since: this.filters.scraped_since,
+      scraped_until: this.filters.scraped_until,
+    };
   }
 
   onChangeFilters() {
-    this.changeFilters.emit({
+    let filters = {
       subthemes: this.themes,
       entities: this.entities,
       local: this.locations,
+      period: this.filters.period,
       until: this.filters.until,
       published_since: this.filters.published_since,
-      scrapted_until: this.filters.until,
-      scraped_since: this.filters.published_since,
-      period: this.filters.period,
-    } as GazetteFilters);
+      scraped_until: this.datesAlert.scraped_until,
+      scraped_since: this.datesAlert.scraped_since,
+    } as GazetteFilters;
+
+    this.changeFilters.emit(filters);
   }
 
   onChangeDates(dates: GazetteFilters) {

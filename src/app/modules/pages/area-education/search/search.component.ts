@@ -35,6 +35,7 @@ export class SearchEducationComponent implements OnInit {
   cities: City[] = [];
   isOpenAlertModal = false;
   isOpenAdvanced = false;
+  savedParams = '';
 
   constructor(
     private searchService: EducationGazettesService,
@@ -52,6 +53,8 @@ export class SearchEducationComponent implements OnInit {
         period: params.period,
         until: params.until,
         published_since: params.published_since,
+        scraped_since: params.scraped_since,
+        scraped_until: params.scraped_until,
         local: params.local,
         sort_by: this.order,
       } as GazetteFilters;
@@ -76,12 +79,23 @@ export class SearchEducationComponent implements OnInit {
   getItems(params?: string) {
     this.isLoading = true;
     this.hasSearched = true;
+    if(this.savedParams !== params) {
+      this.currPage = 0;
+    }
+
     this.searchService.getAllGazettes(params, this.currPage).subscribe(response => {
-      this.isLoading = false;
-      this.listPageIntern = this.currPage;
       const nResponse = response as GazetteResponse;
-      this.totalItems = nResponse.total_excerpts;
-      this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.query as string);
+      if(nResponse.excerpts && nResponse.excerpts.length) {
+        this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.query as string);
+        this.totalItems = nResponse.total_excerpts;
+      } else {
+        this.results = [];
+        this.totalItems = 0;
+      }
+
+      this.listPageIntern = this.currPage;
+      this.savedParams = params as string;
+      this.isLoading = false;
     }, () => {
       this.isLoading = false;
       this.totalItems = 0;
