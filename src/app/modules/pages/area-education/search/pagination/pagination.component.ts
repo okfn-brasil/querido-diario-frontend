@@ -74,5 +74,4 @@ export class EduPaginationComponent implements OnInit {
     }
     return pageNumbers;
   };
-
 }
