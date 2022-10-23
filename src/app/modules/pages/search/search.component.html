@@ -27,7 +27,7 @@
     </div>
   </section>
 
-  <div *ngIf="gazetteResponse && gazetteResponse.total_gazettes">
+  <div *ngIf="gazetteResponse && gazetteResponse.total_gazettes > 0">
     <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
       <div class="container" fxLayout="column" fxLayoutGap="42px">
         <ng-container *ngIf="level$ | async as level">
@@ -91,7 +91,7 @@
                 <a [href]="gazette.url" target="_blank"
                   ><span class="color-purple-3">{{
                     gazette.territory_name
-                  }}                  
+                  }}
                   ({{
                     gazette.state_code
                   }})
