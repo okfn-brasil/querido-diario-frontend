@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Download, DownloadsLabels, Gazette, GazetteQuery, GazetteResponse, Pagination } from 'src/app/interfaces/gazette';
 
@@ -9,6 +9,21 @@ import { Download, DownloadsLabels, Gazette, GazetteQuery, GazetteResponse, Pagi
 })
 export class GazetteService {
   constructor(private http: HttpClient) {}
+
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   *
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T>(result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+
+      // Let the app keep running by returning a default result.
+      return of(result as T);
+    };
+  }
 
   pagination(page: number): Pagination {
     return { size: 10, offset: (page - 1) * 10 };
