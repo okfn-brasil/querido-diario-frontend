@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Download, DownloadsLabels, Gazette, GazetteQuery, GazetteResponse, Pagination } from 'src/app/interfaces/gazette';
 
 @Injectable({
@@ -82,7 +82,12 @@ export class GazetteService {
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {
         return this.resolveGazettes(res);
-      })
+      }),
+      catchError(this.handleError<GazetteResponse>({
+        total_gazettes: -1,
+        gazettes: [],
+        error: true,
+      })),
     );
   }
 }
