@@ -1,8 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { City } from 'src/app/interfaces/city';
 import { GazetteFilters } from 'src/app/interfaces/education-gazettes';
 import { EducationGazettesService } from 'src/app/services/education-gazettes/education-gazettes.service';
+
+interface DatesAlert {
+  scraped_until: string;
+  scraped_since: string;
+}
 
 @Component({
   selector: 'edu-filters',
@@ -11,6 +15,7 @@ import { EducationGazettesService } from 'src/app/services/education-gazettes/ed
 })
 export class EducationFiltersComponent implements OnInit {
   @Input() apiThemes: string[] = [];
+  @Input() apiEntities: string[] = [];
   @Input() apiCities: City[] = [];
   @Input() isModal = false;
   entities: string[] = [];
@@ -21,7 +26,7 @@ export class EducationFiltersComponent implements OnInit {
     until: '',
     period: 0,
   };
-  formGroup: FormGroup = {} as FormGroup;
+  datesAlert: DatesAlert = {} as DatesAlert;
   @Input() filters: GazetteFilters = {} as GazetteFilters;
   @Output() changeFilters: EventEmitter<GazetteFilters> = new EventEmitter();
 
@@ -30,44 +35,38 @@ export class EducationFiltersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formGroup = new FormGroup({
-      entities: new FormControl(''),
-    });
-
     this.searchService.getEntities().subscribe(results => {
-      this.entities = results as string[];
+      this.apiEntities = results as string[];
     });
 
-    this.formGroup.valueChanges.subscribe(() => {
-      this.onChangeFilters();
-    });
     this.themes = this.filters.subthemes as string[];
     this.locations = this.filters.local as string[];
-    this.formGroup.controls.entities.setValue(this.filters.entities || '');
+    this.entities = this.filters.entities as string[];
     this.dates = {
       period: this.filters.period || 0,
       until: this.filters.until ? this.filters.until.toString() : '',
       published_since: this.filters.published_since ? this.filters.published_since.toString() : '',
     };
+
+    this.datesAlert = {
+      scraped_since: this.filters.scraped_since,
+      scraped_until: this.filters.scraped_until,
+    };
   }
 
   onChangeFilters() {
-    let entitie;
-
-    if(this.formGroup.controls.entities.value) {
-      entitie = Array.isArray(this.formGroup.controls.entities.value) ? 
-      this.formGroup.controls.entities.value 
-      : [this.formGroup.controls.entities.value];
-    }
-
-    this.changeFilters.emit({
+    let filters = {
       subthemes: this.themes,
-      entities: entitie ? entitie : null,
+      entities: this.entities,
       local: this.locations,
+      period: this.filters.period,
       until: this.filters.until,
       published_since: this.filters.published_since,
-      period: this.filters.period,
-    } as GazetteFilters);
+      scraped_until: this.datesAlert.scraped_until,
+      scraped_since: this.datesAlert.scraped_since,
+    } as GazetteFilters;
+
+    this.changeFilters.emit(filters);
   }
 
   onChangeDates(dates: GazetteFilters) {
@@ -79,6 +78,11 @@ export class EducationFiltersComponent implements OnInit {
 
   onChangeThemes(themes: string[]) {
     this.themes = themes;
+    this.onChangeFilters();
+  }
+
+  onChangeEntities(entities: string[]) {
+    this.entities = entities;
     this.onChangeFilters();
   }
 

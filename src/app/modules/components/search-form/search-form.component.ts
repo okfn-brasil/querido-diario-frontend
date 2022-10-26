@@ -17,6 +17,8 @@ export class SearchFormComponent implements OnInit {
 
   @Input()
   form: any;
+  
+  timeout: ReturnType<typeof setTimeout> | undefined;
 
   options: string[] = [
     'Compra emergencial COVID-19',
@@ -41,6 +43,7 @@ export class SearchFormComponent implements OnInit {
 
   since: string = '';
   until: string = '';
+  query: string = '';
 
   subscriptions: Subscription[] = [];
 
@@ -51,7 +54,6 @@ export class SearchFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.findCities();
     this.filteredOptions = this.termControl.valueChanges.pipe(
       startWith(''),
       map((value) => this._filterTerms(value))
@@ -84,13 +86,19 @@ export class SearchFormComponent implements OnInit {
   }
 
   findCities() {
-    if(!this.loadingCities && !this.territories.length) {
-      this.loadingCities = true;
-      this.territoryService.findByName('').subscribe(response => {
-        this.territories = response;
+    this.loadingCities = true;
+    if(this.timeout) {
+      clearTimeout(this.timeout)
+    }
+
+    this.timeout = setTimeout(() => {
+      this.territoryService.findByName(this.query.trim()).subscribe(response => {
+        response.forEach(city => {
+          this.territories.push(city);
+        });
         this.loadingCities = false;
       });
-    }
+    }, 500);
   }
 
   findCityById(id: string) {
@@ -152,6 +160,13 @@ export class SearchFormComponent implements OnInit {
 
   onChangeLocation(locations: string[]) {
     this.territory = locations;
+  }
+
+  onChangeQuery(query: string) {
+    this.query = query;
+    if(this.query && this.query.length >= 3) {
+      this.findCities();
+    }
   }
 
   ngOnDestroy() {

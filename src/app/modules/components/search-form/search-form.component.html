@@ -38,7 +38,9 @@
       label="Município" 
       class="city-input" 
       [cities]="getCityList()"
-      (changeLocations)="onChangeLocation($event)">
+      [showCityLevel]="true"
+      (changeLocations)="onChangeLocation($event)"
+      (changeQuery)="onChangeQuery($event)">
     </edu-city-filter>
 
     <app-date-picker-range

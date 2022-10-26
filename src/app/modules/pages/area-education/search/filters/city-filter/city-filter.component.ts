@@ -11,11 +11,13 @@ export class CityFilterComponent implements OnChanges {
   @Input() label: string = 'Novo local...';
   @Input() loadingCities = false;
   @Input() showAll = false;
+  @Input() showCityLevel = false;
   showDropdown = false;
   isLoading = true;
   selectedCities: City[] = [];
   showPlaceholder = true;
   query = '';
+  uniqueCities: City[] = [];
   @Input() initialValue: string[] = [];
   @Output() changeLocations: EventEmitter<string[]> = new EventEmitter();
   @Output() changeQuery: EventEmitter<string> = new EventEmitter();
@@ -81,8 +83,10 @@ export class CityFilterComponent implements OnChanges {
   }
 
   getCitiesList() {
-    if(this.cities && this.cities.length) {
-      return this.cities.filter(city =>  city.territory_name.toLowerCase().includes(this.query.toLowerCase().trim()) && (this.query.length >= 3 || this.showAll));
+    if(this.uniqueCities && this.uniqueCities.length) {
+      return this.uniqueCities.filter(city =>  city.territory_name.toLowerCase().includes(this.query.toLowerCase().trim()) && (this.query.length >= 3 || this.showAll)).sort(function(a,b){
+        return a.territory_name.localeCompare(b.territory_name);
+      }).slice(0, 100);
     }
     return [];
   }
@@ -91,9 +95,15 @@ export class CityFilterComponent implements OnChanges {
     if(this.cities && this.cities.length) {
       this.isLoading = false;
     }
+    this.uniqueCities = [];
+    this.cities.forEach(city => {
+      if(!this.uniqueCities.find(uniqueCity => city.territory_id === uniqueCity.territory_id)) {
+        this.uniqueCities.push(city);
+      }
+    });
 
     if(this.initialValue && this.initialValue.length) {
-      this.selectedCities = this.cities.filter(city => this.initialValue.includes(city.territory_id))
+      this.selectedCities = this.uniqueCities.filter(city => this.initialValue.includes(city.territory_id))
     }
   }
 }
