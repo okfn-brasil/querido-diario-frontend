@@ -38,6 +38,7 @@
       label="Município" 
       class="city-input" 
       [cities]="getCityList()"
+      [showCityLevel]="true"
       (changeLocations)="onChangeLocation($event)"
       (changeQuery)="onChangeQuery($event)">
     </edu-city-filter>

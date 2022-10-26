@@ -11,6 +11,7 @@ export class CityFilterComponent implements OnChanges {
   @Input() label: string = 'Novo local...';
   @Input() loadingCities = false;
   @Input() showAll = false;
+  @Input() showCityLevel = false;
   showDropdown = false;
   isLoading = true;
   selectedCities: City[] = [];
@@ -85,7 +86,7 @@ export class CityFilterComponent implements OnChanges {
     if(this.uniqueCities && this.uniqueCities.length) {
       return this.uniqueCities.filter(city =>  city.territory_name.toLowerCase().includes(this.query.toLowerCase().trim()) && (this.query.length >= 3 || this.showAll)).sort(function(a,b){
         return a.territory_name.localeCompare(b.territory_name);
-    });
+      }).slice(0, 100);
     }
     return [];
   }
