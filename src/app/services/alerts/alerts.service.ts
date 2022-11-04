@@ -12,7 +12,7 @@ export class AlertsService {
   postAlert(filters: GazetteFilters, query: string) {
     const newFilters = {
       query_string: query,
-      territory_id: filters.local && filters.local.length? filters.local : undefined,
+      territory_id: filters.territory_id && filters.territory_id.length? filters.territory_id : undefined,
       sub_themes: filters.subthemes && filters.subthemes.length? filters.subthemes : undefined,
       gov_entities: filters.entities && filters.entities.length? filters.entities : undefined,
     }

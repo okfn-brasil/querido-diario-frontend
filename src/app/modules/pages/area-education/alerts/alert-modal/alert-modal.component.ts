@@ -39,7 +39,7 @@ export class AlertModalComponent implements OnInit {
       this.filters = {
         entities: Array.isArray(params.entities) ? params.entities : [params.entities],
         subthemes: params.subthemes,
-        local: params.local,
+        territory_id: params.territory_id,
       } as GazetteFilters;
     }).unsubscribe();
     this.getFiltersInfo();
@@ -56,12 +56,12 @@ export class AlertModalComponent implements OnInit {
   onChangeFilters(filters: GazetteFilters) {
     this.filters = {
       entities: filters.entities && filters.entities[0] ? filters.entities : [],
-      local: filters.local,
+      territory_id: filters.territory_id,
       subthemes: filters.subthemes
     } as GazetteFilters;
-    if(filters.local && filters.local.length) {
+    if(filters.territory_id && filters.territory_id.length) {
       this.selectedCities = this.cities
-        .filter(city => filters.local?.includes(city.territory_id))
+        .filter(city => filters.territory_id?.includes(city.territory_id))
         .map(city => city.territory_name);
     } else {
       this.selectedCities = [];
