@@ -2,7 +2,7 @@
   <div class="header">
     <div class="container-education">
       <div class="content">
-        Nome do relatório
+        {{report.title}}
       </div>
     </div>
   </div>
@@ -11,9 +11,9 @@
   <div class="page-content">
     <div class="container-education">
       <div class="content">
-        <p>Lorem ipsum dolor sit amet, 07.721.973/0001-69 consectetur adipiscing elit. Duis semper diam in euismod scelerisque. In consectetur facilisis lectus ut tristique. Nunc placerat tincidunt mauris id posuere. Donec non ligula ut ligula consequat consequat. Aliquam fringilla metus ut eros tempor, sed vehicula nunc auctor. Morbi aliquam ullamcorper arcu, vitae faucibus ante posuere vel. Fusce sed eros ac arcu pulvinar fringilla. Proin fermentum faucibus pretium. Ut a ex volutpat, sollicitudin nulla at, efficitur nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nunc mi, pharetra quis felis ac, ultricies rhoncus lectus.</p>
-        <div class="date">15/03/2022 </div>
-        <embed class="embed" src="https://www.africau.edu/images/default/sample.pdf" type="application/pdf" width="100%" />
+        <p>{{report.text}}</p>
+        <div class="date">{{report.date}} </div>
+        <embed *ngIf="file" class="embed" [src]="file" type="application/pdf" width="100%" />
       </div>
     </div>
   </div>

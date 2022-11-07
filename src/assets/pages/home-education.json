@@ -6,45 +6,7 @@
   "bannerButtonMobile": "Cadastre-se",
   "reports": {
     "title": "Relatórios disponíveis",
-    "subtitle": "Relatórios analíticos realizados pela equipe da Open Knowledge Brasil com base nas informações publicadas nos diários oficiais",
-    "reportsArray": [
-      {
-        "title": "Relatórios U",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": "/educacao/relatorio/"
-      },
-      {
-        "title": "Relatórios X",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": "/educacao/relatorio/"
-      },
-      {
-        "title": "Relatórios Y",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": "/educacao/relatorio/"
-      },
-      {
-        "title": "Relatórios Z",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": "/educacao/relatorio/"
-      },
-      {
-        "title": "Relatórios A",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": "/educacao/relatorio/"
-      },
-      {
-        "title": "Relatórios B",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": "/educacao/relatorio/"
-      }
-    ]
+    "subtitle": "Relatórios analíticos realizados pela equipe da Open Knowledge Brasil com base nas informações publicadas nos diários oficiais"
   },
   "cases": {
     "title": "Estudos de caso",
