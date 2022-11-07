@@ -34,7 +34,7 @@ export interface GazetteFilters {
   published_since?: string | Date;
   scraped_until: string;
   scraped_since: string;
-  local?: string[];
+  territory_id?: string[];
   subthemes?: string[];
   entities?: string[] | string;
   [key: string]: string | Date | (string | null)[] | undefined | number | string[];

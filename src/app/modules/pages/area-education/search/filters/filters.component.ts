@@ -40,7 +40,7 @@ export class EducationFiltersComponent implements OnInit {
     });
 
     this.themes = this.filters.subthemes as string[];
-    this.locations = this.filters.local as string[];
+    this.locations = this.filters.territory_id as string[];
     this.entities = this.filters.entities as string[];
     this.dates = {
       period: this.filters.period || 0,
@@ -58,7 +58,7 @@ export class EducationFiltersComponent implements OnInit {
     let filters = {
       subthemes: this.themes,
       entities: this.entities,
-      local: this.locations,
+      territory_id: this.locations,
       period: this.filters.period,
       until: this.filters.until,
       published_since: this.filters.published_since,

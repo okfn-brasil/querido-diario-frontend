@@ -55,7 +55,7 @@ export class SearchEducationComponent implements OnInit {
         published_since: params.published_since,
         scraped_since: params.scraped_since,
         scraped_until: params.scraped_until,
-        local: params.local,
+        territory_id: params.territory_id,
         sort_by: this.order,
       } as GazetteFilters;
     }).unsubscribe();

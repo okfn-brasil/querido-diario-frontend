@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { ReportItem } from 'src/app/interfaces/reports';
 import { ContentService } from 'src/app/services/content/content.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ContentService } from 'src/app/services/content/content.service';
 })
 export class HomeEducacaoComponent implements OnInit {
   content$: Observable<any> = of(null)
+  reports = [];
 
   constructor(
     private contentService: ContentService
@@ -17,5 +19,13 @@ export class HomeEducacaoComponent implements OnInit {
 
   ngOnInit() {
    this.content$ = this.contentService.find('home-education');
+   this.contentService.find('education-reports').subscribe(result => {
+    this.reports = result.reports.map((report: ReportItem) => {
+      return {
+        ...report,
+        link: '/educacao/relatorio/'
+      }
+    });
+   });
   }
 }
