@@ -34,7 +34,7 @@
         <div class="container-carousel">
           <h2>{{content.reports.title}}</h2>
           <p class="sub-title">{{content.reports.subtitle}}</p>
-          <edu-carousel [items]="content.reports.reportsArray"></edu-carousel>
+          <edu-carousel *ngIf="reports && reports.length" [items]="reports"></edu-carousel>
         </div>
       </div>
 
