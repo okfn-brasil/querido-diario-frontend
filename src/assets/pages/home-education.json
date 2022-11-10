@@ -5,44 +5,12 @@
   "bannerButton": "Comece a buscar",
   "bannerButtonMobile": "Cadastre-se",
   "reports": {
-    "title": "Relatórios disponíveis",
-    "subtitle": "Relatórios analíticos realizados pela equipe da Open Knowledge Brasil com base nas informações publicadas nos diários oficiais"
+    "title": "Análises disponíveis",
+    "subtitle": "Análises realizadas pela equipe da Open Knowledge Brasil com base nas informações publicadas nos diários oficiais"
   },
   "cases": {
     "title": "Estudos de caso",
-    "subtitle": "Casos aprofundados",
-    "casesArray": [
-      {
-        "title": "Estudo de caso U",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": ""
-      },
-      {
-        "title": "Estudo de caso X",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": ""
-      },
-      {
-        "title": "Estudo de caso Y",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": ""
-      },
-      {
-        "title": "Estudo de caso Z",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": ""
-      },
-      {
-        "title": "Estudo de caso A",
-        "date": "DD / MM / AAAA",
-        "id": 1,
-        "link": ""
-      }
-    ]
+    "subtitle": "Casos aprofundados"
   },
   "catalog": {
     "title": "Catálogo",
