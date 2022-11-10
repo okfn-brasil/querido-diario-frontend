@@ -9,8 +9,9 @@ import { ContentService } from 'src/app/services/content/content.service';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeEducacaoComponent implements OnInit {
-  content$: Observable<any> = of(null)
+  content$: Observable<any> = of(null);
   reports = [];
+  cases = [];
 
   constructor(
     private contentService: ContentService
@@ -24,6 +25,15 @@ export class HomeEducacaoComponent implements OnInit {
       return {
         ...report,
         link: '/educacao/relatorio/'
+      }
+    });
+   });
+
+   this.contentService.find('education-cases').subscribe(result => {
+    this.cases = result.cases.map((report: ReportItem) => {
+      return {
+        ...report,
+        link: '/educacao/caso/'
       }
     });
    });

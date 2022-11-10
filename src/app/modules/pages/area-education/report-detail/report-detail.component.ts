@@ -21,9 +21,18 @@ export class ReportDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       const id = parseInt(params.id);
-      
-      this.contentService.find('education-reports').subscribe(result => {
-        this.report = result.reports.find((report: ReportItem) => report.id === id);
+
+      const type = location.href.includes('caso') ? {
+        url: 'education-cases',
+        key: 'cases'
+      } :
+      {
+        url: 'education-reports',
+        key: 'reports'
+      };
+
+      this.contentService.find(type.url).subscribe(result => {
+        this.report = result[type.key].find((report: ReportItem) => report.id === id);
         if(this.report.fileUrl) {
           this.file = this._sanitizer.bypassSecurityTrustResourceUrl(this.report.fileUrl);
         }

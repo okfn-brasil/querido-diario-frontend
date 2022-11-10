@@ -49,6 +49,7 @@ const routes: Routes = [
   { path: 'educacao/sobre', component: AboutEducationComponent },
   { path: 'educacao/alertas', component: AlertsComponent },
   { path: 'educacao/relatorio/:id', component: ReportDetailComponent },
+  { path: 'educacao/caso/:id', component: ReportDetailComponent },
 ];
 
 @NgModule({
