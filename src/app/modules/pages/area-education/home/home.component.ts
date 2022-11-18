@@ -20,8 +20,8 @@ export class HomeEducacaoComponent implements OnInit {
 
   ngOnInit() {
    this.content$ = this.contentService.find('home-education');
-   this.contentService.find('education-reports').subscribe(result => {
-    this.reports = result.reports.map((report: ReportItem) => {
+   this.contentService.find('education-analises').subscribe(result => {
+    this.reports = result.analises.map((report: ReportItem) => {
       return {
         ...report,
         link: '/educacao/relatorio/'
