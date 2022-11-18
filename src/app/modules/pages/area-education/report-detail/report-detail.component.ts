@@ -10,7 +10,6 @@ import { ContentService } from 'src/app/services/content/content.service';
 })
 export class ReportDetailComponent implements OnInit {
   report: ReportItem = {} as ReportItem;
-  file: SafeResourceUrl = {};
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -33,9 +32,6 @@ export class ReportDetailComponent implements OnInit {
 
       this.contentService.find(type.url).subscribe(result => {
         this.report = result[type.key].find((report: ReportItem) => report.id === id);
-        if(this.report.fileUrl) {
-          this.file = this._sanitizer.bypassSecurityTrustResourceUrl(this.report.fileUrl);
-        }
       });
     })
   }

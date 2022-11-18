@@ -12,9 +12,8 @@
   <div class="page-content">
     <div class="container-education">
       <div class="content">
-        <p>{{report.text}}</p>
-        <div class="date">{{report.date}} </div>
-        <embed *ngIf="file" class="embed" [src]="file" type="application/pdf" width="100%" />
+        <div class="date">{{report.date}}</div>
+        <div class="report-content" [innerHtml]="report.content"></div>
       </div>
     </div>
   </div>
