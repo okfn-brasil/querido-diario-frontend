@@ -4,43 +4,37 @@
       "title": "Caso U",
       "date": "DD / MM / AAAA",
       "id": 1,
-      "fileUrl": "https://www.africau.edu/images/default/sample.pdf",
-      "text": "Lorem ipsum dolor sit amet, 07.721.973/0001-69 consectetur adipiscing elit. Duis semper diam in euismod scelerisque. In consectetur facilisis lectus ut tristique. Nunc placerat tincidunt mauris id posuere. Donec non ligula ut ligula consequat consequat. Aliquam fringilla metus ut eros tempor, sed vehicula nunc auctor. Morbi aliquam ullamcorper arcu, vitae faucibus ante posuere vel. Fusce sed eros ac arcu pulvinar fringilla. Proin fermentum faucibus pretium. Ut a ex volutpat, sollicitudin nulla at, efficitur nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nunc mi, pharetra quis felis ac, ultricies rhoncus lectus."
+      "content": "<h1>Titulo</h1><h2>subtitulo</h2><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul><table><tr><th>Nome</th><th>Valor</th></tr><tr><td>Teste 1</td><td>Valor teste 1</td></tr><tr><td>Teste 2</td><td>Valor teste 2</td></tr><tr><td>Teste 3</td><td>Valor teste 3</td></tr></table><img src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png' width='100%'/> <div class='link'><a href='https://google.com.br' >link teste</a></div><div class='button-area'><a class='btne-primary'>Baixar relatório</a></div>"
     },
     {
       "title": "Caso X",
       "date": "DD / MM / AAAA",
       "id": 2,
-      "fileUrl": "https://www.africau.edu/images/default/sample.pdf",
-      "text": "Lorem ipsum dolor sit amet, 07.721.973/0001-69 consectetur adipiscing elit. Duis semper diam in euismod scelerisque. In consectetur facilisis lectus ut tristique. Nunc placerat tincidunt mauris id posuere. Donec non ligula ut ligula consequat consequat. Aliquam fringilla metus ut eros tempor, sed vehicula nunc auctor. Morbi aliquam ullamcorper arcu, vitae faucibus ante posuere vel. Fusce sed eros ac arcu pulvinar fringilla. Proin fermentum faucibus pretium. Ut a ex volutpat, sollicitudin nulla at, efficitur nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nunc mi, pharetra quis felis ac, ultricies rhoncus lectus."
+      "content": "<h1>Titulo</h1><h2>subtitulo</h2><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul><table><tr><th>Nome</th><th>Valor</th></tr><tr><td>Teste 1</td><td>Valor teste 1</td></tr><tr><td>Teste 2</td><td>Valor teste 2</td></tr><tr><td>Teste 3</td><td>Valor teste 3</td></tr></table><img src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png' width='100%'/> <div class='link'><a href='https://google.com.br' >link teste</a></div><div class='button-area'><a class='btne-primary'>Baixar relatório</a></div>"
     },
     {
       "title": "Caso Y",
       "date": "DD / MM / AAAA",
       "id": 3,
-      "fileUrl": "https://www.africau.edu/images/default/sample.pdf",
-      "text": "Lorem ipsum dolor sit amet, 07.721.973/0001-69 consectetur adipiscing elit. Duis semper diam in euismod scelerisque. In consectetur facilisis lectus ut tristique. Nunc placerat tincidunt mauris id posuere. Donec non ligula ut ligula consequat consequat. Aliquam fringilla metus ut eros tempor, sed vehicula nunc auctor. Morbi aliquam ullamcorper arcu, vitae faucibus ante posuere vel. Fusce sed eros ac arcu pulvinar fringilla. Proin fermentum faucibus pretium. Ut a ex volutpat, sollicitudin nulla at, efficitur nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nunc mi, pharetra quis felis ac, ultricies rhoncus lectus."
+      "content": "<h1>Titulo</h1><h2>subtitulo</h2><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul><table><tr><th>Nome</th><th>Valor</th></tr><tr><td>Teste 1</td><td>Valor teste 1</td></tr><tr><td>Teste 2</td><td>Valor teste 2</td></tr><tr><td>Teste 3</td><td>Valor teste 3</td></tr></table><img src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png' width='100%'/> <div class='link'><a href='https://google.com.br' >link teste</a></div><div class='button-area'><a class='btne-primary'>Baixar relatório</a></div>"
     },
     {
       "title": "Caso Z",
       "date": "DD / MM / AAAA",
       "id": 4,
-      "fileUrl": "https://www.africau.edu/images/default/sample.pdf",
-      "text": "Lorem ipsum dolor sit amet, 07.721.973/0001-69 consectetur adipiscing elit. Duis semper diam in euismod scelerisque. In consectetur facilisis lectus ut tristique. Nunc placerat tincidunt mauris id posuere. Donec non ligula ut ligula consequat consequat. Aliquam fringilla metus ut eros tempor, sed vehicula nunc auctor. Morbi aliquam ullamcorper arcu, vitae faucibus ante posuere vel. Fusce sed eros ac arcu pulvinar fringilla. Proin fermentum faucibus pretium. Ut a ex volutpat, sollicitudin nulla at, efficitur nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nunc mi, pharetra quis felis ac, ultricies rhoncus lectus."
+      "content": "<h1>Titulo</h1><h2>subtitulo</h2><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul><table><tr><th>Nome</th><th>Valor</th></tr><tr><td>Teste 1</td><td>Valor teste 1</td></tr><tr><td>Teste 2</td><td>Valor teste 2</td></tr><tr><td>Teste 3</td><td>Valor teste 3</td></tr></table><img src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png' width='100%'/> <div class='link'><a href='https://google.com.br' >link teste</a></div><div class='button-area'><a class='btne-primary'>Baixar relatório</a></div>"
     },
     {
       "title": "Caso A",
       "date": "DD / MM / AAAA",
       "id": 5,
-      "fileUrl": "https://www.africau.edu/images/default/sample.pdf",
-      "text": "Lorem ipsum dolor sit amet, 07.721.973/0001-69 consectetur adipiscing elit. Duis semper diam in euismod scelerisque. In consectetur facilisis lectus ut tristique. Nunc placerat tincidunt mauris id posuere. Donec non ligula ut ligula consequat consequat. Aliquam fringilla metus ut eros tempor, sed vehicula nunc auctor. Morbi aliquam ullamcorper arcu, vitae faucibus ante posuere vel. Fusce sed eros ac arcu pulvinar fringilla. Proin fermentum faucibus pretium. Ut a ex volutpat, sollicitudin nulla at, efficitur nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nunc mi, pharetra quis felis ac, ultricies rhoncus lectus."
+      "content": "<h1>Titulo</h1><h2>subtitulo</h2><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul><table><tr><th>Nome</th><th>Valor</th></tr><tr><td>Teste 1</td><td>Valor teste 1</td></tr><tr><td>Teste 2</td><td>Valor teste 2</td></tr><tr><td>Teste 3</td><td>Valor teste 3</td></tr></table><img src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png' width='100%'/> <div class='link'><a href='https://google.com.br' >link teste</a></div><div class='button-area'><a class='btne-primary'>Baixar relatório</a></div>"
     },
     {
       "title": "Caso B",
       "date": "DD / MM / AAAA",
       "id": 6,
-      "fileUrl": "https://www.africau.edu/images/default/sample.pdf",
-      "text": "Lorem ipsum dolor sit amet, 07.721.973/0001-69 consectetur adipiscing elit. Duis semper diam in euismod scelerisque. In consectetur facilisis lectus ut tristique. Nunc placerat tincidunt mauris id posuere. Donec non ligula ut ligula consequat consequat. Aliquam fringilla metus ut eros tempor, sed vehicula nunc auctor. Morbi aliquam ullamcorper arcu, vitae faucibus ante posuere vel. Fusce sed eros ac arcu pulvinar fringilla. Proin fermentum faucibus pretium. Ut a ex volutpat, sollicitudin nulla at, efficitur nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nunc mi, pharetra quis felis ac, ultricies rhoncus lectus."
+      "content": "<h1>Titulo</h1><h2>subtitulo</h2><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul><table><tr><th>Nome</th><th>Valor</th></tr><tr><td>Teste 1</td><td>Valor teste 1</td></tr><tr><td>Teste 2</td><td>Valor teste 2</td></tr><tr><td>Teste 3</td><td>Valor teste 3</td></tr></table><img src='http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png' width='100%'/> <div class='link'><a href='https://google.com.br' >link teste</a></div><div class='button-area'><a class='btne-primary'>Baixar relatório</a></div>"
     }
   ]
 }
