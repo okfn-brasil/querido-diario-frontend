@@ -33,6 +33,7 @@ export class ReportDetailComponent implements OnInit {
 
       this.contentService.find(type.url).subscribe(result => {
         this.report = result[type.key].find((report: ReportItem) => report.id === id);
+        console.log(type.key + '/' + this.report.content)
         this.contentService.find(type.key + '/' + this.report.content).subscribe(content => {
           this.content = content.html;
         });
