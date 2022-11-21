@@ -1,40 +1,40 @@
 {
-  "cases": [
+  "analises": [
     {
-      "title": "Caso U",
+      "title": "Análise U",
       "date": "DD / MM / AAAA",
       "id": 1,
-      "content": "case-x"
+      "content": "analise-x"
     },
     {
-      "title": "Caso X",
+      "title": "Análise X",
       "date": "DD / MM / AAAA",
       "id": 2,
-      "content": "case-x"
+      "content": "analise-x"
     },
     {
-      "title": "Caso Y",
+      "title": "Análise Y",
       "date": "DD / MM / AAAA",
       "id": 3,
-      "content": "case-x"
+      "content": "analise-x"
     },
     {
-      "title": "Caso Z",
+      "title": "Análise Z",
       "date": "DD / MM / AAAA",
       "id": 4,
-      "content": "case-x"
+      "content": "analise-x"
     },
     {
-      "title": "Caso A",
+      "title": "Análise A",
       "date": "DD / MM / AAAA",
       "id": 5,
-      "content": "case-x"
+      "content": "analise-x"
     },
     {
-      "title": "Caso B",
+      "title": "Análise B",
       "date": "DD / MM / AAAA",
       "id": 6,
-      "content": "case-x"
+      "content": "analise-x"
     }
   ]
 }
