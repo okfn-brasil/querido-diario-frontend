@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ReportItem } from 'src/app/interfaces/reports';
 import { ContentService } from 'src/app/services/content/content.service';
@@ -10,7 +10,7 @@ import { ContentService } from 'src/app/services/content/content.service';
 })
 export class ReportDetailComponent implements OnInit {
   report: ReportItem = {} as ReportItem;
-  content: string = '';
+  content: SafeHtml = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -33,9 +33,8 @@ export class ReportDetailComponent implements OnInit {
 
       this.contentService.find(type.url).subscribe(result => {
         this.report = result[type.key].find((report: ReportItem) => report.id === id);
-        console.log(type.key + '/' + this.report.content)
         this.contentService.find(type.key + '/' + this.report.content).subscribe(content => {
-          this.content = content.html;
+          this.content = this._sanitizer.bypassSecurityTrustHtml(content.html);
         });
       });
     })
