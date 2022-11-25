@@ -28,8 +28,8 @@ export interface Theme {
 export interface GazetteQuery {
   term?: string;
   territory_id?: string | string[];
-  since?: string;
-  until?: string;
+  published_since?: string;
+  published_until?: string;
   sort_by?: string;
   page?: number;
 }
