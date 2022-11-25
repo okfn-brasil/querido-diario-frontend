@@ -1,0 +1,21 @@
+
+<ng-container *ngIf="content$ | async as content"> 
+    <app-container theme="light">
+        <div class="container-inner" [style.paddingTOP]="'0px'">
+            <app-column [gap]="10">
+                <h1>{{ content.title }}</h1>
+                <p class="cities-text" [innerHtml]="content.text"></p>
+                <app-column>
+                  <div class="cities-flex">
+                    <ng-container>
+                      <div class="avaliable-city" *ngFor="let city of cities">{{ city.territory_name }} ({{city.state_code}})</div>
+                    </ng-container>
+                  </div>
+                </app-column>
+            </app-column>
+        </div>
+    </app-container>
+</ng-container>
+<app-container *ngIf="loading" theme="light" fxFill>
+  <mat-spinner></mat-spinner>
+</app-container>

@@ -1,0 +1,70 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+  
+.checkbox-item 
+  display: block
+  position: relative
+  padding-left: rem(32)
+  margin-top: rem(16)
+  cursor: pointer
+  font-size: rem(16)
+  line-height: rem(22)
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+.checkbox-item input 
+  position: absolute
+  opacity: 0
+  cursor: pointer
+  height: 0
+  width: 0
+
+.checkmark 
+  position: absolute
+  top: 0
+  left: 0
+  height: rem(24)
+  width: rem(24)
+  background-color: #fff
+  border-radius: rem(4)
+  @media only screen and (max-width: 768px) 
+    background-color: #ece9e9
+
+  &.in-modal
+    background-color: #ece9e9
+
+.checkbox-item:hover input ~ .checkmark 
+  background-color: #ccc
+
+.checkbox-item input:checked ~ .checkmark 
+  background-color: #FF8500
+
+.checkmark:after 
+  content: ""
+  position: absolute
+  display: none
+
+.checkbox-item input:checked ~ .checkmark:after 
+  display: block
+
+.checkbox-item .checkmark:after 
+  left: rem(9)
+  top: rem(7)
+  width: rem(3)
+  height: rem(7)
+  border: solid white
+  border-width: 0 rem(2) rem(2) 0
+  -webkit-transform: rotate(45deg)
+  -ms-transform: rotate(45deg)
+  transform: rotate(45deg)
+
+.show-more
+  font-weight: bold
+  font-size: rem(16)
+  line-height: rem(16)
+  color: #654A9C
+  text-align: right
+  margin-top: rem(24)
+  cursor: pointer

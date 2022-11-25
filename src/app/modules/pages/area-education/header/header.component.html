@@ -1,0 +1,25 @@
+<div class='edu-header'>
+  <edu-login-form [showForm]="showForm" (onLoggedIn)="onLogged()" (onHideForm)="onCloseLoginModal($event)"></edu-login-form>
+  <div class="desktop">
+    <div class="container-education">
+      <div class="content">
+        <div class="links">
+          <a routerLink="/educacao"><div class="title">Tecnologias da Educação</div></a>
+          <a routerLink="/educacao/sobre"><div class="link">Sobre</div></a>
+          <a><div class="link">Estudos de caso</div></a>
+          <a routerLink="/educacao/busca"><div class="link">Busca</div></a>
+        </div>
+
+        <div class="logged" *ngIf="userData.full_name">
+          <a routerLink="/educacao/alertas"><div class="logged-link">Meus alertas</div></a>
+          <div class="user-name">Olá, {{userData.full_name.split(' ')[0]}}</div>
+        </div>
+        <a (click)="openForm()" *ngIf="!isLoggedIn"><div class="login-button">Login / Cadastre-se</div></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile">
+    <a routerLink="/educacao"><div class="title">Tecnologias da Educação</div></a>
+  </div>
+</div>

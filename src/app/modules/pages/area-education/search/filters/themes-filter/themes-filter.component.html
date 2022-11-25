@@ -1,0 +1,8 @@
+<div class="checkboxes">
+  <label class="checkbox-item" *ngFor="let theme of getThemes()">
+    {{theme}}
+    <input type="checkbox" [checked]="selectedThemes[theme]" (change)="selectTheme(theme)">
+    <span class="checkmark" [class.in-modal]="isModal"></span>
+  </label>
+</div>
+<div class="show-more" (click)="setShowMoreThemes()">{{ showMoreThemes ? "Mostrar menos" : "Mostrar mais"}}</div>

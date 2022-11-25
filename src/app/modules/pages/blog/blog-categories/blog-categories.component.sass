@@ -1,0 +1,40 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.categories
+  background-color: #fff
+  padding: rem(40)
+  @media only screen and (max-width: 768px)
+    padding: 0
+
+  .title
+    font-family: Baloo
+    font-size: rem(22)
+    line-height: rem(26)
+    margin-bottom: rem(16)
+
+  .category
+    color: rgba(101, 74, 156, 1)
+    padding: rem(16) 0
+    font-family: Lato
+    font-size: rem(16)
+    line-height: rem(22)
+    font-weight: 700
+    border-bottom: 1px solid rgba(243, 233, 233, 1)
+    position: relative
+    @media only screen and (max-width: 768px)
+      padding: rem(16)
+
+    &::after
+      content: ''
+      position: absolute
+      right: rem(0)
+      top: calc(50% - 2.25px)
+      width: 0
+      height: 0
+      border-left: 4.5px solid transparent
+      border-right: 4.5px solid transparent
+      border-top: 4.5px solid rgba(101, 74, 156, 1)
+      transform: rotate(-90deg)
+      @media only screen and (max-width: 768px)
+        right: rem(16)

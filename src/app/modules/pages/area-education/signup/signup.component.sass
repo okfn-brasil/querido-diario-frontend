@@ -1,0 +1,182 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+:host
+  background-color: #f3e9e9
+  font-family: Lato
+
+  .content
+    display: flex
+    flex-wrap: no-wrap
+    justify-content: space-between
+    @media only screen and (max-width: 768px)
+      display: block
+
+  .title
+    font-family: Baloo
+    font-size: rem(36)
+    line-height: rem(43)
+    margin-bottom: rem(32)
+
+    span
+      color: rgba(94, 64, 143, 1)
+
+  .second-step-title
+    margin-bottom: rem(8)
+
+  .sub-title
+    font-size: rem(18)
+    line-height: rem(25)
+    margin-bottom: rem(32)
+
+  form
+    width: 45%
+    @media only screen and (max-width: 768px)
+      width: 100%
+
+  .space
+    padding: rem(6)
+
+  .sign-up-image
+    width: 52%
+    height: unset
+    @media only screen and (max-width: 768px)
+      width: 100%
+      margin-bottom: rem(35)
+
+    img
+      width: 100%
+
+  .checklist
+    margin-bottom: rem(24)
+
+    .item
+      margin-bottom: rem(8)
+      color: #2C1338
+      padding-left: rem(32)
+      font-size: rem(14)
+      line-height: rem(19)
+      position: relative
+
+      &::after
+        content: ''
+        width: rem(8)
+        height: rem(8)
+        background-color: rgba(245, 95, 95, 1)
+        position: absolute
+        top: calc(50% - 4px)
+        left: rem(14)
+        border-radius: 50%
+
+      &.checked
+        &::after
+          background-color: #15b115
+
+  .btne-primary
+    @media only screen and (max-width: 768px)
+      width: 100%
+
+  hr
+    margin: rem(16) 0
+    border: 1px solid rgba(208, 207, 207, 1)
+    border-bottom: 0
+
+
+  hr.mobile
+    margin-bottom: rem(24)
+
+  .terms-text
+    @media only screen and (max-width: 768px)
+      margin-top: rem(24)
+
+  .login-link
+     @media only screen and (max-width: 768px)
+        margin-top: rem(24)
+
+  .login-link, .terms-text
+    font-size: rem(12)
+    line-height: rem(19)
+    color: rgba(52, 51, 52, 1)
+    
+    @media only screen and (max-width: 768px)
+      text-align: center
+
+    span a
+      font-size: rem(12)
+      line-height: rem(19)
+      text-decoration: underline
+      color: rgba(68, 120, 253, 1)
+      margin-left: rem(8)
+    
+    .contact
+      margin-left: rem(24)
+      position: relative
+
+      &::before
+        position: absolute
+        background-color: rgba(208, 207, 207, 1)
+        content: ''
+        height: rem(15)
+        width: 1px
+        left: rem(-8)
+        top: 0
+
+  .input-error
+    color: red
+    position: absolute
+    bottom: rem(12)
+    font-size: rem(12)
+
+label
+  pointer-events: none
+
+.submit-error
+  font-size: rem(16)
+  color: red
+  margin-bottom: rem(10)
+
+.loading-area
+  position: fixed
+  top: 0
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0,0,0, 0.4)
+  z-index: 999
+
+.email-loading
+  .lds-ring 
+    display: inline-block
+    position: absolute
+    right: 0
+    top: rem(18)
+    width: rem(15)
+    height: rem(15)
+  
+  .lds-ring div 
+    box-sizing: border-box
+    display: block
+    position: absolute
+    width: rem(15)
+    height: rem(15)
+    border: rem(3) solid #ff8500
+    border-radius: 50%
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite
+    border-color: #ff8500 transparent transparent transparent
+  
+  .lds-ring div:nth-child(1) 
+    animation-delay: -0.45s
+  
+  .lds-ring div:nth-child(2) 
+    animation-delay: -0.3s
+  
+  .lds-ring div:nth-child(3) 
+    animation-delay: -0.15s
+  
+  @keyframes lds-ring 
+    0% 
+      transform: rotate(0deg)
+    
+    100% 
+      transform: rotate(360deg)
+    
+  

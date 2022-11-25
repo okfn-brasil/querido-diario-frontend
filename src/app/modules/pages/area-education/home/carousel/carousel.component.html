@@ -1,0 +1,45 @@
+<div class="carousel">
+  <div>
+    <div class="carousel-items" [class.default-items]="type === 'default'">
+      <div class="pages-circle" *ngIf="type === 'second-type'">
+        <div class="flex-pages">
+          <div class="page-circle" (click)="onClickCircle(page)" *ngFor="let page of pages" [class.active]="checkDotActive(page)"></div>
+        </div>
+      </div>
+      <div class="button-nav next desktop" [class.second-type]="type === 'second-type'" (click)="onClickNext()">
+        <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="próximo" />
+        <img *ngIf="type === 'second-type'" src="assets/images/education/carousel-arrow-purple.png" alt="próximo" />
+      </div>
+      <div class="button-nav prev desktop" [class.second-type]="type === 'second-type'" (click)="onClickPrev()">
+        <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="anterior" />
+        <img *ngIf="type === 'second-type'" src="assets/images/education/carousel-arrow-purple.png" alt="anterior" />
+      </div>
+      <div *ngIf="type === 'default'" class="scroll-area" [ngStyle]="{'width': 'calc((288px * ' + items.length + ') + 24px)', transform: 'translateX(calc(-292px * '+ currPosition +'))'}">
+        <div *ngFor="let item of items" class="carousel-item">
+          <div class="title">{{item.title}}</div>
+          <div class="date">{{item.date}}</div>
+          <a [href]="item.link">
+            Ler mais 
+              <app-icon
+              class='center'
+              [icon]="{ file: 'white-arrow', height: 10, width: 10 }"
+            ></app-icon>
+          </a>
+        </div>
+      </div>
+
+      <div *ngIf="type === 'second-type'" class="scroll-area" [ngStyle]="{'width': 'calc((288px * ' + items.length + ') + 17px)', transform: 'translateX(calc(-292px * '+ currPosition +'))'}">
+        <div *ngFor="let item of items" class="success-case">
+          <span>
+            <p [style.lineHeight]="0" class="success-case-title">{{ item.title }}</p>
+          </span>
+          <p class="success-case-text">{{ item.text }}</p>
+          <span class="link" *ngFor="let action of item.actions">
+            <a target="_blank" [href]="action.link">{{ action.text }}</a>
+            <app-icon class="success-case-icon" [icon]="icon"></app-icon>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

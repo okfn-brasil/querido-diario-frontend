@@ -1,0 +1,25 @@
+<div class='alert-item'>
+  <div class='filters-items'>
+    <div class='filter-title'>Palavras-chave:</div>
+    <h3 class='key-words'>{{alert.query_string}}</h3>
+    <div> <hr class='thin-line'/>
+      <div class='filter-title filters'>Filtros:</div>
+      <div class='filter-item'>
+        <img src='/assets/icons/location.svg' alt='icone de localização' />
+        {{alert.territory_id ? '' : 'Nenhuma localização selecionada'}}
+      </div> 
+      <div class='filter-item'>
+        <img src='/assets/icons/theme.svg' alt='icone de tema' />
+        {{alert.sub_themes && alert.sub_themes.length ? alert.sub_themes.join(', ') : 'Nenhum tema selecionado'}}
+      </div> 
+      
+      <div class='filter-item'>
+        <img src='/assets/icons/ente.svg' alt='icone de ente governamental' />
+        {{alert.gov_entities && alert.gov_entities.length ?  alert.gov_entities[0] : 'Nenhum ente do governo selecionado'}}
+      </div> 
+    </div> 
+  </div> 
+  <div class='delete-alert'>
+    <span class='hyper-link hover-animation' (click)="onClickDelete()">Remover alerta</span>
+  </div>
+</div>
