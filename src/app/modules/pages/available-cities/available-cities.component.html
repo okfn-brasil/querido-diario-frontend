@@ -2,17 +2,23 @@
 <ng-container *ngIf="content$ | async as content"> 
     <app-container theme="light">
         <div class="container-inner" [style.paddingTOP]="'0px'">
-            <app-column [gap]="10">
-                <h1>{{ content.title }}</h1>
-                <p class="cities-text" [innerHtml]="content.text"></p>
-                <app-column>
-                  <div class="cities-flex">
-                    <ng-container>
-                      <div class="avaliable-city" *ngFor="let city of cities">{{ city.territory_name }} ({{city.state_code}})</div>
-                    </ng-container>
-                  </div>
-                </app-column>
+          <div class="coverage-dashboard" fxHide fxShow.gt-md>
+            <iframe width="1020" height="700" src="https://datastudio.google.com/embed/reporting/10838efc-aba4-4916-b9e6-c84f6f0688f9/page/E957C"
+            frameborder="0" 
+            style="border:0" allowfullscreen>
+            </iframe>
+          </div>
+          <app-column [gap]="10">
+            <h1>{{ content.title }}</h1>
+            <p class="cities-text" [innerHtml]="content.text"></p>
+            <app-column>
+              <div class="cities-flex">
+                <ng-container>
+                  <div class="avaliable-city" *ngFor="let city of cities">{{ city.territory_name }} ({{city.state_code}})</div>
+                </ng-container>
+              </div>
             </app-column>
+          </app-column>
         </div>
     </app-container>
 </ng-container>
