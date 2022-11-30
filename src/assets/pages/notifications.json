@@ -1,22 +1,28 @@
 {
   "list": [
     {
-      "title": "Nova atualização!",
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de Macapá (AP), Bacabal (MA), Codó (MA), Peritoró (MA) e Santo Antônio dos Lopes (MA) foram adicionadas à plataforma!",
+      "updatedAt": "2022/11/30",
+      "isNew": true
+    },
+    {
+      "title": "Nova cidade!",
       "content": "A cidade de Caxias do Sul (RS) foi adicionada à plataforma!",
       "updatedAt": "2022/11/11",
-      "isNew": true
+      "isNew": false
     },
     {
-      "title": "Nova atualização!",
+      "title": "Novas 4 cidades!",
       "content": "As cidades de Acajutiba (BA), Belford Roxo (RJ), Campinas (SP) e Rondonópolis (MT) foram adicionadas à plataforma!",
       "updatedAt": "2022/10/18",
-      "isNew": true
+      "isNew": false
     },
     {
-      "title": "Nova atualização!",
+      "title": "Novas 4 cidades!",
       "content": "As cidades de Joinville (SC), Marília (SP), Santana (AP) e Santo André (SP) foram adicionadas à plataforma!",
       "updatedAt": "2022/10/11",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 5 cidades!",
