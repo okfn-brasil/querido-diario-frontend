@@ -5,4 +5,4 @@
     <span class="checkmark" [class.in-modal]="isModal"></span>
   </label>
 </div>
-<div class="show-more" (click)="setShowMoreThemes()">{{ showMoreThemes ? "Mostrar menos" : "Mostrar mais"}}</div>
+<div class="show-more" *ngIf="getThemes().length < themes.length || showMoreThemes" (click)="setShowMoreThemes()">{{ showMoreThemes ? "Mostrar menos" : "Mostrar mais"}}</div>

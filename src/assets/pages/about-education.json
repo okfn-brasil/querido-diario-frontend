@@ -1,11 +1,11 @@
 {
-  "aboutTitle": "sobre o quero diário educação",
-  "title": "Nós estamos aqui para promover transparência",
-  "subtitle": "Nunc tempus, est auctor in. Consectetur dapibus quis enim sed sociis blandit. Ac quis dictumst orci odio leo vitae ac eget aliquam. Congue eleifend fermentum, morbi nunc. Mattis aliquet tortor quam a nam. Urna, purus vel non tellus leo duis vulputate id. In aliquam nunc, mattis gravida. Faucibus orci posuere hac aliquam.",
-  "objective": "Nosso propósito é facilitar o acesso a dados sobre o clima para proteger o meio ambiente",
-  "objectiveInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis diam vel nisl aliquet aliquam. Donec dignissim massa et erat semper, eu condimentum eros cursus. Etiam convallis sollicitudin faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis diam vel nisl aliquet aliquam. Donec dignissim massa et erat semper, eu condimentum eros cursus. Etiam convallis sollicitudin faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis diam vel nisl aliquet aliquam. Donec dignissim massa et erat semper, eu condimentum eros cursus. Etiam convallis sollicitudin faucibus.",
+  "aboutTitle": "SOBRE O QUERIDO DIÁRIO EDUCAÇÃO",
+  "title": "Um jeito simples de monitorar as ações municipais",
+  "subtitle": "O Querido Diário é uma tecnologia aberta desenvolvida pela Open Knowledge Brasil (OKBR) para facilitar o acompanhamento dos diários oficiais municipais. Com ela, é possível buscar todos os atos públicos das cidades já incorporadas à plataforma. Agora, colocamos uma “lupa” em toda essa massa de dados para dar visibilidade a um tema urgente: a adoção de tecnologias na educação.",
+  "objective": "As decisões sobre tecnologias na educação municipal ao alcance de todos",
+  "objectiveInfo": "Quase metade das matrículas na educação básica pública no Brasil está nos municípios, mas é muito difícil encontrar informações sobre o dia a dia da gestão dessas redes. Por isso, os diários oficiais se tornam uma fonte preciosa de informação — quando não são as únicas. Em parceria com a Aliança Fundação Lemann & Imaginable Futures, a OKBR construiu esta ferramenta capaz de identificar e coletar todos os atos relacionados ao universo das tecnologias na educação. Contratações, normas e decisões sobre infraestrutura, conectividade, robótica, softwares e serviços contratados: tudo é categorizado pelos robôs e armazenado neste repositório.<br/><br/>Além de consultar os atos, a ferramenta permite criar alertas para receber, por e-mail, atualizações sobre assuntos de interesse. E para quem também constrói tecnologias, é possível conectar-se ao Querido Diário para criar novas aplicações (entenda como funciona).<br/><br/> Mas este não é apenas um trabalho para os robôs: a equipe da OKBR, que tem especialistas em políticas públicas e em tecnologia, também vai desenvolver e disponibilizar nesta plataforma uma curadoria com análises sobre as tendências, novidades e iniciativas que merecem atenção. O objetivo é criar uma base de conhecimento comum e acessível a pessoas interessadas e apontar caminhos para que as equipes de gestão municipais possam tornar a gestão de tecnologias da educação mais transparente e acessível.",
   "supportTitle": "Contamos com seu apoio!",
-  "supportText": "Você pode se tornar um assinante. Assim, você recebe os benefícios de ser PRO e ainda ajuda o Diário do Clima a abrir os dados de novas cidades e desenvolver novas ferramentas!",
+  "supportText": "O Querido Diário é um projeto de código aberto e você também pode contribuir com seu desenvolvimento e financiamento. Ajude a abrir os dados de novas cidades e a criar novas ferramentas! ",
   "supportButton": "APOIE",
   "realization": [
     {
@@ -19,6 +19,8 @@
     {
       "title": "APOIO",
       "icons": [
+        { "file": "assets/images/imaginable.png", "isPng": true, "to": "https://www.imaginablefutures.com/", "target": "_blank", "height": 30, "width": 106 },
+        { "file": "assets/images/lemann.png", "isPng": true, "to": "https://fundacaolemann.org.br/", "target": "_blank", "height": 30, "width": 106 },
         { "file": "logo-Ilda", "to": "https://idatosabiertos.org/", "target": "_blank", "height": 17, "width": 52 },
         { "file": "empatia", "to": "https://www.empatia.la/", "target": "_blank", "height": 16, "width": 87 },
         { "file": "logo-jurema", "to": "https://www.jurema.la/", "target": "_blank", "height": 18, "width": 80 },

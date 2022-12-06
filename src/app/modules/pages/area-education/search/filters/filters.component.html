@@ -12,12 +12,12 @@
 
   <div class="field">
     <div class="title theme">Tema</div>
-    <div class="sub-title">Aqui uma descrição breve do que são e de como funcionam os temas</div>
+    <div class="sub-title">Escolha uma ou mais categorias para filtrar pelo tipo de tecnologia.</div>
     <edu-themes-filter [isModal]="isModal" [themes]="apiThemes" [initialThemes]="themes" (themesChange)="onChangeThemes($event)"></edu-themes-filter>
   </div>
 
   <div class="field">
-    <div class="title">Atores envolvidos</div>
+    <div class="title">Envolvidos</div>
     <div class="edu-input">
       <edu-themes-filter [isModal]="isModal" [themes]="apiEntities" [initialThemes]="entities" (themesChange)="onChangeEntities($event)"></edu-themes-filter>
     </div>

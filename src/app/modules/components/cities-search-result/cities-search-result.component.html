@@ -4,7 +4,7 @@
       <div class="level" *ngIf="levels.length && levels.includes(1)" [style]="{width: 'calc((100%/' + levels.length + ') - 40px)'}">
         <div class="level-icon"><img src="/assets/icons/pin.svg"/></div>
         <div class="level-title">Nível 1 de acesso</div>
-        <div class="level-text">O Querido Diário possui a fonte de publicação do diário oficial desta cidade, mas ainda não consegue coletar os arquivos. Doe e nos ajude a disponibilizar informações de mais cidades na plataforma.</div>
+        <div class="level-text">Possuímos a fonte de publicação do diário oficial deste município.</div>
         <div class="cities level-1">
           <div class="city" *ngFor="let city of getCities(1)">
             <span class="city-name">{{city.territory_label}}</span>
@@ -31,7 +31,7 @@
       <div class="level" *ngIf="levels.length && levels.includes(3)" [style]="{width: 'calc((100%/' + levels.length + ') - 40px)'}">
         <div class="level-icon"><img src="/assets/icons/check.svg"/></div>
         <div class="level-title">Nível 3 de acesso</div>
-        <div class="level-text">O Querido Diário possui a fonte de publicação do diário oficial desta cidade, mas ainda não consegue coletar os arquivos. Doe e nos ajude a disponibilizar informações de mais cidades na plataforma.</div>
+        <div class="level-text">o conteúdo dos diários oficiais deste município está disponível na plataforma Querido Diário.</div>
         <div class="cities level-3">
           <div class="city" *ngFor="let city of getCities(3)">
             <span class="city-name">{{city.territory_label}}</span>

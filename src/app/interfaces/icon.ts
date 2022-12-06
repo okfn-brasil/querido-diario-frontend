@@ -4,6 +4,7 @@ export interface Icon {
   width: number;
   to?: string;
   target?: string;
+  isPng?: boolean;
   xs?: {
     height: number;
     width: number;
