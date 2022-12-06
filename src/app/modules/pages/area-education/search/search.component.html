@@ -6,8 +6,8 @@
   <div class="search-header">
     <div class="flex">
       <div class="edu-input">
-        <input (keyup)="onEnter($event)" class="desktop" [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Encontre um..."/>
-        <input (keyup)="onChangeQuery()" class="mobile" [(ngModel)]="querystring" id="querystringMobile" name="querystring" placeholder="Encontre um..."/>
+        <input (keyup)="onEnter($event)" class="desktop" [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Adicione uma palavra-chave…"/>
+        <input (keyup)="onChangeQuery()" class="mobile" [(ngModel)]="querystring" id="querystringMobile" name="querystring" placeholder="Adicione uma palavra-chave…"/>
         <img class="search-ico" src="assets/images/education/education-search.svg" alt="buscar" />
       </div>
       <button (click)="onChangeQuery()" class="btne-primary">Buscar</button>

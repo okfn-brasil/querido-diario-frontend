@@ -1,6 +1,7 @@
 <ng-container *ngIf="icon">
   <ng-container *ngIf="!icon?.to">
     <mat-icon
+      *ngIf="!icon.isPng"
       [svgIcon]="icon.file"
       [appHeight]="icon.height"
       [appFlexHeight]="icon.xs?.height"
@@ -8,11 +9,17 @@
       [appFlexWidth]="icon.xs?.width"
     >
     </mat-icon>
+    <img 
+      *ngIf="icon.isPng"
+      [src]="icon.file"
+      [ngStyle]="{'max-width.px': icon.width, 'height.px': icon.height}"
+    />
   </ng-container>
 
   <ng-container *ngIf="icon?.to">
     <a [href]="icon.to" [target]="icon.target || '_self'">
       <mat-icon
+        *ngIf="!icon.isPng"
         [svgIcon]="icon.file"
         [appHeight]="icon.height"
         [appFlexHeight]="icon.xs?.height"
@@ -20,6 +27,11 @@
         [appFlexWidth]="icon.xs?.width"
       >
       </mat-icon>
+      <img 
+        *ngIf="icon.isPng"
+        [src]="icon.file"
+        [ngStyle]="{'max-width.px': icon.width, 'height.px': icon.height}"
+      />
     </a>
   </ng-container>
 </ng-container>
