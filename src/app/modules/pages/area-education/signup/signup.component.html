@@ -61,9 +61,12 @@
               <div class="input-error" *ngIf="errors.state">Campo obrigatório!</div>
             </div>
 
-            <div class="edu-input">
-              <input id="city" name="city" formControlName="city" placeholder="Cidade"/>
+            <div class="edu-input cities-input">
+              <input id="city" name="city" (blur)="emptyCity()" formControlName="city" placeholder="Cidade"/>
               <label for="city">Cidade</label>
+              <div class="select-cities">
+                <div class="city" *ngFor="let city of cities" (click)="onClickCity(city)">{{city.territory_label}}</div>
+              </div>
               <div class="input-error" *ngIf="errors.city">Deve possuir no mínimo 8 caracteres</div>
             </div>
           </div>

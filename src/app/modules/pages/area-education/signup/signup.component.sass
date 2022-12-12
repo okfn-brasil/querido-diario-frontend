@@ -187,5 +187,24 @@ label
     
     100% 
       transform: rotate(360deg)
+
+.cities-input
+  position: relative
+
+  .select-cities
+    position: absolute
+    top: calc(100% - 32px)
+    left: 0
+    width: 100%
+    background-color: white
+    z-index: 999
+
+    .city
+      padding: 5px
+      cursor: pointer
+
+      &:hover
+        background-color: rgba(240, 240, 240)
+
     
   

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { City } from 'src/app/interfaces/city';
+import { Territory } from 'src/app/interfaces/territory';
 import { SignUpService } from 'src/app/services/signup/signup.service';
+import { TerritoryService } from 'src/app/services/territory/territory.service';
 import { UserService } from 'src/app/stores/user/user.service';
 import { tokenKeys } from '../utils';
 
@@ -40,11 +43,14 @@ export class SignupComponent implements OnInit {
   }
   validPass = false;
   timeout: ReturnType<typeof setTimeout> | undefined;
+  cities: Territory[] = [];
+  cityEdited = true;
 
   constructor(
     private signUpService: SignUpService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private territoryService: TerritoryService,
   ) { }
 
   ngOnInit(): void {
@@ -88,6 +94,24 @@ export class SignupComponent implements OnInit {
         };
       }
     });
+
+    this.formGroup.controls.city.valueChanges.subscribe(value => {
+      if(value.length > 2) {
+        this.getCities(value);
+      }
+      this.cityEdited = true;
+    })
+  }
+
+  getCities(city: string) {
+    this.territoryService.findByName(city).subscribe(result => {
+      this.cities = result.slice(0, 10);
+    });
+  }
+
+  onClickCity(city: Territory) {
+    this.formGroup.controls.city.setValue(city.territory_label);
+    this.cityEdited = false;
   }
 
   onClickForm() {
@@ -96,6 +120,12 @@ export class SignupComponent implements OnInit {
 
   onClickShowPass() {
     this.showPass = !this.showPass;
+  }
+
+  emptyCity() {
+    if(this.cityEdited) {
+      this.formGroup.controls.city.setValue('');
+    }
   }
 
   disableFirstStep() {

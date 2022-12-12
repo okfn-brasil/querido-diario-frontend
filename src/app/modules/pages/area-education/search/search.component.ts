@@ -76,14 +76,14 @@ export class SearchEducationComponent implements OnInit {
     this.onChangeFilters(this.filters);
   }
 
-  getItems(params?: string) {
+  getItems(currFilters: string, params?: string) {
     this.isLoading = true;
     this.hasSearched = true;
     if(this.savedParams !== params) {
       this.currPage = 0;
     }
 
-    this.searchService.getAllGazettes(params, this.currPage).subscribe(response => {
+    this.searchService.getAllGazettes(currFilters, this.currPage).subscribe(response => {
       const nResponse = response as GazetteResponse;
       if(nResponse.excerpts && nResponse.excerpts.length) {
         this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.query as string);
@@ -126,7 +126,7 @@ export class SearchEducationComponent implements OnInit {
       })
       const params = new URLSearchParams(newObj as any).toString();
       if(this.getIfCanSearch(newObj)) {
-        this.getItems(params);
+        this.getItems(this.convertToParams(newObj), params);
       }
       this.router.navigate([], 
         {
@@ -135,6 +135,32 @@ export class SearchEducationComponent implements OnInit {
       });
     }, 500);
   }
+
+  
+convertToParams(filters: GazetteFilters){
+  let params = Object.keys(filters)
+  .filter(key => (!!filters[key]))
+  .map(key => {
+    if(Array.isArray(filters[key])) {
+      const arrayItems = filters[key] as string[];
+      const resultArray: string[] = [];
+      arrayItems.forEach(item => {
+        if(item !== '0') {
+          resultArray.push(`${key}=${item}`);
+        }
+      });
+      return resultArray.length ? resultArray.join('&') : '';
+    } else {
+      return `${key}=${filters[key]}`;
+    }
+  })
+  .join('&');
+
+  if(params[params.length - 1] === '&') {
+    params = params.slice(0, -1);
+  }
+  return params;
+}
 
   getFiltersInfo() {
     this.searchService.getThemes().subscribe(results => {
