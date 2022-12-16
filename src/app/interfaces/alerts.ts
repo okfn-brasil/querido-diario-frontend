@@ -15,7 +15,7 @@ export interface AlertModel {
   id: string;
   query_string: string;
   sub_themes?: string[];
-  territory_id?: string;
+  territories?: string[];
   user: string;
 }
 
