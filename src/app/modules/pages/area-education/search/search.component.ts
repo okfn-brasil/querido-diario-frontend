@@ -58,6 +58,10 @@ export class SearchEducationComponent implements OnInit {
         territory_id: params.territory_id,
         sort_by: this.order,
       } as GazetteFilters;
+      if(Object.keys(Object.keys(this.filters).filter(key => !!this.filters[key])).length > 1) {
+        this.isLoading = true;
+        this.onChangeFilters(this.filters);
+      }
     }).unsubscribe();
     this.getFiltersInfo();
   }
