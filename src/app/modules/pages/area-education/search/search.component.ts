@@ -163,7 +163,7 @@ convertToParams(filters: GazetteFilters){
   if(params[params.length - 1] === '&') {
     params = params.slice(0, -1);
   }
-  return params;
+  return params.replace(/territory_id/g, 'territory_ids');
 }
 
   getFiltersInfo() {
