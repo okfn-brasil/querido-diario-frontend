@@ -14,7 +14,6 @@ interface ErrorsModel {
   password: boolean;
   city: boolean;
   area: boolean;
-  state: boolean;
 }
 
 @Component({
@@ -23,9 +22,6 @@ interface ErrorsModel {
   styleUrls: ['./signup.component.sass']
 })
 export class SignupComponent implements OnInit {
-  stateList = [
-    'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO', 'DF'
-  ];
   showPass = false;
   formGroup: FormGroup = {} as FormGroup;
   loading = false;
@@ -60,7 +56,7 @@ export class SignupComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.maxLength(100), Validators.email]),
       city: new FormControl(null, [Validators.required, Validators.minLength(8)]),
       area: new FormControl(null, [Validators.required]),
-      state: new FormControl(null, [Validators.required]),
+      state: new FormControl(null, []),
     });
 
     this.formGroup.controls.email.valueChanges.subscribe(value => {
@@ -111,6 +107,7 @@ export class SignupComponent implements OnInit {
 
   onClickCity(city: Territory) {
     this.formGroup.controls.city.setValue(city.territory_label);
+    this.formGroup.controls.state.setValue(city.state_code);
     this.cityEdited = false;
   }
 
@@ -162,7 +159,7 @@ export class SignupComponent implements OnInit {
       }
     } else {
       this.checkSecondStep();
-      if(!this.errors.state && !this.errors.city && !this.errors.area) {
+      if(!this.errors.city && !this.errors.area) {
         this.submit();
       }
     }
@@ -177,7 +174,6 @@ export class SignupComponent implements OnInit {
   checkSecondStep() {
     this.errors.city = !this.formGroup.controls.city.valid;
     this.errors.area = !this.formGroup.controls.area.valid;
-    this.errors.state = !this.formGroup.controls.state.valid;
   }
 
   submit() {

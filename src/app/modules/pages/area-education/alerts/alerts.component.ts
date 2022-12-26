@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertModel, AlertsList } from 'src/app/interfaces/alerts';
 import { AlertsService } from 'src/app/services/alerts/alerts.service';
+import { CitiesService } from 'src/app/services/cities/cities.service';
 
 interface List {
   [key: number]: AlertModel[];
@@ -22,13 +23,22 @@ export class AlertsComponent implements OnInit {
   totalItems = 0;
   error = false;
   showEditEmailModal = false;
+  cities = [];
 
   constructor(
     private alertsService: AlertsService,
+    private citiesService: CitiesService,
   ) { }
 
   ngOnInit(): void {
     this.getList(0);
+    this.getCities();
+  }
+
+  getCities() {
+    this.citiesService.getAll().subscribe(result => {
+      this.cities = result.cities;
+    });
   }
 
 
