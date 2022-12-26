@@ -52,14 +52,6 @@
               <label for="area">Area de atuação</label>
               <div class="input-error" *ngIf="errors.area">Campo obrigatório!</div>
             </div>
-  
-            <div class="edu-input">
-              <select id="state" name="state" formControlName="state" placeholder="Estado">
-                <option *ngFor="let state of stateList" [value]="state">{{state}}</option>
-              </select>
-              <label for="state">Estado</label>
-              <div class="input-error" *ngIf="errors.state">Campo obrigatório!</div>
-            </div>
 
             <div class="edu-input cities-input">
               <input id="city" name="city" (blur)="emptyCity()" formControlName="city" placeholder="Cidade"/>

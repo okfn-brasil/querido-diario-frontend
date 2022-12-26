@@ -53,7 +53,7 @@
     <div class="alerts-list container-education">
       <div class="content">
         <div class="alerts-items" *ngIf="!error">
-          <edu-alert-item *ngFor="let alert of alerts[currPage]" (onDelete)="onDeleteAlert($event)" [alert]="alert"></edu-alert-item>
+          <edu-alert-item *ngFor="let alert of alerts[currPage]" [cities]="cities" (onDelete)="onDeleteAlert($event)" [alert]="alert"></edu-alert-item>
         </div>
         <div class="on-error" *ngIf="error">
           Ocorreu um erro ao buscar estes alertas.
