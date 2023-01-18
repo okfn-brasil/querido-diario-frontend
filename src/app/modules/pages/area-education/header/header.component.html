@@ -12,6 +12,9 @@
         <div class="logged" *ngIf="userData.full_name">
           <a routerLink="/educacao/alertas"><div class="logged-link">Meus alertas</div></a>
           <div class="user-name">Olá, {{userData.full_name.split(' ')[0]}}</div>
+          <div class="logged-menu">
+            <div (click)="onClickLogout()" class="menu-item">Sair</div>
+          </div>
         </div>
         <a (click)="openForm()" *ngIf="!isLoggedIn"><div class="login-button">Login / Cadastre-se</div></a>
       </div>

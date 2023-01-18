@@ -42,6 +42,40 @@
   line-height: rem(16)
   font-family: Lato
   align-items: center
+  position: relative
+
+  .logged-menu
+    position: absolute
+    display: none
+    top: 100%
+    right: 20px
+    width: 115px
+    padding-top: 10px
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 10px
+      width: 0
+      height: 0
+      border-left: 10px solid transparent
+      border-right: 10px solid transparent
+      border-bottom: 10px solid #fff
+
+    .menu-item
+      box-shadow: 5px 5px 9px 1px #d1d1d1
+      background-color: #fff
+      color: #000
+      cursor: pointer
+      padding: rem(12) rem(24)
+
+      &:hover
+        background-color: #f0f0f0
+
+  &:hover
+    .logged-menu
+      display: block
 
   .user-name
     margin-left: rem(40)
