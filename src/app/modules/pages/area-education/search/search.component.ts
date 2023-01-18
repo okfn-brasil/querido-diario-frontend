@@ -90,7 +90,7 @@ export class SearchEducationComponent implements OnInit {
     this.searchService.getAllGazettes(currFilters, this.currPage).subscribe(response => {
       const nResponse = response as GazetteResponse;
       if(nResponse.excerpts && nResponse.excerpts.length) {
-        this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.query as string);
+        this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.querystring as string);
         this.totalItems = nResponse.total_excerpts;
       } else {
         this.results = [];

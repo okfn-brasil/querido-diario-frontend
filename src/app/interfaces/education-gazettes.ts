@@ -42,7 +42,8 @@ export interface GazetteFilters {
 
 export const parseGazettes = (gazettes: GazetteModel[], query: string) => {
   return gazettes.map(item => {
-    item.excerpt = item.excerpt.replace(/entidadecnpj/g, '~~~').replace(/entidadeambiental/g, '~%');
+    console.log(item.excerpt)
+    item.excerpt = item.excerpt.replace(/entidadecnpj/g, '~~~').replace(/entidadeeducacao/g, '~%');
     if(query) {
       item.excerpt = replaceQueryToBold(item.excerpt, query.trim());
     }
