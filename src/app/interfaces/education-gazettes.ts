@@ -48,18 +48,29 @@ export const parseGazettes = (gazettes: GazetteModel[], query: string) => {
       item.excerpt = replaceQueryToBold(item.excerpt, query.trim());
     }
     const replaceCnpj = item.excerpt.split('<~~~>');
-    let newText = '';
+    let newTextCnpj = '';
     replaceCnpj.forEach(textFragment => { 
       const cnpjIndex = textFragment.indexOf('</~~~>');
       if (cnpjIndex > 0) {
         const cnpj = textFragment.slice(0, cnpjIndex).trim();
-        newText += `<a class="education-gazette-link" href='/educacao/cnpj/${removeSpecialChars(cnpj).replace(/b/g, '')}'>${textFragment}`;
+        newTextCnpj += `<a class="education-gazette-link" href='/educacao/cnpj/${removeSpecialChars(cnpj).replace(/b/g, '')}'>${textFragment}`;
       } else {
-        newText += textFragment;
+        newTextCnpj += textFragment;
+      }
+    });
+
+    let newTextEntity = '';
+    const replaceEntity = newTextCnpj.split('<~%>');
+    replaceEntity.forEach(textFragment => { 
+      const entityIndex = textFragment.indexOf('</~%>');
+      if (entityIndex > 0) {
+        newTextEntity += `<b class='education-gazette-entity'>${textFragment}`;
+      } else {
+        newTextEntity += textFragment;
       }
     });
     const date = new Date(item.date);
-    let replacedText = newText.replace(/~~~/g, 'a').replace(/~%/g, 'b');
+    let replacedText = newTextEntity.replace(/~~~/g, 'a').replace(/~%/g, 'b');
   
     return {
       ...item,
