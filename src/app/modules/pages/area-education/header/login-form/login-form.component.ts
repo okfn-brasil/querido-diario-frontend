@@ -49,6 +49,7 @@ export class LoginFormComponent implements OnInit {
       localStorage.setItem(tokenKeys.refresh, response.refresh);
       this.setUserInfo();
       this.onLoggedIn.emit();
+      this.formGroup.reset();
       this.onClickClose();
       this.router.navigate([], {queryParams: {}});
     }, () => {
