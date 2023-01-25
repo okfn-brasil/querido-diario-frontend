@@ -1,0 +1,1 @@
+export const educationApi = 'https://api.queridodiario.jurema.la/api/';

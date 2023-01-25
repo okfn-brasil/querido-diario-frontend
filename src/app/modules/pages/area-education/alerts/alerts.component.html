@@ -27,7 +27,7 @@
         <div class="text">
           <div class="title">Alertas salvos</div>
           <div class="sub-title">Você ainda não possui nenhum alerta</div>
-          <button class="btne-primary desktop" (click)="setOpenModal()">Criar alerta</button>
+          <button *ngIf="isLoggedIn" class="btne-primary desktop" (click)="setOpenModal()">Criar alerta</button>
         </div>
         <img src="assets/images/education/signup.png" alt="usando celular"/>
         

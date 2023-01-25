@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertModel, AlertsList } from 'src/app/interfaces/alerts';
 import { AlertsService } from 'src/app/services/alerts/alerts.service';
 import { CitiesService } from 'src/app/services/cities/cities.service';
+import { UserQuery } from 'src/app/stores/user/user.query';
 
 interface List {
   [key: number]: AlertModel[];
@@ -24,15 +25,23 @@ export class AlertsComponent implements OnInit {
   error = false;
   showEditEmailModal = false;
   cities = [];
+  isLoggedIn = false;
 
   constructor(
     private alertsService: AlertsService,
     private citiesService: CitiesService,
+    private userQuery: UserQuery,
   ) { }
 
   ngOnInit(): void {
     this.getList(0);
     this.getCities();
+
+    this.userQuery.userData$.subscribe(userData => {
+      if(userData.full_name) {
+        this.isLoggedIn = true;
+      }
+    });
   }
 
   getCities() {
