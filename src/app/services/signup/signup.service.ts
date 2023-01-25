@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { RegistrationModel, RegistrationResponse } from 'src/app/interfaces/account';
+import { educationApi } from '../utils';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,7 @@ export class SignUpService {
       sector: form.area,
       gender: "M" // remover
     };
-    return this.http.post<RegistrationResponse>(`https://api.queridodiario.jurema.la/api/accounts/users/`, newForm).pipe(
+    return this.http.post<RegistrationResponse>(`${educationApi}accounts/users/`, newForm).pipe(
       map((res: RegistrationResponse) => {
         return res as RegistrationResponse;
       })
@@ -27,7 +28,7 @@ export class SignUpService {
   }
 
   checkEmail(email: string) {
-    return this.http.get<RegistrationResponse>(`https://api.queridodiario.jurema.la/api/accounts/users/email/${email}/`).pipe(
+    return this.http.get<RegistrationResponse>(`${educationApi}accounts/users/email/${email}/`).pipe(
       map((res: RegistrationResponse) => {
         return res as RegistrationResponse;
       })
