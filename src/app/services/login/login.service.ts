@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserModel } from 'src/app/interfaces/account';
+import { educationApi } from '../utils';
 
 @Injectable({
   providedIn: 'root',
@@ -14,14 +15,14 @@ export class LoginService {
       email: form.email,
       password: form.password,
     };
-    return this.http.post(`https://api.queridodiario.jurema.la/api/token/`, newForm);
+    return this.http.post(`${educationApi}token/`, newForm);
   }
 
   getUserData() {
-    return this.http.get(`https://api.queridodiario.jurema.la/api/accounts/users/me`);
+    return this.http.get(`${educationApi}accounts/users/me`);
   }
 
   updateUserData(userData: UserModel) {
-    return this.http.patch(`https://api.queridodiario.jurema.la/api/accounts/users/me/`, userData);
+    return this.http.patch(`${educationApi}accounts/users/me/`, userData);
   }
 }

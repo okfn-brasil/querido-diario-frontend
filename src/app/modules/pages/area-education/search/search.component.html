@@ -16,7 +16,7 @@
     <div class="mobile ">
       <div class="mobile-buttons">
         <button (click)="openFilters()" class="open-filters">Filtros</button>
-        <button class="create-alert" (click)="onOpenCreateAlert()">Criar alerta</button>
+        <button *ngIf="isLoggedIn" class="create-alert" (click)="onOpenCreateAlert()">Criar alerta</button>
       </div>
     </div>
   </div>
@@ -58,7 +58,7 @@
               </select>
             </div>
           </div>
-          <button class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
+          <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
         </div>
         <edu-search-item *ngFor="let item of results[listPageIntern]" [gazette]="item"></edu-search-item>
         <edu-pagination [listSize]="totalItems" [currentPage]="currPage" (changePage)="onChangePage($event)"></edu-pagination>

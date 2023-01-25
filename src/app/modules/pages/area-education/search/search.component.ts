@@ -4,6 +4,7 @@ import { City } from 'src/app/interfaces/city';
 import { GazetteFilters, GazetteModel, GazetteResponse, OrderFilter, parseGazettes } from 'src/app/interfaces/education-gazettes';
 import { CitiesService } from 'src/app/services/cities/cities.service';
 import { EducationGazettesService } from 'src/app/services/education-gazettes/education-gazettes.service';
+import { UserQuery } from 'src/app/stores/user/user.query';
 
 interface List {
   [key: number]: GazetteModel[];
@@ -16,6 +17,7 @@ interface List {
 })
 export class SearchEducationComponent implements OnInit {
   results: List = {};
+  isLoggedIn = false;
   totalItems = 0;
   filters: GazetteFilters = {} as GazetteFilters;
   hasSearched = false;
@@ -42,6 +44,7 @@ export class SearchEducationComponent implements OnInit {
     private citiesService: CitiesService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private userQuery: UserQuery,
   ) { }
 
   ngOnInit(): void {
@@ -64,6 +67,12 @@ export class SearchEducationComponent implements OnInit {
       }
     }).unsubscribe();
     this.getFiltersInfo();
+
+    this.userQuery.userData$.subscribe(userData => {
+      if(userData.full_name) {
+        this.isLoggedIn = true;
+      }
+    });
   }
 
   onChangeQuery() {
