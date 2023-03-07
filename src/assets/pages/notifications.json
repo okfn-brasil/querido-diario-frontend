@@ -1,10 +1,16 @@
 {
   "list": [
     {
+      "title": "Nova cidade!",
+      "content": "A cidade de Aldeias Altas (MA) foi adicionada à plataforma!",
+      "updatedAt": "2023/02/16",
+      "isNew": true
+    },
+    {
       "title": "Novas 14 cidades!",
       "content": "As cidades de Senhor do Bonfim (BA), Alagoinhas (BA), Juazeiro (BA), Campo Formoso (BA), Maracaju (MS), Inocência (MS), Arraial do Cabo (RJ), Camaquã (RS), Itaúna (MG), Campo Belo (MG), Nova Serrana (MG), Jaboticabal (SP), Ibitinga (SP) e São Mateus do Sul (PR) foram adicionadas à plataforma!",
       "updatedAt": "2022/12/22",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 5 cidades!",
