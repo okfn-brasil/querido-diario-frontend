@@ -35,7 +35,7 @@
           </span>
           <p class="success-case-text">{{ item.text }}</p>
           <span class="link" *ngFor="let action of item.actions">
-            <a target="_blank" [href]="action.link">{{ action.text }}</a>
+            <a [target]="action.target || 'self'" [href]="action.link">{{ action.text }}</a>
             <app-icon class="success-case-icon" [icon]="icon"></app-icon>
           </span>
         </div>

@@ -55,7 +55,6 @@ import { TechComponent } from './modules/pages/tech/tech.component';
 import { SuggestionComponent } from './modules/pages/suggestion/suggestion.component';
 import { HomeComponent } from './modules/pages/home/home.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
-import { PostComponent } from './modules/pages/post/post.component';
 import { SearchComponent } from './modules/pages/search/search.component';
 import { SearchTutorialComponent } from './modules/pages/search-tutorial/search-tutorial.component';
 import { AvailableCitiesComponent } from './modules/pages/available-cities/available-cities.component';
@@ -120,7 +119,6 @@ import { AdvancedModalComponent } from './modules/pages/area-education/search/ad
     TechComponent,
     SuggestionComponent,
     GlossaryComponent,
-    PostComponent,
     SearchTutorialComponent,
     SearchComponent,
     VideoModalComponent,

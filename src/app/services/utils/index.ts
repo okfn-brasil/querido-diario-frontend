@@ -1,1 +1,1 @@
-export const educationApi = 'https://api.queridodiario.jurema.la/api/';
+export const educationApi = 'https://backend-api.queridodiario.ok.org.br/api/';

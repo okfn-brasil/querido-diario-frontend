@@ -3,7 +3,7 @@
   "mobileTitle": "Explore tecnologias nas redes municipais",
   "subtitle": "Nunca foi tão fácil acompanhar como os municípios adotam tecnologias na educação. O Querido Diário faz a parte pesada: todos os dias, seus robôs coletam diários oficiais, identificam onde está o assunto e incluem os dados aqui. Agora, você só precisa filtrar por temas ou buscar termos de seu interesse. Experimente!   ",
   "bannerButton": "Comece a buscar",
-  "bannerButtonMobile": "Cadastre-se",
+  "bannerButtonMobile": "Comece a buscar",
   "reports": {
     "title": "Análises panorâmicas",
     "subtitle": "Análises realizadas pela equipe da Open Knowledge Brasil com base nas informações publicadas nos diários oficiais"
@@ -15,7 +15,7 @@
   "catalog": {
     "title": "Catálogo",
     "subtitle": "Seleção de instrumentos de gestão, como contratos e editais, para facilitar a vida de quem precisa de referências ",
-    "button": "disponível em breve"
+    "button": "Em breve"
   },
   "about": {
     "title": "Sobre o projeto",
@@ -34,12 +34,15 @@
     {
       "title": "APOIO",
       "icons": [
-        { "file": "assets/images/imaginable.png", "isPng": true, "to": "https://www.imaginablefutures.com/", "target": "_blank", "height": 30, "width": 106 },
-        { "file": "assets/images/lemann.png", "isPng": true, "to": "https://fundacaolemann.org.br/", "target": "_blank", "height": 30, "width": 106 },
         { "file": "logo-Ilda", "to": "https://idatosabiertos.org/", "target": "_blank", "height": 17, "width": 52 },
-        { "file": "empatia", "to": "https://www.empatia.la/", "target": "_blank", "height": 16, "width": 87 },
+        { "file": "logo_empatia", "to": "https://www.empatia.la/", "target": "_blank", "height": 16, "width": 87 },
         { "file": "logo-jurema", "to": "https://www.jurema.la/", "target": "_blank", "height": 18, "width": 80 },
-        { "file": "logo-digitalocean", "to": "https://www.digitalocean.com/", "target": "_blank", "height": 18, "width": 110 }
+        { "file": "logo-digitalocean", "to": "https://www.digitalocean.com/", "target": "_blank", "height": 18, "width": 110},
+        { "file": "logo-fiocruz", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
+        { "file": "logo-icict", "to": "hhttps://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
+        { "file": "logo-pcdas", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 72 },
+        { "file": "assets/images/imaginable.png", "isPng": true, "to": "https://www.imaginablefutures.com/", "target": "_blank", "height": 30, "width": 106 },
+        { "file": "assets/images/lemann.png", "isPng": true, "to": "https://fundacaolemann.org.br/", "target": "_blank", "height": 30, "width": 106 }
       ]
     }
   ]

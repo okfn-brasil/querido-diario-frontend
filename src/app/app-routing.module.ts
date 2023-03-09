@@ -16,7 +16,6 @@ import { BlogPostDetailComponent } from './modules/pages/blog/blog-post-detail/b
 import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
 import { HomeComponent } from './modules/pages/home/home.component';
-import { PostComponent } from './modules/pages/post/post.component';
 import { PrivacyPolicyComponent } from './modules/pages/privacy-policy/privacy-policy.component';
 import { SearchComponent } from './modules/pages/search/search.component';
 import { SearchTutorialComponent } from './modules/pages/search-tutorial/search-tutorial.component';
@@ -36,7 +35,6 @@ const routes: Routes = [
   { path: 'sugestao', component: SuggestionComponent },
   { path: 'glossario', component: GlossaryComponent },
   { path: 'pesquisa', component: SearchComponent },
-  { path: 'conteudo/o-que-os-diarios-oficiais-contam-sobre-a-lgpd-nos-municipios', component: PostComponent },
   { path: 'cidades-disponiveis', component: AvailableCitiesComponent },
   { path: 'tecnologia/busca-avancada', component: SearchTutorialComponent },
   { path: 'blog', component: BlogListComponent },

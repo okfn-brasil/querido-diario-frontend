@@ -1,40 +1,10 @@
 {
   "analises": [
     {
-      "title": "Análise U",
-      "date": "DD / MM / AAAA",
+      "title": "Panorama #1: Radar das tecnologias na educação nos municípios",
+      "date": "21 / 03 / 2023",
       "id": 1,
-      "content": "analise-x"
-    },
-    {
-      "title": "Análise X",
-      "date": "DD / MM / AAAA",
-      "id": 2,
-      "content": "analise-x"
-    },
-    {
-      "title": "Análise Y",
-      "date": "DD / MM / AAAA",
-      "id": 3,
-      "content": "analise-x"
-    },
-    {
-      "title": "Análise Z",
-      "date": "DD / MM / AAAA",
-      "id": 4,
-      "content": "analise-x"
-    },
-    {
-      "title": "Análise A",
-      "date": "DD / MM / AAAA",
-      "id": 5,
-      "content": "analise-x"
-    },
-    {
-      "title": "Análise B",
-      "date": "DD / MM / AAAA",
-      "id": 6,
-      "content": "analise-x"
+      "content": "panorama-1/panorama-1"
     }
   ]
 }

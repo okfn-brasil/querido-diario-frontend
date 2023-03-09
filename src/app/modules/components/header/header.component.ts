@@ -82,7 +82,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openNotifications(): void {
-    const left = this.explore.nativeElement.offsetLeft + 40;
+    const left = this.explore.nativeElement.offsetLeft + 144; // important
     this.modal.open(NotificationsComponent, {
       width: '414px',
       maxWidth: '100%',

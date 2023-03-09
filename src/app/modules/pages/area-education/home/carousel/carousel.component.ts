@@ -10,6 +10,7 @@ interface itemsModel {
   actions?: [{
     text?: string;
     link?: string;
+    target?: string;
   }];
 }
 

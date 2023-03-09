@@ -17,7 +17,7 @@
               <div class='h3-class'>{{cnpj.razao_social}}</div>
             </div>
             <div>
-              <a class="search-button btne-primary" routerLink="/educacao/busca" [queryParams]="{querystring: cnpj.cnpj_completo}">
+              <a class="search-button btne-primary" routerLink="/educacao/busca" [queryParams]='{querystring: "\"" + cnpj.cnpj_completo + "\"", period: 4}'>
                 {{content.search}}
               </a>
             </div>
