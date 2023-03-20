@@ -6,6 +6,7 @@ import { AboutEducationComponent } from './modules/pages/area-education/about/ab
 import { AlertsComponent } from './modules/pages/area-education/alerts/alerts.component';
 import { CnpjComponent } from './modules/pages/area-education/cnpj/cnpj.component';
 import { HomeEducacaoComponent } from './modules/pages/area-education/home/home.component';
+import { PassResetComponent } from './modules/pages/area-education/pass-reset/pass-reset.component';
 import { ReportDetailComponent } from './modules/pages/area-education/report-detail/report-detail.component';
 import { SearchEducationComponent } from './modules/pages/area-education/search/search.component';
 import { SignupComponent } from './modules/pages/area-education/signup/signup.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'educacao/alertas', component: AlertsComponent },
   { path: 'educacao/relatorio/:id', component: ReportDetailComponent },
   { path: 'educacao/caso/:id', component: ReportDetailComponent },
+  { path: 'educacao/reset-senha', component: PassResetComponent },
 ];
 
 @NgModule({

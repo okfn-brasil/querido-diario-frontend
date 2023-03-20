@@ -13,7 +13,9 @@ import { tokenKeys } from '../../utils';
 export class LoginFormComponent implements OnInit {
   @Input() showForm = false;
   @Output() onHideForm: EventEmitter<boolean> = new EventEmitter();
+  @Output() onShowResetForm: EventEmitter<boolean> = new EventEmitter();
   @Output() onLoggedIn: EventEmitter<boolean> = new EventEmitter();
+  @Output() onSetEmail: EventEmitter<string> = new EventEmitter();
   formGroup: FormGroup = {} as FormGroup;
   loading = false;
   showPass = false;
@@ -62,6 +64,12 @@ export class LoginFormComponent implements OnInit {
     this.loginService.getUserData().subscribe(response => {
       this.userService.setUserInfo(response);
     });
+  }
+
+  onClickResetPass() {
+    this.onClickClose();
+    this.onShowResetForm.emit(true);
+    this.onSetEmail.emit(this.formGroup.controls.email.value);
   }
 
 }

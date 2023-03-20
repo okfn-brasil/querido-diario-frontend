@@ -9,6 +9,7 @@ import { educationApi } from '../utils';
 })
 export class LoginService {
   constructor(private http: HttpClient) {}
+  resetPassUrl = `${educationApi}password_reset/`;
 
   login(form: {email: string, password: string}): Observable<any> {
     const newForm = {
@@ -24,5 +25,17 @@ export class LoginService {
 
   updateUserData(userData: UserModel) {
     return this.http.patch(`${educationApi}accounts/users/me/`, userData);
+  }
+
+  startReset(email: string) {
+    return this.http.post(this.resetPassUrl, { email });
+  }
+
+  validateToken(token: string) {
+    return this.http.post(this.resetPassUrl + 'validate_token/', { token });
+  }
+  
+  resetPassword(token: string, password: string) {
+    return this.http.post(this.resetPassUrl + 'confirm/', { token, password });
   }
 }
