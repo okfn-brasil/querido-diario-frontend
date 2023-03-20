@@ -13,8 +13,10 @@ import { tokenKeys } from '../utils';
 })
 export class HeaderEducationComponent implements OnInit {
   showForm = false;
+  showResetForm = false;
   isLoggedIn = false;
   userData: UserModel = {};
+  email = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -73,5 +75,13 @@ export class HeaderEducationComponent implements OnInit {
 
   openForm() {
     this.userService.setLoginFormOpen(true);
+  }
+
+  onShowResetPass(value: boolean) {
+    this.showResetForm = value;
+  }
+
+  onSetEmail(email: string) {
+    this.email = email;
   }
 }

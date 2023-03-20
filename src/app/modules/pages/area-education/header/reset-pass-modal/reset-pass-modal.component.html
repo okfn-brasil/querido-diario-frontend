@@ -7,26 +7,16 @@
       <img src="assets/images/education/close.png" alt="fechar" />
     </div>
     <div class="content-form">
-      <div class="title">Acesse sua conta</div>
-      <div class="sub-title">Conecte-se para gerenciar o envio de alertas para seu e-mail!</div>
+      <div class="title">Recuperação de senha</div>
+      <div class="sub-title">Para redefinir sua senha, um link será enviado para seu e-mail de cadastro. Insira seu e-mail, por favor</div>
       <div class="inputs">
       <div class="edu-input">
         <input id="email" class="edu-input" name="email" formControlName="email" required type="email" placeholder="e-mail"/>
         <label for="email">E-mail</label>
       </div>
-      <div class="edu-input">
-        <img src="assets/images/education/view-pass.png" alt="ver senha/esconder senha" (click)="onClickShowPass()"/>
-        <input id="pass" class="edu-input" name="password" formControlName="password" required [type]="showPass ? 'text' : 'password'" placeholder="senha"/>
-        <label for="pass">Senha</label>
-      </div>
-
       </div>
       <div class="error-message" *ngIf="!!errorMessage">{{errorMessage}}</div>
       <input class="submit" [disabled]="formGroup.invalid" type="submit" value="Continuar">
-      <a routerLinkActive="router-link-active" (click)="onClickResetPass()" ><div class="forgot-link">Esqueci minha senha</div></a>
-      <div class="create-account">
-        Não possui uma conta? <a routerLink="/educacao/cadastrar" class="link">Faça o cadastro</a>
-      </div>
     </div>
   </form>
 </div>

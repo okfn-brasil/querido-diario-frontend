@@ -1,0 +1,34 @@
+<div class="form-area">
+  <div *ngIf="loading" class="loading-area">
+    <mat-spinner></mat-spinner>
+  </div>
+  <form *ngIf="!isSent" class="form" (submit)="onSubmit()" [formGroup]="formGroup">
+    <div class="content-form">
+      <div class="title">Recuperação de senha</div>
+      <div class="sub-title">Insira sua nova senha</div>
+      <div class="inputs">
+        <div class="edu-input">
+          <img src="assets/images/education/view-pass.png" alt="ver senha/esconder senha" (click)="onClickShowPass()"/>
+          <input id="pass" class="edu-input" name="password" formControlName="password" required [type]="showPass ? 'text' : 'password'" placeholder="senha"/>
+          <label for="pass">Senha</label>
+        </div>
+        <div class="checklist">
+          <div class="item" [ngClass]="validations.minLength ? 'checked': ''">Ter 8 ou mais caracteres</div>
+          <div class="item" [ngClass]="validations.lettersAndNumbers ? 'checked': ''">Conter letras e números</div>
+          <div class="item" [ngClass]="validations.specials ? 'checked': ''">Conter caracteres especiais (*,!.&%$#@)</div>
+          <div class="item" [ngClass]="validations.uppercase ? 'checked': ''">Conter uma letra maiúscula</div>
+        </div>
+      </div>
+      <div class="error-message" *ngIf="!!errorMessage">{{errorMessage}}</div>
+      <input class="submit" [disabled]="!validPass" type="submit" value="Redefinir senha">
+    </div>
+  </form>
+  <div *ngIf="isSent">
+    <div class='sent-area'>
+      <p class='title'>Senha redefinida com sucesso!</p>
+      <div class='button-area sent-link'>
+        <button class="btne-primary full-width" (click)="onFinish()">Entrar</button>
+      </div>
+    </div>
+  </div>
+</div>

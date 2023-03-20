@@ -103,6 +103,8 @@ import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-heade
 import { ReportDetailComponent } from './modules/pages/area-education/report-detail/report-detail.component';
 import { CitiesSearchResultComponent } from './modules/components/cities-search-result/cities-search-result.component';
 import { AdvancedModalComponent } from './modules/pages/area-education/search/advanced-modal/advanced-modal.component';
+import { PassResetComponent } from './modules/pages/area-education/pass-reset/pass-reset.component';
+import { ResetPassModalComponent } from './modules/pages/area-education/header/reset-pass-modal/reset-pass-modal.component';
 
 @NgModule({
   declarations: [
@@ -176,6 +178,8 @@ import { AdvancedModalComponent } from './modules/pages/area-education/search/ad
     ReportDetailComponent,
     CitiesSearchResultComponent,
     AdvancedModalComponent,
+    PassResetComponent,
+    ResetPassModalComponent,
   ],
   imports: [
     BrowserModule,

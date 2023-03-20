@@ -1,0 +1,85 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.form-area
+  position: fixed
+  width: 100vw
+  height: 100vh
+  top: 0
+  left: 0
+  background-color: rgba(0,0,0, 0.4)
+  z-index: 999
+  display: flex
+  justify-content: center
+  align-items: center
+  font-family: Lato
+
+  .loading-area
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0, 0.4)
+    z-index: 999
+
+  .close-icon
+    width: rem(16)
+    height: rem(16)
+    cursor: pointer
+    float: right
+    img
+      width: 100%
+
+  .error-message
+    color: red
+
+  .form
+    background-color: #fff
+    padding: rem(36)
+    color: black
+    @media only screen and (max-width: 960px)
+      padding: rem(36) rem(16)
+      width: 100%
+
+    .content-form
+      padding: rem(32) rem(56) rem(16)
+      width: calc(300px + 112px)
+
+      @media only screen and (max-width: 960px)
+        padding: rem(32) rem(16) rem(16)
+        width: 100%
+        height: calc(100vh - 48px)
+
+    .title
+      font-family: Baloo
+      font-size: rem(32)
+      line-height: rem(43)
+      margin-bottom: rem(8)
+
+    .sub-title
+      font-size: rem(18)
+      line-height: rem(25)
+      color: #495057
+      margin-bottom: rem(40)
+      @media only screen and (max-width: 960px)
+        margin-bottom: rem(65)
+
+    .submit
+      color: #fff
+      background-color: #FF8500
+      padding: rem(21) 0
+      width: 100%
+      border: 0
+      border-radius: rem(30)
+      font-size: rem(20)
+      margin: rem(15) 0 rem(40) 0
+      cursor: pointer
+      @media only screen and (max-width: 960px)
+        padding: rem(16) 0
+        font-size: rem(16)
+        font-weight: bold
+        margin-bottom: rem(16)
+
+      &:disabled
+        opacity: 0.4
+        cursor: not-allowed
+

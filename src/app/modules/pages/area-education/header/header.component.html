@@ -1,5 +1,6 @@
 <div class='edu-header'>
-  <edu-login-form [showForm]="showForm" (onLoggedIn)="onLogged()" (onHideForm)="onCloseLoginModal($event)"></edu-login-form>
+  <edu-login-form [showForm]="showForm" (onSetEmail)="onSetEmail($event)" (onShowResetForm)="onShowResetPass($event)" (onLoggedIn)="onLogged()" (onHideForm)="onCloseLoginModal($event)"></edu-login-form>
+  <edu-reset-pass-modal [showForm]="showResetForm" [email]="email" (onHideForm)="onShowResetPass($event)"></edu-reset-pass-modal>
   <div class="desktop">
     <div class="container-education">
       <div class="content">
