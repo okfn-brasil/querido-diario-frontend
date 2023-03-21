@@ -64,6 +64,8 @@ export class EducationFiltersComponent implements OnInit {
       published_since: this.filters.published_since,
       scraped_until: this.datesAlert.scraped_until,
       scraped_since: this.datesAlert.scraped_since,
+      pre_tags: "<b>",
+      post_tags: "</b>",
     } as GazetteFilters;
 
     this.changeFilters.emit(filters);

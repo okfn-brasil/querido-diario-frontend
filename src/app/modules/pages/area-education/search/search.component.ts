@@ -60,6 +60,8 @@ export class SearchEducationComponent implements OnInit {
         scraped_until: params.scraped_until,
         territory_id: params.territory_id,
         sort_by: this.order,
+        pre_tags: "<b>",
+        post_tags: "</b>",
       } as GazetteFilters;
       if(Object.keys(Object.keys(this.filters).filter(key => !!this.filters[key])).length > 1) {
         this.isLoading = true;

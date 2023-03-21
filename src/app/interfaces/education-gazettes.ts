@@ -34,6 +34,8 @@ export interface GazetteFilters {
   published_since?: string | Date;
   scraped_until: string;
   scraped_since: string;
+  pre_tags?: string[] | string;
+  post_tags?: string[] | string;
   territory_id?: string[];
   subthemes?: string[];
   entities?: string[] | string;
@@ -44,9 +46,6 @@ export const parseGazettes = (gazettes: GazetteModel[], query: string) => {
   return gazettes.map(item => {
     console.log(item.excerpt)
     item.excerpt = item.excerpt.replace(/entidadecnpj/g, '~~~').replace(/entidadeeducacao/g, '~%');
-    if(query) {
-      item.excerpt = replaceQueryToBold(item.excerpt, query.trim());
-    }
     const replaceCnpj = item.excerpt.split('<~~~>');
     let newTextCnpj = '';
     replaceCnpj.forEach(textFragment => { 
