@@ -2,9 +2,9 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from 'moment';
-import { Observable, of, Subscription } from 'rxjs';
-import { map, startWith, switchMap, take } from 'rxjs/operators';
-import { City } from 'src/app/interfaces/city';
+import { Observable, Subscription } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 
 @Component({
@@ -17,6 +17,8 @@ export class SearchFormComponent implements OnInit {
 
   @Input()
   form: any;
+  
+  timeout: ReturnType<typeof setTimeout> | undefined;
 
   options: string[] = [
     'Compra emergencial COVID-19',
@@ -29,16 +31,19 @@ export class SearchFormComponent implements OnInit {
   filteredOptions: Observable<string[]> = new Observable();
 
   cityControl = new FormControl();
-  territories: Observable<City[]> = of([]);
+  territories: Territory[] = [];
+  selectedCities: Territory[] = [];
+  territory: string[] = [];
+  cityListToInput: Territory[] = [];
+  loadingCities = false;
 
   @ViewChild('cityField') cityField!: ElementRef;
   @ViewChild('termField') termField!: ElementRef;
   @ViewChild('periodField') periodField!: ElementRef;
 
-  published_since: string = '';
-  published_until: string = '';
-
-  territory: City | null = null;
+  since: string = '';
+  until: string = '';
+  query: string = '';
 
   subscriptions: Subscription[] = [];
 
@@ -54,40 +59,60 @@ export class SearchFormComponent implements OnInit {
       map((value) => this._filterTerms(value))
     );
 
-    this.territories = this.cityControl.valueChanges.pipe(
-      startWith(''),
-      switchMap((value) => {
-        if (value !== '') {
-          return this.findTerritory(value);
-        } else {
-          return of([]);
-        }
-      })
-    );
-
     this.subscriptions.push(
       this.route.queryParams.subscribe((params) => {
         const { term, city } = params;
-        this.termControl.setValue(term);
-        if (city) {
-          this.territoryService
-            .findOne({ territoryId: city })
-            .pipe(take(1))
-            .subscribe((res) => {
-              this.cityControl.setValue(res);
-            });
+        this.territory = city;
+        this.selectedCities = [];
+        if(city) {
+          if(Array.isArray(city)) {
+            city.forEach(currCity => {
+              this.findCityById(currCity);
+            })
+          } else {
+            this.findCityById(city);
+          }
         }
+        
+        this.termControl.setValue(term);
+
       })
     );
+  }
+
+  getCityList() {
+    const selectedIds = this.selectedCities.map(city => city.territory_id);
+    return [...this.territories.filter(city => !selectedIds.includes(city.territory_id)) ,...this.selectedCities]
+  }
+
+  findCities() {
+    this.loadingCities = true;
+    if(this.timeout) {
+      clearTimeout(this.timeout)
+    }
+
+    this.timeout = setTimeout(() => {
+      this.territoryService.findByName(this.query.trim()).subscribe(response => {
+        response.forEach(city => {
+          this.territories.push(city);
+        });
+        this.loadingCities = false;
+      });
+    }, 500);
+  }
+
+  findCityById(id: string) {
+    this.territoryService.findOne({territoryId: id}).subscribe(response => {
+      this.selectedCities.push(response);
+    });
   }
 
   search(): void {
     let queryParams = {};
     const term = this.termField.nativeElement.value;
-    const cityName = this.cityField.nativeElement.value;
 
-    if (this.territory && cityName) {
-      queryParams = { ...queryParams, city: this.territory.territory_id };
+    if (this.territory && this.territory.length) {
+      queryParams = { ...queryParams, city: this.territory };
     } else {
       queryParams = { ...queryParams, city: null };
     }
@@ -98,10 +123,10 @@ export class SearchFormComponent implements OnInit {
       queryParams = { ...queryParams, term: null };
     }
 
-    if (this.published_since && this.published_until) {
-      queryParams = { ...queryParams, published_since: this.published_since, published_until: this.published_until };
+    if (this.since && this.until) {
+      queryParams = { ...queryParams, since: this.since, until: this.until };
     } else {
-      queryParams = { ...queryParams, published_since: null, published_until: null };
+      queryParams = { ...queryParams, since: null, until: null };
     }
 
     this.router.navigate(['/pesquisa'], { queryParams });
@@ -109,10 +134,10 @@ export class SearchFormComponent implements OnInit {
 
   onRangeSelected(range: { start: Moment; end: Moment }) {
     if (range.start) {
-      this.published_since = range.start.format('YYYY-MM-DD');
+      this.since = range.start.format('YYYY-MM-DD');
     }
     if (range.end) {
-      this.published_until = range.end.format('YYYY-MM-DD');
+      this.until = range.end.format('YYYY-MM-DD');
     }
   }
 
@@ -127,31 +152,20 @@ export class SearchFormComponent implements OnInit {
     );
   }
 
-  displayFn(territory: City): string {
+  displayFn(territory: Territory): string {
     return territory && territory.territory_label
       ? territory.territory_label
       : '';
   }
 
-  private findTerritory(value: any): Observable<City[]> {
-    if (!value) {
-      this.territory = null;
-      return of([]);
-    }
-    if (typeof value === 'string') {
-      if (value.length <= 1) {
-        return of([]);
-      }
-      const filterValue = value.toLowerCase();
-      return this.territoryService
-        .findByName(filterValue)
-        .pipe(map((result) => result));
-    } else {
-      const filterValue = value.territory_name.toLowerCase();
-      this.territory = value;
-      return this.territoryService
-        .findByName(filterValue)
-        .pipe(map((result) => result));
+  onChangeLocation(locations: string[]) {
+    this.territory = locations;
+  }
+
+  onChangeQuery(query: string) {
+    this.query = query;
+    if(this.query && this.query.length >= 3) {
+      this.findCities();
     }
   }
 
@@ -161,4 +175,3 @@ export class SearchFormComponent implements OnInit {
     }
   }
 }
-

@@ -4,6 +4,7 @@ import { City } from 'src/app/interfaces/city';
 import { GazetteFilters, GazetteModel, GazetteResponse, OrderFilter, parseGazettes } from 'src/app/interfaces/education-gazettes';
 import { CitiesService } from 'src/app/services/cities/cities.service';
 import { EducationGazettesService } from 'src/app/services/education-gazettes/education-gazettes.service';
+import { UserQuery } from 'src/app/stores/user/user.query';
 
 interface List {
   [key: number]: GazetteModel[];
@@ -16,6 +17,7 @@ interface List {
 })
 export class SearchEducationComponent implements OnInit {
   results: List = {};
+  isLoggedIn = false;
   totalItems = 0;
   filters: GazetteFilters = {} as GazetteFilters;
   hasSearched = false;
@@ -34,12 +36,15 @@ export class SearchEducationComponent implements OnInit {
   themes: string[] = [];
   cities: City[] = [];
   isOpenAlertModal = false;
+  isOpenAdvanced = false;
+  savedParams = '';
 
   constructor(
     private searchService: EducationGazettesService,
     private citiesService: CitiesService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private userQuery: UserQuery,
   ) { }
 
   ngOnInit(): void {
@@ -50,12 +55,26 @@ export class SearchEducationComponent implements OnInit {
         subthemes: params.subthemes,
         period: params.period,
         until: params.until,
-        published_since: params.since,
-        local: params.local,
+        published_since: params.published_since,
+        scraped_since: params.scraped_since,
+        scraped_until: params.scraped_until,
+        territory_id: params.territory_id,
         sort_by: this.order,
+        pre_tags: "<b>",
+        post_tags: "</b>",
       } as GazetteFilters;
+      if(Object.keys(Object.keys(this.filters).filter(key => !!this.filters[key])).length > 1) {
+        this.isLoading = true;
+        this.onChangeFilters(this.filters);
+      }
     }).unsubscribe();
     this.getFiltersInfo();
+
+    this.userQuery.userData$.subscribe(userData => {
+      if(userData.full_name) {
+        this.isLoggedIn = true;
+      }
+    });
   }
 
   onChangeQuery() {
@@ -72,15 +91,26 @@ export class SearchEducationComponent implements OnInit {
     this.onChangeFilters(this.filters);
   }
 
-  getItems(params?: string) {
+  getItems(currFilters: string, params?: string) {
     this.isLoading = true;
     this.hasSearched = true;
-    this.searchService.getAllGazettes(params, this.currPage).subscribe(response => {
-      this.isLoading = false;
-      this.listPageIntern = this.currPage;
+    if(this.savedParams !== params) {
+      this.currPage = 0;
+    }
+
+    this.searchService.getAllGazettes(currFilters, this.currPage).subscribe(response => {
       const nResponse = response as GazetteResponse;
-      this.totalItems = nResponse.total_excerpts;
-      this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.query as string);
+      if(nResponse.excerpts && nResponse.excerpts.length) {
+        this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.querystring as string);
+        this.totalItems = nResponse.total_excerpts;
+      } else {
+        this.results = [];
+        this.totalItems = 0;
+      }
+
+      this.listPageIntern = this.currPage;
+      this.savedParams = params as string;
+      this.isLoading = false;
     }, () => {
       this.isLoading = false;
       this.totalItems = 0;
@@ -111,7 +141,7 @@ export class SearchEducationComponent implements OnInit {
       })
       const params = new URLSearchParams(newObj as any).toString();
       if(this.getIfCanSearch(newObj)) {
-        this.getItems(params);
+        this.getItems(this.convertToParams(newObj), params);
       }
       this.router.navigate([], 
         {
@@ -120,6 +150,32 @@ export class SearchEducationComponent implements OnInit {
       });
     }, 500);
   }
+
+  
+convertToParams(filters: GazetteFilters){
+  let params = Object.keys(filters)
+  .filter(key => (!!filters[key]))
+  .map(key => {
+    if(Array.isArray(filters[key])) {
+      const arrayItems = filters[key] as string[];
+      const resultArray: string[] = [];
+      arrayItems.forEach(item => {
+        if(item !== '0') {
+          resultArray.push(`${key}=${item}`);
+        }
+      });
+      return resultArray.length ? resultArray.join('&') : '';
+    } else {
+      return `${key}=${filters[key]}`;
+    }
+  })
+  .join('&');
+
+  if(params[params.length - 1] === '&') {
+    params = params.slice(0, -1);
+  }
+  return params.replace(/territory_id/g, 'territory_ids');
+}
 
   getFiltersInfo() {
     this.searchService.getThemes().subscribe(results => {
@@ -161,5 +217,13 @@ export class SearchEducationComponent implements OnInit {
 
   onOpenCreateAlert() {
     this.isOpenAlertModal = true;
+  }
+
+  onCloseAdvanced() {
+    this.isOpenAdvanced = false;
+  }
+
+  onOpenAdvanced() {
+    this.isOpenAdvanced = true;
   }
 }

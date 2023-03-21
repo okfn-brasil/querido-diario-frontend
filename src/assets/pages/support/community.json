@@ -39,8 +39,8 @@
       ]
     },
     {
-      "title": "Desenvolvimento frontend e usabilidade",
-      "text": "A atual versão da plataforma foi desenvolvida com o apoio da <a href='https://jurema.la' target='_blank'>Jurema</a>, que é responsável pelo frontend e pelo estudo da experiência das pessoas usuárias.",
+      "title": "Desenvolvimento da plataforma e usabilidade",
+      "text": "A atual versão da plataforma foi desenvolvida com o apoio da <a href='https://jurema.la' target='_blank'>Jurema</a>, atuando no frontend, backend e no estudo da experiência das pessoas usuárias.",
       "icons": [
         {
           "file": "jurema",
@@ -78,6 +78,25 @@
           "file": "pcdas",
           "height": 40,
           "width": 72
+        }
+      ]
+    },
+
+    {
+      "title": "Tecnologias na Educação",
+      "text": "Em parceria com a Aliança <a href=\"https://fundacaolemann.org.br/\" target=\"_blank\">Fundação Lemann</a> & <a href=\"https://www.imaginablefutures.com/\" target=\"_blank\">Imaginable Futures</a>, a OKBR construiu a ferramenta capaz de identificar e coletar todos os atos relacionados ao universo das tecnologias na educação.",
+      "icons": [
+        {
+          "file": "assets/images/imaginable.png",
+          "isPng": true,
+          "height": 30,
+          "width": 106
+        },
+        {
+          "file": "assets/images/lemann.png",
+          "isPng": true,
+          "height": 30,
+          "width": 106
         }
       ]
     },

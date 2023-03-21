@@ -7,7 +7,7 @@
       <form (submit)="onSubmit()" [formGroup]="formGroup" (click)="onClickForm()">
         <div *ngIf="!!errorMessage" class="submit-error">{{errorMessage}}</div>
         <div *ngIf="!step">
-          <div class="title">Crie uma conta para começar a buscar no <span>Querido Diário Educação</span></div>
+          <div class="title">Crie uma conta para começar a buscar no <span>Querido Diário: Tecnologias na Educação</span></div>
           <div class="sign-up-image mobile">
             <img src="assets/images/education/signup.png" alt="cadastro"/>
           </div>
@@ -46,24 +46,25 @@
 
           <div class="inputs">
             <div class="edu-input">
-              <select id="area" class="second-type" name="area" formControlName="area" placeholder="Area de atuação">
-                <option>Area 1</option>
+              <select id="area" class="second-type" name="area" formControlName="area" placeholder="Área de atuação">
+                <option>Gestão Pública</option>
+                <option>Terceiro Setor</option>
+                <option>Jornalismo</option>
+                <option>Ensino</option>
+                <option>Ensino e Pesquisa Universitária</option>
+                <option>Estudante</option>
+                <option>Outra</option>
               </select>
-              <label for="area">Area de atuação</label>
+              <label for="area">Área de atuação</label>
               <div class="input-error" *ngIf="errors.area">Campo obrigatório!</div>
             </div>
-  
-            <div class="edu-input">
-              <select id="state" name="state" formControlName="state" placeholder="Estado">
-                <option *ngFor="let state of stateList" [value]="state">{{state}}</option>
-              </select>
-              <label for="state">Estado</label>
-              <div class="input-error" *ngIf="errors.state">Campo obrigatório!</div>
-            </div>
 
-            <div class="edu-input">
-              <input id="city" name="city" formControlName="city" placeholder="Cidade"/>
+            <div class="edu-input cities-input">
+              <input id="city" name="city" (blur)="emptyCity()" formControlName="city" placeholder="Cidade"/>
               <label for="city">Cidade</label>
+              <div class="select-cities">
+                <div class="city" *ngFor="let city of cities" (click)="onClickCity(city)">{{city.territory_label}}</div>
+              </div>
               <div class="input-error" *ngIf="errors.city">Deve possuir no mínimo 8 caracteres</div>
             </div>
           </div>

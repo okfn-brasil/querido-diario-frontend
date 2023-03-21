@@ -2,17 +2,18 @@
   <header fxLayout="row">
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
-      <nav fxHide.xs fxLayoutGap="32px">
+      <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
         <a routerLink="/" #explore>Explore</a>
         <a routerLink="/tecnologia">Tecnologia</a>
-        <a routerLink="/sobre">Sobre o querido diário</a>
-        <!--<a routerLink="/blog">Blog</a>-->
+        <a routerLink="/blog">Blog</a>
+        <a routerLink="/educacao">Educação</a>
+        <a routerLink="/sobre">Sobre</a>
         <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
         <button routerLink="/apoie" class="btn">Apoie</button>
       </nav>
-      <a (click)="openDialog()" id="support" fxHide fxHide.xs="false">
+      <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
         <mat-icon svgIcon="bars" class="bars"></mat-icon>
       </a>
     </div>
@@ -29,25 +30,22 @@
   <a routerLink="/tecnologia"><div class="link bg-white">
     Tecnologia 
   </div></a>
+  <a routerLink="/blog"><div class="link bg-white">
+    Blog
+  </div></a>
   <a routerLink="/sobre"><div class="link bg-white">
-    Sobre o querido diário 
+    Sobre 
   </div></a>
   <a routerLink="/apoie"><div class="link bg-orange">
     Apoie
   </div></a>
-  <!--<a routerLink="/blog"><div class="link bg-white">
-    Blog
-  </div></a>
 
-  <a routerLink="/educacao/"><div class="link divider bg-purple">Tecnologias da Educação</div></a>
+  <a routerLink="/educacao/"><div class="link divider bg-purple">Tecnologias na Educação</div></a>
   <div *ngIf="userData.full_name" class="user-name link">
     Olá, {{userData.full_name.split(' ')[0]}}
   </div>
   <a *ngIf="userData.full_name" routerLink="/educacao/alertas"><div class="link logged-link bg-dark-purple">
     Meus alertas 
-  </div></a>
-  <a *ngIf="userData.full_name" routerLink="/educacao/alertas"><div class="link logged-link bg-dark-purple">
-    Minha conta
   </div></a>
   <a *ngIf="userData.full_name"><div (click)="onClickLogout()" class="link logged-link bg-dark-purple">
     Logout 
@@ -56,13 +54,13 @@
     Login / Cadastre-se 
   </div></a>
   
+  <!-- <a><div class="link bg-purple"> -->
+  <!--   Estudos de caso -->
+  <!-- </div></a> -->
+  <a routerLink="/educacao/busca"><div class="link bg-purple">
+    Busca 
+  </div></a>
   <a routerLink="/educacao/sobre"><div class="link bg-purple">
     Sobre 
   </div></a>
-  <a><div class="link bg-purple">
-    Estudos de caso
-  </div></a>
-  <a routerLink="/educacao/busca"><div class="link bg-purple">
-    Busca 
-  </div></a>-->
 </div>

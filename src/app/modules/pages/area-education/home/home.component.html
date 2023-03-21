@@ -13,19 +13,17 @@
             <img src="assets/images/education/typing.png" alt="digitando" />
           </div>
           <div class="banner-img mobile">
-            <img src="assets/images/education/mobile-typing.png" alt="digitando" />
+            <img src="assets/images/education/typing.png" alt="digitando" />
           </div>
           <div class="banner-content">
-            <h1 class="desktop">
+            <h1>
               {{ content.title }}
-            </h1>
-            <h1 class="mobile" [innerHtml]="content.mobileTitle">
             </h1>
             <p class="sub-title">
               {{ content.subtitle }}
             </p>
-            <button routerLink="/apoie" class="btne-primary desktop">{{ content.bannerButton }}</button>
-            <button routerLink="/apoie" class="btne-primary mobile">{{ content.bannerButtonMobile }}</button>
+            <button routerLink="/educacao/busca" class="btne-primary desktop">{{ content.bannerButton }}</button>
+            <button routerLink="/educacao/busca" class="btne-primary mobile">{{ content.bannerButtonMobile }}</button>
           </div>
         </div>
       </div>
@@ -34,17 +32,17 @@
         <div class="container-carousel">
           <h2>{{content.reports.title}}</h2>
           <p class="sub-title">{{content.reports.subtitle}}</p>
-          <edu-carousel [items]="content.reports.reportsArray"></edu-carousel>
+          <edu-carousel *ngIf="reports && reports.length" [items]="reports"></edu-carousel>
         </div>
       </div>
 
-      <div class="about-section">
+      <!--<div class="about-section">
         <div class="container-carousel">
           <h2>{{content.cases.title}}</h2>
           <p class="sub-title">{{content.cases.subtitle}}</p>
-          <edu-carousel [items]="content.cases.casesArray"></edu-carousel>
+          <edu-carousel *ngIf="cases && cases.length" [items]="cases"></edu-carousel>
         </div>
-      </div>
+      </div>-->
 
       <div class="container-education">
         <div class="content section-content">
@@ -56,20 +54,21 @@
               {{ content.catalog.subtitle }}
             </h2>
             <div class="container-img mobile">
-              <img src="assets/images/education/mobile-charts.png" alt="graficos" />
+              <img src="assets/images/education/browsing.png" alt="graficos" />
             </div> 
-            <button routerLink="/apoie" class="btne-primary full-width-mobile">{{ content.catalog.button }}</button>
+            <button class="btne-primary disabled full-width-mobile">{{ content.catalog.button }}</button>
+            <!-- <button routerLink="LINK DO CATÁLOGO" class="btne-primary full-width-mobile">{{ content.catalog.button }}</button> -->
           </div>
           <div class="container-img desktop">
-            <img src="assets/images/education/charts.png" alt="graficos" />
+            <img src="assets/images/education/browsing.png" alt="graficos" />
           </div> 
         </div>
       </div>
 
       <div class="container-education about">
         <div class="content section-content">
-          <div class="container-img desktop">
-            <img src="assets/images/education/walking-dog.png" alt="caminhando com cachorro" />
+          <div class="container-img">
+            <img src="assets/images/education/using-notebook.png" class="using-notebook-image" alt="caminhando com cachorro" />
           </div> 
           <div class="container-content">
             <p class="sub-title">
@@ -78,7 +77,7 @@
             <h2>
               {{ content.about.subtitle }}
             </h2>
-            <button routerLink="/apoie" class="btne-primary full-width-mobile">{{ content.about.button }}</button>
+            <button routerLink="/educacao/sobre" class="btne-primary full-width-mobile">{{ content.about.button }}</button>
           </div>
         </div>
       </div>

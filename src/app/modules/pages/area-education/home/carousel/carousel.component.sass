@@ -9,7 +9,6 @@
   .button-nav
     position: absolute
     width: rem(50)
-    height: rem(50)
     top: rem(-80)
     right: rem(40)
     border-radius: 50%
@@ -23,6 +22,10 @@
       transform: rotate(-180deg)
       &:hover
         transform: scale(1.1) rotate(-180deg)
+
+    &:not(.abled)
+      opacity: 0.5
+      cursor: not-allowed
 
   .second-type 
     bottom: rem(-76)

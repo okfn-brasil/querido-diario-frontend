@@ -10,18 +10,18 @@
       <div class="banner container-education">
         <div class="content">
           <div class="banner-img desktop">
-            <img src="assets/images/education/typing.png" alt="digitando" />
+            <img src="assets/images/education/about-banner.png" alt="digitando" />
           </div>
           <div class="banner-content">
-            <h2>sobre o quero diário educação</h2>
+            <h2>{{content.aboutTitle}}</h2>
             <div class="banner-img mobile">
-              <img src="assets/images/education/typing.png" alt="digitando" />
+              <img src="assets/images/education/about-banner.png" alt="digitando" />
             </div>
             <h1>
               {{ content.title }}
             </h1>
             <p class="sub-title">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque venenatis diam vel nisl aliquet aliquam. Donec dignissim massa et erat semper, eu condimentum eros cursus. Etiam convallis sollicitudin faucibus.
+              {{content.subtitle}}
             </p>
           </div>
         </div>
@@ -29,21 +29,25 @@
 
       <div class="objective container-education">
         <div class="content">
-          <img class="mobile" src="assets/images/education/walking-dog.png" alt="passeando com cachorro" />
-          <div class="title">
-            Nosso propósito é facilitar o acesso a dados sobre o clima para proteger o meio ambiente
+          <img class="mobile" src="assets/images/education/about-objectives.png" alt="passeando com cachorro" />
+          <div class="text">
+            <div class="title">
+              {{content.objective}}
+            </div>
+            <div class="info" [innerHtml]="content.objectiveInfo">
+            </div>
           </div>
-          <img class="desktop" src="assets/images/education/walking-dog.png" alt="passeando com cachorro" />
+          <img class="desktop" src="assets/images/education/about-objectives.png" alt="passeando com cachorro" />
         </div>
       </div>
 
       <div class="support container-education">
         <div class="content">
           <div class="text">
-            <div class="title">Contamos com seu apoio!</div>
-            <div class="subtitle">Você pode se tornar um assinante. Assim, você recebe os benefícios de ser PRO e ainda ajuda o Diário do Clima a abrir os dados de novas cidades e desenvolver novas ferramentas!</div>
+            <div class="title">{{content.supportTitle}}</div>
+            <div class="subtitle">{{content.supportText}}</div>
           </div>
-          <button class="btne-primary">Quero assinar</button>
+          <a href="/apoie"><button class="btne-primary">{{content.supportButton}}</button></a>
         </div>
       </div>
 

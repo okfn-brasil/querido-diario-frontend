@@ -5,6 +5,15 @@
   background-color: #f3e9e9
   font-family: Lato
 
+  input:-internal-autofill-selected
+    background-color: transparent !important
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active
+    -webkit-box-shadow: 0 0 0 30px #f3e9e9 inset !important
+
   .content
     display: flex
     flex-wrap: no-wrap
@@ -178,5 +187,24 @@ label
     
     100% 
       transform: rotate(360deg)
+
+.cities-input
+  position: relative
+
+  .select-cities
+    position: absolute
+    top: calc(100% - 32px)
+    left: 0
+    width: 100%
+    background-color: white
+    z-index: 999
+
+    .city
+      padding: 5px
+      cursor: pointer
+
+      &:hover
+        background-color: rgba(240, 240, 240)
+
     
   

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostComponent } from './post.component';
+import { ResetPassModalComponent } from './reset-pass-modal.component';
 
-describe('PostComponent', () => {
-  let component: PostComponent;
-  let fixture: ComponentFixture<PostComponent>;
+describe('ResetPassModalComponent', () => {
+  let component: ResetPassModalComponent;
+  let fixture: ComponentFixture<ResetPassModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostComponent ]
+      declarations: [ ResetPassModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostComponent);
+    fixture = TestBed.createComponent(ResetPassModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

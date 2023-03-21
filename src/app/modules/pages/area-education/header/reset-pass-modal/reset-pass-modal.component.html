@@ -1,0 +1,22 @@
+<div class="form-area" *ngIf="showForm">
+  <div *ngIf="loading" class="loading-area">
+    <mat-spinner></mat-spinner>
+  </div>
+  <form class="form" (submit)="onSubmit()" [formGroup]="formGroup">
+    <div class="close-icon" (click)="onClickClose()">
+      <img src="assets/images/education/close.png" alt="fechar" />
+    </div>
+    <div class="content-form">
+      <div class="title">Recuperação de senha</div>
+      <div class="sub-title">Para redefinir sua senha, um link será enviado para seu e-mail de cadastro. Insira seu e-mail, por favor</div>
+      <div class="inputs">
+      <div class="edu-input">
+        <input id="email" class="edu-input" name="email" formControlName="email" required type="email" placeholder="e-mail"/>
+        <label for="email">E-mail</label>
+      </div>
+      </div>
+      <div class="error-message" *ngIf="!!errorMessage">{{errorMessage}}</div>
+      <input class="submit" [disabled]="formGroup.invalid" type="submit" value="Continuar">
+    </div>
+  </form>
+</div>

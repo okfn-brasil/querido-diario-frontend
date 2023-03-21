@@ -8,7 +8,7 @@
     </div>
     <div class="content-form">
       <div class="title">Acesse sua conta</div>
-      <div class="sub-title">Lorem ipsum sit amet consectetur</div>
+      <div class="sub-title">Conecte-se para gerenciar o envio de alertas para seu e-mail!</div>
       <div class="inputs">
       <div class="edu-input">
         <input id="email" class="edu-input" name="email" formControlName="email" required type="email" placeholder="e-mail"/>
@@ -23,7 +23,7 @@
       </div>
       <div class="error-message" *ngIf="!!errorMessage">{{errorMessage}}</div>
       <input class="submit" [disabled]="formGroup.invalid" type="submit" value="Continuar">
-      <a><div class="forgot-link">Esqueci minha senha</div></a>
+      <a routerLinkActive="router-link-active" (click)="onClickResetPass()" ><div class="forgot-link">Esqueci minha senha</div></a>
       <div class="create-account">
         Não possui uma conta? <a routerLink="/educacao/cadastrar" class="link">Faça o cadastro</a>
       </div>

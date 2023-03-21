@@ -8,9 +8,10 @@ import {
   HttpClient
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import {catchError, switchMap, tap} from 'rxjs/operators';
-import {Router} from '@angular/router';
+import { catchError, switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { tokenKeys } from '../modules/pages/area-education/utils';
+import { educationApi } from './utils';
 
 interface RefreshResponse {
   access: string;
@@ -25,7 +26,7 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {}
 
   refreshToken(token: string) {
-    return this.http.post('https://api.queridodiario.jurema.la/api/token/refresh/', {
+    return this.http.post(educationApi + 'token/refresh/', {
       refresh: token
     });
   }

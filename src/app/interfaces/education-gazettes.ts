@@ -32,7 +32,11 @@ export interface GazetteFilters {
   size: number;
   until?: string | Date;
   published_since?: string | Date;
-  local?: string[];
+  scraped_until: string;
+  scraped_since: string;
+  pre_tags?: string[] | string;
+  post_tags?: string[] | string;
+  territory_id?: string[];
   subthemes?: string[];
   entities?: string[] | string;
   [key: string]: string | Date | (string | null)[] | undefined | number | string[];
@@ -40,23 +44,32 @@ export interface GazetteFilters {
 
 export const parseGazettes = (gazettes: GazetteModel[], query: string) => {
   return gazettes.map(item => {
-    item.excerpt = item.excerpt.replace(/entidadecnpj/g, '~~~').replace(/entidadeambiental/g, '~%');
-    if(query) {
-      item.excerpt = replaceQueryToBold(item.excerpt, query.trim());
-    }
+    console.log(item.excerpt)
+    item.excerpt = item.excerpt.replace(/entidadecnpj/g, '~~~').replace(/entidadeeducacao/g, '~%');
     const replaceCnpj = item.excerpt.split('<~~~>');
-    let newText = '';
+    let newTextCnpj = '';
     replaceCnpj.forEach(textFragment => { 
       const cnpjIndex = textFragment.indexOf('</~~~>');
       if (cnpjIndex > 0) {
         const cnpj = textFragment.slice(0, cnpjIndex).trim();
-        newText += `<a class="education-gazette-link" href='/educacao/cnpj/${removeSpecialChars(cnpj).replace(/b/g, '')}'>${textFragment}`;
+        newTextCnpj += `<a class="education-gazette-link" href='/educacao/cnpj/${removeSpecialChars(cnpj).replace(/b/g, '')}'>${textFragment}`;
       } else {
-        newText += textFragment;
+        newTextCnpj += textFragment;
+      }
+    });
+
+    let newTextEntity = '';
+    const replaceEntity = newTextCnpj.split('<~%>');
+    replaceEntity.forEach(textFragment => { 
+      const entityIndex = textFragment.indexOf('</~%>');
+      if (entityIndex > 0) {
+        newTextEntity += `<b class='education-gazette-entity'>${textFragment}`;
+      } else {
+        newTextEntity += textFragment;
       }
     });
     const date = new Date(item.date);
-    let replacedText = newText.replace(/~~~/g, 'a').replace(/~%/g, 'b');
+    let replacedText = newTextEntity.replace(/~~~/g, 'a').replace(/~%/g, 'b');
   
     return {
       ...item,

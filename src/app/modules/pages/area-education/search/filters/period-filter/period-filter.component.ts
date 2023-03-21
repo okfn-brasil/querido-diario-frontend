@@ -24,7 +24,7 @@ export class PeriodFilterComponent implements OnInit {
   @Input() initialValue = {
     published_since: '',
     until: '',
-    period: 0,
+    period: 1,
   };
   @ViewChild('periodField') periodField!: ElementRef;
   @Output() changeDates: EventEmitter<GazetteFilters> = new EventEmitter();
@@ -36,10 +36,12 @@ export class PeriodFilterComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.initialValue.period) {
-      this.period = Number(this.initialValue.period);
+      this.setPeriod(Number(this.initialValue.period))
     } else if(this.initialValue.published_since) {
       this.activeTab = 1;
       this.period = 0;
+    } else {
+      this.setPeriod(1);
     }
 
     this.range = new FormGroup({

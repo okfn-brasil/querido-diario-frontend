@@ -55,7 +55,6 @@ import { TechComponent } from './modules/pages/tech/tech.component';
 import { SuggestionComponent } from './modules/pages/suggestion/suggestion.component';
 import { HomeComponent } from './modules/pages/home/home.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
-import { PostComponent } from './modules/pages/post/post.component';
 import { SearchComponent } from './modules/pages/search/search.component';
 import { SearchTutorialComponent } from './modules/pages/search-tutorial/search-tutorial.component';
 import { AvailableCitiesComponent } from './modules/pages/available-cities/available-cities.component';
@@ -101,6 +100,11 @@ import { BlogPostComponent } from './modules/pages/blog/blog-post/blog-post.comp
 import { BlogPostDetailComponent } from './modules/pages/blog/blog-post-detail/blog-post-detail.component';
 import { BlogRelatedsComponent } from './modules/pages/blog/blog-relateds/blog-relateds.component';
 import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-header.component';
+import { ReportDetailComponent } from './modules/pages/area-education/report-detail/report-detail.component';
+import { CitiesSearchResultComponent } from './modules/components/cities-search-result/cities-search-result.component';
+import { AdvancedModalComponent } from './modules/pages/area-education/search/advanced-modal/advanced-modal.component';
+import { PassResetComponent } from './modules/pages/area-education/pass-reset/pass-reset.component';
+import { ResetPassModalComponent } from './modules/pages/area-education/header/reset-pass-modal/reset-pass-modal.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +121,6 @@ import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-heade
     TechComponent,
     SuggestionComponent,
     GlossaryComponent,
-    PostComponent,
     SearchTutorialComponent,
     SearchComponent,
     VideoModalComponent,
@@ -172,12 +175,16 @@ import { BlogHeaderComponent } from './modules/pages/blog/blog-header/blog-heade
     BlogPostDetailComponent,
     BlogRelatedsComponent,
     BlogHeaderComponent,
+    ReportDetailComponent,
+    CitiesSearchResultComponent,
+    AdvancedModalComponent,
+    PassResetComponent,
+    ResetPassModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     MatGridListModule,
     MatMenuModule,
     MatFormFieldModule,
