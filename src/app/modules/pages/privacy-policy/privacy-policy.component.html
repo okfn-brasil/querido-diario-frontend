@@ -8,12 +8,44 @@
     <div class="container-inner">
       <app-column [gap]="60">
         <h1>{{ content.title }}</h1>
-        <ng-container *ngFor="let item of content.items">
-          <app-column [gap]="22">
-            <h2>{{ item.title }}</h2>
-            <div class="typo-inner" [innerHTML]="item.text"></div>
-          </app-column>
-        </ng-container>
+        <div class="sections-inner">
+          <ol>
+            <ng-container *ngFor="let section of content.sections">
+              <li>
+                <app-column [gap]="40">
+                  <h2>{{ section.title }}</h2>
+                  <ol>
+                    <ng-container *ngFor="let text of section.texts">
+                      <li>
+                        <p class="typo-inner highlight" [innerHTML]="text"></p>
+                        <br>
+                      </li>
+                    </ng-container>
+                    <ng-container *ngFor="let subsection of section.subsections">
+                      <li>
+                        <app-column [gap]="30">
+                          <h3>{{ subsection.title }}</h3>
+                          <ol>
+                            <ng-container *ngFor="let text of subsection.texts">
+                              <li>
+                                <p class="typo-inner highlight" [innerHTML]="text"></p>
+                                <br>
+                              </li>
+                            </ng-container>
+                          </ol>
+                        </app-column>
+                      </li>
+                    </ng-container>
+                  </ol>
+                </app-column>
+              </li>
+            </ng-container>
+          </ol>
+        </div>
+        <hr>
+        <em>
+          <p class="typo-inner highlight" [innerHTML]="content.footnote"></p>
+        </em>
       </app-column>
     </div>
   </app-container>
