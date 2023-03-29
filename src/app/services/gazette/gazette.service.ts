@@ -30,7 +30,7 @@ export class GazetteService {
   }
 
   findAll(query: GazetteQuery): Observable<GazetteResponse> {
-    const { term, territory_id, published_since, published_until, sort_by, page } = query;
+    const { term, territory_id, since, until, sort_by, page } = query;
     let queryParams = {};
     let territoryQuery = '';
 
@@ -46,12 +46,12 @@ export class GazetteService {
       queryParams = { ...queryParams, querystring: term, pre_tags: '<b>', post_tags: '</b>', excerpt_size: 500, number_of_excerpts: 1 }
     }
 
-    if (published_since) {
-      queryParams = { ...queryParams, published_since };
+    if (since) {
+      queryParams = { ...queryParams, published_since: since };
     }
 
-    if (published_until) {
-      queryParams = { ...queryParams, published_until };
+    if (until) {
+      queryParams = { ...queryParams, published_until: until };
     }
 
     if (sort_by) {
