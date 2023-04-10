@@ -2,8 +2,8 @@
 
 ## Community
 
-* [ ] I have read and followed the [Contribution Guide](../CONTRIBUTING-en-US.md).
-* [ ] I have read and followed the [Code of Conduct](../CODE_OF_CONDUCT-en-US.md).
+* [ ] I have read and followed the [Contribution Guide](/docs/CONTRIBUTING-en-US.md).
+* [ ] I have read and followed the [Code of Conduct](/docs/CODE_OF_CONDUCT-en-US.md).
 
 ## Type of change
 
