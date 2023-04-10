@@ -2,8 +2,8 @@
 
 ## Comunidade
 
-* [ ] Eu li e segui o [Guia de Contribuição](CONTRIBUTING.md).
-* [ ] Eu li e segui o [Código de Conduta](CODE_OF_CONDUCT.md).
+* [ ] Eu li e segui o [Guia de Contribuição](/docs/CONTRIBUTING.md).
+* [ ] Eu li e segui o [Código de Conduta](/docs/CODE_OF_CONDUCT.md).
 
 ## Tipo de alteração
 
