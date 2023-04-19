@@ -212,7 +212,7 @@ import { ResetPassModalComponent } from './modules/pages/area-education/header/r
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    EnvServiceProvider
+    EnvServiceProvider,
   ],
   bootstrap: [AppComponent],
 })
