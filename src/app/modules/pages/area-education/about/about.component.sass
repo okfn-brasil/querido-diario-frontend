@@ -1,0 +1,132 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+:host
+  background-color: rgba(243, 233, 233, 1)
+  font-family: Lato
+
+.banner
+  @media only screen and (max-width: 768px)
+    padding: rem(35) rem(16)
+  
+
+.banner .content
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-bottom: 0
+  padding-top: rem(10)
+
+  .banner-content
+    width: 50%
+
+    @media only screen and (max-width: 768px)
+      width: 100%
+
+    h2
+      line-height: rem(25)
+      font-size: rem(18)
+      margin-bottom: rem(8)
+      text-transform: uppercase
+      color: rgba(52, 51, 52, 1)
+
+    h1
+      font-size: rem(56)
+      margin-bottom: rem(16)
+      line-height: rem(67)
+      color: rgba(101, 74, 156, 1)
+      @media only screen and (max-width: 768px)
+        margin-top: rem(16)
+        margin-bottom: rem(8)
+        font-size: rem(28)
+        line-height: rem(33)
+
+
+  .banner-img
+    width: 45%
+    margin: 50px 0
+    @media only screen and (max-width: 768px)
+      width: 100%
+
+    img
+      max-width: 100%
+      max-height: 100%
+
+.sub-title
+  font-size: rem(16)
+  line-height: rem(22)
+
+.objective
+  background-color: rgba(67, 49, 104, 1)
+
+  .content
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    align-items: center
+
+  img
+    width: 45%
+    @media only screen and (max-width: 768px)
+      width: 100%
+
+  .text
+    width: 50%
+    @media only screen and (max-width: 768px)
+      width: 100%
+
+  .info
+    color: #fff
+    font-size: rem(16)
+    line-height: rem(22)
+    letter-spacing: 1.2px
+
+  .title
+    font-size: rem(56)
+    line-height: rem(67)
+    color: #fff
+    font-family: Baloo
+    margin-bottom: rem(40)
+    @media only screen and (max-width: 768px)
+      font-size: rem(28)
+      line-height: rem(33)
+      margin-top: rem(30)
+
+.support
+  background-color: rgba(101, 74, 156, 1)
+  color: #fff
+
+  .content
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+
+    button
+      width: rem(215)
+      height: rem(65)
+      
+      @media only screen and (max-width: 768px)
+        height: rem(48)
+        width: rem(156)
+        line-height: rem(16)
+
+    .text
+      width: calc(70% - 215px)
+      @media only screen and (max-width: 768px)
+        width: 100%
+
+      .title
+        font-size: rem(28)
+        line-height: rem(33)
+        font-family: Baloo
+        margin-bottom: rem(8)
+
+      .subtitle
+        font-size: rem(16)
+        line-height: rem(22)
+        
+        @media only screen and (max-width: 768px)
+          margin-bottom: rem(32)
+
+

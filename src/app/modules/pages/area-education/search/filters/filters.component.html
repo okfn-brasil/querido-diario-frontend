@@ -1,0 +1,26 @@
+<form class="filters-area" [class.in-modal]="isModal">
+  <div class="field">
+    <div class="title">Município</div>
+    <div class="label">Digite um local</div>
+    <edu-city-filter [showAll]="true" [cities]="apiCities" [initialValue]="locations" (changeLocations)="onChangeLocations($event)"></edu-city-filter>
+  </div>
+
+  <div class="field" *ngIf="!isModal">
+    <div class="title">Período de tempo</div>
+    <edu-period-filter [initialValue]="dates" (changeDates)="onChangeDates($event)"></edu-period-filter>
+  </div>
+
+  <div class="field">
+    <div class="title theme">Subtema</div>
+    <div class="sub-title">Escolha uma ou mais categorias para filtrar pelo tipo de tecnologia.</div>
+    <edu-themes-filter [isModal]="isModal" [themes]="apiThemes" [initialThemes]="themes" (themesChange)="onChangeThemes($event)"></edu-themes-filter>
+  </div>
+
+  <div class="field">
+    <div class="title">Envolvidos</div>
+    <div class="sub-title">Escolha uma ou mais categorias para filtrar por termos relevantes mencionados.</div>
+    <div class="edu-input">
+      <edu-themes-filter [isModal]="isModal" [themes]="apiEntities" [initialThemes]="entities" (themesChange)="onChangeEntities($event)"></edu-themes-filter>
+    </div>
+  </div>
+</form>

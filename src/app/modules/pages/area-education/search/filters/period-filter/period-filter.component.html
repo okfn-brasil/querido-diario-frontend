@@ -1,0 +1,41 @@
+<div class="period-filter">
+  <div class="tabs">
+    <div (click)="setTab(0)" class="tab" [class.active]="!activeTab">Recentes</div>
+    <div (click)="setTab(1)" class="tab" [class.active]="activeTab">Intervalo de tempo</div>
+  </div>
+
+  <div class="periods" *ngIf="!activeTab">
+    <div (click)="setPeriod(1)" class="period" [class.active]="period === 1">1m</div>
+    <div (click)="setPeriod(2)" class="period" [class.active]="period === 2">2m</div>
+    <div (click)="setPeriod(3)" class="period" [class.active]="period === 3">3m</div>
+    <div (click)="setPeriod(4)" class="period big" [class.active]="period === 4">Tudo</div>
+  </div>
+
+  <div class="period-input-edu" *ngIf="activeTab">
+    <mat-form-field appearance="fill" (click)="picker.open()">
+      <mat-icon matPrefix svgIcon="calendar-gray" ></mat-icon>
+      <mat-date-range-picker
+        md-hide-icons="calendar"
+        #picker
+      ></mat-date-range-picker>
+      <mat-label>Período</mat-label>
+      <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Início" />
+        <input
+          (dateChange)="onRangeSelected()"
+          matEndDate
+          formControlName="end"
+          placeholder="Fim"
+        />
+      </mat-date-range-input>
+    
+      <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')"
+        >Início Invalido</mat-error
+      >
+      <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')"
+        >Fim Inválido</mat-error
+      >
+    </mat-form-field>
+    
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="menu-container" fxLayoutGap="32px" fxLayout="column">
+  <mat-dialog-actions>
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <mat-icon svgIcon="logo" class="logo"></mat-icon>
+      <div fxLayoutAlign="flex-end" fxLayoutGap="16px">
+        <a (click)="openNotifications()">
+          <app-icon [icon]="notificationIcon"></app-icon>
+        </a>
+        <button class='close-btn'>
+          <mat-icon
+            aria-label="Fechar Menu"
+            aria-hidden="false"
+            mat-dialog-close
+            svgIcon="close"
+            class="close"
+          ></mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayoutAlign="space-between" fxFlexFill>
+      <div class="nav-container">
+        <nav fxLayout="column" fxLayoutGap="32px">
+          <a mat-dialog-close routerLink="/">Explore</a>
+          <a mat-dialog-close routerLink="/tecnologia">Tecnologia</a>
+          <a mat-dialog-close routerLink="/sobre">Sobre</a>
+        </nav>
+        <a routerLink="/apoie">
+          <button mat-dialog-close class="btn">Apoie</button>
+        </a>
+      </div>
+    </div>
+  </mat-dialog-content>
+</div>

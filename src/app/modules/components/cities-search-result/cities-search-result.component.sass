@@ -1,0 +1,90 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+  
+.container-education
+  @media only screen and (max-width: 768px)
+    padding-top: rem(24)
+    padding-bottom: rem(20)
+
+.content
+  padding-top: rem(40)
+  padding-bottom: rem(40)
+
+.levels
+  display: flex
+  justify-content: space-between
+  @media only screen and (max-width: 1000px)
+    display: block
+
+  .level
+    @media only screen and (max-width: 1000px)
+      width: 100% !important
+      margin-bottom: rem(50)
+      &:last-of-type
+        margin-bottom: 0
+
+    .level-icon img
+      width: rem(40)
+      margin-bottom: rem(16)
+
+    .level-title
+      font-size: rem(22)
+      line-height: rem(26)
+      margin-bottom: rem(4)
+      font-family: Baloo
+
+    a
+      color: #fff
+
+    .level-text
+      font-size: rem(14)
+      line-height: rem(19)
+      font-family: Lato
+      margin-bottom: rem(24)
+
+.level-1 .city-name
+  background-color: rgba(142, 59, 46, 1)
+  color: rgba(229, 83, 48, 1)
+
+.level-2 .city-name
+  background-color: rgba(62, 126, 173, 1)
+  color: rgba(104, 191, 255, 1)
+
+.level-3 .city-name
+  background-color: rgba(79, 57, 121, 1)
+  color: rgba(150, 107, 232, 1)
+
+.cities
+  .city
+    padding: rem(18) 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+
+    .city-name
+      padding: rem(8) rem(16)
+      border-radius: rem(15)
+      font-weight: 500
+      font-size: rem(14)
+      line-height: rem(19)
+      letter-spacing: 1.2px
+
+    .city-link
+      font-size: rem(14)
+      line-height: rem(19)
+      padding: rem(10) 0
+      padding-right: rem(40)
+      position: relative
+      &::after
+        content: ''
+        width: rem(5)
+        height: rem(10)
+        position: absolute
+        right: rem(17)
+        top: calc(50% - 5px)
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('/assets/icons/right-arrow-white.svg')

@@ -1,0 +1,58 @@
+<form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px" fxLayoutGap.xs="0">
+  <app-row>
+    <mat-form-field appearance="fill" class="search-input">
+      <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
+      <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
+      <input
+        class="search"
+        #termField
+        matInput
+        [formControl]="termControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete class="light" #auto="matAutocomplete">
+        <p
+          class="autocomplete"
+          [style.marginLeft]="'16px'"
+        > <a routerLink="/tecnologia/busca-avancada" target="_blank"><b>Opções de Busca Avançada</b></a>
+        </p>
+        <p
+          class="typo-secondary autocomplete-title"
+          [style.marginLeft]="'16px'"
+        >
+          Sugestões de busca
+        </p>
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option"
+        >
+          <div fxLayout="row" class="autocomplete">
+            <app-icon [icon]="{ file: 'money', height: 36, width: 36 }">
+            </app-icon>
+            <app-autocomplete-item [title]="option"></app-autocomplete-item>
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </app-row>
+
+  <app-row [flex]="true" [gap]="16">
+    <edu-city-filter
+      [initialValue]="territory" 
+      [loadingCities]="loadingCities"
+      label="Município" 
+      class="city-input" 
+      [cities]="getCityList()"
+      [showCityLevel]="true"
+      (changeLocations)="onChangeLocation($event)"
+      (changeQuery)="onChangeQuery($event)">
+    </edu-city-filter>
+
+    <app-date-picker-range
+      #periodField
+      (onRangeSelected)="onRangeSelected($event)"
+      class="period-input"
+    ></app-date-picker-range>
+  </app-row>
+  <button (click)="search()" class="btn">Pesquisar</button>
+</form>

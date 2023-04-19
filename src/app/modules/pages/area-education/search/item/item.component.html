@@ -1,0 +1,16 @@
+<div class='search-item'>
+  <div class='search-item-desc' [innerHtml]="gazette.excerpt"></div>
+  <div class="flex">
+    <div class='search-item-date'>
+      {{gazette.date}} • <span>{{gazette.territory_name}}</span>
+    </div>
+    <span class='hover-animation download-link'>
+      <span (click)="showTooltip()" class='hyper-link'>Baixar diário oficial</span>
+      <div (click)="showTooltip()" class='arrow-link' ></div>
+        <div class='tooltip' (mouseleave)="hideTooltip()" *ngIf="isShowingTooltip">
+          <a target='_blank' id='txt-link' [href]="gazette.txt_url" (blur)="hideTooltip()" rel='noreferrer'><div class='tooltip-link'>.TXT</div></a>
+          <a target='_blank' [href]="gazette.url" rel='noreferrer'><div class='tooltip-link'>.PDF</div></a>
+        </div> 
+    </span>
+  </div>
+</div>

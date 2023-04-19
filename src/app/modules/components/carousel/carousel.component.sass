@@ -1,0 +1,34 @@
+@import 'src/assets/_tools.sass'
+@import 'src/assets/_variables.sass'
+
+:host
+  .carousel-container
+    height: rem(545) !important
+
+  .carousel-dots
+    bottom: rem(80) !important
+    margin: 0 auto
+    width: 300px
+
+  .carousel-dot
+    background-color: #966BE8
+    border: none !important
+
+  .carousel-arrows
+    transform: scaleY(-1)
+    margin-top: rem(-100)
+    height: rem(100)
+
+    .carousel-arrow-prev, .carousel-arrow-next
+      background-color: transparent !important
+      height: 50px !important
+      width: 50px !important
+      background-size: 50px 50px !important
+
+    .carousel-arrow-prev
+      left: 0 !important
+      background-image: url('/assets/icons/slide-left.svg') !important
+
+    .carousel-arrow-next
+      right: 0 !important
+      background-image: url('/assets/icons/slide-right.svg') !important

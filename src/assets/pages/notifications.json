@@ -1,34 +1,46 @@
 {
   "list": [
     {
-      "title": "Nova atualização!",
-      "content": "A cidade de Contagem (MG) foi adicionada à plataforma!",
-      "updatedAt": "2022/10/07",
+      "title": "Nova cidade!",
+      "content": "A cidade de Aldeias Altas (MA) foi adicionada à plataforma!",
+      "updatedAt": "2023/02/16",
       "isNew": true
     },
     {
-      "title": "Nova atualização!",
-      "content": "A cidade de Serra (ES) foi adicionada à plataforma!",
-      "updatedAt": "2022/10/07",
-      "isNew": true
+      "title": "Novas 14 cidades!",
+      "content": "As cidades de Senhor do Bonfim (BA), Alagoinhas (BA), Juazeiro (BA), Campo Formoso (BA), Maracaju (MS), Inocência (MS), Arraial do Cabo (RJ), Camaquã (RS), Itaúna (MG), Campo Belo (MG), Nova Serrana (MG), Jaboticabal (SP), Ibitinga (SP) e São Mateus do Sul (PR) foram adicionadas à plataforma!",
+      "updatedAt": "2022/12/22",
+      "isNew": false
     },
     {
-      "title": "Nova atualização!",
-      "content": "A cidade de Aparecida de Goiânia (GO) foi adicionada à plataforma!",
-      "updatedAt": "2022/10/07",
-      "isNew": true
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de Macapá (AP), Bacabal (MA), Codó (MA), Peritoró (MA) e Santo Antônio dos Lopes (MA) foram adicionadas à plataforma!",
+      "updatedAt": "2022/11/30",
+      "isNew": false
     },
     {
-      "title": "Nova atualização!",
-      "content": "A cidade de Valinhos (SP) foi adicionada à plataforma!",
-      "updatedAt": "2022/10/07",
-      "isNew": true
+      "title": "Nova cidade!",
+      "content": "A cidade de Caxias do Sul (RS) foi adicionada à plataforma!",
+      "updatedAt": "2022/11/11",
+      "isNew": false
     },
     {
-      "title": "Nova atualização!",
-      "content": "A cidade de Vinhedo (SP) foi adicionada à plataforma!",
+      "title": "Novas 4 cidades!",
+      "content": "As cidades de Acajutiba (BA), Belford Roxo (RJ), Campinas (SP) e Rondonópolis (MT) foram adicionadas à plataforma!",
+      "updatedAt": "2022/10/18",
+      "isNew": false
+    },
+    {
+      "title": "Novas 4 cidades!",
+      "content": "As cidades de Joinville (SC), Marília (SP), Santana (AP) e Santo André (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2022/10/11",
+      "isNew": false
+    },
+    {
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de Contagem (MG), Serra (ES), Aparecida de Goiânia (GO), Valinhos (SP) e Vinhedo (SP) foram adicionadas à plataforma!",
       "updatedAt": "2022/10/07",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 6 cidades!",
@@ -39,11 +51,11 @@
     {
       "title": "Novas 6 cidades!",
       "content": "As cidades de Porto Alegre (RS), Curitiba (PR), Araguaína (TO), Jundiaí (SP), Petrolina (PE) e Mossoró (RN) foram adicionadas à plataforma!",
-      "updatedAt": "2022/03/25",
+      "updatedAt": "2022/05/10",
       "isNew": false
     },
     {
-      "title": "Novas 6 cidades!",
+      "title": "Novas 5 cidades!",
       "content": "As cidades de Brasilia (DF), Recife (PE), Caxias (MA), Jaboatão dos Guararapes (PE) e Sumaré (SP) foram adicionadas à plataforma!",
       "updatedAt": "2022/03/25",
       "isNew": false

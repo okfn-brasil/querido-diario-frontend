@@ -39,8 +39,8 @@
       ]
     },
     {
-      "title": "Desenvolvimento frontend e usabilidade",
-      "text": "A atual versão da plataforma foi desenvolvida com o apoio da <a href='https://jurema.la' target='_blank'>Jurema</a>, que é responsável pelo frontend e pelo estudo da experiência das pessoas usuárias.",
+      "title": "Desenvolvimento da plataforma e usabilidade",
+      "text": "A atual versão da plataforma foi desenvolvida com o apoio da <a href='https://jurema.la' target='_blank'>Jurema</a>, atuando no frontend, backend e no estudo da experiência das pessoas usuárias.",
       "icons": [
         {
           "file": "jurema",
@@ -81,13 +81,33 @@
         }
       ]
     },
+
+    {
+      "title": "Tecnologias na Educação",
+      "text": "Em parceria com a Aliança <a href=\"https://fundacaolemann.org.br/\" target=\"_blank\">Fundação Lemann</a> & <a href=\"https://www.imaginablefutures.com/\" target=\"_blank\">Imaginable Futures</a>, a OKBR construiu a ferramenta capaz de identificar e coletar todos os atos relacionados ao universo das tecnologias na educação.",
+      "icons": [
+        {
+          "file": "assets/images/imaginable.png",
+          "isPng": true,
+          "height": 30,
+          "width": 106
+        },
+        {
+          "file": "assets/images/lemann.png",
+          "isPng": true,
+          "height": 30,
+          "width": 106
+        }
+      ]
+    },
     {
       "title": "Comunidade",
-      "text": "Existem várias maneiras de contribuir com o Querido Diário. Se você deseja ajudar o projeto a ir mais longe, <a href=\"https://www.catarse.me/queridodiario-okbr\" target=\"_blank\" >acesse nossa campanha de financiamento coletivo no Catarse</a> e consulte as faixas de doação e suas recompensas. Assim, você se junta aos 88 doadores que já nos ajudaram. A seguir, confira a lista de quem nos apoia publicamente:",
+      "text": "Existem várias maneiras de contribuir com o Querido Diário. Se você deseja ajudar o projeto a ir mais longe, <a href=\"https://www.catarse.me/queridodiario-okbr\" target=\"_blank\" >acesse nossa campanha de financiamento coletivo no Catarse</a> e consulte as faixas de doação e suas recompensas. Assim, você se junta aos 94 doadores que já nos ajudaram. A seguir, confira a lista de quem nos apoia publicamente:",
       "items": [
         [
           "Alan Silva Costa",
           "Alexandre Vasconcelos",
+          "Alexandre Yukio Harano",
           "All Beer Brasil Ltda",
           "Amanda Lie Kitagava",
           "Ana Cecília Vieira Silva",
@@ -96,14 +116,13 @@
           "Antonio de Araujo Freitas Neto",
           "Antonio Jr Farias",
           "Aurélio A. Heckert",
+          "Billy Cordelli Eugenio",
           "Bruno Moutinho",
           "Bruno Bertolani",
           "Caio Werneck",
           "Carlos André Matos",
           "Daniel Fontolan",
-          "Danilo Amaral de Oliveira"
-        ],
-        [
+          "Danilo Amaral de Oliveira", 
           "Débora Maria Valverde da Silva",
           "Dirk Henning",
           "Dreyf Assis Gonçalves",
@@ -117,13 +136,12 @@
           "Flávio Dal Pozzo",
           "Frank Farias Santos",
           "Gabriel Borges Vaz de Melo",
-          "Guilherme R. Storck"
-        ],
-        [
+          "Guilherme R. Storck",
           "Guillermo Infante",
           "Gustavo Brondani Schenkel",
           "Henrique Lorea Leite",
           "Igor Bandim",
+          "Janaína Behling",
           "Jessica Cestariolli",
           "José Antônio Ribeiro Vargas",
           "Jose Guilherme Vanz",
@@ -134,9 +152,8 @@
           "Laila Bellix",
           "Leonardo Rosa Lemos",
           "Louise Pereira",
-          "Luiz Gimenez"
-        ],
-        [
+          "Luiz Augusto Galicioli",
+          "Luiz Gimenez",
           "Márcio Eduardo Cavalcanti Porto",
           "Marco Alessandro de Campos",
           "Marco Guedes",
@@ -151,9 +168,7 @@
           "Murilo Viana",
           "Natássya Barlate Floro da Silva",
           "Nitai O Bezerra da Silva",
-          "Paulo Henrique Franzon"
-        ],
-        [
+          "Paulo Henrique Franzon",
           "Pedro Guedes",
           "Rafael Rosado Urquhart",
           "Renato Rebelo de Moraes",
@@ -163,6 +178,7 @@
           "Rodrigo Gobatto",
           "Rony Marques",
           "Sarah Bertolini Serafim",
+          "Thales Augusto Zamberlan Pereira",
           "Thassio Gonçalves Ferreira",
           "Thiago Aguiar de Moraes",
           "Thiago Sant' Helena",

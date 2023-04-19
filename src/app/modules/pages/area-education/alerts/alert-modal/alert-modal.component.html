@@ -1,0 +1,87 @@
+<div class="modal-area">
+  <div class="loading-area-edu" *ngIf="isLoading">
+    <mat-spinner ></mat-spinner>
+  </div>
+  <div class="modal">
+    <ng-container *ngIf="page === 0">
+      <div class="title-area" (click)="onClickClose()">
+        <img src="assets/icons/close-icon.svg" alt="fechar" />
+        <div class="title">Criar alerta</div>
+      </div>
+      <div class="modal-content">
+        <div class="sub-title">
+          Crie um alerta com aspectos de tecnologias na educação que deseja monitorar
+        </div>
+        <div class="filter-data" (click)="setPage(1)">
+          <div class="description">Edite os filtros para receber alertas com o tema que você quer</div>
+          <div class="applied-filter" *ngIf="selectedCities && selectedCities.length">{{selectedCities.join(', ')}}</div>
+          <div class="applied-filter" *ngIf="filters.subthemes && filters.subthemes.length">{{filters.subthemes.join(', ')}}</div>
+          <div class="applied-filter" *ngIf="filters.entities && filters.entities.length">{{filters.entities[0]}}</div>
+        </div>
+        <div class="filter-data" (click)="setPage(2)">
+          <div class="description">Adicione palavras-chave</div>
+          <div class="applied-filter" *ngIf="!query">Cadastre palavras chaves para sua busca (campo obrigatório)</div>
+          <div class="applied-filter" *ngIf="!!query">{{query}}</div>
+        </div>
+        <div class="filter-data" (click)="setPage(3)" *ngIf="hasEditEmail">
+          <div class="description">Editar e-mail pare recebimento de alertas</div>
+          <div class="applied-filter">{{currentEmail}}</div>
+        </div>
+        <button class="btne-primary" [disabled]="!query" (click)="create()">Criar alerta</button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="page === 1">
+      <div class="title-area" (click)="setPage(0)">
+        <div class="back-arrow"></div>
+        <div class="title">Editar filtros do alerta</div>
+      </div>
+      <div class="modal-content">
+        <edu-filters [isModal]="true" [apiThemes]="themes" [apiCities]="cities" [filters]="filters" (changeFilters)="onChangeFilters($event)"></edu-filters>
+
+        <button class="btne-primary" (click)="setPage(0)">Aplicar filtros</button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="page === 2">
+      <div class="title-area" (click)="setPage(0)">
+        <div class="back-arrow"></div>
+        <div class="title">Editar palavras-chave</div>
+      </div>
+      <div class="modal-content">
+        <div class="label">
+          Cadastre as palavras-chave do seu alerta e enviaremos as novidades que tiverem os termos buscados. 
+        </div>
+        <div class="edu-input">
+          <input [(ngModel)]="query" id="query" class="second-type" name="query" placeholder="query"/>
+          <label for="query">Ex: "secretaria de educação" + aquisição</label>
+        </div>
+        <button class="btne-primary" (click)="setPage(0)">Aplicar</button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="page === 3">
+      <div class="title-area" (click)="setPage(0)">
+        <div class="back-arrow"></div>
+        <div class="title">Editar e-mail do alerta</div>
+      </div>
+      <div class="modal-content">
+        <edu-edit-email (onSent)="setPage(0)"></edu-edit-email>
+      </div>
+    </ng-container>
+
+
+    <ng-container *ngIf="page === 4">
+      <div class="title-area" (click)="setPage(0)">
+        <div class="back-arrow"></div>
+        <div class="title">Ocorreu um erro!</div>
+      </div>
+      <div class="modal-content">
+        <div class="label">
+          Não conseguimos cadastrar seu alerta, por favor, tente novamente.
+        </div>
+        <button class="btne-primary" (click)="setPage(0)">Voltar</button>
+      </div>
+    </ng-container>
+  </div>
+</div>
