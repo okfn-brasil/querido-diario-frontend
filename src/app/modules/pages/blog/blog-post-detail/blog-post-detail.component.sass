@@ -1,0 +1,46 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+  
+:host
+  background-color: #F3E9E9
+
+  .categories-link
+    font-family: Baloo
+    font-size: rem(18)
+    line-height: rem(21)
+    padding: rem(20) rem(16)
+    background-color: #fff
+    position: relative
+
+    &::after
+      content: ''
+      position: absolute
+      right: rem(16)
+      top: calc(50% - 2.5px)
+      width: 0
+      height: 0
+      border-left: 5px solid transparent
+      border-right: 5px solid transparent
+      border-top: 5px solid rgba(44, 19, 56, 1)
+      transform: rotate(-90deg)
+
+
+  .container-education
+    @media only screen and (max-width: 768px)
+      padding: 0
+
+  .content
+    padding: rem(40) rem(16)
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+    .categories
+      width: rem(392)
+      @media only screen and (max-width: 768px)
+        width: 100%
+
+    .list
+      width: calc(100% - 392px - 24px)
+      @media only screen and (max-width: 768px)
+        width: 100%

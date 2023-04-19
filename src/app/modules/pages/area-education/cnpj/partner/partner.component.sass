@@ -1,0 +1,56 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+.partner-name
+  font-size: rem(18)
+  line-height: rem(25)
+  color: black
+  font-weight: bold
+  padding: rem(16) 0 rem(16) rem(32)
+  border-top: 1px solid rgba(205, 197, 197, 1)
+  cursor: pointer
+  position: relative
+
+.partner-infos-items
+  border-top: 1px solid rgba(205, 197, 197, 1)
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  padding: rem(32)
+  padding-top: 0
+
+  .partner-info-item
+    padding-right: rem(20)
+    width: calc((100% / 3) - 20px)
+
+    @media only screen and (max-width: 768px)
+      padding: 0
+      width: 100%
+
+  .info-name
+    font-weight: bold
+    font-size: rem(16)
+    line-height: rem(22)
+    margin-bottom: rem(8)
+    margin-top: rem(24)
+    color: black
+
+  .info-text
+    font-size: rem(16)
+    line-height: rem(22)
+    color: rgba(52, 51, 52, 1)
+
+.arrow
+  position: absolute
+  left: rem(5)
+  top: calc(50% - 2.5px)
+  width: 0
+  height: 0
+  border-left: 5px solid transparent
+  border-right: 5px solid transparent
+  border-top: 5px solid rgba(255, 133, 0, 1)
+
+  &.open
+    transform: rotate(180deg)
+
+

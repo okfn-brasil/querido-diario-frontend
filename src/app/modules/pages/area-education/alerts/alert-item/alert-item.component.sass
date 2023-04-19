@@ -1,0 +1,91 @@
+@import 'src/assets/_variables.sass'
+@import 'src/assets/_tools.sass'
+
+:host
+  background-color: #fff
+  margin-bottom: 24px
+  padding: 40px 26px
+  width: 100%
+  position: relative
+  font-family: Lato
+
+  @media only screen and (min-width: 768px)
+    width: calc((100% / 2) - 12px)
+    margin-right: 24px
+    padding: 40px 50px
+    &:nth-child(2n) 
+      margin-right: 0
+    
+  @media only screen and (min-width: calc(768px + 300px)) 
+    width: calc((100% / 3) - 16px)
+    &:nth-child(2n) 
+      margin-right: 24px
+    
+    &:nth-child(3n) 
+      margin-right: 0
+
+  .filters-items 
+    padding-bottom: 32px
+    border-bottom: 1px solid rgba(243, 233, 233, 1)
+    margin-bottom: rem(36)
+    position: relative
+
+  .filter-title 
+    font-size:  rem(18)
+    line-height: rem(25)
+    font-weight: 600
+    margin-bottom: rem(5)
+    color: #495057
+    font-weight: bold
+
+    &.filters
+      font-size:  rem(16)
+      line-height: rem(22)
+      margin-bottom: rem(16)
+  
+  .key-words 
+    margin: 0 0 16px
+    font-weight: 500
+    font-size: rem(22)
+    line-height: rem(26)
+    font-family: Baloo
+
+
+  .filter-item 
+    color: rgba(52, 51, 52, 1)
+    font-weight: 500
+    font-size: 16px
+    margin: 0 0 20px
+    display: flex
+    align-items: center
+
+    img 
+      margin-right: 20px
+      width: 18px
+
+  hr 
+    margin-bottom: 16px
+    border: 0
+    border-bottom: 1px solid rgba(243, 233, 233, 1)
+  
+  .hyper-link 
+    position: absolute
+    bottom: 40px
+    font-size: rem(16)
+    line-height: rem(16)
+    right: rem(68)
+    font-weight: bold
+    cursor: pointer
+    color: #2C1338
+
+    &::after
+      content: ''
+      position: absolute
+      right: rem(-20)
+      top: rem(6)
+      width: 0
+      height: 0
+      border-left: 4.5px solid transparent
+      border-right: 4.5px solid transparent
+      border-top: 4.5px solid #2C1338
+      transform: rotate(-90deg)

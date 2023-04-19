@@ -15,18 +15,9 @@
     </defs>
     <g id="Sobre-o-Querido-Diário" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="desk_Sobre" transform="translate(-105.000000, -2247.000000)">
-            <rect fill="#FFFFFF" x="0" y="0" width="1220" height="3810"></rect>
             <g id="Group-3-Copy" transform="translate(-89.923954, 1877.000000)">
-                <g id="bg">
-                    <rect id="Mask" fill="#F3E9E9" transform="translate(703.923954, 273.000000) scale(1, -1) translate(-703.923954, -273.000000) " x="93.9239544" y="0" width="1220" height="546"></rect>
-                    <g filter="url(#filter-1)" id="1.-assets/patterns/document-copy-2" opacity="0.3">
-                        <g transform="translate(0.000000, 215.000000)"></g>
-                    </g>
-                    <rect id="Mask" fill="url(#linearGradient-2)" transform="translate(704.923954, 376.000000) scale(1, -1) translate(-704.923954, -376.000000) " x="94.9239544" y="206" width="1220" height="340"></rect>
-                </g>
                 <g id="Group" transform="translate(109.923954, 76.000000)">
                     <g id="Card-width-link" transform="translate(0.000000, 118.000000)">
-                        <rect id="card" fill="#2C1338" x="0" y="0" width="278" height="230"></rect>
                         <g id="Group-2" transform="translate(20.000000, 41.000000)">
                             <g id="1.-assets_icon-downarrow" transform="translate(0.000000, 130.000000)" filter="url(#filter-3)">
                                 <g transform="translate(71.000000, 11.000000) scale(-1, 1) rotate(90.000000) translate(-71.000000, -11.000000) translate(65.000000, 5.000000)">

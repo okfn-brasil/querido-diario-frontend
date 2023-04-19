@@ -20,7 +20,7 @@
         {
           "images": [
             {
-              "src": "../../../assets/images/posts/imagem5-operador-ou.png",
+              "src": "assets/images/posts/busca-avancada/imagem05-operador-ou.png",
               "height": "",
               "heightXs": "",
               "width": "",
@@ -42,7 +42,7 @@
         {
           "images": [
             {
-              "src": "../../../assets/images/posts/imagem6-operador-and.png",
+              "src": "assets/images/posts/busca-avancada/imagem06-operador-and.png",
               "height": "",
               "heightXs": "",
               "width": "",
@@ -61,7 +61,7 @@
         {
           "images": [
             {
-              "src": "../../../assets/images/posts/imagem7-operador-negacao.png",
+              "src": "assets/images/posts/busca-avancada/imagem07-operador-negacao.png",
               "height": "",
               "heightXs": "",
               "width": "",
@@ -83,7 +83,7 @@
         {
           "images": [
             {
-              "src": "../../../assets/images/posts/imagem8-operador-busca-exata.png",
+              "src": "assets/images/posts/busca-avancada/imagem08-operador-busca-exata.png",
               "height": "",
               "heightXs": "",
               "width": "",
@@ -105,7 +105,7 @@
         {
           "images": [
             {
-              "src": "../../../assets/images/posts/imagem9-operador-prefixo.png",
+              "src": "assets/images/posts/busca-avancada/imagem09-operador-prefixo.png",
               "height": "",
               "heightXs": "",
               "width": "",
@@ -124,7 +124,7 @@
         {
           "images": [
             {
-              "src": "../../../assets/images/posts/imagem10-operador-edicao.png",
+              "src": "assets/images/posts/busca-avancada/imagem10-operador-edicao.png",
               "height": "",
               "heightXs": "",
               "width": "",
@@ -146,7 +146,7 @@
         {
           "images": [
             {
-              "src": "../../../assets/images/posts/imagem11-operador-distancia.png",
+              "src": "assets/images/posts/busca-avancada/imagem11-operador-distancia.png",
               "height": "",
               "heightXs": "",
               "width": "",
@@ -171,7 +171,7 @@
         {
           "images": [
             {
-              "src": "../../../assets/images/posts/imagem12-operador-precedencia.png",
+              "src": "assets/images/posts/busca-avancada/imagem12-operador-precedencia.png",
               "height": "",
               "heightXs": "",
               "width": "",

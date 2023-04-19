@@ -21,7 +21,7 @@
         {
           "text": "Acessar",
           "icon": "right-arrow",
-          "to": "https://www.ok.org.br/wp-content/uploads/2021/07/Querido-Diario-1o-Relatorio-Tecnico-de-Atividades.pdf",
+          "to": "assets/documents/reports/1o-relatorio-tecnico-atividades.pdf",
           "target": "_blank"
         }
       ]

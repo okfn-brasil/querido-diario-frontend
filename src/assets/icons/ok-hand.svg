@@ -3,12 +3,10 @@
     <title>3D546D66-1E5D-48E0-A5FF-090F44AD2A48</title>
     <g id="Home-e-Busca---UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="desk_Home" transform="translate(-60.000000, -1728.000000)">
-            <rect fill="#FFFFFF" x="0" y="0" width="1220" height="4208"></rect>
+            
             <g id="Group-14-Copy" transform="translate(0.000000, 1523.000000)">
-                <rect id="Rectangle" fill="#2C1338" transform="translate(610.000000, 392.500000) scale(1, -1) translate(-610.000000, -392.500000) " x="0" y="-2.27373675e-13" width="1220" height="785"></rect>
                 <g id="Group-5" transform="translate(20.000000, 175.000000)">
                     <g id="Card-width-link-Copy-3" transform="translate(0.000000, 0.000000)">
-                        <rect id="card" fill="#F3E9E9" x="0" y="0" width="278" height="470"></rect>
                         <g id="1.-assets/illustration/ok" transform="translate(40.000000, 30.000000)">
                             <g id="Shadows" transform="translate(2.227826, 4.826957)" fill="#2C1338" fill-rule="nonzero" opacity="0.3">
                                 <path d="M11.0425917,42.8571871 C11.5834584,25.2982038 8.69099742,3.57318564 8.69099742,2.73156242 C8.69099742,1.82557978 9.03878583,0.00866376843 10.2244844,0.00866376843 C11.2146294,0.00866376843 18.0775717,4.19573928 20.2398007,10.0017018" id="Path"></path>

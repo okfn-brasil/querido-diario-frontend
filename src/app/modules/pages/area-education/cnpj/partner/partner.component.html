@@ -1,0 +1,14 @@
+<div class='info-item partner-info'>
+  <div class='partner-name hover-animation' (click)="onClickName()">
+    <div class="arrow" [ngClass]="isOpen ? 'open' : ''"></div>
+    {{name}}
+  </div>
+    <div *ngIf="isOpen" class='partner-infos-items'>
+      <ng-container *ngFor="let key of keys">
+        <div class='partner-info-item' *ngIf="data && data[key]">
+          <div class='info-name'>{{key}}</div>
+          <div class='info-text'>{{data[key]}}</div>
+        </div>
+      </ng-container>
+  </div>
+</div>

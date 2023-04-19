@@ -1,0 +1,22 @@
+<edu-header></edu-header>
+<div class="report-detail-page">
+  <div class="header">
+    <div class="container-education">
+      <div class="content">
+        <div class="report-header">
+          {{report.title}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="page-content">
+    <div class="container-education">
+      <div class="content">
+        <div class="report-header date">{{report.date}}</div>
+        <div class="report-content" [innerHtml]="content"></div>
+      </div>
+    </div>
+  </div>
+</div>
