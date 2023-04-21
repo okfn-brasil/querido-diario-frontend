@@ -37,6 +37,7 @@ export interface GazetteQuery {
 export interface GazetteResponse {
   total_gazettes: number;
   gazettes: Gazette[];
+  error?: boolean;
 }
 
 export interface Pagination {
