@@ -48,8 +48,8 @@
         <div fxLayout="row" fxLayoutAlign="space-between">
           <div>
             <h2>{{ gazetteResponse.total_gazettes }}<span *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;">*</span> resultados encontrados</h2>
-            <em *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;" class="text-xs text-neutral-400">
-              *A quantidade de resultados atingiu o limite da pesquisa. Tente digitar um termo mais específico ou usar mais de um para otimizar sua busca.
+            <em *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;" class="font-lato text-xs text-neutral-400">
+              *A quantidade de resultados atingiu o limite da pesquisa. Tente utilizar termos mais específicos ou os operadores da <a href="/tecnologia/busca-avancada" target="_blank" class="text-xs highlight">busca avançada</a>.
             </em>
           </div>
           <app-select
