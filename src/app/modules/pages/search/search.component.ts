@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
+
+import { EnvService } from 'src/app/env.service';
 import {
   GazetteService,
 } from 'src/app/services/gazette/gazette.service';
@@ -25,6 +27,7 @@ import { Level } from 'src/app/interfaces/level';
 })
 export class SearchComponent implements OnInit {
   constructor(
+    private env: EnvService,
     private router: Router,
     private route: ActivatedRoute,
     private territoryService: TerritoryService,
@@ -34,6 +37,7 @@ export class SearchComponent implements OnInit {
   territoryId: string | undefined = undefined;
   cityName: string | null = null;
   foundResult: boolean = false;
+  searchResultMaxSize: number = this.env.qdApiSearchResultMaxSize;
   response: Observable<SearchResponse> = new Observable();
   city: Observable<City | null> = new Observable();
   levelDescription: LevelDescription | undefined = undefined;

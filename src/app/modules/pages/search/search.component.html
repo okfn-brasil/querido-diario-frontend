@@ -44,12 +44,19 @@
             consegue realizar a busca nos documentos de um jeito fácil.
           </p>
         </ng-container>
+
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <h2>{{ gazetteResponse.total_gazettes }} resultados encontrados</h2>
+          <div>
+            <h2>{{ gazetteResponse.total_gazettes }}<span *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;">*</span> resultados encontrados</h2>
+            <em *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;" class="font-lato text-xs text-neutral-400">
+              *A quantidade de resultados atingiu o limite da pesquisa. Tente utilizar termos mais específicos ou os operadores da <a href="/tecnologia/busca-avancada" target="_blank" class="text-xs highlight">busca avançada</a>.
+            </em>
+          </div>
           <app-select
             [title]="'ORDENAR POR'"
             [options]="orderOptions"
             [selected]="sort_by"
+            class="text-white"
             (onSelected)="orderChanged($event)"
           ></app-select>
         </div>
