@@ -1,0 +1,118 @@
+{
+  "about": {
+    "title": "About Querido Diário",
+    "text": "Know more about the project that uses technology to open official gazettes of Brazilian municipalities content and brings citizens closer to the actions of their local government",
+    "actions": [
+      { "text": "Overview", "route": "/en-US/sobre", "fragment": "overview", "style": "link-secondary" },
+      { "text": "History", "route": "/en-US/sobre", "fragment": "history", "style": "link-secondary" },
+      { "text": "Stories", "route": "/en-US/sobre", "fragment": "stories", "style": "link-secondary" },
+      { "text": "About us", "route": "/en-US/sobre", "fragment": "about-us", "style": "link-secondary" },
+      { "text": "Privacy policy", "route": "/en-US/sobre", "fragment": "privacy", "style": "link-secondary"}
+    ]
+  },
+  "overview": {
+    "title": "Overview",
+    "texts": [
+      "Querido Diário is an open software project that collects data published in official gazettes of Brazilian municipalities. Our main goal is to provide anyone with access to the municipal information contained in these documents, all on a single platform and in a standardized way.",
+      "Brazil has 5,570 cities that publish official documents daily, without any pre-established standard between them and on different websites. An official gazette must contain all information about the management of cities: bids, public notices, hiring, and decision-making at the municipal level must go through the official gazette. Simple continuous access to this information can reveal many facts of public interest. In this sense, Querido Diário is an important tool for social control, data journalism, research, and policy-making at the local level.",
+      "Currently, the Data Science for Civic Innovation Program of Open Knowledge Brazil (OKBR) maintains the project with the support of an extensive community of partner organizations, voluntary contributors, and individual donors. If you can support the project, consider donating to our continuous financing campaign."
+    ],
+    "actions": [
+      {
+        "text": "Donate",
+        "icon": "arrow",
+        "to": "https://www.catarse.me/queridodiario-okbr",
+        "style": "btn-primary"
+      }
+    ]
+  },
+  "history": {
+    "title": "History",
+    "texts": [
+      "The Querido Diário project is the result of two similar initiatives that were born at different times.",
+      "The first idea was conceived by Open Knowledge Brazil and was called <a href='https://github.com/okfn-brasil/queriDO' target='_blank'>\"Projeto Nosso Querido Diário Oficial\", queriDO in short</a>. The initiative established a methodology for retrieving information registered in the official gazettes, based on the interests and goals of the community, which would be formed by two groups: the curators, who would define the \"targets\", establishing which subjects and official gazettes they wish to focus on; and the experts - people who are passionate about open data and who would code the data scrapers.",
+      "The second idea was inspired by the success of <a href='https://serenata.ai/en/' target'_blank'>Serenata de Amor Operation</a>, which, through <a href='https://twitter.com/RosieDaSerenata' target'_blank'>Rosie</a>, a robot that exposes suspicions of misuse of public money by federal deputies, led countless people in Brazil to ask for the same tool for their states and municipalities. As the operation focused on the National Congress, the algorithms were limited to the scope of the federal sphere. Then came the “local official gazette” side of the Serenata project, with the objective of expanding the analyzes to the municipal sphere.",
+      "In 2018, when the Serenata de Amor Operation was already within Open Knowledge Brazil, it was defined that the code base of those two projects would be one and named “Querido Diário”. Initially, the initiative would collect municipalities' official gazettes files and create mechanisms to analyze waiver of bidding, but this idea faced many technical challenges and did not have a strong engagement.",
+      "The following year, we decided to reactivate the community to focus on writing as many scrapers as possible and increasing our coverage of municipalities in Brazil. The result was fantastic, as in less than two years we went from covering less than 100 municipalities to reaching coverage of more than 2,200 municipalities.",
+      "In the second half of 2020, we got our first funding, through a call from Empatía project promoted by <a href='https://idatosabiertos.org/en/' target='_blank'>ILDA</a>. The resource was sponsored by the Inter-American Development Bank (IDB). This support allowed us to start the development of our open API and also our search platform.",
+      "Querido Diário's website was launched on July 20, 2021. It is possible for anyone to search for content using keywords, municipalities or dates."
+    ]
+  },
+  "successCases": {
+    "title": "Stories",
+    "text": "Check out news, reports and surveys that use Querido Diário to find information.",
+    "items": [
+      {
+        "title": "Retruco | 09/08/2022",
+        "text": "No Recife, investimentos na Primeira Infância não incluem os profissionais da área.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.retruco.com.br/post/no-recife-investimentos-na-primeira-inf%C3%A2ncia-n%C3%A3o-incluem-os-profissionais-da-%C3%A1rea" }]
+      },
+      {
+        "title": "Paraíba Feminina | 05/08/2022",
+        "text": "Isenção para empresas, 3ª tarifa mais cara do Nordeste e serviço precário: a situação do transporte público em João Pessoa",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://paraibafeminina.com.br/2022/08/05/isencao-para-empresas-3a-tarifa-mais-cara-do-nordeste-e-servico-precario-a-situacao-do-transporte-publico-em-joao-pessoa/" }]
+      },
+      {
+        "title": "Agência Tatu | 29/07/2022",
+        "text": "Apenas 15% das cidadanias honorárias de Maceió são de mulheres.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.agenciatatu.com.br/noticia/apenas-15-das-cidadanias-honorarias-de-maceio-sao-de-mulheres/" }]
+      },
+      {
+        "title": "Querido Diário | 21/11/2021",
+        "text": "O que os diários oficiais contam sobre a LGPD nos municípios.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "/blog/post/1/" }]
+      },
+      {
+        "title": "Correio Nagô | 07/10/2021",
+        "text": "A invisibilidade da cultura negra e periférica na capital baiana.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://correionago.com.br/a-invisibilidade-da-cultura-negra-e-periferica-na-capital-baiana/" }]
+      },
+      {
+        "title": "data_labe |  20/09/2021",
+        "text": "Por que tem tanto lixo nas ruas da Maré?",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://datalabe.org/por-que-tem-tanto-lixo-nas-ruas-da-mare/" }]
+      },
+      {
+        "title": "Portal Catarinas | 10/09/2021",
+        "text": "Prefeitura de Florianópolis abandona obra para acolhimento de mulheres e jovens em vulnerabilidade.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://catarinas.info/prefeitura-de-florianopolis-abandona-obra-para-acolhimento-de-mulheres-e-jovens-em-vulnerabilidade/" }]
+      },
+      {
+        "title": "Abaré Jornalismo | 23/08/2021",
+        "text": "Câmara mantém suspensa norma que define debate de gênero nas escolas de Manaus.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.abare.jor.br/post/debate-de-g%C3%AAnero-nas-escolas" }]
+      },
+      {
+        "title": "OKBR | 17/08/2021",
+        "text": "Medidas contraditórias e falta de direcionamento: a história do 2º colapso da saúde de Manaus contada pelo Diário Oficial.",
+        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://ok.org.br/noticia/medidas-contraditorias-e-falta-de-direcionamento-a-historia-do-2o-colapso-da-saude-de-manaus-contada-pelo-diario-oficial/ " }]
+      }
+    ]
+  },
+  "whoWeAre": {
+    "title": "About us",
+    "texts": [
+      "Open Knowledge Brazil (OKBR) is a non-profit, non-partisan civil society organization that has been operating in Brazil since 2013. We develop and encourage the use of civic technologies and open data, conduct public policy analysis and promote open knowledge to make the relationship between government and society more transparent and participatory",
+      "Created in 2018, the Civic Innovation Program emerged within the activities of the Serenata de Amor Operation, which had emerged in 2016 by independent professionals from different areas (technology, social sciences, journalism, design, etc.). The Program is responsible for the management and maintenance of the Querido Diário, Serenata de Amor Operation, Parlametria, Perfil Político, Justa and Victims of Intolerance projects."
+    ],
+    "actions": [
+      {
+        "text": "Read more:",
+        "to": "http://ok.org.br",
+        "link": "ok.org.br"
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "text": "Querido Diário aims to facilitate society's access to public data and all processing is done to ensure the integrity of the information as it was originally published by public bodies. In addition, we work to make this a safe environment that respects the privacy of your browsing. Read the terms of use and the privacy policy of this platform",
+    "actions": [
+      {
+        "text": "Read more",
+        "icon": "arrow",
+        "to": "/privacidade",
+        "style": "btn-primary"
+      }
+    ]
+  }
+}

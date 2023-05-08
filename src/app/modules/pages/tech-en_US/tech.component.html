@@ -8,7 +8,7 @@
     <app-column [gap]="36">
       <app-column [gap]="16">
         <em>
-          <a href="/en-US/tecnologia">Read this page in English</a>
+          <a href="/tecnologia">Leia esta página em Português</a>
         </em>
         <h1>{{ navigation.title }}</h1>
         <h3>{{ navigation.text }}</h3>
@@ -40,24 +40,24 @@
 <app-container
   *ngIf="documentationIndex$ | async as doc"
   theme="light"
-  id="documentacao"
+  id="documentation"
 >
   <div class="container-inner">
     <app-column [gap]="60">
-      <app-column [gap]="40">
-        <h1>{{ doc.title }}</h1>
-        <app-column>
-          <p>{{ doc.text }}</p>
-          <ng-container *ngFor="let action of doc.actions">
-            <a *ngIf="action.to" [href]="action.to" [ngClass]="action.style" target="_blank">
-              {{ action.text }}
-            </a>
-            <a *ngIf="action.route" [routerLink]="action.route" [fragment]="action.fragment" [ngClass]="action.style">
-              {{ action.text }}
-            </a>
-          </ng-container>
-        </app-column>
-      </app-column>
+      <!-- <app-column [gap]="40"> -->
+      <!--   <h1>{{ doc.title }}</h1> -->
+      <!--   <app-column> -->
+      <!--     <p>{{ doc.text }}</p> -->
+      <!--     <ng-container *ngFor="let action of doc.actions"> -->
+      <!--       <a *ngIf="action.to" [href]="action.to" [ngClass]="action.style" target="_blank"> -->
+      <!--         {{ action.text }} -->
+      <!--       </a> -->
+      <!--       <a *ngIf="action.route" [routerLink]="action.route" [fragment]="action.fragment" [ngClass]="action.style"> -->
+      <!--         {{ action.text }} -->
+      <!--       </a> -->
+      <!--     </ng-container> -->
+      <!--   </app-column> -->
+      <!-- </app-column> -->
       <app-column
         *ngFor="let documentation of documentations$ | async"
         [gap]="42"
@@ -77,34 +77,4 @@
       </app-column>
     </app-column>
   </div>
-</app-container>
-
-<app-container [gap]="34" theme="light" bg="bg-yellow-lines" id="relatorios">
-  <ng-container *ngIf="reports$ | async as reports">
-    <div class="container-inner">
-      <h1>{{ reports.title }}</h1>
-      <div
-        class="typo-inner highlight"
-        [innerHTML]="reports.text"
-        [style.color]="'#5E408F'"
-      ></div>
-    </div>
-    <app-row [gap]="17" [flex]="true">
-      <app-column
-        [style.padding]="'42px 30px'"
-        *ngFor="let item of reports.items"
-        [gap]="34"
-        theme="dark-secondary"
-        [appWidth]="382"
-        fxFill.xs
-        class="report-item"
-      >
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.text }}</p>
-        <ng-container *ngFor="let action of item.actions">
-          <a [href]="action.to" target="_blank">{{ action.text }}</a>
-        </ng-container>
-      </app-column>
-    </app-row>
-  </ng-container>
 </app-container>

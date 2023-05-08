@@ -1,0 +1,35 @@
+{
+  "title": "Technology",
+  "text": "Querido Diário is an open source project and relies on the contribution of the technology community to evolve. Learn more about the technical side of the initiative.",
+  "actions": [
+    {
+      "text": "Donate",
+      "to": "https://www.catarse.me/queridodiario-okbr",
+      "style": "link-secondary"
+    },
+    {
+      "text": "Where to ask for help?",
+      "route": "/en-US/tecnologia",
+      "fragment": "where-to-ask-for-help?",
+      "style": "link-secondary"
+    },
+    {
+      "text": "Scope",
+      "route": "/en-US/tecnologia",
+      "fragment": "scope",
+      "style": "link-secondary"
+    },
+    {
+      "text": "Architecture",
+      "route": "/en-US/tecnologia",
+      "fragment": "architecture",
+      "style": "link-secondary"
+    },
+    {
+      "text": "Code contribution",
+      "route": "/en-US/tecnologia",
+      "fragment": "code-contribution",
+      "style": "link-secondary"
+    }
+  ]
+}
