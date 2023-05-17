@@ -107,6 +107,8 @@ import { CitiesSearchResultComponent } from './modules/components/cities-search-
 import { AdvancedModalComponent } from './modules/pages/area-education/search/advanced-modal/advanced-modal.component';
 import { PassResetComponent } from './modules/pages/area-education/pass-reset/pass-reset.component';
 import { ResetPassModalComponent } from './modules/pages/area-education/header/reset-pass-modal/reset-pass-modal.component';
+import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
+import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 
 @NgModule({
   declarations: [
@@ -182,6 +184,8 @@ import { ResetPassModalComponent } from './modules/pages/area-education/header/r
     AdvancedModalComponent,
     PassResetComponent,
     ResetPassModalComponent,
+    AboutComponentEnUS,
+    TechComponentEnUS,
   ],
   imports: [
     BrowserModule,
