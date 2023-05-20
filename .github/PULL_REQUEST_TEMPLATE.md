@@ -9,6 +9,7 @@
 
 * [ ] 🐞 Correção de problema
 * [ ] ✨ Melhoria ou nova funcionalidade
+* [ ] 📰 Nova postagem no blog
 
 ## Issues relacionadas
 Issues que são relacionadas a esta Pull Request.
