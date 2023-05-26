@@ -8,18 +8,22 @@
       </div>
       <div class="button-nav next desktop" [class.second-type]="type === 'second-type'"  [class.abled]="currPosition < items.length - itemsPerPage" (click)="onClickNext()">
         <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="próximo" />
-        <img *ngIf="type === 'second-type'" src="assets/images/education/carousel-arrow-purple.png" alt="próximo" />
+        <img *ngIf="type === 'second-type' && theme === 'light'" src="assets/images/education/carousel-arrow-purple.png" alt="próximo" />
+        <img *ngIf="type === 'second-type' && theme === 'dark'" src="assets/images/education/carousel-arrow-white.png" alt="próximo" />
       </div>
+
       <div class="button-nav prev desktop" [class.second-type]="type === 'second-type'" [class.abled]="currPosition > 0" (click)="onClickPrev()">
         <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="anterior" />
-        <img *ngIf="type === 'second-type'" src="assets/images/education/carousel-arrow-purple.png" alt="anterior" />
+        <img *ngIf="type === 'second-type' && theme === 'light'" src="assets/images/education/carousel-arrow-purple.png" alt="anterior" />
+        <img *ngIf="type === 'second-type' && theme === 'dark'" src="assets/images/education/carousel-arrow-white.png" alt="anterior" />
       </div>
+
       <div *ngIf="type === 'default'" class="scroll-area" [ngStyle]="{'width': 'calc((288px * ' + items.length + ') + 24px)', transform: 'translateX(calc(-292px * '+ currPosition +'))'}">
         <div *ngFor="let item of items" class="carousel-item">
           <div class="title">{{item.title}}</div>
           <div class="date">{{item.date}}</div>
           <a [href]="item.link + '' + item.id">
-            Ler mais 
+            Ler mais
               <app-icon
               class='center'
               [icon]="{ file: 'white-arrow', height: 10, width: 10 }"
@@ -29,14 +33,14 @@
       </div>
 
       <div *ngIf="type === 'second-type'" class="scroll-area" [ngStyle]="{'width': 'calc((288px * ' + items.length + ') + 17px)', transform: 'translateX(calc(-292px * '+ currPosition +'))'}">
-        <div *ngFor="let item of items" class="success-case">
+        <div *ngFor="let item of items" [ngClass]="{'stories': true, 'dark': theme === 'dark'}">
           <span>
-            <p [style.lineHeight]="0" class="success-case-title">{{ item.title }}</p>
+            <p [style.lineHeight]="0" class="stories-title">{{ item.title }}</p>
           </span>
-          <p class="success-case-text">{{ item.text }}</p>
+          <p class="stories-text">{{ item.text }}</p>
           <span class="link" *ngFor="let action of item.actions">
             <a [target]="action.target || 'self'" [href]="action.link">{{ action.text }}</a>
-            <app-icon class="success-case-icon" [icon]="icon"></app-icon>
+            <app-icon class="stories-icon" [icon]="icon"></app-icon>
           </span>
         </div>
       </div>

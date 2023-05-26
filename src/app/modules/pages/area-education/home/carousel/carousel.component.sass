@@ -27,7 +27,7 @@
       opacity: 0.5
       cursor: not-allowed
 
-  .second-type 
+  .second-type
     bottom: rem(-76)
     right: rem(10)
     top: unset
@@ -75,7 +75,7 @@
     transform: none !important
   .carousel-items.default-items
     overflow: auto
-    
+
     .carousel-item
       margin-top: rem(8)
       border-radius: 4px 4px 24px 4px
@@ -99,26 +99,25 @@
         bottom: rem(16)
 
 .carousel-item
-  &:nth-child(1n+1) 
+  &:nth-child(1n+1)
     background-color: rgba(89, 65, 137, 1)
 
-  &:nth-child(2n+1) 
+  &:nth-child(2n+1)
     background-color: rgba(79, 57, 121, 1)
 
-  &:nth-child(3n+1) 
+  &:nth-child(3n+1)
     background-color: rgba(67, 49, 104, 1)
 
-  &:nth-child(4n+1) 
+  &:nth-child(4n+1)
     background-color: #342553
 
-  &:nth-child(5n+1) 
+  &:nth-child(5n+1)
     background-color: #2d1f49
 
-  &:first-of-type 
+  &:first-of-type
     background-color: rgba(101, 74, 156, 1)
 
-
-.success-case
+.stories
   margin-top: 10px
   background-color: #2c1338
   padding: rem(42) rem(30) rem(52)
@@ -126,12 +125,13 @@
   width: rem(288)
   position: relative
 
-  .success-case-title
+
+  .stories-title
     font-size: 14px
     color: #F3E9E9
     margin-bottom: rem(24)
 
-  .success-case-text
+  .stories-text
     font-size: 24px
     line-height: 23px
     color: #fff
@@ -145,18 +145,33 @@
     a
       color: #966BE8
 
-.success-case-area-title
-  @media only screen and (max-width: 768px) 
+
+  &.dark
+    background-color: #f3e9e9
+
+    .stories-title
+      color: #2c1338
+
+    .stories-text
+      color: #351e41
+
+    .link
+      a
+        color: #5e3f83
+
+
+.stories-area-title
+  @media only screen and (max-width: 768px)
     padding: 0
 
 
-.success-case-icon 
+.stores-icon
   margin-left: 8px
 
 .link-secondary
   color: #FF8500
-  
-  @media only screen and (max-width: 768px) 
+
+  @media only screen and (max-width: 768px)
     margin-top: 8px
 
 .pages-circle
@@ -167,7 +182,7 @@
   bottom: rem(-55)
   width: calc(100% - 120px)
   left: rem(60)
-  @media only screen and (max-width: 768px) 
+  @media only screen and (max-width: 768px)
     display: none
 
   .flex-pages

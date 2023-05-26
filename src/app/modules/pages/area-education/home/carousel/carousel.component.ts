@@ -27,11 +27,22 @@ export class CarouselEducacaoComponent implements OnChanges {
   pages: number[] = [];
   itemsPerPage = 4;
 
-  icon: IconType = {
+  iconDark: IconType = {
+    file: 'right-arrow',
+    height: 12,
+    width: 12,
+  };
+
+  iconLight: IconType = {
     file: 'right-arrow-purple',
     height: 12,
     width: 12
   }
+
+  icon = this.iconLight
+
+  @Input()
+  theme: 'dark' | 'light' | null = 'light';
 
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -40,6 +51,12 @@ export class CarouselEducacaoComponent implements OnChanges {
   }
 
   constructor() {
+  }
+
+  ngOnInit(): void {
+    if (this.theme === 'dark') {
+      this.icon = this.iconDark;
+    }
   }
 
   onClickNext() {
@@ -79,4 +96,5 @@ export class CarouselEducacaoComponent implements OnChanges {
     const pageResult = (Math.ceil(this.currPosition / this.itemsPerPage));
     return page === (pageResult === -1? 0 : pageResult)
   }
+
 }
