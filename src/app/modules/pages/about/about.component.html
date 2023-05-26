@@ -66,13 +66,26 @@
 </app-container>
 
 <app-container theme="light" id="casos" [gap]="34" *ngIf="content$ | async as content; else loading">
-  <div class="container-inner success-case-area-title">
-    <h1>{{ content.successCases.title }}</h1>
-    <p>{{ content.successCases.text }}</p>
+  <div class="container-inner stories-area-title">
+    <h1>{{ content.useCases.title }}</h1>
+    <p>{{ content.useCases.text }}</p>
   </div>
   <app-row [gap]="17" wrap="wrap" [flex]="true">
-    <div class="success-cases-overflow">
-      <edu-carousel [type]="'second-type'" [items]="content.successCases.items"></edu-carousel>
+    <div class="stories-overflow">
+      <edu-carousel [type]="'second-type'" [items]="content.useCases.items"></edu-carousel>
+    </div>
+  </app-row>
+</app-container>
+
+
+<app-container theme="dark" id="midia" [gap]="34" *ngIf="content$ | async as content; else loading">
+  <div class="container-inner stories-area-title">
+    <h1>{{ content.mediaImpact.title }}</h1>
+    <p>{{ content.mediaImpact.text }}</p>
+  </div>
+  <app-row [gap]="17" wrap="wrap" [flex]="true">
+    <div class="stories-overflow">
+      <edu-carousel [theme]="'dark'" [type]="'second-type'" [items]="content.mediaImpact.items"></edu-carousel>
     </div>
   </app-row>
 </app-container>
