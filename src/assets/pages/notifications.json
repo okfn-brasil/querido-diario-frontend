@@ -2,9 +2,15 @@
   "list": [
     {
       "title": "Novas 2 cidades!",
+      "content": "As cidades de Várzea da Palma (MG) e Taiobeiras (MG) foram adicionadas à plataforma!",
+      "updatedAt": "2023/06/07",
+      "isNew": true
+    },
+    {
+      "title": "Novas 2 cidades!",
       "content": "As cidades de Santos (SP) e Maringá (PR) foram adicionadas à plataforma!",
       "updatedAt": "2023/05/22",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Nova cidade!",
