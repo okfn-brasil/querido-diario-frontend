@@ -113,14 +113,14 @@ mat-spinner
 .dark-tertiary
   background-color: rgba(45, 33, 69, 1)
   color: #fff
-  
+
   p, a, .typo-inner
     color: #FFF
 
   .mat-h2, .mat-title, .mat-typography h2
     color: #F3E9E9
 
-  span 
+  span
     a
       color: #966BE8
 
@@ -283,7 +283,7 @@ mat-icon
     @media only screen and (max-width: 768px)
       font-size: rem(14)
       line-height: rem(19)
-    
+
     a
       border-bottom: 2px  solid $purple4
       color: $purple4
@@ -336,6 +336,44 @@ mat-icon
       line-height: rem(22)
       padding-top: rem(24)
 
+    h4
+      font-size: rem(16)
+      font-family: Lato
+      font-weight: 900
+      letter-spacing: 0
+      line-height: rem(16)
+      padding-top: rem(20)
+
+
+    ul
+      list-style: disc
+
+    ol
+      list-style: decimal
+
+    ul, ol
+      padding-left: rem(30)
+      margin: rem(25) 0
+      li
+        margin: rem(20) 0
+
+    table
+      margin: rem(25) 0
+      width: 100%
+      border-spacing: 0
+      border-collapse: collapse
+
+      th, thead td
+        font-size: rem(16)
+        background-color: $purple4
+        color: $white1
+
+      td, th
+        padding: rem(10) rem(10)
+        border: 1px solid $purple4
+
+
+
 // education-area
 
 .loading-area-edu
@@ -382,7 +420,7 @@ a.education-gazette-link
 
   .mat-form-field-prefix
     transform: translateX(rem(-5))
-  
+
 .edu-input
   position: relative
 
@@ -392,7 +430,7 @@ a.education-gazette-link
     bottom: rem(42)
     z-index: 99
     cursor: pointer
-    
+
     &:hover
       opacity: 0.8
 
@@ -479,7 +517,7 @@ a.education-gazette-link
 
 .desktop
   display: none
-  
+
 @media only screen and (min-width: 768px)
   .desktop
     display: block
@@ -551,6 +589,12 @@ a.education-gazette-link
     margin: rem(20) auto
     width: 60%
 
+  ul
+    list-style: disc
+
+  ol
+    list-style: decimal
+
   ul, ol
     padding-left: rem(30)
     margin: rem(25) 0
@@ -573,7 +617,7 @@ a.education-gazette-link
     border-spacing: 0
     border-collapse: collapse
 
-    th
+    th, thead td
       font-size: rem(16)
       background-color: $purple4
       color: $white1
