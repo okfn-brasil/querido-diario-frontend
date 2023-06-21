@@ -1,10 +1,22 @@
 {
   "list": [
     {
+      "title": "Nova cidade!",
+      "content": "A cidade de Cafelândia (PR) foi adicionada à plataforma!",
+      "updatedAt": "2023/06/21",
+      "isNew": true
+    },
+    {
+      "title": "Novas 2 cidades!",
+      "content": "As cidades de Coroatá (MA) e São José dos Basílios (MA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/06/16",
+      "isNew": true
+    },
+    {
       "title": "Novas 2 cidades!",
       "content": "As cidades de Várzea da Palma (MG) e Taiobeiras (MG) foram adicionadas à plataforma!",
       "updatedAt": "2023/06/07",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 2 cidades!",
