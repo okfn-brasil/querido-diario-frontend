@@ -9,7 +9,7 @@
   <div class="content">
     
     <div class="list">
-      <app-blog-post [postData]="post" [isFullPage]="true" *ngIf="post && post.id"></app-blog-post>
+      <app-blog-post [postData]="post" [isFullPage]="true" *ngIf="post && post.id !== undefined"></app-blog-post>
     </div>
 
     <div class="categories desktop">
