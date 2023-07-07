@@ -3,7 +3,7 @@
   "items": [
     {
       "title": "Realização",
-      "text": "O Querido Diário é um projeto realizado e desenvolvido <a href='https://www.ok.org.br/' target='_blank'> pela Open Knowledge Brasil</a>, contando com a colaboração de sua <a href='https://embaixadoras.ok.org.br/' target='_blank'>rede de pessoas Embaixadoras de Inovação Cívica</a> e da comunidade em torno da <a href='https://serenata.ai/'>Operação Serenata de Amor.</a>",
+      "text": "O Querido Diário é um projeto realizado e desenvolvido <a href='https://www.ok.org.br/' target='_blank'> pela Open Knowledge Brasil</a>, contando com a colaboração de sua <a href='https://embaixadoras.ok.org.br/' target='_blank'>rede de pessoas Embaixadoras de Inovação Cívica</a> e da comunidade em torno da <a href='https://serenata.ai/' target=\"_blank\">Operação Serenata de Amor.</a>",
       "icons": [
         {
           "file": "OK",
