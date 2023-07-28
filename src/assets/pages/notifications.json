@@ -1,22 +1,28 @@
 {
   "list": [
     {
+      "title": "Novas 2 cidades!",
+      "content": "As cidades de Barreiras (BA) e Paulínia (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/07/27",
+      "isNew": true
+    },
+    {
       "title": "Novas 14 cidades!",
       "content": "As cidades de Axixá (MA), Bacurituba (MA), Boa Vista do Gurupi (MA), Centro do Guilherme (MA), Feira Nova do Maranhão (MA), Maranhãozinho (MA), Nina Rodrigues (MA), São Vicente Ferrer (MA), Viana (MA), Zé Doca (MA), Afonso Cunha (MA), Bacuri (MA), Duque Bacelar (MA), Milagres do Maranhão (MA) foram adicionadas à plataforma!",
       "updatedAt": "2023/06/22",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Nova cidade!",
       "content": "A cidade de Cafelândia (PR) foi adicionada à plataforma!",
       "updatedAt": "2023/06/21",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 2 cidades!",
       "content": "As cidades de Coroatá (MA) e São José dos Basílios (MA) foram adicionadas à plataforma!",
       "updatedAt": "2023/06/16",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 2 cidades!",
