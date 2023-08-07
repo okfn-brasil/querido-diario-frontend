@@ -16,6 +16,23 @@
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
+    *ngIf="gazetteResponse && gazetteResponse.error"
+  >
+    <div class="container" fxLayout="column" fxLayoutGap="18px">
+      <h2>Infelizmente não foi possível realizar a sua busca no momento.</h2>
+      <p>
+        Um problema com a nossa base de documentos ou com a sua conexão impediu a conclusão da pesquisa.
+      </p>
+      <p>
+        Verifique seu acesso à internet e tente novamente, ou refaça sua busca mais tarde.
+      </p>
+    </div>
+  </section>
+
+  <section
+    class="bg-purple-2"
+    fxLayoutAlign="center"
+    fxLayout="row"
     *ngIf="gazetteResponse && gazetteResponse.total_gazettes == 0"
   >
     <div class="container" fxLayout="column" fxLayoutGap="18px">
@@ -27,7 +44,7 @@
     </div>
   </section>
 
-  <div *ngIf="gazetteResponse && gazetteResponse.total_gazettes">
+  <div *ngIf="gazetteResponse && gazetteResponse.total_gazettes > 0">
     <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
       <div class="container" fxLayout="column" fxLayoutGap="42px">
         <ng-container *ngIf="level$ | async as level">
@@ -91,7 +108,7 @@
                 <a [href]="gazette.url" target="_blank"
                   ><span class="color-purple-3">{{
                     gazette.territory_name
-                  }}                  
+                  }}
                   ({{
                     gazette.state_code
                   }})
