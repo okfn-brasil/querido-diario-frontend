@@ -86,6 +86,9 @@
           "configurations": {
             "production": {
               "browserTarget": "querido-diario:build:production"
+            },
+            "en-US": {
+              "browserTarget": "querido-diario:build:en-US"
             }
           }
         },
