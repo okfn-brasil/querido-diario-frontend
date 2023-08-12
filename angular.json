@@ -72,6 +72,9 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "en-US": {
+              "localize": ["en-US"]
             }
           }
         },
