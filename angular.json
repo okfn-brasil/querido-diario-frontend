@@ -5,6 +5,12 @@
   "projects": {
     "querido-diario": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "pt",
+        "locales": {
+          "en-US": "src/locales/messages.en-US.xlf"
+        }
+      },
       "schematics": {
         "@schematics/angular:component": {
           "style": "sass"
