@@ -31,6 +31,8 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "localize": true,
+            "i18nMissingTranslation": "error",
             "aot": true,
             "assets": [
               "src/favicon.ico",
