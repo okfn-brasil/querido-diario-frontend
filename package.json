@@ -9,7 +9,8 @@
     "heroku-postbuild": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "i18n:extract": "ng extract-i18n --output-path src/locales"
   },
   "private": true,
   "engines": {
