@@ -19,15 +19,15 @@
         [formGroup]="suggestionForm"
         (ngSubmit)="onSubmit()"
       >
-        <mat-form-field appearance="fill" class="search-input" ngDefaultControl>
+        <mat-form-field appearance="fill" ngDefaultControl>
           <mat-label>Qual é seu nome?</mat-label>
           <input matInput formControlName="name" />
         </mat-form-field>
-        <mat-form-field appearance="fill" class="city-input">
+        <mat-form-field appearance="fill">
           <mat-label>E seu e-mail?</mat-label>
           <input matInput formControlName="email_address" />
         </mat-form-field>
-        <mat-form-field appearance="fill" class="period-input">
+        <mat-form-field appearance="fill">
           <mat-label>Como podemos melhorar?</mat-label>
           <textarea rows="7" matInput formControlName="content"></textarea>
         </mat-form-field>
