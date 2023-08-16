@@ -10,7 +10,7 @@ export class BlogService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<any> {
-    return this.http.get(`/assets/pages/blog.json`).pipe(
+    return this.http.get(`assets/pages/blog.json`).pipe(
       map((data) => {
         return data;
       })
