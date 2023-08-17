@@ -3,7 +3,7 @@
   command = "ng build --prod"
 
 [[redirects]]
-  from = "/pt/*"
+  from = "/*"
   to = "/pt/index.html"
   status = 200
 
