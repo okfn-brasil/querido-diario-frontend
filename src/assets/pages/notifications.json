@@ -2,11 +2,17 @@
   "list": [
     {
       "title": "Novas 8 cidades!",
-      "content": "As cidades de Betim (MG), Canudos (BA), Mascote (BA), Salinas (MG), Votorantim (SP), Piedade (SP), Adolfo (SP) e Guaraçaí (SP) foram adicionadas à plataforma!",
-      "updatedAt": "2023/08/21",
+      "content": "As cidades de Itapetinga (BA), Santo Estevão (BA), Candeias (MG), Carmo da Cachoeira (MG), Jaboti (PR), Vera Cruz (RS), Vera Cruz (SP), São Roque (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/09/01",
       "isNew": true
     },
-        {
+    {
+      "title": "Novas 8 cidades!",
+      "content": "As cidades de Betim (MG), Canudos (BA), Mascote (BA), Salinas (MG), Votorantim (SP), Piedade (SP), Adolfo (SP) e Guaraçaí (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/08/21",
+      "isNew": false
+    },
+    {
       "title": "Novas 2 cidades!",
       "content": "As cidades de Gurupi (TO) e Santana do Araguaia (PA) foram adicionadas à plataforma!",
       "updatedAt": "2023/08/16",
