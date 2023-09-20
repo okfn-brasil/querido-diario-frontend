@@ -2,9 +2,15 @@
   "list": [
     {
       "title": "Novas 8 cidades!",
+      "content": "As cidades de Prado (BA), Teolândia (BA), Tucano (BA), Crucilândia (MG), Piranguinho (MG), Cerrito (RS), Barão de Antonina (SP) e Penápolis (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/09/20",
+      "isNew": true
+    },
+    {
+      "title": "Novas 8 cidades!",
       "content": "As cidades de Itapetinga (BA), Santo Estevão (BA), Candeias (MG), Carmo da Cachoeira (MG), Jaboti (PR), Vera Cruz (RS), Vera Cruz (SP), São Roque (SP) foram adicionadas à plataforma!",
       "updatedAt": "2023/09/01",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 8 cidades!",
