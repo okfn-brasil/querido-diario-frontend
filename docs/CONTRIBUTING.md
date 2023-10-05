@@ -1,5 +1,9 @@
 **Português (BR)** | [English (US)](/docs/CONTRIBUTING-en-US.md)
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](/docs/CONTRIBUTORS.md#pessoas-contribuidoras)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 # Contribuindo
 O Querido Diário possui um [Guia para Contribuição](https://github.com/okfn-brasil/querido-diario-comunidade/blob/main/.github/CONTRIBUTING.md#contribuindo) principal que é relevante para todos os seus repositórios. Este guia traz informações gerais sobre como interagir com o projeto, o código de conduta que você adere ao contribuir, a lista de repositórios do ecossistema e as primeiras ações que você pode tomar. Recomendamos sua leitura antes de continuar.
 

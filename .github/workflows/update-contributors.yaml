@@ -12,7 +12,7 @@ jobs:
       - uses: ./.github/actions/okfn-contributors
       - uses: EndBug/add-and-commit@v9
         with:
-          add: 'CONTRIBUTORS.md .all-contributorsrc'
+          add: '.'
           push: true
           message: 'atualiza lista de pessoas contribuidoras'
 
