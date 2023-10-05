@@ -11,8 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/okfn-contributors
-        with:
-          CONTRIBUTORS_RC: ${{ github.workspace }}/.all-contributorsrc
       - name: "Upload Artifact"
         uses: actions/upload-artifact@v3
         with:
@@ -21,3 +19,4 @@ jobs:
             ${{ github.workspace }}/CONTRIBUTORS.md
             ${{ github.workspace }}/.all-contributorsrc
           if-no-files-found: error
+
