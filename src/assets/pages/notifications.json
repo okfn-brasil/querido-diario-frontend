@@ -1,6 +1,18 @@
 {
   "list": [
     {
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de Itajubá (MG), Birigui (SP), Catanduva (SP), Jandira (SP) e Votuporanga (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/05",
+      "isNew": true
+    },
+    {
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de São Bernardo do Campo (SP), Cabrobó (PE), Rio Claro (SP), Itapevi (SP) e Bragança Paulista (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/03",
+      "isNew": false
+    },
+    {
       "title": "Novas 8 cidades!",
       "content": "As cidades de Prado (BA), Teolândia (BA), Tucano (BA), Crucilândia (MG), Piranguinho (MG), Cerrito (RS), Barão de Antonina (SP) e Penápolis (SP) foram adicionadas à plataforma!",
       "updatedAt": "2023/09/20",
