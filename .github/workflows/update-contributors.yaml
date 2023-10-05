@@ -11,12 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/okfn-contributors
-      - name: "Upload Artifact"
-        uses: actions/upload-artifact@v3
+      - uses: EndBug/add-and-commit@v9
         with:
-          name: contributors
-          path: |
-            ${{ github.workspace }}/CONTRIBUTORS.md
-            ${{ github.workspace }}/.all-contributorsrc
-          if-no-files-found: error
+          add: 'CONTRIBUTORS.md .all-contributorsrc'
+          push: true
+          message: 'atualiza lista de pessoas contribuidoras'
 

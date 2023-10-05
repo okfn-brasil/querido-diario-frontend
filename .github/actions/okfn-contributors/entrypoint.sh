@@ -7,4 +7,3 @@ all-contributors check --config $GITHUB_WORKSPACE/.all-contributorsrc \
   | sed 's/, /\n/g' \
   | xargs -I {} all-contributors add --config $GITHUB_WORKSPACE/.all-contributorsrc {} doc
 
-all-contributors generate --config $GITHUB_WORKSPACE/.all-contributorsrc
