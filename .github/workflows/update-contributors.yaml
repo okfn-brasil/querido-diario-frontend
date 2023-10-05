@@ -1,8 +1,7 @@
 on:
   workflow_dispatch:
   push:
-    branches:
-      - contributors-action
+    branches: ["main"]
 
 jobs:
   update-contributors:
