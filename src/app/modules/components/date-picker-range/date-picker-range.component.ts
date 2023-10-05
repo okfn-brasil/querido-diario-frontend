@@ -69,11 +69,11 @@ export class DatePickerRangeComponent implements OnInit {
   }
 
   getStartDate(): Moment {
-    return this.range.controls.start.value;
+    return moment(this.range.controls.start.value);
   }
 
   getEndDate(): Moment {
-    return this.range.controls.end.value;
+    return moment(this.range.controls.end.value);
   }
 
   parse(date: string): Moment | null {
