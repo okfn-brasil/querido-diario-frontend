@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - contributors-action
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    name: Atualiza CONTRIBUTORS
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/okfn-contributors
+        with:
+          CONTRIBUTORS_RC: ${{ github.workspace }}/.all-contributorsrc
+      - name: "Upload Artifact"
+        uses: actions/upload-artifact@v3
+        with:
+          name: contributors
+          path: |
+            ${{ github.workspace }}/CONTRIBUTORS.md
+            ${{ github.workspace }}/.all-contributorsrc
+          if-no-files-found: error
