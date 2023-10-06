@@ -109,6 +109,9 @@ import { PassResetComponent } from './modules/pages/area-education/pass-reset/pa
 import { ResetPassModalComponent } from './modules/pages/area-education/header/reset-pass-modal/reset-pass-modal.component';
 import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
+import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
+
+
 
 @NgModule({
   declarations: [
@@ -186,6 +189,7 @@ import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/t
     ResetPassModalComponent,
     AboutComponentEnUS,
     TechComponentEnUS,
+    PrivacyPolicyComponentEnUS,
   ],
   imports: [
     BrowserModule,
