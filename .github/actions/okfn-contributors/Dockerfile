@@ -1,11 +1,10 @@
-FROM node:20
-LABEL mantainer="nkzren"
-WORKDIR /opt/contributors
+FROM docker.io/node:20
 
-ENTRYPOINT [ "/opt/contributors/entrypoint.sh" ]
+WORKDIR /opt/contributors
 
 COPY package.json yarn.lock ./
 RUN yarn global add all-contributors-cli@6.26.1
 
 COPY entrypoint.sh entrypoint.sh
 
+ENTRYPOINT [ "/opt/contributors/entrypoint.sh" ]
