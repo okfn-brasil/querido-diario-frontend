@@ -32,7 +32,7 @@ Also, check the [Querido Diário documentation](https://docs.queridodiario.ok.or
 # Thanks
 This project is maintained by Open Knowledge Brazil and made possible thanks to the technical communities, the [Ambassadors of Civic Innovation](https://embaixadoras.ok.org.br/), volunteers and financial donors, in addition to partner universities, companies supporters and funders.
 
-Meet [who supports Querido Diário](https://queridodiario.ok.org.br/apoie#quem-apoia).
+Meet [who supports Querido Diário](https://queridodiario.ok.org.br/apoie#quem-apoia) and [all our contributors in this repository](/docs/CONTRIBUTORS.md)
 
 # Open Knowledge Brazil
 <p>

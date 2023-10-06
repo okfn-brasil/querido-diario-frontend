@@ -1,7 +1,7 @@
 **Português (BR)** | [English (US)](/docs/CONTRIBUTING-en-US.md)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
+[![Pessoas Contribuidoras](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](/docs/CONTRIBUTORS.md#pessoas-contribuidoras)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Contribuindo

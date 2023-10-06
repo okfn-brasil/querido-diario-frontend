@@ -4,8 +4,11 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
+    "docs/README.md",
+    "docs/README-en-US.md",
     "docs/CONTRIBUTORS.md",
-    "docs/CONTRIBUTING.md"
+    "docs/CONTRIBUTING.md",
+    "docs/CONTRIBUTING-en-US.md"
   ],
   "imageSize": 100,
   "commit": false,
