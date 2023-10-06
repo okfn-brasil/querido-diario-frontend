@@ -1,10 +1,22 @@
 {
   "list": [
     {
+      "title": "Novas 10 cidades!",
+      "content": "As cidades de Horizonte (CE), Itu (SP), Mogi Guaçu (SP), Salto (SP), Jaú (SP), Avaré (SP), Itapeva (SP), Campo Limpo Paulista (SP), Araçatuba (SP) e Sertãozinho (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/06",
+      "isNew": true
+    },
+    {
+      "title": "Novas 13 cidades!",
+      "content": "As cidades de Alto Alegre (SP), Araçariguama (SP), Coronel Macedo (SP), Glicério (SP), Itapirapuã Paulista (SP), Lavínia (SP), Monte Alto (SP), Parisi (SP), Patrocínio Paulista (SP), Pratânia (SP), Santa Ernestina (SP), São Manuel (SP) e Sarutaiá (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/06",
+      "isNew": false
+    },
+    {
       "title": "Novas 5 cidades!",
       "content": "As cidades de Itajubá (MG), Birigui (SP), Catanduva (SP), Jandira (SP) e Votuporanga (SP) foram adicionadas à plataforma!",
       "updatedAt": "2023/10/05",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 5 cidades!",
