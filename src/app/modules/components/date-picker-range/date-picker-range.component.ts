@@ -45,12 +45,13 @@ export class DatePickerRangeComponent implements OnInit {
     end: Moment;
   }>();
   range: FormGroup = new FormGroup({});
-
+  maxDate: Date = new Date();
   subscriptions: Subscription[] = [];
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.maxDate = new Date(this.maxDate.getFullYear(), 11, 31);
     this.subscriptions.push(
       this.route.queryParams.subscribe((params) => {
         this.range = new FormGroup({
