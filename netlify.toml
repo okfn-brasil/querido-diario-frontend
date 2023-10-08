@@ -4,11 +4,11 @@
 
 [[redirects]]
   from = "/*"
-  to = "/pt/index.html"
+  to = "/en-US/index.html"
   status = 200
-  conditions = {Language = ["pt"]}
+  conditions = {Language = ["en"]}
 
 [[redirects]]
   from = "/*"
-  to = "/en-US/index.html"
+  to = "/pt/index.html"
   status = 200
