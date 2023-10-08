@@ -30,13 +30,11 @@ import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/t
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sobre', component: AboutComponent },
-  { path: 'en-US/sobre', component: AboutComponentEnUS },
   { path: 'privacidade', component: PrivacyPolicyComponent },
   { path: 'informacoes', component: ComplaintComponent },
   { path: 'acesso', component: AccessLevelsComponent },
   { path: 'apoie', component: SupportComponent },
   { path: 'tecnologia', component: TechComponent },
-  { path: 'en-US/tecnologia', component: TechComponentEnUS },
   { path: 'sugestao', component: SuggestionComponent },
   { path: 'glossario', component: GlossaryComponent },
   { path: 'pesquisa', component: SearchComponent },
