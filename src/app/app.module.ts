@@ -189,7 +189,6 @@ import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/t
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     MatGridListModule,
     MatMenuModule,
@@ -213,6 +212,7 @@ import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/t
     IvyCarouselModule,
 
     NgxPaginationModule,
+    AppRoutingModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
