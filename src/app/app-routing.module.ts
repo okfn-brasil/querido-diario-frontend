@@ -54,6 +54,8 @@ const routes: Routes = [
   { path: 'educacao/relatorio/:id', component: ReportDetailComponent },
   { path: 'educacao/caso/:id', component: ReportDetailComponent },
   { path: 'educacao/redefinir-senha', component: PassResetComponent },
+
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
