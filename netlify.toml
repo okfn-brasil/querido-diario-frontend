@@ -2,10 +2,10 @@
   publish = "dist/querido-diario"
   command = "ng build --prod"
 
-[[redirects]]
-  from = "/en-US"
-  to = "/en-US/index.html"
-  status = 200
+#[[redirects]]
+#  from = "/en-US"
+#  to = "/en-US/index.html"
+#  status = 200
 
 [[redirects]]
   from = "/*"
