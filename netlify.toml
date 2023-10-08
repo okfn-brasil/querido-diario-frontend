@@ -4,5 +4,11 @@
 
 [[redirects]]
   from = "/*"
+  to = "/pt/index.html"
+  status = 200
+  conditions = {Language = ["pt"]}
+
+[[redirects]]
+  from = "/*"
   to = "/en-US/index.html"
   status = 200
