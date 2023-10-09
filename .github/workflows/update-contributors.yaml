@@ -9,7 +9,7 @@ jobs:
     name: Atualiza CONTRIBUTORS
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/okfn-contributors
+      - uses: ./.github/actions/contributors
       - uses: EndBug/add-and-commit@v9
         with:
           add: '.'
