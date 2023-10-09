@@ -45,7 +45,7 @@ export class DatePickerRangeComponent implements OnInit {
     end: Moment;
   }>();
   range: FormGroup = new FormGroup({});
-
+  maxDate: Date = new Date();
   subscriptions: Subscription[] = [];
 
   constructor(private route: ActivatedRoute) {}
