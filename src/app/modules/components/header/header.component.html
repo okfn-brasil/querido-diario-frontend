@@ -3,6 +3,13 @@
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
+        <ng-container *ngFor="let language of languageList">
+          <a href="/{{language.code}}/">
+            <button mat-button [attr.data-active]="localeId === language.code" class="data-[active=true]:bg-purple-700 data-[active=true]:text-white">
+              {{language.label}}
+            </button>
+          </a>
+        </ng-container>
         <a routerLink="/" #explore>Explore</a>
         <a routerLink="/tecnologia">Tecnologia</a>
         <a routerLink="/blog">Blog</a>
@@ -22,8 +29,14 @@
   </header>
 </app-row>
 
-
 <div class="suspended-menu" *ngIf="mobileMenuOpen" (click)="onClickLink()">
+  <ng-container *ngFor="let language of languageList">
+    <a href="/{{language.code}}/">
+      <button mat-button [attr.data-active]="localeId === language.code" class="text-purple-800 data-[active=true]:bg-purple-700 data-[active=true]:text-white">
+        {{language.label}}
+      </button>
+    </a>
+  </ng-container>
   <a routerLink="/" #explore><div class="link bg-white">
     Explore
   </div></a>
