@@ -1,0 +1,9 @@
+ol
+  counter-reset: list-item
+
+li::marker
+  counter-increment: list-item
+  content: counters(list-item, ".") "    "
+
+.sections-inner
+  margin-left: 45px

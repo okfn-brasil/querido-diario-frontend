@@ -25,6 +25,7 @@ import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
 import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
+import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'sobre', component: AboutComponent },
   { path: 'en-US/sobre', component: AboutComponentEnUS },
   { path: 'privacidade', component: PrivacyPolicyComponent },
+  { path: 'en-US/privacidade', component: PrivacyPolicyComponentEnUS },
   { path: 'informacoes', component: ComplaintComponent },
   { path: 'acesso', component: AccessLevelsComponent },
   { path: 'apoie', component: SupportComponent },
