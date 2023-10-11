@@ -4,14 +4,10 @@ const { HttpClient } = require('@actions/http-client');
 const { URLSearchParams } = require('url');
 
 const doGet = async (url) => {
-  const token = core.getInput("TOKEN");
-  if (!token) {
-    console.warn("NO TOKEN CONFIGURED");
-  }
   const headers = {
-    authorization: `Bearer ${token}`
+    Authorization: `Bearer ${core.getInput("TOKEN")}`
   }
-  const client = new HttpClient('client', [], headers)
+  const client = new HttpClient('client', [], { headers })
   return (await client.getJson(url)).result;
 }
 
