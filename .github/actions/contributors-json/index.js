@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const { HttpClient } = require('@actions/http-client');
-const fs = require("fs")
+const fs = require("fs/promises");
 
 const { URLSearchParams } = require('url');
 
@@ -27,8 +27,8 @@ const getUser = async (user, query) => {
   return await doGet(`https://api.github.com/users/${user}?${new URLSearchParams(query)}`);
 }
 
-const generateOutput = (payload) => {
-  fs.writeFile("contributors.json", payload)
+const generateOutput = async (payload) => {
+  await fs.writeFile("contributors.json", payload)
 }
 
 (async () => {
