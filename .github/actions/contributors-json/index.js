@@ -19,7 +19,17 @@ const getRepoContributors = async (owner, repo, query) => {
 
 const listOrgRepos = async (org, query) => {
   console.info(`Getting repos from ${org}`);
-  return await doGet(`https://api.github.com/orgs/${org}/repos?${new URLSearchParams(query)}`);
+  const result = [];
+  const paginate = async (page) => {
+    const next = await doGet(`https://api.github.com/orgs/${org}/repos?${new URLSearchParams({...query, page})}`);
+    result.push(...next);
+    if (next.length || page > 10) { // page > 10 as safeguard
+      await paginate(page + 1);
+    }
+    return result;
+  }
+
+  return await paginate(1);
 }
 
 const getUser = async (user, query) => {
@@ -33,9 +43,9 @@ const generateOutput = async (payload) => {
 
 (async () => {
   const owner = 'okfn-brasil';
-
   const repoNames = (await listOrgRepos(owner, { per_page: 100, type: 'public' }))
     .filter(repo => !repo.archived)
+    .filter(repo => repo.name.includes("querido-diario"))
     .map(repo => repo.name);
 
   const contribMap = {};
