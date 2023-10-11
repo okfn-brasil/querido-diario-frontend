@@ -14,11 +14,8 @@ jobs:
         with:
           node-version: 16.2.0
       - run: yarn add @actions/core @actions/http-client
-      - run: echo $BANANA
-        env:
-          BANANA: ${{ secrets.BANANA }}
       - uses: ./.github/actions/contributors-json
-        env:
+        with:
           PRIVATE_TOKEN: ${{ secrets.PRIVATE_TOKEN }}
       - uses: actions/upload-artifact@v3
         with:
