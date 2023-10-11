@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const { HttpClient } = require('@actions/http-client');
+const fs = require("fs")
 
 const { URLSearchParams } = require('url');
 
@@ -27,7 +28,7 @@ const getUser = async (user, query) => {
 }
 
 const generateOutput = (payload) => {
-  core.setOutput("contributors-json", payload)
+  fs.writeFile("contributors.json", payload)
 }
 
 (async () => {
