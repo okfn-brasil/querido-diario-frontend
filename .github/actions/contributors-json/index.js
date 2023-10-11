@@ -35,6 +35,7 @@ const generateOutput = async (payload) => {
   const owner = 'okfn-brasil';
 
   const repoNames = (await listOrgRepos(owner, { per_page: 100, type: 'public' }))
+    .filter(repo => !repo.archived)
     .map(repo => repo.name);
 
   const contribMap = {};
