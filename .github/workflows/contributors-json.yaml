@@ -16,7 +16,7 @@ jobs:
       - run: yarn add @actions/core @actions/http-client
       - uses: ./.github/actions/contributors-json
         with:
-          PRIVATE_TOKEN: ${{ secrets.PRIVATE_TOKEN }}
+          PRIVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v3
         with:
           name: contributors-json
