@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   hideMenu = false;
   languageList = [
     { code: 'pt', label: 'Português' },
-    { code: 'en-US', label: 'English (US)' }
+    { code: 'en', label: 'English (US)' }
   ];
 
   constructor(
