@@ -8,7 +8,7 @@
       "i18n": {
         "sourceLocale": "pt",
         "locales": {
-          "en-US": "src/locales/messages.en-US.xlf"
+          "en": "src/locales/messages.en.xlf"
         }
       },
       "schematics": {
@@ -73,8 +73,8 @@
                 }
               ]
             },
-            "en-US": {
-              "localize": ["en-US"]
+            "en": {
+              "localize": ["en"]
             }
           }
         },
@@ -87,8 +87,8 @@
             "production": {
               "browserTarget": "querido-diario:build:production"
             },
-            "en-US": {
-              "browserTarget": "querido-diario:build:en-US"
+            "en": {
+              "browserTarget": "querido-diario:build:en"
             }
           }
         },
