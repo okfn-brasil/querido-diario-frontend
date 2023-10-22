@@ -64,7 +64,6 @@ export class SearchEducationComponent implements OnInit {
         post_tags: "</b>",
       } as GazetteFilters;
       if(Object.keys(Object.keys(this.filters).filter(key => !!this.filters[key])).length > 1) {
-        this.isLoading = true;
         this.onChangeFilters(this.filters);
       }
     }).unsubscribe();
