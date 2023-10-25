@@ -59,16 +59,25 @@
                   class="typo-inner highlight"
                   [innerHTML]="supporter.text"
                 ></div>
-                <app-row wrap="wrap" [gap]="32">
-                  <ng-container *ngFor="let icon of supporter.icons">
-                    <app-icon [icon]="icon" class="supporter-icon"></app-icon>
+                <ng-container *ngIf="supporter.icons">
+                  <app-row wrap="wrap" [gap]="32">
+                    <ng-container *ngFor="let icon of supporter.icons">
+                      <app-icon [icon]="icon" class="supporter-icon"></app-icon>
+                    </ng-container>
+                  </app-row>
+                </ng-container>
+                <ng-container *ngIf="supporter.items">
+                  <app-row wrap="wrap" [gap]="22" >
+                    <p *ngFor="let name of supporter.items" class="support-item">{{ name }}</p>
+                  </app-row>
+                </ng-container>
+                <ng-container *ngIf="supporter.repo">
+                  <ng-container *ngIf="contributors$ | async as contributors; else loading">
+                    <app-row wrap="wrap" [gap]="22" >
+                      <p *ngFor="let name of contributors[supporter.repo]" class="support-item">{{ name }}</p>
+                    </app-row>
                   </ng-container>
-                </app-row>
-                <app-row wrap="wrap" [gap]="22" >
-                  <ng-container *ngFor="let list of supporter.items">
-                    <p *ngFor="let name of list" class="support-item">{{ name }}</p>
-                  </ng-container>
-                </app-row>
+                </ng-container>
               </app-column>
             </ng-container>
           </app-column>
