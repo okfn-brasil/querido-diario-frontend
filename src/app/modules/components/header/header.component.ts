@@ -1,4 +1,5 @@
 import { Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild } from '@angular/core';
+import { Location } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/interfaces/account';
@@ -31,6 +32,7 @@ export class HeaderComponent implements OnInit {
     private contentService: ContentService,
     private userService: UserService,
     private router: Router,
+    private location: Location,
     @Inject(LOCALE_ID) public localeId: string
   ) {}
 
@@ -100,6 +102,8 @@ export class HeaderComponent implements OnInit {
   }
 
   switchLanguage(event: MouseEvent): void {
+    //console.log('location', this.location);    
+
     const { dataset } : { dataset: DOMStringMap }  = (event.currentTarget as HTMLElement);
     console.log('switchLanguage.dataset', dataset);
 
@@ -108,6 +112,8 @@ export class HeaderComponent implements OnInit {
 
     console.log('switchLanguage.router', this.router);
     console.log('switchLanguage.router.url', this.router.url);
-    this.router.navigate([languageCode, this.router.url]);
+    //this.router.navigate([languageCode, this.router.url]);
+
+    this.location.go(languageCode || '');
    }
 }
