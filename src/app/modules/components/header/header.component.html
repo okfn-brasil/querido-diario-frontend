@@ -1,15 +1,11 @@
 <app-row class="row-header">
   <header fxLayout="row">
     <div class="container">
-      <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
+      <a routerLink="/">
+        <mat-icon svgIcon="logo" class="logo"></mat-icon>
+      </a>
+
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
-        <ng-container *ngFor="let language of languageList">
-          <a href="/{{language.code}}/">
-            <button mat-button [attr.data-active]="localeId === language.code" class="data-[active=true]:bg-purple-700 data-[active=true]:text-white">
-              {{language.label}}
-            </button>
-          </a>
-        </ng-container>
         <a routerLink="/" #explore>Explore</a>
         <a routerLink="/tecnologia">Tecnologia</a>
         <a routerLink="/blog">Blog</a>
@@ -19,6 +15,19 @@
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
         <button routerLink="/apoie" class="btn">Apoie</button>
+
+        <a>
+          <button mat-icon-button [matMenuTriggerFor]="languageSwitcher" aria-label="Seletor de idioma">
+            <mat-icon>language</mat-icon>
+          </button>
+          <mat-menu #languageSwitcher="matMenu" xPosition="before">
+            <ng-container *ngFor="let language of languageList">
+              <button mat-menu-item [attr.data-language-code]="language.code" (click)="switchLanguage($event)" class="bg-red-500">
+                <span class="bg-green-500">{{language.label}}</span>
+              </button>
+            </ng-container>
+          </mat-menu>
+        </a>
       </nav>
       <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
         <mat-icon svgIcon="bars" class="bars"></mat-icon>
@@ -30,30 +39,36 @@
 </app-row>
 
 <div class="suspended-menu" *ngIf="mobileMenuOpen" (click)="onClickLink()">
-  <ng-container *ngFor="let language of languageList">
-    <a href="/{{language.code}}/">
-      <button mat-button [attr.data-active]="localeId === language.code" class="text-purple-800 data-[active=true]:bg-purple-700 data-[active=true]:text-white">
-        {{language.label}}
-      </button>
-    </a>
-  </ng-container>
-  <a routerLink="/" #explore><div class="link bg-white">
-    Explore
-  </div></a>
-  <a routerLink="/tecnologia"><div class="link bg-white">
-    Tecnologia 
-  </div></a>
-  <a routerLink="/blog"><div class="link bg-white">
-    Blog
-  </div></a>
-  <a routerLink="/sobre"><div class="link bg-white">
-    Sobre 
-  </div></a>
-  <a routerLink="/apoie"><div class="link bg-orange">
+ <a routerLink="/" #explore>
+    <div class="link bg-white">
+      Explore
+    </div>
+  </a>
+  <a routerLink="/tecnologia">
+    <div class="link bg-white">
+      Tecnologia 
+    </div>
+  </a>
+  <a routerLink="/blog">
+    <div class="link bg-white">
+      Blog
+    </div>
+  </a>
+  <a routerLink="/sobre">
+    <div class="link bg-white">
+      Sobre 
+    </div>
+  </a>
+  <a routerLink="/apoie">
+    <div class="link bg-orange">
     Apoie
-  </div></a>
+    </div>
+  </a>
 
-  <a routerLink="/educacao/"><div class="link divider bg-purple">Tecnologias na Educação</div></a>
+  <a routerLink="/educacao/">
+    <div class="link divider bg-purple">Tecnologias na Educação</div>
+  </a>
+
   <div *ngIf="userData.full_name" class="user-name link">
     Olá, {{userData.full_name.split(' ')[0]}}
   </div>
@@ -70,10 +85,32 @@
   <!-- <a><div class="link bg-purple"> -->
   <!--   Estudos de caso -->
   <!-- </div></a> -->
-  <a routerLink="/educacao/busca"><div class="link bg-purple">
+
+  <a routerLink="/educacao/busca">
+    <div class="link bg-purple">
     Busca 
-  </div></a>
-  <a routerLink="/educacao/sobre"><div class="link bg-purple">
-    Sobre 
-  </div></a>
+    </div>
+  </a>
+  <a routerLink="/educacao/sobre">
+    <div class="link bg-purple">
+      Sobre 
+    </div>
+  </a>
+
+  <a (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
+    <div class="link bg-white">
+      <button mat-icon-button [matMenuTriggerFor]="languageSwitcher" aria-label="Seletor de idioma">
+        <mat-icon>language</mat-icon>
+        Language
+      </button>
+      <mat-menu #languageSwitcher="matMenu" xPosition="before">
+        <button mat-menu-item>
+          <span>Português (BR)</span>
+        </button>
+        <button mat-menu-item>
+          <span>English (US)</span>
+        </button>
+      </mat-menu>
+    </div>
+  </a>
 </div>
