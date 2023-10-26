@@ -114,6 +114,6 @@ export class HeaderComponent implements OnInit {
     console.log('switchLanguage.router.url', this.router.url);
     //this.router.navigate([languageCode]);
 
-    this.location.replaceState(languageCode || '');
+    this.location.replaceState(`/${languageCode}` || '');
    }
 }
