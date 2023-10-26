@@ -1,10 +1,40 @@
 {
   "list": [
     {
+      "title": "Novas 9 cidades!",
+      "content": "As cidades de Cachoeira do Sul (RS), Januária (MG), Monte Mor (SP), Itamaraju (BA), Botucatu (SP), Ourinhos (SP), Sátiro Dias (BA), Tapiramutá (BA) e Tamboara (PR) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/24",
+      "isNew": true
+    },
+    {
+      "title": "Novas 6 cidades!",
+      "content": "As cidades de Andradina (SP), Dracena (SP), Cristópolis (BA), Presidente Epitácio (SP), Itápolis (SP) e São Pedro (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/23",
+      "isNew": false
+    },
+    {
+      "title": "Novas 2 cidades!",
+      "content": "As cidades de Santa Cruz Cabrália (BA) e Sento Sé (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/18",
+      "isNew": false
+    },
+    {
+      "title": "Novas 3 cidades!",
+      "content": "As cidades de Alcobaça (BA), Banzaê (BA) e Brotas de Macaúbas (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/17",
+      "isNew": false
+    },
+    {
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de Irará (BA), Ituaçu (BA), Laje (BA), Macajuba (BA) e Mucuri (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/16",
+      "isNew": false
+    },
+    {
       "title": "Novas 10 cidades!",
       "content": "As cidades de Horizonte (CE), Itu (SP), Mogi Guaçu (SP), Salto (SP), Jaú (SP), Avaré (SP), Itapeva (SP), Campo Limpo Paulista (SP), Araçatuba (SP) e Sertãozinho (SP) foram adicionadas à plataforma!",
       "updatedAt": "2023/10/06",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 13 cidades!",

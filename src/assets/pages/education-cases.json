@@ -1,6 +1,11 @@
 {
   "cases": [
     {
+      "title": "Caso #03 | 24/10/2023",
+      "text": "Internet patrocinada em Salvador (BA)",
+      "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documents/education/cases/caso-03.pdf" }]
+    },
+    {
       "title": "Caso #02 | 10/10/2023",
       "text": "Internet patrocinada em Recife (PE)",
       "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documents/education/cases/caso-02.pdf" }]
