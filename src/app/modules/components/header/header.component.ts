@@ -98,4 +98,16 @@ export class HeaderComponent implements OnInit {
       },
     });
   }
+
+  switchLanguage(event: MouseEvent): void {
+    const { dataset } : { dataset: DOMStringMap }  = (event.currentTarget as HTMLElement);
+    console.log('switchLanguage.dataset', dataset);
+
+    const { languageCode } = dataset;
+    console.log('switchLanguage.languageCode', languageCode);
+
+    console.log('switchLanguage.router', this.router);
+    console.log('switchLanguage.router.url', this.router.url);
+    this.router.navigate([languageCode, this.router.url]);
+   }
 }
