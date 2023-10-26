@@ -1,0 +1,88 @@
+{
+  "title": "Terms of use and privacy policy",
+  "sections": [
+    {
+      "title": "Terms of use",
+      "texts": [
+        "The Querido Diário (QD) platform was built by Open Knowledge Brazil (OKBR) to facilitate the search for information published in the official gazettes of Brazilian municipalities. The information resulting from the searches is not official and is a mere reproduction of content published by city halls in their respective official gazettes. Access is free and there is no registration requirement."
+      ],
+      "subsections": [
+        {
+          "title": "How the platform works",
+          "texts": [
+            "In summary, the technology behind QD works as follows: on a daily basis, robots scan official gazette publishing websites that have already been <a target=\"_blank\" href=\"https://queridodiario.ok.org.br/cidades-disponiveis\">integrated into the platform</a>. This tool was built according to best practices in software development, so as not to overload public websites with excessive requests.",
+            "If new content is available, the information is collected in its raw form (PDF, for example), the documents are stored and their content is extracted and converted to TXT format (pure text). The content is then indexed and stored on a cloud server managed by OKBR. In addition to the possibility of using the search interface, QD also provides an API (Application Programming Interface) for developers who intend to reuse the content in another way (see specific section below for API's terms of use).",
+            "<a target=\"_blank\" href=\"https://queridodiario.ok.org.br/tecnologia-en_US\">In this section</a>, you can learn more about technical details related to the platform's architecture. All code is openly <a target=\"_blank\" href=\"https://github.com/orgs/okfn-brasil/repositories?language=&q=querido-diario&type=all\">available in public repositories on GitHub</a> and, therefore, can be audited by anyone.",
+            "In addition to the main search page, QD has a specific page for publications related to <a target=\"_blank\" href=\"https://queridodiario.ok.org.br/educacao\">Technologies in Education</a>; this tool uses the same database of official gazettes described above, but with some specificities: through automation, it identifies and makes available only results related to the area of Education. Furthermore, publication texts can be filtered through searches with keywords related to a subtheme (such as “Accessibility”, “Connectivity”, “Training and learning”, “Management”, “Infrastructure and Devices” and “Robotics”). Finally, the relevance scores of the identified excerpts are reordered so that the most relevant results for that subtopic are prioritized.",
+            "In addition to the possibility of filtering, the <a target=\"_blank\" href=\"https://queridodiario.ok.org.br/educacao\">Technologies in Education</a> tool allows account creation to register alerts to monitor daily search results in new publications integrated into the database. However, to preserve the integrity of this infrastructure, some precautions are necessary, such as maintaining a reasonable volume of registered alerts. If any abuse is detected that harms the functioning of the platform, we may take necessary measures to suspend this excessive use.",
+            "Querido Diário does not carry out any operation to alter the original content of the information. However, the operation of scraping and extracting pure text can cause formatting errors in content that was arranged in tables or images, or problems with accentuation, orthography, etc. Likewise, the update, which is intended to be daily, may also suffer interruptions or technical failures, and the content of a given municipality may have gaps or unavailability for an indefinite period, until the failure can be resolved.",
+            "For this reason, we reinforce that the platform's goal is to facilitate the search for specific keywords or periods and the original document is also offered in the search results for user validation. Furthermore, if you wish to directly access the official gazette of a given municipality, you can consult the link in the <a target=\"_blank\" href=\"https://censo.ok.org.br\">Querido Diário Census</a> database, so that the interested person can locate the original official information."
+          ]
+        },
+        {
+          "title": "Who owns the information provided by Querido Diário?",
+          "texts": [
+            "The information in official gazettes is considered public and, therefore, it is the right of anyone to access, reuse and redistribute it for any purpose — under the terms of the Access to Information Law - AIL (Federal Law 12527/2011) and related standards. In the case of QD, the operations modify the format of public information to expand and democratize its access, since the original form does not comply with the machine-readable format requirements specified by the legislation. There is no type of partnership between QD and public bodies responsible for their respective official gazettes and the veracity of the information depends solely and exclusively on the public body that originally published it."
+          ]
+        },
+        {
+          "title": "What can you do with the information obtained through Querido Diário?",
+          "texts": [
+            "As they are public in nature, the information in official gazettes is made available under free licenses, whether declared or not by the public bodies responsible for their publication (article 4, clause IV and article 29 of the Brazilian AIL). This means that they can be freely accessed, reused and redistributed by anyone and for any lawful purpose. All other information produced by the OKBR team and published on the platform, such as reports, analyses and newsletters, are made available under a Creative Commons CC-BY license, which means that they can be freely reused as long as the source is cited, unless otherwise indicated on the material in question.",
+            "We emphasize that any decisions that people using such information — whether from official gazettes or analyses produced by OKBR — adopt based on its use are their exclusive responsibility. Finally, we emphasize that the platform must only be used to consult public data, respecting the purpose for which such data is made available, that is, access to information and social control over public acts.",
+            "The platform's architecture and accessed data sources may be modified at any time and by OKBR's preference."
+          ]
+        },
+        {
+          "title": "What should you do if you identify information that you consider incorrect or if you feel harmed by personal information that was published?",
+          "texts": [
+            "All information disclosed by official Brazilian gazettes, including personal data, is public. Querido Diário simply reproduces the same data published by public entities in their official gazettes in a more accessible and friendly format. Therefore, as mentioned previously, OKBR is not responsible for the veracity, integrity or quality of this information, as well as for any violations deriving from the publication of personal information. By disclosing only the necessary data according to the specific purpose of publication in the official gazettes, OKBR also does not see itself under a legal obligation to remove any data from the platform.",
+            "If there is any question regarding the veracity, integrity or quality of any information, we recommend that data subjects or other interested parties contact directly the entity responsible for the original publication, through their oversight authorities (such as the ombudsman or the office of the comptroller general) or the person responsible for processing the data in that institution, under article 23, clause III of the Brazilian General Data Protection Law - GDPL (Federal Law 13709/2018)."
+          ]
+        },
+        {
+          "title": "What can you do with the API?",
+          "texts": [
+            "Querido Diário's API aims to make available the pure text extracted from the official gazettes and processing of the original files. This format is dedicated to people who develop software or who have sufficient technical knowledge to make requests based on parameters (“endpoints”) pre-defined by OKBR, such as period, keyword or city. <a target=\"_blank\" href=\"https://queridodiario.ok.org.br/api/docs\">API documentation</a> is available in the Swagger tool.",
+            "This data access format serves the purpose of providing more efficient use of the data made available by QD than through the search platform. The API use is recommended for those who need to perform automatic queries, for example. However, to preserve the integrity of the infrastructure that provides the data, some precautions are necessary, such as keeping the rate of requests made at the lowest possible level. If any abuse is detected that harms or prevents the use of the platform or API by other users, we may take necessary measures to suspend this abusive use."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Privacy Policy",
+      "subsections": [
+        {
+          "title": "Regarding access to information made available by the platform",
+          "texts": [
+            "The use of the search platform on the QD homepage, as well as the information collected and the analysis reports available, is free and there is no requirement for any type of registration to do so. This condition is possible thanks to the support, both financial and through voluntary work, from organizations, companies and individuals who contribute to the project (<a target=\"_blank\" href=\"https://queridodiario.ok.org.br/apoie\">see who they are here</a>), and with Open Knowledge Brazil (OKBR) institutionally.",
+            "Technologies in Education page offers the possibility of registering to create an account, which collects the following data: full name, email address, occupation area, state and city of residence, as well as password access and, optionally, additional email to receive alerts. This data is collected to create and maintain accounts, allowing the configuration of alerts to monitor search results, in addition to generating statistical data on the demographic profile of users. Such data is not shared with third parties and is stored in a secure environment for the period necessary for the purposes described to be met, or until its deletion is requested by email at contato AT serenata.ai.",
+            "Under no circumstances does this platform sell, share or donate users personal information to third parties."
+          ]
+        },
+        {
+          "title": "Regarding processing the information provided",
+          "texts": [
+            "It is possible that, when processing public data, the platform ends up collecting and republishing personal data from any people engaged in public activity or interacting with public entities, which were originally disclosed by these entities in their respective official gazettes. Examples of this data are: names, CPFs [the Brazilian Individual Taxpayer Registry], addresses, ages, etc.",
+            "In this case, OKBR assumes in good faith that these data were evaluated by the public body and were presumably made available by the public administration in compliance with the legislation. Then, OKBR acts on the premise that this type of information is of public interest and, therefore, the legal basis for this processing is to meet a legitimate interest, which is the right to social control of public administration (article 7, clause IX of GDPL and article 3, clause II, III and V and article 31, paragraph 3rd, clause IV and V and paragraph 4th of AIL). As a consequence of this, OKBR does not need authorization to process such data."
+          ]
+        },
+        {
+          "title": "Regarding the purpose of processing the information made available",
+          "texts": [
+            "As all public information republished by QD in an open format, any personal information that has been made available by public bodies is processed by OKBR with the sole purpose of promoting free and user-friendly access to this public information. We do not edit or alter the content of any original information nor are we responsible for irregular uses that third parties may make of this information.",
+            "New content is updated daily — unless there is a technical failure in the data collection — and stored for an indefinite period of time, since the objective of this storage is to make the historical series of publications in the official gazettes available as long as this collection is possible and viable.",
+            "The comptroller of the data available in QD is OKBR. Any questions, requests and suggestions can be sent to the email contato AT serenata.ai."
+          ]
+        },
+        {
+          "title": "Regarding access statistics",
+          "texts": [
+            "In order to collect access statistics, to know how many visitors use the platform and how they interact with its internal content, QD has the Google Analytics tool, which mainly uses first-party cookies to record such data. <a target=\"_blank\" href=\"https://support.google.com/analytics/answer/6004245?sjid=1324317541927352894-SA&hl=en#zippy=%2Ccookies-e-identificadores-do-google-analytics\">This page</a> presents the tool's privacy policy, as well as how it operates and how you can protect your data when accessing websites that use it. General and aggregated information about the platform's statistics may be published institutionally by OKBR and/or shared with partners, supporters and sponsors."
+          ]
+        }
+      ]
+    }
+  ],
+  "footnote": "This is version 2.1 of the “Terms of Use” and “Privacy Policy” documents, which were last updated on 10/10/2023. The documents can always be consulted through this page and new updates may occur at any time and without prior notice, and it is up to those who use the platform to consult them."
+}

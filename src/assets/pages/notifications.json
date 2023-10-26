@@ -1,10 +1,94 @@
 {
   "list": [
     {
+      "title": "Novas 9 cidades!",
+      "content": "As cidades de Cachoeira do Sul (RS), Januária (MG), Monte Mor (SP), Itamaraju (BA), Botucatu (SP), Ourinhos (SP), Sátiro Dias (BA), Tapiramutá (BA) e Tamboara (PR) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/24",
+      "isNew": true
+    },
+    {
+      "title": "Novas 6 cidades!",
+      "content": "As cidades de Andradina (SP), Dracena (SP), Cristópolis (BA), Presidente Epitácio (SP), Itápolis (SP) e São Pedro (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/23",
+      "isNew": false
+    },
+    {
+      "title": "Novas 2 cidades!",
+      "content": "As cidades de Santa Cruz Cabrália (BA) e Sento Sé (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/18",
+      "isNew": false
+    },
+    {
+      "title": "Novas 3 cidades!",
+      "content": "As cidades de Alcobaça (BA), Banzaê (BA) e Brotas de Macaúbas (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/17",
+      "isNew": false
+    },
+    {
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de Irará (BA), Ituaçu (BA), Laje (BA), Macajuba (BA) e Mucuri (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/16",
+      "isNew": false
+    },
+    {
+      "title": "Novas 10 cidades!",
+      "content": "As cidades de Horizonte (CE), Itu (SP), Mogi Guaçu (SP), Salto (SP), Jaú (SP), Avaré (SP), Itapeva (SP), Campo Limpo Paulista (SP), Araçatuba (SP) e Sertãozinho (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/06",
+      "isNew": false
+    },
+    {
+      "title": "Novas 13 cidades!",
+      "content": "As cidades de Alto Alegre (SP), Araçariguama (SP), Coronel Macedo (SP), Glicério (SP), Itapirapuã Paulista (SP), Lavínia (SP), Monte Alto (SP), Parisi (SP), Patrocínio Paulista (SP), Pratânia (SP), Santa Ernestina (SP), São Manuel (SP) e Sarutaiá (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/06",
+      "isNew": false
+    },
+    {
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de Itajubá (MG), Birigui (SP), Catanduva (SP), Jandira (SP) e Votuporanga (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/05",
+      "isNew": false
+    },
+    {
+      "title": "Novas 5 cidades!",
+      "content": "As cidades de São Bernardo do Campo (SP), Cabrobó (PE), Rio Claro (SP), Itapevi (SP) e Bragança Paulista (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/03",
+      "isNew": false
+    },
+    {
+      "title": "Novas 8 cidades!",
+      "content": "As cidades de Prado (BA), Teolândia (BA), Tucano (BA), Crucilândia (MG), Piranguinho (MG), Cerrito (RS), Barão de Antonina (SP) e Penápolis (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/09/20",
+      "isNew": true
+    },
+    {
+      "title": "Novas 8 cidades!",
+      "content": "As cidades de Itapetinga (BA), Santo Estevão (BA), Candeias (MG), Carmo da Cachoeira (MG), Jaboti (PR), Vera Cruz (RS), Vera Cruz (SP), São Roque (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/09/01",
+      "isNew": false
+    },
+    {
+      "title": "Novas 8 cidades!",
+      "content": "As cidades de Betim (MG), Canudos (BA), Mascote (BA), Salinas (MG), Votorantim (SP), Piedade (SP), Adolfo (SP) e Guaraçaí (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/08/21",
+      "isNew": false
+    },
+    {
+      "title": "Novas 2 cidades!",
+      "content": "As cidades de Gurupi (TO) e Santana do Araguaia (PA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/08/16",
+      "isNew": false
+    },
+    {
+      "title": "Novas 2 cidades!",
+      "content": "As cidades de Osasco (SP) e Nossa Senhora do Socorro (SE) foram adicionadas à plataforma!",
+      "updatedAt": "2023/08/10",
+      "isNew": false
+    },
+    {
       "title": "Novas 2 cidades!",
       "content": "As cidades de Barreiras (BA) e Paulínia (SP) foram adicionadas à plataforma!",
       "updatedAt": "2023/07/27",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 14 cidades!",

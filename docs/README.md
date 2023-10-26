@@ -42,7 +42,7 @@ npm install --global yarn
 yarn
 ```
 
-> Para mais detalhes ou informações sobre a configuração em outros sistemas operacionais veja em ["como configurar o ambiente de desenvolvimento"](/docs/CONTRIBUTING.md#como-configurar-o-ambiente-de-desenvolvimento).
+Para mais detalhes ou informações sobre a configuração em outros sistemas operacionais veja em ["como configurar o ambiente de desenvolvimento"](/docs/CONTRIBUTING.md#como-configurar-o-ambiente-de-desenvolvimento).
 
 # Como executar
 1. Com o terminal aberto no diretório raíz do repositório, o projeto pode ser servido localmente com o comando:

@@ -9,12 +9,12 @@
     "subtitle": "Análises realizadas pela equipe da Open Knowledge Brasil com base nas informações publicadas nos diários oficiais"
   },
   "cases": {
-    "title": "Estudos de caso",
-    "subtitle": "Relatos breves sobre práticas inspiradoras que identificamos nos diários oficiais e complementamos com mais informações. "
+    "title": "Casos",
+    "subtitle": "Relatos breves sobre a adoção de tecnologias educacionais que identificamos nos diários oficiais dos municípios e complementamos com mais informações para gerar debate e reflexões"
   },
   "catalog": {
     "title": "Catálogo",
-    "subtitle": "Seleção de instrumentos de gestão, como contratos e editais, para facilitar a vida de quem precisa de referências ",
+    "subtitle": "Seleção de instrumentos de gestão, como contratos e editais, para facilitar a vida de quem precisa de referências",
     "button": "Acesse"
   },
   "about": {
@@ -39,7 +39,7 @@
         { "file": "logo-jurema", "to": "https://www.jurema.la/", "target": "_blank", "height": 18, "width": 80 },
         { "file": "logo-digitalocean", "to": "https://www.digitalocean.com/", "target": "_blank", "height": 18, "width": 110},
         { "file": "logo-fiocruz", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
-        { "file": "logo-icict", "to": "hhttps://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
+        { "file": "logo-icict", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
         { "file": "logo-pcdas", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 72 },
         { "file": "assets/images/imaginable.png", "isPng": true, "to": "https://www.imaginablefutures.com/", "target": "_blank", "height": 30, "width": 106 },
         { "file": "assets/images/lemann.png", "isPng": true, "to": "https://fundacaolemann.org.br/", "target": "_blank", "height": 30, "width": 106 }

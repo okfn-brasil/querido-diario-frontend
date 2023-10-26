@@ -1,40 +1,19 @@
 {
   "cases": [
     {
-      "title": "Caso U",
-      "date": "DD / MM / AAAA",
-      "id": 1,
-      "content": "case-u"
+      "title": "Caso #03 | 24/10/2023",
+      "text": "Internet patrocinada em Salvador (BA)",
+      "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documents/education/cases/caso-03.pdf" }]
     },
     {
-      "title": "Caso X",
-      "date": "DD / MM / AAAA",
-      "id": 2,
-      "content": "case-u"
+      "title": "Caso #02 | 10/10/2023",
+      "text": "Internet patrocinada em Recife (PE)",
+      "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documents/education/cases/caso-02.pdf" }]
     },
     {
-      "title": "Caso Y",
-      "date": "DD / MM / AAAA",
-      "id": 3,
-      "content": "case-u"
-    },
-    {
-      "title": "Caso Z",
-      "date": "DD / MM / AAAA",
-      "id": 4,
-      "content": "case-u"
-    },
-    {
-      "title": "Caso A",
-      "date": "DD / MM / AAAA",
-      "id": 5,
-      "content": "case-u"
-    },
-    {
-      "title": "Caso B",
-      "date": "DD / MM / AAAA",
-      "id": 6,
-      "content": "case-u"
+      "title": "Caso #01 | 20/09/2023",
+      "text": "Internet patrocinada em Florianópolis (SC)",
+      "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documents/education/cases/caso-01.pdf" }]
     }
   ]
 }

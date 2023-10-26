@@ -44,6 +44,7 @@ export class SearchFormComponent implements OnInit {
   since: string = '';
   until: string = '';
   query: string = '';
+  sort_by: string = '';
 
   subscriptions: Subscription[] = [];
 
@@ -61,9 +62,13 @@ export class SearchFormComponent implements OnInit {
 
     this.subscriptions.push(
       this.route.queryParams.subscribe((params) => {
-        const { term, city } = params;
+        const { term, city, since, until, sort_by } = params;
         this.territory = city;
         this.selectedCities = [];
+        this.since = since;
+        this.until = until;
+        this.sort_by = sort_by;
+
         if(city) {
           if(Array.isArray(city)) {
             city.forEach(currCity => {
@@ -127,6 +132,12 @@ export class SearchFormComponent implements OnInit {
       queryParams = { ...queryParams, since: this.since, until: this.until };
     } else {
       queryParams = { ...queryParams, since: null, until: null };
+    }
+
+    if (this.sort_by && this.sort_by.length) {
+      queryParams = { ...queryParams, sort_by: this.sort_by };
+    } else {
+      queryParams = { ...queryParams, sort_by: null };
     }
 
     this.router.navigate(['/pesquisa'], { queryParams });

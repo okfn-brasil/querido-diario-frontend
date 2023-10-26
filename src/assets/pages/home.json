@@ -15,11 +15,11 @@
             "width": 50
           }
         },
-        "count": 90,
+        "count": 176,
         "text": "Cidades já na plataforma"
       },
       {
-        "count": 2420,
+        "count": 3075,
         "icon": {
           "file": "search",
           "height": 76,
@@ -136,7 +136,7 @@
         { "file": "logo-jurema", "to": "https://www.jurema.la/", "target": "_blank", "height": 18, "width": 80 },
         { "file": "logo-digitalocean", "to": "https://www.digitalocean.com/", "target": "_blank", "height": 18, "width": 110},
         { "file": "logo-fiocruz", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
-        { "file": "logo-icict", "to": "hhttps://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
+        { "file": "logo-icict", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
         { "file": "logo-pcdas", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 72 },
         { "file": "assets/images/imaginable.png", "isPng": true, "to": "https://www.imaginablefutures.com/", "target": "_blank", "height": 30, "width": 106 },
         { "file": "assets/images/lemann.png", "isPng": true, "to": "https://fundacaolemann.org.br/", "target": "_blank", "height": 30, "width": 106 }
