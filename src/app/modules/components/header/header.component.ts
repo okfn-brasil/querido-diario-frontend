@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   urlsHide = ['/educacao/cadastrar'];
   hideMenu = false;
   languageList = [
-    { code: 'pt', label: 'Português' },
+    { code: 'pt', label: 'Português (BR)' },
     { code: 'en', label: 'English (US)' }
   ];
 
