@@ -21,7 +21,7 @@
         </button>
         <mat-menu #languageSwitcher="matMenu" xPosition="before" class="language-switcher-menu">
           <ng-container *ngFor="let language of languageList">
-            <a href="/{{language.code}}{{router.url}}">
+            <a routerLink="/{{language.code}}{{router.url}}">
               <button mat-menu-item [attr.data-language-code]="language.code">
                 <span>{{language.label}}</span>
               </button>
