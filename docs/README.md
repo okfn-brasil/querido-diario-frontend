@@ -47,7 +47,7 @@ Para mais detalhes ou informações sobre a configuração em outros sistemas op
 # Como executar
 1. Com o terminal aberto no diretório raíz do repositório, o projeto pode ser servido localmente com o comando:
 ``` console
-yarn ng serve
+yarn serve
 ```
 2. Durante a execução, um log aparecerá no terminal. O trecho final, como este a seguir, informa em qual porta a visualização do site está hospedada. Basta copiar o endereço `http` e abrir no navegador. 
 ```
