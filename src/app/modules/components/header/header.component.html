@@ -103,14 +103,15 @@
         <mat-icon>language</mat-icon>
         Language
       </button>
-      <mat-menu #languageSwitcher="matMenu" xPosition="before">
-        <button mat-menu-item>
-          <span>Português (BR)</span>
-        </button>
-        <button mat-menu-item>
-          <span>English (US)</span>
-        </button>
-      </mat-menu>
     </div>
   </a>
+  <mat-menu #languageSwitcher="matMenu" xPosition="before">
+    <ng-container *ngFor="let language of languageList">
+      <a routerLink="/{{language.code}}{{router.url}}" (click)="onClickLink()">
+        <button mat-menu-item [attr.data-language-code]="language.code">
+          <span>{{language.label}}</span>
+        </button>
+      </a>
+    </ng-container>
+  </mat-menu>
 </div>
