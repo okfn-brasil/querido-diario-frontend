@@ -104,205 +104,159 @@
       "title": "Comunidade",
       "text": "Existem várias maneiras de contribuir com o Querido Diário. Se você deseja ajudar o projeto a ir mais longe, <a href=\"https://www.catarse.me/queridodiario-okbr\" target=\"_blank\" >acesse nossa campanha de financiamento coletivo no Catarse</a> e consulte as faixas de doação e suas recompensas. Assim, você se junta aos 97 doadores que já nos ajudaram. A seguir, confira a lista de quem nos apoia publicamente:",
       "items": [
-        [
-          "Alan Silva Costa",
-          "Alexandre Vasconcelos",
-          "Alexandre Yukio Harano",
-          "All Beer Brasil Ltda",
-          "Amanda Lie Kitagava",
-          "Ana Cecília Vieira Silva",
-          "Ana Terra",
-          "Andre Assumpcao",
-          "Antonio de Araujo Freitas Neto",
-          "Antonio Jr Farias",
-          "Aurélio A. Heckert",
-          "Billy Cordelli Eugenio",
-          "Brenner Santos",
-          "Bruno Moutinho",
-          "Bruno Bertolani",
-          "Caio Werneck",
-          "Carlos André Matos",
-          "Carlos Aquino",
-          "Daniel Fontolan",
-          "Danilo Amaral de Oliveira", 
-          "Débora Maria Valverde da Silva",
-          "Denise Moraes",
-          "Dirk Henning",
-          "Dreyf Assis Gonçalves",
-          "Eduardo Carvalho Rosa",
-          "Eduardo Farias",
-          "Eduardo Mendonça Cristino Cabral Vieira",
-          "Everton Dewes",
-          "Felipe Geremia Nievinski",
-          "Felipe Grandin",
-          "Fernando Morini",
-          "Flávio Dal Pozzo",
-          "Frank Farias Santos",
-          "Gabriel Borges Vaz de Melo",
-          "Guilherme R. Storck",
-          "Guillermo Infante",
-          "Gustavo Brondani Schenkel",
-          "Henrique Lorea Leite",
-          "Hugo Noah",
-          "Igor Bandim",
-          "Janaína Behling",
-          "Jessica Cestariolli",
-          "João Del Valle",
-          "José Antônio Ribeiro Vargas",
-          "Juliana Trevine",
-          "Juliano De Holanda",
-          "Kelsen Henrique",
-          "Keyla Rodrigues",
-          "Laila Bellix",
-          "Leonardo Rosa Lemos",
-          "Louise Pereira",
-          "Luiz Augusto Galicioli",
-          "Luiz Gimenez",
-          "Márcio Eduardo Cavalcanti Porto",
-          "Marco Alessandro de Campos",
-          "Marco Guedes",
-          "Marcus Derencius",
-          "Maria Victoria Ferraz",
-          "Mário Rutman",
-          "Mario Santos Silva",
-          "Máriton Maia",
-          "Marjori Azevedo de Souza Pomarole",
-          "Mauricio Fonseca",
-          "Mércia Maguerroski",
-          "Michel Fonseca Ferreira",
-          "Murilo Viana",
-          "Natássya Barlate Floro da Silva",
-          "Nitai O Bezerra da Silva",
-          "Paulo Henrique Franzon",
-          "Pedro Guedes",
-          "Rafael Rosado Urquhart",
-          "Rafael Toledo",
-          "Renato Rebelo de Moraes",
-          "Ricardo Fernandes de Souza",
-          "Ricardo Inoue",
-          "Rodrigo Franco",
-          "Rodrigo Gobatto",
-          "Rony Marques",
-          "Sarah Bertolini Serafim",
-          "Thales Augusto Zamberlan Pereira",
-          "Thassio Gonçalves Ferreira",
-          "Thiago Aguiar de Moraes",
-          "Thiago Sant' Helena",
-          "Vítor Márcio Paiva de Sousa Baptista",
-          "Vítor Queijo",
-          "Wagner Cateb"
-        ]
+        "Alan Silva Costa",
+        "Alexandre Vasconcelos",
+        "Alexandre Yukio Harano",
+        "All Beer Brasil Ltda",
+        "Amanda Lie Kitagava",
+        "Ana Cecília Vieira Silva",
+        "Ana Terra",
+        "Andre Assumpcao",
+        "Antonio de Araujo Freitas Neto",
+        "Antonio Jr Farias",
+        "Aurélio A. Heckert",
+        "Billy Cordelli Eugenio",
+        "Brenner Santos",
+        "Bruno Moutinho",
+        "Bruno Bertolani",
+        "Caio Werneck",
+        "Carlos André Matos",
+        "Carlos Aquino",
+        "Daniel Fontolan",
+        "Danilo Amaral de Oliveira",
+        "Débora Maria Valverde da Silva",
+        "Denise Moraes",
+        "Dirk Henning",
+        "Dreyf Assis Gonçalves",
+        "Eduardo Carvalho Rosa",
+        "Eduardo Farias",
+        "Eduardo Mendonça Cristino Cabral Vieira",
+        "Everton Dewes",
+        "Felipe Geremia Nievinski",
+        "Felipe Grandin",
+        "Fernando Morini",
+        "Flávio Dal Pozzo",
+        "Frank Farias Santos",
+        "Gabriel Borges Vaz de Melo",
+        "Guilherme R. Storck",
+        "Guillermo Infante",
+        "Gustavo Brondani Schenkel",
+        "Henrique Lorea Leite",
+        "Hugo Noah",
+        "Igor Bandim",
+        "Janaína Behling",
+        "Jessica Cestariolli",
+        "João Del Valle",
+        "José Antônio Ribeiro Vargas",
+        "Juliana Trevine",
+        "Juliano De Holanda",
+        "Kelsen Henrique",
+        "Keyla Rodrigues",
+        "Laila Bellix",
+        "Leonardo Rosa Lemos",
+        "Louise Pereira",
+        "Luiz Augusto Galicioli",
+        "Luiz Gimenez",
+        "Márcio Eduardo Cavalcanti Porto",
+        "Marco Alessandro de Campos",
+        "Marco Guedes",
+        "Marcus Derencius",
+        "Maria Victoria Ferraz",
+        "Mário Rutman",
+        "Mario Santos Silva",
+        "Máriton Maia",
+        "Marjori Azevedo de Souza Pomarole",
+        "Mauricio Fonseca",
+        "Mércia Maguerroski",
+        "Michel Fonseca Ferreira",
+        "Murilo Viana",
+        "Natássya Barlate Floro da Silva",
+        "Nitai O Bezerra da Silva",
+        "Paulo Henrique Franzon",
+        "Pedro Guedes",
+        "Rafael Rosado Urquhart",
+        "Rafael Toledo",
+        "Renato Rebelo de Moraes",
+        "Ricardo Fernandes de Souza",
+        "Ricardo Inoue",
+        "Rodrigo Franco",
+        "Rodrigo Gobatto",
+        "Rony Marques",
+        "Sarah Bertolini Serafim",
+        "Thales Augusto Zamberlan Pereira",
+        "Thassio Gonçalves Ferreira",
+        "Thiago Aguiar de Moraes",
+        "Thiago Sant' Helena",
+        "Vítor Márcio Paiva de Sousa Baptista",
+        "Vítor Queijo",
+        "Wagner Cateb"
       ]
     },
     {
-      "title": "Se você é uma pessoa desenvolvedora interessada em contribuir com o código do projeto, que é aberto e acessível a toda a comunidade, consulte nossos repositórios no Github e junte-se ao time que ajuda o Querido Diário a tomar forma:"
+      "title": "Se você tem interesse em contribuir diretamente com funcionamento do projeto consulte nossos repositórios no Github e junte-se ao time que ajuda o Querido Diário a tomar forma:"
     },
     {
       "action": {
-        "text": "Repositório de raspadores do Querido Diário",
+        "text": "Repositório com documentações e discussões para a comunidade do Querido Diário",
+        "to": "https://github.com/okfn-brasil/querido-diario-comunidade"
+      },
+      "repo": "querido-diario-comunidade"
+    },
+    {
+      "action": {
+        "text": "Repositório de desenvolvimento de raspadores",
         "to": "https://github.com/okfn-brasil/querido-diario"
       },
-      "items": [
-        [
-          "Adorilson Bezerra",
-          "Alan Fachini",
-          "Alexandre Vicenzi",
-          "Alvaro Leonel",
-          "Ana Paula Gomes",
-          "Anderson Berg",
-          "André Angeluci",
-          "Antonio Vendramin",
-          "Ariel Bello",
-          "Avelino",
-          "Beothorn"
-        ],
-        [
-          "Bruna Moreira",
-          "Bruno Lellis",
-          "Camila Fracaro",
-          "Chico Venancio",
-          "Daiana Marasquin",
-          "Danilo Jeremias da Silva",
-          "David Pierre",
-          "Eduardo Cuducos",
-          "Enderson Menezes",
-          "Fábio C. Barrionuevo da Luz",
-          "Felipe Ruhland"
-        ],
-        [
-          "Gabriel (Gabu) Bellon",
-          "Gabriel Trettel",
-          "Giovani Sousa",
-          "Giulio Carvalho",
-          "Gustavo Coelho",
-          "Gustavo de Mari Pereira",
-          "Helder Geovane Gomes de Lima",
-          "Hugo Leonardo Costa e Silva",
-          "Irio Musskopf",
-          "Jeferson Alves",
-          "Jonathan Cardoso"
-        ],
-        [
-          "Jonathan Schweder",
-          "José Guilherme Vanz",
-          "Laerte Pereira",
-          "Lucas Rangel Cezimbra",
-          "Lucas Santos Summer",
-          "Mário Sérgio",
-          "Mohan Sha",
-          "Nícolas F. R. A. Prado",
-          "Paulo Henrique Cuchi",
-          "Pedro Garcias",
-          "Pedro Peixoto"
-        ],
-        [
-          "Renne Rocha",
-          "Rodolfo Lottin Pereira",
-          "Rodrigo Chamun",
-          "Rodrigo Lima",
-          "Rodrigo Vieira",
-          "Thiago Curvelo",
-          "Victor Torres",
-          "Vinicius Artur",
-          "Vinicius Gasparini",
-          "Vitor Baptista",
-          "Weibe Moura"
-        ]
-      ]
+      "repo": "querido-diario"
     },
     {
       "action": {
         "text": "Repositório de desenvolvimento da API",
         "to": "https://github.com/okfn-brasil/querido-diario-api"
       },
-      "items": [["André Formento"], ["Giulio Carvalho"], ["Jonathan Schweder"], ["José Guilherme Vanz"]]
+      "repo": "querido-diario-api"
+    },
+    {
+      "action": {
+        "text": "Repositório de desenvolvimento do frontend (interface web)",
+        "to": "https://github.com/okfn-brasil/querido-diario-frontend"
+      },
+      "repo": "querido-diario-frontend"
+    },
+    {
+      "action": {
+        "text": "Repositório de desenvolvimento do backend (operações internas)",
+        "to": "https://github.com/okfn-brasil/querido-diario-backend"
+      },
+      "repo": "querido-diario-backend"
     },
     {
       "action": {
         "text": "Repositório de desenvolvimento do processamento de dados",
         "to": "https://github.com/okfn-brasil/querido-diario-data-processing"
       },
-      "items": [["André Formento"], ["José Guilherme Vanz"]]
+      "repo": "querido-diario-data-processing"
     },
     {
       "action": {
         "text": "Repositório de desenvolvimento da toolbox (caixa de ferramentas) do Querido Diário",
         "to": "https://github.com/okfn-brasil/querido-diario-toolbox"
       },
-      "items": [["Andre Assumpcao"], ["José Guilherme Vanz"], ["Mário Sérgio"]]
+      "repo": "querido-diario-toolbox"
+    },
+    {
+      "action": {
+        "text": "Repositório de automatizações da infraestrutura",
+        "to": "https://github.com/okfn-brasil/querido-diario-infra"
+      },
+      "repo": "querido-diario-infra"
     },
     {
       "action": {
         "text": "Censo dos diários oficiais - análises e relatórios",
         "to": "https://github.com/okfn-brasil/censo-querido-diario/"
       },
-      "items": [
-        ["Bernardo Chrispim Baron", "Geovane Oliveira de Carvalho"],
-        ["Ana Cecília Vieira", "Giulio Carvalho"],
-        ["David Pierre", "Fausto Sá Teles"],
-        ["Vinicius Antonini"],
-        ["Ana Paula Gomes"]
-      ]
+      "repo": "censo-querido-diario"
     }
   ]
 }
