@@ -7,8 +7,3 @@
   // Max size of Querido Diário API results (THEMED_EXCERPT_FRAGMENT_SIZE)
   window.__env.qdApiSearchResultMaxSize = 10000;
 }(this));
-
-
-function closeButton() {
-  document.getElementById("c-toast-section").style.visibility="hidden";
-}
