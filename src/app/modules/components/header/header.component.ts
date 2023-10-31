@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
     { code: 'pt', label: 'Português (BR)' },
     { code: 'en', label: 'English (US)' }
   ];
+  foo = "./en/tecnologia";
 
   constructor(
     private userQuery: UserQuery,
