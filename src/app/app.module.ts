@@ -110,8 +110,7 @@ import { ResetPassModalComponent } from './modules/pages/area-education/header/r
 import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
-
-
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -190,6 +189,7 @@ import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/
     AboutComponentEnUS,
     TechComponentEnUS,
     PrivacyPolicyComponentEnUS,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
