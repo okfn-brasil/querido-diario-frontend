@@ -1,10 +1,16 @@
 {
   "list": [
     {
+      "title": "Novas 20 cidades!",
+      "content": "As cidades de Junqueirópolis (SP), Palmital (SP), Mirante do Paranapanema (SP), Charqueada (SP), Itariri (SP), Pindorama (SP), Itapuí (SP), Eldorado (SP), Joanópolis (SP), Avanhandava (SP), Porangaba (SP), General Salgado (SP), Nhandeara (SP), Itobi (SP), Tapiraí (SP), Terra Roxa (SP), Iepê (SP), Macaubal (SP), Irapuru (SP) e Barbosa (SP) foram adicionadas à plataforma!",
+      "updatedAt": "2023/10/30",
+      "isNew": true
+    },
+    {
       "title": "Novas 28 cidades!",
       "content": "As cidades de Bela Vista (MS), Costa Rica (MS), Antônio Olinto (PR), Monte Santo (BA), Morro do Chapéu (BA), Santa Luzia (BA), Itapicuru (BA), Jaguaquara (BA), Lajedão (BA), Poloni (SP), Santa Maria da Serra (SP), Lagoinha (SP), Luiziânia (SP), Planalto (SP), João Ramalho (SP), Sebastianópolis do Sul (SP), Mira Estrela (SP), Nova Luzitânia (SP), Águas de São Pedro (SP), Floreal (SP), Taquaral (SP), Brejo Alegre (SP), Pontes Gestal (SP), Arapeí (SP), Turiúba (SP), Dirce Reis (SP), União Paulista (SP) e Nova Castilho (SP) foram adicionadas à plataforma!",
       "updatedAt": "2023/10/28",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 7 cidades!",
