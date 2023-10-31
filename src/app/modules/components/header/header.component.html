@@ -20,13 +20,60 @@
           <mat-icon>language</mat-icon>
         </button>
         <mat-menu #languageSwitcher="matMenu" xPosition="before" class="language-switcher-menu">
-          <ng-container *ngFor="let language of languageList">
+          <a [href]="foo" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>[href]="foo" (./en/tecnologia)</span>
+            </button>
+          </a>
+          <a href="{{language.code}}{{router.url}}" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>href="{{language.code}}{{router.url}}"</span>
+            </button>
+          </a>
+          <a href="/{{language.code}}{{router.url}}" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>href="/{{language.code}}{{router.url}}"</span>
+            </button>
+          </a>
+          <a href="./{{language.code}}{{router.url}}" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>href="./{{language.code}}{{router.url}}"</span>
+            </button>
+          </a>
+          <a href="../{{language.code}}{{router.url}}" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>href="../{{language.code}}{{router.url}}"</span>
+            </button>
+          </a>
+
+          <a routerLink="{{language.code}}{{router.url}}" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>href="{{language.code}}{{router.url}}"</span>
+            </button>
+          </a>
+          <a routerLink="/{{language.code}}{{router.url}}" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>href="/{{language.code}}{{router.url}}"</span>
+            </button>
+          </a>
+          <a routerLink="./{{language.code}}{{router.url}}" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>href="./{{language.code}}{{router.url}}"</span>
+            </button>
+          </a>
+          <a routerLink="../{{language.code}}{{router.url}}" target="_self">
+            <button mat-menu-item [attr.data-language-code]="language.code">
+              <span>href="../{{language.code}}{{router.url}}"</span>
+            </button>
+          </a>
+
+          <!--<ng-container *ngFor="let language of languageList">
             <a [href]="foo" target="_self">
               <button mat-menu-item [attr.data-language-code]="language.code">
                 <span>{{language.label}}</span>
               </button>
             </a>
-          </ng-container>
+          </ng-container>-->
         </mat-menu>
       </nav>
       <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
