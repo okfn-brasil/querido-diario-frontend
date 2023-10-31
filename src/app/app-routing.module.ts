@@ -23,16 +23,12 @@ import { SearchTutorialComponent } from './modules/pages/search-tutorial/search-
 import { SuggestionComponent } from './modules/pages/suggestion/suggestion.component';
 import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
-import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
-import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
-import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
-
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sobre', component: AboutComponent },
   { path: 'privacidade', component: PrivacyPolicyComponent },
-  { path: 'en-US/privacidade', component: PrivacyPolicyComponentEnUS },
   { path: 'informacoes', component: ComplaintComponent },
   { path: 'acesso', component: AccessLevelsComponent },
   { path: 'apoie', component: SupportComponent },
@@ -57,7 +53,7 @@ const routes: Routes = [
   { path: 'educacao/caso/:id', component: ReportDetailComponent },
   { path: 'educacao/redefinir-senha', component: PassResetComponent },
 
-  { path: '**', redirectTo: '' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
