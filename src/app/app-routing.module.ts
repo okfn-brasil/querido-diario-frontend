@@ -23,6 +23,7 @@ import { SearchTutorialComponent } from './modules/pages/search-tutorial/search-
 import { SuggestionComponent } from './modules/pages/suggestion/suggestion.component';
 import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
+import { PageNotFoundComponent } from './modules/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,6 +52,8 @@ const routes: Routes = [
   { path: 'educacao/relatorio/:id', component: ReportDetailComponent },
   { path: 'educacao/caso/:id', component: ReportDetailComponent },
   { path: 'educacao/redefinir-senha', component: PassResetComponent },
+
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
