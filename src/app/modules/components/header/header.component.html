@@ -23,7 +23,7 @@
           <ng-container *ngFor="let language of languageList">
             <a href="../{{language.code}}{{router.url}}" target="_self">
               <button mat-menu-item [attr.data-language-code]="language.code">
-                <span>href="../{{language.code}}{{router.url}}"</span>
+                <span>{{language.label}}</span>
               </button>
             </a>
           </ng-container>
