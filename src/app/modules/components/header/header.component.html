@@ -6,15 +6,15 @@
       </a>
 
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
-        <a routerLink="/" #explore i18n="Item do menu superior para a página inicial">Explore</a>
-        <a routerLink="/tecnologia" i18n="Item do menu superior para a página de Tecnologia">Tecnologia</a>
-        <a routerLink="/blog" i18n="Item do menu superior para a página de Blog">Blog</a>
-        <a routerLink="/educacao" i18n="Item do menu superior para a página de Educação">Educação</a>
-        <a routerLink="/sobre" i18n="Item do menu superior para a página Sobre">Sobre</a>
+        <a routerLink="/" #explore i18n="menu superior|Item do menu superior para a página inicial">Explore</a>
+        <a routerLink="/tecnologia" i18n="menu superior|Item do menu superior para a página de Tecnologia">Tecnologia</a>
+        <a routerLink="/blog" i18n="menu superior|Item do menu superior para a página de Blog">Blog</a>
+        <a routerLink="/educacao" i18n="menu superior|Item do menu superior para a página de Educação">Educação</a>
+        <a routerLink="/sobre" i18n="menu superior|Item do menu superior para a página Sobre">Sobre</a>
         <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
-        <button routerLink="/apoie" class="btn" i18n="Item do menu superior para a página de Apoie">Apoie</button>
+        <button routerLink="/apoie" class="btn" i18n="menu superior|Item do menu superior para a página de Apoie">Apoie</button>
 
         <button mat-icon-button [matMenuTriggerFor]="languageSwitcher" aria-label="Seletor de idioma" class="top-header-menu-item">
           <mat-icon>language</mat-icon>
@@ -40,29 +40,19 @@
 
 <div class="suspended-menu" *ngIf="mobileMenuOpen" (click)="onClickLink()">
  <a routerLink="/" #explore>
-    <div class="link bg-white">
-      Explore
-    </div>
+    <div class="link bg-white" i18n="menu superior|Item do menu superior para a página inicial">Explore</div>
   </a>
   <a routerLink="/tecnologia">
-    <div class="link bg-white">
-      Tecnologia 
-    </div>
+    <div class="link bg-white" i18n="menu superior|Item do menu superior para a página de Tecnologia">Tecnologia</div>
   </a>
   <a routerLink="/blog">
-    <div class="link bg-white">
-      Blog
-    </div>
+    <div class="link bg-white" i18n="menu superior|Item do menu superior para a página de Blog">Blog</div>
   </a>
   <a routerLink="/sobre">
-    <div class="link bg-white">
-      Sobre 
-    </div>
+    <div class="link bg-white" i18n="menu superior|Item do menu superior para a página Sobre">Sobre</div>
   </a>
   <a routerLink="/apoie">
-    <div class="link bg-orange">
-    Apoie
-    </div>
+    <div class="link bg-orange" i18n="menu superior|Item do menu superior para a página de Apoie">Apoie</div>
   </a>
 
   <a routerLink="/educacao/">
