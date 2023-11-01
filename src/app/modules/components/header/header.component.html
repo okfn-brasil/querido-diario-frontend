@@ -6,15 +6,15 @@
       </a>
 
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
-        <a routerLink="/" #explore>Explore</a>
-        <a routerLink="/tecnologia">Tecnologia</a>
-        <a routerLink="/blog">Blog</a>
-        <a routerLink="/educacao">Educação</a>
-        <a routerLink="/sobre">Sobre</a>
+        <a routerLink="/" #explore i18n="Item do menu superior para a página inicial">Explore</a>
+        <a routerLink="/tecnologia" i18n="Item do menu superior para a página de Tecnologia">Tecnologia</a>
+        <a routerLink="/blog" i18n="Item do menu superior para a página de Blog">Blog</a>
+        <a routerLink="/educacao" i18n="Item do menu superior para a página de Educação">Educação</a>
+        <a routerLink="/sobre" i18n="Item do menu superior para a página Sobre">Sobre</a>
         <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
-        <button routerLink="/apoie" class="btn">Apoie</button>
+        <button routerLink="/apoie" class="btn" i18n="Item do menu superior para a página de Apoie">Apoie</button>
 
         <button mat-icon-button [matMenuTriggerFor]="languageSwitcher" aria-label="Seletor de idioma" class="top-header-menu-item">
           <mat-icon>language</mat-icon>
