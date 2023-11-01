@@ -9,6 +9,11 @@
   conditions = {Language = ["en"]}
 
 [[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/pt/index.html"
   status = 200
