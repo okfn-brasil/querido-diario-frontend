@@ -1,10 +1,22 @@
 {
   "list": [
     {
+      "title": "Novas 9 cidades!",
+      "content": "As cidades de Igaraçu do Tietê (SP), Caetité (BA), Cícero Dantas (BA), Cipó (BA), Cotegipe (BA), Formosa do Rio Preto (BA), Inhambupe (BA), Ipiaú (BA) e Angical (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2023/11/21",
+      "isNew": true
+    },
+    {
+      "title": "Remoção de 3 cidades!",
+      "content": "As cidades de Bacurituba (MA), Feira Nova do Maranhão (MA) e Milagres do Maranhão (MA) foram removidas da plataforma devido à incompatibilidade do conteúdo textual dos diários.",
+      "updatedAt": "2023/11/21",
+      "isNew": true
+    },
+    {
       "title": "Novas 20 cidades!",
       "content": "As cidades de Junqueirópolis (SP), Palmital (SP), Mirante do Paranapanema (SP), Charqueada (SP), Itariri (SP), Pindorama (SP), Itapuí (SP), Eldorado (SP), Joanópolis (SP), Avanhandava (SP), Porangaba (SP), General Salgado (SP), Nhandeara (SP), Itobi (SP), Tapiraí (SP), Terra Roxa (SP), Iepê (SP), Macaubal (SP), Irapuru (SP) e Barbosa (SP) foram adicionadas à plataforma!",
       "updatedAt": "2023/10/30",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 28 cidades!",
