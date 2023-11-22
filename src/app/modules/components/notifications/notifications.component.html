@@ -33,8 +33,7 @@
               <p>
                 {{ notification.title }}
               </p>
-              <p>
-                {{ notification.content }}
+              <p class="typo-inner highlight" [innerHTML]="notification.content">
               </p>
               <div fxLayout="row" fxLayoutGap="6px">
                 <app-icon

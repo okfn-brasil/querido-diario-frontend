@@ -8,7 +8,7 @@
     },
     {
       "title": "Remoção de 3 cidades!",
-      "content": "As cidades de Bacurituba (MA), Feira Nova do Maranhão (MA) e Milagres do Maranhão (MA) foram removidas da plataforma devido à incompatibilidade do conteúdo textual dos diários.",
+      "content": "As cidades de Bacurituba (MA), Feira Nova do Maranhão (MA) e Milagres do Maranhão (MA) foram removidas da plataforma devido à incompatibilidade do conteúdo textual dos diários. <a href='https://github.com/okfn-brasil/querido-diario/issues/1034' target='_blank'>Saiba mais.</a>",
       "updatedAt": "2023/11/21",
       "isNew": true
     },
