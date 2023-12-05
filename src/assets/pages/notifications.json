@@ -1,16 +1,23 @@
 {
   "list": [
+
+    {
+      "title": "Novas 26 cidades!",
+      "content": "As cidades de Aquidabã (SE), Areia Branca (SE), Barra dos Coqueiros (SE), Campo do Brito (SE), Canhoba (SE), Canindé de São Francisco (SE), Capela (SE), Divina Pastora (SE), Frei Paulo (SE), Ilha das Flores (SE), Itabaiana (SE), Itabaianinha (SE), Japaratuba (SE), Moita Bonita (SE), Muribeca (SE), Nossa Senhora das Dores (SE), Nossa Senhora de Lourdes (SE), Pedra Mole (SE), Pirambu (SE), Poço Verde (SE), Riachão do Dantas (SE), Rosário do Catete (SE), São Domingos (SE), Simão Dias (SE), Siriri (SE) e Telha (SE) foram adicionadas à plataforma!",
+      "updatedAt": "2023/12/01",
+      "isNew": true
+    },
     {
       "title": "Novas 9 cidades!",
       "content": "As cidades de Igaraçu do Tietê (SP), Caetité (BA), Cícero Dantas (BA), Cipó (BA), Cotegipe (BA), Formosa do Rio Preto (BA), Inhambupe (BA), Ipiaú (BA) e Angical (BA) foram adicionadas à plataforma!",
       "updatedAt": "2023/11/21",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Remoção de 3 cidades!",
       "content": "As cidades de Bacurituba (MA), Feira Nova do Maranhão (MA) e Milagres do Maranhão (MA) foram removidas da plataforma devido à incompatibilidade do conteúdo textual dos diários. <a href='https://github.com/okfn-brasil/querido-diario/issues/1034' target='_blank'>Saiba mais.</a>",
       "updatedAt": "2023/11/21",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 20 cidades!",
