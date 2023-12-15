@@ -9,7 +9,7 @@
         {
           "text": "Acessar",
           "icon": "right-arrow",
-          "to": "assets/documents/reports/1o-relatorio-tecnico-atividades.pdf",
+          "to": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documents/reports/1o-relatorio-tecnico-atividades.pdf",
           "target": "_blank"
         }
       ]
