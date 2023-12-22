@@ -1,23 +1,23 @@
 <p><em>Precisa de algumas dicas sobre raspagem de dados? O passo mais importante é saber como analisar o site antes de começar a desenvolver código. Quer saber mais? Segue lendo!</em></p>
-<hr />
+<hr>
 <p><em>Este texto é uma continuação de <a href="https://queridodiario.ok.org.br/blog/post/28" target="_blank">"Conheça os desafios de raspagem do Querido Diário"</a>. Se a raspagem feita no Querido Diário ainda te deixa dúvidas, começa por lá e depois volta pra cá. A gente te espera</em> 😁</p>
 <h2>Escolhendo um município</h2>
-<p>Para contribuir com a expansão da cobertura do projeto é necessário a escolha de um novo município para a implementação do seu raspador. Para isso, podemos consultar o <a href="https://github.com/orgs/okfn-brasil/projects/12" target="_blank">Quadro de Expansão de Cidades no Querido Diário</a>. Lá encontramos o mapeamento dos municípios e seus sistemas publicadores, assim como as metas do projeto.</p>
+<p>Para contribuir com a expansão da cobertura do projeto é necessário a escolha de um novo município para a implementação do seu raspador. Para isso, podemos consultar o <a href="https://github.com/orgs/okfn-brasil/projects/12" target="_blank">Quadro de Expansão de Cidades no Querido Diário</a>. Lá encontramos o mapeamento dos municípios e seus sistemas publicadores, assim como as metas do projeto.</p>
 <p>Da lista poderemos encontrar (ou não encontrar) casos que se encontram em uma das seguintes fases:</p>
 <ol>
 <li><strong>Não mapeado</strong> - o município ainda não foi mapeado em nenhuma das metas atuais e não se encontra na lista</li>
 <li><strong>Sem classificação de compatibilidade</strong> - o município já foi mapeado mas ainda não foi realizada uma pré-análise quanto a sua compatibilidade com o projeto</li>
 <li><strong>Sem classificação de dificuldade</strong> - o município é compatível com o projeto mas uma análise rápida para estimar a dificuldade de implementação ainda não foi realizada</li>
-<li><strong>Classificado</strong> - o site é compatível e sua dificuldade de implementação já foi estimada mas não há comentários na <em>issue</em> que indiquem o início da implementação</li>
-<li><strong>Implementação iniciada</strong> - alguém já comentou na <em>issue</em> que iniciou o processo de implementação</li>
+<li><strong>Classificado</strong> - o site é compatível e sua dificuldade de implementação já foi estimada mas não há comentários na <em>issue</em> que indiquem o início da implementação</li>
+<li><strong>Implementação iniciada</strong> - alguém já comentou na <em>issue</em> que iniciou o processo de implementação</li>
 <li><strong>Implementação em revisão</strong> - um <em>Pull Request</em> já foi feito com a implementação do código e está sendo avaliado</li>
 <li><strong>Integrado</strong> - o município já está "em produção", ou seja, disponível na plataforma do QD</li>
 </ol>
 <p>Por enquanto vamos focar nos municípios que já foram classificados mas ainda não tiveram implementação iniciada. Nestes já podemos analisar suas requisições e elementos da página para o desenvolvimento do raspador.</p>
 <h2>Analisando um site para raspagem de dados</h2>
-<p>No módulo 3 do curso <a href="https://escoladedados.org/courses/python-para-inovacao-civica/" target="_blank">Python para Inovação Cívica</a> da <a href="https://escoladedados.org/" target="_blank">Escola de Dados</a> aprendemos conceitos de Python e raspagem de dados utilizando o QD como objeto de estudo. Este módulo está <a href="https://youtube.com/playlist?list=PLpWp6ibmzPTc2rod9Hc822_3zMaq9G-qE" target="_blank">disponível gratuitamente</a> e nas aulas 5, 6 e 7 vemos como analisar os sites publicadores de diários oficiais de Natal (RN) e Caetité (BA).</p>
+<p>No módulo 3 do curso <a href="https://escoladedados.org/courses/python-para-inovacao-civica/" target="_blank">Python para Inovação Cívica</a> da <a href="https://escoladedados.org/" target="_blank">Escola de Dados</a> aprendemos conceitos de Python e raspagem de dados utilizando o QD como objeto de estudo. Este módulo está <a href="https://youtube.com/playlist?list=PLpWp6ibmzPTc2rod9Hc822_3zMaq9G-qE" target="_blank">disponível gratuitamente</a> e nas aulas 5, 6 e 7 vemos como analisar os sites publicadores de diários oficiais de Natal (RN) e Caetité (BA).</p>
 <p><img src="https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/post0030/analisando-site.png" alt="Análise de site curso Python para Inovação Cívica" width="100%" /></p>
-<p>Seguindo os conceitos apresentados nas aulas podemos tentar organizar nossa análise antes de iniciar o desenvolvimento. Como sugestão de organização podemos elencar os <strong>tipos de página</strong> presentes, os <strong>elementos de interesse</strong> contidos nelas e as <strong>requisições</strong> que conectam as páginas para preencher o seguinte modelo:</p>
+<p>Seguindo os conceitos apresentados nas aulas podemos tentar organizar nossa análise antes de iniciar o desenvolvimento. Como sugestão de organização podemos elencar os <strong>tipos de página</strong> presentes, os <strong>elementos de interesse</strong> contidos nelas e as <strong>requisições</strong> que conectam as páginas para preencher o seguinte modelo:</p>
 <h3>Modelo de organização de análise para raspagem</h3>
 <h4>Tipos de página</h4>
 <table>
@@ -42,9 +42,9 @@
 <table>
 <thead>
 <tr>
-<td>Nome </td>
+<td>Nome </td>
 <td>Presente na página</td>
-<td>Seletor </td>
+<td>Seletor </td>
 <td>Relativo a</td>
 <td>Tipo de objeto</td>
 </tr>
@@ -53,7 +53,7 @@
 <tr>
 <td>Muitas listas</td>
 <td>Página legal</td>
-<td style="overflow-wrap: anywhere"> //ul</td>
+<td style="overflow-wrap: anywhere"> //ul</td>
 <td>Raíz</td>
 <td>Lista de elementos</td>
 </tr>
@@ -74,7 +74,7 @@
 <tr>
 <td>Link da imagem</td>
 <td>Outra página</td>
-<td style="overflow-wrap: anywhere"> ./@href</td>
+<td style="overflow-wrap: anywhere">./@href</td>
 <td>Imagem</td>
 <td>Dado</td>
 </tr>
@@ -85,8 +85,8 @@
 <thead>
 <tr>
 <td>Nome</td>
-<td> De</td>
-<td>Para </td>
+<td> De</td>
+<td>Para </td>
 <td>Tipo de requisição</td>
 <td>Exemplo de URL</td>
 <td>Exemplo de formdata</td>
@@ -117,7 +117,7 @@
 <li>Para cada lista em "muitas listas", obter "ids de outras páginas"</li>
 <li>Para cada "id de outra página" realizar "acesso a outras páginas" utilizando o id coletado no formdata</li>
 <li>Em cada "outra página", raspar "uma imagem"</li>
-<li>Guardar o "link da imagem" da imagem raspada </li>
+<li>Guardar o "link da imagem" da imagem raspada </li>
 </ol>
 <h2>Aplicando o modelo para Caetité (BA)</h2>
 Agora vamos utilizar o diário oficial de Caetité (BA) apresentado na aula 7 e complementado na aula 9 como objeto de estudo e ver como podemos preencher o modelo:</p>
@@ -141,9 +141,9 @@ Agora vamos utilizar o diário oficial de Caetité (BA) apresentado na aula 7 e 
 <table>
 <thead>
 <tr>
-<td>Nome </td>
+<td>Nome </td>
 <td>Presente na página</td>
-<td>Seletor </td>
+<td>Seletor </td>
 <td>Relativo a</td>
 <td>Tipo de objeto</td>
 </tr>
@@ -152,21 +152,21 @@ Agora vamos utilizar o diário oficial de Caetité (BA) apresentado na aula 7 e 
 <tr>
 <td>Publicações</td>
 <td>Listagem de publicações</td>
-<td style="overflow-wrap: anywhere"> //div[@id='edicoes']/ul[@class!='grid']</td>
+<td style="overflow-wrap: anywhere"> //div[@id='edicoes']/ul[@class!='grid']</td>
 <td>Raíz</td>
 <td>Lista de elementos</td>
 </tr>
 <tr>
 <td>Link da publicação</td>
 <td>Listagem de publicações</td>
-<td style="overflow-wrap: anywhere"> ./li[2]/a/@href</td>
+<td style="overflow-wrap: anywhere">./li[2]/a/@href</td>
 <td>Publicação</td>
 <td>Dado</td>
 </tr>
 <tr>
 <td>Edição da publicação</td>
 <td>Listagem de publicações</td>
-<td style="overflow-wrap: anywhere"> ./li[2]/a/text()</td>
+<td style="overflow-wrap: anywhere">./li[2]/a/text()</td>
 <td>Publicação</td>
 <td>Dado</td>
 </tr>
@@ -180,7 +180,7 @@ Agora vamos utilizar o diário oficial de Caetité (BA) apresentado na aula 7 e 
 <tr>
 <td>Link para próxima página</td>
 <td>Listagem de publicações</td>
-<td style="overflow-wrap: anywhere"> //div[@class!='proximo']/a/@href</td>
+<td style="overflow-wrap: anywhere"> //div[@class!='proximo']/a/@href</td>
 <td>Raíz</td>
 <td>Dado</td>
 </tr>
@@ -191,8 +191,8 @@ Agora vamos utilizar o diário oficial de Caetité (BA) apresentado na aula 7 e 
 <thead>
 <tr>
 <td>Nome</td>
-<td> De</td>
-<td>Para </td>
+<td> De</td>
+<td>Para </td>
 <td>Tipo de requisição</td>
 <td>Exemplo de URL</td>
 <td>Exemplo de formdata</td>
@@ -209,8 +209,8 @@ Agora vamos utilizar o diário oficial de Caetité (BA) apresentado na aula 7 e 
 </tr>
 <tr>
 <td>Paginação</td>
-<td> Listagem de publicações</td>
-<td> Listagem de publicações</td>
+<td> Listagem de publicações</td>
+<td> Listagem de publicações</td>
 <td>GET</td>
 <td style="overflow-wrap: anywhere">http://procedebahia.com.br/ba/caetite/edicoes&amp;pg=2</td>
 <td>N/A</td>
@@ -227,6 +227,6 @@ Agora vamos utilizar o diário oficial de Caetité (BA) apresentado na aula 7 e 
 <h2>Terminei a análise, e agora?</h2>
 <p>Agora você já pode adaptar sua análise para o código como apresentado na aula 9 do curso. Também segue as <a href="https://docs.queridodiario.ok.org.br/pt-br/latest/escrevendo-um-novo-spider.html" target="_blank">indicações da documentação sobre como escrever o raspador</a>. Se tiver dúvidas, comenta lá no <a href="https://go.ok.org.br/discord" target="_blank">Discord da OKBR</a>. Submete um <em>Pull Request</em> e vamos trabalhar para integrar o raspador!</p>
 <h2>E também posso ajudar no mapeamento e classificação de municípios?</h2>
-<p>A partir do texto anterior<em> <a href="https://queridodiario.ok.org.br/blog/post/28" target="_blank">"Conheça os desafios de raspagem do Querido Diário"</a></em> já podemos entender que a análise de um site para o QD pode terminar o classificando como "incompatível" com o projeto. Neste caso, no momento não seguiríamos com a nossa análise e adicionaríamos uma <a href="https://github.com/okfn-brasil/querido-diario/issues" target="_blank"><em>issue</em> ao repositório</a> descrevendo a incompatibilidade.</p>
+<p>A partir do texto anterior<em> <a href="https://queridodiario.ok.org.br/blog/post/28" target="_blank">"Conheça os desafios de raspagem do Querido Diário"</a></em> já podemos entender que a análise de um site para o QD pode terminar o classificando como "incompatível" com o projeto. Neste caso, no momento não seguiríamos com a nossa análise e adicionaríamos uma <a href="https://github.com/okfn-brasil/querido-diario/issues" target="_blank"><em>issue</em> ao repositório</a> descrevendo a incompatibilidade.</p>
 <p><img src="https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/post0030/issue-incompativel.png" alt="Issue incompatível" width="100%" /></p>
-<p> Quanto mais sites você raspar mais repertório você terá para estimar a dificuldade de raspagem do site também. Nesse momento você dará uma força imensa para o projeto e para quem estiver começando a contribuir com o repositório!</p>
+<p> Quanto mais sites você raspar mais repertório você terá para estimar a dificuldade de raspagem do site também. Nesse momento você dará uma força imensa para o projeto e para quem estiver começando a contribuir com o repositório!</p>
