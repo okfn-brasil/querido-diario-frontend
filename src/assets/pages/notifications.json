@@ -1,10 +1,16 @@
 {
   "list": [
     {   
+      "title": "Novas 3 cidades!",
+      "content": "As cidades de Niterói (RJ), São João de Meriti (RJ) e Sampaio (TO)",
+      "updatedAt": "2024/01/22",
+      "isNew": true
+    },
+    {   
       "title": "Novas 93 cidades!",
       "content": "As cidades de Água Branca (AL), Anadia (AL), Arapiraca (AL), Atalaia (AL), Barra de Santo Antônio (AL), Barra de São Miguel (AL), Batalha (AL), Belém (AL), Belo Monte (AL), Branquinha (AL), Cacimbinhas (AL), Cajueiro (AL), Campestre (AL), Campo Alegre (AL), Campo Grande (AL), Canapi (AL), Capela (AL), Carneiros (AL), Chã Preta (AL), Coité do Nóia (AL), Colônia Leopoldina (AL), Coqueiro Seco (AL), Coruripe (AL), Craíbas (AL), Delmiro Gouveia (AL), Dois Riachos (AL), Estrela de Alagoas (AL), Feira Grande (AL), Feliz Deserto (AL), Flexeiras (AL), Girau do Ponciano (AL), Ibateguara (AL), Igaci (AL), Igreja Nova (AL), Inhapi (AL), Jacaré dos Homens (AL), Jacuípe (AL), Japaratinga (AL), Jaramataia (AL), Jequiá da Praia (AL), Joaquim Gomes (AL), Jundiá (AL), Junqueiro (AL), Lagoa da Canoa (AL), Limoeiro de Anadia (AL), Major Isidoro (AL), Maragogi (AL), Maravilha (AL), Marechal Deodoro (AL), Maribondo (AL), Mar Vermelho (AL), Mata Grande (AL), Matriz de Camaragibe (AL), Messias (AL), Minador do Negrão (AL), Monteirópolis (AL), Novo Lino (AL), Olho d'Água das Flores (AL), Olho d'Água do Casado (AL), Olho d'Água Grande (AL), Olivença (AL), Ouro Branco (AL), Palestina (AL), Pão de Açúcar (AL), Pariconha (AL), Passo de Camaragibe (AL), Paulo Jacinto (AL), Piaçabuçu (AL), Pilar (AL), Pindoba (AL), Piranhas (AL), Poço das Trincheiras (AL), Porto Calvo (AL), Porto de Pedras (AL), Porto Real do Colégio (AL), Quebrângulo (AL), Rio Largo (AL), Roteiro (AL), Santa Luzia do Norte (AL), Santana do Ipanema (AL), Santana do Mundaú (AL), São José da Laje (AL), São José da Tapera (AL), São Luís do Quitunde (AL), São Miguel dos Milagres (AL), São Sebastião (AL), Satuba (AL), Senador Rui Palmeira (AL), Tanque d'Arca (AL), Taquarana (AL), Teotônio Vilela (AL), Traipú (AL) e Viçosa (AL) foram adicionadas à plataforma!",
       "updatedAt": "2023/12/14",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 26 cidades!",
