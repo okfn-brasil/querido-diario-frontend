@@ -1,0 +1,24 @@
+<div class="home">
+  <app-column>
+    <ng-template #loading>
+      <app-container fxFill>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+      </app-container>
+    </ng-template>
+    <ng-container *ngIf="content$ | async as content; else loading">
+      <div class="banner container-education">
+        <div class="content">
+          <div class="banner-img">
+            <img src="assets/images/education/typing.png" alt="digitando">
+          </div>
+          <div class="banner-content">
+            <h1>{{ content.title }}</h1>
+            <h2>{{ content.subtitle }}</h2>
+            <p>{{ content.paragraph }}</p>
+            <button class="btne-primary">{{ content.bannerButton }}</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </app-column>
+</div>
