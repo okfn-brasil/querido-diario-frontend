@@ -28,6 +28,7 @@ import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_U
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
+import { HomeUniversitiesComponent } from './modules/pages/universities/home/home.component';
 
 
 const routes: Routes = [
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'blog/:id', component: BlogListComponent },
   { path: 'blog/post/:id', component: BlogPostDetailComponent },
   { path: 'dados', component: AggregateComponent },
+  { path: 'universidades', component: HomeUniversitiesComponent },
   //area educação
   { path: 'educacao', component: HomeEducacaoComponent },
   { path: 'educacao/cnpj/:id', component: CnpjComponent },
