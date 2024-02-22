@@ -1,0 +1,70 @@
+@import 'src/assets/_tools.sass'
+
+.home
+  background-color: white
+
+.banner
+  background-color: #F3E9E9
+
+.banner .content
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  .banner-content
+    width: 45%
+
+    h1
+      font-size: rem(56)
+      margin-bottom: rem(16)
+      line-height: rem(67)
+
+    h2
+      line-height: rem(30)
+
+    p
+      font-size: rem(18)
+      line-height: rem(25)
+      margin-bottom: rem(32)
+  
+  .banner-img
+    width: 50%
+    height: rem(464)
+
+    img
+      max-width: 100%
+      max-height: 100%
+
+
+@media only screen and (max-width: 768px)
+  .content
+    flex-direction: column
+    
+  .btne-primary
+    width: 100%
+    font-weight: bold
+
+  .banner .content
+    .banner-content
+      width: 100%
+      text-align: center
+
+      h1
+        margin-top: rem(16)
+        font-size: rem(28)
+        line-height: rem(33)
+      
+      h2
+        font-size: rem(20)
+        line-height: rem(24)
+
+      p
+        font-size: rem(14)
+        line-height: rem(19)
+
+    .banner-img
+      width: 100%
+      max-height: rem(300)
+
+      img
+        margin: 0 auto

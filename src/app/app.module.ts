@@ -1,5 +1,4 @@
-import { ViewportScroller } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ViewportScroller } from '@angular/common'; import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -113,6 +112,7 @@ import { TechComponent } from './modules/pages/tech/tech.component';
 import { AuthInterceptor } from './services/interceptor';
 import { AggregateStateFilterComponent } from './modules/pages/aggregate/filters/state-filter/aggregate-state-filter.component';
 import { AggregateCityFilterComponent } from './modules/pages/aggregate/filters/city-filter/aggregate-city-filter.component';
+import { HomeUniversitiesComponent } from './modules/pages/universities/home/home.component';
 
 /* custom directives */
 @NgModule({
@@ -200,6 +200,7 @@ import { AggregateCityFilterComponent } from './modules/pages/aggregate/filters/
     AggregateCityFilterComponent,
     AggregateDataComponent,
     AggregateStateFilterComponent,
+    HomeUniversitiesComponent,
   ],
   imports: [
     BrowserModule,
