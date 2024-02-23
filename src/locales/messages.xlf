@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="pt" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1395398189772544030" datatype="html">
+        <source>Explore</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <note priority="1" from="description">Item do menu superior para a página inicial</note>
+        <note priority="1" from="meaning">menu superior</note>
+      </trans-unit>
+      <trans-unit id="8131052739378278178" datatype="html">
+        <source>Tecnologia</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="description">Item do menu superior para a página de Tecnologia</note>
+        <note priority="1" from="meaning">menu superior</note>
+      </trans-unit>
+      <trans-unit id="7695381612022179919" datatype="html">
+        <source>Blog</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+        <note priority="1" from="description">Item do menu superior para a página de Blog</note>
+        <note priority="1" from="meaning">menu superior</note>
+      </trans-unit>
+      <trans-unit id="8456461914579458545" datatype="html">
+        <source>Educação</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">Item do menu superior para a página de Educação</note>
+        <note priority="1" from="meaning">menu superior</note>
+      </trans-unit>
+      <trans-unit id="3173297514752122149" datatype="html">
+        <source>Sobre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <note priority="1" from="description">Item do menu superior para a página Sobre</note>
+        <note priority="1" from="meaning">menu superior</note>
+      </trans-unit>
+      <trans-unit id="583247854058482712" datatype="html">
+        <source>Apoie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <note priority="1" from="description">Item do menu superior para a página de Apoie</note>
+        <note priority="1" from="meaning">menu superior</note>
+      </trans-unit>
+      <trans-unit id="1500181871307171807" datatype="html">
+        <source>Idioma</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/header/header.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+        <note priority="1" from="description">Rótulo do botão para trocar de idioma</note>
+      </trans-unit>
+      <trans-unit id="6434071570521467395" datatype="html">
+        <source>Pesquisar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/components/search-form/search-form.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+        <note priority="1" from="description">Button to submit a search in official gazettes</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -5,6 +5,12 @@
   "projects": {
     "querido-diario": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "pt",
+        "locales": {
+          "en": "src/locales/messages.en.xlf"
+        }
+      },
       "schematics": {
         "@schematics/angular:component": {
           "style": "sass"
@@ -25,6 +31,8 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "localize": true,
+            "i18nMissingTranslation": "error",
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -64,6 +72,9 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "en": {
+              "localize": ["en"]
             }
           }
         },
@@ -75,6 +86,9 @@
           "configurations": {
             "production": {
               "browserTarget": "querido-diario:build:production"
+            },
+            "en": {
+              "browserTarget": "querido-diario:build:en"
             }
           }
         },

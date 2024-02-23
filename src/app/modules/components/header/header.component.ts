@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/interfaces/account';
@@ -20,13 +20,18 @@ export class HeaderComponent implements OnInit {
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
   hideMenu = false;
+  languageList = [
+    { code: 'pt', label: 'Português (BR)' },
+    { code: 'en', label: 'English (US)' }
+  ];
 
   constructor(
     private userQuery: UserQuery,
     private modal: MatDialog,
     private contentService: ContentService,
     private userService: UserService,
-    private router: Router,
+    public router: Router,
+    @Inject(LOCALE_ID) public localeId: string
   ) {}
 
   notificationIcon: IconType = {

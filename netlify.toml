@@ -1,0 +1,19 @@
+[build]
+  publish = "dist/querido-diario"
+  command = "ng build --prod"
+
+[[redirects]]
+  from = "/*"
+  to = "/en/index.html"
+  status = 200
+  conditions = {Language = ["en"]}
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/pt/index.html"
+  status = 200

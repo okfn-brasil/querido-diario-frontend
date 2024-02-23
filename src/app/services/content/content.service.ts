@@ -12,7 +12,7 @@ export class ContentService {
   content$: Observable<any> = of(null)
 
   find(pageName: string): Observable<any> {
-    return this.http.get(`/assets/pages/${pageName}.json`).pipe(
+    return this.http.get(`assets/pages/${pageName}.json`).pipe(
       map((data) => {
         return data;
       })
