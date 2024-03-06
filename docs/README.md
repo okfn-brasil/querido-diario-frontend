@@ -33,7 +33,7 @@ Você encontra como fazê-lo no [CONTRIBUTING.md](/docs/CONTRIBUTING.md)!
 Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/) para te ajudar. 
 
 # Ambiente de desenvolvimento
-O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](package.json).
+O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](../package.json).
 
 Por meio de um terminal aberto no diretório raíz do repositório, use a sequência de comandos a seguir para instalar todas essas ferramentas em sistema operacional Linux:
 ```
