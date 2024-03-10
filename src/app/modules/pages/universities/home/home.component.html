@@ -6,7 +6,7 @@
       </app-container>
     </ng-template>
     <ng-container *ngIf="content$ | async as content; else loading">
-      <div class="banner container-education">
+      <div class="banner block-container">
         <div class="content">
           <div class="banner-img">
             <img src="/assets/images/universities/laptop.svg" alt="Computador portátil">
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="home-boxes container-education">
+      <div class="home-boxes block-container">
         <div class="content">
           <div *ngFor="let section of content.homeBoxes" class="box">
             <h3>{{ section.title }}</h3>

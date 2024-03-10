@@ -1,66 +1,65 @@
 <edu-header></edu-header>
 <div class="loading-area-edu" *ngIf="isLoading">
-  <mat-spinner ></mat-spinner>
+    <mat-spinner></mat-spinner>
 </div>
 <edu-modals *ngIf="showDeleteModal" (onClose)="closeDeleteModal()">
-  <div class="delete-title">
-    Tem certeza que deseja
-    remover o alerta?</div>
-  <div class="delete-sub-title">
-    Você não receberá mais notificações desse alerta e essa configuração será deletada permanentemente.
-  </div>
-  <div class="delete-buttons modal-education-buttons">
-    <button class="btne-primary" (click)="confirmDelete()">Sim, desejo remover</button>
-    <br class="mobile"/>
-    <button class="btne-primary purple" (click)="closeDeleteModal()">Cancelar</button>
-  </div>
+    <div class="delete-title">
+        Tem certeza que deseja remover o alerta?</div>
+    <div class="delete-sub-title">
+        Você não receberá mais notificações desse alerta e essa configuração será deletada permanentemente.
+    </div>
+    <div class="delete-buttons modal-education-buttons">
+        <button class="btne-primary" (click)="confirmDelete()">Sim, desejo remover</button>
+        <br class="mobile" />
+        <button class="btne-primary purple" (click)="closeDeleteModal()">Cancelar</button>
+    </div>
 </edu-modals>
 
 <edu-modals *ngIf="showEditEmailModal" [title]="'Editar e-mail do alerta'" (onClose)="closeEditEmail()">
-  <edu-edit-email (onSent)="closeEditEmail()"></edu-edit-email>
+    <edu-edit-email (onSent)="closeEditEmail()"></edu-edit-email>
 </edu-modals>
 <edu-alert-modal (close)="onCloseCreate()" (created)="setCloseModal()" *ngIf="isOpenModal"></edu-alert-modal>
 <div class="alerts-page">
-  <div class="container-education" *ngIf="notFound">
-    <div class="content">
-      <div class="no-alerts" >
-        <div class="text">
-          <div class="title">Alertas salvos</div>
-          <div class="sub-title">Você ainda não possui nenhum alerta</div>
-          <button *ngIf="isLoggedIn" class="btne-primary desktop" (click)="setOpenModal()">Criar alerta</button>
-        </div>
-        <img src="assets/images/education/signup.png" alt="usando celular"/>
-        
-        <button class="btne-primary mobile" (click)="setOpenModal()">Criar novo alerta</button>
-      </div>
-    </div>
-  </div>
+    <div class="block-container" *ngIf="notFound">
+        <div class="content">
+            <div class="no-alerts">
+                <div class="text">
+                    <div class="title">Alertas salvos</div>
+                    <div class="sub-title">Você ainda não possui nenhum alerta</div>
+                    <button *ngIf="isLoggedIn" class="btne-primary desktop" (click)="setOpenModal()">Criar alerta</button>
+                </div>
+                <img src="assets/images/education/signup.png" alt="usando celular" />
 
-      
-  <div class="alerts-area" *ngIf="totalItems">
-    <div class="alerts-header container-education">
-      <div class="content">
-        <div class="title">Esses são seus alertas para encontrar novidades no universo de tecnologias educacionais</div>
-        <p class="sub-title">Adicione novas preferências de alertas em <a>Criar novo alerta.</a></p>
-        <p class="sub-title">Defina onde prefere receber notificações em <a>Editar e-mail.</a></p>
-        <p class="sub-title">Caso deseje a exclusão da conta e dos dados associados a ela, solicite ao e-mail queridodiario ARROBA ok.org.br.</p>
-        <div class="buttons">
-          <button class="btne-primary" (click)="setOpenModal()">Criar novo alerta</button>
-          <br class="mobile"/>
-          <button class="btne-primary purple" (click)="openEditEmail()">Editar e-mail</button>
+                <button class="btne-primary mobile" (click)="setOpenModal()">Criar novo alerta</button>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="alerts-list container-education">
-      <div class="content">
-        <div class="alerts-items" *ngIf="!error">
-          <edu-alert-item *ngFor="let alert of alerts[currPage]" [cities]="cities" (onDelete)="onDeleteAlert($event)" [alert]="alert"></edu-alert-item>
+
+
+    <div class="alerts-area" *ngIf="totalItems">
+        <div class="alerts-header block-container">
+            <div class="content">
+                <div class="title">Esses são seus alertas para encontrar novidades no universo de tecnologias educacionais</div>
+                <p class="sub-title">Adicione novas preferências de alertas em <a>Criar novo alerta.</a></p>
+                <p class="sub-title">Defina onde prefere receber notificações em <a>Editar e-mail.</a></p>
+                <p class="sub-title">Caso deseje a exclusão da conta e dos dados associados a ela, solicite ao e-mail queridodiario ARROBA ok.org.br.</p>
+                <div class="buttons">
+                    <button class="btne-primary" (click)="setOpenModal()">Criar novo alerta</button>
+                    <br class="mobile" />
+                    <button class="btne-primary purple" (click)="openEditEmail()">Editar e-mail</button>
+                </div>
+            </div>
         </div>
-        <div class="on-error" *ngIf="error">
-          Ocorreu um erro ao buscar estes alertas.
+        <div class="alerts-list block-container">
+            <div class="content">
+                <div class="alerts-items" *ngIf="!error">
+                    <edu-alert-item *ngFor="let alert of alerts[currPage]" [cities]="cities" (onDelete)="onDeleteAlert($event)" [alert]="alert"></edu-alert-item>
+                </div>
+                <div class="on-error" *ngIf="error">
+                    Ocorreu um erro ao buscar estes alertas.
+                </div>
+                <edu-pagination *ngIf="totalItems > 6" [itemsPerPage]="6" [inverted]="true" [listSize]="totalItems" [currentPage]="currPage" (changePage)="onChangePage($event)"></edu-pagination>
+            </div>
         </div>
-        <edu-pagination *ngIf="totalItems > 6" [itemsPerPage]="6" [inverted]="true" [listSize]="totalItems" [currentPage]="currPage" (changePage)="onChangePage($event)"></edu-pagination>
-      </div>
     </div>
-  </div>
 </div>
