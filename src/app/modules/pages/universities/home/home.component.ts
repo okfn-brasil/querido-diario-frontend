@@ -13,7 +13,7 @@ export class HomeUniversitiesComponent implements OnInit {
   constructor(
     private contentService: ContentService
   ) {}
-
+  
   ngOnInit() {
     this.content$ = this.contentService.find('home-universities');
   }
