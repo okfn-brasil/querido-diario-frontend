@@ -1,20 +1,20 @@
 <app-blog-header></app-blog-header>
 <edu-modals *ngIf="showCategoriesModal" class="blog-modal" (onClose)="closeModal()" title="Categorias" (click)="closeModal()">
-  <app-blog-categories></app-blog-categories>
+    <app-blog-categories></app-blog-categories>
 </edu-modals>
-<div (click)="openCategoriesModal()" class="categories-link mobile" >
-  Categorias
+<div (click)="openCategoriesModal()" class="categories-link mobile">
+    Categorias
 </div>
-<div class="container-education">
-  <div class="content">
-    
-    <div class="list">
-      <app-blog-post *ngFor="let post of posts.slice(0 + ((currPage - 1) * 4), 4 * currPage)" [postData]="post"></app-blog-post>
-      <edu-pagination *ngIf="totalItems >= 5" [inverted]="true" [itemsPerPage]="4" [listSize]="totalItems" [currentPage]="currPage - 1" (changePage)="onChangePage($event)"></edu-pagination>
-    </div>
+<div class="block-container">
+    <div class="content">
 
-    <div class="categories desktop">
-      <app-blog-categories></app-blog-categories>
+        <div class="list">
+            <app-blog-post *ngFor="let post of posts.slice(0 + ((currPage - 1) * 4), 4 * currPage)" [postData]="post"></app-blog-post>
+            <edu-pagination *ngIf="totalItems >= 5" [inverted]="true" [itemsPerPage]="4" [listSize]="totalItems" [currentPage]="currPage - 1" (changePage)="onChangePage($event)"></edu-pagination>
+        </div>
+
+        <div class="categories desktop">
+            <app-blog-categories></app-blog-categories>
+        </div>
     </div>
-  </div>
-</div> 
+</div>

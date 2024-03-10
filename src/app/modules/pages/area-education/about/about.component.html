@@ -1,72 +1,72 @@
 <edu-header></edu-header>
 <div class="about-education">
-  <app-column class="about-education-area">
-    <ng-template #loading>
-      <app-container fxFill>
-        <mat-spinner *ngIf="loading"></mat-spinner>
-      </app-container>
-    </ng-template>
-    <ng-container *ngIf="content$ | async as content; else loading">
-      <div class="banner container-education">
-        <div class="content">
-          <div class="banner-img desktop">
-            <img src="assets/images/education/about-banner.png" alt="digitando" />
-          </div>
-          <div class="banner-content">
-            <h2>{{content.aboutTitle}}</h2>
-            <div class="banner-img mobile">
-              <img src="assets/images/education/about-banner.png" alt="digitando" />
+    <app-column class="about-education-area">
+        <ng-template #loading>
+            <app-container fxFill>
+                <mat-spinner *ngIf="loading"></mat-spinner>
+            </app-container>
+        </ng-template>
+        <ng-container *ngIf="content$ | async as content; else loading">
+            <div class="banner block-container">
+                <div class="content">
+                    <div class="banner-img desktop">
+                        <img src="assets/images/education/about-banner.png" alt="digitando" />
+                    </div>
+                    <div class="banner-content">
+                        <h2>{{content.aboutTitle}}</h2>
+                        <div class="banner-img mobile">
+                            <img src="assets/images/education/about-banner.png" alt="digitando" />
+                        </div>
+                        <h1>
+                            {{ content.title }}
+                        </h1>
+                        <p class="sub-title">
+                            {{content.subtitle}}
+                        </p>
+                    </div>
+                </div>
             </div>
-            <h1>
-              {{ content.title }}
-            </h1>
-            <p class="sub-title">
-              {{content.subtitle}}
-            </p>
-          </div>
-        </div>
-      </div> 
 
-      <div class="objective container-education">
-        <div class="content">
-          <img class="mobile" src="assets/images/education/about-objectives.png" alt="passeando com cachorro" />
-          <div class="text">
-            <div class="title">
-              {{content.objective}}
+            <div class="objective block-container">
+                <div class="content">
+                    <img class="mobile" src="assets/images/education/about-objectives.png" alt="passeando com cachorro" />
+                    <div class="text">
+                        <div class="title">
+                            {{content.objective}}
+                        </div>
+                        <div class="info" [innerHtml]="content.objectiveInfo">
+                        </div>
+                    </div>
+                    <img class="desktop" src="assets/images/education/about-objectives.png" alt="passeando com cachorro" />
+                </div>
             </div>
-            <div class="info" [innerHtml]="content.objectiveInfo">
+
+            <div class="support block-container">
+                <div class="content">
+                    <div class="text">
+                        <div class="title">{{content.supportTitle}}</div>
+                        <div class="subtitle">{{content.supportText}}</div>
+                    </div>
+                    <a href="/apoie"><button class="btne-primary">{{content.supportButton}}</button></a>
+                </div>
             </div>
-          </div>
-          <img class="desktop" src="assets/images/education/about-objectives.png" alt="passeando com cachorro" />
-        </div>
-      </div>
 
-      <div class="support container-education">
-        <div class="content">
-          <div class="text">
-            <div class="title">{{content.supportTitle}}</div>
-            <div class="subtitle">{{content.supportText}}</div>
-          </div>
-          <a href="/apoie"><button class="btne-primary">{{content.supportButton}}</button></a>
-        </div>
-      </div>
-
-      <div class="education-support">
-        <app-container theme="light">
-          <app-row [gap]="122" [gapXs]="16" [flex]="true">
-            <ng-container *ngFor="let item of content.realization">
-              <app-column [gap]="14">
-                <p>{{ item.title }}</p>
-                <app-row wrap="wrap" [gap]="14">
-                  <ng-container *ngFor="let icon of item.icons">
-                    <app-icon class="realization-icon" [icon]="icon"></app-icon>
-                  </ng-container>
-                </app-row>
-              </app-column>
-            </ng-container>
-          </app-row>
-        </app-container>
-      </div>
-    </ng-container>
-  </app-column>
+            <div class="education-support">
+                <app-container theme="light">
+                    <app-row [gap]="122" [gapXs]="16" [flex]="true">
+                        <ng-container *ngFor="let item of content.realization">
+                            <app-column [gap]="14">
+                                <p>{{ item.title }}</p>
+                                <app-row wrap="wrap" [gap]="14">
+                                    <ng-container *ngFor="let icon of item.icons">
+                                        <app-icon class="realization-icon" [icon]="icon"></app-icon>
+                                    </ng-container>
+                                </app-row>
+                            </app-column>
+                        </ng-container>
+                    </app-row>
+                </app-container>
+            </div>
+        </ng-container>
+    </app-column>
 </div>
