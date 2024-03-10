@@ -1,111 +1,111 @@
 <edu-header></edu-header>
 <div class="home">
-    <app-column class="home">
-        <ng-template #loading>
-            <app-container fxFill>
-                <mat-spinner *ngIf="loading"></mat-spinner>
-            </app-container>
-        </ng-template>
-        <ng-container *ngIf="content$ | async as content; else loading">
-            <div class="banner block-container">
-                <div class="content">
-                    <div class="banner-img desktop">
-                        <img src="assets/images/education/typing.png" alt="digitando" />
-                    </div>
-                    <div class="banner-img mobile">
-                        <img src="assets/images/education/typing.png" alt="digitando" />
-                    </div>
-                    <div class="banner-content">
-                        <h1>
-                            {{ content.title }}
-                        </h1>
-                        <p class="sub-title">
-                            {{ content.subtitle }}
-                        </p>
-                        <button routerLink="/educacao/busca" class="btne-primary desktop">{{ content.bannerButton }}</button>
-                        <button routerLink="/educacao/busca" class="btne-primary mobile">{{ content.bannerButtonMobile }}</button>
-                    </div>
-                </div>
-            </div>
+  <app-column class="home">
+    <ng-template #loading>
+      <app-container fxFill>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+      </app-container>
+    </ng-template>
+    <ng-container *ngIf="content$ | async as content; else loading">
+      <div class="banner block-container">
+        <div class="content">
+          <div class="banner-img desktop">
+            <img src="assets/images/education/typing.png" alt="digitando" />
+          </div>
+          <div class="banner-img mobile">
+            <img src="assets/images/education/typing.png" alt="digitando" />
+          </div>
+          <div class="banner-content">
+            <h1>
+              {{ content.title }}
+            </h1>
+            <p class="sub-title">
+              {{ content.subtitle }}
+            </p>
+            <button routerLink="/educacao/busca" class="btne-primary desktop">{{ content.bannerButton }}</button>
+            <button routerLink="/educacao/busca" class="btne-primary mobile">{{ content.bannerButtonMobile }}</button>
+          </div>
+        </div>
+      </div>
 
-            <div class="reports-section">
-                <div class="container-carousel">
-                    <h2>{{content.reports.title}}</h2>
-                    <p class="sub-title">{{content.reports.subtitle}}</p>
-                    <edu-carousel *ngIf="reports && reports.length" [items]="reports"></edu-carousel>
-                    <hr class="reports-separator" />
-                    <div>
-                        <h2>Análise Customizada</h2>
-                        <p class="sub-title">Faça agora o pedido de uma análise sob medida, de acordo com suas necessidades. O nosso time avaliará o pedido e entrará em contato.</p>
-                        <button routerLink="/educacao/pedido-analise" class="btne-primary">Realize um pedido de análise sob medida</button>
-                    </div>
-                </div>
-            </div>
+      <div class="reports-section">
+        <div class="container-carousel">
+          <h2>{{content.reports.title}}</h2>
+          <p class="sub-title">{{content.reports.subtitle}}</p>
+          <edu-carousel *ngIf="reports && reports.length" [items]="reports"></edu-carousel>
+          <hr class="reports-separator" />
+          <div>
+            <h2>Análise Customizada</h2>
+            <p class="sub-title">Faça agora o pedido de uma análise sob medida, de acordo com suas necessidades. O nosso time avaliará o pedido e entrará em contato.</p>
+            <button routerLink="/educacao/pedido-analise" class="btne-primary">Realize um pedido de análise sob medida</button>
+          </div>
+        </div>
+      </div>
 
-            <div class="cases-section">
-                <div class="container-carousel">
-                    <h2>{{content.cases.title}}</h2>
-                    <p class="sub-title">{{content.cases.subtitle}}</p>
-                    <edu-carousel [theme]="'dark'" [type]="'second-type'" *ngIf="cases && cases.length" [items]="cases"></edu-carousel>
-                </div>
-            </div>
+      <div class="cases-section">
+        <div class="container-carousel">
+          <h2>{{content.cases.title}}</h2>
+          <p class="sub-title">{{content.cases.subtitle}}</p>
+          <edu-carousel [theme]="'dark'" [type]="'second-type'" *ngIf="cases && cases.length" [items]="cases"></edu-carousel>
+        </div>
+      </div>
 
-            <div class="block-container">
-                <div class="content section-content">
-                    <div class="container-content">
-                        <p class="sub-title">
-                            {{ content.catalog.title }}
-                        </p>
-                        <h2>
-                            {{ content.catalog.subtitle }}
-                        </h2>
-                        <div class="container-img mobile">
-                            <img src="assets/images/education/browsing.png" alt="graficos" />
-                        </div>
-                        <a href="https://go.ok.org.br/qd-tecnologias-educacao-catalogo" target="_blank">
-                            <button class="btne-primary full-width-mobile">{{ content.catalog.button }}</button>
-                        </a>
-                    </div>
-                    <div class="container-img desktop">
-                        <img src="assets/images/education/browsing.png" alt="graficos" />
-                    </div>
-                </div>
+      <div class="block-container">
+        <div class="content section-content">
+          <div class="container-content">
+            <p class="sub-title">
+              {{ content.catalog.title }}
+            </p>
+            <h2>
+              {{ content.catalog.subtitle }}
+            </h2>
+            <div class="container-img mobile">
+              <img src="assets/images/education/browsing.png" alt="graficos" />
             </div>
+            <a href="https://go.ok.org.br/qd-tecnologias-educacao-catalogo" target="_blank">
+              <button class="btne-primary full-width-mobile">{{ content.catalog.button }}</button>
+            </a>
+          </div>
+          <div class="container-img desktop">
+            <img src="assets/images/education/browsing.png" alt="graficos" />
+          </div>
+        </div>
+      </div>
 
-            <div class="block-container about">
-                <div class="content section-content">
-                    <div class="container-img">
-                        <img src="assets/images/education/using-notebook.png" class="using-notebook-image" alt="caminhando com cachorro" />
-                    </div>
-                    <div class="container-content">
-                        <p class="sub-title">
-                            {{ content.about.title }}
-                        </p>
-                        <h2>
-                            {{ content.about.subtitle }}
-                        </h2>
-                        <button routerLink="/educacao/sobre" class="btne-primary full-width-mobile">{{ content.about.button }}</button>
-                    </div>
-                </div>
-            </div>
+      <div class="block-container about">
+        <div class="content section-content">
+          <div class="container-img">
+            <img src="assets/images/education/using-notebook.png" class="using-notebook-image" alt="caminhando com cachorro" />
+          </div>
+          <div class="container-content">
+            <p class="sub-title">
+              {{ content.about.title }}
+            </p>
+            <h2>
+              {{ content.about.subtitle }}
+            </h2>
+            <button routerLink="/educacao/sobre" class="btne-primary full-width-mobile">{{ content.about.button }}</button>
+          </div>
+        </div>
+      </div>
 
-            <div class="education-support">
-                <app-container theme="light">
-                    <app-row [gap]="122" [gapXs]="16" [flex]="true">
-                        <ng-container *ngFor="let item of content.realization">
-                            <app-column [gap]="14">
-                                <p>{{ item.title }}</p>
-                                <app-row wrap="wrap" [gap]="14">
-                                    <ng-container *ngFor="let icon of item.icons">
-                                        <app-icon class="realization-icon" [icon]="icon"></app-icon>
-                                    </ng-container>
-                                </app-row>
-                            </app-column>
-                        </ng-container>
-                    </app-row>
-                </app-container>
-            </div>
+      <div class="education-support">
+        <app-container theme="light">
+          <app-row [gap]="122" [gapXs]="16" [flex]="true">
+            <ng-container *ngFor="let item of content.realization">
+              <app-column [gap]="14">
+                <p>{{ item.title }}</p>
+                <app-row wrap="wrap" [gap]="14">
+                  <ng-container *ngFor="let icon of item.icons">
+                    <app-icon class="realization-icon" [icon]="icon"></app-icon>
+                  </ng-container>
+                </app-row>
+              </app-column>
+            </ng-container>
+          </app-row>
+        </app-container>
+      </div>
 
-        </ng-container>
-    </app-column>
+    </ng-container>
+  </app-column>
 </div>
