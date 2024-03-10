@@ -9,13 +9,28 @@
       <div class="banner container-education">
         <div class="content">
           <div class="banner-img">
-            <img src="assets/images/education/typing.png" alt="digitando">
+            <img src="/assets/images/universities/laptop.svg" alt="Computador portátil">
           </div>
           <div class="banner-content">
             <h1>{{ content.title }}</h1>
             <h2>{{ content.subtitle }}</h2>
             <p>{{ content.paragraph }}</p>
             <button class="btne-primary">{{ content.bannerButton }}</button>
+          </div>
+        </div>
+      </div>
+      <div class="home-boxes container-education">
+        <div class="content">
+          <div *ngFor="let section of content.homeBoxes" class="box">
+            <h3>{{ section.title }}</h3>
+            <p>{{ section.paragraph }}</p>
+            <a>
+              Ler mais
+              <app-icon
+              class='center'
+              [icon]="{ file: 'white-arrow', height: 10, width: 10 }"
+              ></app-icon>
+            </a>
           </div>
         </div>
       </div>

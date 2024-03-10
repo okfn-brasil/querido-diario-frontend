@@ -2,5 +2,19 @@
   "title": "Querido Diário nas Universidades",
   "subtitle": "Pesquisa e extensão acadêmica em parceria com projetos de código aberto.",
   "paragraph": "Parceria com grupos de Ciência de Dados e Jornalismo Científico para a solução de desafios técnicos.",
-  "bannerButton": "Entenda mais"
+  "bannerButton": "Entenda mais",
+  "homeBoxes": [
+    {
+      "title": "Como fazer parte",
+      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!"
+    },
+    {
+      "title": "Base de Conhecimento",
+      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!"
+    },
+    {
+      "title": "Histórico dos Ciclos",
+      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!"
+    }
+  ]
 }
