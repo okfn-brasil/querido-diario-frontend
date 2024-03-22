@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  contributors-json:
+    runs-on: ubuntu-latest
+    name: Gera contributors.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.2.0
+      - run: yarn add @actions/core @actions/http-client
+      - uses: ./.github/actions/contributors-json
+        with:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: contributors-json
+          path: contributors.json

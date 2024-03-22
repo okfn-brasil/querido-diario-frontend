@@ -1,0 +1,156 @@
+{
+  "projectName": "querido-diario-frontend",
+  "projectOwner": "okfn-brasil",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "docs/README.md",
+    "docs/README-en-US.md",
+    "docs/CONTRIBUTORS.md",
+    "docs/CONTRIBUTORS-en-US.md",
+    "docs/CONTRIBUTING.md",
+    "docs/CONTRIBUTING-en-US.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "vinicivs-monteiro",
+      "name": "Vinícius Monteiro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1107639?v=4",
+      "profile": "https://github.com/vinicivs-monteiro",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "trevineju",
+      "name": "Juliana Trevine",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44185775?v=4",
+      "profile": "https://github.com/trevineju",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "lguima",
+      "name": "Lucas Guima",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1562097?v=4",
+      "profile": "https://www.linkedin.com/in/lucasguima",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "LucasMendoncaWF",
+      "name": "LucasMendoncaWF",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43712801?v=4",
+      "profile": "https://github.com/LucasMendoncaWF",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "ogecece",
+      "name": "Giulio Carvalho",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26327506?v=4",
+      "profile": "https://github.com/ogecece",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "ArianeCamilo",
+      "name": "Ariane Camilo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32268301?v=4",
+      "profile": "https://github.com/ArianeCamilo",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "tigreped",
+      "name": "Pedro Guimarães",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1479330?v=4",
+      "profile": "https://github.com/tigreped",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "rasrbk",
+      "name": "RasRbk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/92368456?v=4",
+      "profile": "https://ok.org.br/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "guicalmeida",
+      "name": "Guilherme Almeida",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60672629?v=4",
+      "profile": "https://github.com/guicalmeida",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "trolzen",
+      "name": "trolzen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/731584?v=4",
+      "profile": "https://github.com/trolzen",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "malungo",
+      "name": "malungo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28476?v=4",
+      "profile": "https://github.com/malungo",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "lucalves",
+      "name": "Lucas Alves",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17712401?v=4",
+      "profile": "https://lucalves.github.io/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "sergiomario",
+      "name": "Mário Sérgio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2698516?v=4",
+      "profile": "https://github.com/sergiomario",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "RenatoSiqueira",
+      "name": "Renato Siqueira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30542215?v=4",
+      "profile": "https://www.linkedin.com/in/renatosiqueira/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Winzen",
+      "name": "Luiz Eduardo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94500122?v=4",
+      "profile": "https://github.com/Winzen",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": true
+}

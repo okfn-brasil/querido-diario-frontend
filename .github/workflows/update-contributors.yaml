@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    name: Atualiza CONTRIBUTORS
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/contributors
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: '.'
+          push: true
+          message: 'atualiza lista de pessoas contribuidoras'
+

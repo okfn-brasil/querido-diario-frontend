@@ -1,0 +1,10 @@
+name: 'Contributors JSON'
+description: 'Generates JSON with contributors per repository'
+inputs:
+  TOKEN:
+    description: "GitHub token to authenticate requests"
+    required: true
+runs:
+  using: 'node20'
+  main: 'index.js'
+
