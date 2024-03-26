@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable, forkJoin, of, pipe } from 'rxjs';
+import { Observable, forkJoin, of } from 'rxjs';
 import { ContentService } from 'src/app/services/content/content.service';
 import { VideoModalComponent } from '../../components/video-modal/video-modal.component';
 import { CitiesService } from 'src/app/services/cities/cities.service';
@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   content$: Observable<any> = of(null);
-  newContent$: Observable<any> = of(null);
   numberOfCities = 0;
 
   constructor(
@@ -28,7 +27,7 @@ export class HomeComponent implements OnInit {
       numberOfCities: this.citiesService.getAll(),
     }).pipe(
       map((data) => {
-        data.content.evolution.items[0].count =
+        data.content.evolution.items[0]['count'] =
           data.numberOfCities.cities.length;
         return data.content;
       })

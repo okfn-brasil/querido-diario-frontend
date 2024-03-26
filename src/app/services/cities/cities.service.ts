@@ -1,15 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map, shareReplay } from 'rxjs/operators';
 import { API } from 'src/app/constants';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CitiesService {
   getAllObservableCache: Observable<any> | null = null;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
   getAll(): Observable<any> {
     if (!this.getAllObservableCache)
@@ -17,7 +18,14 @@ export class CitiesService {
         map((data) => {
           return data;
         }),
-        shareReplay(1)
+        shareReplay(1),
+        catchError(() => {
+          this.snackBar.open(
+            'Houve um erro buscando as cidades disponíveis! Tente novamente mais tarde.',
+            'Fechar'
+          );
+          return of({ cities: [] });
+        })
       );
 
     return this.getAllObservableCache;

@@ -110,8 +110,7 @@ import { ResetPassModalComponent } from './modules/pages/area-education/header/r
 import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
-
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -204,6 +203,7 @@ import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/
     MatCardModule,
     MatAutocompleteModule,
     FormsModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
