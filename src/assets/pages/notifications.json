@@ -1,10 +1,16 @@
 {
   "list": [
+    {
+      "title": "Novas 20 cidades!",
+      "content": "As cidades de São José dos Campos (SP), Aguiarnópolis (TO), Campos Lindos (TO), Goiatins (TO), Peixe (TO), Tocantínia (TO), Corumbá (MS), Estância (SE), Tremembé (SP), Monteiro Lobato (SP), Macatuba (SP), Cunha (SP), Campo Alegre de Lourdes (BA), Correntina (BA), Jaborandi (BA), Jeremoabo (BA), Lauro de Freitas (BA), Luis Eduardo Magalhães (BA), Maragogipe (BA) e Riachão das Neves (BA) foram adicionadas à plataforma!",
+      "updatedAt": "2024/03/27",
+      "isNew": true
+    },
     {   
       "title": "Novas 3 cidades!",
       "content": "As cidades de Niterói (RJ), São João de Meriti (RJ) e Sampaio (TO)",
       "updatedAt": "2024/01/22",
-      "isNew": true
+      "isNew": false
     },
     {   
       "title": "Novas 93 cidades!",
