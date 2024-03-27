@@ -21,7 +21,7 @@
 </edu-modals>
 <edu-alert-modal (close)="onCloseCreate()" (created)="setCloseModal()" *ngIf="isOpenModal"></edu-alert-modal>
 <div class="alerts-page">
-  <div class="container-education" *ngIf="notFound">
+  <div class="block-container" *ngIf="notFound">
     <div class="content">
       <div class="no-alerts" >
         <div class="text">
@@ -38,7 +38,7 @@
 
       
   <div class="alerts-area" *ngIf="totalItems">
-    <div class="alerts-header container-education">
+    <div class="alerts-header block-container">
       <div class="content">
         <div class="title">Esses são seus alertas para encontrar novidades no universo de tecnologias educacionais</div>
         <p class="sub-title">Adicione novas preferências de alertas em <a>Criar novo alerta.</a></p>
@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="alerts-list container-education">
+    <div class="alerts-list block-container">
       <div class="content">
         <div class="alerts-items" *ngIf="!error">
           <edu-alert-item *ngFor="let alert of alerts[currPage]" [cities]="cities" (onDelete)="onDeleteAlert($event)" [alert]="alert"></edu-alert-item>

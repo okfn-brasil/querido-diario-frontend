@@ -7,7 +7,7 @@
       </app-container>
     </ng-template>
     <ng-container *ngIf="content$ | async as content; else loading">
-      <div class="banner container-education">
+      <div class="banner block-container">
         <div class="content">
           <div class="banner-img desktop">
             <img src="assets/images/education/about-banner.png" alt="digitando" />
@@ -27,7 +27,7 @@
         </div>
       </div> 
 
-      <div class="objective container-education">
+      <div class="objective block-container">
         <div class="content">
           <img class="mobile" src="assets/images/education/about-objectives.png" alt="passeando com cachorro" />
           <div class="text">
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="support container-education">
+      <div class="support block-container">
         <div class="content">
           <div class="text">
             <div class="title">{{content.supportTitle}}</div>

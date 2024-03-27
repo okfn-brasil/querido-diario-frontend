@@ -2,7 +2,7 @@
   <div *ngIf="loading" class="loading-area">
     <mat-spinner></mat-spinner>
   </div>
-  <div class="container-education">
+  <div class="block-container">
     <div class="content">
       <form (submit)="onSubmit()" [formGroup]="formGroup" (click)="onClickForm()">
         <div *ngIf="!!errorMessage" class="submit-error">{{errorMessage}}</div>

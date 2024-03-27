@@ -110,6 +110,7 @@ import { ResetPassModalComponent } from './modules/pages/area-education/header/r
 import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
+import { HomeUniversitiesComponent } from './modules/pages/universities/home/home.component';
 
 
 
@@ -190,6 +191,7 @@ import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/
     AboutComponentEnUS,
     TechComponentEnUS,
     PrivacyPolicyComponentEnUS,
+    HomeUniversitiesComponent,
   ],
   imports: [
     BrowserModule,
