@@ -15,7 +15,7 @@
             "width": 50
           }
         },
-        "count": 359,  
+        "count": null,
         "text": "Cidades já na plataforma"
       },
       {
@@ -123,23 +123,97 @@
     {
       "title": "REALIZAÇÃO",
       "icons": [
-        { "file": "logo-OK", "to": "https://ok.org.br/", "target": "_blank", "height": 30, "width": 106 },
-        { "file": "logo-serenata", "to": "https://serenata.ai/", "target": "_blank", "height": 40, "width": 82 },
-        { "file": "logo-embaixadores", "to": "https://embaixadoras.ok.org.br/", "target": "_blank", "height": 18, "width": 116 }
+        {
+          "file": "logo-OK",
+          "to": "https://ok.org.br/",
+          "target": "_blank",
+          "height": 30,
+          "width": 106
+        },
+        {
+          "file": "logo-serenata",
+          "to": "https://serenata.ai/",
+          "target": "_blank",
+          "height": 40,
+          "width": 82
+        },
+        {
+          "file": "logo-embaixadores",
+          "to": "https://embaixadoras.ok.org.br/",
+          "target": "_blank",
+          "height": 18,
+          "width": 116
+        }
       ]
     },
     {
       "title": "APOIO",
       "icons": [
-        { "file": "logo-Ilda", "to": "https://idatosabiertos.org/", "target": "_blank", "height": 17, "width": 52 },
-        { "file": "logo_empatia", "to": "https://www.empatia.la/", "target": "_blank", "height": 16, "width": 87 },
-        { "file": "logo-jurema", "to": "https://www.jurema.la/", "target": "_blank", "height": 18, "width": 80 },
-        { "file": "logo-digitalocean", "to": "https://www.digitalocean.com/", "target": "_blank", "height": 18, "width": 110},
-        { "file": "logo-fiocruz", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
-        { "file": "logo-icict", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 116 },
-        { "file": "logo-pcdas", "to": "https://pcdas.icict.fiocruz.br/", "target": "_blank", "height": 40, "width": 72 },
-        { "file": "assets/images/imaginable.png", "isPng": true, "to": "https://www.imaginablefutures.com/", "target": "_blank", "height": 30, "width": 106 },
-        { "file": "assets/images/lemann.png", "isPng": true, "to": "https://fundacaolemann.org.br/", "target": "_blank", "height": 30, "width": 106 }
+        {
+          "file": "logo-Ilda",
+          "to": "https://idatosabiertos.org/",
+          "target": "_blank",
+          "height": 17,
+          "width": 52
+        },
+        {
+          "file": "logo_empatia",
+          "to": "https://www.empatia.la/",
+          "target": "_blank",
+          "height": 16,
+          "width": 87
+        },
+        {
+          "file": "logo-jurema",
+          "to": "https://www.jurema.la/",
+          "target": "_blank",
+          "height": 18,
+          "width": 80
+        },
+        {
+          "file": "logo-digitalocean",
+          "to": "https://www.digitalocean.com/",
+          "target": "_blank",
+          "height": 18,
+          "width": 110
+        },
+        {
+          "file": "logo-fiocruz",
+          "to": "https://pcdas.icict.fiocruz.br/",
+          "target": "_blank",
+          "height": 40,
+          "width": 116
+        },
+        {
+          "file": "logo-icict",
+          "to": "https://pcdas.icict.fiocruz.br/",
+          "target": "_blank",
+          "height": 40,
+          "width": 116
+        },
+        {
+          "file": "logo-pcdas",
+          "to": "https://pcdas.icict.fiocruz.br/",
+          "target": "_blank",
+          "height": 40,
+          "width": 72
+        },
+        {
+          "file": "assets/images/imaginable.png",
+          "isPng": true,
+          "to": "https://www.imaginablefutures.com/",
+          "target": "_blank",
+          "height": 30,
+          "width": 106
+        },
+        {
+          "file": "assets/images/lemann.png",
+          "isPng": true,
+          "to": "https://fundacaolemann.org.br/",
+          "target": "_blank",
+          "height": 30,
+          "width": 106
+        }
       ]
     }
   ]
