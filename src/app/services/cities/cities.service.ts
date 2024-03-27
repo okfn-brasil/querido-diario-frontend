@@ -19,7 +19,8 @@ export class CitiesService {
           return data;
         }),
         shareReplay(1),
-        catchError(() => {
+        catchError((error) => {
+          console.error(error);
           this.snackBar.open(
             'Houve um erro buscando as cidades disponíveis! Tente novamente mais tarde.',
             'Fechar'
