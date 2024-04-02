@@ -9,8 +9,11 @@ import { Gazette, GazetteResponse } from 'src/app/interfaces/gazette';
 import { Level } from 'src/app/interfaces/level';
 import { LevelDescription, Pagination, SearchResponse } from 'src/app/interfaces/search';
 import { Territory } from 'src/app/interfaces/territory';
-import { Level } from 'src/app/interfaces/level';
-import { query } from '@angular/animations';
+import { GazetteService } from 'src/app/services/gazette/gazette.service';
+import { TerritoryService } from 'src/app/services/territory/territory.service';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
+
+var data = Array();
 
 @Component({
   selector: 'app-search',
@@ -178,11 +181,31 @@ export class SearchComponent implements OnInit {
     return text.replace('\n', '<br />');
   }
 
-  selectExcerpts(text: string, data: string, territory: string){
-    text = this.formatText(text)
+  selectExcerpts(text: string, date: string, territory: string, state: string, url: string) {
+    text = this.formatText(text);
 
-    console.log(text)
-    console.log(data)
-    console.log(territory)
+    let selected={
+      'URL': url,
+      'excerpt': text,
+      'date-published': date,
+      'location': territory+" ("+state+")",
+    }
+
+    console.log(selected);
+
+    data.push(selected);
+
+    console.log(data);
+
+    //console.log(this.gazetteResponse?.gazettes[0].downloads);
+  }
+
+  downloadCSV() {
+    var options = {
+      showLabels: true,
+      headers: ["Link para Download do Diário Oficial", "Excerto", "Data de Publicação", "Local"]
+    }
+
+    new ngxCsv(data, 'myExcerpts', options);
   }
 }
