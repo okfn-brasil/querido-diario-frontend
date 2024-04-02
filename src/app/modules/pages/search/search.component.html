@@ -90,13 +90,38 @@
                   }
           "
         >
+        <ng-container *ngFor="let text of gazette.excerpts">
+          <div
+            style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15px;
+            height: 15px;
+            background:white;
+            border-radius: 25%;
+            cursor: pointer;
+            margin-bottom: 2px;"
+            class="selectExcerpts"
+            (click)="selectExcerpts(text, gazette.date, gazette.territory_name)"
+          ><div 
+            class="select"
+            style="
+              display: block;
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background: black;
+            "
+            ></div>
+          </div> 
+        </ng-container>
         <!--é aqui que temos que mexer-->
           <div
             fxLayout="column"
             class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px"
-          >
-          
+          >     
             <ng-container *ngFor="let text of gazette.excerpts">
               <div [innerHTML]="formatText(text)" class="typo-inner"></div>
             </ng-container>
@@ -124,6 +149,7 @@
                 [options]="gazette.downloads"
                 [label]="'Baixar diário oficial'"
               ></app-select>
+              
             </div>
           </div>
           <!--terniar-->
