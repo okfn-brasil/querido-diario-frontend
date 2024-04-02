@@ -76,7 +76,7 @@
           </div>
           <div fxLayout="row" class="view-options">
             <div class="download-area">
-              <button class="btn-download" *ngIf="selectedGazettes.length==0">
+              <button class="btn-download" *ngIf="selectedGazettes.length==0" (click)="downloadCSV()">
                 <mat-icon>cloud_download</mat-icon>
                 <span class="text-white">Baixar todos</span>
               </button>
@@ -139,6 +139,17 @@
             fxLayoutGap="22px"
           >     
             <ng-container *ngFor="let text of gazette.excerpts">
+              <div
+                style="display: flex;justify-content: center; align-items: center;width: 15px; height: 15px;background:white; border-radius: 25%;cursor: pointer; margin-bottom: 2px;"
+                class="selectExcerpts"
+                (click)="selectExcerpts(text, gazette.date, gazette.territory_name, gazette.state_code, gazette.downloads[1].value)">
+
+                <div class="select"
+                  style="display: block;width: 5px;height: 5px;border-radius: 50%;background: black;">
+                </div>
+
+              </div>
+
               <div [innerHTML]="formatText(text)" class="typo-inner"></div>
             </ng-container>
             <div
