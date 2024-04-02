@@ -90,11 +90,13 @@
                   }
           "
         >
+        <!--é aqui que temos que mexer-->
           <div
             fxLayout="column"
             class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px"
           >
+          
             <ng-container *ngFor="let text of gazette.excerpts">
               <div [innerHTML]="formatText(text)" class="typo-inner"></div>
             </ng-container>
@@ -124,6 +126,7 @@
               ></app-select>
             </div>
           </div>
+          <!--terniar-->
         </pagination-template>
         <div fxLayout="row" fxFlexAlign="center" class="pagination-area">
           <a class="pagination-first-page" *ngIf="pagination.currentPage > 1">
