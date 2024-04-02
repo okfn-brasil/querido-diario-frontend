@@ -24,14 +24,14 @@ section
 .form-search-container
   padding-left: 0
   padding-right: 0
-  
+
 .container
   width: rem(979)
 
 .result
   padding: rem(46) rem(100)
 
-  @media only screen and (max-width: 768px) 
+  @media only screen and (max-width: 768px)
     padding: rem(46) rem(16)
     margin-top: 32px
 
@@ -49,6 +49,35 @@ section
   background-color: #FF8500
   border: none
   color: $white1
+
+.btn-download
+  display: flex
+  justify-content: center
+  place-items: center
+  gap: 4px
+  padding: 0 12px
+  height: 2.75rem
+  border-radius: 1.875rem
+  background-color: #ff8500
+  font-family: Lato
+  color: #fff
+  border: none
+  font-size: 1rem
+  font-weight: 600
+  letter-spacing: 0
+  line-height: 1rem
+
+.view-options
+  display: flex
+  justify-content: space-around
+
+  .download-area
+    display: flex
+    align-items: center
+    width: 50%
+
+  .sort-by
+    widows: 100%
 
 ::ng-deep
   mat-icon
@@ -70,7 +99,7 @@ section
 
   .pagination-mobile
     display: block
-    
+
   .pagination-desktop
     display: none
 
