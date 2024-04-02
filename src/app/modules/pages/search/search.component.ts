@@ -19,6 +19,7 @@ import { LevelDescription, Pagination, SearchResponse } from 'src/app/interfaces
 import { GazetteResponse } from 'src/app/interfaces/gazette';
 import { Territory } from 'src/app/interfaces/territory';
 import { Level } from 'src/app/interfaces/level';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-search',
@@ -178,5 +179,13 @@ export class SearchComponent implements OnInit {
 
   formatText(text: string): string {
     return text.replace('\n', '<br />');
+  }
+
+  selectExcerpts(text: string, data: string, territory: string){
+    text = this.formatText(text)
+
+    console.log(text)
+    console.log(data)
+    console.log(territory)
   }
 }
