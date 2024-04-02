@@ -1,22 +1,13 @@
-import {
-  Component,
-  EventEmitter,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
-
 import { EnvService } from 'src/app/env.service';
-import {
-  GazetteService,
-} from 'src/app/services/gazette/gazette.service';
 import { City } from 'src/app/interfaces/city';
-import { TerritoryService } from 'src/app/services/territory/territory.service';
+import { Gazette, GazetteResponse } from 'src/app/interfaces/gazette';
+import { Level } from 'src/app/interfaces/level';
 import { LevelDescription, Pagination, SearchResponse } from 'src/app/interfaces/search';
-import { GazetteResponse } from 'src/app/interfaces/gazette';
 import { Territory } from 'src/app/interfaces/territory';
 import { Level } from 'src/app/interfaces/level';
 import { query } from '@angular/animations';
@@ -50,6 +41,8 @@ export class SearchComponent implements OnInit {
   territories: Territory[] = [];
 
   gazetteResponse: GazetteResponse | null = null;
+
+  selectedGazettes: Gazette[] = [];
 
   pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
 
@@ -125,39 +118,43 @@ export class SearchComponent implements OnInit {
       this.gazetteService
         .findAll({ ...params, territory_id: params.city })
         .pipe(take(1))
-        .subscribe((res) => {
-          this.gazetteResponse = res;
-          let pagination: Pagination = this.pagination;
-          const totalItems = Math.ceil(res.total_gazettes / 10);
-          pagination = {
-            ...pagination,
-            currentPage: params.page,
-            totalItems,
-          };
-          this.pagination = pagination;
-        }, () => {
-          this.gazetteResponse = {total_gazettes: 0} as GazetteResponse;
-        });
+        .subscribe(
+          (res) => {
+            this.gazetteResponse = res;
+            let pagination: Pagination = this.pagination;
+            const totalItems = Math.ceil(res.total_gazettes / 10);
+            pagination = {
+              ...pagination,
+              currentPage: params.page,
+              totalItems,
+            };
+            this.pagination = pagination;
+          },
+          () => {
+            this.gazetteResponse = { total_gazettes: 0 } as GazetteResponse;
+          }
+        );
     });
   }
 
   getCities() {
-    this.cities.forEach(city => {
+    this.cities.forEach((city) => {
       this.territoryService
-      .findOne({ territoryId: city })
-      .pipe(take(1))
-      .subscribe((res) => {
-        this.territories.push(res);
-        const level = parseInt(res.level);
-        if(!this.levels.includes(level)) {
-          this.levels.push(level);
-        }
-      });
-    })
-    
+        .findOne({ territoryId: city })
+        .pipe(take(1))
+        .subscribe((res) => {
+          this.territories.push(res);
+          const level = parseInt(res.level);
+          if (!this.levels.includes(level)) {
+            this.levels.push(level);
+          }
+        });
+    });
   }
 
   openFile(link: string) {
+    console.log('>>>>>> Open Link', link);
+
     window.open(link);
   }
 
