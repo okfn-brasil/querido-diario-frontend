@@ -1,1 +1,1 @@
-export const API = 'https://queridodiario.ok.org.br/api';
+export const API = 'http://localhost:8080';
