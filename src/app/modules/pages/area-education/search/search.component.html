@@ -58,8 +58,11 @@
               </select>
             </div>
           </div>
-          <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
-        </div>
+          <div class="button-container">
+            <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
+            <button *ngIf="isLoggedIn" class="btn-download"><mat-icon>cloud_download</mat-icon>Baixar arquivos<br> selecionados</button>
+          </div>
+          </div>
         <edu-search-item *ngFor="let item of results[listPageIntern]" [gazette]="item"></edu-search-item>
         <edu-pagination [listSize]="totalItems" [currentPage]="currPage" (changePage)="onChangePage($event)"></edu-pagination>
       </div>
