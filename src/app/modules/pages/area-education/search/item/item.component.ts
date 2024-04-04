@@ -11,6 +11,7 @@ export class ItemEducationComponent implements OnInit {
   isShowingTooltip = false;
   constructor() { }
 
+
   ngOnInit(): void {
   }
 
@@ -21,4 +22,9 @@ export class ItemEducationComponent implements OnInit {
   showTooltip() {
     this.isShowingTooltip = true;
   }
+
+  
+
+
+
 }

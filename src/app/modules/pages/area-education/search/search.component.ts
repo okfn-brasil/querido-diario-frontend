@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ngxCsv } from 'ngx-csv';
 import { City } from 'src/app/interfaces/city';
 import { GazetteFilters, GazetteModel, GazetteResponse, OrderFilter, parseGazettes } from 'src/app/interfaces/education-gazettes';
 import { CitiesService } from 'src/app/services/cities/cities.service';
@@ -8,6 +9,16 @@ import { UserQuery } from 'src/app/stores/user/user.query';
 
 interface List {
   [key: number]: GazetteModel[];
+}
+
+interface ValuesCSV{
+  Cidade: string,
+  Exerto: string, 
+  Data: string,
+  Edicao: string,
+  Edicao_Extra: string,
+  URL_Texto: string,
+  URL_PDF: string
 }
 
 @Component({
@@ -38,6 +49,8 @@ export class SearchEducationComponent implements OnInit {
   isOpenAlertModal = false;
   isOpenAdvanced = false;
   savedParams = '';
+
+  valuesCsv: Array<ValuesCSV> = [] 
 
   constructor(
     private searchService: EducationGazettesService,
@@ -224,5 +237,48 @@ convertToParams(filters: GazetteFilters){
 
   onOpenAdvanced() {
     this.isOpenAdvanced = true;
+  }
+
+  addValuesCsv(territory_name:string, 
+    excerpt:string, 
+    date:string, 
+    edition:string, 
+    is_extra_edition:boolean, 
+    txt_url:string, 
+    pdf_url:string
+  ) {
+
+    let val:ValuesCSV= {
+    Cidade: territory_name,
+    Exerto: excerpt, 
+    Data: date,
+    Edicao: edition,
+    Edicao_Extra: is_extra_edition ? "Edicao extra":"Não extra",
+    URL_Texto: txt_url,
+    URL_PDF: pdf_url
+    }
+
+    for(let i=0; i<this.valuesCsv.length; i++){
+      if(this.valuesCsv[i].Exerto == val.Exerto){
+        this.valuesCsv.splice(i,1)
+        return
+      }
+    }
+    
+    this.valuesCsv.push(val)
+  }
+
+  downloadCSV(){
+    console.log(this.valuesCsv)
+    var options = { 
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true, 
+      useBom: true,
+      noDownload: false,
+      headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
+    };
+    new ngxCsv(this.valuesCsv, "pesquisa", options);
   }
 }
