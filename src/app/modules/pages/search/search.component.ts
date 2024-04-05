@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
@@ -218,6 +218,8 @@ gazetteCSV: Array<GazetteCSV> = []
         }
     }
 
+    console.log(val)
+
     this.gazetteCSV.push(val)
 
     //console.log(this.gazetteResponse?.gazettes[0].downloads);
@@ -234,5 +236,16 @@ gazetteCSV: Array<GazetteCSV> = []
       headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
     };
     new ngxCsv(this.gazetteCSV, "pesquisa", options);
+  }
+
+  checkALL(){
+    let checkBox = document.querySelectorAll('#child')
+
+    for(let i=0; i<checkBox.length; i++){
+      console.log(checkBox[i])
+      let box = checkBox[i];
+      
+
+    }
   }
 }

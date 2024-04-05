@@ -78,8 +78,15 @@
             <div class="download-area">
               <button class="btn-download" *ngIf="selectedGazettes.length==0" (click)="downloadCSV()">
                 <mat-icon>cloud_download</mat-icon>
-                <span class="text-white">Baixar todos</span>
+                <span class="text-white">Baixar</span>
               </button>
+
+              <input
+                type="checkbox"
+                id="father"
+                (change)="checkALL()"
+              /> 
+              
               <button class="btn-download" *ngIf="selectedGazettes.length>0">
                 <mat-icon>cloud_download</mat-icon>
                 <span class="text-white">Baixar selecionados (8)</span>
@@ -141,6 +148,7 @@
             <ng-container *ngFor="let text of gazette.excerpts">
               <input
                 type="checkbox"
+                id="child"
                 class="selectExcerpts"
                 (change)="selectExcerpts(gazette.territory_name, text, gazette.date, gazette.edition, gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value)"
               />
