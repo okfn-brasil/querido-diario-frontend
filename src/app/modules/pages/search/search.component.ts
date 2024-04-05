@@ -13,7 +13,16 @@ import { GazetteService } from 'src/app/services/gazette/gazette.service';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 import { ngxCsv } from 'ngx-csv/ngx-csv';
 
-var data = Array();
+interface GazetteCSV{
+  Cidade: string,
+  Exerto: string, 
+  Data: string,
+  Edicao: string,
+  Edicao_Extra: string,
+  URL_Texto: string,
+  URL_PDF: string
+}
+
 
 @Component({
   selector: 'app-search',
@@ -52,6 +61,9 @@ export class SearchComponent implements OnInit {
   level$: Observable<Level | null> = of(null);
 
   @Output() pageBoundsCorrection = new EventEmitter();
+
+gazetteCSV: Array<GazetteCSV> = []
+
 
   public config: PaginationInstance = {
     id: 'custom',
@@ -181,31 +193,46 @@ export class SearchComponent implements OnInit {
     return text.replace('\n', '<br />');
   }
 
-  selectExcerpts(text: string, date: string, territory: string, state: string, url: string) {
-    text = this.formatText(text);
+  selectExcerpts(territory_name:string, 
+    excerpt:string, 
+    date:string, 
+    edition:string, 
+    is_extra_edition:boolean, 
+    txt_url:string, 
+    pdf_url:string) {
 
-    let selected={
-      'URL': url,
-      'excerpt': text,
-      'date-published': date,
-      'location': territory+" ("+state+")",
+    let val:GazetteCSV= {
+        Cidade: territory_name,
+        Exerto: excerpt, 
+        Data: date,
+        Edicao: edition,
+        Edicao_Extra: is_extra_edition ? "Edicao extra":"Não extra",
+        URL_Texto: txt_url,
+        URL_PDF: pdf_url
     }
 
-    console.log(selected);
+    for (let i=0; i < this.gazetteCSV.length;i++){
+        if(this.gazetteCSV[i].Exerto == val.Exerto){
+          this.gazetteCSV.splice(i,1)
+          return
+        }
+    }
 
-    data.push(selected);
-
-    console.log(data);
+    this.gazetteCSV.push(val)
 
     //console.log(this.gazetteResponse?.gazettes[0].downloads);
   }
 
   downloadCSV() {
-    var options = {
-      showLabels: true,
-      headers: ["Link para Download do Diário Oficial", "Excerto", "Data de Publicação", "Local"]
-    }
-
-    new ngxCsv(data, 'myExcerpts', options);
+    var options = { 
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true, 
+      useBom: true,
+      noDownload: false,
+      headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
+    };
+    new ngxCsv(this.gazetteCSV, "pesquisa", options);
   }
 }

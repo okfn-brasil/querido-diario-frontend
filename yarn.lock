@@ -5910,6 +5910,11 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+ngx-csv@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/ngx-csv/-/ngx-csv-0.3.2.tgz#d3f2464829c50e943e833fa13f5891fc27008f90"
+  integrity sha512-rtR5kUUxH1RgZegyRuFaoy3KoeRnP4oi6lHTZkNWoQ19bpVqXOwMFOkdwWjElI4RsMEFCnaFcJQ5iARFsjE86Q==
+
 ngx-pagination@^5.1.0:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/ngx-pagination/-/ngx-pagination-5.1.1.tgz#f8494da1e5eb0665382349a4d926c13a491bed21"
