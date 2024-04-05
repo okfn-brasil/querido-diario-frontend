@@ -33,6 +33,7 @@
     "angular-responsive-carousel": "^2.0.2",
     "express": "^4.17.1",
     "moment": "^2.29.1",
+    "ngx-csv": "^0.3.2",
     "ngx-pagination": "^5.1.0",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
