@@ -269,7 +269,6 @@ convertToParams(filters: GazetteFilters){
   }
 
   downloadCSV(){
-    console.log(this.valuesCsv)
     var options = { 
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -281,4 +280,33 @@ convertToParams(filters: GazetteFilters){
     };
     new ngxCsv(this.valuesCsv, "pesquisa", options);
   }
+
+  selectAllGazette(){
+    const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
+    const checkboxes_gazettes = document.querySelectorAll('input[name="checkbox-gazette"]');
+    
+    let ca = checkbokSelectAll[0] as HTMLInputElement
+
+    if(ca.checked){
+      for(let i=0; i<checkboxes_gazettes.length; i++){
+      console.log("entrou")
+        let c = checkboxes_gazettes[i] as HTMLInputElement
+        let estadoInicial = c.checked
+        c.checked = true
+        if(estadoInicial == false){
+          c.dispatchEvent(new Event('change'))
+        }
+        console.log(this.valuesCsv)
+        
+      }
+    }else{
+      for(let i=0; i<checkboxes_gazettes.length; i++){
+        let c = checkboxes_gazettes[i] as HTMLInputElement
+        c.checked = false
+        c.dispatchEvent(new Event('change'))
+      }
+    }
+    
+  }
+
 }
