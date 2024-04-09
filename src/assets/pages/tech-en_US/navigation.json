@@ -1,6 +1,6 @@
 {
   "title": "Technology",
-  "text": "Querido Diário is an open source project and relies on the contribution of the technology community to evolve. Learn more about the technical side of the initiative.",
+  "text": "Querido Diário is an ambitious free software project and is receiving contributions from technology community in order to evolve. Find out more about the technological side of the initiative.",
   "actions": [
     {
       "text": "Donate",
@@ -8,27 +8,20 @@
       "style": "link-secondary"
     },
     {
-      "text": "Where to ask for help?",
+      "text": "Understanding",
       "route": "/en-US/tecnologia",
-      "fragment": "where-to-ask-for-help?",
+      "fragment": "understanding",
       "style": "link-secondary"
     },
     {
-      "text": "Scope",
-      "route": "/en-US/tecnologia",
-      "fragment": "scope",
+      "text": "Documentation",
+      "to": "https://docs.queridodiario.ok.org.br/en",
       "style": "link-secondary"
     },
     {
-      "text": "Architecture",
+      "text": "Contribute",
       "route": "/en-US/tecnologia",
-      "fragment": "architecture",
-      "style": "link-secondary"
-    },
-    {
-      "text": "Code contribution",
-      "route": "/en-US/tecnologia",
-      "fragment": "code-contribution",
+      "fragment": "contribute",
       "style": "link-secondary"
     }
   ]

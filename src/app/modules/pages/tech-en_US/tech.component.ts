@@ -9,7 +9,6 @@ import { ContentService } from 'src/app/services/content/content.service';
 export class TechComponent implements OnInit {
   navigation$: Observable<any> = of(null);
 
-  documentationIndex$: Observable<any> = of(null);
   documentations$: Observable<any> = of(null);
   reports$: Observable<any> = of(null);
 
@@ -18,7 +17,6 @@ export class TechComponent implements OnInit {
 
   ngOnInit(): void {
     this.navigation$ = this.contentService.find('tech-en_US/navigation');
-    this.documentationIndex$ = this.contentService.find('tech-en_US/documentation-index');
     this.documentations$ = this.contentService.find('tech-en_US/documentation')
   }
 }
