@@ -76,21 +76,18 @@
           </div>
           <div fxLayout="row" class="view-options">
             <div class="download-area">
-              <button class="btn-download" *ngIf="selectedGazettes.length==0" (click)="downloadCSV()">
+              <label class="seleciona-todos-label">
+                <input
+                  type="checkbox"
+                  id="father"
+                  (change)="checkAll()"
+                />Todos
+              </label>
+              <button class="btn-download"  (click)="downloadCSV()" name="botaoDownloadCSV">
                 <mat-icon>cloud_download</mat-icon>
-                <span class="text-white">Baixar</span>
+                <span class="text-white">Baixar Excertos Selecionados <strong></strong></span>
               </button>
 
-              <input
-                type="checkbox"
-                id="father"
-                (change)="checkALL()"
-              /> 
-              
-              <button class="btn-download" *ngIf="selectedGazettes.length>0">
-                <mat-icon>cloud_download</mat-icon>
-                <span class="text-white">Baixar selecionados (8)</span>
-              </button>
             </div>
             <app-select
               [title]="'ORDENAR POR'"
@@ -148,7 +145,6 @@
             <ng-container *ngFor="let text of gazette.excerpts">
               <input
                 type="checkbox"
-                id="child"
                 class="selectExcerpts"
                 (change)="selectExcerpts(gazette.territory_name, text, gazette.date, gazette.edition, gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value)"
               />

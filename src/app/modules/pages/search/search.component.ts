@@ -15,7 +15,7 @@ import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 interface GazetteCSV{
   Cidade: string,
-  Exerto: string, 
+  Excerto: string, 
   Data: string,
   Edicao: string,
   Edicao_Extra: string,
@@ -54,15 +54,13 @@ export class SearchComponent implements OnInit {
 
   gazetteResponse: GazetteResponse | null = null;
 
-  selectedGazettes: Gazette[] = [];
-
   pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
 
   level$: Observable<Level | null> = of(null);
 
   @Output() pageBoundsCorrection = new EventEmitter();
 
-gazetteCSV: Array<GazetteCSV> = []
+  listGazetteCSV: Array<GazetteCSV> = []
 
 
   public config: PaginationInstance = {
@@ -201,51 +199,87 @@ gazetteCSV: Array<GazetteCSV> = []
     txt_url:string, 
     pdf_url:string) {
 
+    let buttonDownloadCsv = document.querySelector('.btn-download')
+    let textButtonDownloadCsv = buttonDownloadCsv?.querySelector('strong')
+    let checkFather = document.querySelector('#father')
+    let b =checkFather as HTMLInputElement
+
     let val:GazetteCSV= {
-        Cidade: territory_name,
-        Exerto: excerpt, 
-        Data: date,
-        Edicao: edition,
-        Edicao_Extra: is_extra_edition ? "Edicao extra":"Não extra",
-        URL_Texto: txt_url,
-        URL_PDF: pdf_url
+      Cidade: territory_name,
+      Excerto: excerpt, 
+      Data: date,
+      Edicao: edition,
+      Edicao_Extra: is_extra_edition ? "Edicao extra":"Não extra",
+      URL_Texto: txt_url,
+      URL_PDF: pdf_url
     }
 
-    for (let i=0; i < this.gazetteCSV.length;i++){
-        if(this.gazetteCSV[i].Exerto == val.Exerto){
-          this.gazetteCSV.splice(i,1)
-          return
+    let indexOfVal = this.listGazetteCSV.findIndex((gazette) => gazette.Excerto == val.Excerto)
+
+    if (indexOfVal == -1){
+      if (this.listGazetteCSV.length == 0)
+        buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500;')
+      this.listGazetteCSV.push(val)
+
+      if (textButtonDownloadCsv)
+        textButtonDownloadCsv.innerText = `(${this.listGazetteCSV.length})`;
+      
+    } else {
+      this.listGazetteCSV.splice(indexOfVal,1)
+      b.checked = false
+      if (textButtonDownloadCsv)
+        if (this.listGazetteCSV.length == 0){
+          textButtonDownloadCsv.innerText = ``;
+          buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
+          
+        } else {
+          textButtonDownloadCsv.innerText = `(${this.listGazetteCSV.length})`;
         }
     }
-
-    console.log(val)
-
-    this.gazetteCSV.push(val)
-
-    //console.log(this.gazetteResponse?.gazettes[0].downloads);
   }
 
   downloadCSV() {
-    var options = { 
-      fieldSeparator: ',',
-      quoteStrings: '"',
-      decimalseparator: '.',
-      showLabels: true, 
-      useBom: true,
-      noDownload: false,
-      headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
-    };
-    new ngxCsv(this.gazetteCSV, "pesquisa", options);
-  }
-
-  checkALL(){
-    let checkBox = document.querySelectorAll('#child')
-
-    for(let i=0; i<checkBox.length; i++){
-      console.log(checkBox[i])
-      let box = checkBox[i];
-      
-
+    if (this.listGazetteCSV.length != 0){
+      var options = { 
+        fieldSeparator: ',',
+        quoteStrings: '"',
+        decimalseparator: '.',
+        showLabels: true, 
+        useBom: true,
+        noDownload: false,
+        headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
+      };
+      new ngxCsv(this.listGazetteCSV, "pesquisa", options);
+    } else {
+      alert("Selecione pelo menos um excerto para baixar!")
     }
   }
+
+  checkAll(){
+    let listCheckBox = document.querySelectorAll('.selectExcerpts')
+    let buttonDownloadCsv = document.querySelector('.btn-download')
+    let checkFather = document.querySelector('#father')
+
+   let b =checkFather as HTMLInputElement
+
+    console.log(b.checked)
+    for(let i=0; i<listCheckBox.length; i++){
+      let box = listCheckBox[i] as HTMLInputElement
+      if(b.checked == true){
+        if(box.checked == false){
+          box.checked = true
+          box.dispatchEvent(new Event('change'))
+          buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500;')
+        }
+      }else{
+        if(box.checked == true){
+          box.checked = false
+          box.dispatchEvent(new Event('change'))
+          buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
+        }
+      }
+      
+      }
+    }
+
 }
