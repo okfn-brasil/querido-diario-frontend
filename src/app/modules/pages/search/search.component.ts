@@ -262,7 +262,7 @@ export class SearchComponent implements OnInit {
 
    let b =checkFather as HTMLInputElement
 
-    console.log(b.checked)
+    
     for(let i=0; i<listCheckBox.length; i++){
       let box = listCheckBox[i] as HTMLInputElement
       if(b.checked == true){
