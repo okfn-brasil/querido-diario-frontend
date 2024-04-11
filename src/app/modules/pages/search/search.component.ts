@@ -256,23 +256,23 @@ export class SearchComponent implements OnInit {
   }
 
   checkAll(){
-    let listCheckBox = document.querySelectorAll('.selectExcerpts')
+    let listCheckBox = document.querySelectorAll('.checkbox-excerpts input[type="checkbox"]')
     let buttonDownloadCsv = document.querySelector('.btn-download')
     let checkFather = document.querySelector('#father')
 
-   let b =checkFather as HTMLInputElement
+    let b = checkFather as HTMLInputElement
 
-    
     for(let i=0; i<listCheckBox.length; i++){
       let box = listCheckBox[i] as HTMLInputElement
-      if(b.checked == true){
+      
+      if(b.checked){
         if(box.checked == false){
           box.checked = true
           box.dispatchEvent(new Event('change'))
           buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500;')
         }
-      }else{
-        if(box.checked == true){
+      } else {
+        if(box.checked){
           box.checked = false
           box.dispatchEvent(new Event('change'))
           buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
