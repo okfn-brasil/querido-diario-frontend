@@ -75,20 +75,6 @@
             </em>
           </div>
           <div fxLayout="row" class="view-options">
-            <div class="download-area">
-              <label class="seleciona-todos-label">
-                <input
-                  type="checkbox"
-                  id="father"
-                  (change)="checkAll()"
-                />Todos
-              </label>
-              <button class="btn-download"  (click)="downloadCSV()" name="botaoDownloadCSV">
-                <mat-icon>cloud_download</mat-icon>
-                <span class="text-white">Baixar Excertos Selecionados <strong></strong></span>
-              </button>
-
-            </div>
             <app-select
               [title]="'ORDENAR POR'"
               [options]="orderOptions"
@@ -98,9 +84,28 @@
           </div>
         </div>
 
-        <pagination-template
-          #p="paginationApi"
-          *ngFor="
+        <div class="download-area">
+          <button class="btn-download" (click)="downloadCSV()"
+            name="botaoDownloadCSV">
+            <mat-icon>cloud_download</mat-icon>
+            <span class="text-white">Baixar Excertos Selecionados
+              <strong></strong></span>
+          </button>
+
+          <label class="seleciona-todos-label">
+            <input
+              type="checkbox"
+              id="father"
+              (change)="checkAll()" />Todos
+          </label>
+
+        </div>
+
+        <div class="gazette-responses">
+
+          <pagination-template class="gazette"
+            #p="paginationApi"
+            *ngFor="
             let gazette of gazetteResponse.gazettes
               | paginate
                 : {

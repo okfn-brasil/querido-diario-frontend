@@ -67,29 +67,37 @@ section
   letter-spacing: 0
   line-height: 1rem
 
+.download-area
+  display: flex
+  align-items: center
+  gap: 12px
+
+.gazette-responses
+  display: flex
+  flex-direction: column
+  gap: 42px
+
+.gazette
+  display: flex
+  flex-direction: row
+  align-items: center
+  gap: 8px
 
 .seleciona-todos-label
   color: white
   display: flex
   align-items: center
-  margin-right: 30px
 
 .seleciona-todos-label input[type="checkbox"]:checked
   border-color: orange
   background-color: orange
 
-
 #father
-  margin-right: 10px
+  margin-right: 4px
 
 .view-options
   display: flex
   justify-content: space-around
-
-  .download-area
-    display: flex
-    align-items: center
-    width: 50%
 
   .sort-by
     widows: 100%
@@ -126,6 +134,9 @@ section
 
   .container
     padding: 0 rem(16)
+
+  .checkbox-excerpts
+    margin-top: 32px
 
 ::ng-deep
   .ngx-pagination
