@@ -1,77 +1,58 @@
 [
   {
-    "title": "Where to ask for help?",
+    "title": "Understanding Querido Diário",
     "texts": [
-      "The community of people involved in Querido Diário is very receptive, we have a <a href='https://go.ok.org.br/discord' target='_blank'>Discord server</a> where we exchange ideas and doubts about our projects. Come in and introduce yourself! There, we organize periodic meetings with the people who maintain the project.",
-      "If you have any questions about the project and our community, you can also send us an email at the following address: <a href='mailto:contato@serenata.ai'>contato@serenata.ai</a>"
-    ]
-  },
-  {
-    "title": "Scope",
-    "texts": [
-      "Querido Diário is an open source project by <a href='https://ok.org.br/' target=\"_blank\">Open Knowledge Brazil</a> - together with valuable contributions from the community - which is using technology to open and centralize the information published in the official gazettes of the municipalities, today trapped in obscure PDFs with complicated access. Every public act, in order to be valid in Brazil, must be published in an official gazette, that is, from the federal government, courts and even the city council, all publish official acts in files that must be accessible by the population.",
-      "The current scope of the project is to collect the acts of the executive power of the 5,570 Brazilian municipalities. It is a very ambitious initiative given the diversity of challenges and barriers to accessing this data, from the lack of standardization to the scarcity of technology resources that many Brazilian municipalities have to keep public information accessible on the internet."
-    ]
-  },
-  {
-    "title": "Architecture",
-    "texts": [
-      "The project relies on several systems so that the diary available on the publishing body's website arrives in an open way and makes interaction with this database accessible. The image below superficially illustrates how the parts interact to have this complete data flow:"
+      "For the official gazette file to travel from the municipality's website to be accessible to you through Querido Diário, it goes through a few stages:",
+      "The <b>data collection</b> where we put scraping robots to work on our behalf by visiting the publishing websites of the integrated municipalities every day to obtain the original official gazette files. Here, we use Python and Scrapy for scraping and the PostgreSQL database for storage.",
+      "In <b>data processing</b> we process the collected file, mainly by extracting the textual content of closed files (usually PDFs) into an open and searchable format. And it's the use of Python, Apache Tika (extraction) and OpenSearch (textual search engine) that make this possible.",
+      "In <b>data sharing</b>, we have created means of accessing our data. Anyone can search in a user-friendly way with the search engine on the home page of this site, developed in TypeScript and Angular. And any computer can search programmatically via the Public API, developed in Python with FastAPI.",
+      "The following image summarizes how the pieces interact in order to have this complete data flow."
     ],
     "images": [
       {
-        "src": "../../../assets/images/arch_english.png",
+        "src": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/arquitetura/architecture.png",
         "height": "612px",
         "heightXs": "306px"
       }
     ]
   },
   {
-    "title": "Code contribution",
+    "title": "Documentation",
     "texts": [
-      "Do you want to contribute to Querido Diário? Here you will find all the information to understand each part of the project. That way, you can decide where to start according to your interest and in a more comfortable way.",
-      "All our codes are on <a href='https://github.com/okfn-brasil' target='_blank'>OKBR's Github</a> and are under explicit software licenses at the root of each repository. In this way, we reinforce that the entire project has its source code open to the community.",
-      "Most of the technical development on the project was done by an amazing community. These people worked voluntarily for years helping OKBR to reach the current structure of Querido Diário"
+      "This was just a “Hello, World!” to Querido Diário. To get to know it more, there are more detailed sections in the technical documentation.",
+      "<b>Access <a href='https://docs.queridodiario.ok.org.br' target='_blank'>docs.queridodiario.ok.org.br</a></b>"
     ]
   },
   {
-    "title": "Data processing",
+    "title": "Contribute",
     "texts": [
-      "This step is essential as this is where the magic of turning closed data into open data happens and connecting other steps in our data flow. <a href='https://github.com/okfn-brasil/querido-diario-data-processing/' target='_blank'>In the repository</a> you will find several technologies such as: <a href='https://tika.apache.org/' target='_blank'>Apache Tika</a> to extract text from documents of various formats, <a href='https://www.elastic.co/' target='_blank'>elasticsearch</a> to interact with the documents' text indexer, <a href='https://www.postgresql.org/' target='_blank'>postgresql</a> to interact with data extracted from spiders and a lot of pure Python."
+      "You can contribute in different ways, from creating knowledge through research in the official gazettes to improving the project's code."
     ]
   },
   {
-    "title": "Data collection",
+    "title": "Using data to create relevant knowledge",
     "texts": [
-      "In order to understand Querido Diário, it is very important to know how the file collection structure of official diaries works. All scripts are developed using the Scrapy framework, a very popular data scraping tool. If you've never used it, the tutorial is a great way to learn how to make your first data collection scripts. We have a targeted repository to organize the collection of files. In it, you will find Python files developed by the community for each municipality, we call these files spiders (Spider is the term used for a data scraping script in Scrapy)."
+      "We are committed to facilitating access to official gazettes because we believe they are valuable information for society. Therefore, using them to create knowledge about the country from within the municipalities is a very meaningful way of contributing and it helps us to concretize the importance of Querido Diário. In particular, people with a background in journalism, public administration, law, sociology, history, etc., can benefit from our data in their investigations or research.",
+      "<b>If you produce content from consultation with Querido Diário, or are interested in doing so, please contact us by e-mail(<a href='mailto:contato@serenata.ai'>contato@serenata.ai</a>). That way, we have a better understanding of the uses that are being made and we can also report your findings here on the site.</b>"
     ]
   },
   {
-    "title": "Census",
+    "title": "Improving and extending code",
     "texts": [
-      "Before anyone manages to write a spider for a municipality, it is important to know on which site the official gazette files are being published, and this is not so simple. We are talking about a country with 5,570 municipalities that publish their public acts without any standard. Some publish on websites of associations, private companies or even websites of other entities of the federation, and all this without any information flow management.",
-      "For this reason, we created an initiative to map publication sources, <a href='https://censo.ok.org.br' target='_blank'>Querido Diário census</a>, where anyone can fill out a form and send us the source of publication of official gazettes in a municipality.",
-      "All publication sources sent are validated by a volunteer team and data analyzes are being carried out that will compose reports on the diagnosis of how this picture of disclosure of public acts in Brazil is going. With access to the database, you can use the R and Python language to perform exploratory analyzes and contribute to our <a href='https://github.com/okfn-brasil/censo-querido-diario' target='_blank'>census repository</a>."
+      "Querido Diário is a combination of free softwares. Since its conception, most of the technical progress has been made by an incredible developer community, which has enabled us to achieve the current structure of the project, as well as continuing to strengthen us on a daily basis.",
+      "All the code is hosted in <a href='https://github.com/orgs/okfn-brasil/repositories?q=querido-diario' target='_blank'>repositories on GitHub</a> and you can contribute where it is most interesting and compatible. The main repositories and their challenges are:",
+      "<b>Scrapers</b>: develop or give maintenance to scraper robots for the official gazette websites of all Brazilian municipalities. Access <a href='https://github.com/okfn-brasil/querido-diario' target='_blank'>github.com/okfn-brasil/querido-diario</a>",
+      "<b>Data Processing</b>: use Data Science to process the raw text of different types of official gazettes. Access <a href='https://github.com/okfn-brasil/querido-diario-data-processing' target='_blank'>github.com/okfn-brasil/querido-diario-data-processing</a>",
+      "<b>Frontend</b>: improving and expanding the site's resources and tools. Access <a href='https://github.com/okfn-brasil/querido-diario-frontend' target='_blank'>github.com/okfn-brasil/querido-diario-frontend</a>"
     ]
   },
   {
-    "title": "Toolbox",
+    "title": "Joining the community",
     "texts": [
-      "The objective of <a href='https://github.com/okfn-brasil/querido-diario-toolbox' target='_blank'>Querido Diário Toolbox</a> is to provide the community with a set of tools that allow the analysis and manipulation of data extracted from official diaries. With the toolbox, we expand the possibilities of new projects that use the database and share accumulated knowledge in cleaning and processing data that the project has already faced. The toolbox is also used internally by the OKBR team to handle the diaries offered in the API; it allows extracting data, metadata, cleaning extraneous characters and extracting CPF and CNPJ. The toolbox is not, nor will it ever be, a finished project: with the support of the community, we will always add new tools and make them available to all people interested in the project!"
-    ]
-  },
-  {
-    "title": "Public API",
-    "texts": [
-      "The <a href='https://queridodiario.ok.org.br/api/docs' target='_blank'>public API</a> is one of the main layers of the project, as it allows the dissemination of the database in an accessible and automated way by machines, in addition to promoting direct access to the data for developers and researchers. In addition, the platform consumes API data to make the data available to the general public.",
-      "The API was built in Python with <a href='https://fastapi.tiangolo.com/' target='blank'>FastAPI</a> and is integrated with <a href='https://swagger.io/' target='blank'>Swagger</a> to obtain documentation automatically. You can contribute ideas for the API in the <a href='https://github.com/okfn-brasil/querido-diario-api' target='_blank'>official repository</a>."
-    ]
-  },
-  {
-    "title": "Front end",
-    "texts": [
-      "This search platform is a visual interface for interacting with the public API and also a tool for disseminating knowledge and encouraging the use of official gazettes.",
-      "Its development is mainly done in Angular with Typescript, with mobile responsiveness in the first place. If you are interested in contributing, the <a href='https://github.com/okfn-brasil/querido-diario-frontend' target='_blank'>official repository</a> is also open."
+      "Whether you're interested in data, code or pure curiosity, join our community. We have several thematic chats on OKBR's Discord server, where we talk about Querido Diário, organize its technical development, provide support by answering questions and organize events. Recurring meetings also take place in this server, precisely because they are open for anyone to participate.",
+      "<b>Access <a href='https://go.ok.org.br/discord' target='_blank'>go.ok.org.br/discord</a></b>",
+      "To make it easier to keep track of the various activities, we always keep an updated calendar for the community. You can sign up to receive notifications about events at a frequency of your choice.",
+      "<b>Access <a href='https://go.ok.org.br/agenda-comunidade' target='_blank'>go.ok.org.br/agenda-comunidade</a></b>"
     ]
   }
 ]

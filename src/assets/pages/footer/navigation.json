@@ -2,10 +2,6 @@
   {
     "title": "APOIE",
     "actions": [
-      {
-        "text": "Cadastre um município",
-        "to": "https://censo.ok.org.br/"
-      },
       { "text": "Nossas metas", "route": "/apoie", "fragment": "nossas-metas" },
       { "text": "Quem apoia", "route": "/apoie", "fragment": "quem-apoia" },
       { "text": "Envie sua sugestão", "route": "/sugestao" }
@@ -16,19 +12,21 @@
     "actions": [
       {
         "text": "Documentação",
-        "route": "/tecnologia",
-        "fragment": "documentacao"
+        "to": "https://docs.queridodiario.ok.org.br"
       },
       {
         "text": "Busca avançada",
         "route": "/tecnologia/busca-avancada"
       },
       {
-        "text": "Contribua com o desenvolvimento",
+        "text": "Contribua",
         "route": "/tecnologia",
-        "fragment": "contribua-com-código"
+        "fragment": "contribua"
       },
-      { "text": "Relatórios", "route": "/tecnologia", "fragment": "relatorios" }
+      { 
+        "text": "API Pública",
+        "to": "https://queridodiario.ok.org.br/api/docs" 
+      }
     ]
   },
   {
