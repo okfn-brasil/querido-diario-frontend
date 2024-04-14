@@ -5,7 +5,7 @@ import { ContentService } from 'src/app/services/content/content.service';
 @Component({
   selector: 'uni-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass'],
+  styleUrls: ['./home.component.sass', '../styles.sass'],
 })
 export class HomeUniversitiesComponent implements OnInit {
   content$: Observable<any> = of(null);
