@@ -113,6 +113,7 @@ import { AuthInterceptor } from './services/interceptor';
 import { AggregateStateFilterComponent } from './modules/pages/aggregate/filters/state-filter/aggregate-state-filter.component';
 import { AggregateCityFilterComponent } from './modules/pages/aggregate/filters/city-filter/aggregate-city-filter.component';
 import { HomeUniversitiesComponent } from './modules/pages/universities/home/home.component';
+import { KnowledgeBaseUniversitiesComponent } from './modules/pages/universities/knowledge-base/knowledge-base.component';
 
 /* custom directives */
 @NgModule({
@@ -201,6 +202,7 @@ import { HomeUniversitiesComponent } from './modules/pages/universities/home/hom
     AggregateDataComponent,
     AggregateStateFilterComponent,
     HomeUniversitiesComponent,
+    KnowledgeBaseUniversitiesComponent
   ],
   imports: [
     BrowserModule,
