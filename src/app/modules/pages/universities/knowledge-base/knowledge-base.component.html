@@ -1,0 +1,35 @@
+<div class="knowledge-base">
+  <app-column>
+    <ng-template #loading>
+      <app-container fxFill>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+      </app-container>
+    </ng-template>
+    <ng-container *ngIf="content$ | async as content; else loading">
+      <div class="banner block-container">
+        <div class="content">
+          <div class="banner-img">
+            <!-- replace img src with updated one from repository -->
+            <img 
+             src="https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/assets-site/hero-home-qd-uni.svg" 
+             alt="Pessoa trabalhando em uma mesa com um computador portátil e um compo de café ao lado"
+            >
+          </div>
+          <div class="banner-content">
+            <h1>{{ content.title }}</h1>
+            <h2>{{ content.subtitle }}</h2>
+            <p>{{ content.paragraph }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="info block-container">
+        <div class="content">
+          <div class="spreadsheet">
+            <p>{{ content.spreadsheetPreview }}</p>
+            <button class="btne-primary">{{ content.spreadsheetButton }}</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </app-column>
+</div>
