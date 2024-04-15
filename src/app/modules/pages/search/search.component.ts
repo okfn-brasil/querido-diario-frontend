@@ -12,10 +12,16 @@ import { Territory } from 'src/app/interfaces/territory';
 import { GazetteService } from 'src/app/services/gazette/gazette.service';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 import { ngxCsv } from 'ngx-csv/ngx-csv';
+import { GazetteModel } from 'src/app/interfaces/education-gazettes';
 
-interface GazetteCSV{
+interface SelectedGazette{
+  gazette: GazetteCSV,
+  page:number
+}
+
+interface GazetteCSV {
   Cidade: string,
-  Excerto: string, 
+  Excerto: string,
   Data: string,
   Edicao: string,
   Edicao_Extra: string,
@@ -38,7 +44,7 @@ export class SearchComponent implements OnInit {
     private route: ActivatedRoute,
     private territoryService: TerritoryService,
     private gazetteService: GazetteService
-  ) {}
+  ) { }
   term: string | undefined = undefined;
   territoryId: string | undefined = undefined;
   cityName: string | null = null;
@@ -94,6 +100,11 @@ export class SearchComponent implements OnInit {
     this.router.navigate(['/pesquisa'], {
       queryParams: { ...queryParams, page },
     });
+
+    let checkFather = document.querySelector('#father') as HTMLInputElement;
+
+    if (checkFather.checked)
+      checkFather.checked = false;
   }
 
   nextPage() {
@@ -191,60 +202,70 @@ export class SearchComponent implements OnInit {
     return text.replace('\n', '<br />');
   }
 
-  selectExcerpts(territory_name:string, 
-    excerpt:string, 
-    date:string, 
-    edition:string, 
-    is_extra_edition:boolean, 
-    txt_url:string, 
-    pdf_url:string) {
+  selectExcerpts(territory_name: string,
+    excerpt: string,
+    date: string,
+    edition: string,
+    is_extra_edition: boolean,
+    txt_url: string,
+    pdf_url: string) {
 
-    let buttonDownloadCsv = document.querySelector('.btn-download')
-    let textButtonDownloadCsv = buttonDownloadCsv?.querySelector('strong')
-    let checkFather = document.querySelector('#father')
-    let b =checkFather as HTMLInputElement
+    let buttonDownloadCsv = document.querySelector('.btn-download') as HTMLButtonElement
+    let textButtonDownloadCsv = buttonDownloadCsv?.querySelector('strong') as HTMLElement
+    let checkFather = document.querySelector('#father') as HTMLInputElement
 
-    let val:GazetteCSV= {
+    let val: GazetteCSV = {
       Cidade: territory_name,
-      Excerto: excerpt, 
+      Excerto: excerpt,
       Data: date,
       Edicao: edition,
-      Edicao_Extra: is_extra_edition ? "Edicao extra":"Não extra",
+      Edicao_Extra: is_extra_edition ? "Edicao extra" : "Não extra",
       URL_Texto: txt_url,
       URL_PDF: pdf_url
     }
 
     let indexOfVal = listGazetteCSV.findIndex((gazette) => gazette.Excerto == val.Excerto)
 
-    if (indexOfVal == -1){
+    if (indexOfVal == -1) {
       if (listGazetteCSV.length == 0)
         buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500;')
+
       listGazetteCSV.push(val)
 
-      if (textButtonDownloadCsv)
-        textButtonDownloadCsv.innerText = `(${listGazetteCSV.length})`;
-      
+      textButtonDownloadCsv.innerText = `(${listGazetteCSV.length})`;
+
     } else {
-      listGazetteCSV.splice(indexOfVal,1)
-      b.checked = false
-      if (textButtonDownloadCsv)
-        if (listGazetteCSV.length == 0){
-          textButtonDownloadCsv.innerText = ``;
-          buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
-          
-        } else {
-          textButtonDownloadCsv.innerText = `(${listGazetteCSV.length})`;
-        }
+      listGazetteCSV.splice(indexOfVal, 1)
+      checkFather.checked = false
+
+      if (listGazetteCSV.length == 0) {
+        textButtonDownloadCsv.innerText = ``;
+        buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
+
+      } else {
+        textButtonDownloadCsv.innerText = `(${listGazetteCSV.length})`;
+      }
     }
   }
 
+  isGazzeteSelected(gazette: Gazette) {
+    let url = gazette.txt_url
+    if (listGazetteCSV.length == 0) return false
+
+    if (listGazetteCSV.find((gazette) => gazette.URL_Texto == url)) {
+      return true
+    }
+    return false
+
+  }
+
   downloadCSV() {
-    if (listGazetteCSV.length != 0){
-      var options = { 
+    if (listGazetteCSV.length != 0) {
+      var options = {
         fieldSeparator: ',',
         quoteStrings: '"',
         decimalseparator: '.',
-        showLabels: true, 
+        showLabels: true,
         useBom: true,
         noDownload: false,
         headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
@@ -255,31 +276,30 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  checkAll(){
+  checkAll() {
     let listCheckBox = document.querySelectorAll('.checkbox-excerpts input[type="checkbox"]')
-    let buttonDownloadCsv = document.querySelector('.btn-download')
-    let checkFather = document.querySelector('#father')
+    let buttonDownloadCsv = document.querySelector('.btn-download') as HTMLButtonElement
+    let checkFather = document.querySelector('#father') as HTMLInputElement
 
-    let b = checkFather as HTMLInputElement
-
-    for(let i=0; i<listCheckBox.length; i++){
+    for (let i = 0; i < listCheckBox.length; i++) {
       let box = listCheckBox[i] as HTMLInputElement
-      
-      if(b.checked){
-        if(box.checked == false){
+
+      if (checkFather.checked) {
+        if (box.checked == false) {
           box.checked = true
           box.dispatchEvent(new Event('change'))
           buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500;')
         }
       } else {
-        if(box.checked){
+        if (box.checked) {
           box.checked = false
           box.dispatchEvent(new Event('change'))
-          buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
         }
       }
-      
-      }
     }
+    
+    if (listGazetteCSV.length == 0) 
+      buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
+  }
 
 }
