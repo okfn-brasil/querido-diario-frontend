@@ -288,6 +288,7 @@ export class SearchEducationComponent implements OnInit {
     }
 
     this.valuesCsv.push(val)
+    this.isAtLeastOneSelected = this.valuesCsv.length > 0
   }
 
   downloadCSV() {
@@ -348,6 +349,7 @@ export class SearchEducationComponent implements OnInit {
         c.checked = false
         c.dispatchEvent(new Event('change'))
       }
+      this.valuesCsv = [];
     }
   }
 
