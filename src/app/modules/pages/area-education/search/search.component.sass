@@ -172,7 +172,8 @@
   padding: rem(16) rem(24)
   border-radius: rem(30)
   font-weight: bold
-
+  margin-left: rem(20)
+  
   @media only screen and (max-width: 768px)
     width: 48%
 
@@ -211,15 +212,22 @@ select
   place-items: center
   gap: 4px
   padding: rem(16) rem(24)
-  border-radius: 1.875rem
+  border-radius: rem(30)
   background-color: #ead9f2
+  opacity: 0.5
   font-family: Lato
   color: #000
   border: none
   font-size: rem(16)
   font-weight: bold
   line-height: rem(16)
-  margin-left: 30px
+  margin-left: rem(30)
+
+  &.selected 
+    background-color: #ff8500
+    color: #fff
+    opacity: 1
+    
 
   @media only screen and (max-width: 768px)
     margin-left: rem(4)
@@ -249,16 +257,38 @@ select
 .button-checkbox-all
   color: #fff 
   font-size: 20px
-  margin-left: 30px
+  font-family: Lato
+  font-size: rem(16)
+  font-weight: bold
+  display: flex
+  align-items: center
+  input[type="checkbox"]
+    accent-color: #ce812c
+    position: relative
+    right: rem(30)
+    transform: scale(1.8)
+    margin-right: rem(-12)
 
 .checkbox-all-gazette
-  margin-right: 5px
+  right: rem(25)
+
+.checkbox-excerpts 
+  display: flex
+  align-items: center
+  position: absolute
+  input[type="checkbox"]
+    accent-color: #ce812c
+    border-radius: rem(4)
+    position: relative
+    transform: scale(1.8)
+    right: rem(30)
+    top: rem(200)
   
-.items
+.items 
   padding-bottom: rem(30)
+  position: relative
 
 .apply-filters
   display: block
   width: unset
   font-weight: bold
-
