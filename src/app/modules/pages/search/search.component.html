@@ -101,50 +101,24 @@
 
         </div>
 
-          <pagination-template class="gazette"
-            #p="paginationApi"
-            *ngFor="
-            let gazette of gazetteResponse.gazettes
-              | paginate
-                : {
-                    itemsPerPage: pagination.itemsPerPage,
-                    currentPage: pagination.currentPage,
-                    totalItems: gazetteResponse.total_gazettes
-                  }
-          "
-        >
-        <ng-container *ngFor="let text of gazette.excerpts">
-          <div
-            style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 15px;
-            height: 15px;
-            background:white;
-            border-radius: 25%;
-            cursor: pointer;
-            margin-bottom: 2px;"
-            class="selectExcerpts"
-            (click)="selectExcerpts(text, gazette.date, gazette.territory_name)"
-          ><div 
-            class="select"
-            style="
-              display: block;
-              width: 5px;
-              height: 5px;
-              border-radius: 50%;
-              background: black;
-            "
-            ></div>
-          </div> 
-        </ng-container>
-        <!--é aqui que temos que mexer-->
-          <div
-            fxLayout="column"
-            class="bg-white-2 result color-purple-1"
-            fxLayoutGap="22px"
-          >     
+        <pagination-template class="gazette"
+          #p="paginationApi"
+          *ngFor="
+          let gazette of gazetteResponse.gazettes
+            | paginate
+              : {
+                  itemsPerPage: pagination.itemsPerPage,
+                  currentPage: pagination.currentPage,
+                  totalItems: gazetteResponse.total_gazettes
+                }">
+          <div class="checkbox-excerpts">
+            <input
+              type="checkbox"
+              [checked]="isGazzeteSelected(gazette)"
+              (change)="selectExcerpts(gazette.territory_name, gazette.state_code, gazette.excerpts[0], gazette.date,  gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value)" />
+          </div>
+          <div fxLayout="column" class="bg-white-2 result color-purple-1"
+            fxLayoutGap="22px">
             <ng-container *ngFor="let text of gazette.excerpts">
               <input
                 type="checkbox"
