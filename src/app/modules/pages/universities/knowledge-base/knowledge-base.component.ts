@@ -3,11 +3,11 @@ import { Observable, of } from 'rxjs';
 import { ContentService } from 'src/app/services/content/content.service';
 
 @Component({
-  selector: 'uni-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass', '../styles.sass'],
+  selector: 'uni-knowledge-base',
+  templateUrl: './knowledge-base.component.html',
+  styleUrls: ['./knowledge-base.component.sass', '../styles.sass'],
 })
-export class HomeUniversitiesComponent implements OnInit {
+export class KnowledgeBaseUniversitiesComponent implements OnInit {
   content$: Observable<any> = of(null);
 
   constructor(
@@ -15,6 +15,6 @@ export class HomeUniversitiesComponent implements OnInit {
   ) {}
   
   ngOnInit() {
-    this.content$ = this.contentService.find('home-universities');
+    this.content$ = this.contentService.find('knowledge-base-universities');
   }
 }

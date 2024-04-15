@@ -1,0 +1,36 @@
+@import 'src/assets/_tools.sass'
+
+.knowledge-base
+  background-color: white
+
+.info
+  background-color: #4F3979
+  padding-top: rem(20)
+  padding-bottom: rem(20)
+
+.spreadsheet
+  width: 45%
+  display: flex
+  flex-direction: column
+  row-gap: rem(24)
+
+  p
+    font-size: rem(16)
+    line-height: rem(25)
+    color: white
+  
+  button
+    max-width: rem(280)
+
+
+@media only screen and (max-width: 768px)
+  .spreadsheet
+    width: unset
+    padding-top: rem(64)
+    padding-bottom: rem(64)
+
+    p
+      text-align: center
+
+    button
+      max-width: unset

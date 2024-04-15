@@ -111,8 +111,7 @@ import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_U
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
 import { HomeUniversitiesComponent } from './modules/pages/universities/home/home.component';
-
-
+import { KnowledgeBaseUniversitiesComponent } from './modules/pages/universities/knowledge-base/knowledge-base.component';
 
 @NgModule({
   declarations: [
@@ -192,6 +191,7 @@ import { HomeUniversitiesComponent } from './modules/pages/universities/home/hom
     TechComponentEnUS,
     PrivacyPolicyComponentEnUS,
     HomeUniversitiesComponent,
+    KnowledgeBaseUniversitiesComponent
   ],
   imports: [
     BrowserModule,
