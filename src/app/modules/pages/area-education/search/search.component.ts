@@ -294,6 +294,7 @@ convertToParams(filters: GazetteFilters){
       headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
     };
     new ngxCsv(this.valuesCsv, "pesquisa", options);
+    this.valuesCsv = []
   }
 
   selectAllGazette(){
