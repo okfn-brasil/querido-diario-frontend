@@ -59,13 +59,17 @@
             </div>
           </div>
           <div class="button-container">
+            <button class="button-checkbox-all"><input type="checkbox" class="checkbox-all-gazette" (change)="selectAllGazette()">Selecionar todos</button>
+            <button *ngIf="isLoggedIn" [ngClass]="{'selected': isAtLeastOneSelected}" class="btn-download" [disabled]="!isAtLeastOneSelected" (click)="downloadCSV()">
+              <mat-icon>cloud_download</mat-icon>Baixar selecionados<span *ngIf="valuesCsv.length > 0">({{valuesCsv.length}})</span>
+            </button>
             <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
-            <button *ngIf="isLoggedIn" class="btn-download" (click)="downloadCSV()"><mat-icon>cloud_download</mat-icon>Baixar<br> selecionados</button>
-            <button class="button-checkbox-all"><input type="checkbox" class="checkbox-all-gazette" (change)="selectAllGazette()">Todos</button>
           </div>
-          </div>
+        </div>
         <div *ngFor="let item of results[listPageIntern]">
-          <input type="checkbox" name="checkbox-gazette" (change)="addValuesCsv(item.territory_name, item.excerpt, item.date, item.edition, item.is_extra_edition, item.txt_url, item.url)">
+          <div class = "checkbox-excerpts">
+            <input type="checkbox" name="checkbox-gazette" (change)="addValuesCsv(item.territory_name, item.excerpt, item.date, item.edition, item.is_extra_edition, item.txt_url, item.url)">
+          </div>
           <edu-search-item [gazette]="item"></edu-search-item>
         </div>
         <edu-pagination [listSize]="totalItems" [currentPage]="currPage" (changePage)="onChangePage($event)"></edu-pagination>

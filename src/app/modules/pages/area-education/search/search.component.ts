@@ -50,7 +50,8 @@ export class SearchEducationComponent implements OnInit {
   isOpenAdvanced = false;
   savedParams = '';
 
-  valuesCsv: Array<ValuesCSV> = [] 
+  valuesCsv: Array<ValuesCSV> = []
+  isAtLeastOneSelected = false;
 
   constructor(
     private searchService: EducationGazettesService,
@@ -266,9 +267,13 @@ convertToParams(filters: GazetteFilters){
     }
     
     this.valuesCsv.push(val)
+    this.isAtLeastOneSelected = this.valuesCsv.length > 0
   }
 
   downloadCSV(){
+    if (!this.isAtLeastOneSelected) {
+      return;
+    }
     var options = { 
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -305,8 +310,9 @@ convertToParams(filters: GazetteFilters){
         c.checked = false
         c.dispatchEvent(new Event('change'))
       }
+      this.valuesCsv = [];
     }
-    
+    this.isAtLeastOneSelected = this.valuesCsv.length > 0 || ca.checked
   }
 
 }
