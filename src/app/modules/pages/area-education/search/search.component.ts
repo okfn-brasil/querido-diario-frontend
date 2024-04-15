@@ -216,6 +216,9 @@ convertToParams(filters: GazetteFilters){
     const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
     let c = checkbokSelectAll[0] as HTMLInputElement
     c.checked = false
+    setTimeout(()=>{
+      this.validateCheckeds()
+    },1000)
   }
 
   clearFilters() {
@@ -262,9 +265,13 @@ convertToParams(filters: GazetteFilters){
     URL_PDF: pdf_url
     }
 
+    const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
+    let cAll = checkbokSelectAll[0] as HTMLInputElement
+
     for(let i=0; i<this.valuesCsv.length; i++){
       if(this.valuesCsv[i].Exerto == val.Exerto){
         this.valuesCsv.splice(i,1)
+        cAll.checked = false
         return
       }
     }
@@ -310,24 +317,29 @@ convertToParams(filters: GazetteFilters){
         c.checked = false
         c.dispatchEvent(new Event('change'))
       }
-      this.valuesCsv = [];
     }
     this.isAtLeastOneSelected = this.valuesCsv.length > 0 || ca.checked
   }
 
   validateCheckeds(){
+    const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
     const checkboxes_gazettes = document.querySelectorAll('input[name="checkbox-gazette"]');
-    console.log("chamei")
+    let count = 0
+    let cAll = checkbokSelectAll[0] as HTMLInputElement
+
     for(let i=0; i<checkboxes_gazettes.length; i++){
-      console.log(`loop ${i}`)
       let c = checkboxes_gazettes[i] as HTMLInputElement
 
       this.valuesCsv.map((val, key)=>{
-        console.log(`Map ${key}`)
-      
+        if(val.URL_PDF == c.id){
           c.checked = true
-        
+          count +=1
+        }
       })
+    }
+
+    if(count==4){
+      cAll.checked = true
     }
   }
 
