@@ -94,7 +94,6 @@
       color: #fff
       right: rem(20)
 
-
   .filters-fields
     padding: rem(16) rem(20)
 
@@ -172,8 +171,8 @@
   padding: rem(16) rem(24)
   border-radius: rem(30)
   font-weight: bold
-  margin-left: rem(20)
-  
+  margin-left: rem(30)
+
   @media only screen and (max-width: 768px)
     width: 48%
 
@@ -209,7 +208,7 @@ select
 .btn-download
   display: flex
   justify-content: center
-  place-items: center
+  align-items: center
   gap: 4px
   padding: rem(16) rem(24)
   border-radius: rem(30)
@@ -223,7 +222,7 @@ select
   font-size: rem(16)
   font-weight: bold
   line-height: rem(16)
-  margin-left: rem(30)
+  margin-left: rem(25)
 
   &.selected 
     background-color: #ff8500
@@ -266,42 +265,32 @@ select
   align-items: center
   input[type="checkbox"]
     accent-color: #ce812c
-    position: relative
-    right: rem(30)
-    transform: scale(1.8)
-    margin-right: rem(-12)
+    border-radius: rem(4)
+    gap: 8px
+    margin-right: rem(12)
+    height: rem(20)
+    width: rem(20)
 
-.checkbox-all-gazette
-  right: rem(25)
+.container-checkbox
+  display: flex
+  gap: 8px
+  padding-right: 28px
+
+.flex result-flex
+  padding: 28px
 
 .checkbox-excerpts 
   display: flex
   align-items: center
-  position: absolute
+  justify-content: center
   input[type="checkbox"]
     accent-color: #ce812c
     border-radius: rem(4)
-    position: relative
-    transform: scale(1.8)
-    right: rem(30)
-    top: rem(200)
-  right: rem(25)
+    height: rem(20)
+    width: rem(20)
 
-.checkbox-excerpts 
-  display: flex
-  align-items: center
-  position: absolute
-  input[type="checkbox"]
-    accent-color: #ce812c
-    border-radius: rem(4)
-    position: relative
-    transform: scale(1.8)
-    right: rem(30)
-    top: rem(200)
-  
-.items 
+.items
   padding-bottom: rem(30)
-  position: relative
 
 .apply-filters
   display: block
