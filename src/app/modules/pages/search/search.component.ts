@@ -31,9 +31,6 @@ interface GazetteCSV {
 
 export var listGazetteCSV: Array<GazetteCSV> = []
 
-let cont = 0;
-
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -97,6 +94,7 @@ export class SearchComponent implements OnInit {
 
   page: number = 1;
   sort_by: string = 'relevance';
+
   pageChange(page: number) {
     const queryParams = this.route.snapshot.queryParams;
     this.router.navigate(['/pesquisa'], {
@@ -105,13 +103,6 @@ export class SearchComponent implements OnInit {
 
     let checkFather = document.querySelector('#father') as HTMLInputElement;
     if (checkFather.checked){checkFather.checked = false;}
-      
-    console.log(page)
-    let p = cont%10;
-    let t = (cont/10)%page
-    if(p == 0 && t == 0){
-      checkFather.checked = true
-    }
   }
 
   nextPage() {
@@ -240,7 +231,7 @@ export class SearchComponent implements OnInit {
       listGazetteCSV.push(val)
 
       textButtonDownloadCsv.innerText = `(${listGazetteCSV.length})`;
-      cont +=1;
+
 
     } else {
       listGazetteCSV.splice(indexOfVal, 1)
@@ -249,7 +240,7 @@ export class SearchComponent implements OnInit {
       if (listGazetteCSV.length == 0) {
         textButtonDownloadCsv.innerText = ``;
         buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
-        cont -=1;
+
       } else {
         textButtonDownloadCsv.innerText = `(${listGazetteCSV.length})`;
       }
@@ -260,11 +251,25 @@ export class SearchComponent implements OnInit {
     let url = gazette.txt_url
     if (listGazetteCSV.length == 0) return false
 
-    if (listGazetteCSV.find((gazette) => gazette.URL_Texto == url)) {
+    if (listGazetteCSV.find((gazette) => gazette.URL_Texto == url))
       return true
-    }
+
     return false
 
+  }
+
+  isAllSelected() {
+    let listCheckBox = document.querySelectorAll('.checkbox-excerpts input[type="checkbox"]')
+
+    for (let i = 0; i < listCheckBox.length; i++) {
+      let box = listCheckBox[i] as HTMLInputElement
+      
+      if (box.checked == false) {
+        return false
+      }
+    }
+
+    return true
   }
 
   downloadCSV() {
@@ -276,7 +281,7 @@ export class SearchComponent implements OnInit {
         showLabels: true,
         useBom: true,
         noDownload: false,
-        headers: ["Cidade", "Estado", "Enxerto", "Data de muplicação", "Edicao_Extra", "URL doc", "URL doc original"]
+        headers: ["Municipio", "Estado", "Excerto", "Data_Publicacao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original"]
       };
       new ngxCsv(listGazetteCSV, "pesquisa", options);
     } else {
