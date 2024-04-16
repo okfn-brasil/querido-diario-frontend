@@ -21,9 +21,9 @@ interface SelectedGazette{
 
 interface GazetteCSV {
   Cidade: string,
+  Estado: string
   Excerto: string,
   Data: string,
-  Edicao: string,
   Edicao_Extra: string,
   URL_Texto: string,
   URL_PDF: string
@@ -203,9 +203,9 @@ export class SearchComponent implements OnInit {
   }
 
   selectExcerpts(territory_name: string,
+    territory_code: string,
     excerpt: string,
     date: string,
-    edition: string,
     is_extra_edition: boolean,
     txt_url: string,
     pdf_url: string) {
@@ -216,9 +216,9 @@ export class SearchComponent implements OnInit {
 
     let val: GazetteCSV = {
       Cidade: territory_name,
+      Estado: territory_code,
       Excerto: excerpt,
       Data: date,
-      Edicao: edition,
       Edicao_Extra: is_extra_edition ? "Edicao extra" : "Não extra",
       URL_Texto: txt_url,
       URL_PDF: pdf_url
@@ -268,7 +268,7 @@ export class SearchComponent implements OnInit {
         showLabels: true,
         useBom: true,
         noDownload: false,
-        headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
+        headers: ["Cidade", "Estado", "Enxerto", "Data de muplicação", "Edicao_Extra", "URL doc", "URL doc original"]
       };
       new ngxCsv(listGazetteCSV, "pesquisa", options);
     } else {
