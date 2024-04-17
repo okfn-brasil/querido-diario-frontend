@@ -61,7 +61,7 @@
           <div class="button-container">
             <button class="button-checkbox-all">
               <input type="checkbox" class="checkbox-all-gazette" (change)="selectAllGazette()">Selecionar todos</button>
-            <button *ngIf="isLoggedIn" [ngClass]="{'selected': isAtLeastOneSelected}" class="btn-download" [disabled]="!isAtLeastOneSelected" (click)="downloadCSV()">
+            <button *ngIf="isLoggedIn" class="btn-download" [ngClass]="{'download-enabled': valuesCsv.length > 0}" [disabled]="valuesCsv.length === 0" (click)="downloadCSV()">
               <mat-icon>cloud_download</mat-icon>Baixar selecionados<span *ngIf="valuesCsv.length > 0">({{valuesCsv.length}})</span>
             </button>
             <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
