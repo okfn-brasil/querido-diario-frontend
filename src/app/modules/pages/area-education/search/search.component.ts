@@ -11,27 +11,18 @@ interface List {
   [key: number]: GazetteModel[];
 }
 
-<<<<<<< HEAD
 interface ValuesCSV {
   Cidade: string,
   Estado: string,
   Exerto: string,
-=======
-interface ValuesCSV{
-  Cidade: string,
-  Exerto: string, 
->>>>>>> be473ca (rebase efetuado com a main)
   Data: string,
   Edicao: string,
   Edicao_Extra: string,
-  URL_Texto: string,
-<<<<<<< HEAD
+  URL_TXT: string,
   URL_PDF: string,
   Subtemas: string[],
-  Entidades: string[]
-=======
-  URL_PDF: string
->>>>>>> be473ca (rebase efetuado com a main)
+  Entidades: string[],
+  id: string
 }
 
 @Component({
@@ -63,12 +54,7 @@ export class SearchEducationComponent implements OnInit {
   isOpenAdvanced = false;
   savedParams = '';
 
-<<<<<<< HEAD
   valuesCsv: Array<ValuesCSV> = []
-  isAtLeastOneSelected = false;
-=======
-  valuesCsv: Array<ValuesCSV> = [] 
->>>>>>> be473ca (rebase efetuado com a main)
 
   constructor(
     private searchService: EducationGazettesService,
@@ -109,11 +95,15 @@ export class SearchEducationComponent implements OnInit {
 
   onChangeQuery() {
     this.onChangeFilters(this.filters);
+    this.valuesCsv = []
+    this.checkSelectAll(false)
   }
 
   onEnter(event?: KeyboardEvent) {
     if (event && event.key === 'Enter') {
       this.onChangeFilters(this.filters);
+      this.valuesCsv = []
+      this.checkSelectAll(false)
     }
   }
 
@@ -230,9 +220,7 @@ export class SearchEducationComponent implements OnInit {
     this.currPage = $page;
     window.scrollTo(0, 0);
     this.onChangeFilters(this.filters);
-    const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
-    let c = checkbokSelectAll[0] as HTMLInputElement
-    c.checked = false
+    this.checkSelectAll(false)
     setTimeout(() => {
       this.validateCheckeds()
     }, 1000)
@@ -263,7 +251,6 @@ export class SearchEducationComponent implements OnInit {
     this.isOpenAdvanced = true;
   }
 
-<<<<<<< HEAD
   addValuesCsv(territory_name: string,
     state_code: string,
     excerpt: string,
@@ -273,7 +260,8 @@ export class SearchEducationComponent implements OnInit {
     txt_url: string,
     pdf_url: string,
     subthemes: string[],
-    entities: string[]
+    entities: string[],
+    id: string
   ) {
 
     let val: ValuesCSV = {
@@ -283,44 +271,59 @@ export class SearchEducationComponent implements OnInit {
       Data: date,
       Edicao: edition,
       Edicao_Extra: is_extra_edition ? "Edicao extra" : "Não extra",
-      URL_Texto: txt_url,
+      URL_TXT: txt_url,
       URL_PDF: pdf_url,
       Subtemas: subthemes,
-      Entidades: entities
+      Entidades: entities,
+      id: id
     }
 
-    const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
-    let cAll = checkbokSelectAll[0] as HTMLInputElement
-
     for (let i = 0; i < this.valuesCsv.length; i++) {
-      if (this.valuesCsv[i].Exerto == val.Exerto) {
+      if (this.valuesCsv[i].id == val.id) {
         this.valuesCsv.splice(i, 1)
-        cAll.checked = false
+        this.checkSelectAll(false)
         return
       }
     }
 
     this.valuesCsv.push(val)
-    this.isAtLeastOneSelected = this.valuesCsv.length > 0
-    this.checkDownloadButton()
   }
 
   downloadCSV() {
-    if (!this.isAtLeastOneSelected) {
-      return
+    let arrayDownload:any = []
+
+    this.valuesCsv.map(val=>{
+      let value = {
+        Cidade: val.Cidade,
+        Estado: val.Estado,
+        Exerto: val.Exerto,
+        Data: val.Data,
+        Edicao: val.Edicao,
+        Edicao_Extra: val.Edicao_Extra,
+        URL_TXT: val.URL_TXT,
+        URL_PDF: val.URL_PDF,
+        Subtemas: val.Subtemas,
+        Entidades: val.Entidades
+      }
+      arrayDownload.push(value)
+    })
+
+    if (this.valuesCsv.length != 0) {
+      var options = {
+        fieldSeparator: ',',
+        quoteStrings: '"',
+        decimalseparator: '.',
+        showLabels: true,
+        useBom: true,
+        noDownload: false,
+        headers: ["Município", "Estado", "Exerto", "Data da Publicação", "Edicao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original", "Subtemas", "Entidades"]
+      };
+      new ngxCsv(arrayDownload, "pesquisa", options)
+    }else { 
+      document.querySelector('.btn-download')?.setAttribute('ariaDisabled', 'true')
     }
-    var options = {
-      fieldSeparator: ',',
-      quoteStrings: '"',
-      decimalseparator: '.',
-      showLabels: true,
-      useBom: true,
-      noDownload: false,
-      headers: ["Município", "Estado", "Exerto", "Data da Publicação", "Edicao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original", "Subtemas", "Entidades"]
-    };
-    new ngxCsv(this.valuesCsv, "pesquisa", options)
-    this.valuesCsv = []
-    this.resetStateAfterDownload()
+      this.valuesCsv = []
+      this.resetStateAfterDownload()
   }
 
   selectAllGazette() {
@@ -345,46 +348,25 @@ export class SearchEducationComponent implements OnInit {
         c.dispatchEvent(new Event('change'))
       }
     }
-    this.isAtLeastOneSelected = this.valuesCsv.length > 0 || ca.checked
-    this.checkDownloadButton()
   }
 
   validateCheckeds() {
-    const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
     const checkboxes_gazettes = document.querySelectorAll('input[name="checkbox-gazette"]')
     let count = 0
-    let cAll = checkbokSelectAll[0] as HTMLInputElement
 
     for (let i = 0; i < checkboxes_gazettes.length; i++) {
       let c = checkboxes_gazettes[i] as HTMLInputElement
 
       this.valuesCsv.map((val, key) => {
-        if (val.URL_PDF == c.id) {
+        if (val.id == c.id) {
           c.checked = true
           count += 1
         }
       })
     }
 
-    if (count == 4) {
-      cAll.checked = true
-    }
-    this.isAtLeastOneSelected = this.valuesCsv.length > 0 || cAll.checked
-    this.checkDownloadButton()
-  }
-  checkDownloadButton() {
-    const checkboxes_gazettes = document.querySelectorAll('input[name="checkbox-gazette"]')
-    let isEnabled = false
+    count == checkboxes_gazettes.length ? this.checkSelectAll(true):this.checkSelectAll(false)
 
-    for (let i = 0; i < checkboxes_gazettes.length; i++) {
-      let c = checkboxes_gazettes[i] as HTMLInputElement
-      if (c.checked) {
-        isEnabled = true
-        return
-      }
-    }
-    const downloadButton = document.querySelector('.btn-download') as HTMLButtonElement
-    downloadButton.disabled = !isEnabled
   }
 
   resetStateAfterDownload() {
@@ -392,56 +374,48 @@ export class SearchEducationComponent implements OnInit {
     checkboxes.forEach((checkbox) => {
       (checkbox as HTMLInputElement).checked = false
     });
-    this.isAtLeastOneSelected = false
 
+    this.checkSelectAll(false)
+  }
+
+  disableButtonDownload() {
+    const button = document.querySelector('.btn-download') as HTMLButtonElement
+
+    if (this.valuesCsv.length == 0) {
+      button.style.backgroundColor = '#ead9f2'
+      button.style.opacity = '0.5'
+      button.style.color = '#000'
+      return true
+    } else {
+      button.style.backgroundColor = '#ff8500'
+      button.style.opacity = '1'
+      button.style.color = '#fff'
+      return false
+    }
+  }
+
+  checkedAll(){
+    const checkboxes_gazettes = document.querySelectorAll('input[name="checkbox-gazette"]')
+    let count = 0
+
+    for (let i = 0; i < checkboxes_gazettes.length; i++) {
+      let c = checkboxes_gazettes[i] as HTMLInputElement
+
+      this.valuesCsv.map((val, key) => {
+        if (val.id == c.id) {
+          count += 1
+        }
+      })
+    }
+
+    if (count == checkboxes_gazettes.length) {
+      this.checkSelectAll(true)
+    }
+  }
+
+  checkSelectAll(val:boolean){
     const selectAllCheckbox = document.querySelector('.checkbox-all-gazette') as HTMLInputElement
-    selectAllCheckbox.checked = false
-
-    this.checkDownloadButton()
+    selectAllCheckbox.checked = val
   }
 
-=======
-  addValuesCsv(territory_name:string, 
-    excerpt:string, 
-    date:string, 
-    edition:string, 
-    is_extra_edition:boolean, 
-    txt_url:string, 
-    pdf_url:string
-  ) {
-
-    let val:ValuesCSV= {
-    Cidade: territory_name,
-    Exerto: excerpt, 
-    Data: date,
-    Edicao: edition,
-    Edicao_Extra: is_extra_edition ? "Edicao extra":"Não extra",
-    URL_Texto: txt_url,
-    URL_PDF: pdf_url
-    }
-
-    for(let i=0; i<this.valuesCsv.length; i++){
-      if(this.valuesCsv[i].Exerto == val.Exerto){
-        this.valuesCsv.splice(i,1)
-        return
-      }
-    }
-    
-    this.valuesCsv.push(val)
-  }
-
-  downloadCSV(){
-    console.log(this.valuesCsv)
-    var options = { 
-      fieldSeparator: ',',
-      quoteStrings: '"',
-      decimalseparator: '.',
-      showLabels: true, 
-      useBom: true,
-      noDownload: false,
-      headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
-    };
-    new ngxCsv(this.valuesCsv, "pesquisa", options);
-  }
->>>>>>> be473ca (rebase efetuado com a main)
 }

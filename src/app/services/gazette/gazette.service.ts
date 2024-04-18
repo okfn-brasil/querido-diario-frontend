@@ -77,7 +77,8 @@ export class GazetteService {
     queryParams = { ...queryParams, size: pagination.size, offset: pagination.offset };
 
     const encodedQueryString = new URLSearchParams(queryParams).toString();
-    const url = new URL(`/gazettes?${encodedQueryString}${territoryQuery}`, `http://localhost:8080`).toString();
+    const url = new URL(`/api/gazettes?${encodedQueryString}${territoryQuery}`,
+    `https://queridodiario.ok.org.br`).toString();
 
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {
