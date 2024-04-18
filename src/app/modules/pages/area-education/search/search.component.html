@@ -70,7 +70,7 @@
         <div *ngFor="let item of results[listPageIntern]">
           <div class="container-checkbox">
             <div class = "checkbox-excerpts">
-              <input type="checkbox" name="checkbox-gazette" [id]="item.url" (change)="addValuesCsv(item.territory_name, item.excerpt, item.date, item.edition, item.is_extra_edition, item.txt_url, item.url)">
+              <input type="checkbox" name="checkbox-gazette" [id]="item.url" (change)="addValuesCsv(item.territory_name, item.state_code, item.excerpt, item.date, item.edition, item.is_extra_edition, item.txt_url, item.url, item.subthemes, item.entities)">
             </div>
             <edu-search-item [gazette]="item"></edu-search-item>
           </div>
