@@ -6,6 +6,8 @@ import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
+import { Renderer2, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { listGazetteCSV } from '../../pages/search/search.component';
 
 @Component({
