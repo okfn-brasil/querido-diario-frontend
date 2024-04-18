@@ -13,12 +13,15 @@ interface List {
 
 interface ValuesCSV {
   Cidade: string,
+  Estado: string,
   Exerto: string,
   Data: string,
   Edicao: string,
   Edicao_Extra: string,
   URL_Texto: string,
-  URL_PDF: string
+  URL_PDF: string,
+  Subtemas: string[],
+  Entidades: string[]
 }
 
 @Component({
@@ -247,22 +250,28 @@ export class SearchEducationComponent implements OnInit {
   }
 
   addValuesCsv(territory_name: string,
+    state_code: string,
     excerpt: string,
     date: string,
     edition: string,
     is_extra_edition: boolean,
     txt_url: string,
-    pdf_url: string
+    pdf_url: string,
+    subthemes: string[],
+    entities: string[]
   ) {
 
     let val: ValuesCSV = {
       Cidade: territory_name,
+      Estado: state_code,
       Exerto: excerpt,
       Data: date,
       Edicao: edition,
       Edicao_Extra: is_extra_edition ? "Edicao extra" : "Não extra",
       URL_Texto: txt_url,
-      URL_PDF: pdf_url
+      URL_PDF: pdf_url,
+      Subtemas: subthemes,
+      Entidades: entities
     }
 
     const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
@@ -292,7 +301,7 @@ export class SearchEducationComponent implements OnInit {
       showLabels: true,
       useBom: true,
       noDownload: false,
-      headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
+      headers: ["Município", "Estado", "Exerto", "Data da Publicação", "Edicao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original", "Subtemas", "Entidades"]
     };
     new ngxCsv(this.valuesCsv, "pesquisa", options)
     this.valuesCsv = []
