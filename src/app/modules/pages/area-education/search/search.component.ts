@@ -11,17 +11,27 @@ interface List {
   [key: number]: GazetteModel[];
 }
 
+<<<<<<< HEAD
 interface ValuesCSV {
   Cidade: string,
   Estado: string,
   Exerto: string,
+=======
+interface ValuesCSV{
+  Cidade: string,
+  Exerto: string, 
+>>>>>>> be473ca (rebase efetuado com a main)
   Data: string,
   Edicao: string,
   Edicao_Extra: string,
   URL_Texto: string,
+<<<<<<< HEAD
   URL_PDF: string,
   Subtemas: string[],
   Entidades: string[]
+=======
+  URL_PDF: string
+>>>>>>> be473ca (rebase efetuado com a main)
 }
 
 @Component({
@@ -53,8 +63,12 @@ export class SearchEducationComponent implements OnInit {
   isOpenAdvanced = false;
   savedParams = '';
 
+<<<<<<< HEAD
   valuesCsv: Array<ValuesCSV> = []
   isAtLeastOneSelected = false;
+=======
+  valuesCsv: Array<ValuesCSV> = [] 
+>>>>>>> be473ca (rebase efetuado com a main)
 
   constructor(
     private searchService: EducationGazettesService,
@@ -249,6 +263,7 @@ export class SearchEducationComponent implements OnInit {
     this.isOpenAdvanced = true;
   }
 
+<<<<<<< HEAD
   addValuesCsv(territory_name: string,
     state_code: string,
     excerpt: string,
@@ -385,4 +400,48 @@ export class SearchEducationComponent implements OnInit {
     this.checkDownloadButton()
   }
 
+=======
+  addValuesCsv(territory_name:string, 
+    excerpt:string, 
+    date:string, 
+    edition:string, 
+    is_extra_edition:boolean, 
+    txt_url:string, 
+    pdf_url:string
+  ) {
+
+    let val:ValuesCSV= {
+    Cidade: territory_name,
+    Exerto: excerpt, 
+    Data: date,
+    Edicao: edition,
+    Edicao_Extra: is_extra_edition ? "Edicao extra":"Não extra",
+    URL_Texto: txt_url,
+    URL_PDF: pdf_url
+    }
+
+    for(let i=0; i<this.valuesCsv.length; i++){
+      if(this.valuesCsv[i].Exerto == val.Exerto){
+        this.valuesCsv.splice(i,1)
+        return
+      }
+    }
+    
+    this.valuesCsv.push(val)
+  }
+
+  downloadCSV(){
+    console.log(this.valuesCsv)
+    var options = { 
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: true, 
+      useBom: true,
+      noDownload: false,
+      headers: ["Cidade", "Exerto", "Data", "Edicao", "Edicao_Extra", "URL_Texto", "URL_PDF"]
+    };
+    new ngxCsv(this.valuesCsv, "pesquisa", options);
+  }
+>>>>>>> be473ca (rebase efetuado com a main)
 }

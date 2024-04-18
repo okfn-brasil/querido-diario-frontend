@@ -58,9 +58,12 @@
               </select>
             </div>
           </div>
-          <div class="button-container">
+          <div class="check-all-container">
             <button class="button-checkbox-all">
-              <input type="checkbox" class="checkbox-all-gazette" (change)="selectAllGazette()">Selecionar todos</button>
+              <input type="checkbox" class="checkbox-all-gazette" (change)="selectAllGazette()">Selecionar todos
+            </button>
+        </div>
+          <div class="button-container">
             <button *ngIf="isLoggedIn" class="btn-download" [ngClass]="{'download-enabled': valuesCsv.length > 0}" [disabled]="valuesCsv.length === 0" (click)="downloadCSV()">
               <mat-icon>cloud_download</mat-icon>Baixar selecionados<span *ngIf="valuesCsv.length > 0">({{valuesCsv.length}})</span>
             </button>
