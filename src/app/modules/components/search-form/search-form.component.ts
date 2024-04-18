@@ -6,6 +6,7 @@ import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
+
 import { listGazetteCSV } from '../../pages/search/search.component';
 
 @Component({
@@ -18,7 +19,7 @@ export class SearchFormComponent implements OnInit {
 
   @Input()
   form: any;
-  
+
   timeout: ReturnType<typeof setTimeout> | undefined;
 
   options: string[] = [
@@ -70,45 +71,51 @@ export class SearchFormComponent implements OnInit {
         this.until = until;
         this.sort_by = sort_by;
 
-        if(city) {
-          if(Array.isArray(city)) {
-            city.forEach(currCity => {
+        if (city) {
+          if (Array.isArray(city)) {
+            city.forEach((currCity) => {
               this.findCityById(currCity);
-            })
+            });
           } else {
             this.findCityById(city);
           }
         }
-        
-        this.termControl.setValue(term);
 
+        this.termControl.setValue(term);
       })
     );
   }
 
   getCityList() {
-    const selectedIds = this.selectedCities.map(city => city.territory_id);
-    return [...this.territories.filter(city => !selectedIds.includes(city.territory_id)) ,...this.selectedCities]
+    const selectedIds = this.selectedCities.map((city) => city.territory_id);
+    return [
+      ...this.territories.filter(
+        (city) => !selectedIds.includes(city.territory_id)
+      ),
+      ...this.selectedCities,
+    ];
   }
 
   findCities() {
     this.loadingCities = true;
-    if(this.timeout) {
-      clearTimeout(this.timeout)
+    if (this.timeout) {
+      clearTimeout(this.timeout);
     }
 
     this.timeout = setTimeout(() => {
-      this.territoryService.findByName(this.query.trim()).subscribe(response => {
-        response.forEach(city => {
-          this.territories.push(city);
+      this.territoryService
+        .findByName(this.query.trim())
+        .subscribe((response) => {
+          response.forEach((city) => {
+            this.territories.push(city);
+          });
+          this.loadingCities = false;
         });
-        this.loadingCities = false;
-      });
     }, 500);
   }
 
   findCityById(id: string) {
-    this.territoryService.findOne({territoryId: id}).subscribe(response => {
+    this.territoryService.findOne({ territoryId: id }).subscribe((response) => {
       this.selectedCities.push(response);
     });
   }
@@ -177,7 +184,7 @@ export class SearchFormComponent implements OnInit {
 
   onChangeQuery(query: string) {
     this.query = query;
-    if(this.query && this.query.length >= 3) {
+    if (this.query && this.query.length >= 3) {
       this.findCities();
     }
   }
@@ -188,22 +195,23 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  clearListGazzete(){
-    listGazetteCSV.length = 0
+  clearListGazzete() {
+    listGazetteCSV.length = 0;
 
-    let buttonDownloadCsv = document.querySelector('.btn-download')
-    let textButtonDownloadCsv = buttonDownloadCsv?.querySelector('strong')
-    let checkFather = document.querySelector('#father')
-    
-    if(textButtonDownloadCsv){
+    let buttonDownloadCsv = document.querySelector('.btn-download');
+    let textButtonDownloadCsv = buttonDownloadCsv?.querySelector('strong');
+    let checkFather = document.querySelector('#father');
 
+    if (textButtonDownloadCsv) {
       textButtonDownloadCsv.innerText = ``;
-      buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
+      buttonDownloadCsv?.setAttribute(
+        'style',
+        'background-color: rgba(245, 232, 233, 0.4);'
+      );
 
-      let b = checkFather as HTMLInputElement
+      let b = checkFather as HTMLInputElement;
 
-      b.checked=false
+      b.checked = false;
     }
   }
-
 }
