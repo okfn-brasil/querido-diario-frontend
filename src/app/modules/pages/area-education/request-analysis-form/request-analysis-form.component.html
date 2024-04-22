@@ -1,0 +1,34 @@
+<app-container theme="light">
+  <app-column [gap]="16">
+    <h1>Formulário de requisição de uma análise customizada</h1>
+    <h3>Preencha os campos abaixo para informar os detalhes a respeito da análise desejada.</h3>
+    <section>
+      <form [formGroup]="form">
+        <app-column [gap]="16">
+          <mat-form-field appearance="legacy">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name" />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>E-mail</mat-label>
+            <input type="email" matInput formControlName="email" />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>Telefone</mat-label>
+            <input type="tel" matInput formControlName="phone" />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>Informe as palavras chave que deseja monitorar, separadas por vírgula</mat-label>
+            <input matInput formControlName="keywords" />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>Descrição: explique os detalhes do tipo de informação que deseja compreender a partir da
+              análise</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+          </mat-form-field>
+        </app-column>
+      </form>
+    </section>
+
+  </app-column>
+</app-container>
