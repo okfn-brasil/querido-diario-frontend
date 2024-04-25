@@ -222,7 +222,7 @@ export class SearchComponent implements OnInit {
       URL_PDF: pdf_url
     }
 
-    let indexOfVal = listGazetteCSV.findIndex((gazette) => gazette.Excerto == val.Excerto)
+    let indexOfVal = listGazetteCSV.findIndex((gazette) => gazette.URL_Texto == val.URL_Texto)
 
     if (indexOfVal == -1) {
       if (listGazetteCSV.length == 0)
@@ -284,9 +284,7 @@ export class SearchComponent implements OnInit {
         headers: ["Municipio", "Estado", "Excerto", "Data_Publicacao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original"]
       };
       new ngxCsv(listGazetteCSV, "pesquisa", options);
-    } else {
-      alert("Selecione pelo menos um excerto para baixar!")
-    }
+    } 
   }
 
   checkAll() {
@@ -301,7 +299,7 @@ export class SearchComponent implements OnInit {
         if (box.checked == false) {
           box.checked = true
           box.dispatchEvent(new Event('change'))
-          buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500;')
+          buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500; cursor: pointer;')
         }
       } else {
         if (box.checked) {

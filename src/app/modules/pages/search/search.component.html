@@ -85,6 +85,15 @@
         </div>
 
         <div class="download-area">
+          <label class="seleciona-todos-label">
+            <input
+              class="input-all"
+              type="checkbox"
+              id="father"
+              [checked]="isAllSelected()"
+              (change)="checkAll()" />Selecianar todos
+          </label>
+
           <button class="btn-download" (click)="downloadCSV()"
             name="botaoDownloadCSV">
             <mat-icon>cloud_download</mat-icon>
@@ -92,13 +101,7 @@
               <strong></strong></span>
           </button>
 
-          <label class="seleciona-todos-label">
-            <input
-              type="checkbox"
-              id="father"
-              [checked]="isAllSelected()"
-              (change)="checkAll()" />Todos
-          </label>
+          
 
         </div>
 
@@ -114,6 +117,7 @@
                 }">
           <div class="checkbox-excerpts">
             <input
+              class="input-excerpts"
               type="checkbox"
               [checked]="isGazzeteSelected(gazette)"
               (change)="selectExcerpts(gazette.territory_name, gazette.state_code, gazette.excerpts[0], gazette.date,  gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value)" />
