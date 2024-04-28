@@ -112,6 +112,7 @@ import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/t
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
+import { PeriodPickerComponent } from './modules/components/period-picker/period-picker.component';
 
 
 @NgModule({
@@ -192,6 +193,7 @@ import { RequestAnalysisFormComponent } from './modules/pages/area-education/req
     TechComponentEnUS,
     PrivacyPolicyComponentEnUS,
     RequestAnalysisFormComponent,
+    PeriodPickerComponent,
   ],
   imports: [
     BrowserModule,
