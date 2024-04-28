@@ -111,6 +111,7 @@ import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_U
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
+import { PeriodPickerComponent } from './modules/components/period-picker/period-picker.component';
 
 
 
@@ -192,6 +193,7 @@ import { RequestAnalysisFormComponent } from './modules/pages/area-education/req
     TechComponentEnUS,
     PrivacyPolicyComponentEnUS,
     RequestAnalysisFormComponent,
+    PeriodPickerComponent,
   ],
   imports: [
     BrowserModule,

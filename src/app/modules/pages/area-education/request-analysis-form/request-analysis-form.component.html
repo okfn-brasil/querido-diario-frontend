@@ -1,34 +1,99 @@
 <app-container theme="light">
-  <app-column [gap]="16">
+  <app-column [gap]="24">
     <h1>Formulário de requisição de uma análise customizada</h1>
-    <h3>Preencha os campos abaixo para informar os detalhes a respeito da análise desejada.</h3>
+    <h3>
+      Preencha os campos abaixo para informar os detalhes a respeito da análise
+      desejada.
+    </h3>
     <section>
       <form [formGroup]="form">
-        <app-column [gap]="16">
+        <app-column [gap]="24">
           <mat-form-field appearance="legacy">
-            <mat-label>Nome</mat-label>
-            <input matInput formControlName="name" />
+            <div class="field">
+              <div class="title">Nome</div>
+              <input matInput formControlName="name" />
+            </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
-            <mat-label>E-mail</mat-label>
-            <input type="email" matInput formControlName="email" />
+            <div class="field">
+              <div class="title">E-mail</div>
+              <input type="email" matInput formControlName="email" />
+            </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
-            <mat-label>Telefone</mat-label>
-            <input type="tel" matInput formControlName="phone" />
+            <div class="field">
+              <div class="title">Telefone</div>
+              <input type="tel" matInput formControlName="phone" />
+            </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
-            <mat-label>Informe as palavras chave que deseja monitorar, separadas por vírgula</mat-label>
-            <input matInput formControlName="keywords" />
+            <div class="field">
+              <div class="title">Palavras-chave</div>
+              <div class="label">
+                Informe as palavras chave que deseja monitorar, separadas por
+                vírgula
+              </div>
+              <input matInput formControlName="keywords" />
+            </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
-            <mat-label>Descrição: explique os detalhes do tipo de informação que deseja compreender a partir da
-              análise</mat-label>
-            <textarea matInput formControlName="description"></textarea>
+            <div class="field">
+              <div class="title">Descrição</div>
+              <div class="label">
+                explique os detalhes do tipo de informação que deseja
+                compreender a partir da análise
+              </div>
+              <textarea matInput formControlName="description"></textarea>
+            </div>
           </mat-form-field>
+          <div class="field">
+            <div class="title">Município</div>
+            <div class="label">Digite um local</div>
+            <edu-city-filter
+              [showAll]="true"
+              [cities]="cities"
+              [initialValue]="locations"
+              (changeLocations)="onChangeLocations($event)"
+            ></edu-city-filter>
+          </div>
+          <div class="field">
+            <div class="title">Período de tempo</div>
+            <app-period-picker
+              (rangeSelected)="changePeriod($event)"
+            ></app-period-picker>
+          </div>
+
+          <div class="field">
+            <div class="title theme">Subtema</div>
+            <div class="sub-title">
+              Escolha uma ou mais categorias para filtrar pelo tipo de
+              tecnologia.
+            </div>
+            <edu-themes-filter
+              [isModal]="false"
+              [themes]="themes"
+              [initialThemes]="themes"
+              (themesChange)="onChangeThemes($event)"
+            ></edu-themes-filter>
+          </div>
+
+          <div class="field">
+            <div class="title">Envolvidos</div>
+            <div class="sub-title">
+              Escolha uma ou mais categorias para filtrar por termos relevantes
+              mencionados.
+            </div>
+            <div class="edu-input">
+              <edu-themes-filter
+                [isModal]="false"
+                [themes]="entities"
+                [initialThemes]="entities"
+                (themesChange)="onChangeEntities($event)"
+              ></edu-themes-filter>
+            </div>
+          </div>
         </app-column>
       </form>
     </section>
-
   </app-column>
 </app-container>
