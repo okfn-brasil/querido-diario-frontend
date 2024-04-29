@@ -21,7 +21,8 @@ interface ValuesCSV {
   URL_TXT: string,
   URL_PDF: string,
   Subtemas: string[],
-  Entidades: string[]
+  Entidades: string[],
+  id: string
 }
 
 @Component({
@@ -259,7 +260,8 @@ export class SearchEducationComponent implements OnInit {
     txt_url: string,
     pdf_url: string,
     subthemes: string[],
-    entities: string[]
+    entities: string[],
+    id: string
   ) {
 
     let val: ValuesCSV = {
@@ -272,11 +274,12 @@ export class SearchEducationComponent implements OnInit {
       URL_TXT: txt_url,
       URL_PDF: pdf_url,
       Subtemas: subthemes,
-      Entidades: entities
+      Entidades: entities,
+      id: id
     }
 
     for (let i = 0; i < this.valuesCsv.length; i++) {
-      if (this.valuesCsv[i].Exerto == val.Exerto) {
+      if (this.valuesCsv[i].id == val.id) {
         this.valuesCsv.splice(i, 1)
         this.checkSelectAll(false)
         return
@@ -287,6 +290,24 @@ export class SearchEducationComponent implements OnInit {
   }
 
   downloadCSV() {
+    let arrayDownload:any = []
+
+    this.valuesCsv.map(val=>{
+      let value = {
+        Cidade: val.Cidade,
+        Estado: val.Estado,
+        Exerto: val.Exerto,
+        Data: val.Data,
+        Edicao: val.Edicao,
+        Edicao_Extra: val.Edicao_Extra,
+        URL_TXT: val.URL_TXT,
+        URL_PDF: val.URL_PDF,
+        Subtemas: val.Subtemas,
+        Entidades: val.Entidades
+      }
+      arrayDownload.push(value)
+    })
+
     var options = {
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -296,7 +317,7 @@ export class SearchEducationComponent implements OnInit {
       noDownload: false,
       headers: ["Município", "Estado", "Exerto", "Data da Publicação", "Edicao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original", "Subtemas", "Entidades"]
     };
-    new ngxCsv(this.valuesCsv, "pesquisa", options)
+    new ngxCsv(arrayDownload, "pesquisa", options)
     this.valuesCsv = []
     this.resetStateAfterDownload()
   }
@@ -333,7 +354,7 @@ export class SearchEducationComponent implements OnInit {
       let c = checkboxes_gazettes[i] as HTMLInputElement
 
       this.valuesCsv.map((val, key) => {
-        if (val.URL_PDF == c.id) {
+        if (val.id == c.id) {
           c.checked = true
           count += 1
         }
@@ -377,7 +398,7 @@ export class SearchEducationComponent implements OnInit {
       let c = checkboxes_gazettes[i] as HTMLInputElement
 
       this.valuesCsv.map((val, key) => {
-        if (val.URL_PDF == c.id) {
+        if (val.id == c.id) {
           count += 1
         }
       })

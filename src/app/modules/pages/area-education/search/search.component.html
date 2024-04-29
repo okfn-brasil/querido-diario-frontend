@@ -67,11 +67,11 @@
             </button>
             <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
           </div>
-        </div>
-        <div *ngFor="let item of results[listPageIntern]">
+          </div>
+        <div *ngFor="let item of results[listPageIntern]; index as i">
           <div class="container-checkbox">
             <div class = "checkbox-excerpts">
-              <input type="checkbox" name="checkbox-gazette" [id]="item.url" (change)="addValuesCsv(item.territory_name, item.state_code, item.excerpt, item.date, item.edition, item.is_extra_edition, item.txt_url, item.url, item.subthemes, item.entities)">
+              <input type="checkbox" name="checkbox-gazette" [id]="item.url+currPage+i" (change)="addValuesCsv(item.territory_name, item.state_code, item.excerpt, item.date, item.edition, item.is_extra_edition, item.txt_url, item.url, item.subthemes, item.entities, (item.url+currPage+i))">
             </div>
             <edu-search-item [gazette]="item"></edu-search-item>
           </div>
