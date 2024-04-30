@@ -256,13 +256,33 @@ select
   font-weight: bold
   display: flex
   align-items: center
+  cursor: pointer
   input[type="checkbox"]
-    accent-color: #ce812c
-    border-radius: rem(4)
-    gap: 8px
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    border: 2px solid #ddd
+    border-radius: 4px
+    background-color: #fff
     margin-right: rem(12)
-    height: rem(20)
-    width: rem(20)
+    width: 20px
+    height: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    cursor: pointer
+
+  input[type="checkbox"]:after
+    font-family: "Font Awesome 5 Free"
+    font-weight: 900
+    content: '\f00c'
+    font-size: 16px
+    color: white
+
+  input[type="checkbox"]:checked
+    background-color: #FF8500
+    border-color: #FF8500
 
 .container-checkbox
   display: flex
@@ -272,15 +292,35 @@ select
 .flex result-flex
   padding: 28px
 
-.checkbox-excerpts 
+.checkbox-excerpts
   display: flex
   align-items: center
   justify-content: center
   input[type="checkbox"]
-    accent-color: #ce812c
-    border-radius: rem(4)
-    height: rem(20)
-    width: rem(20)
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    border: 2px solid #ddd
+    border-radius: 4px
+    background-color: #fff
+    width: 20px
+    height: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    cursor: pointer
+  
+  input[type="checkbox"]:after
+    font-family: "Font Awesome 5 Free"
+    font-weight: 900
+    content: '\f00c'
+    font-size: 16px
+    color: white
+
+  input[type="checkbox"]:checked
+    background-color: #FF8500
+    border-color: #FF8500
 
 .items
   padding-bottom: rem(30)

@@ -308,18 +308,22 @@ export class SearchEducationComponent implements OnInit {
       arrayDownload.push(value)
     })
 
-    var options = {
-      fieldSeparator: ',',
-      quoteStrings: '"',
-      decimalseparator: '.',
-      showLabels: true,
-      useBom: true,
-      noDownload: false,
-      headers: ["Município", "Estado", "Exerto", "Data da Publicação", "Edicao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original", "Subtemas", "Entidades"]
-    };
-    new ngxCsv(arrayDownload, "pesquisa", options)
-    this.valuesCsv = []
-    this.resetStateAfterDownload()
+    if (this.valuesCsv.length != 0) {
+      var options = {
+        fieldSeparator: ',',
+        quoteStrings: '"',
+        decimalseparator: '.',
+        showLabels: true,
+        useBom: true,
+        noDownload: false,
+        headers: ["Município", "Estado", "Exerto", "Data da Publicação", "Edicao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original", "Subtemas", "Entidades"]
+      };
+      new ngxCsv(arrayDownload, "pesquisa", options)
+    }else { 
+      document.querySelector('.btn-download')?.setAttribute('ariaDisabled', 'true')
+    }
+      this.valuesCsv = []
+      this.resetStateAfterDownload()
   }
 
   selectAllGazette() {

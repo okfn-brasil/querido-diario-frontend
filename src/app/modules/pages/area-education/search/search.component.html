@@ -1,3 +1,7 @@
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head> 
+
 <edu-header></edu-header>
 <edu-alert-modal [hasEditEmail]="true" (close)="onCloseCreate()" (created)="onCloseCreate()" *ngIf="isOpenAlertModal"></edu-alert-modal>
 <edu-advanced-modal (close)="onCloseAdvanced()" *ngIf="isOpenAdvanced"></edu-advanced-modal>
@@ -59,10 +63,10 @@
             </div>
           </div>
           <div class="button-container">
-            <button class="button-checkbox-all">
+            <label class="button-checkbox-all">
               <input type="checkbox" class="checkbox-all-gazette" [checked]="checkedAll()" (change)="selectAllGazette()">Selecionar todos
-            </button>
-            <button *ngIf="isLoggedIn" class="btn-download" [ngClass]="{'download-enabled': valuesCsv.length > 0}" [disabled]="disableButtonDownload()" (click)="downloadCSV()">
+            </label>
+            <button class="btn-download" [ngClass]="{'download-enabled': valuesCsv.length > 0}" [disabled]="disableButtonDownload()" (click)="downloadCSV()">
               <mat-icon>cloud_download</mat-icon>Baixar selecionados<span *ngIf="valuesCsv.length > 0">({{valuesCsv.length}})</span>
             </button>
             <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
