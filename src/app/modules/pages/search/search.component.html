@@ -1,3 +1,7 @@
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head> 
+
 <div fxLayout="column">
   <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
     <div class="container form-search-container" fxLayout="column">
@@ -87,11 +91,10 @@
         <div class="download-area">
           <label class="seleciona-todos-label">
             <input
-              class="input-all"
               type="checkbox"
               id="father"
               [checked]="isAllSelected()"
-              (change)="checkAll()" />Selecianar todos
+              (change)="checkAll()" />Selecionar todos
           </label>
 
           <button class="btn-download" (click)="downloadCSV()"
@@ -101,7 +104,6 @@
               <strong></strong></span>
           </button>
 
-          
 
         </div>
 
@@ -117,7 +119,6 @@
                 }">
           <div class="checkbox-excerpts">
             <input
-              class="input-excerpts"
               type="checkbox"
               [checked]="isGazzeteSelected(gazette)"
               (change)="selectExcerpts(gazette.territory_name, gazette.state_code, gazette.excerpts[0], gazette.date,  gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value)" />

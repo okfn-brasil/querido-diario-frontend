@@ -222,7 +222,7 @@ export class SearchComponent implements OnInit {
       URL_PDF: pdf_url
     }
 
-    let indexOfVal = listGazetteCSV.findIndex((gazette) => gazette.URL_Texto == val.URL_Texto)
+    let indexOfVal = listGazetteCSV.findIndex((gazette) => gazette.Excerto == val.Excerto)
 
     if (indexOfVal == -1) {
       if (listGazetteCSV.length == 0)
@@ -284,7 +284,9 @@ export class SearchComponent implements OnInit {
         headers: ["Municipio", "Estado", "Excerto", "Data_Publicacao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original"]
       };
       new ngxCsv(listGazetteCSV, "pesquisa", options);
-    } 
+    } else {
+      document.querySelector('.btn-download')?.setAttribute('ariaDisabled', 'true')
+    }
   }
 
   checkAll() {
@@ -309,8 +311,9 @@ export class SearchComponent implements OnInit {
       }
     }
     
-    if (listGazetteCSV.length == 0) 
-      buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
+    if (listGazetteCSV.length == 0){
+      buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4); cursor: default;')
+    }
   }
 
 }
