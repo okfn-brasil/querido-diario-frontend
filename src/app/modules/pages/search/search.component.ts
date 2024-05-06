@@ -226,7 +226,7 @@ export class SearchComponent implements OnInit {
 
     if (indexOfVal == -1) {
       if (listGazetteCSV.length == 0)
-        buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500;')
+        buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500; cursor: pointer;')
 
       listGazetteCSV.push(val)
 
