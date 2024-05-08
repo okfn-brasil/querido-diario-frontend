@@ -125,11 +125,7 @@
           <div fxLayout="column" class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px">
             <ng-container *ngFor="let text of gazette.excerpts">
-              <input
-                type="checkbox"
-                class="selectExcerpts"
-                (change)="selectExcerpts(gazette.territory_name, text, gazette.date, gazette.edition, gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value)"
-              />
+              
 
               <div [innerHTML]="formatText(text)" class="typo-inner"></div>
             </ng-container>
