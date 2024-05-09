@@ -1,10 +1,22 @@
 {
   "list": [
     {
+      "title": "Novas 4 cidades!",
+      "content": "As cidades de São Francisco de Paula (RS), Marau (RS), Santa Clara do Sul (RS), Três Arroios (RS) foram adicionadas à plataforma!",
+      "updatedAt": "2024/05/09",
+      "isNew": true
+    },
+    {
+      "title": "Novas 2 cidades!",
+      "content": "As cidades de Jaru (RO) e Uberlândia (MG) foram adicionadas à plataforma!",
+      "updatedAt": "2024/04/17",
+      "isNew": false
+    },
+    {
       "title": "Novas 20 cidades!",
       "content": "As cidades de São José dos Campos (SP), Aguiarnópolis (TO), Campos Lindos (TO), Goiatins (TO), Peixe (TO), Tocantínia (TO), Corumbá (MS), Estância (SE), Tremembé (SP), Monteiro Lobato (SP), Macatuba (SP), Cunha (SP), Campo Alegre de Lourdes (BA), Correntina (BA), Jaborandi (BA), Jeremoabo (BA), Lauro de Freitas (BA), Luis Eduardo Magalhães (BA), Maragogipe (BA) e Riachão das Neves (BA) foram adicionadas à plataforma!",
       "updatedAt": "2024/03/27",
-      "isNew": true
+      "isNew": false
     },
     {   
       "title": "Novas 3 cidades!",
