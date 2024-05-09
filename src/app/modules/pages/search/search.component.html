@@ -115,12 +115,12 @@
                   itemsPerPage: pagination.itemsPerPage,
                   currentPage: pagination.currentPage,
                   totalItems: gazetteResponse.total_gazettes
-                }">
+                }, index as i">
           <div class="checkbox-excerpts">
             <input
               type="checkbox"
-              [checked]="isGazzeteSelected(gazette)"
-              (change)="selectExcerpts(gazette.territory_name, gazette.state_code, gazette.excerpts[0], gazette.date,  gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value)" />
+              [checked]="isGazzeteSelected((gazette.downloads[0].value+pagination.currentPage+i))"
+              (change)="selectExcerpts(gazette.territory_name, gazette.state_code, gazette.excerpts[0], gazette.date,  gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value, (gazette.downloads[0].value+pagination.currentPage+i))" />
           </div>
           <div fxLayout="column" class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px">

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ngxCsv } from 'ngx-csv';
-import { ngxCsv } from 'ngx-csv';
 import { City } from 'src/app/interfaces/city';
 import { GazetteFilters, GazetteModel, GazetteResponse, OrderFilter, parseGazettes } from 'src/app/interfaces/education-gazettes';
 import { CitiesService } from 'src/app/services/cities/cities.service';
