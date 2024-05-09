@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ngxCsv } from 'ngx-csv';
 import { City } from 'src/app/interfaces/city';
 import { GazetteFilters, GazetteModel, GazetteResponse, OrderFilter, parseGazettes } from 'src/app/interfaces/education-gazettes';
 import { CitiesService } from 'src/app/services/cities/cities.service';
@@ -8,6 +9,20 @@ import { UserQuery } from 'src/app/stores/user/user.query';
 
 interface List {
   [key: number]: GazetteModel[];
+}
+
+interface ValuesCSV {
+  Cidade: string,
+  Estado: string,
+  Exerto: string,
+  Data: string,
+  Edicao: string,
+  Edicao_Extra: string,
+  URL_TXT: string,
+  URL_PDF: string,
+  Subtemas: string[],
+  Entidades: string[],
+  id: string
 }
 
 @Component({
@@ -28,9 +43,9 @@ export class SearchEducationComponent implements OnInit {
   isLoading = false;
   order = OrderFilter.relevance;
   orderList = [
-    {value: OrderFilter.relevance, label: 'Mais relevante'},
-    {value: OrderFilter.descending_date, label: 'Mais recente'},
-    {value: OrderFilter.ascending_date, label: 'Mais antigo'}
+    { value: OrderFilter.relevance, label: 'Mais relevante' },
+    { value: OrderFilter.descending_date, label: 'Mais recente' },
+    { value: OrderFilter.ascending_date, label: 'Mais antigo' }
   ];
   listPageIntern = 0;
   themes: string[] = [];
@@ -38,6 +53,8 @@ export class SearchEducationComponent implements OnInit {
   isOpenAlertModal = false;
   isOpenAdvanced = false;
   savedParams = '';
+
+  valuesCsv: Array<ValuesCSV> = []
 
   constructor(
     private searchService: EducationGazettesService,
@@ -63,14 +80,14 @@ export class SearchEducationComponent implements OnInit {
         pre_tags: "<b>",
         post_tags: "</b>",
       } as GazetteFilters;
-      if(Object.keys(Object.keys(this.filters).filter(key => !!this.filters[key])).length > 1) {
+      if (Object.keys(Object.keys(this.filters).filter(key => !!this.filters[key])).length > 1) {
         this.onChangeFilters(this.filters);
       }
     }).unsubscribe();
     this.getFiltersInfo();
 
     this.userQuery.userData$.subscribe(userData => {
-      if(userData.full_name) {
+      if (userData.full_name) {
         this.isLoggedIn = true;
       }
     });
@@ -78,11 +95,15 @@ export class SearchEducationComponent implements OnInit {
 
   onChangeQuery() {
     this.onChangeFilters(this.filters);
+    this.valuesCsv = []
+    this.checkSelectAll(false)
   }
 
   onEnter(event?: KeyboardEvent) {
-    if(event && event.key === 'Enter') {
+    if (event && event.key === 'Enter') {
       this.onChangeFilters(this.filters);
+      this.valuesCsv = []
+      this.checkSelectAll(false)
     }
   }
 
@@ -93,13 +114,13 @@ export class SearchEducationComponent implements OnInit {
   getItems(currFilters: string, params?: string) {
     this.isLoading = true;
     this.hasSearched = true;
-    if(this.savedParams !== params) {
+    if (this.savedParams !== params) {
       this.currPage = 0;
     }
 
     this.searchService.getAllGazettes(currFilters, this.currPage).subscribe(response => {
       const nResponse = response as GazetteResponse;
-      if(nResponse.excerpts && nResponse.excerpts.length) {
+      if (nResponse.excerpts && nResponse.excerpts.length) {
         this.results[this.currPage] = parseGazettes(nResponse.excerpts, this.filters.querystring as string);
         this.totalItems = nResponse.total_excerpts;
       } else {
@@ -118,7 +139,7 @@ export class SearchEducationComponent implements OnInit {
   }
 
   getIfCanSearch(obj: GazetteFilters) {
-    if(!!obj.querystring || obj.entities || (obj.subthemes && obj.subthemes.length)) {
+    if (!!obj.querystring || obj.entities || (obj.subthemes && obj.subthemes.length)) {
       return true;
     } else {
       this.hasSearched = false;
@@ -127,54 +148,54 @@ export class SearchEducationComponent implements OnInit {
   };
 
   onChangeFilters(filters: GazetteFilters) {
-    if(this.timeout) {
+    if (this.timeout) {
       clearTimeout(this.timeout)
     }
     this.timeout = setTimeout(() => {
-      this.filters = {...filters, querystring: this.querystring, sort_by: this.order};
+      this.filters = { ...filters, querystring: this.querystring, sort_by: this.order };
       const newObj: GazetteFilters = {} as GazetteFilters;
       Object.keys(this.filters).forEach(key => {
-        if(!!this.filters[key]) {
+        if (!!this.filters[key]) {
           newObj[key] = this.filters[key];
         }
       })
       const params = new URLSearchParams(newObj as any).toString();
-      if(this.getIfCanSearch(newObj)) {
+      if (this.getIfCanSearch(newObj)) {
         this.getItems(this.convertToParams(newObj), params);
       }
-      this.router.navigate([], 
+      this.router.navigate([],
         {
           relativeTo: this.activatedRoute,
           queryParams: newObj,
-      });
+        });
     }, 500);
   }
 
-  
-convertToParams(filters: GazetteFilters){
-  let params = Object.keys(filters)
-  .filter(key => (!!filters[key]))
-  .map(key => {
-    if(Array.isArray(filters[key])) {
-      const arrayItems = filters[key] as string[];
-      const resultArray: string[] = [];
-      arrayItems.forEach(item => {
-        if(item !== '0') {
-          resultArray.push(`${key}=${item}`);
-        }
-      });
-      return resultArray.length ? resultArray.join('&') : '';
-    } else {
-      return `${key}=${filters[key]}`;
-    }
-  })
-  .join('&');
 
-  if(params[params.length - 1] === '&') {
-    params = params.slice(0, -1);
+  convertToParams(filters: GazetteFilters) {
+    let params = Object.keys(filters)
+      .filter(key => (!!filters[key]))
+      .map(key => {
+        if (Array.isArray(filters[key])) {
+          const arrayItems = filters[key] as string[];
+          const resultArray: string[] = [];
+          arrayItems.forEach(item => {
+            if (item !== '0') {
+              resultArray.push(`${key}=${item}`);
+            }
+          });
+          return resultArray.length ? resultArray.join('&') : '';
+        } else {
+          return `${key}=${filters[key]}`;
+        }
+      })
+      .join('&');
+
+    if (params[params.length - 1] === '&') {
+      params = params.slice(0, -1);
+    }
+    return params.replace(/territory_id/g, 'territory_ids');
   }
-  return params.replace(/territory_id/g, 'territory_ids');
-}
 
   getFiltersInfo() {
     this.searchService.getThemes().subscribe(results => {
@@ -197,8 +218,12 @@ convertToParams(filters: GazetteFilters){
   onChangePage($page: number) {
     this.isLoading = true;
     this.currPage = $page;
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     this.onChangeFilters(this.filters);
+    this.checkSelectAll(false)
+    setTimeout(() => {
+      this.validateCheckeds()
+    }, 1000)
   }
 
   clearFilters() {
@@ -225,4 +250,172 @@ convertToParams(filters: GazetteFilters){
   onOpenAdvanced() {
     this.isOpenAdvanced = true;
   }
+
+  addValuesCsv(territory_name: string,
+    state_code: string,
+    excerpt: string,
+    date: string,
+    edition: string,
+    is_extra_edition: boolean,
+    txt_url: string,
+    pdf_url: string,
+    subthemes: string[],
+    entities: string[],
+    id: string
+  ) {
+
+    let val: ValuesCSV = {
+      Cidade: territory_name,
+      Estado: state_code,
+      Exerto: excerpt,
+      Data: date,
+      Edicao: edition,
+      Edicao_Extra: is_extra_edition ? "Edicao extra" : "Não extra",
+      URL_TXT: txt_url,
+      URL_PDF: pdf_url,
+      Subtemas: subthemes,
+      Entidades: entities,
+      id: id
+    }
+
+    for (let i = 0; i < this.valuesCsv.length; i++) {
+      if (this.valuesCsv[i].id == val.id) {
+        this.valuesCsv.splice(i, 1)
+        this.checkSelectAll(false)
+        return
+      }
+    }
+
+    this.valuesCsv.push(val)
+  }
+
+  downloadCSV() {
+    let arrayDownload:any = []
+
+    this.valuesCsv.map(val=>{
+      let value = {
+        Cidade: val.Cidade,
+        Estado: val.Estado,
+        Exerto: val.Exerto,
+        Data: val.Data,
+        Edicao: val.Edicao,
+        Edicao_Extra: val.Edicao_Extra,
+        URL_TXT: val.URL_TXT,
+        URL_PDF: val.URL_PDF,
+        Subtemas: val.Subtemas,
+        Entidades: val.Entidades
+      }
+      arrayDownload.push(value)
+    })
+
+    if (this.valuesCsv.length != 0) {
+      var options = {
+        fieldSeparator: ',',
+        quoteStrings: '"',
+        decimalseparator: '.',
+        showLabels: true,
+        useBom: true,
+        noDownload: false,
+        headers: ["Município", "Estado", "Exerto", "Data da Publicação", "Edicao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original", "Subtemas", "Entidades"]
+      };
+      new ngxCsv(arrayDownload, "pesquisa", options)
+    }else { 
+      document.querySelector('.btn-download')?.setAttribute('ariaDisabled', 'true')
+    }
+      this.valuesCsv = []
+      this.resetStateAfterDownload()
+  }
+
+  selectAllGazette() {
+    const checkbokSelectAll = document.querySelectorAll('.checkbox-all-gazette')
+    const checkboxes_gazettes = document.querySelectorAll('input[name="checkbox-gazette"]')
+
+    let ca = checkbokSelectAll[0] as HTMLInputElement
+
+    if (ca.checked) {
+      for (let i = 0; i < checkboxes_gazettes.length; i++) {
+        let c = checkboxes_gazettes[i] as HTMLInputElement
+        let estadoInicial = c.checked
+        c.checked = true
+        if (estadoInicial == false) {
+          c.dispatchEvent(new Event('change'))
+        }
+      }
+    } else {
+      for (let i = 0; i < checkboxes_gazettes.length; i++) {
+        let c = checkboxes_gazettes[i] as HTMLInputElement
+        c.checked = false
+        c.dispatchEvent(new Event('change'))
+      }
+    }
+  }
+
+  validateCheckeds() {
+    const checkboxes_gazettes = document.querySelectorAll('input[name="checkbox-gazette"]')
+    let count = 0
+
+    for (let i = 0; i < checkboxes_gazettes.length; i++) {
+      let c = checkboxes_gazettes[i] as HTMLInputElement
+
+      this.valuesCsv.map((val, key) => {
+        if (val.id == c.id) {
+          c.checked = true
+          count += 1
+        }
+      })
+    }
+
+    count == checkboxes_gazettes.length ? this.checkSelectAll(true):this.checkSelectAll(false)
+
+  }
+
+  resetStateAfterDownload() {
+    const checkboxes = document.querySelectorAll('input[name="checkbox-gazette"]')
+    checkboxes.forEach((checkbox) => {
+      (checkbox as HTMLInputElement).checked = false
+    });
+
+    this.checkSelectAll(false)
+  }
+
+  disableButtonDownload() {
+    const button = document.querySelector('.btn-download') as HTMLButtonElement
+
+    if (this.valuesCsv.length == 0) {
+      button.style.backgroundColor = '#ead9f2'
+      button.style.opacity = '0.5'
+      button.style.color = '#000'
+      return true
+    } else {
+      button.style.backgroundColor = '#ff8500'
+      button.style.opacity = '1'
+      button.style.color = '#fff'
+      return false
+    }
+  }
+
+  checkedAll(){
+    const checkboxes_gazettes = document.querySelectorAll('input[name="checkbox-gazette"]')
+    let count = 0
+
+    for (let i = 0; i < checkboxes_gazettes.length; i++) {
+      let c = checkboxes_gazettes[i] as HTMLInputElement
+
+      this.valuesCsv.map((val, key) => {
+        if (val.id == c.id) {
+          count += 1
+        }
+      })
+    }
+
+    if (count == checkboxes_gazettes.length) {
+      this.checkSelectAll(true)
+    }
+  }
+
+  checkSelectAll(val:boolean){
+    const selectAllCheckbox = document.querySelector('.checkbox-all-gazette') as HTMLInputElement
+    selectAllCheckbox.checked = val
+  }
+
 }

@@ -24,14 +24,14 @@ section
 .form-search-container
   padding-left: 0
   padding-right: 0
-  
+
 .container
   width: rem(979)
 
 .result
   padding: rem(46) rem(100)
 
-  @media only screen and (max-width: 768px) 
+  @media only screen and (max-width: 768px)
     padding: rem(46) rem(16)
     margin-top: 32px
 
@@ -49,6 +49,93 @@ section
   background-color: #FF8500
   border: none
   color: $white1
+
+.btn-download
+  display: flex
+  justify-content: center
+  place-items: center
+  gap: 4px
+  padding: 0 12px
+  height: 2.75rem
+  border-radius: 1.875rem
+  background-color: rgba(245, 232, 233, 0.4)
+  font-family: Lato
+  color: #fff
+  border: none
+  font-size: 1rem
+  font-weight: 600
+  letter-spacing: 0
+  line-height: 1rem
+  cursor: default
+  
+
+  
+.gazette-responses
+  display: flex
+  flex-direction: column
+  gap: 42px
+
+.gazette
+  display: flex
+  flex-direction: row
+  align-items: center
+  gap: 8px
+  padding-right: 28px
+
+.seleciona-todos-label
+  color: white
+  display: flex
+  align-items: center
+  cursor: pointer
+
+input[type="checkbox"]
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+  border: 2px solid #ddd
+  border-radius: 4px
+  background-color: #fff
+  width: 20px
+  height: 20px
+  display: flex
+  align-items: center
+  justify-content: center
+  color: white
+  cursor: pointer
+
+input[type="checkbox"]:after
+  font-family: "Font Awesome 5 Free"
+  font-weight: 900
+  content: '\f00c'
+  font-size: 16px
+  color: white
+
+input[type="checkbox"]:checked
+  background-color: #FF8500
+  border-color: #FF8500
+
+.checkbox-excerpts input
+  cursor: pointer
+
+.download-area
+  display: flex
+  align-items: center
+  gap: 2em
+  margin-right: rem(15)
+
+#father
+  margin-right: .5em
+  cursor: pointer
+
+.seleciona-todos-label
+  font-weight: 500
+
+.view-options
+  display: flex
+  justify-content: space-around
+
+  .sort-by
+    widows: 100%
 
 ::ng-deep
   mat-icon
@@ -70,7 +157,7 @@ section
 
   .pagination-mobile
     display: block
-    
+
   .pagination-desktop
     display: none
 
@@ -82,6 +169,9 @@ section
 
   .container
     padding: 0 rem(16)
+
+  .checkbox-excerpts
+    margin-top: 32px
 
 ::ng-deep
   .ngx-pagination

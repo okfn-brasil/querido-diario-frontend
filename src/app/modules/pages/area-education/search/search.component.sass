@@ -94,7 +94,6 @@
       color: #fff
       right: rem(20)
 
-
   .filters-fields
     padding: rem(16) rem(20)
 
@@ -172,7 +171,8 @@
   padding: rem(16) rem(24)
   border-radius: rem(30)
   font-weight: bold
-  
+  margin-left: rem(30)
+
   @media only screen and (max-width: 768px)
     width: 48%
 
@@ -201,6 +201,31 @@ select
   option
     color: #000
 
+.button-container
+  display: flex
+
+.btn-download
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 4px
+  padding: rem(16) rem(24)
+  border-radius: rem(30)
+  border-radius: rem(30)
+  background-color: #ead9f2
+  opacity: 0.5
+  opacity: 0.5
+  font-family: Lato
+  color: #000
+  border: none
+  font-size: rem(16)
+  font-weight: bold
+  line-height: rem(16)
+  margin-left: rem(30)
+
+  @media only screen and (max-width: 768px)
+    margin-left: rem(4)
+
 .result-flex
   margin-bottom: rem(16)
 
@@ -222,7 +247,81 @@ select
     border-left: 6px solid transparent
     border-right: 6px solid transparent
     border-top: 6px solid #fff
+
+.button-checkbox-all
+  color: #fff 
+  font-size: 20px
+  font-family: Lato
+  font-size: rem(16)
+  font-weight: bold
+  display: flex
+  align-items: center
+  cursor: pointer
+  input[type="checkbox"]
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    border: 2px solid #ddd
+    border-radius: 4px
+    background-color: #fff
+    margin-right: rem(12)
+    width: 20px
+    height: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    cursor: pointer
+
+  input[type="checkbox"]:after
+    font-family: "Font Awesome 5 Free"
+    font-weight: 900
+    content: '\f00c'
+    font-size: 16px
+    color: white
+
+  input[type="checkbox"]:checked
+    background-color: #FF8500
+    border-color: #FF8500
+
+.container-checkbox
+  display: flex
+  gap: 8px
+  padding-right: 28px
+
+.flex result-flex
+  padding: 28px
+
+.checkbox-excerpts
+  display: flex
+  align-items: center
+  justify-content: center
+  input[type="checkbox"]
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    border: 2px solid #ddd
+    border-radius: 4px
+    background-color: #fff
+    width: 20px
+    height: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    cursor: pointer
   
+  input[type="checkbox"]:after
+    font-family: "Font Awesome 5 Free"
+    font-weight: 900
+    content: '\f00c'
+    font-size: 16px
+    color: white
+
+  input[type="checkbox"]:checked
+    background-color: #FF8500
+    border-color: #FF8500
+
 .items
   padding-bottom: rem(30)
 
@@ -230,3 +329,8 @@ select
   display: block
   width: unset
   font-weight: bold
+
+.download-enabled
+  background-color: #FF8500
+  color: white
+  opacity: 1

@@ -1,3 +1,7 @@
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head> 
+
 <div fxLayout="column">
   <section class="bg-white-2" fxLayoutAlign="center" fxLayout="row">
     <div class="container form-search-container" fxLayout="column">
@@ -7,24 +11,25 @@
 
   <section
     *ngIf="levels && levels.length"
-    class="bg-purple-2 cities-result"
-  >
-    <app-cities-search-result [levels]="levels" [territories]="territories"></app-cities-search-result>
+    class="bg-purple-2 cities-result">
+    <app-cities-search-result [levels]="levels"
+      [territories]="territories"></app-cities-search-result>
   </section>
 
   <section
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="gazetteResponse && gazetteResponse.error"
-  >
+    *ngIf="gazetteResponse && gazetteResponse.error">
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <h2>Infelizmente não foi possível realizar a sua busca no momento.</h2>
       <p>
-        Um problema com a nossa base de documentos ou com a sua conexão impediu a conclusão da pesquisa.
+        Um problema com a nossa base de documentos ou com a sua conexão impediu
+        a conclusão da pesquisa.
       </p>
       <p>
-        Verifique seu acesso à internet e tente novamente, ou refaça sua busca mais tarde.
+        Verifique seu acesso à internet e tente novamente, ou refaça sua busca
+        mais tarde.
       </p>
     </div>
   </section>
@@ -33,8 +38,7 @@
     class="bg-purple-2"
     fxLayoutAlign="center"
     fxLayout="row"
-    *ngIf="gazetteResponse && gazetteResponse.total_gazettes == 0"
-  >
+    *ngIf="gazetteResponse && gazetteResponse.total_gazettes == 0">
     <div class="container" fxLayout="column" fxLayoutGap="18px">
       <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
       <p>
@@ -53,8 +57,7 @@
           </ng-container>
         </ng-container>
         <ng-container
-          *ngIf="gazetteResponse && gazetteResponse.total_gazettes > 0"
-        >
+          *ngIf="gazetteResponse && gazetteResponse.total_gazettes > 0">
           <p>
             Abaixo, estão os resultados encontrados nos diários dos municípios
             que já conseguimos disponibilizar em formato aberto! Assim você
@@ -64,57 +67,83 @@
 
         <div fxLayout="row" fxLayoutAlign="space-between">
           <div>
-            <h2>{{ gazetteResponse.total_gazettes }}<span *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;">*</span> resultados encontrados</h2>
-            <em *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;" class="font-lato text-xs text-neutral-400">
-              *A quantidade de resultados atingiu o limite da pesquisa. Tente utilizar termos mais específicos ou os operadores da <a href="/tecnologia/busca-avancada" target="_blank" class="text-xs highlight">busca avançada</a>.
+            <h2>{{ gazetteResponse.total_gazettes }}<span
+                *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;">*</span>
+              resultados encontrados</h2>
+            <em *ngIf="gazetteResponse.total_gazettes >= searchResultMaxSize;"
+              class="font-lato text-xs text-neutral-400">
+              *A quantidade de resultados atingiu o limite da pesquisa. Tente
+              utilizar termos mais específicos ou os operadores da <a
+                href="/tecnologia/busca-avancada" target="_blank"
+                class="text-xs highlight">busca avançada</a>.
             </em>
           </div>
-          <app-select
-            [title]="'ORDENAR POR'"
-            [options]="orderOptions"
-            [selected]="sort_by"
-            class="text-white"
-            (onSelected)="orderChanged($event)"
-          ></app-select>
+          <div fxLayout="row" class="view-options">
+            <app-select
+              [title]="'ORDENAR POR'"
+              [options]="orderOptions"
+              [selected]="sort_by"
+              class="text-white sort-by"
+              (onSelected)="orderChanged($event)"></app-select>
+          </div>
         </div>
 
-        <pagination-template
+        <div class="download-area">
+          <label class="seleciona-todos-label">
+            <input
+              type="checkbox"
+              id="father"
+              [checked]="isAllSelected()"
+              (change)="checkAll()" />Selecionar Todos
+          </label>
+          
+          <button class="btn-download" (click)="downloadCSV()"
+            name="botaoDownloadCSV">
+            <mat-icon>cloud_download</mat-icon>
+            <span class="text-white">Baixar Selecionados
+              <strong></strong></span>
+          </button>
+
+        </div>
+
+        <pagination-template class="gazette"
           #p="paginationApi"
           *ngFor="
-            let gazette of gazetteResponse.gazettes
-              | paginate
-                : {
-                    itemsPerPage: pagination.itemsPerPage,
-                    currentPage: pagination.currentPage,
-                    totalItems: gazetteResponse.total_gazettes
-                  }
-          "
-        >
-          <div
-            fxLayout="column"
-            class="bg-white-2 result color-purple-1"
-            fxLayoutGap="22px"
-          >
+          let gazette of gazetteResponse.gazettes
+            | paginate
+              : {
+                  itemsPerPage: pagination.itemsPerPage,
+                  currentPage: pagination.currentPage,
+                  totalItems: gazetteResponse.total_gazettes
+                }, index as i">
+          <div class="checkbox-excerpts">
+            <input
+              type="checkbox"
+              [checked]="isGazzeteSelected((gazette.downloads[0].value+pagination.currentPage+i))"
+              (change)="selectExcerpts(gazette.territory_name, gazette.state_code, gazette.excerpts[0], gazette.date,  gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value, (gazette.downloads[0].value+pagination.currentPage+i))" />
+          </div>
+          <div fxLayout="column" class="bg-white-2 result color-purple-1"
+            fxLayoutGap="22px">
             <ng-container *ngFor="let text of gazette.excerpts">
+              
+
               <div [innerHTML]="formatText(text)" class="typo-inner"></div>
             </ng-container>
             <div
               fxLayout="row"
               fxLayout.xs="column"
-              fxLayoutAlign="space-between"
-            >
+              fxLayoutAlign="space-between">
               <p [style.paddingTop]="'16px'">
                 {{ gazette.date }} •
-                <a [href]="gazette.url" target="_blank"
-                  ><span class="color-purple-3">{{
+                <a [href]="gazette.url" target="_blank"><span
+                    class="color-purple-3">{{
                     gazette.territory_name
-                  }}
-                  ({{
+                    }}
+                    ({{
                     gazette.state_code
-                  }})
-                </span>
-                </a
-                >
+                    }})
+                  </span>
+                </a>
               </p>
               <app-select
                 [style]="'secondary'"
@@ -122,63 +151,57 @@
                 [options]="gazette.downloads"
                 [label]="'Baixar diário oficial'"
               ></app-select>
+              
             </div>
           </div>
+          <!--terniar-->
         </pagination-template>
         <div fxLayout="row" fxFlexAlign="center" class="pagination-area">
           <a class="pagination-first-page" *ngIf="pagination.currentPage > 1">
             <mat-icon
               (click)="firstPage()"
-              svgIcon="pagination-left-double-arrow"
-            ></mat-icon>
+              svgIcon="pagination-left-double-arrow"></mat-icon>
           </a>
           <a class="pagination-first-page" *ngIf="pagination.currentPage > 1">
             <mat-icon
               (click)="previousPage()"
-              svgIcon="pagination-left-single-arrow"
-            ></mat-icon>
+              svgIcon="pagination-left-single-arrow"></mat-icon>
           </a>
           <pagination-controls
             class="pagination-mobile"
             (pageChange)="pageChange($event)"
             [maxSize]="5"
-            previousLabel=""
-            nextLabel=""
-            [responsive]="false"
-          >
+            previousLabel
+            nextLabel
+            [responsive]="false">
           </pagination-controls>
 
           <pagination-controls
             class="pagination-desktop"
             (pageChange)="pageChange($event)"
-            previousLabel=""
-            nextLabel=""
-            [responsive]="false"
-          >
+            previousLabel
+            nextLabel
+            [responsive]="false">
           </pagination-controls>
           <a
             class="pagination-first-page"
             *ngIf="
               pagination.totalItems &&
               (pagination.currentPage || 1) < pagination.totalItems
-            "
-          >
+            ">
             <mat-icon
               (click)="nextPage()"
-              svgIcon="pagination-right-single-arrow"
-            ></mat-icon>
+              svgIcon="pagination-right-single-arrow"></mat-icon>
           </a>
           <a
             class="pagination-first-page"
             *ngIf="
               pagination.totalItems &&
               (pagination.currentPage || 1) < pagination.totalItems
-            "
-          >
+            ">
             <mat-icon
               (click)="lastPage()"
-              svgIcon="pagination-right-double-arrow"
-            ></mat-icon>
+              svgIcon="pagination-right-double-arrow"></mat-icon>
           </a>
         </div>
       </div>

@@ -1,3 +1,7 @@
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head> 
+
 <edu-header></edu-header>
 <edu-alert-modal [hasEditEmail]="true" (close)="onCloseCreate()" (created)="onCloseCreate()" *ngIf="isOpenAlertModal"></edu-alert-modal>
 <edu-advanced-modal (close)="onCloseAdvanced()" *ngIf="isOpenAdvanced"></edu-advanced-modal>
@@ -58,9 +62,24 @@
               </select>
             </div>
           </div>
-          <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
+          <div class="button-container">
+            <label class="button-checkbox-all">
+              <input type="checkbox" class="checkbox-all-gazette" [checked]="checkedAll()" (change)="selectAllGazette()">Selecionar todos
+            </label>
+            <button class="btn-download" [ngClass]="{'download-enabled': valuesCsv.length > 0}" [disabled]="disableButtonDownload()" (click)="downloadCSV()">
+              <mat-icon>cloud_download</mat-icon>Baixar selecionados<span *ngIf="valuesCsv.length > 0">({{valuesCsv.length}})</span>
+            </button>
+            <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
+          </div>
+          </div>
+        <div *ngFor="let item of results[listPageIntern]; index as i">
+          <div class="container-checkbox">
+            <div class = "checkbox-excerpts">
+              <input type="checkbox" name="checkbox-gazette" [id]="item.url+currPage+i" (change)="addValuesCsv(item.territory_name, item.state_code, item.excerpt, item.date, item.edition, item.is_extra_edition, item.txt_url, item.url, item.subthemes, item.entities, (item.url+currPage+i))">
+            </div>
+            <edu-search-item [gazette]="item"></edu-search-item>
+          </div>
         </div>
-        <edu-search-item *ngFor="let item of results[listPageIntern]" [gazette]="item"></edu-search-item>
         <edu-pagination [listSize]="totalItems" [currentPage]="currPage" (changePage)="onChangePage($event)"></edu-pagination>
       </div>
 
