@@ -1,6 +1,6 @@
 @import 'src/assets/_variables.sass'
 @import 'src/assets/_tools.sass'
-  
+
 .search-header
   padding: rem(56) 45% rem(56) 20%
   background-color: #4F3979
@@ -53,7 +53,7 @@
     top: rem(15)
     width: rem(17)
     height: rem(17)
-  
+
 .advanced
   cursor: pointer
   img
@@ -100,7 +100,7 @@
 .search-area
   display: flex
   font-family: Lato
-  
+
   .filters
     background-color: #F3E9E9
     width: rem(400)
@@ -212,11 +212,10 @@ select
   padding: rem(16) rem(24)
   border-radius: rem(30)
   border-radius: rem(30)
-  background-color: #ead9f2
-  opacity: 0.5
-  opacity: 0.5
+  background-color: #ff8500
+  opacity: 1
   font-family: Lato
-  color: #000
+  color: #fff
   border: none
   font-size: rem(16)
   font-weight: bold
@@ -226,13 +225,19 @@ select
   @media only screen and (max-width: 768px)
     margin-left: rem(4)
 
+.btn-download:disabled
+  color: #000
+  background-color: #ead9f2 !important
+  opacity: 0.5
+  cursor: not-allowed
+
 .result-flex
   margin-bottom: rem(16)
 
 .select-order
   position: relative
   cursor: pointer
-  
+
   @media only screen and (max-width: 768px)
     margin-top: rem(28)
     margin-bottom: rem(4)
@@ -249,7 +254,7 @@ select
     border-top: 6px solid #fff
 
 .button-checkbox-all
-  color: #fff 
+  color: #fff
   font-size: 20px
   font-family: Lato
   font-size: rem(16)
@@ -310,7 +315,7 @@ select
     justify-content: center
     color: white
     cursor: pointer
-  
+
   input[type="checkbox"]:after
     font-family: "Font Awesome 5 Free"
     font-weight: 900
