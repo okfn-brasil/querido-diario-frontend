@@ -1,91 +1,120 @@
 <head>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-</head> 
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet">
+</head>
 
 <edu-header></edu-header>
-<edu-alert-modal [hasEditEmail]="true" (close)="onCloseCreate()" (created)="onCloseCreate()" *ngIf="isOpenAlertModal"></edu-alert-modal>
-<edu-advanced-modal (close)="onCloseAdvanced()" *ngIf="isOpenAdvanced"></edu-advanced-modal>
+<edu-alert-modal [hasEditEmail]="true" (close)="onCloseCreate()"
+  (created)="onCloseCreate()" *ngIf="isOpenAlertModal"></edu-alert-modal>
+<edu-advanced-modal (close)="onCloseAdvanced()"
+  *ngIf="isOpenAdvanced"></edu-advanced-modal>
 
 <div class="search-page">
   <div class="search-header">
     <div class="flex">
       <div class="edu-input">
-        <input (keyup)="onEnter($event)" class="desktop" [(ngModel)]="querystring" id="querystring" name="querystring" placeholder="Adicione uma palavra-chave…"/>
-        <input (keyup)="onChangeQuery()" class="mobile" [(ngModel)]="querystring" id="querystringMobile" name="querystring" placeholder="Adicione uma palavra-chave…"/>
-        <img class="search-ico" src="assets/images/education/education-search.svg" alt="buscar" />
+        <input (keyup)="onEnter($event)" class="desktop"
+          [(ngModel)]="querystring" id="querystring" name="querystring"
+          placeholder="Adicione uma palavra-chave…" />
+        <input (keyup)="onChangeQuery()" class="mobile"
+          [(ngModel)]="querystring" id="querystringMobile" name="querystring"
+          placeholder="Adicione uma palavra-chave…" />
+        <img class="search-ico"
+          src="assets/images/education/education-search.svg" alt="buscar" />
       </div>
       <button (click)="onChangeQuery()" class="btne-primary">Buscar</button>
     </div>
-    <div class="advanced" style="flex-direction: row; display: flex" (click)="onOpenAdvanced()">Busca avançada <img src="assets/icons/right-arrow-white.svg" alt="buscar" /></div>
+    <div class="advanced" style="flex-direction: row; display: flex"
+      (click)="onOpenAdvanced()">Busca avançada <img
+        src="assets/icons/right-arrow-white.svg" alt="buscar" /></div>
     <div class="mobile ">
       <div class="mobile-buttons">
         <button (click)="openFilters()" class="open-filters">Filtros</button>
-        <button *ngIf="isLoggedIn" class="create-alert" (click)="onOpenCreateAlert()">Criar alerta</button>
+        <button *ngIf="isLoggedIn" class="create-alert"
+          (click)="onOpenCreateAlert()">Criar alerta</button>
       </div>
     </div>
   </div>
 
   <div class="filters mobile" *ngIf="showMobileFilters">
     <div class="filters-header">
-      <img (click)="closeFilters()" src="assets/icons/close-icon.svg" alt="buscar" />
+      <img (click)="closeFilters()" src="assets/icons/close-icon.svg"
+        alt="buscar" />
       <div (click)="closeFilters()" class="title">Filtros</div>
     </div>
     <div class="filters-fields">
-      <edu-filters [apiThemes]="themes" [apiCities]="cities" [filters]="filters" (changeFilters)="onChangeFilters($event)"></edu-filters>
+      <edu-filters [apiThemes]="themes" [apiCities]="cities" [filters]="filters"
+        (changeFilters)="onChangeFilters($event)"></edu-filters>
 
-      <button class="apply-filters btne-primary" (click)="closeFilters()">Aplicar filtros</button>
+      <button class="apply-filters btne-primary"
+        (click)="closeFilters()">Aplicar filtros</button>
     </div>
   </div>
 
   <div class="search-area">
     <div class="filters">
-      <edu-filters [apiThemes]="themes" [apiCities]="cities" [filters]="filters" (changeFilters)="onChangeFilters($event)"></edu-filters>
+      <edu-filters [apiThemes]="themes" [apiCities]="cities" [filters]="filters"
+        (changeFilters)="onChangeFilters($event)"></edu-filters>
     </div>
     <div class="results">
       <div class="loading-search" *ngIf="isLoading">
         <mat-spinner></mat-spinner>
-      </div> 
+      </div>
       <div class="empty" *ngIf="!isLoading && !hasSearched">
         <div class="empty-content">
           <img src="assets/images/education/busca.png" alt="buscar" />
-          <div class="text">Busque por palavras-chave ou utilize os filtros para encontrar resultados</div>
+          <div class="text">Busque por palavras-chave ou utilize os filtros para
+            encontrar resultados</div>
         </div>
       </div>
 
       <div class="items" *ngIf="totalItems && hasSearched">
         <div class="results-header">
           <div class="flex result-flex">
-            <div class="result-count">{{totalItems}} resultados encontrados</div>
+            <div class="result-count">{{totalItems}} resultados
+              encontrados</div>
             <div class="select-order">
               <select [(ngModel)]="order" (change)="onChangeOrder()">
-                <option *ngFor="let option of orderList" [value]="option.value">{{option.label}}</option>
+                <option *ngFor="let option of orderList"
+                  [value]="option.value">{{option.label}}</option>
               </select>
             </div>
           </div>
           <div class="button-container">
             <label class="button-checkbox-all">
-              <input type="checkbox" class="checkbox-all-gazette" [checked]="checkedAll()" (change)="selectAllGazette()">Selecionar todos
+              <input type="checkbox" class="checkbox-all-gazette"
+                [checked]="allSearchResultsSelected()"
+                (change)="selectAllPageSearchResults()">Selecionar todos
             </label>
-            <button class="btn-download" [ngClass]="{'download-enabled': valuesCsv.length > 0}" [disabled]="disableButtonDownload()" (click)="downloadCSV()">
-              <mat-icon>cloud_download</mat-icon>Baixar selecionados<span *ngIf="valuesCsv.length > 0">({{valuesCsv.length}})</span>
+            <button class="btn-download"
+              [ngClass]="{'download-enabled': searchResultsCsv.length > 0}"
+              [disabled]="searchResultsCsv.length == 0" (click)="downloadCSV()">
+              <mat-icon>cloud_download</mat-icon>Baixar selecionados<span
+                *ngIf="searchResultsCsv.length > 0">({{searchResultsCsv.length}})</span>
             </button>
-            <button *ngIf="isLoggedIn" class="create-alert desktop" (click)="onOpenCreateAlert()">Criar alerta</button>
+            <button *ngIf="isLoggedIn" class="create-alert desktop"
+              (click)="onOpenCreateAlert()">Criar alerta</button>
           </div>
-          </div>
+        </div>
         <div *ngFor="let item of results[listPageIntern]; index as i">
           <div class="container-checkbox">
-            <div class = "checkbox-excerpts">
-              <input type="checkbox" name="checkbox-gazette" [id]="item.url+currPage+i" (change)="addValuesCsv(item.territory_name, item.state_code, item.excerpt, item.date, item.edition, item.is_extra_edition, item.txt_url, item.url, item.subthemes, item.entities, (item.url+currPage+i))">
+            <div class="checkbox-excerpts">
+              <input type="checkbox" name="checkbox-gazette"
+                [id]="item.url + currPage + i"
+                (change)="addSearchResultsCsv(item, item.url + currPage + i)">
             </div>
             <edu-search-item [gazette]="item"></edu-search-item>
           </div>
         </div>
-        <edu-pagination [listSize]="totalItems" [currentPage]="currPage" (changePage)="onChangePage($event)"></edu-pagination>
+        <edu-pagination [listSize]="totalItems" [currentPage]="currPage"
+          (changePage)="onChangePage($event)"></edu-pagination>
       </div>
 
       <div class="empty" *ngIf="!isLoading && hasSearched && !totalItems">
         <div class="empty-content">
-          <div class="text">Não foram encontrados resultados para sua busca.</div>
+          <div class="text">Não foram encontrados resultados para sua
+            busca.</div>
         </div>
       </div>
     </div>
