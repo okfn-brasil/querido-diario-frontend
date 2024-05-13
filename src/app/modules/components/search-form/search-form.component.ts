@@ -9,7 +9,7 @@ import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 import { Renderer2, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { listGazetteCSV } from '../../pages/search/search.component';
+import { listCheckedSearchResults } from '../../pages/search/search.component';
 
 @Component({
   selector: 'app-search-form',
@@ -169,7 +169,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   search(): void {
-    this.clearListGazzete();
+    this.clearCheckedSearchResults();
     let queryParams = {};
     const term = this.termField.nativeElement.value;
 
@@ -243,8 +243,8 @@ export class SearchFormComponent implements OnInit {
     }
   }
 
-  clearListGazzete() {
-    listGazetteCSV.length = 0;
+  clearCheckedSearchResults() {
+    listCheckedSearchResults.length = 0;
 
     let buttonDownloadCsv = document.querySelector('.btn-download');
     let textButtonDownloadCsv = buttonDownloadCsv?.querySelector('strong');
