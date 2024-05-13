@@ -91,12 +91,12 @@
         </div>
 
         <div class="download-area">
-          <label class="seleciona-todos-label">
+          <label class="label-select-all">
             <input
               type="checkbox"
-              id="father"
-              [checked]="isAllSelected()"
-              (change)="checkAll()" />Selecionar Todos
+              id="checkbox-select-all"
+              [checked]="isCheckboxCheckAllSelected()"
+              (change)="selectAllCheckboxAction()" />Selecionar Todos
           </label>
 
           <button class="btn-download" (click)="downloadCSV()"
@@ -121,8 +121,8 @@
           <div class="checkbox-excerpts">
             <input
               type="checkbox"
-              [checked]="isGazzeteSelected((gazette.downloads[0].value+pagination.currentPage+i))"
-              (change)="selectExcerpts(gazette.territory_name, gazette.state_code, gazette.excerpts[0], gazette.date,  gazette.is_extra_edition, gazette.downloads[0].value, gazette.downloads[1].value, (gazette.downloads[0].value+pagination.currentPage+i))" />
+              [checked]="isSearchResultSelected((gazette.downloads[0].value+pagination.currentPage+i))"
+              (change)="selectSearchResults(gazette, gazette.downloads[0].value + pagination.currentPage + i)" />
           </div>
           <div fxLayout="column" class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px">

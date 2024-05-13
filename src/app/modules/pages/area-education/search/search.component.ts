@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ngxCsv } from 'ngx-csv';
 import { City } from 'src/app/interfaces/city';
-import { SearchResultsCSV } from 'src/app/interfaces/download-csv';
+import { SearchResultCSV } from 'src/app/interfaces/download-csv';
 import {
   GazetteFilters,
   GazetteModel,
@@ -47,7 +47,7 @@ export class SearchEducationComponent implements OnInit {
   isOpenAdvanced = false;
   savedParams = '';
 
-  searchResultsCsv: Array<SearchResultsCSV> = [];
+  searchResultsCsv: Array<SearchResultCSV> = [];
 
   constructor(
     private searchService: EducationGazettesService,
@@ -263,7 +263,7 @@ export class SearchEducationComponent implements OnInit {
   }
 
   addSearchResultsCsv(item: GazetteModel, id: string) {
-    let searchResultItem: SearchResultsCSV = {
+    let searchResultItem: SearchResultCSV = {
       municipio: item.territory_name,
       uf: item.state_code,
       excerto: item.excerpt,
@@ -303,7 +303,7 @@ export class SearchEducationComponent implements OnInit {
         url_arquivo_original: selectedResult.url_arquivo_original,
         subtemas: selectedResult.subtemas,
         envolvidos: selectedResult.envolvidos,
-      } as SearchResultsCSV;
+      } as SearchResultCSV;
       arrayDownload.push(searchResult);
     });
 

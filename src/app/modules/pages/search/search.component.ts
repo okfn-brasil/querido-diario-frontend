@@ -1,41 +1,20 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { EnvService } from 'src/app/env.service';
 import { City } from 'src/app/interfaces/city';
+import { SearchResultCSV } from 'src/app/interfaces/download-csv';
 import { Gazette, GazetteResponse } from 'src/app/interfaces/gazette';
 import { Level } from 'src/app/interfaces/level';
 import { LevelDescription, Pagination, SearchResponse } from 'src/app/interfaces/search';
 import { Territory } from 'src/app/interfaces/territory';
 import { GazetteService } from 'src/app/services/gazette/gazette.service';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
-import { ngxCsv } from 'ngx-csv/ngx-csv';
-import { GazetteModel } from 'src/app/interfaces/education-gazettes';
 
-interface GazetteCSV {
-  Cidade: string,
-  Estado: string
-  Excerto: string,
-  Data: string,
-  Edicao_Extra: string,
-  URL_Texto: string,
-  URL_PDF: string,
-  id: string
-}
-
-interface GazetteCSVDownload {
-  Cidade: string,
-  Estado: string
-  Excerto: string,
-  Data: string,
-  Edicao_Extra: string,
-  URL_Texto: string,
-  URL_PDF: string
-}
-
-export var listGazetteCSV: Array<GazetteCSV> = []
+export var listCheckedSearchResults: Array<SearchResultCSV> = [];
 
 @Component({
   selector: 'app-search',
@@ -49,7 +28,7 @@ export class SearchComponent implements OnInit {
     private route: ActivatedRoute,
     private territoryService: TerritoryService,
     private gazetteService: GazetteService
-  ) { }
+  ) {}
   term: string | undefined = undefined;
   territoryId: string | undefined = undefined;
   cityName: string | null = null;
@@ -72,7 +51,6 @@ export class SearchComponent implements OnInit {
   level$: Observable<Level | null> = of(null);
 
   @Output() pageBoundsCorrection = new EventEmitter();
-
 
   public config: PaginationInstance = {
     id: 'custom',
@@ -107,8 +85,12 @@ export class SearchComponent implements OnInit {
       queryParams: { ...queryParams, page },
     });
 
-    let checkFather = document.querySelector('#father') as HTMLInputElement;
-    if (checkFather.checked){checkFather.checked = false;}
+    let checkboxSelectAll = document.querySelector(
+      '#checkbox-select-all'
+    ) as HTMLInputElement;
+    if (checkboxSelectAll.checked) {
+      checkboxSelectAll.checked = false;
+    }
   }
 
   nextPage() {
@@ -181,8 +163,6 @@ export class SearchComponent implements OnInit {
   }
 
   openFile(link: string) {
-    console.log('>>>>>> Open Link', link);
-
     window.open(link);
   }
 
@@ -206,95 +186,102 @@ export class SearchComponent implements OnInit {
     return text.replace('\n', '<br />');
   }
 
-  selectExcerpts(territory_name: string,
-    territory_code: string,
-    excerpt: string,
-    date: string,
-    is_extra_edition: boolean,
-    txt_url: string,
-    pdf_url: string,
-    id:string) {
+  selectSearchResults(gazette: Gazette, id: string) {
+    let buttonDownloadCsv = document.querySelector(
+      '.btn-download'
+    ) as HTMLButtonElement;
+    let textButtonDownloadCsv = buttonDownloadCsv?.querySelector(
+      'strong'
+    ) as HTMLElement;
+    let checkboxSelectAll = document.querySelector(
+      '#checkbox-select-all'
+    ) as HTMLInputElement;
 
-    let buttonDownloadCsv = document.querySelector('.btn-download') as HTMLButtonElement
-    let textButtonDownloadCsv = buttonDownloadCsv?.querySelector('strong') as HTMLElement
-    let checkFather = document.querySelector('#father') as HTMLInputElement
+    let selectedGazette: SearchResultCSV = {
+      id: id,
+      municipio: gazette.territory_name,
+      uf: gazette.state_code,
+      excerto: gazette.excerpts.join(' >>> '),
+      data_publicacao: gazette.date,
+      edicao_extra: gazette.is_extra_edition ? 'Sim' : 'Não',
+      url_arquivo_txt: gazette.txt_url || '',
+      url_arquivo_original: gazette.url,
+    };
 
-    let val: GazetteCSV = {
-      Cidade: territory_name,
-      Estado: territory_code,
-      Excerto: excerpt,
-      Data: date,
-      Edicao_Extra: is_extra_edition ? "Edicao extra" : "Não extra",
-      URL_Texto: txt_url,
-      URL_PDF: pdf_url,
-      id: id
-    }
+    let indexOfSelectedGazette = listCheckedSearchResults.findIndex(
+      (gazette) => gazette.id == selectedGazette.id
+    );
 
-    let indexOfVal = listGazetteCSV.findIndex((gazette) => gazette.id == val.id)
+    if (indexOfSelectedGazette == -1) {
+      if (listCheckedSearchResults.length == 0)
+        buttonDownloadCsv?.setAttribute(
+          'style',
+          'background-color: #FF8500; cursor: pointer;'
+        );
 
-    if (indexOfVal == -1) {
-      if (listGazetteCSV.length == 0)
-        buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500; cursor: pointer;')
+      listCheckedSearchResults.push(selectedGazette);
 
-      listGazetteCSV.push(val)
-
-      textButtonDownloadCsv.innerText = `(${listGazetteCSV.length})`;
-
-
+      textButtonDownloadCsv.innerText = `(${listCheckedSearchResults.length})`;
     } else {
-      listGazetteCSV.splice(indexOfVal, 1)
-      checkFather.checked = false
+      listCheckedSearchResults.splice(indexOfSelectedGazette, 1);
+      checkboxSelectAll.checked = false;
 
-      if (listGazetteCSV.length == 0) {
+      if (listCheckedSearchResults.length == 0) {
         textButtonDownloadCsv.innerText = ``;
-        buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4);')
-
+        buttonDownloadCsv?.setAttribute(
+          'style',
+          'background-color: rgba(245, 232, 233, 0.4);'
+        );
       } else {
-        textButtonDownloadCsv.innerText = `(${listGazetteCSV.length})`;
+        textButtonDownloadCsv.innerText = `(${listCheckedSearchResults.length})`;
       }
     }
   }
 
-  isGazzeteSelected(gazetteId: string) {
-    if (listGazetteCSV.length == 0) return false
+  isSearchResultSelected(gazetteId: string) {
+    if (listCheckedSearchResults.length == 0) return false;
 
-    if (listGazetteCSV.find((gazette) => gazette.id == gazetteId))
-      return true
+    if (listCheckedSearchResults.find((gazette) => gazette.id == gazetteId))
+      return true;
 
-    return false
-
+    return false;
   }
 
-  isAllSelected() {
-    let listCheckBox = document.querySelectorAll('.checkbox-excerpts input[type="checkbox"]')
+  isCheckboxCheckAllSelected() {
+    let listCheckBox = document.querySelectorAll(
+      '.checkbox-excerpts input[type="checkbox"]'
+    );
 
     for (let i = 0; i < listCheckBox.length; i++) {
-      let box = listCheckBox[i] as HTMLInputElement
-      
+      let box = listCheckBox[i] as HTMLInputElement;
+
       if (box.checked == false) {
-        return false
+        return false;
       }
     }
 
-    return true
+    return true;
   }
 
   downloadCSV() {
-    let list:GazetteCSVDownload[] = []
+    let downloadList: SearchResultCSV[] = [];
 
-    listGazetteCSV.map((val)=>{
-      list.push({
-        Cidade: val.Cidade,
-        Estado: val.Estado,
-        Excerto: val.Excerto,
-        Data: val.Data,
-        Edicao_Extra: val.Edicao_Extra,
-        URL_Texto: val.URL_Texto,
-        URL_PDF: val.URL_PDF
-      })
-    })
+    // Removing Id before download
+    listCheckedSearchResults.map((selectedResult) => {
+      let searchResult = {
+        municipio: selectedResult.municipio,
+        uf: selectedResult.uf,
+        excerto: selectedResult.excerto,
+        data_publicacao: selectedResult.data_publicacao,
+        numero_edicao: selectedResult.numero_edicao,
+        edicao_extra: selectedResult.edicao_extra,
+        url_arquivo_txt: selectedResult.url_arquivo_txt,
+        url_arquivo_original: selectedResult.url_arquivo_original,
+      } as SearchResultCSV;
+      downloadList.push(searchResult);
+    });
 
-    if (list.length != 0) {
+    if (downloadList.length != 0) {
       var options = {
         fieldSeparator: ',',
         quoteStrings: '"',
@@ -302,39 +289,62 @@ export class SearchComponent implements OnInit {
         showLabels: true,
         useBom: true,
         noDownload: false,
-        headers: ["Municipio", "Estado", "Excerto", "Data_Publicacao", "Edicao_Extra", "URL_TXT", "URL_PDF_Original"]
+        headers: [
+          'Municipio',
+          'Estado',
+          'Excerto',
+          'Data_Publicacao',
+          'Edicao',
+          'Edicao_Extra',
+          'URL_TXT',
+          'URL_PDF_Original',
+        ],
       };
-      new ngxCsv(list, "pesquisa", options);
+      new ngxCsv(downloadList, 'pesquisa', options);
     } else {
-      document.querySelector('.btn-download')?.setAttribute('ariaDisabled', 'true')
+      document
+        .querySelector('.btn-download')
+        ?.setAttribute('ariaDisabled', 'true');
     }
   }
 
-  checkAll() {
-    let listCheckBox = document.querySelectorAll('.checkbox-excerpts input[type="checkbox"]')
-    let buttonDownloadCsv = document.querySelector('.btn-download') as HTMLButtonElement
-    let checkFather = document.querySelector('#father') as HTMLInputElement
+  // Select All Checkbox refers to one checkbox that will select all checkboxes in the list
+  selectAllCheckboxAction() {
+    let listCheckBox = document.querySelectorAll(
+      '.checkbox-excerpts input[type="checkbox"]'
+    );
+    let buttonDownloadCsv = document.querySelector(
+      '.btn-download'
+    ) as HTMLButtonElement;
+    let checkboxSelectAll = document.querySelector(
+      '#checkbox-select-all'
+    ) as HTMLInputElement;
 
     for (let i = 0; i < listCheckBox.length; i++) {
-      let box = listCheckBox[i] as HTMLInputElement
+      let box = listCheckBox[i] as HTMLInputElement;
 
-      if (checkFather.checked) {
+      if (checkboxSelectAll.checked) {
         if (box.checked == false) {
-          box.checked = true
-          box.dispatchEvent(new Event('change'))
-          buttonDownloadCsv?.setAttribute('style', 'background-color: #FF8500; cursor: pointer;')
+          box.checked = true;
+          box.dispatchEvent(new Event('change'));
+          buttonDownloadCsv?.setAttribute(
+            'style',
+            'background-color: #FF8500; cursor: pointer;'
+          );
         }
       } else {
         if (box.checked) {
-          box.checked = false
-          box.dispatchEvent(new Event('change'))
+          box.checked = false;
+          box.dispatchEvent(new Event('change'));
         }
       }
     }
-    
-    if (listGazetteCSV.length == 0){
-      buttonDownloadCsv?.setAttribute('style', 'background-color: rgba(245, 232, 233, 0.4); cursor: default;')
+
+    if (listCheckedSearchResults.length == 0) {
+      buttonDownloadCsv?.setAttribute(
+        'style',
+        'background-color: rgba(245, 232, 233, 0.4); cursor: default;'
+      );
     }
   }
-
 }
