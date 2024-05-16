@@ -11,6 +11,7 @@ import {
   parseGazettes,
 } from 'src/app/interfaces/education-gazettes';
 import { CitiesService } from 'src/app/services/cities/cities.service';
+import { DownloadCSVService } from 'src/app/services/download-csv/download-csv.service';
 import { EducationGazettesService } from 'src/app/services/education-gazettes/education-gazettes.service';
 import { UserQuery } from 'src/app/stores/user/user.query';
 
@@ -54,10 +55,16 @@ export class SearchEducationComponent implements OnInit {
     private citiesService: CitiesService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private userQuery: UserQuery
+    private userQuery: UserQuery,
+    private downloadCsvService: DownloadCSVService 
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
+    this.downloadCsvService.getClearSearchResults().subscribe((clear) => {
+      if (clear) {    
+        this.searchResultsCsv = [];
+      }
+    } );
     this.activatedRoute.queryParams
       .subscribe((params) => {
         this.querystring = params.querystring;
@@ -79,6 +86,7 @@ export class SearchEducationComponent implements OnInit {
             Object.keys(this.filters).filter((key) => !!this.filters[key])
           ).length > 1
         ) {
+          this.downloadCsvService.clear();
           this.onChangeFilters(this.filters);
         }
       })
@@ -93,20 +101,19 @@ export class SearchEducationComponent implements OnInit {
   }
 
   onChangeQuery() {
+    this.downloadCsvService.clear();
     this.onChangeFilters(this.filters);
-    this.searchResultsCsv = [];
-    this.checkSelectAll(false);
   }
 
   onEnter(event?: KeyboardEvent) {
     if (event && event.key === 'Enter') {
+      this.downloadCsvService.clear();
       this.onChangeFilters(this.filters);
-      this.searchResultsCsv = [];
-      this.checkSelectAll(false);
     }
   }
 
   onChangeOrder() {
+    this.downloadCsvService.clear();
     this.onChangeFilters(this.filters);
   }
 
@@ -154,6 +161,11 @@ export class SearchEducationComponent implements OnInit {
       this.hasSearched = false;
       return false;
     }
+  }
+
+  onChangeFiltersSide(filters: GazetteFilters){
+    this.downloadCsvService.clear();
+    this.onChangeFilters(filters);
   }
 
   onChangeFilters(filters: GazetteFilters) {
@@ -231,7 +243,6 @@ export class SearchEducationComponent implements OnInit {
     this.currPage = $page;
     window.scrollTo(0, 0);
     this.onChangeFilters(this.filters);
-    this.checkSelectAll(false);
     setTimeout(() => {
       this.validateCheckedSearchResults();
     }, 1000);
@@ -240,6 +251,7 @@ export class SearchEducationComponent implements OnInit {
   clearFilters() {
     this.filters = {} as GazetteFilters;
     this.onChangeFilters({} as GazetteFilters);
+    this.downloadCsvService.clear();
     this.showMobileFilters = false;
     setTimeout(() => {
       this.showMobileFilters = true;
@@ -334,8 +346,6 @@ export class SearchEducationComponent implements OnInit {
         .querySelector('.btn-download')
         ?.setAttribute('ariaDisabled', 'true');
     }
-    this.searchResultsCsv = [];
-    this.resetStateAfterDownload();
   }
 
   selectAllPageSearchResults() {
@@ -370,54 +380,31 @@ export class SearchEducationComponent implements OnInit {
     const resultCheckboxes = document.querySelectorAll(
       'input[name="checkbox-gazette"]'
     );
-    let count = 0;
-
     for (let i = 0; i < resultCheckboxes.length; i++) {
       let resultCheckbox = resultCheckboxes[i] as HTMLInputElement;
 
       this.searchResultsCsv.map((resultItem) => {
         if (resultItem.id == resultCheckbox.id) {
           resultCheckbox.checked = true;
-          count += 1;
         }
       });
     }
-
-    count == resultCheckboxes.length
-      ? this.checkSelectAll(true)
-      : this.checkSelectAll(false);
-  }
-
-  resetStateAfterDownload() {
-    const checkboxes = document.querySelectorAll(
-      'input[name="checkbox-gazette"]'
-    );
-    checkboxes.forEach((checkbox) => {
-      (checkbox as HTMLInputElement).checked = false;
-    });
-
-    this.checkSelectAll(false);
   }
 
   allSearchResultsSelected() {
     const resultCheckboxes = document.querySelectorAll(
       'input[name="checkbox-gazette"]'
     );
-    let count = 0;
-
     for (let i = 0; i < resultCheckboxes.length; i++) {
       let resultCheckbox = resultCheckboxes[i] as HTMLInputElement;
 
-      this.searchResultsCsv.map((val) => {
-        if (val.id == resultCheckbox.id) {
-          count += 1;
-        }
-      });
+      if (resultCheckbox.checked == false) {
+        return false;
+      }
     }
 
-    if (count == resultCheckboxes.length && count != 0) {
-      this.checkSelectAll(true);
-    }
+    return true;
+
   }
 
   checkSelectAll(isChecked: boolean) {
