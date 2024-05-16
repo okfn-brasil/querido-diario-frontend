@@ -100,10 +100,11 @@
           </label>
 
           <button class="btn-download" (click)="downloadCSV()"
+            [disabled]="listCheckedSearchResults.length == 0"
             name="botaoDownloadCSV">
             <mat-icon>cloud_download</mat-icon>
-            <span class="text-white">Baixar Selecionados
-              <strong></strong></span>
+            <span>Baixar
+              Selecionados{{getQntSelected}}</span>
           </button>
 
         </div>

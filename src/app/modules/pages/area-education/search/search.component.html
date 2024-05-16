@@ -45,7 +45,7 @@
     </div>
     <div class="filters-fields">
       <edu-filters [apiThemes]="themes" [apiCities]="cities" [filters]="filters"
-        (changeFilters)="onChangeFilters($event)"></edu-filters>
+        (changeFilters)="onChangeFiltersSide($event)"></edu-filters>
 
       <button class="apply-filters btne-primary"
         (click)="closeFilters()">Aplicar filtros</button>
@@ -55,7 +55,7 @@
   <div class="search-area">
     <div class="filters">
       <edu-filters [apiThemes]="themes" [apiCities]="cities" [filters]="filters"
-        (changeFilters)="onChangeFilters($event)"></edu-filters>
+        (changeFilters)="onChangeFiltersSide($event)"></edu-filters>
     </div>
     <div class="results">
       <div class="loading-search" *ngIf="isLoading">
