@@ -1,10 +1,16 @@
 {
   "list": [
     {
-      "title": "Novas 4 cidades!",
-      "content": "As cidades de São Francisco de Paula (RS), Marau (RS), Santa Clara do Sul (RS), Três Arroios (RS) foram adicionadas à plataforma!",
-      "updatedAt": "2024/05/09",
+      "title": "Novas 10 cidades!",
+      "content": "As cidades de Bento Gonçalves (RS), Candelária (RS), Dois Irmãos (RS), Estrela (RS), Gravataí (RS), Horizontina (RS), Panambi (RS), Santa Rosa (RS), São João do Polêsine (RS) e Sobradinho (RS) foram adicionadas à plataforma!",
+      "updatedAt": "2024/05/16",
       "isNew": true
+    },
+    {
+      "title": "Novas 4 cidades!",
+      "content": "As cidades de São Francisco de Paula (RS), Marau (RS), Santa Clara do Sul (RS) e Três Arroios (RS) foram adicionadas à plataforma!",
+      "updatedAt": "2024/05/09",
+      "isNew": false
     },
     {
       "title": "Novas 2 cidades!",
