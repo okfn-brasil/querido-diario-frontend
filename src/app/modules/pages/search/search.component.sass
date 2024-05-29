@@ -86,41 +86,81 @@ section
   gap: 8px
   padding-right: 28px
 
-.label-select-all
-  color: white
-  display: flex
-  align-items: center
+.label-checkbox 
+  display: block
+  position: relative
+  padding-left: rem(32)
+  margin-top: rem(-25)
   cursor: pointer
+  font-size: rem(16)
+  line-height: rem(26)
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  color: white
   font-weight: 500
 
-input[type="checkbox"]
-  -webkit-appearance: none
-  -moz-appearance: none
-  appearance: none
-  border: 2px solid #ddd
-  border-radius: 4px
-  background-color: #fff
-  width: 20px
-  height: 20px
-  display: flex
-  align-items: center
-  justify-content: center
-  color: white
+#label-select-all
+  margin-top: rem(1)
+
+.label-checkbox input 
+  position: absolute
+  opacity: 0
   cursor: pointer
+  height: 0
+  width: 0
 
-input[type="checkbox"]:after
-  font-family: "Font Awesome 5 Free"
-  font-weight: 900
-  content: '\f00c'
-  font-size: 16px
-  color: white
+.checkmark 
+  position: absolute
+  top: 0
+  left: 0
+  height: rem(24)
+  width: rem(24)
+  background-color: #fff
+  border-radius: rem(4)
+  @media only screen and (max-width: 768px) 
+    background-color: #ece9e9
 
-input[type="checkbox"]:checked
+
+.label-checkbox:hover input ~ .checkmark 
+  background-color: #ccc
+
+.label-checkbox input:checked ~ .checkmark 
   background-color: #FF8500
-  border-color: #FF8500
+
+.checkmark:after 
+  content: ""
+  position: absolute
+  display: none
+
+.label-checkbox input:checked ~ .checkmark:after 
+  display: block
+
+.label-checkbox .checkmark:after 
+  left: rem(8.5)
+  top: rem(4)
+  width: rem(7)
+  height: rem(12)
+  border: solid white
+  border-width: 0 rem(2) rem(2) 0
+  -webkit-transform: rotate(45deg)
+  -ms-transform: rotate(45deg)
+  transform: rotate(45deg)
 
 .checkbox-excerpts input
   cursor: pointer
+
+.checkmark 
+  position: absolute
+  top: 0
+  left: 0
+  height: rem(24)
+  width: rem(24)
+  background-color: #fff
+  border-radius: rem(4)
+  @media only screen and (max-width: 768px) 
+    background-color: #ece9e9
 
 .download-area
   display: flex

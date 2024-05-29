@@ -7,8 +7,9 @@ export interface SearchResultCSV {
   edicao_extra: string;
   url_arquivo_txt: string;
   url_arquivo_original: string;
-  // Bellow items only avaible on QD Education
-  envolvidos?: string[];
   numero_edicao?: string;
+
+  // Below are the items available only on QD-Edu
+  envolvidos?: string[];
   subtemas?: string[];
 }

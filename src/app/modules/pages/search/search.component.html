@@ -91,20 +91,23 @@
         </div>
 
         <div class="download-area">
-          <label class="label-select-all">
-            <input
-              type="checkbox"
+          <div class="checkbox-item">
+            <label class="label-checkbox" id="label-select-all">
+              <input type="checkbox"
               id="checkbox-select-all"
               [checked]="isCheckboxCheckAllSelected()"
-              (change)="selectAllCheckboxAction()" />Selecionar Todos
-          </label>
+              (change)="selectAllCheckboxAction()">
+              <span class="checkmark"></span>
+              Selecionar Todos
+            </label>
+          </div>
 
           <button class="btn-download" (click)="downloadCSV()"
             [disabled]="listCheckedSearchResults.length == 0"
             name="botaoDownloadCSV">
             <mat-icon>cloud_download</mat-icon>
-            <span>Baixar
-              Selecionados{{getQntSelected}}</span>
+            <span class="text-white">Baixar selecionados
+              <strong>{{getQntSelected}}</strong></span>
           </button>
 
         </div>
@@ -120,10 +123,15 @@
                   totalItems: gazetteResponse.total_gazettes
                 }, index as i">
           <div class="checkbox-excerpts">
-            <input
-              type="checkbox"
-              [checked]="isSearchResultSelected((gazette.downloads[0].value+pagination.currentPage+i))"
-              (change)="selectSearchResults(gazette, gazette.downloads[0].value + pagination.currentPage + i)" />
+            <div class="checkbox-item ">
+              <label class="label-checkbox">
+                <input
+                  type="checkbox"
+                  [checked]="isSearchResultSelected((gazette.downloads[0].value+pagination.currentPage+i))"
+                  (change)="selectSearchResults(gazette, gazette.downloads[0].value + pagination.currentPage + i)" />
+                <span class="checkmark"></span>
+              </label>
+            </div>            
           </div>
           <div fxLayout="column" class="bg-white-2 result color-purple-1"
             fxLayoutGap="22px">
