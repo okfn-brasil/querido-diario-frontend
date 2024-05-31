@@ -349,14 +349,14 @@ export class SearchEducationComponent implements OnInit {
   }
 
   selectAllPageSearchResults() {
-    const checkbokSelectAll = document.querySelectorAll(
-      '.checkbox-all-gazette'
+    const checkbokSelectAll = document.querySelector(
+      '#checkbox-select-all'
     );
     const resultCheckboxes = document.querySelectorAll(
       'input[name="checkbox-gazette"]'
     );
 
-    let buttonCheckboxAll = checkbokSelectAll[0] as HTMLInputElement;
+    let buttonCheckboxAll = checkbokSelectAll as HTMLInputElement;
 
     if (buttonCheckboxAll.checked) {
       for (let i = 0; i < resultCheckboxes.length; i++) {
@@ -409,7 +409,7 @@ export class SearchEducationComponent implements OnInit {
 
   checkSelectAll(isChecked: boolean) {
     const selectAllCheckbox = document.querySelector(
-      '.checkbox-all-gazette'
+      '#checkbox-select-all'
     ) as HTMLInputElement;
     selectAllCheckbox.checked = isChecked;
   }
