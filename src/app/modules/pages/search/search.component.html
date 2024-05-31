@@ -98,7 +98,7 @@
               [checked]="isCheckboxCheckAllSelected()"
               (change)="selectAllCheckboxAction()">
               <span class="checkmark"></span>
-              Selecionar Todos
+              Selecionar todos
             </label>
           </div>
 
@@ -106,7 +106,7 @@
             [disabled]="listCheckedSearchResults.length == 0"
             name="botaoDownloadCSV">
             <mat-icon>cloud_download</mat-icon>
-            <span class="text-white">Baixar selecionados
+            <span class="text-white">Baixar selecionados 
               <strong>{{getQntSelected}}</strong></span>
           </button>
 
@@ -123,7 +123,7 @@
                   totalItems: gazetteResponse.total_gazettes
                 }, index as i">
           <div class="checkbox-excerpts">
-            <div class="checkbox-item ">
+            <div class="checkbox-item">
               <label class="label-checkbox">
                 <input
                   type="checkbox"

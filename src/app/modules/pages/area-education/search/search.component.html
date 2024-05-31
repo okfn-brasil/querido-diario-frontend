@@ -82,11 +82,16 @@
             </div>
           </div>
           <div class="button-container">
-            <label class="button-checkbox-all">
-              <input type="checkbox" class="checkbox-all-gazette"
+            <div class="checkbox-item">
+              <label class="label-checkbox" id="label-select-all">
+                <input type="checkbox"
+                id="checkbox-select-all"
                 [checked]="allSearchResultsSelected()"
-                (change)="selectAllPageSearchResults()">Selecionar todos
-            </label>
+                (change)="selectAllPageSearchResults()">
+                <span class="checkmark"></span>
+                Selecionar todos
+              </label>
+            </div>
             <button class="btn-download"
               [ngClass]="{'download-enabled': searchResultsCsv.length > 0}"
               [disabled]="searchResultsCsv.length == 0" (click)="downloadCSV()">
@@ -100,9 +105,15 @@
         <div *ngFor="let item of results[listPageIntern]; index as i">
           <div class="container-checkbox">
             <div class="checkbox-excerpts">
-              <input type="checkbox" name="checkbox-gazette"
-                [id]="item.url + currPage + i"
-                (change)="addSearchResultsCsv(item, item.url + currPage + i)">
+              <div class="checkbox-item">
+                <label class="label-checkbox">
+                  <input type="checkbox"
+                  name="checkbox-gazette"
+                  [id]="item.url + currPage + i"
+                  (change)="addSearchResultsCsv(item, item.url + currPage + i)">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
             </div>
             <edu-search-item [gazette]="item"></edu-search-item>
           </div>

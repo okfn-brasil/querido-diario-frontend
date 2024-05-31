@@ -77,7 +77,6 @@ export class SearchComponent implements OnInit {
     },
   ];
 
-  //p: number = 0;
   p: number[] = [];
 
   page: number = 1;
@@ -92,9 +91,7 @@ export class SearchComponent implements OnInit {
     let checkboxSelectAll = document.querySelector(
       '#checkbox-select-all'
     ) as HTMLInputElement;
-    if (checkboxSelectAll.checked) {
-      checkboxSelectAll.checked = false;
-    }
+    checkboxSelectAll.checked = this.isCheckboxCheckAllSelected()
   }
 
   nextPage() {
@@ -140,7 +137,6 @@ export class SearchComponent implements OnInit {
         .pipe(take(1))
         .subscribe(
           (res) => {
-            this.listCheckedSearchResults = [];
             this.gazetteResponse = res;
             let pagination: Pagination = this.pagination;
             const totalItems = Math.ceil(res.total_gazettes / 10);
@@ -183,7 +179,7 @@ export class SearchComponent implements OnInit {
     this.router.navigate(['/pesquisa'], {
       queryParams: { ...queryParams, sort_by },
     });
-  }
+   } 
 
   previous() {}
 
@@ -269,7 +265,7 @@ export class SearchComponent implements OnInit {
         uf: selectedResult.uf,
         excerto: selectedResult.excerto,
         data_publicacao: selectedResult.data_publicacao,
-        numero_edicao: selectedResult.numero_edicao || "Indefinido",
+        numero_edicao: selectedResult.numero_edicao || "",
         edicao_extra: selectedResult.edicao_extra,
         url_arquivo_txt: selectedResult.url_arquivo_txt,
         url_arquivo_original: selectedResult.url_arquivo_original,
