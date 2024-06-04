@@ -142,7 +142,7 @@ export class SearchComponent implements OnInit {
             const totalItems = Math.ceil(res.total_gazettes / 10);
             pagination = {
               ...pagination,
-              currentPage: params.page,
+              currentPage: params.page || 1,
               totalItems,
             };
             this.pagination = pagination;
