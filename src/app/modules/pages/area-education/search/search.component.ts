@@ -284,8 +284,8 @@ export class SearchEducationComponent implements OnInit {
       edicao_extra: item.is_extra_edition ? 'Sim' : 'Não',
       url_arquivo_txt: item.txt_url,
       url_arquivo_original: item.url,
-      subtemas: item.subthemes,
-      envolvidos: item.entities,
+      subtemas: item.subthemes.join(";"),   // Transforma a lista em uma única string com separador ';'
+      envolvidos: item.entities.join(";"),
       id: id,
     };
 
@@ -321,7 +321,7 @@ export class SearchEducationComponent implements OnInit {
 
     if (this.searchResultsCsv.length != 0) {
       var options = {
-        fieldSeparator: ';',
+        fieldSeparator: ',',
         quoteStrings: '"',
         decimalseparator: '.',
         showLabels: true,
