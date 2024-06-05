@@ -321,7 +321,7 @@ export class SearchEducationComponent implements OnInit {
 
     if (this.searchResultsCsv.length != 0) {
       var options = {
-        fieldSeparator: ',',
+        fieldSeparator: ';',
         quoteStrings: '"',
         decimalseparator: '.',
         showLabels: true,
