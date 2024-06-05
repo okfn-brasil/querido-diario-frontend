@@ -10,6 +10,7 @@ export interface SearchResultCSV {
   numero_edicao?: string;
 
   // Below are the items available only on QD-Edu
-  envolvidos?: string[];
-  subtemas?: string[];
+  // These are lists joined into one string with ';' separator
+  envolvidos?: string;  
+  subtemas?: string;
 }
