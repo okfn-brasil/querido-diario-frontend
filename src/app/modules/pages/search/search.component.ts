@@ -211,6 +211,7 @@ export class SearchComponent implements OnInit {
       uf: gazette.state_code,
       excerto: gazette.excerpts.join(' >>> '),
       data_publicacao: gazette.date,
+      numero_edicao: gazette.edition,
       edicao_extra: gazette.is_extra_edition ? 'Sim' : 'Não',
       url_arquivo_txt: gazette.txt_url || '',
       url_arquivo_original: gazette.url,
