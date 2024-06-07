@@ -24,14 +24,14 @@ section
 .form-search-container
   padding-left: 0
   padding-right: 0
-  
+
 .container
   width: rem(979)
 
 .result
   padding: rem(46) rem(100)
 
-  @media only screen and (max-width: 768px) 
+  @media only screen and (max-width: 768px)
     padding: rem(46) rem(16)
     margin-top: 32px
 
@@ -49,6 +49,139 @@ section
   background-color: #FF8500
   border: none
   color: $white1
+
+.btn-download
+  display: flex
+  justify-content: center
+  place-items: center
+  gap: 4px
+  padding: 0 12px
+  height: 2.75rem
+  border-radius: 1.875rem
+  background-color: rgba(245, 232, 233, 0.4)
+  font-family: Lato
+  color: #fff
+  border: none
+  font-size: 1rem
+  font-weight: bold
+  letter-spacing: 0
+  line-height: 1rem
+  cursor: default
+
+.btn-download:disabled
+  color: #000
+  background-color: #ead9f2 !important
+  opacity: 0.5
+  cursor: not-allowed
+  .text-white
+    color: black
+    font-size: 1rem
+    font-weight: bold
+
+.gazette-responses
+  display: flex
+  flex-direction: column
+  gap: 42px
+
+.gazette
+  display: flex
+  flex-direction: row
+  align-items: center
+  gap: 8px
+  padding-right: 28px
+
+.label-checkbox 
+  display: block
+  position: relative
+  padding-left: rem(32)
+  margin-top: rem(-25)
+  cursor: pointer
+  font-size: rem(16)
+  line-height: rem(26)
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  color: white
+  font-weight: 500
+
+#label-select-all
+  margin-top: rem(1)
+
+.label-checkbox input 
+  position: absolute
+  opacity: 0
+  cursor: pointer
+  height: 0
+  width: 0
+
+.checkmark 
+  position: absolute
+  top: 0
+  left: 0
+  height: rem(24)
+  width: rem(24)
+  background-color: #fff
+  border-radius: rem(4)
+  @media only screen and (max-width: 768px) 
+    background-color: #ece9e9
+
+
+.label-checkbox:hover input ~ .checkmark 
+  background-color: #ccc
+
+.label-checkbox input:checked ~ .checkmark 
+  background-color: #FF8500
+
+.checkmark:after 
+  content: ""
+  position: absolute
+  display: none
+
+.label-checkbox input:checked ~ .checkmark:after 
+  display: block
+
+.label-checkbox .checkmark:after 
+  left: rem(8.5)
+  top: rem(4)
+  width: rem(7)
+  height: rem(12)
+  border: solid white
+  border-width: 0 rem(2) rem(2) 0
+  -webkit-transform: rotate(45deg)
+  -ms-transform: rotate(45deg)
+  transform: rotate(45deg)
+
+.checkbox-excerpts input
+  cursor: pointer
+
+.checkmark 
+  position: absolute
+  top: 0
+  left: 0
+  height: rem(24)
+  width: rem(24)
+  background-color: #fff
+  border-radius: rem(4)
+  @media only screen and (max-width: 768px) 
+    background-color: #ece9e9
+
+.download-area
+  display: flex
+  align-items: center
+  gap: 2em
+  margin-right: rem(15)
+
+#checkbox-select-all
+  margin-right: .5em
+  cursor: pointer
+
+.view-options
+  display: flex
+  justify-content: space-around
+
+  .sort-by
+    widows: 100%
 
 ::ng-deep
   mat-icon
@@ -70,7 +203,7 @@ section
 
   .pagination-mobile
     display: block
-    
+
   .pagination-desktop
     display: none
 
@@ -82,6 +215,9 @@ section
 
   .container
     padding: 0 rem(16)
+
+  .checkbox-excerpts
+    margin-top: 32px
 
 ::ng-deep
   .ngx-pagination

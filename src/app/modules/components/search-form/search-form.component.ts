@@ -9,6 +9,7 @@ import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 import { Renderer2, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { DownloadCSVService } from './../../../services/download-csv/download-csv.service';
 
 @Component({
   selector: 'app-search-form',
@@ -58,7 +59,8 @@ export class SearchFormComponent implements OnInit {
     private titleService: Title,
     private metaService: Meta,
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private downloadCSVService: DownloadCSVService
   ) {}
 
   ngOnInit(): void {
@@ -118,45 +120,51 @@ export class SearchFormComponent implements OnInit {
         }
 
         // TODO: incluir a(s) cidade(s) selecionadas nas meta tags para SEO
-        if(city) {
-          if(Array.isArray(city)) {
-            city.forEach(currCity => {
+        if (city) {
+          if (Array.isArray(city)) {
+            city.forEach((currCity) => {
               this.findCityById(currCity);
-            })
+            });
           } else {
             this.findCityById(city);
           }
         }
 
         this.termControl.setValue(term);
-
       })
     );
   }
 
   getCityList() {
-    const selectedIds = this.selectedCities.map(city => city.territory_id);
-    return [...this.territories.filter(city => !selectedIds.includes(city.territory_id)) ,...this.selectedCities]
+    const selectedIds = this.selectedCities.map((city) => city.territory_id);
+    return [
+      ...this.territories.filter(
+        (city) => !selectedIds.includes(city.territory_id)
+      ),
+      ...this.selectedCities,
+    ];
   }
 
   findCities() {
     this.loadingCities = true;
-    if(this.timeout) {
-      clearTimeout(this.timeout)
+    if (this.timeout) {
+      clearTimeout(this.timeout);
     }
 
     this.timeout = setTimeout(() => {
-      this.territoryService.findByName(this.query.trim()).subscribe(response => {
-        response.forEach(city => {
-          this.territories.push(city);
+      this.territoryService
+        .findByName(this.query.trim())
+        .subscribe((response) => {
+          response.forEach((city) => {
+            this.territories.push(city);
+          });
+          this.loadingCities = false;
         });
-        this.loadingCities = false;
-      });
     }, 500);
   }
 
   findCityById(id: string) {
-    this.territoryService.findOne({territoryId: id}).subscribe(response => {
+    this.territoryService.findOne({ territoryId: id }).subscribe((response) => {
       this.selectedCities.push(response);
     });
   }
@@ -188,6 +196,8 @@ export class SearchFormComponent implements OnInit {
     } else {
       queryParams = { ...queryParams, sort_by: null };
     }
+
+    this.downloadCSVService.clear();
 
     this.router.navigate(['/pesquisa'], { queryParams });
   }
@@ -224,7 +234,7 @@ export class SearchFormComponent implements OnInit {
 
   onChangeQuery(query: string) {
     this.query = query;
-    if(this.query && this.query.length >= 3) {
+    if (this.query && this.query.length >= 3) {
       this.findCities();
     }
   }
