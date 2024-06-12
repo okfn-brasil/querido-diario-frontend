@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:check": "all-contributors check",
+    "contributors:generate": "all-contributors generate"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "all-contributors-cli": "^6.26.1"
+  }
+}

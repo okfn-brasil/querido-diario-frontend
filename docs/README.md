@@ -71,7 +71,7 @@ A aplicação foi inicialmente desenvolvida junto às pessoas do estúdio de sof
 
 Este projeto é mantido pela Open Knowledge Brasil e possível graças às comunidades técnicas, às [Embaixadoras de Inovação Cívica](https://embaixadoras.ok.org.br/), às pessoas voluntárias e doadoras financeiras, além de universidades parceiras, empresas apoiadoras e financiadoras.
 
-Conheça [quem apoia o Querido Diário](https://queridodiario.ok.org.br/apoie#quem-apoia).
+Conheça [quem apoia o Querido Diário](https://queridodiario.ok.org.br/apoie#quem-apoia) e [todas as pessoas contribuidoras deste repositório](/docs/CONTRIBUTORS.md)
 
 # Open Knowledge Brasil
 <p>
