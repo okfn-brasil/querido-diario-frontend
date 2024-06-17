@@ -54,6 +54,7 @@ import { PrivacyPolicyComponent } from './modules/pages/privacy-policy/privacy-p
 import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
 import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
+import { DataComponent } from './modules/pages/data/data.component';
 import { SuggestionComponent } from './modules/pages/suggestion/suggestion.component';
 import { HomeComponent } from './modules/pages/home/home.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
@@ -111,6 +112,8 @@ import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_U
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DataFormComponent } from './modules/components/data-form/data-form.component';
+import { StateFilterComponent } from './modules/pages/area-education/search/filters/state-filter/state-filter.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +128,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AccessLevelsComponent,
     SupportComponent,
     TechComponent,
+    DataComponent,
     SuggestionComponent,
     GlossaryComponent,
     SearchTutorialComponent,
@@ -189,6 +193,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AboutComponentEnUS,
     TechComponentEnUS,
     PrivacyPolicyComponentEnUS,
+    DataFormComponent,
+    StateFilterComponent,
   ],
   imports: [
     BrowserModule,

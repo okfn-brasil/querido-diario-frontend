@@ -1,0 +1,18 @@
+{
+  "explore": {
+    "title": "Explore dados dos diários oficiais com todas as informações compactadas"
+  },
+  "dados": {
+    "title": "Dados",
+    "subtitle": "A página de download de arquivos XML de diários oficiais é essencial, pois permite aos usuários acessar e baixar facilmente todos os diários de um ano específico, promovendo a transparência dos dados públicos. Um dicionário de dados, por sua vez, é um catálogo detalhado que documenta os elementos de dados de um sistema, servindo como referência centralizada para desenvolvedores e outros stakeholders, facilitando a comunicação e padronização."
+  },
+  "baixar": {
+    "actions": [
+      {
+        "text": "Baixar Dicionário de Dados",
+        "to": "https://www.catarse.me/queridodiario-okbr",
+        "style": "btn-secondary"
+      }
+    ]
+  }
+}
