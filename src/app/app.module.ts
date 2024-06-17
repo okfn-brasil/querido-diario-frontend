@@ -54,6 +54,7 @@ import { PrivacyPolicyComponent } from './modules/pages/privacy-policy/privacy-p
 import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
 import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
+import { DataComponent } from './modules/pages/data/data.component';
 import { SuggestionComponent } from './modules/pages/suggestion/suggestion.component';
 import { HomeComponent } from './modules/pages/home/home.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
@@ -114,6 +115,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
 import { PeriodPickerComponent } from './modules/components/period-picker/period-picker.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { DataFormComponent } from './modules/components/data-form/data-form.component';
+import { StateFilterComponent } from './modules/pages/area-education/search/filters/state-filter/state-filter.component';
 
 @NgModule({
   declarations: [
@@ -128,6 +131,7 @@ import { NgxMaskModule } from 'ngx-mask';
     AccessLevelsComponent,
     SupportComponent,
     TechComponent,
+    DataComponent,
     SuggestionComponent,
     GlossaryComponent,
     SearchTutorialComponent,
@@ -194,6 +198,8 @@ import { NgxMaskModule } from 'ngx-mask';
     PrivacyPolicyComponentEnUS,
     RequestAnalysisFormComponent,
     PeriodPickerComponent,
+    DataFormComponent,
+    StateFilterComponent,
   ],
   imports: [
     BrowserModule,

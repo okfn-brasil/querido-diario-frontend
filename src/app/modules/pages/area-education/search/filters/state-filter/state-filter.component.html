@@ -1,0 +1,33 @@
+<div class="location-search" (click)="focusOnInput()" (mouseleave)="focusOutInput()">
+    <div (click)="removeCity(city, $event)" class="tag" *ngFor="let city of selectedCities">{{city.territory_label || city.territory_name + ' (' + city.state_code + ')'}} <img src="assets/images/education/close.png" alt="fechar" /></div>
+    
+    <div class="text-area">
+      <div class="editable" (focus)="onHidePlaceholder()" contenteditable="true" id="location-filter-educacao" (keyup)="getText()" (click)="onHidePlaceholder()" (blur)="onShowPlaceholder()">
+        
+      </div>
+      <div class="new-place" *ngIf="showPlaceholder">{{label}}</div>
+    </div>
+  
+    <div class="dropdown" (click)="stopPropagation($event)" *ngIf="showDropdown">
+      <ng-container *ngIf="!loadingStates">
+        <ng-container *ngIf="!showCityLevel">
+          <div class="option" *ngFor="let city of getStateList()" (click)="addCity(city)">{{city.territory_label || city.territory_name + ' (' + city.state_code + ')'}}</div>
+        </ng-container>
+  
+        <ng-container *ngIf="showCityLevel">
+          <div class="option has-level" *ngFor="let city of getStateList()" (click)="addCity(city)">
+            <div>{{city.territory_label || city.territory_name}}</div>
+            <div class="level-label">Nível {{city.level}} de abertura</div>
+          </div>
+        </ng-container>
+      </ng-container>
+      <div class="loading-options" *ngIf="isLoading && query.length > 2 || loadingStates">
+        <mat-spinner ></mat-spinner>
+      </div>
+  
+      <div class="empty-result" *ngIf="query.length > 2 && !getStateList().length && !isLoading && !loadingStates">
+        Nenhum resultado encontrado para sua busca
+      </div>
+    </div>
+  </div>
+  
