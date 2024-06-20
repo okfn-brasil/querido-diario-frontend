@@ -56,7 +56,7 @@
           "title": "Quanto ao acesso às informações disponibilizadas pela plataforma",
           "texts": [
             "O uso da plataforma de busca da página principal do QD, bem como das informações que ela coleta e dos relatórios de análise que disponibiliza, é livre e gratuito, não havendo exigência de qualquer tipo de cadastro para tanto. Essa condição é possível graças ao apoio, tanto financeiro como por meio de trabalho voluntário, por parte de organizações, empresas e pessoas físicas que contribuem com este projeto em específico (<a target=\"_blank\" href=\"https://queridodiario.ok.org.br/apoie\">veja aqui</a> quem são), e com a Open Knowledge Brasil (OKBR) institucionalmente.",
-            "A página específica de Tecnologias na Educação, por sua vez, oferece a possibilidade de cadastro para criação de conta, que coleta os seguintes dados: nome completo, endereço de e-mail, área de atuação, estado e cidade de residência, além de senha de acesso e, opcionalmente, e-mail adicional para recebimento de alertas. Esses dados são coletados com a finalidade de criação e manutenção de conta que possibilita configurar os alertas para monitorar resultados de busca, além de gerar dados estatísticos sobre o perfil demográfico das pessoas usuárias. Tais dados não são compartilhados com terceiros e são armazenados em ambiente seguro pelo período necessário para que as finalidades descritas sejam atendidas, ou até que se solicite sua exclusão pelo email contato ARROBA serenata.ai.",
+            "A página específica de Tecnologias na Educação, por sua vez, oferece a possibilidade de cadastro para criação de conta, que coleta os seguintes dados: nome completo, endereço de e-mail, área de atuação, estado e cidade de residência, além de senha de acesso e, opcionalmente, e-mail adicional para recebimento de alertas. Esses dados são coletados com a finalidade de criação e manutenção de conta que possibilita configurar os alertas para monitorar resultados de busca, além de gerar dados estatísticos sobre o perfil demográfico das pessoas usuárias. Tais dados não são compartilhados com terceiros e são armazenados em ambiente seguro pelo período necessário para que as finalidades descritas sejam atendidas, ou até que se solicite sua exclusão pelo email queridodiario ARROBA ok.org.br.",
             "Em nenhuma hipótese esta plataforma vende, repassa ou doa informações pessoais de pessoas usuárias a terceiros."
           ]
         },
@@ -72,7 +72,7 @@
           "texts": [
             "Assim como todas as informações públicas republicadas pelo QD em formato aberto, eventuais informações pessoais que tenham sido disponibilizadas pelos órgãos públicos são tratadas pela OKBR com a única finalidade de promover o acesso gratuito e amigável a essa informação pública. Não editamos ou alteramos o conteúdo de qualquer informação original e tampouco nos responsabilizamos por usos irregulares que terceiros possam fazer dessa informação.",
             "Novos conteúdos são atualizados diariamente — a menos que haja falha técnica na coleta de dados — e armazenados por tempo indeterminado, uma vez que o objetivo desse armazenamento é disponibilizar a série histórica de publicações dos diários oficiais à medida que essa coleta for possível e viável.  ",
-            "A controladora dos dados disponíveis no QD é a OKBR. Eventuais dúvidas, solicitações e sugestões poderão ser encaminhadas para o email contato ARROBA serenata.ai.  "
+            "A controladora dos dados disponíveis no QD é a OKBR. Eventuais dúvidas, solicitações e sugestões poderão ser encaminhadas para o email queridodiario ARROBA ok.org.br.  "
           ]
         },
         {
@@ -84,5 +84,5 @@
       ]
     }
   ],
-  "footnote": "Esta é a versão 2.1 dos documentos “Termo de uso” e “Política de privacidade”, que tiveram sua última atualização em 10/10/2023. Os documentos sempre poderão ser consultados por meio desta página e novas atualizações poderão ocorrer a qualquer tempo e sem aviso prévio, cabendo a quem utiliza a plataforma consultá-los."
+  "footnote": "Esta é a versão 2.2 dos documentos “Termo de uso” e “Política de privacidade”, que tiveram sua última atualização em 20/06/2024. Os documentos sempre poderão ser consultados por meio desta página e novas atualizações poderão ocorrer a qualquer tempo e sem aviso prévio, cabendo a quem utiliza a plataforma consultá-los."
 }
