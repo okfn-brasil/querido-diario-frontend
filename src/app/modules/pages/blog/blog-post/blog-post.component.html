@@ -2,6 +2,7 @@
   <div [routerLink]="'/blog/' + postData.category" class="category">{{postData.category}}</div>
   <div class="title">{{postData.title}}</div>
   <div class="author">Por:&nbsp;<div class="author-name">{{postData.author}}</div></div>
+  <div class="author" *ngIf="postData.reviewer">Revisão:&nbsp;<div class="author-name">{{postData.reviewer}}</div></div>
   <div class="date full-page-date" *ngIf="isFullPage">{{date}}</div>
   <div class="banner" [ngStyle]="{'background-image': 'url(' + postData.banner + ')'}"></div>
   <div class="post-content" [innerHtml]="content" [class.full-page]="isFullPage"></div>
