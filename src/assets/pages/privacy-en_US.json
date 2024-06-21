@@ -56,7 +56,7 @@
           "title": "Regarding access to information made available by the platform",
           "texts": [
             "The use of the search platform on the QD homepage, as well as the information collected and the analysis reports available, is free and there is no requirement for any type of registration to do so. This condition is possible thanks to the support, both financial and through voluntary work, from organizations, companies and individuals who contribute to the project (<a target=\"_blank\" href=\"https://queridodiario.ok.org.br/apoie\">see who they are here</a>), and with Open Knowledge Brazil (OKBR) institutionally.",
-            "Technologies in Education page offers the possibility of registering to create an account, which collects the following data: full name, email address, occupation area, state and city of residence, as well as password access and, optionally, additional email to receive alerts. This data is collected to create and maintain accounts, allowing the configuration of alerts to monitor search results, in addition to generating statistical data on the demographic profile of users. Such data is not shared with third parties and is stored in a secure environment for the period necessary for the purposes described to be met, or until its deletion is requested by email at contato AT serenata.ai.",
+            "Technologies in Education page offers the possibility of registering to create an account, which collects the following data: full name, email address, occupation area, state and city of residence, as well as password access and, optionally, additional email to receive alerts. This data is collected to create and maintain accounts, allowing the configuration of alerts to monitor search results, in addition to generating statistical data on the demographic profile of users. Such data is not shared with third parties and is stored in a secure environment for the period necessary for the purposes described to be met, or until its deletion is requested by email at queridodiario AT ok.org.br.",
             "Under no circumstances does this platform sell, share or donate users personal information to third parties."
           ]
         },
@@ -72,7 +72,7 @@
           "texts": [
             "As all public information republished by QD in an open format, any personal information that has been made available by public bodies is processed by OKBR with the sole purpose of promoting free and user-friendly access to this public information. We do not edit or alter the content of any original information nor are we responsible for irregular uses that third parties may make of this information.",
             "New content is updated daily — unless there is a technical failure in the data collection — and stored for an indefinite period of time, since the objective of this storage is to make the historical series of publications in the official gazettes available as long as this collection is possible and viable.",
-            "The comptroller of the data available in QD is OKBR. Any questions, requests and suggestions can be sent to the email contato AT serenata.ai."
+            "The comptroller of the data available in QD is OKBR. Any questions, requests and suggestions can be sent to the email queridodiario AT ok.org.br."
           ]
         },
         {
@@ -84,5 +84,5 @@
       ]
     }
   ],
-  "footnote": "This is version 2.1 of the “Terms of Use” and “Privacy Policy” documents, which were last updated on 10/10/2023. The documents can always be consulted through this page and new updates may occur at any time and without prior notice, and it is up to those who use the platform to consult them."
+  "footnote": "This is version 2.2 of the “Terms of Use” and “Privacy Policy” documents, which were last updated on 20/06/2024. The documents can always be consulted through this page and new updates may occur at any time and without prior notice, and it is up to those who use the platform to consult them."
 }
