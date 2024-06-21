@@ -6,7 +6,7 @@
 </p>
 
 # Frontend (interface web)
-Dentro do [ecossistema do Querido Diário](https://github.com/okfn-brasil/querido-diario-comunidade/blob/main/.github/CONTRIBUTING.md#ecossistema-do-querido-di%C3%A1rio), este repositório é o responsável pelo **[site do Querido Diário](https://queridodiario.ok.org.br/)**.
+Dentro do [ecossistema do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/guia-de-contribuicao.html#ecossistema-do-querido-diario), este repositório é o responsável pelo **[site do Querido Diário](https://queridodiario.ok.org.br/)**.
 
 Conheça mais sobre as [tecnologias](https://queridodiario.ok.org.br/tecnologia) e a [história](https://queridodiario.ok.org.br/sobre) do projeto.
 
