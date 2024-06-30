@@ -1,0 +1,24 @@
+<mat-form-field appearance="fill" (click)="picker.open()">
+  <mat-icon matPrefix svgIcon="calendar-gray"></mat-icon>
+  <mat-date-range-picker
+    md-hide-icons="calendar"
+    #picker
+  ></mat-date-range-picker>
+  <mat-label>Período</mat-label>
+  <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+    <input matStartDate formControlName="start" placeholder="Início" />
+    <input
+      (dateChange)="onRangeSelected()"
+      matEndDate
+      formControlName="end"
+      placeholder="Fim"
+    />
+  </mat-date-range-input>
+
+  <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')"
+    >Início Invalido</mat-error
+  >
+  <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')"
+    >Fim Inválido</mat-error
+  >
+</mat-form-field>

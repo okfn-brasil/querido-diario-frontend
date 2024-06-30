@@ -33,6 +33,14 @@
           <h2>{{content.reports.title}}</h2>
           <p class="sub-title">{{content.reports.subtitle}}</p>
           <edu-carousel *ngIf="reports && reports.length" [items]="reports"></edu-carousel>
+          <hr class="reports-separator" />
+          <div>
+            <h2>Análise Customizada</h2>
+            <p class="sub-title">Faça agora o pedido de uma análise sob medida, de acordo com suas necessidades. O nosso
+              time avaliará o pedido e entrará em contato.</p>
+            <button routerLink="/educacao/pedido-analise" class="btne-primary">Realize um pedido de análise sob
+              medida</button>
+          </div>
         </div>
       </div>
 
@@ -40,7 +48,8 @@
         <div class="container-carousel">
           <h2>{{content.cases.title}}</h2>
           <p class="sub-title">{{content.cases.subtitle}}</p>
-          <edu-carousel [theme]="'dark'" [type]="'second-type'" *ngIf="cases && cases.length" [items]="cases"></edu-carousel>
+          <edu-carousel [theme]="'dark'" [type]="'second-type'" *ngIf="cases && cases.length"
+            [items]="cases"></edu-carousel>
         </div>
       </div>
 
@@ -69,7 +78,8 @@
       <div class="container-education about">
         <div class="content section-content">
           <div class="container-img">
-            <img src="assets/images/education/using-notebook.png" class="using-notebook-image" alt="caminhando com cachorro" />
+            <img src="assets/images/education/using-notebook.png" class="using-notebook-image"
+              alt="caminhando com cachorro" />
           </div>
           <div class="container-content">
             <p class="sub-title">
@@ -78,7 +88,8 @@
             <h2>
               {{ content.about.subtitle }}
             </h2>
-            <button routerLink="/educacao/sobre" class="btne-primary full-width-mobile">{{ content.about.button }}</button>
+            <button routerLink="/educacao/sobre" class="btne-primary full-width-mobile">{{ content.about.button
+              }}</button>
           </div>
         </div>
       </div>
