@@ -38,26 +38,12 @@
 </app-container>
 
 <app-container
-  *ngIf="documentationIndex$ | async as doc"
+  *ngIf="documentations$ | async as doc"
   theme="light"
   id="documentacao"
 >
   <div class="container-inner">
     <app-column [gap]="60">
-      <app-column [gap]="40">
-        <h1>{{ doc.title }}</h1>
-        <app-column>
-          <p>{{ doc.text }}</p>
-          <ng-container *ngFor="let action of doc.actions">
-            <a *ngIf="action.to" [href]="action.to" [ngClass]="action.style" target="_blank">
-              {{ action.text }}
-            </a>
-            <a *ngIf="action.route" [routerLink]="action.route" [fragment]="action.fragment" [ngClass]="action.style">
-              {{ action.text }}
-            </a>
-          </ng-container>
-        </app-column>
-      </app-column>
       <app-column
         *ngFor="let documentation of documentations$ | async"
         [gap]="42"
@@ -75,6 +61,10 @@
           />
         </ng-container>
       </app-column>
+      <div class="embed-calendar">
+        <iframe src='https://calendar.google.com/calendar/u/0/embed?wkst=1&ctz=America/Sao_Paulo&bgcolor=%23f3e9e9&showPrint=0&showTabs=0&showCalendars=0&src=Y181NmNjZmE4MTI0NmIxMjA5ODFjZGI3NWI1ZDQ5ZjM2NzAxNzIwZDA4ZmExZDExOWYwOTUyN2JlNzJiZGNlZGUwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&color=%239E69AF' style='border: 0' width='100%' height='500' frameborder='0' scrolling='no'>
+        </iframe>
+      </div>
     </app-column>
   </div>
 </app-container>

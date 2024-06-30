@@ -44,7 +44,6 @@ export interface GazetteFilters {
 
 export const parseGazettes = (gazettes: GazetteModel[], query: string) => {
   return gazettes.map(item => {
-    console.log(item.excerpt)
     item.excerpt = item.excerpt.replace(/entidadecnpj/g, '~~~').replace(/entidadeeducacao/g, '~%');
     const replaceCnpj = item.excerpt.split('<~~~>');
     let newTextCnpj = '';

@@ -113,7 +113,7 @@ import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
 import { PeriodPickerComponent } from './modules/components/period-picker/period-picker.component';
 
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -208,6 +208,7 @@ import { PeriodPickerComponent } from './modules/components/period-picker/period
     MatCardModule,
     MatAutocompleteModule,
     FormsModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,

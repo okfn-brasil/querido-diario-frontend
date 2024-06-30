@@ -6,7 +6,7 @@
 </p>
 
 # Frontend (interface web)
-Dentro do [ecossistema do Querido Diário](https://github.com/okfn-brasil/querido-diario-comunidade/blob/main/.github/CONTRIBUTING.md#ecossistema-do-querido-di%C3%A1rio), este repositório é o responsável pelo **[site do Querido Diário](https://queridodiario.ok.org.br/)**.
+Dentro do [ecossistema do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/guia-de-contribuicao.html#ecossistema-do-querido-diario), este repositório é o responsável pelo **[site do Querido Diário](https://queridodiario.ok.org.br/)**.
 
 Conheça mais sobre as [tecnologias](https://queridodiario.ok.org.br/tecnologia) e a [história](https://queridodiario.ok.org.br/sobre) do projeto.
 
@@ -33,7 +33,7 @@ Você encontra como fazê-lo no [CONTRIBUTING.md](/docs/CONTRIBUTING.md)!
 Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/) para te ajudar. 
 
 # Ambiente de desenvolvimento
-O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](package.json).
+O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](../package.json).
 
 Por meio de um terminal aberto no diretório raíz do repositório, use a sequência de comandos a seguir para instalar todas essas ferramentas em sistema operacional Linux:
 ```

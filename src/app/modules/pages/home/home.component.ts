@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable, of } from 'rxjs';
+import { Observable, forkJoin, of } from 'rxjs';
 import { ContentService } from 'src/app/services/content/content.service';
 import { VideoModalComponent } from '../../components/video-modal/video-modal.component';
+import { CitiesService } from 'src/app/services/cities/cities.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -10,16 +12,26 @@ import { VideoModalComponent } from '../../components/video-modal/video-modal.co
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
-  content$: Observable<any> = of(null)
+  content$: Observable<any> = of(null);
+  numberOfCities = 0;
 
   constructor(
     private modal: MatDialog,
-    private contentService: ContentService
-  ) {
-  }
+    private contentService: ContentService,
+    private citiesService: CitiesService
+  ) {}
 
   ngOnInit() {
-   this.content$ = this.contentService.find('home');
+    this.content$ = forkJoin({
+      content: this.contentService.find('home'),
+      numberOfCities: this.citiesService.getAll(),
+    }).pipe(
+      map((data) => {
+        data.content.evolution.items[0]['count'] =
+          data.numberOfCities.cities.length;
+        return data.content;
+      })
+    );
   }
 
   openVideo(): void {

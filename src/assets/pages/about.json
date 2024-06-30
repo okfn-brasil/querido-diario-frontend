@@ -1,14 +1,32 @@
 {
   "about": {
     "title": "Sobre o Querido Diário",
-    "text": "Conheça o projeto que usa tecnologia para libertar o conteúdos dos diários oficiais dos municípios brasileiros e aproximar os cidadãos das ações de seus governantes.",
+    "text": "Conheça o projeto que usa tecnologia para libertar os conteúdos dos diários oficiais dos municípios brasileiros e aproximar os cidadãos das ações de seus governantes.",
     "actions": [
+      { "text": "Motivação", "route": "/sobre", "fragment": "motivacao", "style": "link-secondary" },
       { "text": "História", "route": "/sobre", "fragment": "historia", "style": "link-secondary" },
-      { "text": "Entenda", "route": "/sobre", "fragment": "entenda", "style": "link-secondary" },
       { "text": "Casos de uso", "route": "/sobre", "fragment": "casos", "style": "link-secondary" },
       { "text": "Na mídia", "route": "/sobre", "fragment": "midia", "style": "link-secondary" },
+      { "text": "Entenda", "route": "/sobre", "fragment": "entenda", "style": "link-secondary" },      
       { "text": "Quem somos", "route": "/sobre", "fragment": "quem-somos", "style": "link-secondary" },
       { "text": "Política de privacidade", "route": "/sobre", "fragment": "privacidade", "style": "link-secondary"}
+    ]
+  },
+  "overview": {
+    "title": "Motivação",
+    "texts": [
+      "Há 150 anos, os diários oficiais já eram uma parte essencial do Brasil, documentando as decisões mais significativas do país. Com o passar do anos, no entanto, esses diários oficiais permaneceram do mesmo jeito, pouco acessíveis, ainda com a chegada de novas tecnologias.",
+      "Enquanto o Diário Oficial da União, de estados e municípios - quando capitais ou de região metropolitana - recebem mais atenção pública, muitos municípios menores carecem de transparência e acesso a informações. Nessas situações, o diário oficial pode ser a única fonte de informação oficial disponível.",
+      "E, mesmo entre os melhores casos de abertura de dados, outro desafio existe: a informação sobre a atividade administrativa é dispersa por uma variedade de sites e arquivos na internet. Isso torna difícil monitorar o progresso de políticas públicas de um mesmo município e, ainda mais, inviável comparar decisões de diferentes localidades. O Brasil tem 5570 municípios e não tem ser humano capaz de acompanhar tanta atividade administrativa pulverizada.",
+      "O Querido Diário enfrenta essa situação, inaugurando uma gigantesca (e em constante expansão!) fonte de dados integrada sobre os diários oficiais municipais. Uma empreitada monumental tendo em vista não apenas a grande quantidade de municípios e de sites governamentais, mas também a variedade de formatos de diários oficiais, já que não existe nenhuma regulamentação que os padronize."
+    ],
+    "actions": [
+      {
+        "text": "Doe",
+        "icon": "arrow",
+        "to": "https://www.catarse.me/queridodiario-okbr",
+        "style": "btn-primary"
+      }
     ]
   },
   "history": {

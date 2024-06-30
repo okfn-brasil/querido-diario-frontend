@@ -44,7 +44,44 @@
   </app-container>
 </ng-container>
 
-<app-container theme="light" id="historia">
+<app-container theme="light" id="motivacao">
+  <ng-container *ngIf="content$ | async as content; else loading">
+    <div class="container-inner">
+      <app-column [gap]="22">
+        <h1>
+          {{ content.overview.title }}
+        </h1>
+        <div
+          *ngFor="let text of content.overview.texts"
+          class="typo-inner highlight"
+          [innerHTML]="text"
+        ></div>
+        <app-row [gap]="12">
+          <ng-container *ngFor="let action of content.overview.actions">
+            <a
+              *ngIf="action.to"
+              [ngClass]="action.style"
+              [href]="action.to"
+              target="_blank"
+            >
+              {{ action.text }}
+            </a>
+            <a
+              *ngIf="action.route"
+              [ngClass]="action.style"
+              [routerLink]="action.route"
+              [fragment]="action.fragment"
+            >
+              {{ action.text }}
+            </a>
+          </ng-container>
+        </app-row>
+      </app-column>
+    </div>
+  </ng-container>
+</app-container>
+
+<app-container theme="dark" id="historia">
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="22">
@@ -61,10 +98,6 @@
   </ng-container>
 </app-container>
 
-<app-container [gap]="34" theme="darker" bg="bg-purple-square" id="entenda">
-  <app-infos page="about"></app-infos>
-</app-container>
-
 <app-container theme="light" id="casos" [gap]="34" *ngIf="content$ | async as content; else loading">
   <div class="container-inner stories-area-title">
     <h1>{{ content.useCases.title }}</h1>
@@ -76,7 +109,6 @@
     </div>
   </app-row>
 </app-container>
-
 
 <app-container theme="dark" id="midia" [gap]="34" *ngIf="content$ | async as content; else loading">
   <div class="container-inner stories-area-title">
@@ -90,6 +122,9 @@
   </app-row>
 </app-container>
 
+<app-container [gap]="34" theme="light" bg="bg-yellow-lines" id="entenda">
+  <app-infos page="about"></app-infos>
+</app-container>
 
 <app-container theme="dark" bg="bg-blue-square" id="quem-somos">
   <ng-container *ngIf="content$ | async as content; else loading">

@@ -14,9 +14,10 @@
   "overview": {
     "title": "Overview",
     "texts": [
-      "Querido Diário is an open software project that collects data published in official gazettes of Brazilian municipalities. Our main goal is to provide anyone with access to the municipal information contained in these documents, all on a single platform and in a standardized way.",
-      "Brazil has 5,570 cities that publish official documents daily, without any pre-established standard between them and on different websites. An official gazette must contain all information about the management of cities: bids, public notices, hiring, and decision-making at the municipal level must go through the official gazette. Simple continuous access to this information can reveal many facts of public interest. In this sense, Querido Diário is an important tool for social control, data journalism, research, and policy-making at the local level.",
-      "Currently, the Data Science for Civic Innovation Program of Open Knowledge Brazil (OKBR) maintains the project with the support of an extensive community of partner organizations, voluntary contributors, and individual donors. If you can support the project, consider donating to our continuous financing campaign."
+      "As long as 150 years ago, official gazettes were already an essential part of Brazil, documenting the country's most significant decisions. Over the years, however, these official gazettes have remained the same, barely accessible, even with the arrival of new technologies.",
+      "While the official gazette of the Union, states and municipalities - when capitals or metropolitan regions - receive more public attention, many smaller municipalities lack transparency and access to information. In these situations, the official gazette may be the only source of official information available.",
+      "And even among the best cases of open data, another challenge exists: information about administrative activity is dispersed across a variety of websites and files on the internet. This makes it difficult to monitor the progress of public policies in the same municipality and even more impractical to compare decisions from different locations. Brazil has 5570 municipalities and there is no person capable of keeping track of so much widespread administrative activity.",
+      "Querido Diário is tackling this situation by inaugurating a gigantic (and constantly expanding!) integrated data source on municipal official gazettes. A monumental undertaking given not only the large number of municipalities and government websites, but also the variety of official gazette formats, since there are no regulations to standardize them."
     ],
     "actions": [
       {

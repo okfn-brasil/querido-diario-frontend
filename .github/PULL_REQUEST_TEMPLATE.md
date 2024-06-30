@@ -3,7 +3,7 @@
 ## Comunidade
 
 * [ ] Eu li e segui o [Guia de Contribuição](https://github.com/okfn-brasil/querido-diario-frontend/blob/main/docs/CONTRIBUTING.md).
-* [ ] Eu li e segui o [Código de Conduta](https://github.com/okfn-brasil/querido-diario-comunidade/blob/main/.github/CODE_OF_CONDUCT.md).
+* [ ] Eu li e segui o [Código de Conduta](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/codigo-de-conduta.html).
 
 ## Tipo de alteração
 

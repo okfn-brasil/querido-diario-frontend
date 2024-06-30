@@ -1,6 +1,6 @@
 {
   "title": "Tecnologia",
-  "text": "O Querido Diário é um projeto de código livre e conta com a contribuição da comunidade de tecnologia para evoluir. Saiba mais sobre a frente técnica da iniciativa.",
+  "text": "O Querido Diário é um ambicioso projeto de código livre e conta com a contribuição da comunidade de tecnologia para evoluir. Saiba mais sobre a frente tecnológica da iniciativa.",
   "actions": [
     {
       "text": "Doe",
@@ -9,8 +9,7 @@
     },
     {
       "text": "Documentação",
-      "route": "/tecnologia",
-      "fragment": "documentacao",
+      "to": "https://docs.queridodiario.ok.org.br",
       "style": "link-secondary"
     },
     {
