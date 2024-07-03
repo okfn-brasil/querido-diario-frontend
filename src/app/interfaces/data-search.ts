@@ -5,10 +5,25 @@ export interface DataSearch {
   last_update: string;
   hash_info: string;
   file_size: string;
+  downloads: DownloadData[]
 }
 
 export interface ResponseDataSearch{
-  url_zip: string;
-  year:number;
-  file_size: string;
+  total_dataSearch: number;
+  datas: DataSearch[];
+  error?: boolean;
+}
+
+export interface DataSearchQuery {
+  territory_id?: string | string[];
+  year?:string;
+}
+
+export enum DownloadsLabelsData {
+  URL_ZIP = 'Baixar XML'
+}
+
+export interface DownloadData {
+  value: string;
+  viewValue: DownloadsLabelsData,
 }

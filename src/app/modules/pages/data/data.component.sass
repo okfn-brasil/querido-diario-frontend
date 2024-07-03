@@ -23,7 +23,7 @@
 .results
   width: calc(200vw - 400px)
   padding: rem(40) 10%
-  min-height: 60vh
+  min-height: 70vh
   position: relative
   @media only screen and (max-width: 768px)
     width: 100vw
@@ -51,7 +51,7 @@
   display: flex
   flex-wrap: wrap
   justify-content: center
-
+  
   img
     width: rem(100)
     margin: 0 0 40px
@@ -67,14 +67,17 @@
   text-align: center
   
 .center
-  display:block
+  display: block
   margin: 0 auto
+  text-align: center
+  margin-top: 45px
+  
 
 .btn-secondary
-  color: #fff !important
+  padding: 20px 80px
+  border-radius: 20em !important
   height: rem(60)
   width: rem(174)
-  border-radius: rem(30)
   background-color: #ff8500
   font-family: Lato
   border: none
@@ -82,6 +85,15 @@
   font-weight: 600
   letter-spacing: 0
   line-height: rem(16)
-  
+  color: #fff !important
+
+@media only screen and (max-width: 768px) 
+  .btn-secondary 
+    margin-top: rem(32)
+
+@media only screen and (max-width: 768px) 
+  .center 
+    margin-top: 32px 
+
 
   

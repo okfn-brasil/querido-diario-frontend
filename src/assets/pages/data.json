@@ -4,7 +4,7 @@
   },
   "dados": {
     "title": "Dados",
-    "subtitle": "A página de download de arquivos XML de diários oficiais é essencial, pois permite aos usuários acessar e baixar facilmente todos os diários de um ano específico, promovendo a transparência dos dados públicos. Um dicionário de dados, por sua vez, é um catálogo detalhado que documenta os elementos de dados de um sistema, servindo como referência centralizada para desenvolvedores e outros stakeholders, facilitando a comunicação e padronização."
+    "subtitle": "A página de download de arquivos XML de diários oficiais facilita o acesso e a transparência dos dados públicos. Dessa forma, um dicionário de dados serve como uma referência detalhada e centralizada, padronizando a comunicação entre desenvolvedores e stakeholders."
   },
   "baixar": {
     "actions": [
