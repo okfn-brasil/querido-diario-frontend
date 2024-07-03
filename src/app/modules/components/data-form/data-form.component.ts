@@ -1,15 +1,10 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, ElementRef, Inject, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Moment } from 'moment';
-import { Observable, Subscription } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
-import { Renderer2, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { DownloadCSVService } from './../../../services/download-csv/download-csv.service';
 
 @Component({
   selector: 'app-data-form',
@@ -17,31 +12,28 @@ import { DownloadCSVService } from './../../../services/download-csv/download-cs
   styleUrls: ['./data-form.component.sass'],
 })
 export class DataFormComponent implements OnInit {
-  termControl = new FormControl();
-
   @Input()
   form: any;
 
   timeout: ReturnType<typeof setTimeout> | undefined;
 
-
-  cityControl = new FormControl();
-  territories: Territory[] = [];
+  territoriesAutocomplete: Territory[] = []; // Lista de municipios que aparecem ao digitar no campo de busca
   selectedCities: Territory[] = [];
-  territory: string[] = [];
+  selectedStates: Territory[] = [];
+
   cityListToInput: Territory[] = [];
   loadingCities = false;
   loadingStates = false;
 
   @ViewChild('cityField') cityField!: ElementRef;
   @ViewChild('stateField') stateField!: ElementRef;
-  
-  since: string = '';
-  until: string = '';
+
   query: string = '';
-  sort_by: string = '';
 
   subscriptions: Subscription[] = [];
+
+  /* stateQuery: string[] = []; */
+  cityQuery: string[] = [];
 
   constructor(
     private territoryService: TerritoryService,
@@ -50,32 +42,44 @@ export class DataFormComponent implements OnInit {
     private titleService: Title,
     private metaService: Meta,
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document,
-    private downloadCSVService: DownloadCSVService
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit(): void {
-
     this.subscriptions.push(
       this.route.queryParams.subscribe((params) => {
-        const { term, city, since, until, sort_by } = params;
-        this.territory = city;
+        const { city } = params;
+        this.cityQuery = city;
         this.selectedCities = [];
-        this.since = since;
-        this.until = until;
-        this.sort_by = sort_by;
-        // TODO: adicionar cidade e se possível período de tempo selecionado para a busca na descrição e ao título
-        // Página de resultados da busca:
-        if (term !== undefined) {
+
+        if (city) {
+          if (Array.isArray(city)) {
+            city.forEach((currCity) => {
+              this.findCityById(currCity);
+            });
+          } else {
+            this.findCityById(city);
+          }
+        }
+
+        // Se a cidade foi fornecida, atualiza as meta tags da página para SEO
+        if (city !== undefined) {
           // TITLE - Deve ser relevante para o conteúdo, ter menos de 70 caracteres e incluir as palavras-chave.
-          let title_txt: string = 'Querido Diário - Resultados para a busca [' +  term + ']:';
+          let title_txt: string =
+            'Querido Diário - Resultados para a busca agregada [' + city + ']:';
           this.titleService.setTitle(title_txt);
           // KEYWORDS - Inclua aqui as palavras-chave relevantes para o conteúdo da página.
-          let terms = 'busca, pesquisa, querido diário, diários oficiais municipais, Brasil, transparência, governança, ' + term;
-          this.metaService.updateTag({ name: 'keywords', content: term });
+
+          this.metaService.updateTag({ name: 'keywords', content: city });
           // DESCRIPTION - Deve ser relevante para o conteúdo, menos de 160 caracteres e incluir as palavras-chave.
-          let description_txt: string = 'Resultados para a busca no Querido Diário para os termos: [' + term + ']';
-          this.metaService.updateTag({ name: 'description', content: description_txt });
+          let description_txt: string =
+            'Resultados para a busca no de Downloads para os municípios: [' +
+            city +
+            ']';
+          this.metaService.updateTag({
+            name: 'description',
+            content: description_txt,
+          });
 
           // Adiciona TAG <link> à página de maneira dinâmica, incluindo o link completo para a página com os termos fornecidos para a busca
           const link: HTMLLinkElement = this.renderer.createElement('link');
@@ -89,13 +93,22 @@ export class DataFormComponent implements OnInit {
         // Página inicial da pesquisa:
         else {
           // TITLE - Deve ser relevante para o conteúdo, ter menos de 70 caracteres e incluir as palavras-chave.
-          let title_txt: string = 'Querido Diário - Pesquise nos Diários Oficiais municipais do Brasil';
+          let title_txt: string =
+            'Querido Diário - Faça o download agregado de Diários Oficiais municipais do Brasil';
           this.titleService.setTitle(title_txt);
           // KEYWORDS - Inclua aqui as palavras-chave relevantes para o conteúdo da página, separadas por vírgula.
-          this.metaService.updateTag({ name: 'keywords', content: 'busca, pesquisa, querido diário, diários oficiais municipais, Brasil, transparência, governança' });
+          this.metaService.updateTag({
+            name: 'keywords',
+            content:
+              'busca, pesquisa, querido diário, diários oficiais municipais, Brasil, transparência, governança, download agregado, XML',
+          });
           // DESCRIPTION - Deve ser relevante para o conteúdo, menos de 160 caracteres e incluir as palavras-chave.
-          let description_txt: string = 'Página para realização de busca no Querido Diário';
-          this.metaService.updateTag({ name: 'description', content: description_txt });
+          let description_txt: string =
+            'Página para busca de XML agregados pelo Querido Diário';
+          this.metaService.updateTag({
+            name: 'description',
+            content: description_txt,
+          });
           // Adiciona TAG <link> à página de maneira dinâmica, incluindo o link completo para a página com os termos fornecidos para a busca
           const link: HTMLLinkElement = this.renderer.createElement('link');
           link.setAttribute('rel', 'canonical');
@@ -105,19 +118,6 @@ export class DataFormComponent implements OnInit {
           let robots_txt: string = 'noindex,nofollow';
           this.metaService.updateTag({ name: 'robots', content: robots_txt });
         }
-
-        // TODO: incluir a(s) cidade(s) selecionadas nas meta tags para SEO
-        if (city) {
-          if (Array.isArray(city)) {
-            city.forEach((currCity) => {
-              this.findCityById(currCity);
-            });
-          } else {
-            this.findCityById(city);
-          }
-        }
-
-        this.termControl.setValue(term);
       })
     );
   }
@@ -125,17 +125,17 @@ export class DataFormComponent implements OnInit {
   getCityList() {
     const selectedIds = this.selectedCities.map((city) => city.territory_id);
     return [
-      ...this.territories.filter(
+      ...this.territoriesAutocomplete.filter(
         (city) => !selectedIds.includes(city.territory_id)
       ),
       ...this.selectedCities,
     ];
   }
 
-  getStateList(){
+  getStateList() {
     const selectedIds = this.selectedCities.map((city) => city.state_code);
     return [
-      ...this.territories.filter(
+      ...this.territoriesAutocomplete.filter(
         (city) => !selectedIds.includes(city.state_code)
       ),
       ...this.selectedCities,
@@ -153,7 +153,7 @@ export class DataFormComponent implements OnInit {
         .findByName(this.query.trim())
         .subscribe((response) => {
           response.forEach((city) => {
-            this.territories.push(city);
+            this.territoriesAutocomplete.push(city);
           });
           this.loadingCities = false;
         });
@@ -169,31 +169,23 @@ export class DataFormComponent implements OnInit {
   search(): void {
     let queryParams = {};
 
-    if (this.territory && this.territory.length) {
-      queryParams = { ...queryParams, city: this.territory };
+    /* if (this.stateQuery && this.stateQuery.length) {
+      queryParams = { ...queryParams, state: this.stateQuery };
+    } else {
+      queryParams = { ...queryParams, state: null };
+    } */
+
+    if (this.cityQuery && this.cityQuery.length) {
+      queryParams = { ...queryParams, city: this.cityQuery };
     } else {
       queryParams = { ...queryParams, city: null };
     }
 
-    if (this.sort_by && this.sort_by.length) {
-      queryParams = { ...queryParams, sort_by: this.sort_by };
-    } else {
-      queryParams = { ...queryParams, sort_by: null };
-    }
-
-    this.downloadCSVService.clear();
-
-    this.router.navigate(['/pesquisa'], { queryParams });
+    this.router.navigate(['/dados'], { queryParams });
   }
 
-  displayFn(territory: Territory): string {
-    return territory && territory.territory_label
-      ? territory.territory_label
-      : '';
-  }
-
-  onChangeLocation(locations: string[]) {
-    this.territory = locations;
+  onChangeCity(locations: string[]) {
+    this.cityQuery = locations;
   }
 
   onChangeQuery(query: string) {
