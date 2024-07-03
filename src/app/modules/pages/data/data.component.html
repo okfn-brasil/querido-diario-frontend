@@ -15,11 +15,10 @@
         </div>
       </app-container>
   
-      <app-container [gap]="34">
+      <app-container [gap]="10">
         <h1>{{ content.dados.title }}</h1>
-        <p class="subtitle">{{ content.dados.subtitle }}</p>
+        <h3 class="subtitle">{{ content.dados.subtitle }}</h3>
           <app-row *ngFor="let action of content.baixar.actions" [gap]="8">
-
             <div class="center">
               <a class="btn-secondary" [routerLink]="action.to">
                 {{ action.text }}
