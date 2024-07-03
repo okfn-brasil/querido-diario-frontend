@@ -1,33 +1,28 @@
 <form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px" fxLayoutGap.xs="0">
-    <app-row [flex]="true" [gap]="16">
-        
-        <edu-state-filter
-          [initialValue]="territory" 
-          [loadingStates]="loadingStates"
-          label="Estado" 
+  <app-row [flex]="true" [gap]="16">
 
-          class="state-input" 
+    <!--  <edu-state-filter
+      [initialValue]="selectedStates"
+      [loadingStates]="loadingStates"
+      label="Estado"
+      class="state-input"
+      [states]="getStateList()"
+      (changeLocations)="onChangeState($event)"
+      (changeQuery)="onChangeQuery($event)">
+    </edu-state-filter>
+    -->
 
-          [states]="getStateList()"
-          (changeLocations)="onChangeLocation($event)"
-          (changeQuery)="onChangeQuery($event)">
-        </edu-state-filter>
+    <edu-city-filter
+      [initialValue]="cityQuery"
+      [loadingCities]="loadingCities"
+      label="Município"
+      class="city-input"
+      [cities]="getCityList()"
+      [showCityLevel]="true"
+      (changeLocations)="onChangeCity($event)"
+      (changeQuery)="onChangeQuery($event)">
+    </edu-city-filter>
 
-        <edu-city-filter
-          [initialValue]="territory" 
-          [loadingCities]="loadingCities"
-          label="Município" 
-
-          class="city-input" 
-          
-          [cities]="getCityList()"
-          [showCityLevel]="true"
-          (changeLocations)="onChangeLocation($event)"
-          (changeQuery)="onChangeQuery($event)">
-        </edu-city-filter>
-        
-  
-    </app-row>
-    <button (click)="search()" class="btn">Pesquisar</button>
-  </form>
-  
+  </app-row>
+  <button (click)="search()" class="btn">Pesquisar</button>
+</form>
