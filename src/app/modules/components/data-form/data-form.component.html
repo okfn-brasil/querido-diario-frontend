@@ -12,7 +12,7 @@
     </edu-state-filter>
     -->
 
-    <edu-city-filter
+    <!-- <edu-city-filter
       [initialValue]="cityQuery"
       [loadingCities]="loadingCities"
       label="Município"
@@ -21,7 +21,18 @@
       [showCityLevel]="true"
       (changeLocations)="onChangeCity($event)"
       (changeQuery)="onChangeQuery($event)">
-    </edu-city-filter>
+    </edu-city-filter> -->
+
+    <data-city-filter
+      [initialValue]="cityQuery"
+      [loadingCities]="loadingCities"
+      label="Município"
+      class="city-input"
+      [cities]="getCityList()"
+      [showCityLevel]="true"
+      (changeLocations)="onChangeCity($event)"
+      (changeQuery)="onChangeQuery($event)">
+    </data-city-filter>
 
   </app-row>
   <button (click)="search()" class="btn">Pesquisar</button>

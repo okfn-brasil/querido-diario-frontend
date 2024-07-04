@@ -1,16 +1,15 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { City } from 'src/app/interfaces/city';
 
-
 @Component({
-  selector: 'edu-state-filter',
-  templateUrl: './state-filter.component.html',
-  styleUrls: ['./state-filter.component.sass']
+  selector: 'data-city-filter',
+  templateUrl: './data-city-filter.component.html',
+  styleUrls: ['./data-city-filter.component.sass']
 })
-export class StateFilterComponent implements OnChanges {
-  @Input() states: City[] = [];
+export class DataCityFilterComponent implements OnChanges {
+  @Input() cities: City[] = [];
   @Input() label: string = 'Novo local...';
-  @Input() loadingStates = false;
+  @Input() loadingCities = false;
   @Input() showAll = false;
   @Input() showCityLevel = false;
   showDropdown = false;
@@ -27,7 +26,7 @@ export class StateFilterComponent implements OnChanges {
   ) { }
 
   getText() {
-    const text = document.getElementById('location-filter-educacao')?.textContent;
+    const text = document.getElementById('location-filter-data')?.textContent;
     this.query = text as string;
     this.changeQuery.emit(this.query);
   }
@@ -64,7 +63,7 @@ export class StateFilterComponent implements OnChanges {
   }
 
   focusOnInput() {
-    let container = document.getElementById('location-filter-educacao')
+    let container = document.getElementById('location-filter-data')
     if(container) {
       container.focus();
     }
@@ -73,7 +72,7 @@ export class StateFilterComponent implements OnChanges {
 
   resetInput() {
     this.query = '';
-    let container = document.getElementById('location-filter-educacao')
+    let container = document.getElementById('location-filter-data')
     if(container) {
       container.textContent = '';
     }
@@ -83,7 +82,7 @@ export class StateFilterComponent implements OnChanges {
     event.stopPropagation();
   }
 
-  getStateList() {
+  getCitiesList() {
     if(this.uniqueCities && this.uniqueCities.length) {
       return this.uniqueCities.filter(city =>  city.territory_name.toLowerCase().includes(this.query.toLowerCase().trim()) && (this.query.length >= 3 || this.showAll)).sort(function(a,b){
         return a.territory_name.localeCompare(b.territory_name);
@@ -93,11 +92,11 @@ export class StateFilterComponent implements OnChanges {
   }
 
   ngOnChanges(): void {
-    if(this.states && this.states.length) {
+    if(this.cities && this.cities.length) {
       this.isLoading = false;
     }
     this.uniqueCities = [];
-    this.states.forEach(city => {
+    this.cities.forEach(city => {
       if(!this.uniqueCities.find(uniqueCity => city.territory_id === uniqueCity.territory_id)) {
         this.uniqueCities.push(city);
       }

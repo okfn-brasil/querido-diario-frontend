@@ -12,21 +12,21 @@ import { Gazette, GazetteResponse } from 'src/app/interfaces/gazette';
 import { LevelDescription, Pagination, SearchResponse } from 'src/app/interfaces/search';
 import { Territory } from 'src/app/interfaces/territory';
 import { GazetteService } from 'src/app/services/gazette/gazette.service';
-//Fazer DataSearchService
+import { DataSearchService } from 'src/app/services/data/data.service';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.sass'],
+  selector: 'app-data-search',
+  templateUrl: './data-search.component.html',
+  styleUrls: ['./data-search.component.sass'],
 })
-export class SearchComponent implements OnInit {
+export class DataSearchComponent implements OnInit {
   constructor(
     private env: EnvService,
     private router: Router,
     private route: ActivatedRoute,
     private territoryService: TerritoryService,
-    private gazetteService: GazetteService,
+    private dataSearchService: DataSearchService,
   ) {}
 
   term: string | undefined = undefined;
@@ -38,13 +38,14 @@ export class SearchComponent implements OnInit {
   city: Observable<City | null> = new Observable();
   levelDescription: LevelDescription | undefined = undefined;
   cities: string[] = [];
-  levels: number[] = [];
 
   levelIcon: string | null = null;
 
   territories: Territory[] = [];
 
   gazetteResponse: GazetteResponse | null = null;
+
+  dataSearchResponse: ResponseDataSearch | null = null;
 
   pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
 
@@ -73,66 +74,21 @@ export class SearchComponent implements OnInit {
 
   p: number[] = [];
 
-  page: number = 1;
   sort_by: string = 'relevance';
-
-  pageChange(page: number) {
-    const queryParams = this.route.snapshot.queryParams;
-    this.router.navigate(['/pesquisa'], {
-      queryParams: { ...queryParams, page },
-    });
-  }
-
-  nextPage() {
-    this.pageChange(Number(this.pagination.currentPage || 1) + 1);
-  }
-
-  previousPage() {
-    this.pageChange(Number(this.pagination.currentPage) - 1);
-  }
-
-  firstPage() {
-    this.pageChange(1);
-  }
-
-  lastPage() {
-    const page =
-      this.gazetteResponse && this.gazetteResponse.total_gazettes / 10;
-    if (page) {
-      this.pageChange(Math.ceil(page));
-    }
-  }
 
   ngOnInit(): void {
 
     this.route.queryParams.subscribe((params) => {
-      if (params.sort_by) {
-        this.sort_by = params.sort_by;
-      }
 
-      this.levels = [];
-      this.territories = [];
-      if (params.city) {
-        this.cities = Array.isArray(params.city) ? params.city : [params.city];
-        this.getCities();
-      }
-      this.gazetteService
-        .findAll({ ...params, territory_id: params.city })
+      this.dataSearchService
+        .findAll({ ...params, state_code: params.state_code })
         .pipe(take(1))
         .subscribe(
           (res) => {
-            this.gazetteResponse = res;
-            let pagination: Pagination = this.pagination;
-            const totalItems = Math.ceil(res.total_gazettes / 10);
-            pagination = {
-              ...pagination,
-              currentPage: params.page || 1,
-              totalItems,
-            };
-            this.pagination = pagination;
+            this.dataSearchResponse = res;
           },
           () => {
-            this.gazetteResponse = { total_gazettes: 0 } as GazetteResponse;
+            this.dataSearchResponse = { total_dataSearch: 0 } as ResponseDataSearch;
           }
         );
     });
@@ -145,10 +101,6 @@ export class SearchComponent implements OnInit {
         .pipe(take(1))
         .subscribe((res) => {
           this.territories.push(res);
-          const level = parseInt(res.level);
-          if (!this.levels.includes(level)) {
-            this.levels.push(level);
-          }
         });
     });
   }

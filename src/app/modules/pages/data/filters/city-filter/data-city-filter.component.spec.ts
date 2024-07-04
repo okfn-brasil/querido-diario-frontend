@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StateFilterComponent } from './state-filter.component';
+import { DataCityFilterComponent } from './data-city-filter.component';
 
-describe('StateFilterComponent', () => {
-  let component: StateFilterComponent;
-  let fixture: ComponentFixture<StateFilterComponent>;
+describe('CityFilterComponent', () => {
+  let component: DataCityFilterComponent;
+  let fixture: ComponentFixture<DataCityFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StateFilterComponent ]
+      declarations: [ DataCityFilterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StateFilterComponent);
+    fixture = TestBed.createComponent(DataCityFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

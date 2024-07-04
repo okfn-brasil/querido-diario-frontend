@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { DataSearch, ResponseDataSearch, DataSearchQuery,DownloadData, DownloadsLabelsData } from 'src/app/interfaces/data-search';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -25,7 +26,7 @@ export class DataSearchService {
     };
   }
 
-  resolveGazetteDownloadsData(data: DataSearch): DataSearch {
+  resolveDataSearchDownloads(data: DataSearch): DataSearch {
     const downloads: DownloadData[] = [];
     if (data.url_zip) {
       downloads.push({ value: data.url_zip, viewValue: DownloadsLabelsData.URL_ZIP})
@@ -34,41 +35,39 @@ export class DataSearchService {
     return { ...data, downloads }
   }
 
-  resolveGazettes(res: ResponseDataSearch): ResponseDataSearch {
-    const datas = res.datas.map((data: DataSearch) => this.resolveGazetteDownloadsData(data))
+  resolveDataSearch(res: ResponseDataSearch): ResponseDataSearch {
+    const datas = res.datas.map((data: DataSearch) => this.resolveDataSearchDownloads(data))
     return { ...res, datas }
   }
 
   findAll(query: DataSearchQuery): Observable<ResponseDataSearch> {
-    const { territory_id, year } = query;
-    let queryParams = {};
-    let territoryQuery = '';
+    const { territory_id, state_code } = query;
+    let queryParams: any = {};
 
-    if (territory_id && !Array.isArray(territory_id)) {
-      queryParams = { ...queryParams, territory_ids: territory_id };
-    } else if(territory_id && territory_id.length){
-      (territory_id as string[]).forEach(id => {
-        territoryQuery += '&territory_ids=' + id;
-      });
+    if (state_code && !territory_id) {
+        queryParams = { state_code: state_code };
+    } else {
+        queryParams = { territory_id: territory_id, state_code: state_code };
     }
 
-    if (year) {
-      queryParams = { ...queryParams, published_since: year };
+    let url: string;
+    if (Object.keys(queryParams).length === 0) {
+        url = new URL(`/aggregate/${state_code}`, 'http://0.0.0.0:8080').toString();
+    } else {
+        const encodedQueryString = new URLSearchParams(queryParams).toString();
+        url = new URL(`/aggregate/${state_code}?${encodedQueryString}`, 'http://0.0.0.0:8080').toString();
     }
-
-    //const encodedQueryString = new URLSearchParams(queryParams).toString();
-    const url = new URL(`/api/agregates?${territoryQuery}$`,
-    `https://queridodiario.ok.org.br`).toString();
 
     return this.http.get<ResponseDataSearch>(url).pipe(
       map((res: ResponseDataSearch) => {
-        return this.resolveGazettes(res);
+        return this.resolveDataSearch(res);
       }),
       catchError(this.handleError<ResponseDataSearch>({
-        total_dataSearch: -1,
+        total_dataSearch: 0,
         datas: [],
-        error: true,
+        error: false,
       })),
     );
-  }
+}
+
 }
