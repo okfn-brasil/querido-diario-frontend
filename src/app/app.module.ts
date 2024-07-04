@@ -116,7 +116,8 @@ import { RequestAnalysisFormComponent } from './modules/pages/area-education/req
 import { PeriodPickerComponent } from './modules/components/period-picker/period-picker.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { DataFormComponent } from './modules/components/data-form/data-form.component';
-import { StateFilterComponent } from './modules/pages/area-education/search/filters/state-filter/state-filter.component';
+import { DataSearchComponent } from './modules/pages/data-search/data-search.component';
+import { DataCityFilterComponent } from './modules/pages/data/filters/city-filter/data-city-filter.component';
 
 @NgModule({
   declarations: [
@@ -199,7 +200,8 @@ import { StateFilterComponent } from './modules/pages/area-education/search/filt
     RequestAnalysisFormComponent,
     PeriodPickerComponent,
     DataFormComponent,
-    StateFilterComponent,
+    DataSearchComponent,
+    DataCityFilterComponent,
   ],
   imports: [
     BrowserModule,
