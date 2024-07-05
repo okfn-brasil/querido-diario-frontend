@@ -23,9 +23,7 @@ export class DataComponent implements OnInit {
     this.content$ = this.contentService.find('data');
   }
 
-  getItems(currFilters: string, params?: string) {
-    this.isLoading = true;
+  searched() {
     this.hasSearched = true;
   }
-
 }
