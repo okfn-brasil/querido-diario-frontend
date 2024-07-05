@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, ElementRef, Inject, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Inject, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -14,6 +14,9 @@ import { TerritoryService } from 'src/app/services/territory/territory.service';
 export class DataFormComponent implements OnInit {
   @Input()
   form: any;
+
+  @Output()
+  searched = new EventEmitter<boolean>();
 
   timeout: ReturnType<typeof setTimeout> | undefined;
 
@@ -180,6 +183,8 @@ export class DataFormComponent implements OnInit {
     } else {
       queryParams = { ...queryParams, city: null };
     }
+
+    this.searched.emit(true);
 
     this.router.navigate(['/dados'], { queryParams });
   }
