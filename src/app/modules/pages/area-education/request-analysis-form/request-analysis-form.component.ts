@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { City } from 'src/app/interfaces/city';
 import { PeriodRange } from 'src/app/modules/components/period-picker/period-picker.component';
+import { FormSentComponent } from 'src/app/modules/components/form-sent/form-sent.component';
 import { CitiesService } from 'src/app/services/cities/cities.service';
 import { EducationGazettesService } from 'src/app/services/education-gazettes/education-gazettes.service';
+import { EducationAnalysisQuotationService } from 'src/app/services/education-quotation/education-quotation.service';
 
 @Component({
   selector: 'app-request-analysis-form',
@@ -17,10 +20,14 @@ export class RequestAnalysisFormComponent implements OnInit {
   locations: string[] = [];
   entities: string[] = [];
 
+  error: string | null = null;
+
   constructor(
     private formBuilder: FormBuilder,
     private citiesService: CitiesService,
-    private searchService: EducationGazettesService
+    private searchService: EducationGazettesService,
+    private educationAnalysisQuotationService: EducationAnalysisQuotationService,
+    private modal: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -67,5 +74,22 @@ export class RequestAnalysisFormComponent implements OnInit {
   onChangeEntities(entities: string[]) {
     this.entities = entities;
     this.form.patchValue({ entities });
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      this.educationAnalysisQuotationService.save(this.form.value).subscribe(
+        (_data) => {
+          this.modal.open(FormSentComponent, {
+            width: '382px',
+            height: '360px',
+            maxWidth: '382px',
+          });
+        },
+        (_error) => {
+          this.error = 'Erro ao enviar sugestão. Por favor, tente mais tarde.';
+        }
+      );
+    }
   }
 }
