@@ -4,7 +4,7 @@
   },
   "dados": {
     "title": "Dados",
-    "subtitle": "A página de download de arquivos XML de diários oficiais facilita o acesso e a transparência dos dados públicos. Dessa forma, um dicionário de dados serve como uma referência detalhada e centralizada, padronizando a comunicação entre desenvolvedores e stakeholders."
+    "subtitle": "A página de download de arquivos XML de diários oficiais facilita o acesso e a transparência dos dados públicos. O dicionário de dados serve como uma referência detalhada e centralizada, padronizando a comunicação entre os desenvolvedores e usuários."
   },
   "baixar": {
     "actions": [

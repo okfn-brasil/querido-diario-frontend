@@ -6,7 +6,7 @@ import { take } from 'rxjs/operators';
 import { EnvService } from 'src/app/env.service';
 import { City } from 'src/app/interfaces/city';
 
-import { DataSearch, ResponseDataSearch} from 'src/app/interfaces/data-search';
+import { DataSearchResults, ResponseDataSearch} from 'src/app/interfaces/data-search';
 import { Gazette, GazetteResponse } from 'src/app/interfaces/gazette';
 
 import { LevelDescription, Pagination, SearchResponse } from 'src/app/interfaces/search';
@@ -45,7 +45,7 @@ export class DataSearchComponent implements OnInit {
 
   gazetteResponse: GazetteResponse | null = null;
 
-  dataSearchResponse: ResponseDataSearch | null = null;
+  dataSearchResults: DataSearchResults = {} as DataSearchResults;
 
   pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
 
@@ -79,18 +79,29 @@ export class DataSearchComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.queryParams.subscribe((params) => {
+      let cities:string[] = params.city
+      console.log(params);
+      
+      this.dataSearchResults = {results:[]}
 
-      this.dataSearchService
-        .findAll({ ...params, state_code: params.state_code })
+      cities?.forEach(territory_id => {
+        this.dataSearchService
+        .findAll({ state_code:"GO", territory_id:territory_id})
         .pipe(take(1))
         .subscribe(
           (res) => {
-            this.dataSearchResponse = res;
+              console.log(res);
+              this.dataSearchResults.results.push(res);
+              
           },
           () => {
-            this.dataSearchResponse = { total_dataSearch: 0 } as ResponseDataSearch;
+            // this.dataSearchResponse = { total_dataSearch: 0 } as ResponseDataSearch;
+            console.log("a")
           }
         );
+        
+      });
+      
     });
   }
 

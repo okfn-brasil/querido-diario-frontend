@@ -2,7 +2,7 @@
   class="bg-purple-2"
   fxLayoutAlign="center"
   fxLayout="row"
-  *ngIf="dataSearchResponse && dataSearchResponse.error">
+  *ngIf="dataSearchResults && dataSearchResults.error">
   >
   <div class="container" fxLayout="column" fxLayoutGap="18px">
     <h2>Infelizmente não foi possível realizar a sua busca no momento.</h2>
@@ -21,7 +21,7 @@
   class="bg-purple-2"
   fxLayoutAlign="center"
   fxLayout="row"
-  *ngIf="dataSearchResponse && dataSearchResponse.total_dataSearch == 0">
+  *ngIf="dataSearchResults && dataSearchResults.results.length == 0">
   <div class="container" fxLayout="column" fxLayoutGap="18px">
     <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
     <p>
@@ -31,21 +31,21 @@
   </div>
 </section>
 
-<div *ngIf="dataSearchResponse && dataSearchResponse.total_dataSearch > 0">
+<div *ngIf="dataSearchResults && dataSearchResults.results.length > 0">
   <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
     <div class="container" fxLayout="column" fxLayoutGap="42px">
       <ng-container
-        *ngIf="dataSearchResponse && dataSearchResponse.total_dataSearch > 0">
+        *ngIf="dataSearchResults && dataSearchResults.results.length > 0">
         <p>
           Abaixo, estão os resultados encontrados nos diários do município
-          informado! Os dados estão organizados de maneira compactada e
+          informado. Os dados estão organizados de maneira compactada e
           disponível para download!
         </p>
       </ng-container>
 
-      <app-aggregate-data
-        [dataSearchResponse]="dataSearchResponse">
-      </app-aggregate-data>
+      <!-- <app-aggregate-data
+        [dataSearchResults]="dataSearchResults">
+      </app-aggregate-data> -->
     </div>
 
   </section>
