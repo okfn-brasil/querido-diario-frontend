@@ -1,0 +1,26 @@
+<div class="location-search" (click)="focusOnInput()" (mouseleave)="focusOutInput()">
+  <div *ngIf="selectedStates" (click)="removeState(selectedStates, $event)" class="tag">
+    {{ selectedStates.name + '( ' + selectedStates.state_code + ')' }}
+    <img src="assets/images/education/close.png" alt="fechar" />
+  </div>
+
+  <div class="text-area">
+    <div class="editable" (focus)="onHidePlaceholder()" contenteditable="true" id="state-filter-data" (keyup)="getText()" (click)="onHidePlaceholder()" (blur)="onShowPlaceholder()"></div>
+    <div class="new-place" *ngIf="showPlaceholder">{{ label }}</div>
+  </div>
+
+  <div class="dropdown" (click)="stopPropagation($event)" *ngIf="showDropdown">
+    <ng-container>
+      <div *ngIf="getStatesList().length > 0">
+        <div *ngFor="let state of getStatesList()" (click)="addState(state)">
+          {{ state.name }} ({{ state.state_code }})
+        </div>
+      </div>
+    </ng-container>
+    <!-- <div class="loading-options" *ngIf="isLoading && query.length >= 1 || loadingStates">
+      <mat-spinner></mat-spinner>
+    </div> -->
+    <div class="empty-result" *ngIf="query.length >= 1 && !getStatesList().length">
+      Nenhum resultado encontrado para sua busca
+    </div>
+</div>

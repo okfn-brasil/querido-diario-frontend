@@ -14,12 +14,12 @@ export class DataCityFilterComponent implements OnChanges {
   @Input() showCityLevel = false;
   showDropdown = false;
   isLoading = true;
-  selectedCities: City[] = [];
+  selectedCities: City | null = null;
   showPlaceholder = true;
   query = '';
   uniqueCities: City[] = [];
-  @Input() initialValue: string[] = [];
-  @Output() changeLocations: EventEmitter<string[]> = new EventEmitter();
+  @Input() initialValue: Object | null = null;
+  @Output() changeLocations: EventEmitter<City> = new EventEmitter();
   @Output() changeQuery: EventEmitter<string> = new EventEmitter();
 
   constructor(
@@ -44,18 +44,27 @@ export class DataCityFilterComponent implements OnChanges {
 
   removeCity(city: City, event: Event) {
     event.stopPropagation();
-    this.selectedCities = this.selectedCities.filter(currCity => city !== currCity);
+    if (this.selectedCities === city ){
+      this.selectedCities = null;
+    }
     this.emitLocations();
+    this.onShowPlaceholder();
   }
 
   addCity(city: City) {
     this.resetInput();
-    this.selectedCities.push(city);
+    this.selectedCities = city;
+    this.showPlaceholder = false;
     this.emitLocations();
+    this.showDropdown = false;
   }
 
   emitLocations() {
-    this.changeLocations.emit(this.selectedCities.map(city => city.territory_id))
+    if (this.selectedCities) {
+      this.changeLocations.emit(this.selectedCities);
+    } else {
+      this.changeLocations.emit(undefined);
+    }
   }
 
   focusOutInput() {
@@ -101,9 +110,5 @@ export class DataCityFilterComponent implements OnChanges {
         this.uniqueCities.push(city);
       }
     });
-
-    if(this.initialValue && this.initialValue.length) {
-      this.selectedCities = this.uniqueCities.filter(city => this.initialValue.includes(city.territory_id))
-    }
   }
 }

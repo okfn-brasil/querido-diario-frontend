@@ -112,6 +112,7 @@ import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
 import { AuthInterceptor } from './services/interceptor';
+import { DataStateFilterComponent } from './modules/pages/data/filters/state-filter/data-state-filter.component';
 
 /* custom directives */
 @NgModule({
@@ -198,6 +199,7 @@ import { AuthInterceptor } from './services/interceptor';
     DataSearchComponent,
     DataCityFilterComponent,
     AggregateDataComponent,
+    DataStateFilterComponent,
   ],
   imports: [
     BrowserModule,

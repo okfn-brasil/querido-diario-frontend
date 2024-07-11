@@ -5,6 +5,7 @@ export interface Aggregate {
   last_updated: string;
   hash_info: string;
   file_size: string;
+  created_at: string;
 }
 
 export interface ResponseDataSearch {
@@ -15,6 +16,7 @@ export interface ResponseDataSearch {
 
 export interface DataSearchResults {
   results: ResponseDataSearch[];
+  error?: Error
 }
 
 export interface DataSearchQuery {
