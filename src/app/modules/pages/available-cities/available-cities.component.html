@@ -1,11 +1,21 @@
 
-<ng-container *ngIf="content$ | async as content"> 
-    <app-container theme="light">
-        <div class="container-inner" [style.paddingTOP]="'0px'" fxLayout="column" fxLayoutGap="24px">
-          <div class="coverage-dashboard" fxHide fxShow.gt-md>
-            <iframe width="1020" height="700" src="https://datastudio.google.com/embed/reporting/10838efc-aba4-4916-b9e6-c84f6f0688f9/page/E957C"
-            frameborder="0" 
-            style="border:0" allowfullscreen>
+<ng-container *ngIf="content$ | async as content">
+    <app-container theme="light" containerClass="container-notop">
+        <div class="container-inner" [style.paddingTOP]="'24px'" fxLayout="column" fxLayoutGap="24px">
+          <div style="aspect-ratio:4/3;" fxHide fxShow.gt-md>
+            <iframe width="100%" height="100%" src="https://lookerstudio.google.com/embed/reporting/10838efc-aba4-4916-b9e6-c84f6f0688f9/page/E957C"
+            frameborder="0"
+            style="border:0"
+            scrolling="no"
+            allowfullscreen>
+            </iframe>
+          </div>
+          <div style="aspect-ratio:3/4;" fxShow fxHide.gt-md>
+            <iframe width="100%" height="100%" src="https://lookerstudio.google.com/embed/reporting/77b6b3cd-70c0-4387-a58b-32c72bc7b9b7/page/E957C"
+            frameborder="0"
+            style="border:0"
+            scrolling="no"
+            allowfullscreen>
             </iframe>
           </div>
           <app-column [gap]="10">
