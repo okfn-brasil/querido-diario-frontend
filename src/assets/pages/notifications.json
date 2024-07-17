@@ -2,9 +2,21 @@
   "list": [
     {
       "title": "Novas 9 cidades!",
+      "content": "As cidades de Jacaraú (PB), Jericó (PB), Marizópolis (PB), Pilõezinhos (PB), Riachão (PB), São José Dos Ramos (PB), Serraria (PB), Sertãozinho (PB) e Tacima (PB) foram adicionadas à plataforma!",
+      "updatedAt": "2024/07/17",
+      "isNew": true
+    },
+    {
+      "title": "Novas 9 cidades!",
+      "content": "As cidades de Aurora (CE), Canindé (CE), Caririaçu (CE), Cedro (CE), Crateús (CE), General Sampaio (CE), Hidrolândia (CE), Itaitinga (CE) e Jaguaribe (CE) foram adicionadas à plataforma!",
+      "updatedAt": "2024/07/05",
+      "isNew": false
+    },
+    {
+      "title": "Novas 9 cidades!",
       "content": "As cidades de Adustina (BA), Andorinha (BA), Anagé (BA), Almadina (BA), Abaré (BA), Carmo do Rio Claro (MG), Juatuba (MG), Onça do Pitangui (MG) e Pau dos Ferros (RN) foram adicionadas à plataforma!",
       "updatedAt": "2024/06/14",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 7 cidades!",
