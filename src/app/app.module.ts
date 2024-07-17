@@ -215,12 +215,9 @@ import { PeriodPickerComponent } from './modules/components/period-picker/period
     MatSelectModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-
     HttpClientModule,
     FlexLayoutModule,
-
     IvyCarouselModule,
-
     NgxPaginationModule,
   ],
   providers: [
