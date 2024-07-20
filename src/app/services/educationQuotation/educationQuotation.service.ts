@@ -12,6 +12,6 @@ export class EducationQuotationService {
   constructor(private http: HttpClient) {}
 
   createQuotation(data: EducationQuotation): Observable<void> {
-    return this.http.post<void>(`${educationApi}educacao/pedido-analise`, data);
+    return this.http.post<void>(`${educationApi}reports/quotation/`, data);
   }
 }

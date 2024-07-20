@@ -71,7 +71,7 @@ export class RequestAnalysisFormComponent implements OnInit {
     });
 
     this.searchService.getEntities().subscribe((results) => {
-      this.entities = results as string[];
+      this.apiEntities = results as string[];
     });
   }
 
@@ -86,7 +86,7 @@ export class RequestAnalysisFormComponent implements OnInit {
 
   onChangeThemes(themes: string[]) {
     this.themes = themes;
-    this.form.patchValue({ themes });
+    this.form.patchValue({ subthemes: themes });
   }
 
   onChangeEntities(entities: string[]) {
@@ -122,7 +122,7 @@ export class RequestAnalysisFormComponent implements OnInit {
       `;
 
       this.educationQuotationService
-        .createQuotation({ email_address: email, name, content })
+        .createQuotation({ email, name, message: content })
         .subscribe(
           (_data) => {
             this.loading = false;

@@ -1,5 +1,5 @@
 export interface EducationQuotation {
-  email_address: string;
+  email: string;
   name: string;
-  content: string;
+  message: string;
 }

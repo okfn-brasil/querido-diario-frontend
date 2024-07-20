@@ -86,7 +86,8 @@
             <div class="edu-input">
               <edu-themes-filter
                 [isModal]="false"
-                [themes]="entities"
+                [initialThemes]="entities"
+                [themes]="apiEntities"
                 (themesChange)="onChangeEntities($event)"
               ></edu-themes-filter>
             </div>
@@ -98,7 +99,10 @@
               [disabled]="loading || !form.valid"
               type="submit"
             >
-              <mat-spinner *ngIf="loading; else send"></mat-spinner>
+              <mat-spinner
+                *ngIf="loading; else send"
+                [diameter]="20"
+              ></mat-spinner>
               <ng-template #send> Enviar </ng-template>
             </button>
           </div>
