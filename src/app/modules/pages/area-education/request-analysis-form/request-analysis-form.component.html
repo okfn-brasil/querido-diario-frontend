@@ -10,19 +10,19 @@
         <app-column [gap]="24">
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">Nome</div>
+              <div class="title">Nome (*)</div>
               <input matInput formControlName="name" required />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">E-mail</div>
+              <div class="title">E-mail (*)</div>
               <input type="email" matInput formControlName="email" required />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">Telefone</div>
+              <div class="title">Telefone (*)</div>
               <input
                 type="tel"
                 matInput
@@ -34,7 +34,7 @@
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">Palavras-chave</div>
+              <div class="title">Palavras-chave (*)</div>
               <div class="label">
                 Informe as palavras chave que deseja monitorar, separadas por
                 vírgula
@@ -44,7 +44,7 @@
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">Descrição</div>
+              <div class="title">Descrição (*)</div>
               <div class="label">
                 Explique os detalhes do tipo de informação que deseja
                 compreender a partir da análise
@@ -57,7 +57,7 @@
             </div>
           </mat-form-field>
           <div class="field">
-            <div class="title">Município</div>
+            <div class="title">Município (*)</div>
             <div class="label">Digite um local</div>
             <edu-city-filter
               [showAll]="true"

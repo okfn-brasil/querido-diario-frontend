@@ -114,7 +114,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
 import { PeriodPickerComponent } from './modules/components/period-picker/period-picker.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -220,13 +220,11 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     FlexLayoutModule,
     IvyCarouselModule,
     NgxPaginationModule,
-    NgxMaskDirective,
-    NgxMaskPipe,
+    NgxMaskModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     EnvServiceProvider,
-    provideNgxMask(),
   ],
   bootstrap: [AppComponent],
 })

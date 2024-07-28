@@ -34,7 +34,7 @@
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "ngx-csv": "^0.3.2",
-    "ngx-mask": "16.4.2",
+    "ngx-mask": "11.0.0",
     "ngx-pagination": "^5.1.0",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",

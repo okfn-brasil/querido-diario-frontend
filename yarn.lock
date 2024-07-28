@@ -5915,12 +5915,12 @@ ngx-csv@^0.3.2:
   resolved "https://registry.yarnpkg.com/ngx-csv/-/ngx-csv-0.3.2.tgz#d3f2464829c50e943e833fa13f5891fc27008f90"
   integrity sha512-rtR5kUUxH1RgZegyRuFaoy3KoeRnP4oi6lHTZkNWoQ19bpVqXOwMFOkdwWjElI4RsMEFCnaFcJQ5iARFsjE86Q==
 
-ngx-mask@16.4.2:
-  version "16.4.2"
-  resolved "https://registry.yarnpkg.com/ngx-mask/-/ngx-mask-16.4.2.tgz#d2b85d4a5f19118eff554cd0bfb94ef514916eff"
-  integrity sha512-mQjcsTpctGu6HYKLf6/gjEUvW65D+46xvPIMYz0BDZXqHXrqKVluHXR3KF++TNOfdLLXwW6SvuHWd91NZN/C1A==
+ngx-mask@11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/ngx-mask/-/ngx-mask-11.0.0.tgz#45059d10e66f4e062eafcc12a62815a972fdd423"
+  integrity sha512-5Z6SVpQu71P5wN9U6RJRWRl+irS6imLN1oTQXzS4RLPIoW6L/ayIjZsijEs7bnyd9/p2lzn+YEynSKrNQEhbpw==
   dependencies:
-    tslib "^2.3.0"
+    tslib "^2.0.0"
 
 ngx-pagination@^5.1.0:
   version "5.1.1"
