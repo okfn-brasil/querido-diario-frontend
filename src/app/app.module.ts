@@ -113,7 +113,8 @@ import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
 import { PeriodPickerComponent } from './modules/components/period-picker/period-picker.component';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -219,10 +220,13 @@ import { PeriodPickerComponent } from './modules/components/period-picker/period
     FlexLayoutModule,
     IvyCarouselModule,
     NgxPaginationModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     EnvServiceProvider,
+    provideNgxMask(),
   ],
   bootstrap: [AppComponent],
 })

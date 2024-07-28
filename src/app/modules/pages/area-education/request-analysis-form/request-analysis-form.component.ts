@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EntityService } from '@datorama/akita';
 import { City } from 'src/app/interfaces/city';
-import { EducationQuotation } from 'src/app/interfaces/education-quotation';
 import { FormSentComponent } from 'src/app/modules/components/form-sent/form-sent.component';
 import { PeriodRange } from 'src/app/modules/components/period-picker/period-picker.component';
 import { CitiesService } from 'src/app/services/cities/cities.service';
@@ -110,7 +108,6 @@ export class RequestAnalysisFormComponent implements OnInit {
         subthemes,
       } = this.form.value;
       const content = `
-        Nome: ${name} \n
         Telefone: ${phone} \n
         Palavras-chave: ${keywords.toString()} \n
         Descrição: ${description} \n
@@ -135,7 +132,7 @@ export class RequestAnalysisFormComponent implements OnInit {
           (_error) => {
             this.loading = false;
             this.snackbar.open(
-              'Erro ao enviar sugestão. Por favor, tente mais tarde.',
+              'Erro ao enviar pedido. Por favor, tente mais tarde.',
               'Fechar'
             );
           }

@@ -11,19 +11,25 @@
           <mat-form-field appearance="legacy">
             <div class="field">
               <div class="title">Nome</div>
-              <input matInput formControlName="name" />
+              <input matInput formControlName="name" required />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
               <div class="title">E-mail</div>
-              <input type="email" matInput formControlName="email" />
+              <input type="email" matInput formControlName="email" required />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
               <div class="title">Telefone</div>
-              <input type="tel" matInput formControlName="phone" />
+              <input
+                type="tel"
+                matInput
+                formControlName="phone"
+                mask="(00) 0 0000-0000"
+                required
+              />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
@@ -33,7 +39,7 @@
                 Informe as palavras chave que deseja monitorar, separadas por
                 vírgula
               </div>
-              <input matInput formControlName="keywords" />
+              <input matInput formControlName="keywords" required />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
@@ -43,7 +49,11 @@
                 Explique os detalhes do tipo de informação que deseja
                 compreender a partir da análise
               </div>
-              <textarea matInput formControlName="description"></textarea>
+              <textarea
+                matInput
+                formControlName="description"
+                required
+              ></textarea>
             </div>
           </mat-form-field>
           <div class="field">
