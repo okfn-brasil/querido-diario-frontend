@@ -39,7 +39,7 @@ export class SuggestionComponent implements OnInit {
           });
         },
         (_error) => {
-          this.error = 'Erro ao enviar sugestão. Por favor, tenta mais tarde.';
+          this.error = 'Erro ao enviar sugestão. Por favor, tente mais tarde.';
         }
       );
     }
