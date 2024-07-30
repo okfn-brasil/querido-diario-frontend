@@ -113,7 +113,6 @@ import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
 import { PeriodPickerComponent } from './modules/components/period-picker/period-picker.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({

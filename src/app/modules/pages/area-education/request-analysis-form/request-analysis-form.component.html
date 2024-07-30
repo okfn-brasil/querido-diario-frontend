@@ -10,41 +10,31 @@
         <app-column [gap]="24">
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">Nome (*)</div>
+              <div class="title">Nome</div>
               <input matInput formControlName="name" required />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">E-mail (*)</div>
+              <div class="title">E-mail</div>
               <input type="email" matInput formControlName="email" required />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">Telefone (*)</div>
+              <div class="title">Telefone</div>
               <input
                 type="tel"
                 matInput
                 formControlName="phone"
-                mask="(00) 0 0000-0000"
+                mask="(00) 0000-0000||(00) 0 0000-0000"
                 required
               />
             </div>
           </mat-form-field>
           <mat-form-field appearance="legacy">
             <div class="field">
-              <div class="title">Palavras-chave (*)</div>
-              <div class="label">
-                Informe as palavras chave que deseja monitorar, separadas por
-                vírgula
-              </div>
-              <input matInput formControlName="keywords" required />
-            </div>
-          </mat-form-field>
-          <mat-form-field appearance="legacy">
-            <div class="field">
-              <div class="title">Descrição (*)</div>
+              <div class="title">Descrição</div>
               <div class="label">
                 Explique os detalhes do tipo de informação que deseja
                 compreender a partir da análise
@@ -56,8 +46,18 @@
               ></textarea>
             </div>
           </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <div class="field">
+              <div class="title">Palavras-chave</div>
+              <div class="label">
+                Informe as palavras chave que deseja monitorar, separadas por
+                vírgula
+              </div>
+              <input matInput formControlName="keywords" required />
+            </div>
+          </mat-form-field>
           <div class="field">
-            <div class="title">Município (*)</div>
+            <div class="title">Município</div>
             <div class="label">Digite um local</div>
             <edu-city-filter
               [showAll]="true"
@@ -67,14 +67,14 @@
             ></edu-city-filter>
           </div>
           <div class="field">
-            <div class="title">Período de tempo</div>
+            <div class="title">Período de tempo (opcional)</div>
             <app-period-picker
               (rangeSelected)="changePeriod($event)"
             ></app-period-picker>
           </div>
 
           <div class="field">
-            <div class="title theme">Subtema</div>
+            <div class="title theme">Subtema (opcional)</div>
             <div class="sub-title">
               Escolha uma ou mais categorias para filtrar pelo tipo de
               tecnologia.
@@ -88,7 +88,7 @@
           </div>
 
           <div class="field">
-            <div class="title">Envolvidos</div>
+            <div class="title">Envolvidos (opcional)</div>
             <div class="sub-title">
               Escolha uma ou mais categorias para filtrar por termos relevantes
               mencionados.

@@ -107,16 +107,21 @@ export class RequestAnalysisFormComponent implements OnInit {
         entities,
         subthemes,
       } = this.form.value;
-      const content = `
-        Telefone: ${phone} \n
-        Palavras-chave: ${keywords.toString()} \n
-        Descrição: ${description} \n
-        Cidade: ${city} \n
-        De: ${from} \n
-        Para: ${to} \n
-        Entidades: ${entities.toString()} \n
-        Subtemas: ${subthemes.toString()} \n
-      `;
+      let city_complete = this.cities
+        .filter(
+          cityInfo => city.includes(cityInfo.territory_id))
+        .map(
+          cityInfo => `${cityInfo.territory_name} (${cityInfo.state_code})`);
+      const content = [
+        `Telefone: ${phone}`,
+        `Descrição: ${description}`,
+        `Palavras-chave: ${keywords.toString()}`,
+        `Cidade: ${city_complete}`,
+        `De: ${from}`,
+        `Até: ${to}`,
+        `Entidades: ${entities.toString()}`,
+        `Subtemas: ${subthemes.toString()}`,
+      ].join('\n');
 
       this.educationQuotationService
         .createQuotation({ email, name, message: content })
