@@ -5,7 +5,7 @@
   </div>
 
   <div class="text-area">
-    <div class="editable" (focus)="onHidePlaceholder()" contenteditable="true" id="location-filter-data" (keyup)="getText()" (click)="onHidePlaceholder()" (blur)="onShowPlaceholder()">
+    <div class="editable" [class.disabled]="disabled"  [attr.contenteditable]="!disabled" (focus)="onHidePlaceholder()" contenteditable="true" id="location-filter-data" (keyup)="getText()" (click)="onHidePlaceholder()" (blur)="onShowPlaceholder()" (keydown)="blockTyping($event)">
     </div>
     <div class="new-place" *ngIf="showPlaceholder">{{ label }}</div>
   </div>
