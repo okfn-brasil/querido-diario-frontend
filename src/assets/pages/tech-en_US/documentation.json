@@ -10,7 +10,7 @@
     ],
     "images": [
       {
-        "src": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documentacao-tecnica/arquitetura/architecture.png",
+        "src": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/docs/qd-architecture.png",
         "height": "612px",
         "heightXs": "306px"
       }
