@@ -12,6 +12,7 @@ export class DataCityFilterComponent implements OnChanges {
   @Input() loadingCities = false;
   @Input() showAll = false;
   @Input() showCityLevel = false;
+  @Input() disabled: boolean = false; 
   showDropdown = false;
   isLoading = true;
   selectedCities: City | null = null;
@@ -34,12 +35,14 @@ export class DataCityFilterComponent implements OnChanges {
   onShowPlaceholder() {
     setTimeout(() => {
       this.resetInput();
-      this.showPlaceholder = true;
+      this.showPlaceholder = !this.selectedCities;
     }, 300);
   }
 
   onHidePlaceholder() {
-    this.showPlaceholder = false;
+    if (!this.disabled) {
+      this.showPlaceholder = false;
+    }
   }
 
   removeCity(city: City, event: Event) {
@@ -72,11 +75,13 @@ export class DataCityFilterComponent implements OnChanges {
   }
 
   focusOnInput() {
-    let container = document.getElementById('location-filter-data')
-    if(container) {
-      container.focus();
+    if (!this.disabled) { 
+      let container = document.getElementById('location-filter-data');
+      if (container) {
+        container.focus();
+      }
+      this.showDropdown = true;
     }
-    this.showDropdown = true;
   }
 
   resetInput() {
@@ -110,5 +115,11 @@ export class DataCityFilterComponent implements OnChanges {
         this.uniqueCities.push(city);
       }
     });
+  }
+
+  blockTyping(event: KeyboardEvent) {
+    if (this.disabled) {
+      event.preventDefault();
+    }
   }
 }

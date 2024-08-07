@@ -10,6 +10,7 @@ import { States, states } from 'src/app/interfaces/state';
 export class DataStateFilterComponent {
   @Input() states_form: States[] = [];
   @Input() label: string = 'Novo local...';
+  @Input() disabled: boolean = false; 
   showDropdown = false;
   isLoading = true;
   selectedStates: States | null = null;
@@ -28,12 +29,14 @@ export class DataStateFilterComponent {
   onShowPlaceholder() {
     setTimeout(() => {
       this.resetInput();
-      this.showPlaceholder = true;
+      this.showPlaceholder = !this.selectedStates;
     }, 300);
   }
 
   onHidePlaceholder() {
-    this.showPlaceholder = false;
+    if (!this.disabled) {
+      this.showPlaceholder = false;
+    }
   }
 
   removeState(state: States, event: Event) {
@@ -66,11 +69,13 @@ export class DataStateFilterComponent {
   }
 
   focusOnInput() {
-    let container = document.getElementById('state-filter-data')
-    if(container) {
-      container.focus();
+    if (!this.disabled) { 
+      let container = document.getElementById('state-filter-data');
+      if (container) {
+        container.focus();
+      }
+      this.showDropdown = true;
     }
-    this.showDropdown = true;
   }
 
   resetInput() {
@@ -95,4 +100,9 @@ export class DataStateFilterComponent {
     return [];
   }
 
+  blockTyping(event: KeyboardEvent) {
+    if (this.disabled) {
+      event.preventDefault();
+    }
+  }
 }

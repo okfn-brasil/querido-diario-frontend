@@ -32,6 +32,9 @@ export class DataFormComponent implements OnInit {
   loadingCities = false;
   loadingStates = false;
 
+  isCityDisabled: boolean = false;
+  isStateDisabled: boolean = false;
+
   @ViewChild('cityField') cityField!: ElementRef;
   @ViewChild('stateField') stateField!: ElementRef;
 
@@ -179,10 +182,14 @@ export class DataFormComponent implements OnInit {
   onChangeCity(location: City) {
     console.log(location)
     this.cityQuery = location;
+    this.isStateDisabled = !!location;
+    this.isCityDisabled = !location;
   }
 
   onChangeState(state: string) {
     this.stateQuery = state;
+    this.isCityDisabled = !!state;
+    this.isStateDisabled = !state;
   }
 
   onChangeQuery(query: string) {
