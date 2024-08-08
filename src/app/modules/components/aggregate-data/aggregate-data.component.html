@@ -1,22 +1,22 @@
-<div *ngIf="dataSearchResponse" class="aggregate-results">
-  <div class="aggregate"
-    *ngFor="let territoryId of territories; let i= index">
+<div class="aggregate-results">
+  <div class="aggregate">
 
     <div fxLayout="row" fxLayoutAlign="space-between">
 
       <div class="territory-name">
         <div>
           <h2 class="title">
-            Diários Oficiais
-            {{getCityName(territoryId)}}
+            Diários Oficiais Agregados: 
+            {{name}}
           </h2>
         </div>
       </div>
 
       <div class="download-button">
-        <button click class="btn-download"><img
-            src="../../../../assets/icons/zip-folder.png" alt="download">
-          Baixar</button>
+        <button (click)="getSelectedYearData()?.file_path" class="btn-download">
+          <img src="../../../../assets/icons/zip-folder.png" alt="download">
+          Baixar
+        </button>
       </div>
 
     </div>
@@ -24,15 +24,14 @@
     <div class="aggregate-data" fxLayout="row" fxLayoutAlign="space-between">
       <div class="year-selection">
         <h2 class="title">Ano</h2>
-        <div class="year-list"
-          [id]="territoryId">
+        <div class="year-list">
           <div class="year"
-            *ngFor="let year of territoryYears[territoryId]; let idx = index">
+            *ngFor="let year of territoryYears; let idx = index">
             <button (click)="selectYear($event)"
               class="year-button"
               [ngClass]="{'selected' : idx==0}">{{year}}</button>
           </div>
-          <div *ngIf="territoryYears[territoryId].length > 5">
+          <div *ngIf="territoryYears.length > 5">
             <p class="year">Mais ...</p>
           </div>
         </div>
@@ -48,26 +47,27 @@
           <div class="info-field last-data-update">
             <div class="field">Última atualização dos dados</div>
             <div
-              class="value">{{getSelectedYearData(territoryId)?.last_updated}}</div>
+              class="value">{{getSelectedYearData()?.last_updated}}</div>
           </div>
 
           <div class="info-field last-metadata-update">
-            <div class="field">Última atualização dos metadados</div>
+            <div class="field">Hora da última atualização</div>
             <div
-              class="value">{{getSelectedYearData(territoryId)?.last_updated}}</div>
+              class="value">{{getSelectedYearData()?.last_updated}}</div>
           </div>
 
-          <div class="info-field creation-date">
+          <!-- <div class="info-field creation-date">
             <div
               class="field">Data de criação</div>
             <div
-              class="value">{{getSelectedYearData(territoryId)?.created_at}}</div>
-          </div>
+              class="value">{{getSelectedYearData()?.created_at}}</div>
+          </div> -->
 
           <div class="info-field file-size">
             <div class="field">Tamanho do arquivo</div>
-            <div class="value">{{getSelectedYearData(territoryId)?.file_size}}
-              MB</div>
+            <div class="value">
+              {{getSelectedYearData()?.file_size_mb}} MB
+            </div>
           </div>
 
         </div>

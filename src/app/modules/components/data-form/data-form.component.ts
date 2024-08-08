@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
+import { AggregateService } from 'src/app/services/data/data.service';
 import { States } from 'src/app/interfaces/state';
 import { City } from 'src/app/interfaces/city';
 
@@ -47,6 +48,7 @@ export class DataFormComponent implements OnInit {
 
   constructor(
     private territoryService: TerritoryService,
+    private aggregateService: AggregateService,
     private router: Router,
     private route: ActivatedRoute,
     private titleService: Title,
@@ -58,9 +60,8 @@ export class DataFormComponent implements OnInit {
   ngOnInit(): void {
     this.subscriptions.push(
       this.route.queryParams.subscribe((params) => {
-        const { city, state } = params;
+        const { state, city } = params;
         this.cityQuery = city;
-        this.stateQuery = state;
         this.selectedCities = [];
         this.selectedStates = [];
 

@@ -2,12 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { DataSearchQuery, ResponseDataSearch } from 'src/app/interfaces/data-search';
+import { AggregateQuery, ResponseAggregate } from 'src/app/interfaces/data-search';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DataSearchService {
+export class AggregateService {
   constructor(private http: HttpClient) {}
 
   /**
@@ -25,33 +25,27 @@ export class DataSearchService {
     };
   }
 
-  findAll(query: DataSearchQuery): Observable<ResponseDataSearch> {
+  findAll(query: AggregateQuery): Observable<ResponseAggregate> {
     const { territory_id, state_code } = query;
     let queryParams: any = {};
 
     let url: string;
 
-    if (state_code && !territory_id) {
+    if (!territory_id) {
       queryParams = { state_code: state_code };
-      url = new URL(
-        `/aggregate/${state_code}`,
-        'http://0.0.0.0:8080'
-      ).toString();
+      url = new URL(`/aggregates/${state_code}`,'http://0.0.0.0:8080').toString();
     } else {
       queryParams = { territory_id: territory_id };
       const encodedQueryString = new URLSearchParams(queryParams).toString();
-      url = new URL(
-        `/aggregate/${state_code}?${encodedQueryString}`,
-        'http://0.0.0.0:8080'
-      ).toString();
+      url = new URL(`/aggregates/${state_code}?${encodedQueryString}`,'http://0.0.0.0:8080').toString();
     }
 
-    return this.http.get<ResponseDataSearch>(url).pipe(
-      map((res: ResponseDataSearch) => {
+    return this.http.get<ResponseAggregate>(url).pipe(
+      map((res: ResponseAggregate) => {
         return res;
       }),
       catchError(
-        this.handleError<ResponseDataSearch>({
+        this.handleError<ResponseAggregate>({
           state_code: '',
           territory_id: '',
           aggregates: [],

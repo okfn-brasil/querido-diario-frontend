@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Aggregate, ResponseDataSearch } from 'src/app/interfaces/data-search';
+import { Aggregate, ResponseAggregate } from 'src/app/interfaces/data-search';
+import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 
 @Component({
@@ -8,48 +9,41 @@ import { TerritoryService } from 'src/app/services/territory/territory.service';
   styleUrls: ['./aggregate-data.component.sass'],
 })
 export class AggregateDataComponent implements OnInit {
-  @Input()
-  dataSearchResponse: ResponseDataSearch | null = null;
+  @Input() aggregateResults: ResponseAggregate = {} as ResponseAggregate;
 
-  territoriesData: any = {};
-  territoryYears: any = {};
-  territories: string[] = [];
+  territorieData: Territory = {} as Territory;
+  territoryYears: string[] = [];
+  name:string = ""
 
   constructor(private territoryService: TerritoryService) {}
 
   ngOnInit(): void {
-    this.loadTerritories();
+    this.loadData();
+    this.filterYears();
   }
 
-  loadTerritories() {
-    this.dataSearchResponse?.aggregates.forEach((aggregate) => {
-      let territory: any = {};
-      territory[aggregate.year] = aggregate;
+  loadData():void{
 
+    if(this.aggregateResults.territory_id){
       this.territoryService
-        .findOne({ territoryId: aggregate.territory_id })
-        .subscribe((response) => {
-          this.territoriesData[aggregate.territory_id] = {
-            ...this.territoriesData[aggregate.territory_id],
-            ...territory,
-            territory_name: response.territory_name,
-          };
-        });
-      if (!this.territoryYears[aggregate.territory_id]) {
-        this.territoryYears[aggregate.territory_id] = [];
-      }
-      this.territoryYears[aggregate.territory_id]?.push(aggregate.year);
+      .findOne({ territoryId: this.aggregateResults.territory_id })
+      .subscribe((response) => {
+        this.territorieData = response
+        this.name = response.territory_name +" - "+response.state_code
+      });
+    }else{
+      this.name = this.aggregateResults.state_code
+    }
 
-      if (!this.territories.includes(aggregate.territory_id)) {
-        this.territories.push(aggregate.territory_id);
-      }
-    });
   }
 
-  getCityName(territoryId: string) {
-    return this.territoriesData[territoryId]
-      ? ' de ' + this.territoriesData[territoryId]?.territory_name
-      : ' Agregados';
+  filterYears():void{
+    this.aggregateResults?.aggregates.forEach((val)=>{
+      if(this.territoryYears.indexOf(val.year) === -1){
+        this.territoryYears.push(val.year)
+      }
+    })
+    console.log(this.territoryYears)
   }
 
   selectYear(event: MouseEvent) {
@@ -65,24 +59,27 @@ export class AggregateDataComponent implements OnInit {
     targetElement.classList.add('selected');
   }
 
-  getSelectedYear(territoryId: string) {
-    let territoryYearElement = document.getElementById(territoryId);
-    let selectedYear = territoryYearElement?.querySelector('.selected');
+  getSelectedYear() {
+    let selectedYear = document.querySelector('.selected');
     if (!selectedYear) {
       return null;
     }
     return selectedYear?.textContent;
   }
 
-  getSelectedYearData(territoryId: string): Aggregate | null {
-    if (!this.territoriesData[territoryId]) {
-      return null;
-    }
-
-    let selectedYear = this.getSelectedYear(territoryId);
+  getSelectedYearData(): Aggregate | null {
+    let selectedYear = this.getSelectedYear();
     if (!selectedYear) {
       return null;
     }
-    return this.territoriesData[territoryId][selectedYear];
+    
+    let data = this.aggregateResults?.aggregates
+    .find(agg => agg.year === selectedYear);
+  
+    if(!data){
+      return null
+    }
+
+    return data;
   }
 }

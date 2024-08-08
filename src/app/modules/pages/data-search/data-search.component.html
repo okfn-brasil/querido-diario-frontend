@@ -2,40 +2,19 @@
   class="bg-purple-2"
   fxLayoutAlign="center"
   fxLayout="row"
-  *ngIf="dataSearchResults && dataSearchResults.error">
-  >
-  <div class="container" fxLayout="column" fxLayoutGap="18px">
-    <h2>Infelizmente não foi possível realizar a sua busca no momento.</h2>
-    <p>
-      Um problema com a nossa base de documentos ou com a sua conexão impediu
-      a conclusão da pesquisa.
-    </p>
-    <p>
-      Verifique seu acesso à internet e tente novamente, ou refaça sua busca
-      mais tarde.
-    </p>
-  </div>
-</section>
-
-<section
-  class="bg-purple-2"
-  fxLayoutAlign="center"
-  fxLayout="row"
-  *ngIf="dataSearchResults && dataSearchResults.results.length == 0">
+  *ngIf="aggregateResultslength===0">
   <div class="container" fxLayout="column" fxLayoutGap="18px">
     <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
     <p>
-      Confira a grafia das palavras, tente outros termos ou palavras mais
-      genéricas.
+      ababa
     </p>
   </div>
 </section>
 
-<div *ngIf="dataSearchResults && dataSearchResults.results.length > 0">
+<div *ngIf="aggregateResultslength">
   <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
     <div class="container" fxLayout="column" fxLayoutGap="42px">
-      <ng-container
-        *ngIf="dataSearchResults && dataSearchResults.results.length > 0">
+      <ng-container>
         <p>
           Abaixo, estão os resultados encontrados nos diários do município
           informado. Os dados estão organizados de maneira compactada e
@@ -43,9 +22,9 @@
         </p>
       </ng-container>
 
-      <!-- <app-aggregate-data
-        [dataSearchResults]="dataSearchResults">
-      </app-aggregate-data> -->
+      <app-aggregate-data
+        [aggregateResults]="aggregateResults">
+      </app-aggregate-data>
     </div>
 
   </section>
