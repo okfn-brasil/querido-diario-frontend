@@ -2,6 +2,7 @@
   <app-row [flex]="true" [gap]="16">
     <data-state-filter
       [initialValue]="stateQuery"
+      [disabled]="isStateDisabled"
       label="Estado"
       class="state-input"
       (changeLocations)="onChangeState($event)"
@@ -11,6 +12,7 @@
     <data-city-filter
       [initialValue]="cityQuery"
       [loadingCities]="loadingCities"
+      [disabled]="isCityDisabled"
       label="Município"
       class="city-input"
       [cities]="getCityList()"

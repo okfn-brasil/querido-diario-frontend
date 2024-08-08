@@ -1,18 +1,15 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PaginationInstance } from 'ngx-pagination';
 import { Observable, of } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { EnvService } from 'src/app/env.service';
 import { City } from 'src/app/interfaces/city';
 
-import { DataSearchResults, ResponseDataSearch} from 'src/app/interfaces/data-search';
-import { Gazette, GazetteResponse } from 'src/app/interfaces/gazette';
+import { ResponseAggregate} from 'src/app/interfaces/data-search';
 
-import { LevelDescription, Pagination, SearchResponse } from 'src/app/interfaces/search';
+import { LevelDescription, SearchResponse } from 'src/app/interfaces/search';
 import { Territory } from 'src/app/interfaces/territory';
-import { GazetteService } from 'src/app/services/gazette/gazette.service';
-import { DataSearchService } from 'src/app/services/data/data.service';
+import { AggregateService } from 'src/app/services/data/data.service';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 
 @Component({
@@ -26,7 +23,7 @@ export class DataSearchComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private territoryService: TerritoryService,
-    private dataSearchService: DataSearchService,
+    private aggregateService: AggregateService,
   ) {}
 
   term: string | undefined = undefined;
@@ -43,64 +40,26 @@ export class DataSearchComponent implements OnInit {
 
   territories: Territory[] = [];
 
-  gazetteResponse: GazetteResponse | null = null;
-
-  dataSearchResults: DataSearchResults = {} as DataSearchResults;
-
-  pagination: Pagination = { itemsPerPage: 10, currentPage: 1 };
+  aggregateResults: ResponseAggregate = {} as ResponseAggregate;
+  aggregateResultslength:number = 0
 
   @Output() pageBoundsCorrection = new EventEmitter();
-
-  public config: PaginationInstance = {
-    id: 'custom',
-    itemsPerPage: 10,
-    currentPage: 1,
-  };
-
-  orderOptions = [
-    {
-      viewValue: 'Relevância',
-      value: 'relevance',
-    },
-    {
-      viewValue: 'Mais recentes',
-      value: 'descending_date',
-    },
-    {
-      viewValue: 'Mais antigos',
-      value: 'ascending_date',
-    },
-  ];
-
-  p: number[] = [];
-
-  sort_by: string = 'relevance';
 
   ngOnInit(): void {
 
     this.route.queryParams.subscribe((params) => {
-      let cities:string[] = params.city
-      console.log(params);
+      const {state_code, territory_id} = params
       
-      this.dataSearchResults = {results:[]}
+      this.aggregateResults = {} as ResponseAggregate
 
-      cities?.forEach(territory_id => {
-        this.dataSearchService
-        .findAll({ state_code:"GO", territory_id:territory_id})
-        .pipe(take(1))
-        .subscribe(
-          (res) => {
-              console.log(res);
-              this.dataSearchResults.results.push(res);
-              
-          },
-          () => {
-            // this.dataSearchResponse = { total_dataSearch: 0 } as ResponseDataSearch;
-            console.log("a")
-          }
-        );
-        
-      });
+      this.aggregateService
+      .findAll({territory_id:territory_id, state_code:state_code, })
+      .pipe(take(1))
+      .subscribe((res) => {
+          this.aggregateResults=res;
+          this.aggregateResultslength = res.aggregates.length
+        }
+      );
       
     });
   }
