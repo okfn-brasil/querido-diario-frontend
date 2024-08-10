@@ -7,7 +7,7 @@ import { ContentService } from 'src/app/services/content/content.service';
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.sass'],
 })
-export class DataComponent implements OnInit {
+export class AggregateComponent implements OnInit {
   content$: Observable<any> = of(null);
   isLoading = false;
   hasSearched = false;

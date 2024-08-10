@@ -5,11 +5,11 @@ import { take } from 'rxjs/operators';
 import { EnvService } from 'src/app/env.service';
 import { City } from 'src/app/interfaces/city';
 
-import { ResponseAggregate} from 'src/app/interfaces/data-search';
+import { ResponseAggregate} from 'src/app/interfaces/aggregate';
 
 import { LevelDescription, SearchResponse } from 'src/app/interfaces/search';
 import { Territory } from 'src/app/interfaces/territory';
-import { AggregateService } from 'src/app/services/data/data.service';
+import { AggregateService } from 'src/app/services/aggregate/aggregate.service';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 
 @Component({
@@ -17,7 +17,7 @@ import { TerritoryService } from 'src/app/services/territory/territory.service';
   templateUrl: './data-search.component.html',
   styleUrls: ['./data-search.component.sass'],
 })
-export class DataSearchComponent implements OnInit {
+export class AggregateSearchComponent implements OnInit {
   constructor(
     private env: EnvService,
     private router: Router,

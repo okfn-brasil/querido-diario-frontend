@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { AggregateQuery, ResponseAggregate } from 'src/app/interfaces/data-search';
+import { AggregateQuery, ResponseAggregate } from 'src/app/interfaces/aggregate';
 
 @Injectable({
   providedIn: 'root',

@@ -3,8 +3,8 @@
     <app-container theme="light" fxFill>
       <mat-spinner *ngIf="loading"></mat-spinner>
     </app-container>
-
   </ng-template>
+
   <ng-container *ngIf="content$ | async as content; else loading">
     <app-container theme="light">
       <div class="container-inner form-search-container">
@@ -20,12 +20,11 @@
       <h3 class="subtitle">{{ content.dados.subtitle }}</h3>
       <app-row *ngFor="let action of content.baixar.actions" [gap]="8">
         <div class="center">
-          <a class="btn-secondary" [routerLink]="action.to">
+          <a class="btn-secondary" [href]="action.to" target="_blank">
             {{ action.text }}
           </a>
         </div>
       </app-row>
-
     </app-container>
 
     <app-container [gap]="34" theme="dark">

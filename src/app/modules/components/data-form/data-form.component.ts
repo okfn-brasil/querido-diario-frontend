@@ -5,7 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
-import { AggregateService } from 'src/app/services/data/data.service';
 import { States } from 'src/app/interfaces/state';
 import { City } from 'src/app/interfaces/city';
 
@@ -14,7 +13,7 @@ import { City } from 'src/app/interfaces/city';
   templateUrl: './data-form.component.html',
   styleUrls: ['./data-form.component.sass'],
 })
-export class DataFormComponent implements OnInit {
+export class AggregateFormComponent implements OnInit {
   @Input()
   form: any;
 
@@ -48,7 +47,6 @@ export class DataFormComponent implements OnInit {
 
   constructor(
     private territoryService: TerritoryService,
-    private aggregateService: AggregateService,
     private router: Router,
     private route: ActivatedRoute,
     private titleService: Title,
@@ -177,20 +175,16 @@ export class DataFormComponent implements OnInit {
     this.searched.emit(true);
 
     this.router.navigate(['/dados'], { queryParams });
-    console.log(queryParams)
   }
 
   onChangeCity(location: City) {
-    console.log(location)
     this.cityQuery = location;
     this.isStateDisabled = !!location;
-    this.isCityDisabled = !location;
   }
 
   onChangeState(state: string) {
     this.stateQuery = state;
     this.isCityDisabled = !!state;
-    this.isStateDisabled = !state;
   }
 
   onChangeQuery(query: string) {

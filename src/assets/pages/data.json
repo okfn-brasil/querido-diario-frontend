@@ -10,7 +10,7 @@
     "actions": [
       {
         "text": "Baixar Dicionário de Dados",
-        "to": "https://www.catarse.me/queridodiario-okbr",
+        "to": "assets/pdf/dicionario-de-dados.pdf",
         "style": "btn-secondary"
       }
     ]

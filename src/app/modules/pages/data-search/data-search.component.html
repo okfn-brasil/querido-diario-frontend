@@ -3,17 +3,17 @@
   fxLayoutAlign="center"
   fxLayout="row"
   *ngIf="aggregateResultslength===0">
-  <div class="container" fxLayout="column" fxLayoutGap="18px">
+  <div class="container-no-results" fxLayout="column" fxLayoutGap="18px">
     <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
     <p>
-      ababa
+      Confira a busca realizada. Verifique a grafia e tente novamente.
     </p>
   </div>
 </section>
 
 <div *ngIf="aggregateResultslength">
   <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
-    <div class="container" fxLayout="column" fxLayoutGap="42px">
+    <div class="container-results" fxLayout="column" fxLayoutGap="42px">
       <ng-container>
         <p>
           Abaixo, estão os resultados encontrados nos diários do município

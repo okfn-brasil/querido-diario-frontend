@@ -1,14 +1,13 @@
 <div class="aggregate-results">
   <div class="aggregate">
-
     <div fxLayout="row" fxLayoutAlign="space-between">
-
       <div class="territory-name">
         <div>
           <h2 class="title">
-            Diários Oficiais Agregados: 
+            Diários Oficiais agregados de 
             {{name}}
           </h2>
+          <p>A tabela apresenta informações sobre o arquivo xml a ser baixado.</p>
         </div>
       </div>
 
@@ -18,7 +17,6 @@
           Baixar
         </button>
       </div>
-
     </div>
 
     <div class="aggregate-data" fxLayout="row" fxLayoutAlign="space-between">
@@ -30,9 +28,6 @@
             <button (click)="selectYear($event)"
               class="year-button"
               [ngClass]="{'selected' : idx==0}">{{year}}</button>
-          </div>
-          <div *ngIf="territoryYears.length > 5">
-            <p class="year">Mais ...</p>
           </div>
         </div>
       </div>
@@ -47,21 +42,14 @@
           <div class="info-field last-data-update">
             <div class="field">Última atualização dos dados</div>
             <div
-              class="value">{{getSelectedYearData()?.last_updated}}</div>
+              class="value">{{getSelectedYearData()?.last_updated | date:'dd/MM/yyyy'}}</div>
           </div>
 
-          <div class="info-field last-metadata-update">
+          <div class="info-field last-hour-update">
             <div class="field">Hora da última atualização</div>
             <div
-              class="value">{{getSelectedYearData()?.last_updated}}</div>
+              class="value">{{getSelectedYearData()?.last_updated | date:'HH:mm:ss'}}</div>
           </div>
-
-          <!-- <div class="info-field creation-date">
-            <div
-              class="field">Data de criação</div>
-            <div
-              class="value">{{getSelectedYearData()?.created_at}}</div>
-          </div> -->
 
           <div class="info-field file-size">
             <div class="field">Tamanho do arquivo</div>
@@ -69,11 +57,8 @@
               {{getSelectedYearData()?.file_size_mb}} MB
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
-
   </div>
 </div>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataStateFilterComponent } from './data-state-filter.component';
+import { AggregateStateFilterComponent } from './data-state-filter.component';
 
-describe('DataStateFilterComponent', () => {
-  let component: DataStateFilterComponent;
-  let fixture: ComponentFixture<DataStateFilterComponent>;
+describe('AggregateStateFilterComponent', () => {
+  let component: AggregateStateFilterComponent;
+  let fixture: ComponentFixture<AggregateStateFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataStateFilterComponent ]
+      declarations: [ AggregateStateFilterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataStateFilterComponent);
+    fixture = TestBed.createComponent(AggregateStateFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

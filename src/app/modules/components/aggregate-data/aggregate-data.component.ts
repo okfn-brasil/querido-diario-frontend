@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Aggregate, ResponseAggregate } from 'src/app/interfaces/data-search';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Aggregate, ResponseAggregate } from 'src/app/interfaces/aggregate';
 import { Territory } from 'src/app/interfaces/territory';
 import { TerritoryService } from 'src/app/services/territory/territory.service';
 
@@ -8,18 +8,40 @@ import { TerritoryService } from 'src/app/services/territory/territory.service';
   templateUrl: './aggregate-data.component.html',
   styleUrls: ['./aggregate-data.component.sass'],
 })
+
 export class AggregateDataComponent implements OnInit {
   @Input() aggregateResults: ResponseAggregate = {} as ResponseAggregate;
 
   territorieData: Territory = {} as Territory;
   territoryYears: string[] = [];
-  name:string = ""
+  name:string = "";
+  selectedYear: string | null = null;
+  selectedAggregate: Aggregate | null = null;
 
-  constructor(private territoryService: TerritoryService) {}
+  constructor(
+    private territoryService: TerritoryService
+  ) {}
 
   ngOnInit(): void {
     this.loadData();
     this.filterYears();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['aggregateResults']) {
+      const previousValue = changes['aggregateResults'].previousValue;
+      const currentValue = changes['aggregateResults'].currentValue;
+
+      if (previousValue !== currentValue){
+        this.loadData();
+        this.filterYears();
+        this.resetSelectedYear();
+      } else {
+        this.loadData();
+        this.filterYears();
+        this.resetSelectedYear();
+      }
+    }
   }
 
   loadData():void{
@@ -29,42 +51,46 @@ export class AggregateDataComponent implements OnInit {
       .findOne({ territoryId: this.aggregateResults.territory_id })
       .subscribe((response) => {
         this.territorieData = response
-        this.name = response.territory_name +" - "+response.state_code
+        this.name = response.territory_name + " (" + response.state_code + ") "
       });
     }else{
-      this.name = this.aggregateResults.state_code
+        this.name = this.aggregateResults.state_code
     }
-
   }
 
   filterYears():void{
+    this.territoryYears = [];
     this.aggregateResults?.aggregates.forEach((val)=>{
       if(this.territoryYears.indexOf(val.year) === -1){
         this.territoryYears.push(val.year)
       }
     })
-    console.log(this.territoryYears)
+  }
+
+  resetSelectedYear(): void {
+    this.selectedYear = null;
+    let territoryYearElement = document.querySelector('.selected');
+    if (territoryYearElement) {
+      territoryYearElement.classList.remove('selected');
+    }
   }
 
   selectYear(event: MouseEvent) {
     let targetElement = event.target as HTMLElement;
-    let territoryYearElement = document.getElementById(
-      targetElement.parentElement?.parentElement?.id!
-    );
-    // remove selected elements from territory year element
-    territoryYearElement?.querySelectorAll('.selected').forEach((el) => {
-      el.classList.remove('selected');
-    });
-
+    let territoryYearElement = document.querySelector('.selected');
+    
+    if (territoryYearElement) {
+      territoryYearElement.classList.remove('selected');
+    }
     targetElement.classList.add('selected');
   }
 
-  getSelectedYear() {
-    let selectedYear = document.querySelector('.selected');
-    if (!selectedYear) {
+  getSelectedYear(): string | null {
+    let selectedYearElement = document.querySelector('.selected');
+    if (!selectedYearElement) {
       return null;
     }
-    return selectedYear?.textContent;
+    return selectedYearElement.textContent?.trim() || null;
   }
 
   getSelectedYearData(): Aggregate | null {
