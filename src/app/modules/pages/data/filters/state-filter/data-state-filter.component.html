@@ -1,6 +1,6 @@
 <div class="location-search" (click)="focusOnInput()" (mouseleave)="focusOutInput()">
   <div *ngIf="selectedStates" (click)="removeState(selectedStates, $event)" class="tag">
-    {{ selectedStates.name + '( ' + selectedStates.state_code + ')' }}
+    {{ selectedStates.name }} ({{ selectedStates.state_code }})
     <img src="assets/images/education/close.png" alt="fechar" />
   </div>
 
@@ -15,7 +15,7 @@
   <div class="dropdown" (click)="stopPropagation($event)" *ngIf="showDropdown">
     <ng-container>
       <div *ngIf="getStatesList().length > 0">
-        <div *ngFor="let state of getStatesList()" (click)="addState(state)">
+        <div class="option line" *ngFor="let state of getStatesList()" (click)="addState(state)">
           {{ state.name }} ({{ state.state_code }})
         </div>
       </div>

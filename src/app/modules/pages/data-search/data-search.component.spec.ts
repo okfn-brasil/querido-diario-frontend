@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataSearchComponent } from './data-search.component';
+import { AggregateSearchComponent } from './data-search.component';
 
-describe('DataSearchComponent', () => {
-  let component: DataSearchComponent;
-  let fixture: ComponentFixture<DataSearchComponent>;
+describe('AggregateSearchComponent', () => {
+  let component: AggregateSearchComponent;
+  let fixture: ComponentFixture<AggregateSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataSearchComponent ]
+      declarations: [ AggregateSearchComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataSearchComponent);
+    fixture = TestBed.createComponent(AggregateSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataCityFilterComponent } from './data-city-filter.component';
+import { AggregateCityFilterComponent } from './data-city-filter.component';
 
-describe('CityFilterComponent', () => {
-  let component: DataCityFilterComponent;
-  let fixture: ComponentFixture<DataCityFilterComponent>;
+describe('AggregateCityFilterComponent', () => {
+  let component: AggregateCityFilterComponent;
+  let fixture: ComponentFixture<AggregateCityFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataCityFilterComponent ]
+      declarations: [ AggregateCityFilterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataCityFilterComponent);
+    fixture = TestBed.createComponent(AggregateCityFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

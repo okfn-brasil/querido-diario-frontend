@@ -12,17 +12,9 @@
 
   <div class="dropdown" (click)="stopPropagation($event)" *ngIf="showDropdown">
     <ng-container *ngIf="!loadingCities">
-      <ng-container *ngIf="!showCityLevel">
-        <div class="option" *ngFor="let city of getCitiesList()" (click)="addCity(city)">
+        <div class="option line" *ngFor="let city of getCitiesList()" (click)="addCity(city)">
           {{ city.territory_label || city.territory_name + ' (' + city.state_code + ')' }}
         </div>
-      </ng-container>
-
-      <ng-container *ngIf="showCityLevel">
-        <div class="option has-level" *ngFor="let city of getCitiesList()" (click)="addCity(city)">
-          <div>{{ city.territory_label || city.territory_name }}</div>
-        </div>
-      </ng-container>
     </ng-container>
     <div class="loading-options" *ngIf="isLoading && query.length > 2 || loadingCities">
       <mat-spinner></mat-spinner>

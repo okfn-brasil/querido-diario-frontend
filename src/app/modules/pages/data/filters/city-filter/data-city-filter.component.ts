@@ -6,7 +6,7 @@ import { City } from 'src/app/interfaces/city';
   templateUrl: './data-city-filter.component.html',
   styleUrls: ['./data-city-filter.component.sass']
 })
-export class DataCityFilterComponent implements OnChanges {
+export class AggregateCityFilterComponent implements OnChanges {
   @Input() cities: City[] = [];
   @Input() label: string = 'Novo local...';
   @Input() loadingCities = false;

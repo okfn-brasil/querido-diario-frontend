@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { States, states } from 'src/app/interfaces/state';
 
 @Component({
@@ -7,7 +7,7 @@ import { States, states } from 'src/app/interfaces/state';
   styleUrls: ['./data-state-filter.component.sass']
 })
 
-export class DataStateFilterComponent {
+export class AggregateStateFilterComponent {
   @Input() states_form: States[] = [];
   @Input() label: string = 'Novo local...';
   @Input() disabled: boolean = false; 

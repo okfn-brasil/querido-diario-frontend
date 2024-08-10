@@ -38,7 +38,7 @@ import { CardComponent } from './modules/components/card/card.component';
 import { CarouselComponent } from './modules/components/carousel/carousel.component';
 import { CitiesSearchResultComponent } from './modules/components/cities-search-result/cities-search-result.component';
 import { ContentComponent } from './modules/components/content/content.component';
-import { DataFormComponent } from './modules/components/data-form/data-form.component';
+import { AggregateFormComponent } from './modules/components/data-form/data-form.component';
 import { DatePickerRangeComponent } from './modules/components/date-picker-range/date-picker-range.component';
 import { FooterComponent } from './modules/components/footer/footer.component';
 import { FormSentComponent } from './modules/components/form-sent/form-sent.component';
@@ -96,9 +96,8 @@ import { BlogPostDetailComponent } from './modules/pages/blog/blog-post-detail/b
 import { BlogPostComponent } from './modules/pages/blog/blog-post/blog-post.component';
 import { BlogRelatedsComponent } from './modules/pages/blog/blog-relateds/blog-relateds.component';
 import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
-import { DataSearchComponent } from './modules/pages/data-search/data-search.component';
-import { DataComponent } from './modules/pages/data/data.component';
-import { DataCityFilterComponent } from './modules/pages/data/filters/city-filter/data-city-filter.component';
+import { AggregateSearchComponent } from './modules/pages/data-search/data-search.component';
+import { AggregateComponent } from './modules/pages/data/data.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
 import { HomeComponent } from './modules/pages/home/home.component';
 import {
@@ -112,7 +111,8 @@ import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
 import { AuthInterceptor } from './services/interceptor';
-import { DataStateFilterComponent } from './modules/pages/data/filters/state-filter/data-state-filter.component';
+import { AggregateStateFilterComponent } from './modules/pages/data/filters/state-filter/data-state-filter.component';
+import { AggregateCityFilterComponent } from './modules/pages/data/filters/city-filter/data-city-filter.component';
 
 /* custom directives */
 @NgModule({
@@ -128,7 +128,7 @@ import { DataStateFilterComponent } from './modules/pages/data/filters/state-fil
     AccessLevelsComponent,
     SupportComponent,
     TechComponent,
-    DataComponent,
+    AggregateComponent,
     SuggestionComponent,
     GlossaryComponent,
     SearchTutorialComponent,
@@ -195,11 +195,11 @@ import { DataStateFilterComponent } from './modules/pages/data/filters/state-fil
     PrivacyPolicyComponentEnUS,
     RequestAnalysisFormComponent,
     PeriodPickerComponent,
-    DataFormComponent,
-    DataSearchComponent,
-    DataCityFilterComponent,
+    AggregateFormComponent,
+    AggregateSearchComponent,
+    AggregateCityFilterComponent,
     AggregateDataComponent,
-    DataStateFilterComponent,
+    AggregateStateFilterComponent,
   ],
   imports: [
     BrowserModule,

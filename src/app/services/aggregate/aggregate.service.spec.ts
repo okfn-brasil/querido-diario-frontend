@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataSearchService } from './data.service';
+import { AggregateService } from './aggregate.service';
 
-describe('DataServiceComponent', () => {
-  let component: DataSearchService;
-  let fixture: ComponentFixture<DataSearchService>;
+describe('AggregateService', () => {
+  let component: AggregateService;
+  let fixture: ComponentFixture<AggregateService>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataSearchService ]
+      declarations: [ AggregateService ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataSearchService);
+    fixture = TestBed.createComponent(AggregateService);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

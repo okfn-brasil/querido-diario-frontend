@@ -32,4 +32,3 @@ export const states: States[] = [
   { state_code: 'SE', name: 'Sergipe' },
   { state_code: 'TO', name: 'Tocantins' }
 ]
-
