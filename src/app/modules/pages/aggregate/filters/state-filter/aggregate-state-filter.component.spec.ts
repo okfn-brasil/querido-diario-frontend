@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AggregateStateFilterComponent } from './data-state-filter.component';
+import { AggregateStateFilterComponent } from './aggregate-state-filter.component';
 
 describe('AggregateStateFilterComponent', () => {
   let component: AggregateStateFilterComponent;

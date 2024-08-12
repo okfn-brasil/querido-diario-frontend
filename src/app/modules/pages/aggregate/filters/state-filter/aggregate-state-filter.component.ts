@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { States, states } from 'src/app/interfaces/state';
 
 @Component({
-  selector: 'data-state-filter',
-  templateUrl: './data-state-filter.component.html',
-  styleUrls: ['./data-state-filter.component.sass']
+  selector: 'aggregate-state-filter',
+  templateUrl: './aggregate-state-filter.component.html',
+  styleUrls: ['./aggregate-state-filter.component.sass']
 })
 
 export class AggregateStateFilterComponent {

@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
 import { City } from 'src/app/interfaces/city';
 
 @Component({
-  selector: 'data-city-filter',
-  templateUrl: './data-city-filter.component.html',
-  styleUrls: ['./data-city-filter.component.sass']
+  selector: 'aggregate-city-filter',
+  templateUrl: './aggregate-city-filter.component.html',
+  styleUrls: ['./aggregate-city-filter.component.sass']
 })
 export class AggregateCityFilterComponent implements OnChanges {
   @Input() cities: City[] = [];

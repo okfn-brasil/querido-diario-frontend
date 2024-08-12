@@ -8,13 +8,12 @@ import { TerritoryService } from 'src/app/services/territory/territory.service';
   templateUrl: './aggregate-data.component.html',
   styleUrls: ['./aggregate-data.component.sass'],
 })
-
 export class AggregateDataComponent implements OnInit {
   @Input() aggregateResults: ResponseAggregate = {} as ResponseAggregate;
 
   territorieData: Territory = {} as Territory;
   territoryYears: string[] = [];
-  name:string = "";
+  name: string = '';
   selectedYear: string | null = null;
   selectedAggregate: Aggregate | null = null;
 
@@ -29,14 +28,10 @@ export class AggregateDataComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['aggregateResults']) {
-      const previousValue = changes['aggregateResults'].previousValue;
-      const currentValue = changes['aggregateResults'].currentValue;
+      let previousValue = changes['aggregateResults'].previousValue;
+      let currentValue = changes['aggregateResults'].currentValue;
 
-      if (previousValue !== currentValue){
-        this.loadData();
-        this.filterYears();
-        this.resetSelectedYear();
-      } else {
+      if (previousValue !== currentValue) {
         this.loadData();
         this.filterYears();
         this.resetSelectedYear();
@@ -44,27 +39,27 @@ export class AggregateDataComponent implements OnInit {
     }
   }
 
-  loadData():void{
-
-    if(this.aggregateResults.territory_id){
+  loadData(): void {
+    if (this.aggregateResults.territory_id) {
       this.territoryService
-      .findOne({ territoryId: this.aggregateResults.territory_id })
-      .subscribe((response) => {
-        this.territorieData = response
-        this.name = response.territory_name + " (" + response.state_code + ") "
-      });
-    }else{
-        this.name = this.aggregateResults.state_code
+        .findOne({ territoryId: this.aggregateResults.territory_id })
+        .subscribe((response) => {
+          this.territorieData = response;
+          this.name =
+            response.territory_name + ' (' + response.state_code + ') ';
+        });
+    } else {
+      this.name = this.aggregateResults.state_code;
     }
   }
 
-  filterYears():void{
+  filterYears(): void {
     this.territoryYears = [];
-    this.aggregateResults?.aggregates.forEach((val)=>{
-      if(this.territoryYears.indexOf(val.year) === -1){
-        this.territoryYears.push(val.year)
+    this.aggregateResults?.aggregates.forEach((val) => {
+      if (this.territoryYears.indexOf(val.year) === -1) {
+        this.territoryYears.push(val.year);
       }
-    })
+    });
   }
 
   resetSelectedYear(): void {
@@ -78,7 +73,7 @@ export class AggregateDataComponent implements OnInit {
   selectYear(event: MouseEvent) {
     let targetElement = event.target as HTMLElement;
     let territoryYearElement = document.querySelector('.selected');
-    
+
     if (territoryYearElement) {
       territoryYearElement.classList.remove('selected');
     }
@@ -98,12 +93,13 @@ export class AggregateDataComponent implements OnInit {
     if (!selectedYear) {
       return null;
     }
-    
-    let data = this.aggregateResults?.aggregates
-    .find(agg => agg.year === selectedYear);
-  
-    if(!data){
-      return null
+
+    let data = this.aggregateResults?.aggregates.find(
+      (agg) => agg.year === selectedYear
+    );
+
+    if (!data) {
+      return null;
     }
 
     return data;

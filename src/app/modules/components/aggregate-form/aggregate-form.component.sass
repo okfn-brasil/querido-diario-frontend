@@ -32,8 +32,10 @@
     width: rem(313) !important
 
   .city-input
-    min-width: 235px
+    width: 300px
     padding-top: rem(29)
+    max-width: 90%
+    margin: 0 auto
 
     & ::ng-deep
 
@@ -62,8 +64,10 @@
         font-size: rem(14)
 
   .state-input
-    min-width: 235px
+    width: 300px
     padding-top: rem(29)
+    max-width: 90%
+    margin: 0 auto
 
     & ::ng-deep
 
@@ -92,8 +96,8 @@
         font-size: rem(14)
 
 @media only screen and (max-width: 768px)
-  .city-input, .period-input
-    width: 100% !important
+  .city-input, .state-input
+    width: 100%
 
   form
     .btn

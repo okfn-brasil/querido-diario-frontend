@@ -9,9 +9,9 @@ import { States } from 'src/app/interfaces/state';
 import { City } from 'src/app/interfaces/city';
 
 @Component({
-  selector: 'app-data-form',
-  templateUrl: './data-form.component.html',
-  styleUrls: ['./data-form.component.sass'],
+  selector: 'app-aggregate-form',
+  templateUrl: './aggregate-form.component.html',
+  styleUrls: ['./aggregate-form.component.sass'],
 })
 export class AggregateFormComponent implements OnInit {
   @Input()

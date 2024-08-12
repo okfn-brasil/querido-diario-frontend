@@ -11,7 +11,7 @@
         <h1>
           {{ content.explore.title }}
         </h1>
-        <app-data-form (searched)="searched()"></app-data-form>
+        <app-aggregate-form (searched)="searched()"></app-aggregate-form>
       </div>
     </app-container>
 
@@ -42,7 +42,7 @@
             </div>
           </div>
           <div class="data-search" *ngIf="!isLoading && hasSearched">
-            <app-data-search></app-data-search>
+            <app-aggregate-search></app-aggregate-search>
           </div>
         </div>
       </app-row>

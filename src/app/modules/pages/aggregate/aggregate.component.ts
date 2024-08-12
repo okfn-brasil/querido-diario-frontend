@@ -3,9 +3,9 @@ import { Observable, of } from 'rxjs';
 import { ContentService } from 'src/app/services/content/content.service';
 
 @Component({
-  selector: 'app-data',
-  templateUrl: './data.component.html',
-  styleUrls: ['./data.component.sass'],
+  selector: 'app-aggregate',
+  templateUrl: './aggregate.component.html',
+  styleUrls: ['./aggregate.component.sass'],
 })
 export class AggregateComponent implements OnInit {
   content$: Observable<any> = of(null);
