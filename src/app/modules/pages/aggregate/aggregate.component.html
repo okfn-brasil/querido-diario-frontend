@@ -20,6 +20,7 @@
       <h3 class="subtitle">{{ content.dados.subtitle }}</h3>
       <app-row *ngFor="let action of content.baixar.actions" [gap]="8">
         <div class="center">
+          <h3 class="description">{{ content.baixar.description }}</h3>
           <a class="btn-secondary" [href]="action.to" target="_blank">
             {{ action.text }}
           </a>

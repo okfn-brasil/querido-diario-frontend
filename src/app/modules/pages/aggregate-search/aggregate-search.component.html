@@ -2,7 +2,7 @@
   class="bg-purple-2"
   fxLayoutAlign="center"
   fxLayout="row"
-  *ngIf="!aggregateResults.aggregates.length">
+  *ngIf="!aggregateResults.aggregates?.length">
   <div class="container-no-results" fxLayout="column" fxLayoutGap="18px">
     <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
     <p>
@@ -11,14 +11,14 @@
   </div>
 </section>
 
-<div *ngIf="aggregateResults.aggregates.length">
+<div *ngIf="aggregateResults.aggregates?.length">
   <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
     <div class="container-results" fxLayout="column" fxLayoutGap="42px">
       <ng-container>
         <p>
-          Abaixo, estão os resultados encontrados nos diários do município
-          informado. Os dados estão organizados de maneira compactada e
-          disponível para download!
+          Abaixo, estão os resultados encontrados na localidade informada.
+          Os dados estão organizados de maneira compactada e disponíveis
+          para download!
         </p>
       </ng-container>
 
