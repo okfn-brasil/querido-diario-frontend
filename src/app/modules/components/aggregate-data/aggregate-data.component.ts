@@ -104,4 +104,8 @@ export class AggregateDataComponent implements OnInit {
 
     return data;
   }
+
+  downloadZip(){
+    window.open(this.getSelectedYearData()?.file_path)
+  }
 }

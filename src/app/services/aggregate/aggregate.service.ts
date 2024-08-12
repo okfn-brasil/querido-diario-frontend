@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AggregateQuery, ResponseAggregate } from 'src/app/interfaces/aggregate';
+import { API } from 'src/app/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -33,11 +34,11 @@ export class AggregateService {
 
     if (!territory_id) {
       queryParams = { state_code: state_code };
-      url = new URL(`/aggregates/${state_code}`,'http://0.0.0.0:8080').toString();
+      url = new URL(`/aggregates/${state_code}`,API).toString();
     } else {
       queryParams = { territory_id: territory_id };
       const encodedQueryString = new URLSearchParams(queryParams).toString();
-      url = new URL(`/aggregates/${state_code}?${encodedQueryString}`,'http://0.0.0.0:8080').toString();
+      url = new URL(`/aggregates/${state_code}?${encodedQueryString}`,API).toString();
     }
 
     return this.http.get<ResponseAggregate>(url).pipe(
