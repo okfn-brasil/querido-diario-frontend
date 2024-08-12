@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AggregateComponent } from './data.component';
+import { AggregateFormComponent } from './aggregate-form.component';
 
-describe('AggregateComponent', () => {
-  let component: AggregateComponent;
-  let fixture: ComponentFixture<AggregateComponent>;
+describe('AggregateFormComponent', () => {
+  let component: AggregateFormComponent;
+  let fixture: ComponentFixture<AggregateFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AggregateComponent ]
+      declarations: [ AggregateFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AggregateComponent);
+    fixture = TestBed.createComponent(AggregateFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

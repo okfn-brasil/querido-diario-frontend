@@ -38,7 +38,7 @@ import { CardComponent } from './modules/components/card/card.component';
 import { CarouselComponent } from './modules/components/carousel/carousel.component';
 import { CitiesSearchResultComponent } from './modules/components/cities-search-result/cities-search-result.component';
 import { ContentComponent } from './modules/components/content/content.component';
-import { AggregateFormComponent } from './modules/components/data-form/data-form.component';
+import { AggregateFormComponent } from './modules/components/aggregate-form/aggregate-form.component';
 import { DatePickerRangeComponent } from './modules/components/date-picker-range/date-picker-range.component';
 import { FooterComponent } from './modules/components/footer/footer.component';
 import { FormSentComponent } from './modules/components/form-sent/form-sent.component';
@@ -96,8 +96,8 @@ import { BlogPostDetailComponent } from './modules/pages/blog/blog-post-detail/b
 import { BlogPostComponent } from './modules/pages/blog/blog-post/blog-post.component';
 import { BlogRelatedsComponent } from './modules/pages/blog/blog-relateds/blog-relateds.component';
 import { ComplaintComponent } from './modules/pages/complaint/complaint.component';
-import { AggregateSearchComponent } from './modules/pages/data-search/data-search.component';
-import { AggregateComponent } from './modules/pages/data/data.component';
+import { AggregateSearchComponent } from './modules/pages/aggregate-search/aggregate-search.component';
+import { AggregateComponent } from './modules/pages/aggregate/aggregate.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
 import { HomeComponent } from './modules/pages/home/home.component';
 import {
@@ -111,8 +111,8 @@ import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
 import { AuthInterceptor } from './services/interceptor';
-import { AggregateStateFilterComponent } from './modules/pages/data/filters/state-filter/data-state-filter.component';
-import { AggregateCityFilterComponent } from './modules/pages/data/filters/city-filter/data-city-filter.component';
+import { AggregateStateFilterComponent } from './modules/pages/aggregate/filters/state-filter/aggregate-state-filter.component';
+import { AggregateCityFilterComponent } from './modules/pages/aggregate/filters/city-filter/aggregate-city-filter.component';
 
 /* custom directives */
 @NgModule({

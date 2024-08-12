@@ -23,7 +23,7 @@ import { SearchTutorialComponent } from './modules/pages/search-tutorial/search-
 import { SuggestionComponent } from './modules/pages/suggestion/suggestion.component';
 import { SupportComponent } from './modules/pages/support/support.component';
 import { TechComponent } from './modules/pages/tech/tech.component';
-import { AggregateComponent } from './modules/pages/data/data.component';
+import { AggregateComponent } from './modules/pages/aggregate/aggregate.component';
 import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';

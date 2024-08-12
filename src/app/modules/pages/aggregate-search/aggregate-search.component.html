@@ -2,7 +2,7 @@
   class="bg-purple-2"
   fxLayoutAlign="center"
   fxLayout="row"
-  *ngIf="aggregateResultslength===0">
+  *ngIf="!aggregateResults.aggregates.length">
   <div class="container-no-results" fxLayout="column" fxLayoutGap="18px">
     <h2>Sua pesquisa não encontrou nenhum conteúdo correspondente</h2>
     <p>
@@ -11,7 +11,7 @@
   </div>
 </section>
 
-<div *ngIf="aggregateResultslength">
+<div *ngIf="aggregateResults.aggregates.length">
   <section class="bg-purple-3" fxLayoutAlign="center" fxLayout="row">
     <div class="container-results" fxLayout="column" fxLayoutGap="42px">
       <ng-container>

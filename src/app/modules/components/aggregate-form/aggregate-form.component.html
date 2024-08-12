@@ -1,15 +1,15 @@
 <form fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px" fxLayoutGap.xs="0">
   <app-row [flex]="true" [gap]="16">
-    <data-state-filter
+    <aggregate-state-filter
       [initialValue]="stateQuery"
       [disabled]="isStateDisabled"
       label="Estado"
       class="state-input"
       (changeLocations)="onChangeState($event)"
     >
-    </data-state-filter>
+    </aggregate-state-filter>
 
-    <data-city-filter
+    <aggregate-city-filter
       [initialValue]="cityQuery"
       [loadingCities]="loadingCities"
       [disabled]="isCityDisabled"
@@ -19,7 +19,7 @@
       [showCityLevel]="true"
       (changeLocations)="onChangeCity($event)"
       (changeQuery)="onChangeQuery($event)">
-    </data-city-filter>
+    </aggregate-city-filter>
   </app-row>
 
   <button (click)="search()" class="btn">Pesquisar</button>

@@ -1,6 +1,6 @@
 <div class="aggregate-results">
   <div class="aggregate">
-    <div fxLayout="row" fxLayoutAlign="space-between">
+    <div fxLayout="row" fxLayoutAlign="space-between" class="mobile">
       <div class="territory-name">
         <div>
           <h2 class="title">
@@ -12,14 +12,14 @@
       </div>
 
       <div class="download-button">
-        <button (click)="getSelectedYearData()?.file_path" class="btn-download">
+        <button (click)="downloadZip()" class="btn-download">
           <img src="../../../../assets/icons/zip-folder.png" alt="download">
           Baixar
         </button>
       </div>
     </div>
 
-    <div class="aggregate-data" fxLayout="row" fxLayoutAlign="space-between">
+    <div class="aggregate-data">
       <div class="year-selection">
         <h2 class="title">Ano</h2>
         <div class="year-list">

@@ -1,12 +1,12 @@
 .aggregate-results
   display: flex
   flex-direction: column
-  gap: 88px
+  gap: 20px
 
 .aggregate
   display: flex
   flex-direction: column
-  gap: 24px
+  gap: 20px
 
   .btn-download
     display: flex
@@ -28,6 +28,11 @@
       width: 24px
       height: 24px
       margin-right: 8px
+
+.header-section
+  display: flex
+  justify-content: space-around
+  align-items: center
 
 .title
   font-family: "Baloo"
@@ -54,7 +59,6 @@
       font-size: 16px
       font-weight: 700
       font-family: "Lato"
-
       margin-left: 12px
 
     .selected
@@ -73,13 +77,14 @@
 
 .aggregate-data
   display: flex
-  flex-direction: column
+  justify-content: space-around
+  width: 100%
 
   .year-selection
-    width: 60%
+    width: 20%
 
   .year-aggregate-info
-    width: 80%
+    width: 75%
 
     .aggregate-info
       display: flex
@@ -101,11 +106,41 @@
         .field
           width: 80%
 
-        .value
-          width: 20%
 
       .header
         background: #5e3f8e !important
         color: white !important
         padding-bottom: 16px !important
         
+@media only screen and (max-width: 768px) 
+  .mobile
+    flex-direction: column !important
+
+  .header-section
+    flex-direction: column
+    align-items:flex-start
+
+  .aggregate-data
+    flex-wrap: wrap
+    flex-direction: column
+    width: 100%
+    padding: 8px 0 
+
+    .year-aggregate-info
+      width: 100%
+
+    .year-aggregate-info
+      margin-top:20px
+
+  .year-list
+    display: flex
+    flex-direction: row
+    width: 100%
+    padding-bottom: 6px
+
+  .year-selection
+    width: 100% !important
+
+  .year-list::-webkit-scrollbar 
+    height: 2px 
+  

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AggregateCityFilterComponent } from './data-city-filter.component';
+import { AggregateCityFilterComponent } from './aggregate-city-filter.component';
 
 describe('AggregateCityFilterComponent', () => {
   let component: AggregateCityFilterComponent;
