@@ -1,0 +1,146 @@
+.aggregate-results
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+.aggregate
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+  .btn-download
+    display: flex
+    justify-content: center
+    align-items: center
+
+    width: 128px
+    height: 60px
+    border-radius: 30px
+    background: #ff8500
+
+    color: white
+    line-height: 21px
+    font-size: 16px
+    font-weight: 700
+    font-family: "Lato"
+
+    img
+      width: 24px
+      height: 24px
+      margin-right: 8px
+
+.header-section
+  display: flex
+  justify-content: space-around
+  align-items: center
+
+.title
+  font-family: "Baloo"
+  font-size: 22px
+  font-weight: 400
+
+.year-list
+  max-height: 130px
+  overflow-y: auto
+  padding-right: 8px
+  width: 90px
+
+  .year
+    display: flex
+    flex-direction: column
+
+    .year-button
+      padding: 6px
+      height: 34px
+      border-radius: 16px
+      width: 80%
+      color: white
+      line-height: 21px
+      font-size: 16px
+      font-weight: 700
+      font-family: "Lato"
+      margin-left: 12px
+
+    .selected
+      background: #ff8500
+
+.year-list::-webkit-scrollbar 
+  width: 8px
+
+.year-list::-webkit-scrollbar-thumb 
+  background-color: #ff8500
+  border-radius: 4px
+  margin-right: -8px
+
+.year-list::-webkit-scrollbar-thumb:hover 
+  background-color: #ff8500
+
+.aggregate-data
+  display: flex
+  justify-content: space-around
+  width: 100%
+
+  .year-selection
+    width: 20%
+
+  .year-aggregate-info
+    width: 75%
+
+    .aggregate-info
+      display: flex
+      flex-direction: column
+      gap: 4px
+
+      .info-field
+        padding: 8px
+        display: flex
+        justify-content: space-between
+        flex-direction: row
+        color: black
+        line-height: 21px
+        font-size: 16px
+        font-weight: 700
+        font-family: "Lato"
+        background: white
+
+        .field
+          width: 80%
+
+
+      .header
+        background: #5e3f8e !important
+        color: white !important
+        padding-bottom: 16px !important
+        
+@media only screen and (max-width: 768px) 
+  .mobile
+    flex-direction: column !important
+
+  .header-section
+    flex-direction: column
+    align-items:flex-start
+
+  .aggregate-data
+    flex-wrap: wrap
+    flex-direction: column
+    width: 100%
+    padding: 8px 0 
+
+    .year-aggregate-info
+      width: 100%
+
+    .year-aggregate-info
+      margin-top:20px
+
+  .year-list
+    display: flex
+    flex-direction: row
+    width: 100%
+    padding-bottom: 6px
+
+  .year-selection
+    width: 100% !important
+
+  .year-list::-webkit-scrollbar 
+    height: 2px 
+  

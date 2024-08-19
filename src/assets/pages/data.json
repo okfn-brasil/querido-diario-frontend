@@ -1,0 +1,19 @@
+{
+  "explore": {
+    "title": "Explore dados dos diários oficiais com todas as informações agregadas"
+  },
+  "dados": {
+    "title": "Dados",
+    "subtitle": "Baixe o conteúdo completo dos diários oficiais de cada município disponível no QD em formato XML, agrupados por ano! Caso deseje utilizar dados de diversos municípios, também é possível agrupar por estado."
+  },
+  "baixar": {
+    "description": "Entenda mais sobre os arquivos XML baixados. Consulte o Dicionário de Dados!",
+    "actions": [
+      {
+        "text": "Baixar Dicionário de Dados",
+        "to": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/assets-site/dicionario-de-dados.pdf",
+        "style": "btn-secondary"
+      }
+    ]
+  }
+}

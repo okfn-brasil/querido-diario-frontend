@@ -1,0 +1,64 @@
+<div class="aggregate-results">
+  <div class="aggregate">
+    <div fxLayout="row" fxLayoutAlign="space-between" class="mobile">
+      <div class="territory-name">
+        <div>
+          <h2 class="title">
+            Diários Oficiais agregados de 
+            {{name}}
+          </h2>
+          <p>A tabela apresenta informações sobre o arquivo a ser baixado.</p>
+        </div>
+      </div>
+
+      <div class="download-button">
+        <button (click)="downloadZip()" class="btn-download">
+          <img src="../../../../assets/icons/zip-folder.png" alt="download">
+          Baixar
+        </button>
+      </div>
+    </div>
+
+    <div class="aggregate-data">
+      <div class="year-selection">
+        <h2 class="title">Ano</h2>
+        <div class="year-list">
+          <div class="year"
+            *ngFor="let year of territoryYears; let idx = index">
+            <button (click)="selectYear($event)"
+              class="year-button"
+              [ngClass]="{'selected' : idx==0}">{{year}}</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="year-aggregate-info">
+        <div class="aggregate-info">
+          <div class="info-field header">
+            <div class="field">Campo</div>
+            <div class="value">Informação</div>
+          </div>
+
+          <div class="info-field last-data-update">
+            <div class="field">Última atualização dos dados</div>
+            <div
+              class="value">{{getSelectedYearData()?.last_updated | date:'dd/MM/yyyy'}}</div>
+          </div>
+
+          <div class="info-field last-hour-update">
+            <div class="field">Hora da última atualização</div>
+            <div
+              class="value">{{getSelectedYearData()?.last_updated | date:'HH:mm:ss'}}</div>
+          </div>
+
+          <div class="info-field file-size">
+            <div class="field">Tamanho do arquivo</div>
+            <div class="value">
+              {{getSelectedYearData()?.file_size_mb}} MB
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
