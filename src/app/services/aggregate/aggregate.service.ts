@@ -34,11 +34,11 @@ export class AggregateService {
 
     if (!territory_id) {
       queryParams = { state_code: state_code };
-      url = new URL(`/aggregates/${state_code}`,API).toString();
+      url = API + `/aggregates/${state_code}`;
     } else {
       queryParams = { territory_id: territory_id };
       const encodedQueryString = new URLSearchParams(queryParams).toString();
-      url = new URL(`/aggregates/${state_code}?${encodedQueryString}`,API).toString();
+      url = API + `/aggregates/${state_code}?${encodedQueryString}`;
     }
 
     return this.http.get<ResponseAggregate>(url).pipe(
