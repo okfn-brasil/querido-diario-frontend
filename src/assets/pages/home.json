@@ -1,9 +1,9 @@
 {
   "explore": {
-    "title": "Explore os diários oficiais dos municípios e fique de olho nas ações dos governos"
+    "title": "Explore diários oficiais municipais..."
   },
   "evolution": {
-    "title": "Acompanhe a evolução do Querido Diário",
+    "title": "... e fique de olho nas ações das prefeituras",
     "items": [
       {
         "icon": {
@@ -16,10 +16,9 @@
           }
         },
         "count": null,
-        "text": "Cidades já na plataforma"
+        "text": "cidades na plataforma"
       },
       {
-        "count": 3075,
         "icon": {
           "file": "search",
           "height": 76,
@@ -29,9 +28,13 @@
             "width": 50
           }
         },
-        "text": "Cidades já têm robôs para coletar diários"
+        "count": "600",
+        "height": 76,
+        "width": 76,
+        "text": "mil diários disponibilizados para busca"
       },
       {
+        "count": 3075,
         "icon": {
           "file": "pin",
           "height": 76,
@@ -41,20 +44,13 @@
             "width": 50
           }
         },
-        "count": 600,
-        "height": 76,
-        "width": 76,
-        "text": "Cidades já foram mapeadas pelo censo"
+        "text": "cidades na projeção de cobertura"
       }
     ],
     "actions": [
       {
         "text": "Confira as cidades disponíveis",
         "to": "/cidades-disponiveis"
-      },
-      {
-        "text": "Conheça os níveis de acesso",
-        "to": "/acesso"
       }
     ]
   },
@@ -63,8 +59,8 @@
     "items": [
       {
         "icon": { "file": "gift", "height": 56, "width": 40 },
-        "title": "Nossa próxima meta",
-        "text": "Hoje, já poderíamos ter 2420 cidades na plataforma e você pode nos ajudar a chegar lá",
+        "title": "Contribua financeiramente",
+        "text": "Mantemos uma campanha de financiamento coletivo para manter o projeto ativo",
         "actions": [
           {
             "text": "Doe",
@@ -84,7 +80,7 @@
       {
         "icon": { "file": "document", "height": 56, "width": 40 },
         "title": "Contribua com o desenvolvimento",
-        "text": "Contribua com código - o Querido Diário é um projeto de código aberto, então qualquer pessoa pode colaborar com novas funcionalidades para a plataforma",
+        "text": "O Querido Diário é um projeto de código aberto, então qualquer pessoa pode colaborar",
         "actions": [
           {
             "text": "Comece por aqui",
@@ -96,15 +92,15 @@
         ]
       },
       {
-        "icon": { "file": "frame", "height": 56, "width": 40 },
-        "title": "Cadastre um município",
-        "text": "Precisamos saber onde as prefeituras publicam seus diários oficiais",
+        "icon": { "file": "gift", "height": 56, "width": 40 },
+        "title": "Doe para a OKBR",
+        "text": "Ao contribuir com a OKBR você estará colaborando com o Querido Diário e outros projetos",
         "actions": [
           {
-            "text": "Comece por aqui",
+            "text": "Doe",
             "icon": "arrow",
-            "to": "https://censo.ok.org.br/",
-            "style": "btn-secondary"
+            "to": "https://ok.org.br/apoie/",
+            "style": "btn-primary"
           }
         ]
       }
