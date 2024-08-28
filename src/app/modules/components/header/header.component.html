@@ -5,13 +5,13 @@
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
         <a routerLink="/" #explore>Explore</a>
         <a routerLink="/dados">Dados</a>
-        <a routerLink="/educacao">Educação</a>
         <a routerLink="/blog">Blog</a>
         <a routerLink="/tecnologia">Tecnologia</a>     
         <a routerLink="/sobre">Sobre</a>
         <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
+        <button routerLink="/educacao" class="btnedu">Educação</button>
         <button routerLink="/apoie" class="btn">Apoie</button>
       </nav>
       <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
