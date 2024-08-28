@@ -3,7 +3,6 @@ import { Observable, of } from 'rxjs';
 import { IconType, Sizeable } from 'src/app/interfaces/icon';
 import { ContentService } from 'src/app/services/content/content.service';
 
-
 const square = (size: number) : Sizeable => {
   return {
     height: size,
@@ -18,6 +17,8 @@ const square = (size: number) : Sizeable => {
 })
 export class AboutComponent implements OnInit {
   content$: Observable<any> = of(null);
+  useCases$: Observable<any> = of(null);
+  mediaImpact$: Observable<any> = of(null);
 
   icon: IconType = {
     file: 'right-arrow-purple',
@@ -28,5 +29,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.content$ = this.contentService.find('about');
+    this.useCases$ = this.contentService.find('use-cases');
+    this.mediaImpact$ = this.contentService.find('media-impact');
   }
 }

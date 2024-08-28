@@ -103,9 +103,9 @@
     <h1>{{ content.useCases.title }}</h1>
     <p>{{ content.useCases.text }}</p>
   </div>
-  <app-row [gap]="17" wrap="wrap" [flex]="true">
+  <app-row [gap]="17" wrap="wrap" [flex]="true" *ngIf="useCases$ | async as useCases; else loading">
     <div class="stories-overflow">
-      <edu-carousel [type]="'second-type'" [items]="content.useCases.items"></edu-carousel>
+      <edu-carousel [type]="'second-type'" [items]="useCases.useCases.items"></edu-carousel>
     </div>
   </app-row>
 </app-container>
@@ -116,9 +116,9 @@
     <h1>{{ content.mediaImpact.title }}</h1>
     <p>{{ content.mediaImpact.text }}</p>
   </div>
-  <app-row [gap]="17" wrap="wrap" [flex]="true">
+  <app-row [gap]="17" wrap="wrap" [flex]="true" *ngIf="mediaImpact$ | async as mediaImpact; else loading">
     <div class="stories-overflow">
-      <edu-carousel [theme]="'dark'" [type]="'second-type'" [items]="content.mediaImpact.items"></edu-carousel>
+      <edu-carousel [theme]="'dark'" [type]="'second-type'" [items]="mediaImpact.mediaImpact.items"></edu-carousel>
     </div>
   </app-row>
 </app-container>
