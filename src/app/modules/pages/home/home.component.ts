@@ -13,6 +13,9 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   content$: Observable<any> = of(null);
+  useCases$: Observable<any> = of(null);
+  mediaImpact$: Observable<any> = of(null);
+
   numberOfCities = 0;
 
   constructor(
@@ -32,6 +35,8 @@ export class HomeComponent implements OnInit {
         return data.content;
       })
     );
+    this.useCases$ = this.contentService.find('use-cases');
+    this.mediaImpact$ = this.contentService.find('media-impact');
   }
 
   openVideo(): void {

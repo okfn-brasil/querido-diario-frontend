@@ -47,6 +47,18 @@
       </ng-container>
     </app-container>
 
+    <app-container theme="light" id="casos" [gap]="34" *ngIf="content$ | async as content; else loading">
+      <div class="container-inner stories-area-title">
+        <h1>{{ content.useCases.title }}</h1>
+        <p>{{ content.useCases.text }}</p>
+      </div>
+      <app-row [gap]="17" wrap="wrap" [flex]="true" *ngIf="useCases$ | async as useCases; else loading">
+        <div class="stories-overflow">
+          <edu-carousel [type]="'second-type'" [items]="useCases.useCases.items"></edu-carousel>
+        </div>
+      </app-row>
+    </app-container>
+
     <app-container [gap]="34" theme="dark">
       <h1>{{ content.help.title }}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="60">
@@ -88,8 +100,16 @@
       </app-row>
     </app-container>
 
-    <app-container>
-      <app-goals></app-goals>
+    <app-container theme="dark" id="midia" [gap]="34" *ngIf="content$ | async as content">
+      <div class="container-inner stories-area-title">
+        <h1>{{ content.mediaImpact.title }}</h1>
+        <p>{{ content.mediaImpact.text }}</p>
+      </div>
+      <app-row [gap]="17" wrap="wrap" [flex]="true" *ngIf="mediaImpact$ | async as mediaImpact; else loading">
+        <div class="stories-overflow">
+          <edu-carousel [theme]="'dark'" [type]="'second-type'" [items]="mediaImpact.mediaImpact.items"></edu-carousel>
+        </div>
+      </app-row>
     </app-container>
 
     <app-container [gap]="34" theme="light" bg="bg-gray-square" id="entenda">

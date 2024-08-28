@@ -54,6 +54,10 @@
       }
     ]
   },
+  "useCases": {
+    "title": "Casos de uso",
+    "text": "Confira reportagens, análises e pesquisas que utilizam o Querido Diário para encontrar informações sobre os atos públicos."
+  },
   "help": {
     "title": "Precisamos do seu apoio",
     "items": [
@@ -105,6 +109,10 @@
         ]
       }
     ]
+  },
+  "mediaImpact": {
+    "title": "Na mídia",
+    "text": "Como o Querido Diário repercute nos veículos de comunicação."
   },
   "trajectory": {
     "title": "Conheça a trajetória e próximos passos do Querido Diário",
