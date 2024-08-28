@@ -4,10 +4,10 @@
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
         <a routerLink="/" #explore>Explore</a>
-        <a routerLink="/tecnologia">Tecnologia</a>
-        <a routerLink="/blog">Blog</a>
         <a routerLink="/dados">Dados</a>
         <a routerLink="/educacao">Educação</a>
+        <a routerLink="/blog">Blog</a>
+        <a routerLink="/tecnologia">Tecnologia</a>     
         <a routerLink="/sobre">Sobre</a>
         <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
