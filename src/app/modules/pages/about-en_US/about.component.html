@@ -98,12 +98,6 @@
   </ng-container>
 </app-container>
 
-<!-- Desabilita container
-<app-container [gap]="34" theme="darker" bg="bg-purple-square" id="entenda">
-  <app-infos page="about"></app-infos>
-</app-container>
--->
-
 <app-container theme="light" id="cases" [gap]="34" *ngIf="content$ | async as content; else loading">
   <div class="container-inner stories-area-title">
     <h1>{{ content.useCases.title }}</h1>

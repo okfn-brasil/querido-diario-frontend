@@ -7,7 +7,6 @@
       { "text": "História", "route": "/sobre", "fragment": "historia", "style": "link-secondary" },
       { "text": "Casos de uso", "route": "/sobre", "fragment": "casos", "style": "link-secondary" },
       { "text": "Na mídia", "route": "/sobre", "fragment": "midia", "style": "link-secondary" },
-      { "text": "Entenda", "route": "/sobre", "fragment": "entenda", "style": "link-secondary" },      
       { "text": "Quem somos", "route": "/sobre", "fragment": "quem-somos", "style": "link-secondary" },
       { "text": "Política de privacidade", "route": "/sobre", "fragment": "privacidade", "style": "link-secondary"}
     ]
