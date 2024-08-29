@@ -2,6 +2,26 @@
     "mediaImpact": {
         "items": [
             {
+                "title": "Nexo | 10/06/2024",
+                "text": "O site que mostra as decisões municipais sobre clima",
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.nexojornal.com.br/expresso/2024/06/10/plataforma-diarios-oficiais-clima-meio-ambiente" }]
+            },
+            {
+                "title": "O Globo | 03/03/2024",
+                "text": "Querido Diário: população pode ter acesso mais fácil ao Diário Oficial de Niterói",
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://oglobo.globo.com/rio/bairros/ana-claudia-guimaraes/post/2024/03/querido-diariopopulacao-pode-ter-acesso-mais-facil-ao-diario-oficial-de-niteroi.ghtml" }]
+            },
+            {
+                "title": "Eco Nordeste | 21/02/2024",
+                "text": "Plataforma amplia monitoramento no Matopiba",
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://agenciaeconordeste.com.br/dados-ajudam-a-monitorar-fronteira-agricola/" }]
+            },
+            {
+                "title": "Folha | 29/08/2023",
+                "text": "Ferramenta online vai monitorar ação climática nas cidades",
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www1.folha.uol.com.br/colunas/papo-de-responsa/2023/08/ferramenta-online-vai-monitorar-acao-climatica-nas-cidades.shtml" }]
+            },
+            {
                 "title": "G1 | 25/05/2023",
                 "text": "Projeto brasileiro que dá transparência a publicações oficiais é premiado na Cúpula do Prêmio Nobel",
                 "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://g1.globo.com/mundo/noticia/2023/05/25/projeto-brasileiro-que-da-transparencia-a-publicacoes-oficiais-e-premiado-na-cupula-do-premio-nobel.ghtml" }]
@@ -10,6 +30,11 @@
                 "title": "Jornal Nacional | 25/05/2023",
                 "text": "Fundação Nobel reúne especialistas para discutir propostas de combate à desinformação",
                 "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://g1.globo.com/jornal-nacional/noticia/2023/05/25/fundacao-nobel-reune-especialistas-para-discutir-propostas-de-combate-a-desinformacao.ghtml" }]
+            },
+            {
+                "title": "GloboNews | 25/05/2023",
+                "text": "Projeto brasileiro que combate desinformação é premiado na Cúpula do Nobel nos EUA",
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://g1.globo.com/globonews/jornal-globonews-edicao-das-18/video/projeto-brasileiro-que-combate-desinformacao-e-premiado-na-cupula-do-nobel-nos-eua-11648039.ghtml" }]
             },
             {
                 "title": "desinformante | 25/05/2023",
@@ -24,7 +49,7 @@
             {
                 "title": "A Gazeta | 11/12/2022",
                 "text": "Tecnologia fortalece o controle social no 'deserto de dados' sobre os governos",
-                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://drive.google.com/file/d/14dO2j39WJltfzajs4-trm1FS9aMAfCtl/view?usp=sharing" }]
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/archive/2022-12-11_a-gazeta_tecnologia-fortalece-o-controle-social-no-deserto-de-dados.pdf" }]
             },
             {
                 "title": "Bom Dia Brasil | 27/09/2022",
@@ -32,9 +57,19 @@
                 "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://globoplay.globo.com/v/10969433/" }]
             },
             {
-                "title": "Portal Amazônia | 22/09/2022",
-                "text": "Conservar os manguezais amazônicos fortalece a adaptação das comunidades tradicionais à crise climática",
-                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://amazonia.org.br/2022/09/conservar-os-manguezais-amazonicos-fortalece-a-adaptacao-das-comunidades-tradicionais-a-crise-climatica/#:~:text=Conservar%20os%20manguezais%20amaz%C3%B4nicos%20fortalece%20a%20adapta%C3%A7%C3%A3o%20das%20comunidades%20tradicionais%20%C3%A0%20crise%20clim%C3%A1tica,-Biomas%2C%20Clima%2C%20Destaques&text=Com%20%E2%80%9Cp%C3%A9%20na%20lama%E2%80%9D%20se,pescadores%20atuantes%20na%20costa%20paraense" }]
+                "title": "ndmais | 31/08/2021",
+                "text": "Robôs em ação para raspar dados e monitorar a gestão pública",
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://ndmais.com.br/tecnologia/robos-em-acao-para-raspar-dados-e-monitorar-a-gestao-publica/" }]
+            },
+            {
+                "title": "Portal dos Jornalistas | 03/08/2021",
+                "text": "Nova ferramenta reúne documentos oficiais de capitais brasileiras",
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.portaldosjornalistas.com.br/nova-ferramenta-reune-documentos-oficiais-de-capitais-brasileiras/" }]
+            },
+            {
+                "title": "IJNET | 02/08/2021",
+                "text": "Ferramenta aberta facilita a busca em diários oficiais de 12 capitais brasileiras",
+                "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://ijnet.org/pt-br/story/ferramenta-aberta-facilita-busca-em-di%C3%A1rios-oficiais-de-12-capitais-brasileiras" }]
             },
             {
                 "title": "Nexo | 21/07/2021",
