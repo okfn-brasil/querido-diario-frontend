@@ -14,13 +14,20 @@
         <p
           class="autocomplete"
           [style.marginLeft]="'16px'"
-        > <a routerLink="/tecnologia/busca-avancada" target="_blank"><b>Opções de Busca Avançada</b></a>
+        > <a routerLink="/tecnologia/busca-avancada" target="_blank"><b>Opções de Busca Avançada </b>
+            <mat-icon
+              [appHeight]="12"
+              [appWidth]="12"
+              svgIcon="right-arrow"
+              class="right-arrow"
+            ></mat-icon>
+          </a>
         </p>
         <p
           class="typo-secondary autocomplete-title"
           [style.marginLeft]="'16px'"
         >
-          Sugestões de busca
+          Sugestões de busca:
         </p>
         <mat-option
           *ngFor="let option of filteredOptions | async"

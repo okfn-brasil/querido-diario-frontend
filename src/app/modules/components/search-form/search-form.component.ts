@@ -25,11 +25,11 @@ export class SearchFormComponent implements OnInit {
   timeout: ReturnType<typeof setTimeout> | undefined;
 
   options: string[] = [
-    'Compra emergencial COVID-19',
-    'Dispensa de licitação',
     'Contratação',
-    'Nomeação',
-    'Saneamento básico',
+    '"Dispensa de licitação"',
+    '"Compra emergencial COVID-19"~50',
+    'Nomeação~3',
+    'Saneamento + básico',
   ];
 
   filteredOptions: Observable<string[]> = new Observable();
