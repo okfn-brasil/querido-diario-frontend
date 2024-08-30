@@ -3,7 +3,7 @@
     "title": "Explore diários oficiais municipais..."
   },
   "evolution": {
-    "title": "... e fique de olho nas ações das prefeituras",
+    "title": "... e fique de olho nas ações das prefeituras!",
     "items": [
       {
         "icon": {
@@ -28,10 +28,10 @@
             "width": 50
           }
         },
-        "count": "600",
+        "count": "600.000+",
         "height": 76,
         "width": 76,
-        "text": "mil diários disponibilizados para busca"
+        "text": "diários disponibilizados para busca"
       },
       {
         "count": 3075,
@@ -55,8 +55,8 @@
     ]
   },
   "useCases": {
-    "title": "Casos de uso",
-    "text": "Confira reportagens, análises e pesquisas que utilizam o Querido Diário para encontrar informações sobre os atos públicos."
+    "title": "Conheça e se inspire em casos de uso do Querido Diário",
+    "text": "Compartilhe seu uso conosco!"
   },
   "help": {
     "title": "Precisamos do seu apoio",
@@ -67,17 +67,10 @@
         "text": "Mantemos uma campanha de financiamento coletivo para manter o projeto ativo",
         "actions": [
           {
-            "text": "Doe",
+            "text": "Ver todas as metas",
             "icon": "arrow",
             "to": "https://www.catarse.me/queridodiario-okbr",
             "style": "btn-primary"
-          },
-          {
-            "text": "Ver todas as metas",
-            "icon": "arrow",
-            "route": "/apoie",
-            "fragment": "nossas-metas",
-            "style": "btn-secondary"
           }
         ]
       },
@@ -111,8 +104,7 @@
     ]
   },
   "mediaImpact": {
-    "title": "Na mídia",
-    "text": "Como o Querido Diário repercute nos veículos de comunicação."
+    "title": "Querido Diário na mídia"
   },
   "trajectory": {
     "title": "Conheça a trajetória e próximos passos do Querido Diário",

@@ -1,3 +1,5 @@
+@import 'src/assets/_tools.sass'
+
 .video
   app-icon
     align-self: center
@@ -31,11 +33,11 @@
     padding-top: 0
 
 .stories-overflow
+  overflow: hidden
   max-width: 95vw
   padding-bottom: rem(100)
 
   @media only screen and (max-width: 768px)
-    overflow: hidden
     padding-bottom: 0
     margin-top: rem(-50)
     overflow-x: auto
