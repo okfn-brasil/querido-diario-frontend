@@ -29,7 +29,10 @@
     "Camila Fracaro",
     "Adorilson Bezerra"
   ],
-  "querido-diario-infra": ["José Guilherme Vanz", "Giulio Carvalho"],
+  "querido-diario-infra": [
+    "José Guilherme Vanz", 
+    "Giulio Carvalho"
+  ],
   "querido-diario-api": [
     "José Guilherme Vanz",
     "Giulio Carvalho",
@@ -39,7 +42,9 @@
     "Eduardo Cuducos",
     "Fernanda",
     "Gerardo Alcantara",
-    "Jonathan Schweder"
+    "Jonathan Schweder",
+    "Wildemberg Sales",
+    "Pedro Cabeceira"
   ],
   "censo-querido-diario": [
     "Mário Sérgio",
@@ -58,7 +63,9 @@
   "querido-diario-data-processing": [
     "Giulio Carvalho",
     "José Guilherme Vanz",
-    "André Formento"
+    "André Formento",
+    "Wildemberg Sales",
+    "Cristian Furtado"
   ],
   "querido-diario-toolbox": [
     "José Guilherme Vanz",
@@ -102,7 +109,16 @@
     "Lucas Alves",
     "Mário Sérgio",
     "Renato Siqueira",
-    "Luiz Eduardo"
+    "Luiz Eduardo",
+    "Raíssa Oliveira", 
+    "Ester Lino", 
+    "Wildemberg Sales", 
+    "Cristian Furtado", 
+    "Artur Ferreira",
+    "Pedro Cabeceira"
   ],
-  "querido-diario-backend": ["Giulio Carvalho", "Juliana Trevine"]
+  "querido-diario-backend": [
+    "Giulio Carvalho", 
+    "Juliana Trevine"
+  ]
 }
