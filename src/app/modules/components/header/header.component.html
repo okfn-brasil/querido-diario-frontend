@@ -4,15 +4,15 @@
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
         <a routerLink="/" #explore>Explore</a>
-        <a routerLink="/tecnologia">Tecnologia</a>
-        <a routerLink="/blog">Blog</a>
         <a routerLink="/dados">Dados</a>
-        <a routerLink="/educacao">Educação</a>
+        <a routerLink="/blog">Blog</a>
+        <a routerLink="/tecnologia">Tecnologia</a>     
         <a routerLink="/sobre">Sobre</a>
         <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
         <button routerLink="/apoie" class="btn">Apoie</button>
+        <button routerLink="/educacao" class="btn-purple">Educação</button>
       </nav>
       <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
         <mat-icon svgIcon="bars" class="bars"></mat-icon>
@@ -28,14 +28,14 @@
   <a routerLink="/" #explore><div class="link bg-white">
     Explore
   </div></a>
-  <a routerLink="/tecnologia"><div class="link bg-white">
-    Tecnologia 
+  <a routerLink="/dados"><div class="link bg-white">
+    Dados
   </div></a>
   <a routerLink="/blog"><div class="link bg-white">
     Blog
   </div></a>
-  <a routerLink="/dados"><div class="link bg-white">
-    Dados
+  <a routerLink="/tecnologia"><div class="link bg-white">
+    Tecnologia
   </div></a>
   <a routerLink="/sobre"><div class="link bg-white">
     Sobre 

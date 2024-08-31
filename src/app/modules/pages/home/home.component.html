@@ -16,13 +16,10 @@
 
     <app-container [gap]="34">
       <h1>{{ content.evolution.title }}</h1>
-      <app-row layoutAlign="space-between">
+      <app-row layoutAlign="space-between" [flex]="true" [gap]="30">
         <app-column *ngFor="let item of content.evolution.items">
           <app-row
             [gap]="24"
-            [flex]="true"
-            [appFlexHeight]="172"
-            [appFlexWidth]="120"
             layoutAlign="left"
           >
             <app-icon [icon]="item.icon" class="evolution-icon"></app-icon>
@@ -47,7 +44,19 @@
       </ng-container>
     </app-container>
 
-    <app-container [gap]="34" theme="dark">
+    <app-container theme="light" id="casos" [gap]="34" *ngIf="content$ | async as content; else loading">
+      <div class="container-inner stories-area-title">
+        <h1>{{ content.useCases.title }}</h1>
+        <p>{{ content.useCases.text }}</p>
+      </div>
+      <app-row [gap]="17" wrap="wrap" [flex]="true">
+        <div class="stories-overflow">
+          <edu-carousel [type]="'second-type'" [items]="content.useCases.items"></edu-carousel>
+        </div>
+      </app-row>
+    </app-container>
+
+    <app-container  bg="bg-purple-square-nofading" [gap]="34" theme="dark-tertiary">
       <h1>{{ content.help.title }}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="60">
         <app-column
@@ -88,41 +97,19 @@
       </app-row>
     </app-container>
 
-    <app-container>
-      <app-goals></app-goals>
-    </app-container>
-
-    <app-container [gap]="34" theme="light" bg="bg-gray-square" id="entenda">
-      <app-infos theme="light"></app-infos>
-    </app-container>
-
-    <app-container containerClass="container-notop" bg="bg-purple-square">
-      <div fxLayout="column" fxLayoutGap="100px" fxLayoutGap.xs="0">
-        <a (click)="openVideo()" class="video" fxLayout="row">
-          <img
-            fxFill
-            [style.opacity]="'0.65'"
-            src="assets/images/video@1x.jpg"
-            srcset="assets/images/video@2x.jpg 2x"
-          />
-          <app-icon [icon]="{ file: 'play', height: 50, width: 50 }"></app-icon>
-        </a>
-        <app-video-modal fxHide></app-video-modal>
-        <div class="container-inner">
-          <app-column [gap]="28">
-            <h1>{{ content.trajectory.title }}</h1>
-            <app-row *ngFor="let action of content.trajectory.actions" [gap]="8">
-              <a [routerLink]="action.to">
-                {{ action.text }}
-              </a>
-              <app-icon
-                class='center'
-                [icon]="{ file: 'white-arrow', height: 12, width: 12 }"
-              ></app-icon>
-            </app-row>
-          </app-column>
-        </div>
+    <app-container theme="light" id="midia" [gap]="34" *ngIf="content$ | async as content; else loading">
+      <div class="container-inner stories-area-title">
+        <h1>{{ content.mediaImpact.title }}</h1>
       </div>
+      <app-row [gap]="17" wrap="wrap" [flex]="true">
+        <div class="stories-overflow">
+          <edu-carousel [type]="'second-type'" [items]="content.mediaImpact.items"></edu-carousel>
+        </div>
+      </app-row>
+    </app-container>
+
+    <app-container [gap]="34" id="entenda" theme="dark">
+      <app-infos theme="dark"></app-infos>
     </app-container>
 
     <app-container theme="light">

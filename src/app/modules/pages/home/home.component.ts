@@ -24,11 +24,15 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.content$ = forkJoin({
       content: this.contentService.find('home'),
+      cardsUseCases: this.contentService.find('use-cases'),
+      cardsMediaImpact: this.contentService.find('media-impact'),
       numberOfCities: this.citiesService.getAll(),
     }).pipe(
       map((data) => {
         data.content.evolution.items[0]['count'] =
           data.numberOfCities.cities.length;
+        data.content.useCases['items'] = data.cardsUseCases.useCases;
+        data.content.mediaImpact['items'] = data.cardsMediaImpact.mediaImpact;
         return data.content;
       })
     );

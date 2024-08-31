@@ -42,100 +42,13 @@
   },
   "useCases": {
     "title": "Use cases",
-    "text": "Check out news, reports and surveys that use Querido Diário to find information.",
-    "items": [
-      {
-        "title": "Retruco | 09/08/2022",
-        "text": "No Recife, investimentos na Primeira Infância não incluem os profissionais da área.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.retruco.com.br/post/no-recife-investimentos-na-primeira-inf%C3%A2ncia-n%C3%A3o-incluem-os-profissionais-da-%C3%A1rea" }]
-      },
-      {
-        "title": "Paraíba Feminina | 05/08/2022",
-        "text": "Isenção para empresas, 3ª tarifa mais cara do Nordeste e serviço precário: a situação do transporte público em João Pessoa",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://paraibafeminina.com.br/2022/08/05/isencao-para-empresas-3a-tarifa-mais-cara-do-nordeste-e-servico-precario-a-situacao-do-transporte-publico-em-joao-pessoa/" }]
-      },
-      {
-        "title": "Agência Tatu | 29/07/2022",
-        "text": "Apenas 15% das cidadanias honorárias de Maceió são de mulheres.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.agenciatatu.com.br/noticia/apenas-15-das-cidadanias-honorarias-de-maceio-sao-de-mulheres/" }]
-      },
-      {
-        "title": "Querido Diário | 21/11/2021",
-        "text": "O que os diários oficiais contam sobre a LGPD nos municípios.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "/blog/post/1/" }]
-      },
-      {
-        "title": "Correio Nagô | 07/10/2021",
-        "text": "A invisibilidade da cultura negra e periférica na capital baiana.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://correionago.com.br/a-invisibilidade-da-cultura-negra-e-periferica-na-capital-baiana/" }]
-      },
-      {
-        "title": "data_labe |  20/09/2021",
-        "text": "Por que tem tanto lixo nas ruas da Maré?",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://datalabe.org/por-que-tem-tanto-lixo-nas-ruas-da-mare/" }]
-      },
-      {
-        "title": "Portal Catarinas | 10/09/2021",
-        "text": "Prefeitura de Florianópolis abandona obra para acolhimento de mulheres e jovens em vulnerabilidade.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://catarinas.info/prefeitura-de-florianopolis-abandona-obra-para-acolhimento-de-mulheres-e-jovens-em-vulnerabilidade/" }]
-      },
-      {
-        "title": "Abaré Jornalismo | 23/08/2021",
-        "text": "Câmara mantém suspensa norma que define debate de gênero nas escolas de Manaus.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.abare.jor.br/post/debate-de-g%C3%AAnero-nas-escolas" }]
-      },
-      {
-        "title": "OKBR | 17/08/2021",
-        "text": "Medidas contraditórias e falta de direcionamento: a história do 2º colapso da saúde de Manaus contada pelo Diário Oficial.",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/12/" }]
-      }
-    ]
+    "text": "Check out news, reports and surveys that use Querido Diário to find information."
+    
   },
   "mediaImpact": {
     "title": "Media impact",
-    "text": "How Querido Diário resonates in the press.",
-    "items": [
-      {
-        "title": "G1 | 25/05/2023",
-        "text": "Projeto brasileiro que dá transparência a publicações oficiais é premiado na Cúpula do Prêmio Nobel",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://g1.globo.com/mundo/noticia/2023/05/25/projeto-brasileiro-que-da-transparencia-a-publicacoes-oficiais-e-premiado-na-cupula-do-premio-nobel.ghtml" }]
-      },
-      {
-        "title": "Jornal Nacional | 25/05/2023",
-        "text": "Fundação Nobel reúne especialistas para discutir propostas de combate à desinformação",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://g1.globo.com/jornal-nacional/noticia/2023/05/25/fundacao-nobel-reune-especialistas-para-discutir-propostas-de-combate-a-desinformacao.ghtml" }]
-      },
-      {
-        "title": "desinformante | 25/05/2023",
-        "text": "Efeitos da desinformação no Brasil são apresentados em evento do Prêmio Nobel",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://desinformante.com.br/desinformacao-brasil-nobel/" }]
-      },
-      {
-        "title": "Porvir | 18/04/2023",
-        "text": "Plataforma acompanha compras públicas de tecnologia educacional e aponta tendências",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://porvir.org/plataforma-acompanha-compras-publicas-de-tecnologia-educacional-e-aponta-tendencias/" }]
-      },
-      {
-        "title": "A Gazeta | 11/12/2022",
-        "text": "Tecnologia fortalece o controle social no 'deserto de dados' sobre os governos",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://drive.google.com/file/d/14dO2j39WJltfzajs4-trm1FS9aMAfCtl/view?usp=sharing" }]
-      },
-      {
-        "title": "Bom Dia Brasil | 27/09/2022",
-        "text": "Tecnologia ajuda cidadãos a fiscalizar o trabalho do poder público",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://globoplay.globo.com/v/10969433/" }]
-      },
-      {
-        "title": "Portal Amazônia | 22/09/2022",
-        "text": "Conservar os manguezais amazônicos fortalece a adaptação das comunidades tradicionais à crise climática",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://amazonia.org.br/2022/09/conservar-os-manguezais-amazonicos-fortalece-a-adaptacao-das-comunidades-tradicionais-a-crise-climatica/#:~:text=Conservar%20os%20manguezais%20amaz%C3%B4nicos%20fortalece%20a%20adapta%C3%A7%C3%A3o%20das%20comunidades%20tradicionais%20%C3%A0%20crise%20clim%C3%A1tica,-Biomas%2C%20Clima%2C%20Destaques&text=Com%20%E2%80%9Cp%C3%A9%20na%20lama%E2%80%9D%20se,pescadores%20atuantes%20na%20costa%20paraense" }]
-      },
-      {
-        "title": "Nexo | 21/07/2021",
-        "text": "O projeto que facilita o acesso a diários oficiais de municípios",
-        "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.nexojornal.com.br/expresso/2021/07/21/O-projeto-que-facilita-o-acesso-a-di%C3%A1rios-oficiais-de-munic%C3%ADpios" }]
-      }
-    ]
+    "text": "How Querido Diário resonates in the press."
+    
   },
   "whoWeAre": {
     "title": "About us",

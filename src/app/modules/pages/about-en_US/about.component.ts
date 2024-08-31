@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, forkJoin, of } from 'rxjs';
 import { IconType, Sizeable } from 'src/app/interfaces/icon';
 import { ContentService } from 'src/app/services/content/content.service';
-
+import { map } from 'rxjs/operators';
 
 const square = (size: number) : Sizeable => {
   return {
@@ -26,7 +26,17 @@ export class AboutComponent implements OnInit {
 
   constructor(private contentService: ContentService) {}
 
-  ngOnInit(): void {
-    this.content$ = this.contentService.find('about-en_US');
+  ngOnInit() {
+    this.content$ = forkJoin({
+      content: this.contentService.find('about-en_US'),
+      cardsUseCases: this.contentService.find('use-cases'),
+      cardsMediaImpact: this.contentService.find('media-impact'),
+    }).pipe(
+      map((data) => {
+        data.content.useCases['items'] = data.cardsUseCases.useCases;
+        data.content.mediaImpact['items'] = data.cardsMediaImpact.mediaImpact;
+        return data.content;
+      })
+    );
   }
 }

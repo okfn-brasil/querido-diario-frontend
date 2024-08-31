@@ -1,0 +1,149 @@
+{
+    "useCases": [
+        {
+            "title": "Querido Diário | 15/08/2024",
+            "text": "Olha a cobra! Quem vai tocar no São João?",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/58" }]
+        },
+        {
+            "title": "UFBA | 14/08/2024",
+            "text": "Repetição de tragédias ambientais em cidades da Bahia",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/repeticao-de-tragedias-ambientais-em-cidades-da-bahia/" }]
+        },
+        {
+            "title": "UFBA | 26/06/2024",
+            "text": "Chuvas no Rio Grande do Sul: um recorte das ações municipais diante da crise climática",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/destaques/chuvas-no-rio-grande-do-sul-um-recorte-das-acoes-municipais-diante-da-crise-climatica/" }]
+        },
+        {
+            "title": "((o))eco | 24/06/2024",
+            "text": "Projetos aprovados no Congresso obrigam municípios a considerar as mudanças climáticas",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "" }]
+        },
+        {
+            "title": "Colabora | 31/05/2024",
+            "text": "Teresina cria comissão para discutir justiça climática e racismo ambiental",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://projetocolabora.com.br/ods11/teresina-cria-comissao-para-discutir-justica-climatica-e-racismo-ambiental/" }]
+        },
+        {
+            "title": "Querido Diário | 16/05/2024",
+            "text": "Acesso à informação em tempos de desastre: como monitorar alguns diários oficiais dos municípios gaúchos",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/56" }]
+        },
+        {
+            "title": "Intercept Brasil | 15/05/2024",
+            "text": "Empresa de manutenção de sistema antienchente contratou seu próprio fiscal da prefeitura de Porto Alegre",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.intercept.com.br/2024/05/15/empresa-de-manutencao-de-sistema-antienchente-contratou-seu-proprio-fiscal-da-prefeitura-de-porto-alegre/" }]
+        },
+        {
+            "title": "Colabora | 10/05/2024",
+            "text": "Sócios do desastre climático: ações de Executivo e Legislativo agravam enchentes no Sul",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://projetocolabora.com.br/ods13/socios-do-desastre-climatico-acoes-de-executivo-e-legislativo-agravam-crise-no-sul/" }]
+        },
+        {
+            "title": "Querido Diário | 02/05/2024",
+            "text": "Educação inclusiva para pessoas surdas: estudo de caso em Uberlândia-MG",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/55" }]
+        },
+        {
+            "title": "UFBA | 21/12/2023",
+            "text": "Um sol pra cada um: como as mudanças climáticas afetam Salvador",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/um-sol-pra-cada-um-como-as-mudancas-climaticas-afetam-salvador/" }]
+        },
+        {
+            "title": "UFBA | 05/10/2023",
+            "text": "Conselhos de cultura e seus impactos nas políticas culturais de municípios baianos no pós pandemia",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/conselhos-de-cultura-e-seus-impactos-nas-politicas-culturais-de-municipios-baianos-no-pos-pandemia/" }]
+        },
+        {
+            "title": "Correio | 31/08/2023",
+            "text": "Estações meteorológicas automáticas enriquecem coleta de dados para previsão do tempo",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.correio24horas.com.br/minha-bahia/estacoes-meteorologicas-automaticas-enriquecem-coleta-de-dados-para-previsao-do-tempo-0823" }]
+        },
+        {
+            "title": "InfoAmazonia | 30/08/2023",
+            "text": "Sede da COP em 2025, Belém sofre com falta de investimento em saneamento básico",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://infoamazonia.org/2023/08/30/sede-da-cop-2025-belem-sofre-com-falta-de-investimento-em-saneamento-basico/" }]
+        },
+        {
+            "title": "Eco Nordeste | 30/08/2023",
+            "text": "Trabalhadores da cadeia da reciclagem seguem excluídos das políticas públicas em João Pessoa",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://agenciaeconordeste.com.br/trabalhadores-da-cadeia-da-reciclagem-seguem-excluidos-das-politicas-publicas-em-joao-pessoa/" }]
+        },
+        {
+            "title": "UFBA | 21/07/2023",
+            "text": "Dengue em Salvador: resultado do primeiro semestre e ações da prefeitura",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/dengue-em-salvador-resultado-do-primeiro-semestre-e-acoes-da-prefeitura/" }]
+        },
+        {
+            "title": "UFBA | 30/06/2023",
+            "text": "Entre orgulho e cuidado: a saúde da comunidade LGBTQIA+",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/entre-orgulho-e-cuidado-a-saude-da-comunidade-lgbtqia/" }]
+        },
+        {
+            "title": "UFBA | 23/06/2023",
+            "text": "Salvador: as raízes de uma \"cidade de papel\"",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/salvador-as-raizes-de-uma-cidade-de-papel/" }]
+        },
+        {
+            "title": "UFBA | 01/06/2023",
+            "text": "Alagoinhas, Feira de Santana e Salvador: como está a segurança escolar nos municípios baianos",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/alagoinhas-feira-de-santana-e-salvador-como-esta-a-seguranca-escolar-nos-municipios-baianos/" }]
+        },
+        {
+            "title": "Querido Diário | 19/01/2023",
+            "text": "Seu município cumpre a legislação (Lei de Governo Digital)?",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/24" }]
+        },
+        {
+            "title": "((o))eco | 21/09/2022",
+            "text": "Conservar os manguezais amazônicos fortalece a adaptação das comunidades tradicionais à crise climática",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://oeco.org.br/reportagens/conservar-os-manguezais-amazonicos-fortalece-a-adaptacao-das-comunidades-tradicionais-a-crise-climatica/" }]
+        },
+        {
+            "title": "Retruco | 09/08/2022",
+            "text": "No Recife, investimentos na Primeira Infância não incluem os profissionais da área",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.retruco.com.br/post/no-recife-investimentos-na-primeira-inf%C3%A2ncia-n%C3%A3o-incluem-os-profissionais-da-%C3%A1rea" }]
+        },
+        {
+            "title": "Paraíba Feminina | 05/08/2022",
+            "text": "Isenção para empresas, 3ª tarifa mais cara do Nordeste e serviço precário: a situação do transporte público em João Pessoa",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://paraibafeminina.com.br/2022/08/05/isencao-para-empresas-3a-tarifa-mais-cara-do-nordeste-e-servico-precario-a-situacao-do-transporte-publico-em-joao-pessoa/" }]
+        },
+        {
+            "title": "Agência Tatu | 29/07/2022",
+            "text": "Apenas 15% das cidadanias honorárias de Maceió são de mulheres",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.agenciatatu.com.br/noticia/apenas-15-das-cidadanias-honorarias-de-maceio-sao-de-mulheres/" }]
+        },
+        {
+            "title": "Querido Diário | 21/11/2021",
+            "text": "O que os diários oficiais contam sobre a LGPD nos municípios",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "link": "https://queridodiario.ok.org.br/blog/post/13" }]
+        },
+        {
+            "title": "Correio Nagô | 07/10/2021",
+            "text": "A invisibilidade da cultura negra e periférica na capital baiana",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://correionago.com.br/a-invisibilidade-da-cultura-negra-e-periferica-na-capital-baiana/" }]
+        },
+        {
+            "title": "data_labe |  20/09/2021",
+            "text": "Por que tem tanto lixo nas ruas da Maré?",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://datalabe.org/por-que-tem-tanto-lixo-nas-ruas-da-mare/" }]
+        },
+        {
+            "title": "Portal Catarinas | 10/09/2021",
+            "text": "Prefeitura de Florianópolis abandona obra para acolhimento de mulheres e jovens em vulnerabilidade",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://catarinas.info/prefeitura-de-florianopolis-abandona-obra-para-acolhimento-de-mulheres-e-jovens-em-vulnerabilidade/" }]
+        },
+        {
+            "title": "Abaré Jornalismo | 23/08/2021",
+            "text": "Câmara mantém suspensa norma que define debate de gênero nas escolas de Manaus",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.abare.jor.br/post/debate-de-g%C3%AAnero-nas-escolas" }]
+        },
+        {
+            "title": "OKBR | 17/08/2021",
+            "text": "Medidas contraditórias e falta de direcionamento: a história do 2º colapso da saúde de Manaus contada pelo Diário Oficial",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/12/" }]
+        }
+    ]
+}

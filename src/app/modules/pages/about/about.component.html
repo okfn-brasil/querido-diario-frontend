@@ -122,10 +122,6 @@
   </app-row>
 </app-container>
 
-<app-container [gap]="34" theme="light" bg="bg-yellow-lines" id="entenda">
-  <app-infos page="about"></app-infos>
-</app-container>
-
 <app-container theme="dark" bg="bg-blue-square" id="quem-somos">
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
