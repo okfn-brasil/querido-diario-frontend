@@ -1,9 +1,11 @@
 ol
-  counter-reset: list-item
+  counter-reset: section
+
+li
+  counter-increment: section
 
 li::marker
-  counter-increment: list-item
-  content: counters(list-item, ".") "    "
+  content: counters(section, ".", decimal) "    "
 
 .sections-inner
   margin-left: 45px
