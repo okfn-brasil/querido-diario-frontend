@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Download, DownloadsLabels, Gazette, GazetteQuery, GazetteResponse, Pagination } from 'src/app/interfaces/gazette';
+import { API } from 'src/app/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -77,7 +78,7 @@ export class GazetteService {
     queryParams = { ...queryParams, size: pagination.size, offset: pagination.offset };
 
     const encodedQueryString = new URLSearchParams(queryParams).toString();
-    const url = new URL( `/api/gazettes?${encodedQueryString}${territoryQuery}` ,  `https://queridodiario.ok.org.br` ).toString(); 
+    const url = API + `/gazettes?${encodedQueryString}${territoryQuery}`;
 
     return this.http.get<GazetteResponse>(url).pipe(
       map((res: GazetteResponse) => {
