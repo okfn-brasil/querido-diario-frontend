@@ -67,6 +67,9 @@ export class CityFilterComponent implements OnChanges {
     if(container) {
       container.focus();
     }
+  }
+
+  onInputChange() {
     this.showDropdown = true;
   }
 
