@@ -1,9 +1,19 @@
 {
     "mediaImpact": [
         {
+            "title": "InfoAmazonia | 16/09/2024",
+            "text": "O que o prefeito e o vereador da sua cidade podem fazer pelo clima?",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://infoamazonia.org/2024/09/16/o-que-o-prefeito-e-o-vereador-da-sua-cidade-podem-fazer-pelo-clima/" }]
+        },
+        {
+            "title": "Veja | 06/09/2024",
+            "text": "'Nenhuma tecnologia é resposta para a segurança pública', diz especialista",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://veja.abril.com.br/tecnologia/nenhuma-tecnologia-e-resposta-para-a-seguranca-publica-diz-especialista/" }]
+        },
+        {
             "title": "Nexo | 10/06/2024",
             "text": "O site que mostra as decisões municipais sobre clima",
-            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.nexojornal.com.br/expresso/2024/06/10/plataforma-diarios-oficiais-clima-meio-ambiente" }]
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://www.nexojornal.com.br/expresso/2024/06/10/plataforma-diarios-oficiais-clima-meio-ambiente/" }]
         },
         {
             "title": "O Globo | 03/03/2024",
