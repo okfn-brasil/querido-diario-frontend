@@ -33,6 +33,10 @@ export class CityFilterComponent implements OnChanges {
 
   onShowPlaceholder() {
     setTimeout(() => {
+      if(this.selectedCities.length) {
+        return;
+      }
+
       this.resetInput();
       this.showPlaceholder = true;
     }, 300);
