@@ -51,7 +51,7 @@ Além das issues marcadas como [`good first issue`](https://github.com/okfn-bras
 Ao escolher issues de desenho de interfaces ou de desenho gráfico, se atente aos estilos do projeto. Você também pode achar útil a [documentação de design do frontend](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/frontend.html).
 
 ## Como configurar o ambiente de desenvolvimento
-O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](package.json). 
+O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](../package.json). 
 
 A seguir, veja como instalar todas essas ferramentas em seu sistema operacional.
 
@@ -82,7 +82,7 @@ Parte das funcionalidades do frontend do Querido Diário dependem de recursos ex
 
 ### [API pública](https://github.com/okfn-brasil/querido-diario-api/)
 
-Para realizar buscas conteúdo em diários, consultar dados de municípios cadastrados no QD, consultar dados de CNPJs e envio de emails de sugestões, é necessário interagir com a API do QD.
+Para realizar buscas de conteúdo em diários, consultar dados de municípios cadastrados no QD, consultar dados de CNPJs e envio de emails de sugestões, é necessário interagir com a API do QD.
 
 É possível utilizar a API de produção, principalmente se precisar de dados que demoram a ser coletados (e na API de produção já estão prontos para consulta) e o seu uso da API for de intensidade leve. Neste caso, não é necessário alterar nada no repositório, já configurado para acessar a API de produção.
 

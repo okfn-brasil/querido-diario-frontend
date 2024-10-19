@@ -1,16 +1,18 @@
 **English (US)** | [Português (BR)](/docs/README.md) 
 
 <p align="center">
-  <a href="https://queridodiario.ok.org.br/sobre" target="_blank"> <img alt="Querido Diário" src="./images/querido-diario-logo.png" width="200">
+  <a href="https://queridodiario.ok.org.br/en-US/sobre" target="_blank"> <img alt="Querido Diário" src="./images/querido-diario-logo.png" width="200">
   </a>
 </p>
 
 # Frontend (website)
 
-Find out more about [technologies](https://queridodiario.ok.org.br/tecnologia) and [history](https://queridodiario.ok.org.br/sobre) of the project on the [Querido Diário website](https://queridodiario.ok.org.br)
+Find out more about [technologies](https://queridodiario.ok.org.br/en-US/tecnologia) and [history](https://queridodiario.ok.org.br/en-US/sobre) of the project on the [Querido Diário website](https://queridodiario.ok.org.br)
 
 # Summary
 - [How to contribute](#how-to-contribute)
+- [Development environment](#development-environment)
+- [How to run](#how-to-run)
 - [Support](#support)
 - [Thanks](#thanks)
 - [Open Knowledge Brazil](#open-knowledge-brazil)
@@ -29,7 +31,43 @@ You can find how to do it at [CONTRIBUTING-en-US.md](/docs/CONTRIBUTING-en-US.md
 
 Also, check the [Querido Diário documentation](https://docs.queridodiario.ok.org.br/en/latest/) to help you.
 
+# Development environment
+The project uses [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/). We also use [nvm](https://github.com/nvm-sh/nvm), a `node.js` version manager. To know the `node.js` version, the list of dependencies and their versions, see the [`package.json`](../package.json) file.
+
+With a terminal opened in the root directory of the repository, use the following sequence of commands to install all these tools on a Linux operating system:
+```
+nvm install v16.2.0
+npm install --global yarn
+yarn
+```
+
+To learn more details or information about setting up on other operating systems see ["how to set up the development environment"](/docs/CONTRIBUTING-en-US.md#how-to-set-up-the-development-environment).
+
+# How to run
+1. With the terminal opened in the root directory of the repository, the project can be served locally with the command:
+``` console
+yarn ng serve
+```
+2. During execution, a log will appear in the terminal. The final part, like the following, informs which port the site is being hosted on.
+```
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+
+✔ Compiled successfully.
+```
+3. Done! Now you can simulate the changes and see how the modifications made in the code are reflected on the site before sending your contribution!
+
+# Support
+<p>  
+  <a href="https://go.ok.org.br/discord" target="_blank">
+    <img alt="Discord Invite" src="https://img.shields.io/badge/Discord-Entre%20no%20servidor-blue?style=for-the-badge&logo=discord" >
+  </a>
+</p>
+
+Join our [community channel](https://go.ok.org.br/discord) to exchange ideas about the projects, ask questions, request help with contributions, and discuss civic innovation in general.
+
 # Thanks
+The application was initially developed in collaboration with the people from the software studio [Jurema](https://jurema.la/).
+
 This project is maintained by Open Knowledge Brazil and made possible thanks to the technical communities, the [Ambassadors of Civic Innovation](https://embaixadoras.ok.org.br/), volunteers and financial donors, in addition to partner universities, companies supporters and funders.
 
 Meet [who supports Querido Diário](https://queridodiario.ok.org.br/apoie#quem-apoia).
