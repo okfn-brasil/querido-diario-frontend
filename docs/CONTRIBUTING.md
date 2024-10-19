@@ -21,7 +21,7 @@ Uma breve descrição da estrutura do repositório:
 |-------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`.github`](/.github)                                       | Configurações do repositório para o GitHub.                                                                                                      |
 | [`docs`](/docs)                                             | Arquivos de documentação do repositório (README, CONTRIBUTING, etc.).                                                                            |
-| [`e2e`](/e2e)                                               | Testes end-to-end (👀).                                                                                                                       |
+| [`e2e`](/e2e)                                               | Testes end-to-end (👀).                                                                                                                          |
 | [`src`](/src)                                               | Diretório do código fonte. Contém arquivos principais da aplicação (index.html, styles.sass, etc.) e subdiretórios que organizam o código fonte. |
 | [`src/app`](/src/app)                                       | Diretório que organiza as funcionalidades da aplicação (diretivas, módulos, serviços, etc.)                                                      |
 | [`src/app/data`](/src/app/data)                             | Conjuntos de dados constantes do projeto.                                                                                                        |
@@ -51,7 +51,7 @@ Além das issues marcadas como [`good first issue`](https://github.com/okfn-bras
 Ao escolher issues de desenho de interfaces ou de desenho gráfico, se atente aos estilos do projeto. Você também pode achar útil a [documentação de design do frontend](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/frontend.html).
 
 ## Como configurar o ambiente de desenvolvimento
-O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](package.json). 
+O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](/package.json). 
 
 A seguir, veja como instalar todas essas ferramentas em seu sistema operacional.
 
@@ -82,11 +82,11 @@ Parte das funcionalidades do frontend do Querido Diário dependem de recursos ex
 
 ### [API pública](https://github.com/okfn-brasil/querido-diario-api/)
 
-Para realizar buscas conteúdo em diários, consultar dados de municípios cadastrados no QD, consultar dados de CNPJs e envio de emails de sugestões, é necessário interagir com a API do QD.
+Para realizar buscas de conteúdo em diários, consultar dados de municípios cadastrados no QD, consultar dados de CNPJs e envio de emails de sugestões, é necessário interagir com a API do QD.
 
 É possível utilizar a API de produção, principalmente se precisar de dados que demoram a ser coletados (e na API de produção já estão prontos para consulta) e o seu uso da API for de intensidade leve. Neste caso, não é necessário alterar nada no repositório, já configurado para acessar a API de produção.
 
-Porém, em outros casos será necessário configurar localmente a API. Para isso, altere a constante `API` no arquivo [`src/app/constants.ts`](src/app/constants.ts) de `'https://queridodiario.ok.org.br/api'` para `'http://0.0.0.0:8080'` (ou `'http://localhost:8080'`), e execute localmente (como instruído na documentação de configuração de ambiente da API) para consumir seus dados.
+Porém, em outros casos será necessário configurar localmente a API. Para isso, altere a constante `API` no arquivo [`src/app/constants.ts`](/src/app/constants.ts) de `'https://queridodiario.ok.org.br/api'` para `'http://0.0.0.0:8080'` (ou `'http://localhost:8080'`), e execute localmente (como instruído na documentação de configuração de ambiente da API) para consumir seus dados.
 
 Se for necessário popular a API local com muitos dados, será necessário executar o fluxo completo do QD, da raspagem à disponibilização pela API. Nesses casos, consulte como [configurar o Querido Diário de ponta-a-ponta](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/configuracao-de-ponta-a-ponta.html).
 
@@ -94,7 +94,7 @@ Se for necessário popular a API local com muitos dados, será necessário execu
 
 As funcionalidades de busca e alertas do [Querido Diário: Tecnologias na Educação](https://queridodiario.ok.org.br/educacao) dependem inteiramente do backend.
 
-Não é possível utilizar o backend de produção. Para testar qualquer funcionalidade referente ao QD-Edu, será necessário configurar o backend localmente. Para isso, altere a constante `educationApi` no arquivo [`src/app/services/utils/index.ts`](src/app/services/utils/index.ts) de `'https://backend-api.queridodiario.ok.org.br/api/'` para `'http://0.0.0.0:8000/api/'` (ou `'http://localhost:8000/api/'`), e execute localmente (como instruído na documentação de configuração de ambiente da API) para utilizar o backend local.
+Não é possível utilizar o backend de produção. Para testar qualquer funcionalidade referente ao QD-Edu, será necessário configurar o backend localmente. Para isso, altere a constante `educationApi` no arquivo [`src/app/services/utils/index.ts`](/src/app/services/utils/index.ts) de `'https://backend-api.queridodiario.ok.org.br/api/'` para `'http://0.0.0.0:8000/api/'` (ou `'http://localhost:8000/api/'`), e execute localmente (como instruído na documentação de configuração de ambiente da API) para utilizar o backend local.
 
 Se for necessário configurar a API e o backend do QD ao mesmo tempo, se atente ao uso correto de pods e containers para que os dois serviços possam ser levantados (dentro do mesmo pod com as duas portas abertas ou em pods diferentes) ou consulte como [configurar o Querido Diário de ponta-a-ponta](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/configuracao-de-ponta-a-ponta.html).
 
