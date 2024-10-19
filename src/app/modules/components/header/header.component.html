@@ -2,6 +2,14 @@
   <header fxLayout="row">
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
+      <div *ngIf="!hideMenu" fxLayout="row" fxLayoutGap="8px">
+        <a (click)="openMobileNotifications()" fxHide fxHide.xs="false">
+          <app-icon [icon]="notificationIcon"></app-icon>
+        </a>
+        <a (click)="openDialog()" id="support" fxHide fxHide.xs="false">
+          <mat-icon svgIcon="bars" class="bars"></mat-icon>
+        </a>
+      </div>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
         <a routerLink="/" #explore>Explore</a>
         <a routerLink="/dados">Dados</a>
@@ -14,15 +22,15 @@
         <button routerLink="/apoie" class="btn">Apoie</button>
         <button routerLink="/educacao" class="btn-purple">Educação</button>
       </nav>
-      <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
-        <mat-icon svgIcon="bars" class="bars"></mat-icon>
-      </a>
     </div>
     <app-modal fxHide> </app-modal>
     <app-notifications fxHide></app-notifications>
   </header>
 </app-row>
 
+<div class="mobile-notifications" *ngIf="mobileNotificationsOpen" fxHide fxHide.xs="false">
+  <app-notifications></app-notifications>
+</div>
 
 <div class="suspended-menu" *ngIf="mobileMenuOpen" (click)="onClickLink()">
   <a routerLink="/" #explore><div class="link bg-white">
