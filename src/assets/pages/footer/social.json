@@ -2,10 +2,17 @@
   "title": "REDES SOCIAIS",
   "icons": [
     {
-      "file": "twitter",
+      "file": "bluesky",
       "height": 36,
       "width": 36,
-      "to": "https://twitter.com/okfnbr/",
+      "to": "https://bsky.app/profile/ok.org.br",
+      "target": "_blank"
+    },
+    {
+      "file": "mastodon",
+      "height": 36,
+      "width": 36,
+      "to": "https://mastodon.social/@okbr",
       "target": "_blank"
     },
     {
@@ -13,13 +20,6 @@
       "height": 36,
       "width": 36,
       "to": "https://www.instagram.com/openknowledgebrasil/",
-      "target": "_blank"
-    },
-    {
-      "file": "facebook",
-      "height": 36,
-      "width": 36,
-      "to": "https://www.facebook.com/OpenKnowledgeBrasil",
       "target": "_blank"
     },
     {
