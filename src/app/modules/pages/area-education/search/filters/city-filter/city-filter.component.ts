@@ -56,6 +56,7 @@ export class CityFilterComponent implements OnChanges {
     this.resetInput();
     this.selectedCities.push(city);
     this.emitLocations();
+    this.focusOutInput();
   }
 
   emitLocations() {
