@@ -2,6 +2,12 @@
   "explore": {
     "title": "Explore diários oficiais municipais..."
   },
+  "search": {
+     "placeholderSearch": "Ex.: licitação, contratação, COVID 19",
+     "placeholderLocation": "Município",
+     "placeholderDateRange": "Período",
+     "button": "Pesquisar"
+  },
   "evolution": {
     "title": "... e fique de olho nas ações das prefeituras!",
     "items": [

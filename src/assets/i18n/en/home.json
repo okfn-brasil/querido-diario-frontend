@@ -2,6 +2,12 @@
   "explore": {
     "title": "Explore municipal official diaries..."
   },
+  "search": {
+    "placeholderSearch": "E.g.: bidding, contracting, COVID-19",
+    "placeholderLocation": "Municipality",
+    "placeholderDateRange": "Period",
+    "button": "Search"
+  },
   "evolution": {
     "title": "... and keep an eye on the actions of city halls!",
     "items": [
