@@ -1,6 +1,6 @@
-<app-container *ngIf="navigation$ as content" [gap]="86">
+<app-container  [gap]="86">
   <app-row wrap="wrap" layoutAlign="space-between">
-    <ng-container *ngFor="let section of content | async">
+    <ng-container *ngFor="let section of 'footer.items' | translate">
       <app-column [gap]="12" class="footer-links">
         <span
           ><p class="links-title">{{ section.title }}</p></span
