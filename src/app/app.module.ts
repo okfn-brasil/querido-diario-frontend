@@ -1,5 +1,5 @@
 import { ViewportScroller } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -113,6 +113,12 @@ import { TechComponent } from './modules/pages/tech/tech.component';
 import { AuthInterceptor } from './services/interceptor';
 import { AggregateStateFilterComponent } from './modules/pages/aggregate/filters/state-filter/aggregate-state-filter.component';
 import { AggregateCityFilterComponent } from './modules/pages/aggregate/filters/city-filter/aggregate-city-filter.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 /* custom directives */
 @NgModule({
@@ -226,6 +232,13 @@ import { AggregateCityFilterComponent } from './modules/pages/aggregate/filters/
     IvyCarouselModule,
     NgxPaginationModule,
     NgxMaskModule.forRoot(),
+     TranslateModule.forRoot({
+      // loader: {
+      //   provide: TranslateLoader,
+      //   useFactory: HttpLoaderFactory,
+      //   deps: [HttpClient]
+      // }
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
