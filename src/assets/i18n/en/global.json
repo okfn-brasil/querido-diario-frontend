@@ -1,0 +1,94 @@
+{
+  "header": {
+    "items": [
+      {
+        "text": "Explore",
+        "route": "/"
+      },
+      {
+        "text": "Data",
+        "route": "/data"
+      },
+      {
+        "text": "Blog",
+        "route": "/blog"
+      },
+      {
+        "text": "Technology",
+        "route": "/technology"
+      },
+      {
+        "text": "About",
+        "route": "/about"
+      }
+    ],
+    "buttons": {
+      "support": "Support",
+      "education": "Education"
+    }
+  },
+  "footer": {
+    "items": [
+      {
+        "title": "SUPPORT",
+        "actions": [
+          {
+            "text": "Our goals",
+            "route": "/support",
+            "fragment": "our-goals"
+          },
+          {
+            "text": "Who supports",
+            "route": "/support",
+            "fragment": "who-supports"
+          },
+          {
+            "text": "Send your suggestion",
+            "route": "/suggestion"
+          }
+        ]
+      },
+      {
+        "title": "TECHNOLOGY",
+        "actions": [
+          {
+            "text": "Documentation",
+            "to": "https://docs.queridodiario.ok.org.br"
+          },
+          {
+            "text": "Advanced search",
+            "route": "/technology/advanced-search"
+          },
+          {
+            "text": "Contribute",
+            "route": "/technology",
+            "fragment": "contribute"
+          },
+          {
+            "text": "Public API",
+            "to": "https://queridodiario.ok.org.br/api/docs"
+          }
+        ]
+      },
+      {
+        "title": "ABOUT",
+        "actions": [
+          {
+            "text": "History",
+            "route": "/about",
+            "fragment": "history"
+          },
+          {
+            "text": "Who we are",
+            "route": "about",
+            "fragment": "who-we-are"
+          },
+          {
+            "text": "Terms of use and privacy policy",
+            "route": "/privacy"
+          }
+        ]
+      }
+    ]
+  }
+}
