@@ -89,6 +89,15 @@
           }
         ]
       }
-    ]
+    ],
+    "social": {
+      "title": "SOCIAL MEDIA"
+    },
+    "copyright":{
+       "texts": [
+        "All content from Querido Diário is available under the Creative Commons Attribution 4.0 International license, which means it can be shared and reused for derivative works, provided the source is cited.",
+        "Developers: we have open data and an API ♥ <a href='tecnologia#contribua-com-código'>Learn more and contribute to the development</a>"
+      ]
+    }
   }
 }

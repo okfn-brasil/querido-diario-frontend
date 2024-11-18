@@ -1,97 +1,103 @@
-  {
-    "header": {
-      "items": [
-        {
-          "text": "Explorar",
-          "route": "/"
-        },
-        {
-          "text": "Dados",
-          "route": "/dados"
-        },
-        {
-          "text": "Blog",
-          "route": "/blog"
-        },
-        {
-          "text": "Tecnologia",
-          "route": "/tecnologia"
-        },
-        {
-          "text": "Sobre",
-          "route": "/sobre"
-        }
-      ],
-      "buttons": {
-        "support": "Suporte",
-        "education": "Educação"
+{
+  "header": {
+    "items": [
+      {
+        "text": "Explorar",
+        "route": "/"
+      },
+      {
+        "text": "Dados",
+        "route": "/dados"
+      },
+      {
+        "text": "Blog",
+        "route": "/blog"
+      },
+      {
+        "text": "Tecnologia",
+        "route": "/tecnologia"
+      },
+      {
+        "text": "Sobre",
+        "route": "/sobre"
       }
-    },
-   
-
-     "footer":{
-        "items":[
-           {
-              "title":"APOIE",
-              "actions":[
-                 {
-                    "text":"Nossas metas",
-                    "route":"/apoie",
-                    "fragment":"nossas-metas"
-                 },
-                 {
-                    "text":"Quem apoia",
-                    "route":"/apoie",
-                    "fragment":"quem-apoia"
-                 },
-                 {
-                    "text":"Envie sua sugestão",
-                    "route":"/sugestao"
-                 }
-              ]
-           },
-           {
-              "title":"TECNOLOGIA",
-              "actions":[
-                 {
-                    "text":"Documentação",
-                    "to":"https://docs.queridodiario.ok.org.br"
-                 },
-                 {
-                    "text":"Busca avançada",
-                    "route":"/tecnologia/busca-avancada"
-                 },
-                 {
-                    "text":"Contribua",
-                    "route":"/tecnologia",
-                    "fragment":"contribua"
-                 },
-                 {
-                    "text":"API Pública",
-                    "to":"https://queridodiario.ok.org.br/api/docs"
-                 }
-              ]
-           },
-           {
-              "title":"SOBRE",
-              "actions":[
-                 {
-                    "text":"História",
-                    "route":"/sobre",
-                    "fragment":"historia"
-                 },
-                 {
-                    "text":"Quem somos",
-                    "route":"sobre",
-                    "fragment":"quem-somos"
-                 },
-                 {
-                    "text":"Termos de uso e política de privacidade",
-                    "route":"/privacidade"
-                 }
-              ]
-           }
+    ],
+    "buttons": {
+      "support": "Suporte",
+      "education": "Educação"
+    }
+  },
+  "footer":{
+    "items":[
+      {
+        "title":"APOIE",
+        "actions":[
+          {
+            "text":"Nossas metas",
+            "route":"/apoie",
+            "fragment":"nossas-metas"
+          },
+          {
+            "text":"Quem apoia",
+            "route":"/apoie",
+            "fragment":"quem-apoia"
+          },
+          {
+            "text":"Envie sua sugestão",
+            "route":"/sugestao"
+          }
         ]
-     }
-
+      },
+      {
+        "title":"TECNOLOGIA",
+        "actions":[
+          {
+            "text":"Documentação",
+            "to":"https://docs.queridodiario.ok.org.br"
+          },
+          {
+            "text":"Busca avançada",
+            "route":"/tecnologia/busca-avancada"
+          },
+          {
+            "text":"Contribua",
+            "route":"/tecnologia",
+            "fragment":"contribua"
+          },
+          {
+            "text":"API Pública",
+            "to":"https://queridodiario.ok.org.br/api/docs"
+          }
+        ]
+      },
+      {
+        "title":"SOBRE",
+        "actions":[
+          {
+            "text":"História",
+            "route":"/sobre",
+            "fragment":"historia"
+          },
+          {
+            "text":"Quem somos",
+            "route":"sobre",
+            "fragment":"quem-somos"
+          },
+          {
+            "text":"Termos de uso e política de privacidade",
+            "route":"/privacidade"
+          }
+        ]
+      }
+    ],
+    "social": {
+      "title": "REDES SOCIAIS"
+    },
+    "copyright":{
+       "texts": [
+        "Todo o conteúdo do Querido Diário está disponível sob a licença Creative Commons Atribuição 4.0 Internacional, o que significa que pode ser compartilhado e reutilizado para trabalhos derivados, desde que citada a fonte.",
+        "Pessoas desenvolvedoras: temos dados abertos e API ♥ <a href=\"tecnologia#contribua-com-código\">Conheça e contribua com o desenvolvimento</a>"
+      ]
+    }
   }
+}
