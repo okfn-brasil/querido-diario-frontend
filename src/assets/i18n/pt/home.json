@@ -3,10 +3,10 @@
     "title": "Explore diários oficiais municipais..."
   },
   "search": {
-     "placeholderSearch": "Ex.: licitação, contratação, COVID 19",
-     "placeholderLocation": "Município",
-     "placeholderDateRange": "Período",
-     "button": "Pesquisar"
+    "placeholderSearch": "Ex.: licitação, contratação, COVID 19",
+    "placeholderLocation": "Município",
+    "placeholderDateRange": "Período",
+    "button": "Pesquisar"
   },
   "evolution": {
     "title": "... e fique de olho nas ações das prefeituras!",
@@ -123,6 +123,44 @@
   },
   "mediaImpact": {
     "title": "Querido Diário na mídia"
+  },
+  "infos": {
+    "title": "Entenda",
+    "items": [
+      {
+        "title": "Nível de Acesso",
+        "text": "Cada município possui um nível de acesso no projeto Querido Diário. Conheça cada um deles.",
+        "actions": [
+          {
+            "text": "Ler mais",
+            "icon": "right-arrow",
+            "to": "/acesso"
+          }
+        ]
+      },
+      {
+        "title": "Glossário",
+        "text": "Veja os termos que mais aparecem nos textos dos diários oficiais e entenda o que significam.",
+        "actions": [
+          {
+            "text": "Ler mais",
+            "icon": "right-arrow",
+            "to": "/glossario"
+          }
+        ]
+      },
+      {
+        "title": "Como denunciar ou pedir informações",
+        "text": "Encontrou uma informação suspeita ou precisa de mais detalhes sobre alguma publicação do diário oficial? Saiba como fazer.",
+        "actions": [
+          {
+            "text": "Ler mais",
+            "icon": "right-arrow",
+            "to": "/informacoes"
+          }
+        ]
+      }
+    ]
   },
   "trajectory": {
     "title": "Conheça a trajetória e próximos passos do Querido Diário",

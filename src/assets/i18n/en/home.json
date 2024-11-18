@@ -112,6 +112,45 @@
   "mediaImpact": {
     "title": "Querido Diário in the media"
   },
+  "infos": {
+    "title": "Understand",
+    "items": [
+      {
+        "title": "Access Level",
+        "text": "Each municipality has an access level in the Querido Diário project. Learn about each one of them.",
+        "actions": [
+          {
+            "text": "Read more",
+            "icon": "right-arrow",
+            "to": "/acesso"
+          }
+        ]
+      },
+      {
+        "title": "Glossary",
+        "text": "See the terms that appear most frequently in the texts of official gazettes and understand what they mean.",
+        "actions": [
+          {
+            "text": "Read more",
+            "icon": "right-arrow",
+            "to": "/glossario"
+          }
+        ]
+      },
+      {
+        "title": "How to Report or Request Information",
+        "text": "Found suspicious information or need more details about a publication in the official gazette? Learn how to proceed.",
+        "actions": [
+          {
+            "text": "Read more",
+            "icon": "right-arrow",
+            "to": "/informacoes"
+          }
+        ]
+      }
+    ]
+  },
+
   "trajectory": {
     "title": "Learn about the trajectory and next steps of Querido Diário",
     "actions": [

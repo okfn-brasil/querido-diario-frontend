@@ -232,13 +232,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     IvyCarouselModule,
     NgxPaginationModule,
     NgxMaskModule.forRoot(),
-     TranslateModule.forRoot({
-      // loader: {
-      //   provide: TranslateLoader,
-      //   useFactory: HttpLoaderFactory,
-      //   deps: [HttpClient]
-      // }
-    })
+    TranslateModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
