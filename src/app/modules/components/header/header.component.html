@@ -3,16 +3,16 @@
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
-        <a routerLink="/" #explore>Explore</a>
-        <a routerLink="/dados">Dados</a>
-        <a routerLink="/blog">Blog</a>
-        <a routerLink="/tecnologia">Tecnologia</a>     
-        <a routerLink="/sobre">Sobre</a>
+        <a routerLink="/" #explore data-testid="explore-head">Explore</a>
+        <a routerLink="/dados" data-testid="dados-head">Dados</a>
+        <a routerLink="/blog" data-testid="blog-head">Blog</a>
+        <a routerLink="/tecnologia" data-testid="tecnologia-head">Tecnologia</a>
+        <a routerLink="/sobre" data-testid="sobre-head">Sobre</a>
         <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
-        <button routerLink="/apoie" class="btn">Apoie</button>
-        <button routerLink="/educacao" class="btn-purple">Educação</button>
+        <button routerLink="/apoie" class="btn" data-testid="btn-apoie">Apoie</button>
+        <button routerLink="/educacao" class="btn-purple" data-testid="btn-educacao">Educação</button>
       </nav>
       <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
         <mat-icon svgIcon="bars" class="bars"></mat-icon>
@@ -38,7 +38,7 @@
     Tecnologia
   </div></a>
   <a routerLink="/sobre"><div class="link bg-white">
-    Sobre 
+    Sobre
   </div></a>
   <a routerLink="/apoie"><div class="link bg-orange">
     Apoie
@@ -49,22 +49,22 @@
     Olá, {{userData.full_name.split(' ')[0]}}
   </div>
   <a *ngIf="userData.full_name" routerLink="/educacao/alertas"><div class="link logged-link bg-dark-purple">
-    Meus alertas 
+    Meus alertas
   </div></a>
   <a *ngIf="userData.full_name"><div (click)="onClickLogout()" class="link logged-link bg-dark-purple">
-    Logout 
+    Logout
   </div></a>
-  <a *ngIf="!userData.full_name"><div (click)="openForm()" class="link login">
-    Login / Cadastre-se 
+  <a *ngIf="!userData.full_name"><div (click)="openForm()" class="link login" data-testid="btn-login-cadastro">
+    Login / Cadastre-se
   </div></a>
-  
+
   <!-- <a><div class="link bg-purple"> -->
   <!--   Estudos de caso -->
   <!-- </div></a> -->
   <a routerLink="/educacao/busca"><div class="link bg-purple">
-    Busca 
+    Busca
   </div></a>
   <a routerLink="/educacao/sobre"><div class="link bg-purple">
-    Sobre 
+    Sobre
   </div></a>
 </div>
