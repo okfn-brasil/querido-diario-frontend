@@ -7,7 +7,7 @@
       },
       {
         "text": "Data",
-        "route": "/data"
+        "route": "/dados"
       },
       {
         "text": "Blog",
@@ -15,11 +15,11 @@
       },
       {
         "text": "Technology",
-        "route": "/technology"
+        "route": "/tecnologia"
       },
       {
         "text": "About",
-        "route": "/about"
+        "route": "/sobre"
       }
     ],
     "buttons": {
