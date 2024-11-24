@@ -2,7 +2,7 @@
   <app-row>
     <mat-form-field appearance="fill" class="search-input">
       <mat-icon matPrefix svgIcon="search-gray"></mat-icon>
-      <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
+      <mat-label>{{ 'search.placeholderSearch' | translate }}</mat-label>
       <input
         class="search"
         #termField
@@ -47,7 +47,7 @@
     <edu-city-filter
       [initialValue]="territory" 
       [loadingCities]="loadingCities"
-      label="Município" 
+      label="{{ 'search.placeholderLocation' | translate }}" 
       class="city-input" 
       [cities]="getCityList()"
       [showCityLevel]="true"
@@ -61,5 +61,5 @@
       class="period-input"
     ></app-date-picker-range>
   </app-row>
-  <button (click)="search()" class="btn">Pesquisar</button>
+  <button (click)="search()" class="btn">{{ 'search.button' | translate }}</button>
 </form>

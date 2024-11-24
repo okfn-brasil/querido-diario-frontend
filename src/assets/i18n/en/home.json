@@ -1,0 +1,261 @@
+{
+  "explore": {
+    "title": "Explore municipal official diaries..."
+  },
+  "search": {
+    "placeholderSearch": "E.g.: bidding, contracting, COVID-19",
+    "placeholderLocation": "Municipality",
+    "placeholderDateRange": "Period",
+    "button": "Search"
+  },
+  "evolution": {
+    "title": "... and keep an eye on the actions of city halls!",
+    "items": [
+      {
+        "icon": {
+          "file": "check",
+          "height": 76,
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
+        },
+        "count": null,
+        "text": "cities on the platform"
+      },
+      {
+        "icon": {
+          "file": "search",
+          "height": 76,
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
+        },
+        "count": "700,000+",
+        "height": 76,
+        "width": 76,
+        "text": "diaries available for search"
+      },
+      {
+        "count": 3075,
+        "icon": {
+          "file": "pin",
+          "height": 76,
+          "width": 76,
+          "xs": {
+            "height": 50,
+            "width": 50
+          }
+        },
+        "text": "cities in the coverage projection"
+      }
+    ],
+    "actions": [
+      {
+        "text": "Check out the available cities",
+        "to": "/available-cities"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Discover and get inspired by Querido Diário use cases",
+    "text": "Share your use with us"
+  },
+  "help": {
+    "title": "We need your support",
+    "items": [
+      {
+        "icon": { "file": "gift", "height": 56, "width": 40 },
+        "title": "Contribute financially",
+        "text": "We run a crowdfunding campaign to keep the project active",
+        "actions": [
+          {
+            "text": "See all goals",
+            "icon": "arrow",
+            "to": "https://www.catarse.me/queridodiario-okbr",
+            "style": "btn-primary"
+          }
+        ]
+      },
+      {
+        "icon": { "file": "document", "height": 56, "width": 40 },
+        "title": "Contribute to the development",
+        "text": "Querido Diário is an open-source project, so anyone can collaborate",
+        "actions": [
+          {
+            "text": "Start here",
+            "icon": "arrow",
+            "route": "/technology",
+            "fragment": "contribute-with-code",
+            "style": "btn-secondary"
+          }
+        ]
+      },
+      {
+        "icon": { "file": "gift", "height": 56, "width": 40 },
+        "title": "Donate to OKBR",
+        "text": "By contributing to OKBR, you will support Querido Diário and other projects",
+        "actions": [
+          {
+            "text": "Donate",
+            "icon": "arrow",
+            "to": "https://ok.org.br/apoie/",
+            "style": "btn-primary"
+          }
+        ]
+      }
+    ]
+  },
+  "mediaImpact": {
+    "title": "Querido Diário in the media"
+  },
+  "infos": {
+    "title": "Understand",
+    "items": [
+      {
+        "title": "Access Level",
+        "text": "Each municipality has an access level in the Querido Diário project. Learn about each one of them.",
+        "actions": [
+          {
+            "text": "Read more",
+            "icon": "right-arrow",
+            "to": "/acesso"
+          }
+        ]
+      },
+      {
+        "title": "Glossary",
+        "text": "See the terms that appear most frequently in the texts of official gazettes and understand what they mean.",
+        "actions": [
+          {
+            "text": "Read more",
+            "icon": "right-arrow",
+            "to": "/glossario"
+          }
+        ]
+      },
+      {
+        "title": "How to Report or Request Information",
+        "text": "Found suspicious information or need more details about a publication in the official gazette? Learn how to proceed.",
+        "actions": [
+          {
+            "text": "Read more",
+            "icon": "right-arrow",
+            "to": "/informacoes"
+          }
+        ]
+      }
+    ]
+  },
+
+  "trajectory": {
+    "title": "Learn about the trajectory and next steps of Querido Diário",
+    "actions": [
+      {
+        "text": "Learn more about the project",
+        "to": "/about"
+      }
+    ]
+  },
+  "realization": [
+    {
+      "title": "REALIZATION",
+      "icons": [
+        {
+          "file": "logo-OK",
+          "to": "https://ok.org.br/",
+          "target": "_blank",
+          "height": 30,
+          "width": 106
+        },
+        {
+          "file": "logo-serenata",
+          "to": "https://serenata.ai/",
+          "target": "_blank",
+          "height": 40,
+          "width": 82
+        },
+        {
+          "file": "logo-embaixadores",
+          "to": "https://embaixadoras.ok.org.br/",
+          "target": "_blank",
+          "height": 18,
+          "width": 116
+        }
+      ]
+    },
+    {
+      "title": "SUPPORT",
+      "icons": [
+        {
+          "file": "logo-Ilda",
+          "to": "https://idatosabiertos.org/",
+          "target": "_blank",
+          "height": 17,
+          "width": 52
+        },
+        {
+          "file": "logo_empatia",
+          "to": "https://www.empatia.la/",
+          "target": "_blank",
+          "height": 16,
+          "width": 87
+        },
+        {
+          "file": "logo-jurema",
+          "to": "https://www.jurema.la/",
+          "target": "_blank",
+          "height": 18,
+          "width": 80
+        },
+        {
+          "file": "logo-digitalocean",
+          "to": "https://www.digitalocean.com/",
+          "target": "_blank",
+          "height": 18,
+          "width": 110
+        },
+        {
+          "file": "logo-fiocruz",
+          "to": "https://pcdas.icict.fiocruz.br/",
+          "target": "_blank",
+          "height": 40,
+          "width": 116
+        },
+        {
+          "file": "logo-icict",
+          "to": "https://pcdas.icict.fiocruz.br/",
+          "target": "_blank",
+          "height": 40,
+          "width": 116
+        },
+        {
+          "file": "logo-pcdas",
+          "to": "https://pcdas.icict.fiocruz.br/",
+          "target": "_blank",
+          "height": 40,
+          "width": 72
+        },
+        {
+          "file": "assets/images/imaginable.png",
+          "isPng": true,
+          "to": "https://www.imaginablefutures.com/",
+          "target": "_blank",
+          "height": 30,
+          "width": 106
+        },
+        {
+          "file": "assets/images/lemann.png",
+          "isPng": true,
+          "to": "https://fundacaolemann.org.br/",
+          "target": "_blank",
+          "height": 30,
+          "width": 106
+        }
+      ]
+    }
+  ]
+}
