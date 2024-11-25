@@ -6,9 +6,9 @@
         <a routerLink="/" #explore>Explore</a>
         <a routerLink="/dados">Dados</a>
         <a routerLink="/blog">Blog</a>
-        <a routerLink="/tecnologia">Tecnologia</a>     
+        <a routerLink="/tecnologia">Tecnologia</a>
         <a routerLink="/sobre">Sobre</a>
-        <a fxLayout="center" (click)="openNotifications()">
+        <a fxLayout="center" (click)="openNotifications()"  #notification>
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
         <button routerLink="/apoie" class="btn">Apoie</button>
@@ -38,7 +38,7 @@
     Tecnologia
   </div></a>
   <a routerLink="/sobre"><div class="link bg-white">
-    Sobre 
+    Sobre
   </div></a>
   <a routerLink="/apoie"><div class="link bg-orange">
     Apoie
@@ -49,22 +49,22 @@
     Olá, {{userData.full_name.split(' ')[0]}}
   </div>
   <a *ngIf="userData.full_name" routerLink="/educacao/alertas"><div class="link logged-link bg-dark-purple">
-    Meus alertas 
+    Meus alertas
   </div></a>
   <a *ngIf="userData.full_name"><div (click)="onClickLogout()" class="link logged-link bg-dark-purple">
-    Logout 
+    Logout
   </div></a>
   <a *ngIf="!userData.full_name"><div (click)="openForm()" class="link login">
-    Login / Cadastre-se 
+    Login / Cadastre-se
   </div></a>
-  
+
   <!-- <a><div class="link bg-purple"> -->
   <!--   Estudos de caso -->
   <!-- </div></a> -->
   <a routerLink="/educacao/busca"><div class="link bg-purple">
-    Busca 
+    Busca
   </div></a>
   <a routerLink="/educacao/sobre"><div class="link bg-purple">
-    Sobre 
+    Sobre
   </div></a>
 </div>
