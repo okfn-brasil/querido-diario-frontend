@@ -17,6 +17,7 @@ import { tokenKeys } from '../../pages/area-education/utils';
 export class HeaderComponent implements OnInit {
   @ViewChild('explore') explore!: ElementRef;
   mobileMenuOpen = false;
+  mobileNotificationsOpen = false;
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
   hideMenu = false;
@@ -92,5 +93,9 @@ export class HeaderComponent implements OnInit {
         left: left + 'px',
       },
     });
+  }
+
+  openMobileNotifications() {
+    this.mobileNotificationsOpen = !this.mobileNotificationsOpen;
   }
 }
