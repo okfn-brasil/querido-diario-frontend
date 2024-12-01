@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, HostListener } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/interfaces/account';
 import { IconType } from 'src/app/interfaces/icon';
@@ -16,7 +16,7 @@ import { tokenKeys } from '../../pages/area-education/utils';
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('notification') notification!: ElementRef;
-  notificationPopoverRef: any;
+  notificationPopoverRef: MatDialogRef<NotificationsComponent> | null = null;
   mobileMenuOpen = false;
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
@@ -102,7 +102,7 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:resize')
   onWindowResize(): void {
     if (window.innerWidth < 600) {
-      this.notificationPopoverRef.close();
+      this.notificationPopoverRef?.close();
       return;
     }
 
