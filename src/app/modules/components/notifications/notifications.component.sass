@@ -5,6 +5,12 @@
 
 .mat-dialog-content
   padding: 0
+  scrollbar-width: none // Firefox
+  -ms-overflow-style: none // Internet Explorer e Edge antigos
+
+  &::-webkit-scrollbar // Chrome, Edge e Safari
+    width: 0
+    height: 0
 
 .notifications-inner
   align-self: flex-end
