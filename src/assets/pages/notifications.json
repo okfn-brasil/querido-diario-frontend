@@ -1,10 +1,16 @@
 {
   "list": [
     {
+      "title": "Novas 2 capitais!",
+      "content": "As cidades de São Luís (MA) e Vitória (ES) foram adicionadas à plataforma!",
+      "updatedAt": "2025/01/16",
+      "isNew": true
+    },
+    {
       "title": "Novas 44 cidades!",
       "content": "As cidades de Garrafão do Norte (PA), Tartarugalzinho (AP), Aparecida do Rio Negro (TO), Axixá do Tocantins (TO), Caseara (TO), Centenário (TO), Divinópolis do Tocantins (TO), Lagoa da Confusão (TO), Miracema do Tocantins (TO), Muricilândia (TO), Nazaré (TO), Ponte Alta do Tocantins (TO), Pugmil (TO), Santa Fé do Araguaia (TO), Talismã (TO), Tocantinópolis (TO), Tupirama (TO), Anajatuba (MA), Bom Jardim (MA), Bom Lugar (MA), Maracaçumé (MA), Santa Cruz (RN), São Francisco do Oeste (RN), Taboleiro Grande (RN), Moreilândia (PE), Antas (BA), Apuarema (BA), Araças (BA), Aramari (BA), Arataca (BA), Maricá (RJ), Iracemápolis (SP), Itaporanga (SP), Potirendaba (SP), Cafezal do Sul (PR), Carambeí (PR), Santo Antônio do Paraíso (PR), São João do Triunfo (PR), Quatro Irmãos (RS), Deodápolis (MS), Glória de Dourados (MS), Paranhos (MS), Rio Brilhante (MS) e Cotriguaçu (MT) foram adicionadas à plataforma!",
       "updatedAt": "2024/12/19",
-      "isNew": true
+      "isNew": false
     },
     {
       "title": "Novas 11 cidades!",
