@@ -1,8 +1,11 @@
 
 import logging
+import time
+
 import unicodedata
 
-from playwright.sync_api import Page
+from playwright.sync_api import Page, Browser, BrowserContext
+
 
 class ExplorePage:
 
@@ -10,7 +13,8 @@ class ExplorePage:
   head_explore     = "explore-head"
 
   button_pesquisar    = "btn-pesquisar"
-
+  button_proximo      = "próximo"
+  button_anterior     = "anterior"
   input_conteudo  = "conteudo-campo"
   input_municipio = '[class="location-filter-educacao"]'
   input_inicio_periodo = "data-inicio-periodo"
@@ -20,11 +24,17 @@ class ExplorePage:
 
   label_resultado = '[class="city-name"]'
 
+  link_noticias_texto =  '[class="stories-text"]'
+
   # Textos
   TEXT_EXPLORE_PAGE = "Explore diários oficiais municipais..."
 
-  def __init__(self, page : Page):
-    self.page = page
+  def __init__(self, browser: BrowserContext):
+    self.browser = browser
+    self.page = browser.new_page()
+
+  def wait_main_fields(self):
+    self.page.get_by_test_id(self.button_pesquisar).wait_for(state='visible')
 
   def click_on_header_explore(self):
     """
@@ -53,6 +63,16 @@ class ExplorePage:
 
     # Clica na opcao do dropdown baseada no texto fornecido
     self.page.locator(dropdown_class_option).get_by_text(normalized_text).click()
+
+  def click_on_noticia_link_based_on_index(self, index : int ):
+
+    noticias_cards = self.page.get_by_test_id("cartao-post").all()
+    noticia_card = noticias_cards[index]
+    noticia_card.scroll_into_view_if_needed()
+    while not noticia_card.is_visible():
+      self.page.get_by_alt_text(self.button_proximo).click()
+
+    noticia_card.get_by_test_id("cartao-link").click()
 
   def fill_municipio_input(self, text: str):
     """
