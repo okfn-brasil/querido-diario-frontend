@@ -15,6 +15,10 @@ class ExplorePage:
   button_pesquisar    = "btn-pesquisar"
   button_proximo      = "próximo"
   button_anterior     = "anterior"
+  button_ver_todas_metas = "Ver todas as metas"
+  button_comece_por_aqui = "Comece por aqui"
+  button_doe = '[href="https://ok.org.br/apoie/"]'
+
   input_conteudo  = "conteudo-campo"
   input_municipio = '[class="location-filter-educacao"]'
   input_inicio_periodo = "data-inicio-periodo"
@@ -25,6 +29,10 @@ class ExplorePage:
   label_resultado = '[class="city-name"]'
 
   link_noticias_texto =  '[class="stories-text"]'
+  link_cidades_disponveis = '[href="/cidades-disponiveis"]'
+  link_nivel_de_acesso  = '[href="/acesso"]'
+  link_glossario  = '[href="/glossario"]'
+  link_denunciar_info = '[href="/informacoes"]'
 
   # Textos
   TEXT_EXPLORE_PAGE = "Explore diários oficiais municipais..."
@@ -47,6 +55,27 @@ class ExplorePage:
     Este metodo clica no botão "Pesquisar"
     """
     self.page.get_by_test_id(self.button_pesquisar).click()
+
+  def click_on_ver_todas_as_metas_button(self):
+    """
+        Este metodo clica no botão "Ver todas as metas"
+    """
+    self.page.get_by_text(self.button_ver_todas_metas).scroll_into_view_if_needed()
+    self.page.get_by_text(self.button_ver_todas_metas).click()
+
+  def click_on_comece_por_aqui_button(self):
+    """
+            Este metodo clica no botão "Comece por aqui"
+        """
+    self.page.get_by_text(self.button_comece_por_aqui).scroll_into_view_if_needed()
+    self.page.get_by_text(self.button_comece_por_aqui).click()
+
+  def click_on_doe_button(self):
+    """
+                Este metodo clica no botão "Doe"
+    """
+    self.page.locator(self.button_doe).scroll_into_view_if_needed()
+    self.page.locator(self.button_doe).click()
 
   def click_on_municipio_dropdown(self, city_option: str):
     """
@@ -73,6 +102,22 @@ class ExplorePage:
       self.page.get_by_alt_text(self.button_proximo).click()
 
     noticia_card.get_by_test_id("cartao-link").click()
+
+  def click_on_cidades_disponiveis_link(self):
+      self.page.locator(self.link_cidades_disponveis).scroll_into_view_if_needed()
+      self.page.locator(self.link_cidades_disponveis).click()
+
+  def click_on_nivel_de_acesso_link(self):
+      self.page.locator(self.link_nivel_de_acesso).scroll_into_view_if_needed()
+      self.page.locator(self.link_nivel_de_acesso).click()
+
+  def click_on_glossario_link(self):
+    self.page.locator(self.link_glossario).scroll_into_view_if_needed()
+    self.page.locator(self.link_glossario).click()
+
+  def click_on_denunciar_ou_pedir_info_link(self):
+    self.page.locator(self.link_denunciar_info).scroll_into_view_if_needed()
+    self.page.locator(self.link_denunciar_info).click()
 
   def fill_municipio_input(self, text: str):
     """

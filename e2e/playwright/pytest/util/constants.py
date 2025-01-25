@@ -1,7 +1,9 @@
 
 class Constants():
 
-  cidades_por_regiao = {
+  URL_QD_CATARSE = "https://www.catarse.me/queridodiario-okbr"
+  URL_QD_APOIE =  "https://ok.org.br/apoie/"
+  CIDADES_POR_REGIAO = {
     "Norte": [
       "Jaru (RO)", "Manaus (AM)", "Boa Vista (RR)", "Belém (PA)", "Garrafão do Norte (PA)",
       "Santana do Araguaia (PA)", "Macapá (AP)", "Santana (AP)", "Tartarugalzinho (AP)",

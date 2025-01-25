@@ -60,18 +60,131 @@ def test_buscar_licitacao_todas_regioes_brasil(explore_page : ExplorePage, munic
     for locator in explore_page.page.locator(explore_page.label_resultado).all():
       expect(locator).to_have_text(municipio_state)
 
+@pytest.mark.TC006
+@pytest.mark.pagina_explore
+@pytest.mark.parametrize("noticia_index", range(0,10))
+def test_abrir_link_de_uma_noticia(explore_page: ExplorePage, base_url, noticia_index):
+  """
+       Teste ID: TC006
+       Cenário de teste:
+          Verificar se os links das notícias exibidas no sistema estão funcionando corretamente.
 
-def test_abrir_uma_noticia(explore_page: ExplorePage, base_url):
-
+      Obs: Neste caso, estavamos validando as 10 primeiras notícias do carrousel.
+  """
   # Clica no botão de aba 'Explore'
   explore_page.click_on_header_explore()
 
   # Gatilho que verifica se uma nova página/aba foi aberta
   with explore_page.browser.expect_page() as new_page:
     # Vai até as noticias e clica em uma notícia baseada no índice especificado
-    explore_page.click_on_noticia_link_based_on_index(3)
+    explore_page.click_on_noticia_link_based_on_index(noticia_index)
 
   expect(new_page.value).not_to_have_url(base_url+"/")
+
+@pytest.mark.TC007
+@pytest.mark.pagina_explore
+def test_abrir_link_de_cidades_disponiveis(explore_page: ExplorePage, base_url):
+  """
+        Teste ID: TC007
+        Cenário de teste:
+           Verificar se o link "Confira as cidades disponíveis" está funcionando corretamente
+   """
+  # Clica no botão de aba 'Explore'
+  explore_page.click_on_header_explore()
+  # Clica no link 'Cidades Disponíveis'
+  explore_page.click_on_cidades_disponiveis_link()
+
+  expect(explore_page.page).to_have_url(base_url+'/cidades-disponiveis')
+
+
+@pytest.mark.TC008
+@pytest.mark.pagina_explore
+def test_abrir_link_de_nivel_de_acesso(explore_page: ExplorePage, base_url):
+  """
+        Teste ID: TC008
+        Cenário de teste:
+          Verificar se o link 'Nível de Acesso' da seção 'Entenda' exibida no sistema está funcionando corretamente.
+  """
+  # Clica no botão de aba 'Explore'
+  explore_page.click_on_header_explore()
+  # Clica no link 'Nível de Acesso'
+  explore_page.click_on_nivel_de_acesso_link()
+
+  expect(explore_page.page).to_have_url(base_url+'/acesso')
+
+@pytest.mark.TC009
+@pytest.mark.pagina_explore
+def test_abrir_link_de_glossario(explore_page: ExplorePage, base_url):
+  """
+        Teste ID: TC009
+        Cenário de teste:
+           Verificar se o link 'Glossário' da seção 'Entenda' exibida no sistema está funcionando corretamente.
+   """
+  # Clica no botão de aba 'Explore'
+  explore_page.click_on_header_explore()
+  # Clica no link 'Glossario'
+  explore_page.click_on_glossario_link()
+
+  expect(explore_page.page).to_have_url(base_url+'/glossario')
+
+@pytest.mark.TC010
+@pytest.mark.pagina_explore
+def test_abrir_link_de_denunciar_ou_pedir_informacoes(explore_page: ExplorePage, base_url):
+  """
+        Teste ID: TC010
+        Cenário de teste:
+          Verificar se o link 'Como denunciar ou pedir informações da seção 'Entenda' exibida no sistema está funcionando corretamente.
+  """
+
+  # Clica no botão de aba 'Explore'
+  explore_page.click_on_header_explore()
+  # Clica no link 'Denunciar ou pedir informações'
+  explore_page.click_on_denunciar_ou_pedir_info_link()
+
+  expect(explore_page.page).to_have_url('/informacoes')
+
+@pytest.mark.TC011
+@pytest.mark.pagina_explore
+def test_abrir_link_ver_todas_as_metas(explore_page: ExplorePage, base_url):
+  """
+        Teste ID: TC011
+        Cenário de teste:
+          Verificar se o link 'Contribua financeiramente' da seção 'Apoio' exibida no sistema está funcionando corretamente.
+  """
+
+  # Clica no botão de aba 'Explore'
+  explore_page.click_on_header_explore()
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with explore_page.browser.expect_page() as new_page:
+    # Vai até o botão 'Ver todas as metas' e clica nele
+    explore_page.click_on_ver_todas_as_metas_button()
+
+  # Verifica a URL da nova aba aberta
+  expect(new_page.value).to_have_url(c.URL_QD_CATARSE)
+
+
+@pytest.mark.TC012
+@pytest.mark.pagina_explore
+def test_abrir_link_contribua_com_desenvolvimento(explore_page: ExplorePage, base_url):
+  """
+        Teste ID: TC012
+        Cenário de teste:
+          Verificar se o link 'Doe para a OKBR' da seção 'Apoio' exibida no sistema está funcionando corretamente.
+  """
+
+  # Clica no botão de aba 'Explore'
+  explore_page.click_on_header_explore()
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with explore_page.browser.expect_page() as new_page:
+    # Vai até o botão 'Doe' e clica nele
+    explore_page.click_on_doe_button()
+
+  # Verifica a URL da nova aba aberta
+  expect(new_page.value).to_have_url(c.URL_QD_APOIE)
+
+
 
 
 
