@@ -176,6 +176,27 @@ def test_abrir_link_contribua_com_desenvolvimento(explore_page: ExplorePage, bas
   # Clica no botão de aba 'Explore'
   explore_page.click_on_header_explore()
 
+  # Clica no botão 'Comece por aqui'
+  explore_page.click_on_comece_por_aqui_button()
+
+
+  # Verifica a URL da nova aba aberta
+  expect(explore_page.page).to_have_url("/tecnologia#contribua-com-c%C3%B3digo")
+
+
+
+@pytest.mark.TC013
+@pytest.mark.pagina_explore
+def test_abrir_link_doe_para_okbr(explore_page: ExplorePage, base_url):
+  """
+        Teste ID: TC013
+        Cenário de teste:
+          Verificar se o link 'Doe para a OKBR' da seção 'Apoio' exibida no sistema está funcionando corretamente.
+  """
+
+  # Clica no botão de aba 'Explore'
+  explore_page.click_on_header_explore()
+
   # Gatilho que verifica se uma nova página/aba foi aberta
   with explore_page.browser.expect_page() as new_page:
     # Vai até o botão 'Doe' e clica nele
@@ -183,8 +204,5 @@ def test_abrir_link_contribua_com_desenvolvimento(explore_page: ExplorePage, bas
 
   # Verifica a URL da nova aba aberta
   expect(new_page.value).to_have_url(c.URL_QD_APOIE)
-
-
-
 
 
