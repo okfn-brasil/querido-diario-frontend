@@ -1,3 +1,4 @@
 [build]
   publish = "dist/querido-diario"
   command = "ng build --configuration production"
+  environment = { NODE_VERSION = "16.10.0" }
