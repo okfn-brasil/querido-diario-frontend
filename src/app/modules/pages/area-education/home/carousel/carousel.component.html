@@ -8,7 +8,7 @@
       </div>
       <div class="button-nav next desktop" [class.second-type]="type === 'second-type'"  [class.abled]="currPosition < items.length - itemsPerPage" (click)="onClickNext()" data-testid="btn-seta-proximo">
         <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="próximo" />
-        <img *ngIf="type === 'second-taaadadaasdasdype' && theme === 'light'" src="assets/images/education/carousel-arrow-purple.png" alt="próximo" />
+        <img *ngIf="type === 'second-type' && theme === 'light'" src="assets/images/education/carousel-arrow-purple.png" alt="próximo" />
         <img *ngIf="type === 'second-type' && theme === 'dark'" src="assets/images/education/carousel-arrow-white.png" alt="próximo" />
       </div>
 
