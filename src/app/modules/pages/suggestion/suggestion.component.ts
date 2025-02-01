@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { SuggestionService } from 'src/app/services/suggestion/suggestion.service';
 import { FormSentComponent } from '../../components/form-sent/form-sent.component';
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { Observable, forkJoin, of } from 'rxjs';
 import { ContentService } from 'src/app/services/content/content.service';
 import { VideoModalComponent } from '../../components/video-modal/video-modal.component';
