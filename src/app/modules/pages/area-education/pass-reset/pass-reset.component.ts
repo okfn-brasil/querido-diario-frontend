@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login/login.service';
 
@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/services/login/login.service';
   styleUrls: ['./pass-reset.component.sass']
 })
 export class PassResetComponent implements OnInit {
-  formGroup: FormGroup = {} as FormGroup;
+  formGroup: UntypedFormGroup = {} as UntypedFormGroup;
   errorMessage = '';
   loading = false;
   isSent = false;
@@ -30,8 +30,8 @@ export class PassResetComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formGroup = new FormGroup({
-      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+    this.formGroup = new UntypedFormGroup({
+      password: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
     });
 
     this.route.queryParams

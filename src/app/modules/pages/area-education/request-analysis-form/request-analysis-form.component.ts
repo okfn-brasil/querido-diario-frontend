@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { City } from 'src/app/interfaces/city';
@@ -15,7 +15,7 @@ import { EducationQuotationService } from 'src/app/services/educationQuotation/e
   styleUrls: ['./request-analysis-form.component.sass'],
 })
 export class RequestAnalysisFormComponent implements OnInit {
-  form: FormGroup = this.formBuilder.group({});
+  form: UntypedFormGroup = this.formBuilder.group({});
   cities: City[] = [];
   themes: string[] = [];
   locations: string[] = [];
@@ -26,7 +26,7 @@ export class RequestAnalysisFormComponent implements OnInit {
   loading = false;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private citiesService: CitiesService,
     private searchService: EducationGazettesService,
     private educationQuotationService: EducationQuotationService,

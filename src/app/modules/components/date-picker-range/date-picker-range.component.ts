@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import {
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
   MomentDateAdapter,
@@ -44,7 +44,7 @@ export class DatePickerRangeComponent implements OnInit {
     start: Moment;
     end: Moment;
   }>();
-  range: FormGroup = new FormGroup({});
+  range: UntypedFormGroup = new UntypedFormGroup({});
   maxDate: Date = new Date();
   subscriptions: Subscription[] = [];
 
@@ -53,9 +53,9 @@ export class DatePickerRangeComponent implements OnInit {
   ngOnInit(): void {
     this.subscriptions.push(
       this.route.queryParams.subscribe((params) => {
-        this.range = new FormGroup({
-          start: new FormControl(params.since),
-          end: new FormControl(params.until),
+        this.range = new UntypedFormGroup({
+          start: new UntypedFormControl(params.since),
+          end: new UntypedFormControl(params.until),
         });
       })
     );

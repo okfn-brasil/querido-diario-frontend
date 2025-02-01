@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login/login.service';
 import { UserService } from 'src/app/stores/user/user.service';
@@ -16,7 +16,7 @@ export class LoginFormComponent implements OnInit {
   @Output() onShowResetForm: EventEmitter<boolean> = new EventEmitter();
   @Output() onLoggedIn: EventEmitter<boolean> = new EventEmitter();
   @Output() onSetEmail: EventEmitter<string> = new EventEmitter();
-  formGroup: FormGroup = {} as FormGroup;
+  formGroup: UntypedFormGroup = {} as UntypedFormGroup;
   loading = false;
   showPass = false;
   errorMessage = '';
@@ -28,9 +28,9 @@ export class LoginFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formGroup = new FormGroup({
-      password: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required, Validators.maxLength(100), Validators.email]),
+    this.formGroup = new UntypedFormGroup({
+      password: new UntypedFormControl(null, [Validators.required]),
+      email: new UntypedFormControl(null, [Validators.required, Validators.maxLength(100), Validators.email]),
     });
   }
 

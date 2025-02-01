@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import {
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
   MomentDateAdapter,
@@ -37,14 +37,14 @@ export class PeriodPickerComponent implements OnInit {
     to: '',
   };
   @Output() rangeSelected: EventEmitter<PeriodRange> = new EventEmitter();
-  range: FormGroup = new FormGroup({});
+  range: UntypedFormGroup = new UntypedFormGroup({});
 
   constructor() {}
 
   ngOnInit(): void {
-    this.range = new FormGroup({
-      start: new FormControl(new Date(this.initialValue.from) || ''),
-      end: new FormControl(new Date(this.initialValue.to) || ''),
+    this.range = new UntypedFormGroup({
+      start: new UntypedFormControl(new Date(this.initialValue.from) || ''),
+      end: new UntypedFormControl(new Date(this.initialValue.to) || ''),
     });
   }
 
