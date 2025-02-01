@@ -1,5 +1,6 @@
 [build]
-  publish = "dist/querido-diario" # Ajuste para o nome correto da sua pasta de build
+  publish = "dist/querido-diario"
+  command = "ng build --configuration production"
 
 [[redirects]]
   from = "/*"
