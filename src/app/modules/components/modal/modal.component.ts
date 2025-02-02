@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { IconType } from 'src/app/interfaces/icon';
 import { ContentService } from 'src/app/services/content/content.service';
 import { NotificationsComponent } from '../notifications/notifications.component';
