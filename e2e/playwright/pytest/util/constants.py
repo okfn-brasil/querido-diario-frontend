@@ -34,3 +34,18 @@ class Constants():
       "Campo Largo (PR)", "Campo Mourão (PR)", "Carambeí (PR)", "Castro (PR)", "Corbélia (PR)"
     ]
     }
+
+  ESTADOS_POR_REGIAO = {
+    "Norte": [("Acre", "AC"), ("Amapá", "AP"), ("Amazonas", "AM"), ("Pará", "PA"), ("Rondônia", "RO"),
+              ("Roraima", "RR"), ("Tocantins", "TO")],
+
+    "Nordeste": [("Alagoas", "AL"), ("Bahia", "BA"), ("Ceará", "CE"), ("Maranhão", "MA"), ("Paraíba", "PB"),
+                 ("Pernambuco", "PE"), ("Piauí", "PI"), ("Rio Grande do Norte", "RN"), ("Sergipe", "SE")],
+
+    "Centro-Oeste": [("Goiás", "GO"), ("Mato Grosso", "MT"), ("Mato Grosso do Sul", "MS"), ("Distrito Federal", "DF")],
+
+    "Sudeste": [("Espírito Santo", "ES"), ("Minas Gerais", "MG"), ("Rio de Janeiro", "RJ"), ("São Paulo", "SP")],
+
+    "Sul": [("Paraná", "PR"), ("Rio Grande do Sul", "RS"), ("Santa Catarina", "SC")]
+  }
+
