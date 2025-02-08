@@ -33,11 +33,13 @@ export class CityFilterComponent implements OnChanges {
 
   onShowPlaceholder() {
     setTimeout(() => {
+      this.focusOutInput();
+      this.resetInput();
       if(this.selectedCities.length) {
         return;
       }
 
-      this.resetInput();
+      
       this.showPlaceholder = true;
     }, 300);
   }
@@ -56,6 +58,7 @@ export class CityFilterComponent implements OnChanges {
     this.resetInput();
     this.selectedCities.push(city);
     this.emitLocations();
+    this.focusOutInput();
   }
 
   emitLocations() {

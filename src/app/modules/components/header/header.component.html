@@ -3,6 +3,7 @@
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
+
         <a routerLink="/" #explore data-testid="explore-head">Explore</a>
         <a routerLink="/dados" data-testid="dados-head">Dados</a>
         <a routerLink="/blog" data-testid="blog-head">Blog</a>
