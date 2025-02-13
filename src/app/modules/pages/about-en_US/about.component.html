@@ -20,6 +20,7 @@
               [routerLink]="action.route"
               [fragment]="action.fragment"
               [ngClass]="action.style"
+              data-testid="nav-bar-option"
             >
               {{ action.text }}
             </a>
@@ -48,7 +49,7 @@
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="22">
-        <h1>
+        <h1 data-testid="overview-title">
           {{ content.overview.title }}
         </h1>
         <div
@@ -138,7 +139,7 @@
         <ng-container *ngFor="let action of content.whoWeAre.actions">
           <p [style.color]="'#FFF'" class="highlight">
             {{ action.text }}
-            <a [href]="action.to" [style.color]="'#FFF'" target="_blank">{{
+            <a [href]="action.to" [style.color]="'#FFF'" target="_blank" data-testid="quemsomos-link">{{
               action.link
             }}</a>
           </p>
@@ -162,6 +163,7 @@
             [appWidth]="249"
             [routerLink]="action.to"
             [ngClass]="action.style"
+            data-testid="leiamais-privacidade"
           >
             {{ action.text }}
           </button>
