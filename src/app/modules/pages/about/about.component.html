@@ -82,7 +82,7 @@
   </ng-container>
 </app-container>
 
-<app-container theme="dark" id="historia">
+<app-container theme="dark"   id="historia">
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="22">
@@ -137,7 +137,7 @@
         <ng-container *ngFor="let action of content.whoWeAre.actions">
           <p [style.color]="'#FFF'" class="highlight">
             {{ action.text }}
-            <a [href]="action.to" [style.color]="'#FFF'" target="_blank">{{
+            <a [href]="action.to" [style.color]="'#FFF'" target="_blank" data-testid="quemsomos-link">{{
               action.link
             }}</a>
           </p>
@@ -161,6 +161,7 @@
             [appWidth]="249"
             [routerLink]="action.to"
             [ngClass]="action.style"
+            data-testid="leiamais-privacidade"
           >
             {{ action.text }}
           </button>
