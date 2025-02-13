@@ -27,6 +27,7 @@ def before_after_each(request, sobre_page):
 
   pass
 
+@pytest.mark.pagina_sobre
 def test_clicar_no_link_motivacao(sobre_page):
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_motivacao)
 
@@ -37,6 +38,7 @@ def test_clicar_no_link_motivacao(sobre_page):
   # Valida se URL é alterada
   expect(sobre_page.page).to_have_url("/sobre#motivacao")
 
+@pytest.mark.pagina_sobre
 def test_clicar_no_botao_doe(sobre_page):
 
   # Gatilho que verifica se uma nova página/aba foi aberta
@@ -47,6 +49,7 @@ def test_clicar_no_botao_doe(sobre_page):
   # Verifica a URL da nova aba aberta
   expect(new_page.value).to_have_url(c.URL_QD_CATARSE)
 
+@pytest.mark.pagina_sobre
 def test_clicar_no_link_historia(sobre_page):
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_historia)
 
@@ -57,6 +60,7 @@ def test_clicar_no_link_historia(sobre_page):
   # Valida se URL é alterada
   expect(sobre_page.page).to_have_url("/sobre#historia")
 
+@pytest.mark.pagina_sobre
 def test_clicar_no_link_casos_de_uso(sobre_page):
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_casos)
 
@@ -67,6 +71,7 @@ def test_clicar_no_link_casos_de_uso(sobre_page):
   # Valida se URL é alterada
   expect(sobre_page.page).to_have_url("/sobre#casos")
 
+@pytest.mark.pagina_sobre
 def test_clicar_no_link_na_midia(sobre_page):
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_midia)
 
@@ -77,6 +82,7 @@ def test_clicar_no_link_na_midia(sobre_page):
   # Valida se URL é alterada
   expect(sobre_page.page).to_have_url("/sobre#midia")
 
+@pytest.mark.pagina_sobre
 def test_clicar_no_link_quem_somos(sobre_page):
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_quemsomos)
 
@@ -87,6 +93,7 @@ def test_clicar_no_link_quem_somos(sobre_page):
   # Valida se URL é alterada
   expect(sobre_page.page).to_have_url("/sobre#quem-somos")
 
+@pytest.mark.pagina_sobre
 def test_clicar_no_link_saiba_mais(sobre_page):
 
   # Gatilho que verifica se uma nova página/aba foi aberta
@@ -98,6 +105,7 @@ def test_clicar_no_link_saiba_mais(sobre_page):
   expect(new_page.value).to_have_url(c.URL_QD_ORG)
 
 
+@pytest.mark.pagina_sobre
 def test_clicar_no_link_poltilica_de_privacidade(sobre_page):
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_privacidade)
 
