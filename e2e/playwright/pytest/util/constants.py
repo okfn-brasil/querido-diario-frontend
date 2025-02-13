@@ -4,6 +4,8 @@ class Constants():
   URL_QD_CATARSE = "https://www.catarse.me/queridodiario-okbr"
   URL_QD_APOIE =  "https://ok.org.br/apoie/"
   URL_QD_ORG = "https://ok.org.br/"
+  URL_QD_DOCUMENTACAO = "https://docs.queridodiario.ok.org.br/pt-br/latest/"
+
   CIDADES_POR_REGIAO = {
     "Norte": [
       "Jaru (RO)", "Manaus (AM)", "Boa Vista (RR)", "Belém (PA)", "Garrafão do Norte (PA)",

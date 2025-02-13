@@ -20,6 +20,7 @@
             target="_blank"
             [ngClass]="action.style"
             *ngIf="action.to"
+            [attr.data-testid]="'link-'+action.text"
           >
             {{ action.text }}
           </a>
@@ -28,6 +29,7 @@
             [fragment]="action.fragment"
             [ngClass]="action.style"
             *ngIf="action.route"
+            [attr.data-testid]="'link-'+action.text"
           >
             {{ action.text }}
           </a>
@@ -92,7 +94,7 @@
         <h2>{{ item.title }}</h2>
         <p>{{ item.text }}</p>
         <ng-container *ngFor="let action of item.actions">
-          <a [href]="action.to" target="_blank">{{ action.text }}</a>
+          <a [href]="action.to" target="_blank" [attr.data-testid]="'link-'+action.text" >{{ action.text }}</a>
         </ng-container>
       </app-column>
     </app-row>
