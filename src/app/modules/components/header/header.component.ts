@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('notification') notification!: ElementRef;
   notificationPopoverRef: MatDialogRef<NotificationsComponent> | null = null;
   mobileMenuOpen = false;
+  mobileNotificationsOpen = false;
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
   hideMenu = false;
@@ -115,5 +116,9 @@ export class HeaderComponent implements OnInit {
   private calculatePopoverPosition(): number {
     const notificationElement = this.notification.nativeElement;
     return notificationElement.offsetLeft - 340;
+  }
+
+  openMobileNotifications() {
+    this.mobileNotificationsOpen = !this.mobileNotificationsOpen;
   }
 }
