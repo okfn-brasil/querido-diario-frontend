@@ -5,14 +5,14 @@
   </div>
 
   <div class="text-area">
-    <div class="editable" [class.disabled]="disabled" [attr.contenteditable]="!disabled" (focus)="onHidePlaceholder()" contenteditable="true" id="state-filter-data" 
-    (keyup)="getText()" 
-    (click)="onHidePlaceholder()" 
+    <div class="editable" [class.disabled]="disabled" [attr.contenteditable]="!disabled" (focus)="onHidePlaceholder()" contenteditable="true" id="state-filter-data"
+    (keyup)="getText()"
+    (click)="onHidePlaceholder()"
     (blur)="onShowPlaceholder()"  (keydown)="blockTyping($event)"></div>
     <div class="new-place" *ngIf="showPlaceholder">{{ label }}</div>
   </div>
 
-  <div class="dropdown" (click)="stopPropagation($event)" *ngIf="showDropdown">
+  <div class="dropdown" (click)="stopPropagation($event)" *ngIf="showDropdown" data-testid="state-dropdown">
     <ng-container>
       <div *ngIf="getStatesList().length > 0">
         <div class="option line" *ngFor="let state of getStatesList()" (click)="addState(state)">

@@ -3,16 +3,17 @@
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
-        <a routerLink="/" #explore>Explore</a>
-        <a routerLink="/dados">Dados</a>
-        <a routerLink="/blog">Blog</a>
-        <a routerLink="/tecnologia">Tecnologia</a>
-        <a routerLink="/sobre">Sobre</a>
-        <a fxLayout="center" (click)="openNotifications()"  #notification>
+
+        <a routerLink="/" #explore data-testid="explore-head">Explore</a>
+        <a routerLink="/dados" data-testid="dados-head">Dados</a>
+        <a routerLink="/blog" data-testid="blog-head">Blog</a>
+        <a routerLink="/tecnologia" data-testid="tecnologia-head">Tecnologia</a>
+        <a routerLink="/sobre" data-testid="sobre-head">Sobre</a>
+        <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
-        <button routerLink="/apoie" class="btn">Apoie</button>
-        <button routerLink="/educacao" class="btn-purple">Educação</button>
+        <button routerLink="/apoie" class="btn" data-testid="btn-apoie">Apoie</button>
+        <button routerLink="/educacao" class="btn-purple" data-testid="btn-educacao">Educação</button>
       </nav>
       <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
         <mat-icon svgIcon="bars" class="bars"></mat-icon>
@@ -54,7 +55,7 @@
   <a *ngIf="userData.full_name"><div (click)="onClickLogout()" class="link logged-link bg-dark-purple">
     Logout
   </div></a>
-  <a *ngIf="!userData.full_name"><div (click)="openForm()" class="link login">
+  <a *ngIf="!userData.full_name"><div (click)="openForm()" class="link login" data-testid="btn-login-cadastro">
     Login / Cadastre-se
   </div></a>
 

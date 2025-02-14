@@ -20,6 +20,7 @@
               [routerLink]="action.route"
               [fragment]="action.fragment"
               [ngClass]="action.style"
+              data-testid="nav-bar-option"
             >
               {{ action.text }}
             </a>
@@ -44,11 +45,11 @@
   </app-container>
 </ng-container>
 
-<app-container theme="light" id="motivacao">
+<app-container theme="light" id="motivacao" >
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="22">
-        <h1>
+        <h1 data-testid="header-motivacao">
           {{ content.overview.title }}
         </h1>
         <div
@@ -81,11 +82,11 @@
   </ng-container>
 </app-container>
 
-<app-container theme="dark" id="historia">
+<app-container theme="dark"   id="historia">
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="22">
-        <h1>
+        <h1 data-testid="header-historia">
           {{ content.history.title }}
         </h1>
         <div
@@ -100,7 +101,7 @@
 
 <app-container theme="light" id="casos" [gap]="34" *ngIf="content$ | async as content; else loading">
   <div class="container-inner stories-area-title">
-    <h1>{{ content.useCases.title }}</h1>
+    <h1 data-testid="header-casos">{{ content.useCases.title }}</h1>
     <p>{{ content.useCases.text }}</p>
   </div>
   <app-row [gap]="17" wrap="wrap" [flex]="true">
@@ -112,7 +113,7 @@
 
 <app-container theme="dark" id="midia" [gap]="34" *ngIf="content$ | async as content; else loading">
   <div class="container-inner stories-area-title">
-    <h1>{{ content.mediaImpact.title }}</h1>
+    <h1 data-testid="header-midia">{{ content.mediaImpact.title }}</h1>
     <p>{{ content.mediaImpact.text }}</p>
   </div>
   <app-row [gap]="17" wrap="wrap" [flex]="true">
@@ -126,7 +127,7 @@
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="36">
-        <h1>{{ content.whoWeAre.title }}</h1>
+        <h1 data-testid="header-quemsomos">{{ content.whoWeAre.title }}</h1>
         <div
           *ngFor="let text of content.whoWeAre.texts"
           class="typo-inner highlight"
@@ -136,7 +137,7 @@
         <ng-container *ngFor="let action of content.whoWeAre.actions">
           <p [style.color]="'#FFF'" class="highlight">
             {{ action.text }}
-            <a [href]="action.to" [style.color]="'#FFF'" target="_blank">{{
+            <a [href]="action.to" [style.color]="'#FFF'" target="_blank" data-testid="quemsomos-link">{{
               action.link
             }}</a>
           </p>
@@ -150,7 +151,7 @@
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="36">
-        <h1>
+        <h1 data-testid="header-privacidade">
           {{ content.privacy.title }}
         </h1>
         <p>{{ content.privacy.text }}</p>
@@ -160,6 +161,7 @@
             [appWidth]="249"
             [routerLink]="action.to"
             [ngClass]="action.style"
+            data-testid="leiamais-privacidade"
           >
             {{ action.text }}
           </button>

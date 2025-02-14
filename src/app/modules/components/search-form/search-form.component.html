@@ -5,6 +5,7 @@
       <mat-label>Ex.: licitação, contratação, COVID 19</mat-label>
       <input
         class="search"
+        data-testid="conteudo-campo"
         #termField
         matInput
         [formControl]="termControl"
@@ -45,10 +46,11 @@
 
   <app-row [flex]="true" [gap]="16">
     <edu-city-filter
-      [initialValue]="territory" 
+      [initialValue]="territory"
       [loadingCities]="loadingCities"
-      label="Município" 
-      class="city-input" 
+      label="Município"
+      class="city-input"
+      data-testid="municipio-campo"
       [cities]="getCityList()"
       [showCityLevel]="true"
       (changeLocations)="onChangeLocation($event)"
@@ -61,5 +63,5 @@
       class="period-input"
     ></app-date-picker-range>
   </app-row>
-  <button (click)="search()" class="btn">Pesquisar</button>
+  <button (click)="search()" class="btn" data-testid="btn-pesquisar">Pesquisar</button>
 </form>

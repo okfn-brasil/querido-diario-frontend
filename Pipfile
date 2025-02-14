@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.9"
+pytest = "8.3.3"
+pytest-base-url = "2.1.0"
+pytest-playwright = "0.5.2"
+playwright = "1.48.0"
