@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, ElementRef, OnInit, ViewChild, HostListener } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/interfaces/account';
 import { IconType } from 'src/app/interfaces/icon';
@@ -16,7 +16,8 @@ import { I18nService } from 'src/app/services/translation/i18n.service'
   styleUrls: ['./header.component.sass'],
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('explore') explore!: ElementRef;
+  @ViewChild('notification') notification!: ElementRef;
+  notificationPopoverRef: MatDialogRef<NotificationsComponent> | null = null;
   mobileMenuOpen = false;
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
@@ -88,16 +89,38 @@ export class HeaderComponent implements OnInit {
   }
 
   openNotifications(): void {
-    const left = this.explore.nativeElement.offsetLeft + 80; // important
-    this.modal.open(NotificationsComponent, {
+    const left = this.calculatePopoverPosition();
+    this.notificationPopoverRef = this.modal.open(NotificationsComponent, {
       width: '414px',
       maxWidth: '100%',
       backdropClass: 'bg-transparent',
       position: {
         top: '40px',
-        left: left + 'px',
+        left: `${left}px`,
       },
     });
+
+    this.modal.afterAllClosed.subscribe(() => {
+      this.notificationPopoverRef = null;
+    });
+  }
+
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    if (window.innerWidth < 600) {
+      this.notificationPopoverRef?.close();
+      return;
+    }
+
+    if (this.notificationPopoverRef) {
+      this.notificationPopoverRef.close();
+      this.openNotifications();
+    }
+  }
+
+  private calculatePopoverPosition(): number {
+    const notificationElement = this.notification.nativeElement;
+    return notificationElement.offsetLeft - 340;
   }
 
 

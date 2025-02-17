@@ -33,7 +33,7 @@ Você encontra como fazê-lo no [CONTRIBUTING.md](/docs/CONTRIBUTING.md)!
 Além disso, consulte a [documentação do Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/) para te ajudar. 
 
 # Ambiente de desenvolvimento
-O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](../package.json).
+O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](/package.json).
 
 Por meio de um terminal aberto no diretório raíz do repositório, use a sequência de comandos a seguir para instalar todas essas ferramentas em sistema operacional Linux:
 ```
@@ -75,14 +75,17 @@ Conheça [quem apoia o Querido Diário](https://queridodiario.ok.org.br/apoie#qu
 
 # Open Knowledge Brasil
 <p>
-  <a href="https://twitter.com/okfnbr" target="_blank">
-    <img alt="Twitter Follow" src="https://img.shields.io/badge/Twitter-_-blue?style=for-the-badge&logo=twitter">
+  <a href="https://bsky.app/profile/ok.org.br" target="_blank">
+    <img alt="Bluesky Follow" src="https://img.shields.io/badge/Bluesky-_-0285FF?style=for-the-badge&logo=bluesky">
   </a>
   <a href="https://www.instagram.com/openknowledgebrasil/" target="_blank">
     <img alt="Instagram Follow" src="https://img.shields.io/badge/Instagram-_-red?style=for-the-badge&logo=instagram">
   </a>
   <a href="https://www.linkedin.com/company/open-knowledge-brasil" target="_blank">
     <img alt="LinkedIn Follow" src="https://img.shields.io/badge/LinkedIn-_-9cf?style=for-the-badge&logo=linkedin">
+  </a> 
+  <a href="https://mastodon.social/@okbr" target="_blank">
+    <img alt="Mastodon Follow" src="https://img.shields.io/badge/mastodon-_-6364FF?style=for-the-badge&logo=mastodon">
   </a>
 </p>
 

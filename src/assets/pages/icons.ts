@@ -21,6 +21,8 @@ export const Icons: string[] = [
   'instagram',
   'facebook',
   'linkedin',
+  'mastodon',
+  'bluesky',
   'right-arrow',
   'right-arrow-white',
   'right-arrow-purple',
