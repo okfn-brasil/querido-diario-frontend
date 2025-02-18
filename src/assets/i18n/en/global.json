@@ -1,0 +1,103 @@
+{
+  "header": {
+    "items": [
+      {
+        "text": "Explore",
+        "route": "/"
+      },
+      {
+        "text": "Data",
+        "route": "/dados"
+      },
+      {
+        "text": "Blog",
+        "route": "/blog"
+      },
+      {
+        "text": "Technology",
+        "route": "/tecnologia"
+      },
+      {
+        "text": "About",
+        "route": "/sobre"
+      }
+    ],
+    "buttons": {
+      "support": "Support",
+      "education": "Education"
+    }
+  },
+  "footer": {
+    "items": [
+      {
+        "title": "SUPPORT",
+        "actions": [
+          {
+            "text": "Our goals",
+            "route": "/support",
+            "fragment": "our-goals"
+          },
+          {
+            "text": "Who supports",
+            "route": "/support",
+            "fragment": "who-supports"
+          },
+          {
+            "text": "Send your suggestion",
+            "route": "/suggestion"
+          }
+        ]
+      },
+      {
+        "title": "TECHNOLOGY",
+        "actions": [
+          {
+            "text": "Documentation",
+            "to": "https://docs.queridodiario.ok.org.br"
+          },
+          {
+            "text": "Advanced search",
+            "route": "/technology/advanced-search"
+          },
+          {
+            "text": "Contribute",
+            "route": "/technology",
+            "fragment": "contribute"
+          },
+          {
+            "text": "Public API",
+            "to": "https://queridodiario.ok.org.br/api/docs"
+          }
+        ]
+      },
+      {
+        "title": "ABOUT",
+        "actions": [
+          {
+            "text": "History",
+            "route": "/about",
+            "fragment": "history"
+          },
+          {
+            "text": "Who we are",
+            "route": "about",
+            "fragment": "who-we-are"
+          },
+          {
+            "text": "Terms of use and privacy policy",
+            "route": "/privacy"
+          }
+        ]
+      }
+    ],
+    "social": {
+      "title": "SOCIAL MEDIA"
+    },
+    "copyright":{
+       "texts": [
+        "All content from Querido Diário is available under the Creative Commons Attribution 4.0 International license, which means it can be shared and reused for derivative works, provided the source is cited.",
+        "Developers: we have open data and an API ♥ <a href='tecnologia#contribua-com-código'>Learn more and contribute to the development</a>"
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
-<app-container *ngIf="navigation$ as content" [gap]="86">
+<app-container  [gap]="86">
   <app-row wrap="wrap" layoutAlign="space-between">
-    <ng-container *ngFor="let section of content | async">
+    <ng-container *ngFor="let section of 'footer.items' | translate">
       <app-column [gap]="12" class="footer-links">
         <span
           ><p class="links-title">{{ section.title }}</p></span
@@ -22,7 +22,7 @@
     <app-column fxHide.xs *ngIf="social$ | async as social">
       <app-column [gap]="12">
         <span>
-          <p>{{ social.title }}</p>
+          <p>{{ 'footer.social.title' | translate }}</p>
         </span>
         <app-row>
           <ng-container *ngFor="let icon of social.icons">
@@ -35,7 +35,7 @@
   <app-row class="social-row" fxHide fxHide.xs="false" *ngIf="social$ | async as social">
     <app-column [gap]="12">
       <span>
-        <p>{{ social.title }}</p>
+        <p>{{ 'footer.social.title' | translate }}</p>
       </span>
       <app-row class="social-icons-row">
         <ng-container *ngFor="let icon of social.icons">
@@ -51,7 +51,7 @@
       </ng-container>
     </app-row>
     <app-column>
-      <ng-container *ngFor="let text of copyright.texts">
+      <ng-container *ngFor="let text of 'footer.copyright.texts' | translate">
         <div [innerHTML]="text" class="highlight copyright"></div>
       </ng-container>
     </app-column>

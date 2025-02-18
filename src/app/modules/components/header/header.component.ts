@@ -8,6 +8,7 @@ import { ContentService } from 'src/app/services/content/content.service';
 import { UserQuery } from 'src/app/stores/user/user.query';
 import { UserService } from 'src/app/stores/user/user.service';
 import { tokenKeys } from '../../pages/area-education/utils';
+import { I18nService } from 'src/app/services/translation/i18n.service'
 
 @Component({
   selector: 'app-header',
@@ -21,6 +22,10 @@ export class HeaderComponent implements OnInit {
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
   hideMenu = false;
+  languageList = [
+    { code: 'pt', label: 'Português (BR)' },
+    { code: 'en', label: 'English (US)' }
+  ];
 
   constructor(
     private userQuery: UserQuery,
@@ -28,6 +33,7 @@ export class HeaderComponent implements OnInit {
     private contentService: ContentService,
     private userService: UserService,
     private router: Router,
+    private I18nService: I18nService,
   ) {}
 
   notificationIcon: IconType = {
@@ -115,5 +121,10 @@ export class HeaderComponent implements OnInit {
   private calculatePopoverPosition(): number {
     const notificationElement = this.notification.nativeElement;
     return notificationElement.offsetLeft - 340;
+  }
+
+
+  changeLanguage(language: string): void {
+    this.I18nService.loadRouteTranslations(language);
   }
 }
