@@ -47,11 +47,91 @@ def test_clicar_no_link_relatorios(tecnolgia_page):
   # Verifica a URL
   expect(tecnolgia_page.page).to_have_url("/tecnologia#relatorios")
 
+
+@pytest.mark.pagina_tecnologia
+def test_acessar_relatorio_tecnico(tecnolgia_page):
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with tecnolgia_page.browser.expect_page() as new_page:
+    # Vai até o botao 'Acessar' na parte do relatorio tecnico e clica nele
+    tecnolgia_page.click_on_acessar_relatorio_button()
+
+  # Verifica a URL da nova aba aberta
+  expect(new_page.value).to_have_url(c.URL_RELATORIO_TECNICO)
+
+
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_busca_avancada(tecnolgia_page):
 
-  # Vai até o link de 'Relatórios' e clica nele
+  # Vai até o link de 'Busca Avancada' e clica nele
   tecnolgia_page.click_on_link_busca_avancada()
 
   # Verifica a URL
   expect(tecnolgia_page.page).to_have_url("tecnologia/busca-avancada")
+
+@pytest.mark.pagina_tecnologia
+def test_clicar_no_link_repositorios(tecnolgia_page):
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with tecnolgia_page.browser.expect_page() as new_page:
+    # Vai até o link de 'Repositórios' e clica nele
+    tecnolgia_page.click_on_link_repositorios()
+
+  # Verifica a URL da nova aba aberta
+  expect(new_page.value).to_have_url(c.URL_REPOSITORIOS_GITHUB)
+
+
+@pytest.mark.pagina_tecnologia
+def test_clicar_no_link_raspadores(tecnolgia_page):
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with tecnolgia_page.browser.expect_page() as new_page:
+    # Vai até o link de 'Raspadores' e clica nele
+    tecnolgia_page.click_on_link_raspadores()
+
+  # Verifica a URL da nova aba aberta
+  expect(new_page.value).to_have_url(c.URL_REPOSITORIO_RASPADORES)
+
+@pytest.mark.pagina_tecnologia
+def test_clicar_no_link_processamento_de_dados(tecnolgia_page):
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with tecnolgia_page.browser.expect_page() as new_page:
+    # Vai até o link de 'Processamento de dados' e clica nele
+    tecnolgia_page.click_on_link_processamento_de_dados()
+
+  # Verifica a URL da nova aba aberta
+  expect(new_page.value).to_have_url(c.URL_REPOSITORIO_PROCESSAMENTO_DADOS)
+
+@pytest.mark.pagina_tecnologia
+def test_clicar_no_link_frontend(tecnolgia_page):
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with tecnolgia_page.browser.expect_page() as new_page:
+    # Vai até o link de 'Repositório frontend' e clica nele
+    tecnolgia_page.click_on_link_repo_frontend()
+
+  # Verifica a URL da nova aba aberta
+  expect(new_page.value).to_have_url(c.URL_REPOSITORIO_FRONTEND)
+
+@pytest.mark.pagina_tecnologia
+def test_clicar_no_link_discord(tecnolgia_page):
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with tecnolgia_page.browser.expect_page() as new_page:
+    # Vai até o link de 'Discord' e clica nele
+    tecnolgia_page.click_on_link_discord()
+
+  # Verifica a URL da nova aba aberta
+  expect(new_page.value).to_have_url(c.URL_CONVITE_DISCORD)
+
+@pytest.mark.pagina_tecnologia
+def test_clicar_no_link_agenda_comunidade(tecnolgia_page):
+
+  # Gatilho que verifica se uma nova página/aba foi aberta
+  with tecnolgia_page.browser.expect_page() as new_page:
+    # Vai até o link de 'Discord' e clica nele
+    tecnolgia_page.click_on_link_agenda_comunidade()
+
+  # Verifica a URL da nova aba aberta
+  assert "https://calendar.google.com/" in new_page.value.url

@@ -5,6 +5,12 @@ class Constants():
   URL_QD_APOIE =  "https://ok.org.br/apoie/"
   URL_QD_ORG = "https://ok.org.br/"
   URL_QD_DOCUMENTACAO = "https://docs.queridodiario.ok.org.br/pt-br/latest/"
+  URL_REPOSITORIOS_GITHUB = "https://github.com/orgs/okfn-brasil/repositories?q=querido-diario"
+  URL_REPOSITORIO_RASPADORES = "https://github.com/okfn-brasil/querido-diario"
+  URL_REPOSITORIO_PROCESSAMENTO_DADOS = "https://github.com/okfn-brasil/querido-diario-data-processing"
+  URL_REPOSITORIO_FRONTEND= "https://github.com/okfn-brasil/querido-diario-frontend"
+  URL_CONVITE_DISCORD="https://discord.com/invite/mxHGPq8rdY"
+  URL_RELATORIO_TECNICO="https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documents/reports/1o-relatorio-tecnico-atividades.pdf"
 
   CIDADES_POR_REGIAO = {
     "Norte": [
