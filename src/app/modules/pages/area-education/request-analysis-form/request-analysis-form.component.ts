@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { City } from 'src/app/interfaces/city';
 import { FormSentComponent } from 'src/app/modules/components/form-sent/form-sent.component';
 import { PeriodRange } from 'src/app/modules/components/period-picker/period-picker.component';
@@ -15,7 +15,7 @@ import { EducationQuotationService } from 'src/app/services/educationQuotation/e
   styleUrls: ['./request-analysis-form.component.sass'],
 })
 export class RequestAnalysisFormComponent implements OnInit {
-  form: FormGroup = this.formBuilder.group({});
+  form: UntypedFormGroup = this.formBuilder.group({});
   cities: City[] = [];
   themes: string[] = [];
   locations: string[] = [];
@@ -26,7 +26,7 @@ export class RequestAnalysisFormComponent implements OnInit {
   loading = false;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private citiesService: CitiesService,
     private searchService: EducationGazettesService,
     private educationQuotationService: EducationQuotationService,

@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { Moment } from 'moment';
@@ -30,7 +30,7 @@ export class PeriodFilterComponent implements OnInit {
   @Output() changeDates: EventEmitter<GazetteFilters> = new EventEmitter();
   activeTab = 0;
   period: number = 1;
-  range: FormGroup = new FormGroup({});
+  range: UntypedFormGroup = new UntypedFormGroup({});
 
   constructor() { }
 
@@ -44,9 +44,9 @@ export class PeriodFilterComponent implements OnInit {
       this.setPeriod(1);
     }
 
-    this.range = new FormGroup({
-      start: new FormControl(new Date(this.initialValue.published_since) || ''),
-      end: new FormControl(new Date(this.initialValue.until) || ''),
+    this.range = new UntypedFormGroup({
+      start: new UntypedFormControl(new Date(this.initialValue.published_since) || ''),
+      end: new UntypedFormControl(new Date(this.initialValue.until) || ''),
     });
   }
 

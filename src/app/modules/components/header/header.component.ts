@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, HostListener } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from '@angular/material/legacy-dialog';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/interfaces/account';
 import { IconType } from 'src/app/interfaces/icon';
