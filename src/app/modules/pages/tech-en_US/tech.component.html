@@ -20,6 +20,7 @@
             target="_blank"
             [ngClass]="action.style"
             *ngIf="action.to"
+            [attr.data-testid]="'link-'+action.text"
           >
             {{ action.text }}
           </a>
@@ -28,6 +29,7 @@
             [fragment]="action.fragment"
             [ngClass]="action.style"
             *ngIf="action.route"
+            [attr.data-testid]="'link-'+action.text"
           >
             {{ action.text }}
           </a>

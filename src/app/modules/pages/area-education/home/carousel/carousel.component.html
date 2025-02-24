@@ -3,16 +3,16 @@
     <div class="carousel-items" [class.default-items]="type === 'default'">
       <div class="pages-circle" *ngIf="type === 'second-type'">
         <div class="flex-pages">
-          <div class="page-circle" (click)="onClickCircle(page)" *ngFor="let page of pages" [class.active]="checkDotActive(page)"></div>
+          <div class="page-circle" (click)="onClickCircle(page)" *ngFor="let page of pages" [class.active]="checkDotActive(page)" data-testid="itens-paginacao"></div>
         </div>
       </div>
-      <div class="button-nav next desktop" [class.second-type]="type === 'second-type'"  [class.abled]="currPosition < items.length - itemsPerPage" (click)="onClickNext()">
+      <div class="button-nav next desktop" [class.second-type]="type === 'second-type'"  [class.abled]="currPosition < items.length - itemsPerPage" (click)="onClickNext()" data-testid="btn-seta-proximo">
         <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="próximo" />
         <img *ngIf="type === 'second-type' && theme === 'light'" src="assets/images/education/carousel-arrow-purple.png" alt="próximo" />
         <img *ngIf="type === 'second-type' && theme === 'dark'" src="assets/images/education/carousel-arrow-white.png" alt="próximo" />
       </div>
 
-      <div class="button-nav prev desktop" [class.second-type]="type === 'second-type'" [class.abled]="currPosition > 0" (click)="onClickPrev()">
+      <div class="button-nav prev desktop" [class.second-type]="type === 'second-type'" [class.abled]="currPosition > 0" (click)="onClickPrev()" data-testid="btn-seta-anterior">
         <img *ngIf="type === 'default'" src="assets/images/education/carousel-arrow.png" alt="anterior" />
         <img *ngIf="type === 'second-type' && theme === 'light'" src="assets/images/education/carousel-arrow-purple.png" alt="anterior" />
         <img *ngIf="type === 'second-type' && theme === 'dark'" src="assets/images/education/carousel-arrow-white.png" alt="anterior" />
@@ -33,13 +33,13 @@
       </div>
 
       <div *ngIf="type === 'second-type'" class="scroll-area" [ngStyle]="{'width': 'calc((288px * ' + items.length + ') + 17px)', transform: 'translateX(calc(-292px * '+ currPosition +'))'}">
-        <div *ngFor="let item of items" [ngClass]="{'stories': true, 'dark': theme === 'dark'}">
+        <div *ngFor="let item of items" [ngClass]="{'stories': true, 'dark': theme === 'dark'}" data-testid="cartao-post">
           <span>
-            <p [style.lineHeight]="0" class="stories-title">{{ item.title }}</p>
+            <p [style.lineHeight]="0" class="stories-title" data-testid="cartao-titulo">{{ item.title }}</p>
           </span>
-          <p class="stories-text">{{ item.text }}</p>
+          <p class="stories-text" data-testid="cartao-texto">{{ item.text }}</p>
           <span class="link" *ngFor="let action of item.actions">
-            <a [target]="action.target || 'self'" [href]="action.link">{{ action.text }}</a>
+            <a [target]="action.target || 'self'" [href]="action.link" data-testid="cartao-link">{{ action.text }}</a>
             <app-icon class="stories-icon" [icon]="icon"></app-icon>
           </span>
         </div>
