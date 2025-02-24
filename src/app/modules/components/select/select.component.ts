@@ -5,7 +5,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Option } from 'src/app/interfaces/option';
 
 @Component({
@@ -28,7 +28,7 @@ export class SelectComponent implements OnInit {
   @Input()
   selected: any;
 
-  selectControl = new FormControl({});
+  selectControl = new UntypedFormControl({});
 
   constructor() {}
 
@@ -42,7 +42,7 @@ export class SelectComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.selected) {
-      this.selectControl = new FormControl(this.selected);
+      this.selectControl = new UntypedFormControl(this.selected);
     }
   }
 
