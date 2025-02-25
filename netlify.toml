@@ -1,0 +1,3 @@
+[build]
+  publish = "dist/querido-diario"
+  command = "ng build --configuration production"
