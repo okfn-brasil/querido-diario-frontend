@@ -8,16 +8,16 @@
     <app-container theme="light">
       <div class="container-inner form-search-container">
         <h1>
-          {{ content.explore.title }}
+          {{ 'explore.title' | translate }}
         </h1>
         <app-search-form></app-search-form>
       </div>
     </app-container>
 
     <app-container [gap]="34">
-      <h1>{{ content.evolution.title }}</h1>
+      <h1>{{ 'evolution.title' | translate }}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="30">
-        <app-column *ngFor="let item of content.evolution.items">
+        <app-column *ngFor="let item of 'evolution.items' | translate">
           <app-row
             [gap]="24"
             layoutAlign="left"
@@ -30,7 +30,7 @@
           </app-row>
         </app-column>
       </app-row>
-      <ng-container *ngFor="let action of content.evolution.actions">
+      <ng-container *ngFor="let action of 'evolution.actions' | translate">
         <app-row class="evolution-link" [gap]="6">
           <a [routerLink]="action.to">
             {{ action.text }}
@@ -46,8 +46,8 @@
 
     <app-container theme="light" id="casos" [gap]="34" *ngIf="content$ | async as content; else loading">
       <div class="container-inner stories-area-title">
-        <h1>{{ content.useCases.title }}</h1>
-        <p>{{ content.useCases.text }}</p>
+        <h1>{{ 'useCases.title' | translate }}</h1>
+        <p>{{ 'useCases.text' | translate }}</p>
       </div>
       <app-row [gap]="17" wrap="wrap" [flex]="true">
         <div class="stories-overflow">
@@ -57,12 +57,12 @@
     </app-container>
 
     <app-container  bg="bg-purple-square-blurred" [gap]="34" theme="dark-tertiary">
-      <h1>{{ content.help.title }}</h1>
+      <h1>{{ 'help.title' | translate }}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="60">
         <app-column
           [appWidth]="380"
           fxFill.xs
-          *ngFor="let item of content.help.items"
+          *ngFor="let item of 'help.items' | translate"
         >
           <app-column [gap]="24" [flex]="true">
             <app-icon [icon]="item.icon"></app-icon>
@@ -99,7 +99,7 @@
 
     <app-container theme="light" id="midia" [gap]="34" *ngIf="content$ | async as content; else loading">
       <div class="container-inner stories-area-title">
-        <h1>{{ content.mediaImpact.title }}</h1>
+        <h1>{{ 'mediaImpact.title' | translate }}</h1>
       </div>
       <app-row [gap]="17" wrap="wrap" [flex]="true">
         <div class="stories-overflow">
@@ -114,7 +114,7 @@
 
     <app-container theme="light">
       <app-row [gap]="70" [gapXs]="16" [flex]="true">
-        <ng-container *ngFor="let item of content.realization">
+        <ng-container *ngFor="let item of 'realization' | translate">
           <app-column [gap]="14">
             <p>{{ item.title }}</p>
             <app-row wrap="wrap" [gap]="14">

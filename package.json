@@ -30,6 +30,8 @@
     "@angular/platform-browser-dynamic": "~11.2.11",
     "@angular/router": "~11.2.11",
     "@datorama/akita": "^7.1.1",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "angular-responsive-carousel": "^2.0.2",
     "express": "^4.17.1",
     "moment": "^2.29.1",

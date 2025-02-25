@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Icons } from './data/icons';
+import { I18nService } from './services/translation/i18n.service'
+
 
 @Component({
   selector: 'app-root',
@@ -14,8 +16,15 @@ export class AppComponent {
 
   constructor(
     private matIconRegistry: MatIconRegistry,
-    private sanitizer: DomSanitizer) {
+    private sanitizer: DomSanitizer,
+    private I18nService: I18nService) {
     this.registerIcons(sanitizer);
+
+  }
+
+  ngOnInit(): void {
+    const defaultLanguage = 'pt';
+    this.I18nService.loadRouteTranslations(defaultLanguage);
   }
 
   registerIcons(sanitizer: DomSanitizer): void {

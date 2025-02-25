@@ -1,12 +1,12 @@
 <ng-container *ngIf="infos$ | async as infos">
   <div class="container-inner">
-    <h1>{{ infos.title }}</h1>
+    <h1>{{ 'infos.title' | translate }}</h1>
   </div>
   <app-row [gap]="17" [flex]="true">
     <app-column
       [ngClass]="page === 'about' ? 'info-item' : ''"
       [style.padding]="'42px 30px'"
-      *ngFor="let item of infos.items"
+      *ngFor="let item of 'infos.items' | translate"
       [gap]="34"
       [theme]="themeCard"
     >

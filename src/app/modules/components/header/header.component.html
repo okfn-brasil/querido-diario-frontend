@@ -3,16 +3,39 @@
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
-        <a routerLink="/" #explore>Explore</a>
-        <a routerLink="/dados">Dados</a>
-        <a routerLink="/blog">Blog</a>
-        <a routerLink="/tecnologia">Tecnologia</a>
-        <a routerLink="/sobre">Sobre</a>
-        <a fxLayout="center" (click)="openNotifications()"  #notification>
+        <ng-container *ngFor="let item of 'header.items' | translate; let i = index">
+           <a 
+            *ngIf="i === 0; else regularLink" 
+            routerLink="{{ item.route }}" 
+            #explore>
+            {{ item.text }}
+          </a>
+          <ng-template #regularLink>
+            <a routerLink="{{ item.route }}">
+              {{ item.text }}
+            </a>
+          </ng-template>
+        </ng-container>
+
+        <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
-        <button routerLink="/apoie" class="btn">Apoie</button>
-        <button routerLink="/educacao" class="btn-purple">Educação</button>
+        <button routerLink="/apoie" class="btn">{{ 'header.buttons.support' | translate }}</button>
+        <button routerLink="/educacao" class="btn-purple">{{ 'header.buttons.education' | translate }}</button>
+
+        <button mat-icon-button [matMenuTriggerFor]="languageSwitcher" aria-label="Seletor de idioma" class="top-header-menu-item">
+          <mat-icon>language</mat-icon>
+        </button>
+        <mat-menu #languageSwitcher="matMenu" xPosition="before" class="language-switcher-menu">
+          <ng-container *ngFor="let language of languageList">
+            <a target="_self" (click)="changeLanguage(language.code)">
+              <button mat-menu-item [attr.data-language-code]="language.code">
+                <span>{{language.label}}</span>
+              </button>
+            </a>
+          </ng-container>
+        </mat-menu>
+
       </nav>
       <a *ngIf="!hideMenu" (click)="openDialog()" id="support" fxHide fxHide.xs="false">
         <mat-icon svgIcon="bars" class="bars"></mat-icon>
@@ -25,32 +48,47 @@
 
 
 <div class="suspended-menu" *ngIf="mobileMenuOpen" (click)="onClickLink()">
-  <a routerLink="/" #explore><div class="link bg-white">
-    Explore
-  </div></a>
-  <a routerLink="/dados"><div class="link bg-white">
-    Dados
-  </div></a>
-  <a routerLink="/blog"><div class="link bg-white">
-    Blog
-  </div></a>
-  <a routerLink="/tecnologia"><div class="link bg-white">
-    Tecnologia
-  </div></a>
-  <a routerLink="/sobre"><div class="link bg-white">
-    Sobre
-  </div></a>
-  <a routerLink="/apoie"><div class="link bg-orange">
-    Apoie
-  </div></a>
+  <a routerLink="/" #explore>
+    <div class="link bg-white">
+      Explore
+    </div>
+  </a>
+  <a routerLink="/dados">
+    <div class="link bg-white">
+      Dados
+    </div>
+  </a>
+  <a routerLink="/blog">
+    <div class="link bg-white">
+      Blog
+    </div>
+  </a>
+  <a routerLink="/tecnologia">
+    <div class="link bg-white">
+      Tecnologia
+    </div>
+  </a>
+  <a routerLink="/sobre">
+    <div class="link bg-white">
+      Sobre 
+    </div>
+  </a>
+  <a routerLink="/apoie">
+    <div class="link bg-orange">
+      Apoie
+    </div>
+  </a>
 
-  <a routerLink="/educacao/"><div class="link divider bg-purple">Tecnologias na Educação</div></a>
+  <a routerLink="/educacao/">
+    <div class="link divider bg-purple">Tecnologias na Educação</div>
+  </a>
   <div *ngIf="userData.full_name" class="user-name link">
     Olá, {{userData.full_name.split(' ')[0]}}
   </div>
   <a *ngIf="userData.full_name" routerLink="/educacao/alertas"><div class="link logged-link bg-dark-purple">
-    Meus alertas
-  </div></a>
+    Meus alertas 
+  </div>
+  </a>
   <a *ngIf="userData.full_name"><div (click)="onClickLogout()" class="link logged-link bg-dark-purple">
     Logout
   </div></a>
