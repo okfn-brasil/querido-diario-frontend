@@ -1,6 +1,11 @@
 {
     "useCases": [
         {
+            "title": "Querido Diário | 26/02/2025",
+            "text": "Panorama das Tecnologias de Reconhecimento Facial em Salvador-BA",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/62" }]
+        },
+        {
             "title": "Querido Diário | 15/08/2024",
             "text": "Olha a cobra! Quem vai tocar no São João?",
             "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/58" }]
