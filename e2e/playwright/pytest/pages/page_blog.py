@@ -14,3 +14,11 @@ class BlogPage:
   def __init__(self, browser : BrowserContext):
     self.browser = browser
     self.page = browser.new_page()
+
+
+
+  def click_on_historia_button(self):
+    """
+    Este metodo clica no link 'Histórias' na aba de opções da tela
+    """
+    self.page.get_by_test_id(self.link_historia).click()
