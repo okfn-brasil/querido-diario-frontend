@@ -24,4 +24,5 @@ def test_clicar_no_link_doe(blog_page: BlogPage, base_url):
   blog_page.click_on_historia_button()
 
   # Verifica a URL da nova aba aberta
+
   expect(blog_page.page).to_have_url('blog/Hist%C3%B3ria')
