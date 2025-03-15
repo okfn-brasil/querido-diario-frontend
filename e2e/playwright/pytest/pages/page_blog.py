@@ -11,6 +11,10 @@ class BlogPage:
   link_diario_do_clima = "Diário do Clima"
   link_tecnologias_educacao = "Tecnologias na Educação"
 
+  class_historia_post = '[class="post"]'
+  category_historia_post = '[class="category"]'
+
+
   def __init__(self, browser : BrowserContext):
     self.browser = browser
     self.page = browser.new_page()
@@ -22,3 +26,7 @@ class BlogPage:
     Este metodo clica no link 'Histórias' na aba de opções da tela
     """
     self.page.get_by_test_id(self.link_historia).click()
+
+
+  def get_historia_page(self):
+    return self.page.locator(self.class_historia_post).all()
