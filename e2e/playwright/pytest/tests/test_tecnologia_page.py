@@ -1,9 +1,10 @@
 import logging
 import pytest
 from playwright.sync_api import Page, expect, Browser
-from e2e.playwright.pytest.pages.page_tecnologia import TecnologiaPage
-from  e2e.playwright.pytest.util.constants import Constants as c
-
+# from e2e.playwright.pytest.pages.page_tecnologia import TecnologiaPage
+# from  e2e.playwright.pytest.util.constants import Constants as c
+from  util.constants      import Constants as c
+from  pages.page_tecnologia    import TecnologiaPage
 
 @pytest.fixture(scope="function")
 def tecnolgia_page(browser_context) -> TecnologiaPage:

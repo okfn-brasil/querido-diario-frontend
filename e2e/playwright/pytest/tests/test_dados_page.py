@@ -4,9 +4,10 @@ import random
 import logging
 from playwright.sync_api import Page, expect, Browser
 
-from e2e.playwright.pytest.pages.page_dados import DadosPage
-from  e2e.playwright.pytest.util.constants import Constants as c
-
+# from e2e.playwright.pytest.pages.page_dados import DadosPage
+# from  e2e.playwright.pytest.util.constants import Constants as c
+from  util.constants      import Constants as c
+from  pages.page_dados   import DadosPage
 
 
 @pytest.fixture(scope="function")

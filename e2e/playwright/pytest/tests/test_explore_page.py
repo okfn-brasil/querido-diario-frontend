@@ -2,10 +2,10 @@ import pytest
 import time
 import random
 import logging
-from playwright.sync_api import Page, expect, Browser
-from  e2e.playwright.pytest.pages.page_explore import ExplorePage
-from  e2e.playwright.pytest.util.constants import Constants as c
 
+from  playwright.sync_api   import Page, expect, Browser
+from  util.constants        import Constants as c
+from  pages.page_explore    import ExplorePage
 
 
 @pytest.fixture(scope="function")
