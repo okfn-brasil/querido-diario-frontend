@@ -28,7 +28,7 @@ jobs:
         run: python -m pip install pipenv
 
       - name: Install dependencies from Pipfile
-        run: pipenv install 
+        run:  pipenv run python install
 
       - name: Install Playwright browsers
         run: pipenv run python -m playwright install
