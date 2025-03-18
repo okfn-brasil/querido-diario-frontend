@@ -1,0 +1,34 @@
+name: Run Playwright Tests
+
+on:
+  push:
+    branches:
+      - main   
+  pull_request:
+    branches:
+      - main   
+  workflow_dispatch: 
+jobs:
+  test:
+    runs-on: ubuntu-latest   
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12   
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Install dependencies from Pipfile
+        run: pipenv install --dev
+
+      - name: Install Playwright browsers
+        run: pipenv run python -m playwright install
+
+      - name: Run tests
+        run: pipenv run pytest
