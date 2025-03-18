@@ -27,11 +27,8 @@ jobs:
       - name: Install pipenv
         run: python -m pip install pipenv
         
-      - name: Go to pytest folder
-        run: cd /home/runner/work/querido-diario-frontend/querido-diario-frontend/e2e/playwright/pytest
-        
       - name: Install dependencies from Pipfile
-        run:  pipenv run python -m pip install
+        run:  pipenv --pipfile=querido-diario-frontend/querido-diario-frontend/e2e/playwright/pytest/Pipfile install 
 
       - name: Install Playwright browsers
         run: pipenv run python -m playwright install
