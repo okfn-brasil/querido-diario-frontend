@@ -16,8 +16,15 @@ def explore_page(browser_context) -> ExplorePage:
 
   return explorepage
 
-def before_after_each(self):
-  pass
+@pytest.fixture(scope="function", autouse=True)
+def before_after_each( request):
+  test_case_name = request.node.name
+  logging.info(c.TEXT_SETUP_SCENARIO)
+
+  yield
+  logging.info(c.TEXT_TEARDOWN_SCENARIO)
+
+
 
 @pytest.mark.TC001
 @pytest.mark.TC002

@@ -12,6 +12,11 @@ class Constants():
   URL_CONVITE_DISCORD="https://discord.com/invite/mxHGPq8rdY"
   URL_RELATORIO_TECNICO="https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/documents/reports/1o-relatorio-tecnico-atividades.pdf"
 
+  TEXT_SETUP_MODULE = "[SETUP] Starting Setup for file:"
+  TEXT_TEARDOWN_MODULE = "[SETUP] Starting Teardown for file:"
+  TEXT_SETUP_SCENARIO = "[SETUP] Starting Setup for test function:"
+  TEXT_TEARDOWN_SCENARIO = "[SETUP] Starting Teardown for test function:"
+
   CIDADES_POR_REGIAO = {
     "Norte": [
       "Jaru (RO)", "Manaus (AM)", "Boa Vista (RR)", "Belém (PA)", "Garrafão do Norte (PA)",

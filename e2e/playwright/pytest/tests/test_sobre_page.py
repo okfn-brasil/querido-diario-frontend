@@ -11,19 +11,21 @@ from  pages.page_sobre    import SobrePage
 def sobre_page(browser_context) -> SobrePage:
   sobre_page = SobrePage(browser_context)
   sobre_page.page.goto("/sobre")
-  # dados_page.wait_main_fields()
   return sobre_page
+
 
 @pytest.fixture(scope="function", autouse=True)
 def before_after_each(request, sobre_page):
   test_case_name = request.node.name
+  logging.info(c.TEXT_SETUP_SCENARIO)
+
 
   if "clicar_no_link_motivacao" in test_case_name:
-      sobre_page.click_on_link_politica_privacidade()
-      time.sleep(3)
-  yield
+        sobre_page.click_on_link_politica_privacidade()
+        time.sleep(3)
 
-  pass
+  yield
+  logging.info(c.TEXT_TEARDOWN_SCENARIO)
 
 @pytest.mark.pagina_sobre
 def test_clicar_no_link_motivacao(sobre_page):

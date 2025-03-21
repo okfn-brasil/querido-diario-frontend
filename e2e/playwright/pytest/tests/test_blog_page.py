@@ -1,7 +1,9 @@
 import pytest
+import logging
 from playwright.sync_api import expect
 
 from e2e.playwright.pytest.pages.page_blog import BlogPage
+from  util.constants      import Constants as c
 
 
 
@@ -13,9 +15,15 @@ def blog_page(browser_context) -> BlogPage:
 
   return blogpage
 
+
 @pytest.fixture(scope="function", autouse=True)
-def before_after_each():
-  pass
+def before_after_each(request):
+  test_case_name = request.node.name
+  logging.info(c.TEXT_SETUP_SCENARIO)
+
+  yield
+  logging.info(c.TEXT_TEARDOWN_SCENARIO)
+
 
 @pytest.mark.pagina_blog
 def test_clicar_no_link_historia(blog_page: BlogPage):

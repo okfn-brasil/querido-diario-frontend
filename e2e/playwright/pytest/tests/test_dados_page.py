@@ -17,8 +17,15 @@ def dados_page(browser_context) ->DadosPage:
   # dados_page.wait_main_fields()
   return dados_page
 
-def before_after_each(self):
-  pass
+
+@pytest.fixture(scope="function", autouse=True)
+def before_after_each(request):
+  test_case_name = request.node.name
+  logging.info(c.TEXT_SETUP_SCENARIO)
+
+  yield
+  logging.info(c.TEXT_TEARDOWN_SCENARIO)
+
 
 @pytest.mark.pagina_dados
 @pytest.mark.parametrize("regiao_brasil", ["Norte", "Nordeste","Sul", "Sudeste", "Centro-Oeste"] )

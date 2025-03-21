@@ -13,9 +13,12 @@ def tecnolgia_page(browser_context) -> TecnologiaPage:
   return tecnologia_page
 
 @pytest.fixture(scope="function", autouse=True)
-def before_after_each():
-  pass
+def before_after_each(request):
+  test_case_name = request.node.name
+  logging.info(c.TEXT_SETUP_SCENARIO)
 
+  yield
+  logging.info(c.TEXT_TEARDOWN_SCENARIO)
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_doe(tecnolgia_page):
