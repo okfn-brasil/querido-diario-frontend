@@ -33,7 +33,6 @@
               Deve possuir no mínimo 8 caracteres
             </div>
           </div>
-
           <div class="edu-input">
             <input
               id="email"
@@ -57,7 +56,6 @@
               O e-mail inserido já existe!
             </div>
           </div>
-
           <div class="edu-input">
             <img
               src="assets/images/education/view-pass.png"
@@ -97,13 +95,11 @@
             </div>
           </div>
         </div>
-
         <div *ngIf="step">
           <div class="title second-step-title">Boas-vindas</div>
           <div class="sub-title">
             Queremos te conhecer um pouco melhor! Complete seu cadastro
           </div>
-
           <div class="inputs">
             <div class="edu-input">
               <select
@@ -126,7 +122,6 @@
                 Campo obrigatório!
               </div>
             </div>
-
             <div class="edu-input cities-input">
               <input
                 id="city"
@@ -151,7 +146,6 @@
             </div>
           </div>
         </div>
-
         <div class="space" *ngIf="step"></div>
         <hr class="mobile" />
         <button class="btne-primary">Continuar</button>
@@ -160,22 +154,20 @@
           Ao se cadastrar, você está aceitando os nossos
           <br class="mobile" />
           <span>
-            <a routerLink="/privacidade">Termos e condições</a>
+            <a routerLink="/privacidade" target="_blank">Termos e condições</a>
           </span>
           <span class="contact">
-            <a routerLink="/sugestao">Fale conosco</a>
+            <a routerLink="/sugestao" target="_blank">Fale conosco</a>
           </span>
         </div>
-
         <hr *ngIf="!step" />
-
         <div class="login-link" *ngIf="!step">
           Já possui uma conta?
-          <span
-            ><a routerLink="/educacao" [queryParams]="{ login: 'open' }"
-              >Faça o login</a
-            ></span
-          >
+          <span>
+            <a routerLink="/educacao" [queryParams]="{ login: 'open' }">
+              Faça o login
+            </a>
+          </span>
         </div>
       </form>
       <div class="sign-up-image desktop">
