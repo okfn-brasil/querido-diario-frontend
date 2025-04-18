@@ -8,6 +8,7 @@ playwright = "==1.49.1"
 pytest = "==8.3.4"
 pytest-base-url = "==2.1.0"
 pytest-playwright= "==0.6.2"
+pytest-html = "==4.1.1"
 requests = "==2.32.3"
 
 [dev-packages]

@@ -1,11 +1,16 @@
 import pytest
 import time
 import logging
+from  playwright.sync_api   import Page, expect, Browser
+from  util.constants        import Constants as c
+from  pages.page_sobre      import SobrePage
 
-from  playwright.sync_api import Page, expect, Browser
-from  util.constants      import Constants as c
-from  pages.page_sobre    import SobrePage
 
+"""
+Este arquivo executa testes E2E
+Testes são executados na Página -> https://queridodiario.ok.org.br/sobre
+
+"""
 
 @pytest.fixture(scope="function")
 def sobre_page(browser_context) -> SobrePage:
@@ -29,6 +34,11 @@ def before_after_each(request, sobre_page):
 
 @pytest.mark.pagina_sobre
 def test_clicar_no_link_motivacao(sobre_page):
+  """
+       Cenário de teste:
+          Verificar se o link 'Motivação' está funcionando e a URL e o viewport do usuário estão na posição correta.
+  """
+
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_motivacao)
 
   # Clica no link do início da página 'Motivação'
@@ -40,7 +50,11 @@ def test_clicar_no_link_motivacao(sobre_page):
 
 @pytest.mark.pagina_sobre
 def test_clicar_no_botao_doe(sobre_page):
+  """
+       Cenário de teste:
+          Verificar ao clicar no botão 'Doe', se uma nova aba é aberta com a URL do Catarse
 
+  """
   # Gatilho que verifica se uma nova página/aba foi aberta
   with sobre_page.browser.expect_page() as new_page:
     # Vai até o botão 'Doe' e clica nele
@@ -51,6 +65,10 @@ def test_clicar_no_botao_doe(sobre_page):
 
 @pytest.mark.pagina_sobre
 def test_clicar_no_link_historia(sobre_page):
+  """
+        Cenário de teste:
+           Verificar ao clicar no link 'História', está funcionando e a URL e o viewport do usuário estão na posição correta.
+   """
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_historia)
 
   # Clica no link do início da página 'Historia'
@@ -62,6 +80,10 @@ def test_clicar_no_link_historia(sobre_page):
 
 @pytest.mark.pagina_sobre
 def test_clicar_no_link_casos_de_uso(sobre_page):
+  """
+        Cenário de teste:
+           Verificar ao clicar no link 'Casos de Uso', está funcionando e a URL e o viewport do usuário estão na posição correta.
+   """
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_casos)
 
   # Clica no link do início da página 'Casos de uso'
@@ -73,6 +95,10 @@ def test_clicar_no_link_casos_de_uso(sobre_page):
 
 @pytest.mark.pagina_sobre
 def test_clicar_no_link_na_midia(sobre_page):
+  """
+        Cenário de teste:
+           Verificar ao clicar no link 'Na Mídia', está funcionando e a URL e o viewport do usuário estão na posição correta.
+   """
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_midia)
 
   # Clica no link do início da página 'Na mídia'
@@ -84,6 +110,10 @@ def test_clicar_no_link_na_midia(sobre_page):
 
 @pytest.mark.pagina_sobre
 def test_clicar_no_link_quem_somos(sobre_page):
+  """
+        Cenário de teste:
+           Verificar ao clicar no link 'Quem somos', está funcionando e a URL e o viewport do usuário estão na posição correta.
+   """
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_quemsomos)
 
   # Clica no link do início da página 'Quem somos'
@@ -95,6 +125,11 @@ def test_clicar_no_link_quem_somos(sobre_page):
 
 @pytest.mark.pagina_sobre
 def test_clicar_no_link_saiba_mais(sobre_page):
+  """
+        Cenário de teste:
+           Verificar ao clicar no link 'Saiba mais' no Viewport do 'Quem somos', se abre uma nova aba com a URL da organização
+   """
+
 
   # Gatilho que verifica se uma nova página/aba foi aberta
   with sobre_page.browser.expect_page() as new_page:
@@ -106,7 +141,11 @@ def test_clicar_no_link_saiba_mais(sobre_page):
 
 
 @pytest.mark.pagina_sobre
-def test_clicar_no_link_poltilica_de_privacidade(sobre_page):
+def test_clicar_no_link_politica_de_privacidade(sobre_page):
+  """
+         Cenário de teste:
+            Verificar ao clicar no link 'Politica de privacidade' está funcionando e a URL e o viewport do usuário estão na posição correta.
+    """
   locator_header = sobre_page.page.get_by_test_id(sobre_page.head_privacidade)
 
   # Clica no link do início da página 'Política de Privacidade'

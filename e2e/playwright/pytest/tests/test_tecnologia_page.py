@@ -1,10 +1,14 @@
 import logging
 import pytest
-from playwright.sync_api import Page, expect, Browser
-# from e2e.playwright.pytest.pages.page_tecnologia import TecnologiaPage
-# from  e2e.playwright.pytest.util.constants import Constants as c
-from  util.constants      import Constants as c
-from  pages.page_tecnologia    import TecnologiaPage
+from playwright.sync_api      import expect
+from  util.constants          import Constants as c
+from  pages.page_tecnologia   import TecnologiaPage
+
+"""
+Este arquivo executa testes E2E
+Testes são executados na Página -> https://queridodiario.ok.org.br/tecnologia
+
+"""
 
 @pytest.fixture(scope="function")
 def tecnolgia_page(browser_context) -> TecnologiaPage:
@@ -22,6 +26,10 @@ def before_after_each(request):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_doe(tecnolgia_page):
+  """
+          Cenário de teste:
+           Verificar ao clicar no link 'Doe' se abre uma nova aba com a URL do Catarse
+  """
 
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
@@ -33,7 +41,10 @@ def test_clicar_no_link_doe(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_documentacao(tecnolgia_page):
-
+  """
+         Cenário de teste:
+            Verificar ao clicar no link 'Documentação'' se abre uma nova aba com a URL da documentação do QD
+   """
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
     # Vai até o link de 'Documentação' e clica nele
@@ -44,7 +55,10 @@ def test_clicar_no_link_documentacao(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_relatorios(tecnolgia_page):
-
+  """
+    Cenário de teste:
+             Verificar ao clicar no link 'Relatórios' se a URL é alterada corretamente
+    """
   # Vai até o link de 'Relatórios' e clica nele
   tecnolgia_page.click_on_link_relatorios()
 
@@ -54,6 +68,10 @@ def test_clicar_no_link_relatorios(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_acessar_relatorio_tecnico(tecnolgia_page):
+  """
+          Cenário de teste:
+           Verificar ao clicar para acessar o relatório técnico, se uma nova aba é aberta com o PDF do relatório técnico
+  """
 
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
@@ -66,7 +84,10 @@ def test_acessar_relatorio_tecnico(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_busca_avancada(tecnolgia_page):
-
+  """
+           Cenário de teste:
+            Verificar ao clicar para acessar o relatório técnico, se uma nova aba é aberta com o PDF do relatório técnico
+   """
   # Vai até o link de 'Busca Avancada' e clica nele
   tecnolgia_page.click_on_link_busca_avancada()
 
@@ -75,6 +96,10 @@ def test_clicar_no_link_busca_avancada(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_repositorios(tecnolgia_page):
+  """
+           Cenário de teste:
+            Verificar ao clicar para acessar os repositórios, se uma nova aba é aberta com a página da OKBR no git contendo todos os repositórios
+   """
 
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
@@ -87,6 +112,10 @@ def test_clicar_no_link_repositorios(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_raspadores(tecnolgia_page):
+  """
+           Cenário de teste:
+            Verificar ao clicar no link dos Raspadores, se o usuário é redirecionado para o repositório dos raspadores
+   """
 
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
@@ -98,7 +127,10 @@ def test_clicar_no_link_raspadores(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_processamento_de_dados(tecnolgia_page):
-
+  """
+           Cenário de teste:
+            Verificar ao clicar no link de Processamento de Dados , se uma nova aba é aberta com a URL do repositório de processamento de dados
+   """
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
     # Vai até o link de 'Processamento de dados' e clica nele
@@ -109,7 +141,10 @@ def test_clicar_no_link_processamento_de_dados(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_frontend(tecnolgia_page):
-
+  """
+           Cenário de teste:
+            Verificar ao clicar no link do Frontend, se uma nova aba é aberta com a URL do repositório do frontend
+   """
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
     # Vai até o link de 'Repositório frontend' e clica nele
@@ -120,7 +155,10 @@ def test_clicar_no_link_frontend(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_discord(tecnolgia_page):
-
+  """
+           Cenário de teste:
+            Verificar ao clicar no link do Discord, se uma nova aba é aberta com a URL do servidor do discord
+   """
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
     # Vai até o link de 'Discord' e clica nele
@@ -131,7 +169,10 @@ def test_clicar_no_link_discord(tecnolgia_page):
 
 @pytest.mark.pagina_tecnologia
 def test_clicar_no_link_agenda_comunidade(tecnolgia_page):
-
+  """
+           Cenário de teste:
+            Verificar ao clicar no link do Frontend, se uma nova aba é aberta com a google agenda do OKBR.
+   """
   # Gatilho que verifica se uma nova página/aba foi aberta
   with tecnolgia_page.browser.expect_page() as new_page:
     # Vai até o link de 'Discord' e clica nele

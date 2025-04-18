@@ -1,12 +1,15 @@
 import pytest
-import time
-import random
 import logging
-
 from  playwright.sync_api   import Page, expect, Browser
 from  util.constants        import Constants as c
 from  pages.page_explore    import ExplorePage
 
+
+"""
+Este arquivo executa testes E2E
+Testes são executados na Página -> https://queridodiario.ok.org.br/explore
+
+"""
 
 @pytest.fixture(scope="function")
 def explore_page(browser_context) -> ExplorePage:
@@ -67,12 +70,10 @@ def test_buscar_licitacao_todas_regioes_brasil(explore_page : ExplorePage, munic
     for locator in explore_page.page.locator(explore_page.label_resultado).all():
       expect(locator).to_have_text(municipio_state)
 
-@pytest.mark.TC006
 @pytest.mark.pagina_explore
 @pytest.mark.parametrize("noticia_index", range(0,10))
 def test_abrir_link_de_uma_noticia(explore_page: ExplorePage, base_url, noticia_index):
   """
-       Teste ID: TC006
        Cenário de teste:
           Verificar se os links das notícias exibidas no sistema estão funcionando corretamente.
 
@@ -88,11 +89,9 @@ def test_abrir_link_de_uma_noticia(explore_page: ExplorePage, base_url, noticia_
 
   expect(new_page.value).not_to_have_url(base_url+"/")
 
-@pytest.mark.TC007
 @pytest.mark.pagina_explore
 def test_abrir_link_de_cidades_disponiveis(explore_page: ExplorePage, base_url):
   """
-        Teste ID: TC007
         Cenário de teste:
            Verificar se o link "Confira as cidades disponíveis" está funcionando corretamente
    """
@@ -104,11 +103,9 @@ def test_abrir_link_de_cidades_disponiveis(explore_page: ExplorePage, base_url):
   expect(explore_page.page).to_have_url(base_url+'/cidades-disponiveis')
 
 
-@pytest.mark.TC008
 @pytest.mark.pagina_explore
 def test_abrir_link_de_nivel_de_acesso(explore_page: ExplorePage, base_url):
   """
-        Teste ID: TC008
         Cenário de teste:
           Verificar se o link 'Nível de Acesso' da seção 'Entenda' exibida no sistema está funcionando corretamente.
   """
@@ -119,11 +116,9 @@ def test_abrir_link_de_nivel_de_acesso(explore_page: ExplorePage, base_url):
 
   expect(explore_page.page).to_have_url(base_url+'/acesso')
 
-@pytest.mark.TC009
 @pytest.mark.pagina_explore
 def test_abrir_link_de_glossario(explore_page: ExplorePage, base_url):
   """
-        Teste ID: TC009
         Cenário de teste:
            Verificar se o link 'Glossário' da seção 'Entenda' exibida no sistema está funcionando corretamente.
    """
@@ -134,11 +129,9 @@ def test_abrir_link_de_glossario(explore_page: ExplorePage, base_url):
 
   expect(explore_page.page).to_have_url(base_url+'/glossario')
 
-@pytest.mark.TC010
 @pytest.mark.pagina_explore
 def test_abrir_link_de_denunciar_ou_pedir_informacoes(explore_page: ExplorePage, base_url):
   """
-        Teste ID: TC010
         Cenário de teste:
           Verificar se o link 'Como denunciar ou pedir informações da seção 'Entenda' exibida no sistema está funcionando corretamente.
   """
@@ -150,11 +143,9 @@ def test_abrir_link_de_denunciar_ou_pedir_informacoes(explore_page: ExplorePage,
 
   expect(explore_page.page).to_have_url('/informacoes')
 
-@pytest.mark.TC011
 @pytest.mark.pagina_explore
 def test_abrir_link_ver_todas_as_metas(explore_page: ExplorePage, base_url):
   """
-        Teste ID: TC011
         Cenário de teste:
           Verificar se o link 'Contribua financeiramente' da seção 'Apoio' exibida no sistema está funcionando corretamente.
   """
@@ -171,11 +162,9 @@ def test_abrir_link_ver_todas_as_metas(explore_page: ExplorePage, base_url):
   expect(new_page.value).to_have_url(c.URL_QD_CATARSE)
 
 
-@pytest.mark.TC012
 @pytest.mark.pagina_explore
 def test_abrir_link_contribua_com_desenvolvimento(explore_page: ExplorePage, base_url):
   """
-        Teste ID: TC012
         Cenário de teste:
           Verificar se o link 'Doe para a OKBR' da seção 'Apoio' exibida no sistema está funcionando corretamente.
   """
@@ -192,11 +181,9 @@ def test_abrir_link_contribua_com_desenvolvimento(explore_page: ExplorePage, bas
 
 
 
-@pytest.mark.TC013
 @pytest.mark.pagina_explore
 def test_abrir_link_doe_para_okbr(explore_page: ExplorePage, base_url):
   """
-        Teste ID: TC013
         Cenário de teste:
           Verificar se o link 'Doe para a OKBR' da seção 'Apoio' exibida no sistema está funcionando corretamente.
   """

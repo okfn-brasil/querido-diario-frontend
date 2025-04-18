@@ -1,74 +1,85 @@
-# E2E Test Automation 
+# Automação de Testes E2E
 
-The test automation is using  **pytest** and **playwright**. Playwright is a powerful library for automating web browsers, and when combined with pytest, it offers a flexible, scalable, and easy-to-maintain testing framework.
+A automação de testes utiliza **pytest** e **playwright**. O Playwright é uma biblioteca poderosa para automação de navegadores web, e quando combinado com o pytest, oferece um framework de testes flexível, escalável e fácil de manter.
 
-## Prerequisites
+## Pré-requisitos
 
-Before you begin, ensure you have the following installed:
+Antes de começar, certifique-se de ter o seguinte instalado:
 
-- Python 3.7 or later
+- Python 3.12
 
-## Installing Dependencies
+## Instalando Dependências
 
-To set up the project, clone the repository and install the necessary dependencies.
+Para configurar o projeto, clone o repositório e instale as dependências necessárias.
 
-1. **Clone the repository**:
+1. **Clone o repositório**:
 
-    ```bash
-    git clone https://github.com/okfn-brasil/querido-diario-frontend.git
-    
-    cd e2e/playwright/pytest
-    ```
-
-2. **Set up a virtual environment** (optional but recommended):
-
-    Install pipenv
-    
-    ```bash
-    pip install pipenv
-    ```
-    Check if pipenv is successfully installed
-    ```bash
-    pipenv
-    ```
-    
-3. **Install the required Python packages via Pipfile**:
-
-    Under e2e/playwright/pytest
-    ```bash
-    pipenv install
-    ```
-
-    This will start and  dependencies in the virtual environment:
-
-    - `pytest`
-    - `pytest-playwright`
-    - `playwright`
-
-4. **Install Playwright browsers**:
-
-    After all dependencies installed, run the command to install playwright browsers
-    ```bash
-    playwright install    
-    ```
-
-    This command will trigger Playwright to download the necessary browser binaries.
-
-
-5. **Running the tests**
-
-Go to folder /tests
    ```bash
-     cd /tests    
+   git clone https://github.com/okfn-brasil/querido-diario-frontend.git
+
+   cd e2e/playwright/pytest
    ```
-To run all tests
-  ```bash
-    pytest
-  ```
 
-Check all markers via *pytest.ini* file
+2. **Configure um ambiente virtual** (opcional, mas recomendado):
 
-Example
+   Instale o pipenv
+
+   ```bash
+   pip install pipenv
+   ```
+
+   Verifique se o pipenv foi instalado com sucesso
+
+   ```bash
+   pipenv
+   ```
+
+3. **Instale os pacotes Python requeridos via Pipfile**:
+
+   Dentro da pasta `e2e/playwright/pytest`
+
+   ```bash
+   pipenv install
+   ```
+
+   Isso iniciará o ambiente virtual e instalará as dependências:
+
+   - `pytest`
+   - `pytest-playwright`
+   - `playwright`
+
+4. **Instale os navegadores do Playwright**:
+
+   Após todas as dependências estarem instaladas, execute o comando para instalar os navegadores do Playwright:
+
+   ```bash
+   playwright install    
+   ```
+
+   Esse comando fará o download dos binários necessários dos navegadores.
+
+5. **Executando os testes**
+
+Acesse a pasta `/tests`:
+
 ```bash
-  pytest -m pagina_dados
+cd /tests
 ```
+
+Para rodar todos os testes:
+
+```bash
+pytest
+```
+
+Verifique todas as *markers* disponíveis no arquivo `pytest.ini`.
+
+Exemplo:
+
+```bash
+pytest -m pagina_dados
+```
+
+---
+
+Após executar qualquer teste, a automação irá gerar um relatório simples em 
