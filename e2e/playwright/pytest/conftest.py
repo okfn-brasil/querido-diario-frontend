@@ -15,7 +15,7 @@ def browser_context_args(base_url):
 def browser_context(browser_context_args):
     """Create and return a browser context."""
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context(**browser_context_args)
         yield context
         browser.close()
