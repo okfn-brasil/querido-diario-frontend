@@ -31,10 +31,4 @@ jobs:
         working-directory: e2e/playwright/pytest
         run: |
           pipenv install
-          pipenv shell
-
-      - name: Instalar browsers Playwright
-        run: playwright install
-
-      - name: Rodar pytest
-        run: pytest
+          pipenv playwright install
