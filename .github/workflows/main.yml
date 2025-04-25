@@ -35,5 +35,12 @@ jobs:
 
       - name: List all dependencies installed
         working-directory: e2e/playwright/pytest
-        run: |
-          pipenv graph
+        run: pipenv graph
+
+      - name: Install playwright
+        working-directory: e2e/playwright/pytest
+        run: pipenv run playwright install
+
+      - name: Running tests
+        working-directory: e2e/playwright/pytest/tests
+        run: pipenv run pytest
