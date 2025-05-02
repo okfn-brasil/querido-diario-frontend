@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('notification') notification!: ElementRef;
   notificationPopoverRef: MatDialogRef<NotificationsComponent> | null = null;
   mobileMenuOpen = false;
+  mobileNotificationsOpen = false;
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
   hideMenu = false;
@@ -126,5 +127,9 @@ export class HeaderComponent implements OnInit {
 
   changeLanguage(language: string): void {
     this.I18nService.loadRouteTranslations(language);
+  }
+
+  openMobileNotifications() {
+    this.mobileNotificationsOpen = !this.mobileNotificationsOpen;
   }
 }
