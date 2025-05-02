@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { City } from 'src/app/interfaces/city';
 import { Territory } from 'src/app/interfaces/territory';
@@ -23,7 +23,7 @@ interface ErrorsModel {
 })
 export class SignupComponent implements OnInit {
   showPass = false;
-  formGroup: FormGroup = {} as FormGroup;
+  formGroup: UntypedFormGroup = {} as UntypedFormGroup;
   loading = false;
   emailLoading = false;
   emailExists = false;
@@ -50,13 +50,13 @@ export class SignupComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formGroup = new FormGroup({
-      name: new FormControl(null, [Validators.required, Validators.minLength(8)]),
-      password: new FormControl(null, [Validators.required]),
-      email: new FormControl(null, [Validators.required, Validators.maxLength(100), Validators.email]),
-      city: new FormControl(null, [Validators.required, Validators.minLength(8)]),
-      area: new FormControl(null, [Validators.required]),
-      state: new FormControl(null, []),
+    this.formGroup = new UntypedFormGroup({
+      name: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
+      password: new UntypedFormControl(null, [Validators.required]),
+      email: new UntypedFormControl(null, [Validators.required, Validators.maxLength(100), Validators.email]),
+      city: new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]),
+      area: new UntypedFormControl(null, [Validators.required]),
+      state: new UntypedFormControl(null, []),
     });
 
     this.formGroup.controls.email.valueChanges.subscribe(value => {

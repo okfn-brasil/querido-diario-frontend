@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class ResetPassModalComponent implements OnInit, OnChanges {
   @Input() showForm = false;
   @Input() email = '';
   @Output() onHideForm: EventEmitter<boolean> = new EventEmitter();
-  formGroup: FormGroup = {} as FormGroup;
+  formGroup: UntypedFormGroup = {} as UntypedFormGroup;
   loading = false;
   errorMessage = '';
 
@@ -20,8 +20,8 @@ export class ResetPassModalComponent implements OnInit, OnChanges {
   ) { }
 
   ngOnInit(): void {
-    this.formGroup = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.maxLength(100), Validators.email]),
+    this.formGroup = new UntypedFormGroup({
+      email: new UntypedFormControl(null, [Validators.required, Validators.maxLength(100), Validators.email]),
     });
   }
 

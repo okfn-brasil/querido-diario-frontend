@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Moment } from 'moment';
 import { Observable, Subscription } from 'rxjs';
@@ -17,7 +17,7 @@ import { DownloadCSVService } from './../../../services/download-csv/download-cs
   styleUrls: ['./search-form.component.sass'],
 })
 export class SearchFormComponent implements OnInit {
-  termControl = new FormControl();
+  termControl = new UntypedFormControl();
 
   @Input()
   form: any;
@@ -34,7 +34,7 @@ export class SearchFormComponent implements OnInit {
 
   filteredOptions: Observable<string[]> = new Observable();
 
-  cityControl = new FormControl();
+  cityControl = new UntypedFormControl();
   territories: Territory[] = [];
   selectedCities: Territory[] = [];
   territory: string[] = [];
