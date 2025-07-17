@@ -1,0 +1,62 @@
+{
+  "about": {
+    "title": "Programa Querido Diário nas Universidades",
+    "text": "Iniciativa cujo objetivo é aproximar o QD das atividades de instituições de ensino e pesquisa brasileiras, potencializando seu desenvolvimento e impactos.",
+    "actions": [
+      { "text": "Conheça", "route": "/universidades", "fragment": "conheca", "style": "link-secondary" },      
+      { "text": "Como fazer parte", "route": "/universidades", "fragment": "como-fazer-parte", "style": "link-secondary" },
+      { "text": "Histórico", "route": "/universidades", "fragment": "historico", "style": "link-secondary" },
+      { "text": "Base de conhecimento", "route": "/universidades", "fragment": "base-de-conhecimento", "style": "link-secondary" }
+    ]
+  },
+  "overview": {
+    "title": "Conheça",
+    "texts": [
+      "As universidades e institutos tecnológicos podem ser fortes aliados no desenvolvimento de projetos de código aberto, como o Querido Diário, por se beneficiarem do contato com um projeto prático e de relevância sociotécnica em diferentes campos do conhecimento. É a partir do potencial dessas trocas que surge o Querido Diário nas Universidades.",
+      "Além do acompanhamento e suporte às pesquisas, o Querido Diário nas Universidades também busca pavimentar um cenário contínuo de parcerias e mapear o ecossistema acadêmico brasileiro, identificando iniciativas e grupos de pesquisa que também estejam abordando temas relacionados. Com os resultados do projeto, esperamos fortalecer a comunidade de Ciência de Dados no Brasil, fomentando cooperações e trocas de conhecimento em torno da cultura de código aberto. "
+    ]
+  },
+  "history": {
+    "title": "Como fazer parte",
+    "texts": [
+      "Projetos de pesquisa, grupos de iniciação científica, extensão universitária, aplicação em disciplinas, e outras formas de colaboração, podem fazer parte do programa. Já realizamos parcerias com grupos de pesquisa nas áreas de Computação e Comunicação, mas também visualizamos a possibilidade de parcerias com outras áreas, como Políticas Públicas, Direito e outras.",
+      "A participação no programa o ocorre de maneira voluntária, não oferecemos apoio financeiro. Para se inscrever ou inscrever um projeto é necessário preencher o formulário de manifestação interesse. Após esta etapa inicial, nossa equipe entrará em contato para definirmos a melhor maneira de executar a parceria:"
+    ]
+  },
+  "useCases": {
+    "title": "Histórico",
+    "text": [
+      "O programa surgiu em 2022, a partir da parceria com a parceria entre o QD e a Plataforma de Ciência de Dados aplicada à Saúde (PCDaS) é uma iniciativa do Laboratório de Informação em Saúde (LIS), do Instituto de Comunicação e Informação Científica e Tecnológica em Saúde (Icict/Fiocruz), em parceria com o Laboratório Nacional de Computação Científica (LNCC).",
+      "Na primeira fase do programa, foram acompanhados dois projetos de iniciação científica, o vinculado à Universidade Tiradentes (UNIT) e o segundo vinculado ao Instituto Federal de Alagoas (IFAL). Ao longo da primeira fase da parceria, também foi desenvolvida a documentação da evolução das entregas e a construção de bases para futuras parcerias. Nos semestres seguintes, passaram a integrar o programa um grupo de extensão universitária da Universidade Federal da Bahia (UFBA) e uma disciplina do curso de bacharelado em Ciências da Computação do Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (CEFET-RJ). Por fim, o programa acompanhou uma residência tecnológica na Universidade de Brasília (UnB) e um trabalho de graduação na Universidade Federal de Sergipe (UFS)."
+    ]
+  },
+  "mediaImpact": {
+    "title": "----",
+    "text": "Como o Querido Diário repercute nos veículos de comunicação."
+  },
+  "whoWeAre": {
+    "title": "Base de conhecimento",
+    "texts": [
+      "Cada grupo parceira do programa teve seus próprios objetivos, cronograma e resultados. Abaixo, você encontrar detalhes de cada uma das instituições, grupos e atividades realizadas ao longo da parceria com o Querido Diário:"
+    ],
+    "actions": [
+      {
+        "text": "Saiba mais em:",
+        "to": "http://ok.org.br",
+        "link": "ok.org.br"
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Termos de uso e política de privacidade",
+    "text": "O Querido Diário tem por objetivo facilitar o acesso da sociedade a dados públicos e todo o processamento é feito para garantir a integridade das informações tais como foram originalmente publicadas pelos órgãos públicos. Além disso, trabalhamos para que este seja um ambiente seguro e que respeite a privacidade em sua navegação. Conheça aqui os detalhes dos termos de uso e da política de privacidade desta plataforma.",
+    "actions": [
+      {
+        "text": "Leia mais",
+        "icon": "arrow",
+        "to": "/privacidade",
+        "style": "btn-primary"
+      }
+    ]
+  }
+}
