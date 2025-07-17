@@ -18,6 +18,10 @@
         "route": "/tecnologia"
       },
       {
+        "text": "Universidades",
+        "route": "/universidades"
+      },
+      {
         "text": "Sobre",
         "route": "/sobre"
       }
