@@ -58,6 +58,7 @@ import { ContainerComponent } from './modules/layout/container/container.compone
 import { RowComponent } from './modules/layout/row/row.component';
 import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_US/about.component';
 import { AboutComponent } from './modules/pages/about/about.component';
+import { UniversitiesComponent } from './modules/pages/universities/universities.component';
 import { AccessLevelsComponent } from './modules/pages/access-levels/access-levels.component';
 import { AboutEducationComponent } from './modules/pages/area-education/about/about.component';
 import { AlertItemComponent } from './modules/pages/area-education/alerts/alert-item/alert-item.component';
@@ -129,6 +130,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ModalComponent,
     FooterComponent,
     AboutComponent,
+    UniversitiesComponent,
     PrivacyPolicyComponent,
     ComplaintComponent,
     AccessLevelsComponent,
