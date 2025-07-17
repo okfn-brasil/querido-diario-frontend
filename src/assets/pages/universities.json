@@ -1,58 +1,43 @@
 {
   "about": {
-    "title": "Sobre o Querido Diário",
-    "text": "Conheça o projeto que usa tecnologia para libertar os conteúdos dos diários oficiais dos municípios brasileiros e aproximar os cidadãos das ações de seus governantes.",
+    "title": "Programa Querido Diário nas Universidades",
+    "text": "Iniciativa cujo objetivo é aproximar o QD das atividades de instituições de ensino e pesquisa brasileiras, potencializando seu desenvolvimento e impactos.",
     "actions": [
-      { "text": "Motivação", "route": "/sobre", "fragment": "motivacao", "style": "link-secondary" },
-      { "text": "História", "route": "/sobre", "fragment": "historia", "style": "link-secondary" },
-      { "text": "Casos de uso", "route": "/sobre", "fragment": "casos", "style": "link-secondary" },
-      { "text": "Na mídia", "route": "/sobre", "fragment": "midia", "style": "link-secondary" },
-      { "text": "Quem somos", "route": "/sobre", "fragment": "quem-somos", "style": "link-secondary" },
-      { "text": "Política de privacidade", "route": "/sobre", "fragment": "privacidade", "style": "link-secondary"}
+      { "text": "Conheça", "route": "/universidades", "fragment": "conheca", "style": "link-secondary" },      
+      { "text": "Como fazer parte", "route": "/universidades", "fragment": "como-fazer-parte", "style": "link-secondary" },
+      { "text": "Histórico", "route": "/universidades", "fragment": "historico", "style": "link-secondary" },
+      { "text": "Base de conhecimento", "route": "/universidades", "fragment": "base-de-conhecimento", "style": "link-secondary" }
     ]
   },
   "overview": {
-    "title": "Motivação",
+    "title": "Conheça",
     "texts": [
-      "Há 150 anos, os diários oficiais já eram uma parte essencial do Brasil, documentando as decisões mais significativas do país. Com o passar do anos, no entanto, esses diários oficiais permaneceram do mesmo jeito, pouco acessíveis, ainda com a chegada de novas tecnologias.",
-      "Enquanto o Diário Oficial da União, de estados e municípios - quando capitais ou de região metropolitana - recebem mais atenção pública, muitos municípios menores carecem de transparência e acesso a informações. Nessas situações, o diário oficial pode ser a única fonte de informação oficial disponível.",
-      "E, mesmo entre os melhores casos de abertura de dados, outro desafio existe: a informação sobre a atividade administrativa é dispersa por uma variedade de sites e arquivos na internet. Isso torna difícil monitorar o progresso de políticas públicas de um mesmo município e, ainda mais, inviável comparar decisões de diferentes localidades. O Brasil tem 5570 municípios e não tem ser humano capaz de acompanhar tanta atividade administrativa pulverizada.",
-      "O Querido Diário enfrenta essa situação, inaugurando uma gigantesca (e em constante expansão!) fonte de dados integrada sobre os diários oficiais municipais. Uma empreitada monumental tendo em vista não apenas a grande quantidade de municípios e de sites governamentais, mas também a variedade de formatos de diários oficiais, já que não existe nenhuma regulamentação que os padronize."
-    ],
-    "actions": [
-      {
-        "text": "Doe",
-        "icon": "arrow",
-        "to": "https://www.catarse.me/queridodiario-okbr",
-        "style": "btn-primary"
-      }
+      "As universidades e institutos tecnológicos podem ser fortes aliados no desenvolvimento de projetos de código aberto, como o Querido Diário, por se beneficiarem do contato com um projeto prático e de relevância sociotécnica em diferentes campos do conhecimento. É a partir do potencial dessas trocas que surge o Querido Diário nas Universidades.",
+      "Além do acompanhamento e suporte às pesquisas, o Querido Diário nas Universidades também busca pavimentar um cenário contínuo de parcerias e mapear o ecossistema acadêmico brasileiro, identificando iniciativas e grupos de pesquisa que também estejam abordando temas relacionados. Com os resultados do projeto, esperamos fortalecer a comunidade de Ciência de Dados no Brasil, fomentando cooperações e trocas de conhecimento em torno da cultura de código aberto. "
     ]
   },
   "history": {
-    "title": "História",
+    "title": "Como fazer parte",
     "texts": [
-      "O projeto Querido Diário é resultado de uma fusão de duas iniciativas semelhantes que nasceram em momentos distintos.",
-      "A primeira ideia foi concebida pela Open Knowledge Brasil e se chamava <a href='https://github.com/okfn-brasil/queriDO' target='_blank'>\"Projeto Nosso Querido Diário Oficial\", abreviadamente queriDO</a>. A iniciativa estabeleceu uma metodologia para recuperação da informação registrada nos diários oficiais, a partir dos interesses e metas da comunidade, que seria formada por dois grupos: as pessoas curadoras, que definiriam os \"alvos\", estabelecendo para quais assuntos e diários oficiais desejam voltar seus olhares; e os experts - pessoas entusiastas de dados abertos e que codificariam os raspadores de dados.",
-      "A segunda ideia veio inspirada no sucesso da <a href='https://serenata.ai/' target='_blank'>Operação Serenata de Amor</a>, que por meio da <a href='https://twitter.com/RosieDaSerenata' target='_blank'>Rosie</a>, uma robô que expõe suspeitas de mal uso de dinheiro público pelos deputados federais, levou inúmeras pessoas no Brasil a pedir uma mesma ferramenta para os seus estados e municípios. Como a operação tinha o foco no Congresso Nacional, os algoritmos se limitavam ao escopo da esfera federal. Então surgiu o projeto Diário Oficial da Serenata, com o objetivo de levar as análises para a esfera municipal.",
-      "Em 2018, quando a Operação Serenata de Amor já estava dentro da estrutura da Open Knowledge Brasil, definiu-se que a base de código do projeto Querido Diário da Serenata seria a oficial e que seria usado o nome Querido Diário, uma adaptação do projeto anterior da OKBR. Inicialmente a iniciativa iria coletar os arquivos de diários oficiais dos municípios e criar mecanismos para analisar a dispensa de licitações, mas essa ideia enfrentou muitos desafios técnicos e não teve um forte engajamento.",
-      "No ano seguinte, decidimos reativar a comunidade para focar em escrever o maior número de raspadores de arquivos possível e aumentar nossa cobertura de municípios no Brasil. O resultado foi fantástico, pois em menos de dois anos saímos de uma cobertura inferior à 100 municípios para alcançar uma cobertura de mais de 2.200 municípios.",
-      "No segundo semestre de 2020, conseguimos o nosso primeiro financiamento, por meio de uma chamada do projeto Empatía promovido pela <a href='https://idatosabiertos.org/en/' target='_blank'>ILDA</a>. O recurso foi patrocinado pelo Banco Interamericano de Desenvolvimento (BID). Esse apoio nos permitiu dar início ao desenvolvimento da nossa API aberta e também da nossa plataforma de busca.",
-      "A plataforma oficial do Querido Diário foi lançada no dia 20 de julho de 2021. Nela, é possível que qualquer pessoa faça buscas por conteúdos por meio de palavras-chave, municípios ou datas."
+      "Projetos de pesquisa, grupos de iniciação científica, extensão universitária, aplicação em disciplinas, e outras formas de colaboração, podem fazer parte do programa. Já realizamos parcerias com grupos de pesquisa nas áreas de Computação e Comunicação, mas também visualizamos a possibilidade de parcerias com outras áreas, como Políticas Públicas, Direito e outras.",
+      "A participação no programa o ocorre de maneira voluntária, não oferecemos apoio financeiro. Para se inscrever ou inscrever um projeto é necessário preencher o formulário de manifestação interesse. Após esta etapa inicial, nossa equipe entrará em contato para definirmos a melhor maneira de executar a parceria:"
     ]
   },
   "useCases": {
-    "title": "Casos de uso",
-    "text": "Confira reportagens, análises e pesquisas que utilizam o Querido Diário para encontrar informações sobre os atos públicos."
+    "title": "Histórico",
+    "text": [
+      "O programa surgiu em 2022, a partir da parceria com a parceria entre o QD e a Plataforma de Ciência de Dados aplicada à Saúde (PCDaS) é uma iniciativa do Laboratório de Informação em Saúde (LIS), do Instituto de Comunicação e Informação Científica e Tecnológica em Saúde (Icict/Fiocruz), em parceria com o Laboratório Nacional de Computação Científica (LNCC).",
+      "Na primeira fase do programa, foram acompanhados dois projetos de iniciação científica, o vinculado à Universidade Tiradentes (UNIT) e o segundo vinculado ao Instituto Federal de Alagoas (IFAL). Ao longo da primeira fase da parceria, também foi desenvolvida a documentação da evolução das entregas e a construção de bases para futuras parcerias. Nos semestres seguintes, passaram a integrar o programa um grupo de extensão universitária da Universidade Federal da Bahia (UFBA) e uma disciplina do curso de bacharelado em Ciências da Computação do Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (CEFET-RJ). Por fim, o programa acompanhou uma residência tecnológica na Universidade de Brasília (UnB) e um trabalho de graduação na Universidade Federal de Sergipe (UFS)."
+    ]
   },
   "mediaImpact": {
-    "title": "Na mídia",
+    "title": "----",
     "text": "Como o Querido Diário repercute nos veículos de comunicação."
   },
   "whoWeAre": {
-    "title": "Quem somos",
+    "title": "Base de conhecimento",
     "texts": [
-      "A OKBR, também conhecida como Rede pelo Conhecimento Livre, é uma organização da sociedade civil sem fins lucrativos e apartidária que atua no país desde 2013. Desenvolvemos e incentivamos o uso de tecnologias cívicas e de dados abertos, realizamos análises de políticas públicas e promovemos o conhecimento livre para tornar a relação entre governo e sociedade mais transparente e participativa.",
-      "Criado em 2018, o Programa Ciência de Dados para Inovação Cívica surgiu no âmbito das atividades da Operação Serenata de Amor, que havia surgido em 2016 por profissionais independentes de diversas áreas (tecnologia, ciências sociais, jornalismo, design etc.). O Programa é responsável pela gestão e manutenção dos projetos Querido Diário, Operação Serenata de Amor, Parlametria, Perfil Político, Justa e Vítimas da Intolerância. "
+      "Cada grupo parceira do programa teve seus próprios objetivos, cronograma e resultados. Abaixo, você encontrar detalhes de cada uma das instituições, grupos e atividades realizadas ao longo da parceria com o Querido Diário:"
     ],
     "actions": [
       {
