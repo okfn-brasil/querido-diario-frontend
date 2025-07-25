@@ -1,0 +1,7 @@
+[build]
+  publish = "dist/querido-diario" # Ajuste para o nome correto da sua pasta de build
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

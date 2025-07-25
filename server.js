@@ -1,11 +1,16 @@
-const express = require('express')
-
-const _app_folder = 'dist/querido-diario';
-
+const express = require('express');
+const path = require('path');
 const app = express();
-app.get('*.*', express.static(_app_folder, {maxAge: '1y'}));
-app.all('*', function (req, res) {
-    res.status(200).sendFile(`/`, {root: _app_folder});
+
+const publicPath = path.join(__dirname, 'dist', 'querido-diario'); 
+
+app.use(express.static(publicPath));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-app.listen(process.env.PORT || 8080);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
