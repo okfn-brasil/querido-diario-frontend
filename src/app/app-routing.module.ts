@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './modules/pages/about/about.component';
+import { UniversitiesComponent } from './modules/pages/universities/universities.component';
 import { AccessLevelsComponent } from './modules/pages/access-levels/access-levels.component';
 import { AboutEducationComponent } from './modules/pages/area-education/about/about.component';
 import { AlertsComponent } from './modules/pages/area-education/alerts/alerts.component';
@@ -33,6 +34,7 @@ import { RequestAnalysisFormComponent } from './modules/pages/area-education/req
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sobre', component: AboutComponent },
+  { path: 'universidades', component: UniversitiesComponent },
   { path: 'en-US/sobre', component: AboutComponentEnUS },
   { path: 'privacidade', component: PrivacyPolicyComponent },
   { path: 'en-US/privacidade', component: PrivacyPolicyComponentEnUS },
