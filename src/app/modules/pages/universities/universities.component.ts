@@ -31,11 +31,9 @@ export class UniversitiesComponent implements OnInit {
     this.content$ = forkJoin({
       content: this.contentService.find('universities'),
       cardsUseCases: this.contentService.find('use-cases'),
-      cardsMediaImpact: this.contentService.find('media-impact'),
     }).pipe(
       map((data) => {
         data.content.useCases['items'] = data.cardsUseCases.useCases;
-        data.content.mediaImpact['items'] = data.cardsMediaImpact.mediaImpact;
         return data.content;
       })
     );

@@ -9,13 +9,13 @@
       <app-column [gap]="36">
         <app-column [gap]="16">
           <em>
-            <a href="/en-US/sobre">Read this page in English</a>
+            <!-- <a href="/en-US/sobre">Read this page in English</a> -->
           </em>
-          <h1>{{ content.about.title }}</h1>
-          <h3>{{ content.about.text }}</h3>
+          <h1>{{ content.universities.title }}</h1>
+          <h3>{{ content.universities.text }}</h3>
         </app-column>
         <app-row [gap]="36" class="nav-secondary" fxHide.xs>
-          <ng-container *ngFor="let action of content.about.actions">
+          <ng-container *ngFor="let action of content.universities.actions">
             <a
               [routerLink]="action.route"
               [fragment]="action.fragment"
@@ -28,7 +28,7 @@
 
         <app-row fxHide [fxHide.xs]="false" wrap="wrap" [gap]="36">
             <ng-container
-              *ngFor="let action of content.about.actions"
+              *ngFor="let action of content.universities.actions"
             >
               <a
                 [routerLink]="action.route"
@@ -44,7 +44,7 @@
   </app-container>
 </ng-container>
 
-<app-container theme="light" id="motivacao">
+<app-container theme="light" id="conheca">
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="22">
@@ -81,7 +81,7 @@
   </ng-container>
 </app-container>
 
-<app-container theme="dark" id="historia">
+<app-container theme="dark" id="como-fazer-parte">
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="22">
@@ -93,15 +93,29 @@
           class="typo-inner highlight"
           [innerHTML]="text"
         ></div>
+         <ng-container *ngFor="let action of content.history.actions">
+            <a
+              [ngClass]="action.style"
+              [href]="action.to"
+              target="_blank"
+              [appHeight]="43"
+              [appWidth]="249"
+            >
+              {{ action.text }}
+            </a>
+          </ng-container>
       </app-column>
     </div>
   </ng-container>
 </app-container>
 
-<app-container theme="light" id="casos" [gap]="34" *ngIf="content$ | async as content; else loading">
-  <div class="container-inner stories-area-title">
+<app-container theme="light" id="historico" [gap]="34" *ngIf="content$ | async as content; else loading">
+  <div class="container-inner">
     <h1>{{ content.useCases.title }}</h1>
-    <p>{{ content.useCases.text }}</p>
+    <div
+        *ngFor="let text of content.useCases.texts"
+        class="typo-inner highlight"
+        [innerHTML]="text"></div>
   </div>
   <app-row [gap]="17" wrap="wrap" [flex]="true">
     <div class="stories-overflow">
@@ -110,19 +124,7 @@
   </app-row>
 </app-container>
 
-<app-container theme="dark" id="midia" [gap]="34" *ngIf="content$ | async as content; else loading">
-  <div class="container-inner stories-area-title">
-    <h1>{{ content.mediaImpact.title }}</h1>
-    <p>{{ content.mediaImpact.text }}</p>
-  </div>
-  <app-row [gap]="17" wrap="wrap" [flex]="true">
-    <div class="stories-overflow">
-      <edu-carousel [theme]="'dark'" [type]="'second-type'" [items]="content.mediaImpact.items"></edu-carousel>
-    </div>
-  </app-row>
-</app-container>
-
-<app-container theme="dark" bg="bg-blue-square" id="quem-somos">
+<app-container theme="dark" bg="bg-purple-4" id="base-de-conhecimento">
   <ng-container *ngIf="content$ | async as content; else loading">
     <div class="container-inner">
       <app-column [gap]="36">
@@ -134,36 +136,17 @@
           [innerHTML]="text"
         ></div>
         <ng-container *ngFor="let action of content.whoWeAre.actions">
-          <p [style.color]="'#FFF'" class="highlight">
-            {{ action.text }}
-            <a [href]="action.to" [style.color]="'#FFF'" target="_blank">{{
-              action.link
-            }}</a>
-          </p>
-        </ng-container>
-      </app-column>
-    </div>
-  </ng-container>
-</app-container>
-
-<app-container theme="light" id="privacidade">
-  <ng-container *ngIf="content$ | async as content; else loading">
-    <div class="container-inner">
-      <app-column [gap]="36">
-        <h1>
-          {{ content.privacy.title }}
-        </h1>
-        <p>{{ content.privacy.text }}</p>
-        <ng-container *ngFor="let action of content.privacy.actions">
-          <button
-            [appHeight]="43"
-            [appWidth]="249"
-            [routerLink]="action.to"
-            [ngClass]="action.style"
-          >
-            {{ action.text }}
-          </button>
-        </ng-container>
+            <a
+              [ngClass]="action.style"
+              [href]="action.to"
+              target="_blank"
+              [appHeight]="43"
+              [appWidth]="249"
+              rel="noopener noreferrer"
+            >
+              {{ action.text }}
+            </a>
+          </ng-container>
       </app-column>
     </div>
   </ng-container>
