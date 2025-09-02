@@ -20,7 +20,7 @@
         <a fxLayout="center" (click)="openNotifications()">
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
-        <button routerLink="/apoie" class="btn">{{ 'header.buttons.support' | translate }}</button>
+        <button (click)="openCaterseUrl()" class="btn">{{ 'header.buttons.support' | translate }}</button>
         <button routerLink="/educacao" class="btn-purple">{{ 'header.buttons.education' | translate }}</button>
 
         <button mat-icon-button [matMenuTriggerFor]="languageSwitcher" aria-label="Seletor de idioma" class="top-header-menu-item">
@@ -73,7 +73,7 @@
       Sobre 
     </div>
   </a>
-  <a routerLink="/apoie">
+  <a href="https://www.catarse.me/queridodiario-okbr" target="_blank">
     <div class="link bg-orange">
       Apoie
     </div>
