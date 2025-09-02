@@ -127,4 +127,8 @@ export class HeaderComponent implements OnInit {
   changeLanguage(language: string): void {
     this.I18nService.loadRouteTranslations(language);
   }
+
+  openCaterseUrl(): void {
+    window.open('https://www.catarse.me/queridodiario-okbr', '_blank');
+  }
 }
