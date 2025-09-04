@@ -30,10 +30,10 @@ export class UniversitiesComponent implements OnInit {
   ngOnInit() {
     this.content$ = forkJoin({
       content: this.contentService.find('universities'),
-      cardsUseCases: this.contentService.find('use-cases'),
+      cardsUseCases: this.contentService.find('program-history'),
     }).pipe(
       map((data) => {
-        data.content.useCases['items'] = data.cardsUseCases.useCases;
+        data.content.useCases['items'] = data.cardsUseCases.programHistory;
         return data.content;
       })
     );

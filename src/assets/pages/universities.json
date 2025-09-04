@@ -33,7 +33,7 @@
     "title": "Conheça",
     "texts": [
       "As universidades e institutos tecnológicos podem ser fortes aliados no desenvolvimento de projetos de código aberto, como o <a href='https://ok.org.br/projetos/querido-diario/'>Querido Diário</a>, por se beneficiarem do contato com um projeto prático e de relevância sociotécnica em diferentes campos do conhecimento. É a partir do potencial dessas trocas que surge o Querido Diário nas Universidades.",
-      "Além do acompanhamento e suporte às pesquisas, o Querido Diário nas Universidades também busca pavimentar um cenário contínuo de parcerias e mapear o ecossistema acadêmico brasileiro, identificando iniciativas e grupos de pesquisa que também estejam abordando temas relacionados. Com os resultados do projeto, esperamos fortalecer a comunidade de Ciência de Dados no Brasil, fomentando cooperações e trocas de conhecimento em torno da cultura de código aberto. "
+      "Além do acompanhamento e suporte às pesquisas, o Querido Diário nas Universidades também busca pavimentar um cenário contínuo de parcerias e mapear o ecossistema acadêmico brasileiro, identificando iniciativas e grupos de pesquisa que também estejam abordando temas relacionados. Com os resultados do projeto, esperamos fortalecer a comunidade de inovação cidadã e código aberto no Brasil, fomentando cooperações e trocas de conhecimento."
     ]
   },
   "history": {
@@ -56,13 +56,13 @@
       "<p>O programa surgiu em 2022, com a parceria entre o QD e a Plataforma de Ciência de Dados aplicada à Saúde (<a href='https://docs.google.com/document/d/e/2PACX-1vTfPkamdxWCWdHWMN-rBEVETUyQForaNQfcmn1_8eq29mMWLibYmUgQq0zJ0JzpCZt71qvVWa8wZFAs/pub' target='_blank'>PCDaS</a>) – uma iniciativa do Laboratório de Informação em Saúde (LIS) e do Instituto de Comunicação e Informação Científica e Tecnológica em Saúde (Icict/Fiocruz), em parceria com o Laboratório Nacional de Computação Científica (LNCC).</p>",
       "<p>Na primeira fase do programa, foram acompanhados dois projetos de iniciação científica: um vinculado à Universidade Tiradentes (UNIT) e o segundo vinculado ao Instituto Federal de Alagoas (IFAL). Ao longo da primeira fase da parceria, também foram desenvolvidas a documentação da evolução das entregas e a construção de bases para futuras parcerias.</p>",
       "<p>Nos semestres seguintes, passaram a integrar o programa um grupo de extensão universitária da Universidade Federal da Bahia (<a href='https://docs.google.com/document/d/e/2PACX-1vT03h_lSBKEEFvnqvJNigxw17kV-xbaUmmq4igCkJnx-g7wiw5zzuI_4MoerY6MrZdqWP8iRkhwxKOA/pub' target='_blank'>UFBA</a>) e uma disciplina do curso de bacharelado em Ciências da Computação do Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (CEFET-RJ). Por fim, o programa acompanhou uma residência tecnológica na Universidade de Brasília (<a href='https://docs.google.com/document/d/e/2PACX-1vQZe6di_ezSxtj93-5YUOmYI-jvBISgE1JqdzcG2wt9RBPX4v3PHrq2vfc3B-dtadMl2VW7sRp8tXzs/pub' target='_blank'>UnB</a>) e um trabalho de graduação na Universidade Federal de Sergipe (UFS).</p>",
-      "<p>Abaixo, alguns conteúdos desenvolvidos no âmbito do programa:</p>"
+      "<p>Abaixo, alguns conteúdos e projetos desenvolvidos no âmbito do programa:</p>"
     ]
   },
   "whoWeAre": {
     "title": "Base de conhecimento",
     "texts": [
-      "Cada grupo parceira do programa teve seus próprios objetivos, cronograma e resultados. Abaixo, você encontrar detalhes de cada uma das instituições, grupos e atividades realizadas ao longo da parceria com o Querido Diário:"
+      "Cada grupo parceiro do programa teve seus próprios objetivos, cronograma e resultados. Abaixo, você encontra detalhes de cada uma das instituições, grupos e atividades realizadas ao longo da parceria com o Querido Diário:"
     ],
     "actions": [
       {

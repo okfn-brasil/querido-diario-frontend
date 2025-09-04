@@ -1,0 +1,84 @@
+{
+    "programHistory": [
+        {
+            "title": "Querido Diário | 15/08/2024",
+            "text": "Olha a cobra! Quem vai tocar no São João?",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/58" }]
+        },
+        {
+            "title": "Ciência e Cultura | 14/08/2024",
+            "text": "Repetição de tragédias ambientais em cidades da Bahia",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/repeticao-de-tragedias-ambientais-em-cidades-da-bahia/" }]
+        },
+        {
+            "title": "Ciência e Cultura | 27/06/2024",
+            "text": "Chuvas no Rio Grande do Sul: um recorte das ações municipais diante da crise climática",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/destaques/chuvas-no-rio-grande-do-sul-um-recorte-das-acoes-municipais-diante-da-crise-climatica/" }]
+        },
+        {
+            "title": "Querido Diário | 09/05/2024",
+            "text": "Acesso à informação em tempos de desastre: como monitorar alguns diários oficiais dos municípios gaúchos",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/56" }]
+        },
+        {
+            "title": "Querido Diário | 02/05/2024",
+            "text": "Educação inclusiva para pessoas surdas: estudo de caso em Uberlândia-MG",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/55" }]
+        },
+        {
+            "title": "Ciência e Cultura | 21/12/2023",
+            "text": "Um sol pra cada um: como as mudanças climáticas afetam Salvador",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/um-sol-pra-cada-um-como-as-mudancas-climaticas-afetam-salvador/" }]
+        },
+        {
+            "title": "Ciência e Cultura | 05/10/2023",
+            "text": "Políticas culturais de municípios baianos no pós pandemia",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/conselhos-de-cultura-e-seus-impactos-nas-politicas-culturais-de-municipios-baianos-no-pos-pandemia/" }]
+        },
+        {
+            "title": "Ciência e Cultura | 21/07/2023",
+            "text": "Dengue em Salvador: resultado do primeiro semestre e ações da prefeitura",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/dengue-em-salvador-resultado-do-primeiro-semestre-e-acoes-da-prefeitura/" }]
+        },
+        {
+            "title": "Querido Diário | 30/06/2023",
+            "text": "Entre orgulho e cuidado: a saúde da comunidade LGBTQIA+",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/entre-orgulho-e-cuidado-a-saude-da-comunidade-lgbtqia/" }]
+        },
+        {
+            "title": "Ciência e Cultura | 23/06/2025",
+            "text": "Salvador: as raízes de uma “cidade de papel”A",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/salvador-as-raizes-de-uma-cidade-de-papel/" }]
+        },
+        {
+            "title": "Ciência e Cultura | 01/06/2023",
+            "text": "Alagoinhas, Feira de Santana e Salvador: como está a segurança escolar nos municípios baianos",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "http://www.cienciaecultura.ufba.br/agenciadenoticias/noticias/alagoinhas-feira-de-santana-e-salvador-como-esta-a-seguranca-escolar-nos-municipios-baianos/" }]
+        },
+        {
+            "title": "Querido Diário | 19/10/2024",
+            "text": "Utilizando dados públicos para produzir Jornalismo Científico: AGN e Querido Diário",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/60" }]
+        },
+        {
+            "title": "Querido Diário | 01/10/2024",
+            "text": "Transformando dados públicos em ferramentas de cidadania: A Evolução do Querido Diário",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/59" }]
+        },
+        {
+            "title": "Querido Diário | 26/02/2025",
+            "text": "Panorama das Tecnologias de Reconhecimento Facial em Salvador-BA",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://queridodiario.ok.org.br/blog/post/62" }]
+        },
+        {
+            "title": "Any Caroliny - UFS",
+            "text": "Análise de Performance em Motor de Busca para o Projeto Querido Diário",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://drive.google.com/file/d/15E7_zHXTc9zOfzd4zkcUrIPdz21wbJcp/view" }]
+        },
+        {
+            "title": "Projeto Exoonero",
+            "text": "Acompanhe as nomeações e exonerações que aconteceram em Alagoas",
+            "actions": [{ "text": "Ler mais", "icon": "right-arrow", "target": "_blank", "link": "https://exoonero.org/" }]
+        }
+    ]
+}
