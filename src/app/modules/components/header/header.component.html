@@ -1,7 +1,12 @@
 <app-row class="row-header">
   <header fxLayout="row">
     <div class="container">
-      <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
+      <div class="start">
+        <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
+        <a *ngIf="!hideMenu" fxHide fxHide.xs="false" fxLayout="center" (click)="openNotifications()" class="notification">
+          <app-icon [icon]="notificationIcon"></app-icon>
+        </a>
+      </div>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
         <ng-container *ngFor="let item of 'header.items' | translate; let i = index">
            <a 
