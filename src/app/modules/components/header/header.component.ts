@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('notification') notification!: ElementRef;
   notificationPopoverRef: MatDialogRef<NotificationsComponent> | null = null;
   mobileMenuOpen = false;
+  mobileNotificationsOpen = false;
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
   hideMenu = false;
@@ -130,5 +131,9 @@ export class HeaderComponent implements OnInit {
 
   openCaterseUrl(): void {
     window.open('https://www.catarse.me/queridodiario-okbr', '_blank');
+  }
+
+  openMobileNotifications() {
+    this.mobileNotificationsOpen = !this.mobileNotificationsOpen;
   }
 }
