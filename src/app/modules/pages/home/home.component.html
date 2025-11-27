@@ -17,7 +17,7 @@
     <app-container [gap]="34">
       <h1>{{ 'evolution.title' | translate }}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="30">
-        <app-column *ngFor="let item of 'evolution.items' | translate">
+        <app-column *ngFor="let item of content.evolution.items">
           <app-row
             [gap]="24"
             layoutAlign="left"
@@ -30,7 +30,7 @@
           </app-row>
         </app-column>
       </app-row>
-      <ng-container *ngFor="let action of 'evolution.actions' | translate">
+      <ng-container *ngFor="let action of content.evolution.actions">
         <app-row class="evolution-link" [gap]="6">
           <a [routerLink]="action.to">
             {{ action.text }}
