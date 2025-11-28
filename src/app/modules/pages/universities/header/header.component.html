@@ -1,0 +1,34 @@
+<div class="uni-header">
+  <div class="desktop">
+    <div class="links">
+      <a 
+        *ngFor="let item of navItems"
+        [routerLink]="item.route" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="link"
+      >
+        {{ item.label }}
+      </a>
+    </div>
+  </div>
+
+  <div class="mobile">
+    <span class="current-section">{{ currentSection.label }}</span>
+    <div class="mobile-menu" [class.open]="menuOpen" (click)="menuOpen = !menuOpen">
+      <span class="hamburger"></span>
+    </div>
+    <div class="mobile-nav" [class.open]="menuOpen">
+      <a 
+        *ngFor="let item of navItems"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="menuOpen = false"
+        class="mobile-link"
+      >
+        {{ item.mobileLabel || item.label }}
+      </a>
+    </div>
+  </div>
+</div>

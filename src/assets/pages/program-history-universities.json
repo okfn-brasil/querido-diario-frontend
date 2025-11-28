@@ -1,0 +1,37 @@
+{
+  "title": "Histórico do Programa",
+  "subtitle": "Um registro de cada ciclo de parcerias e projetos realizados.",
+  "description": "Lorem ipsum dolor sit amet consectetur. Purus sit in nec ac ultrices eget. Feugiat pretium potenti scelerisque amet urna quisque pulvinar gravida. Condimentum vitae pretium elit massa ipsum vitae eu dolor. Gravida sit enim morbi praesent.",
+  "heroImage": "/assets/images/universities/hero-program-history-qd-uni.png",
+  "heroImageAlt": "Ilustração de análise de dados",
+  "currentActivityTitle": "Atividades Vigentes",
+  "currentActivity": {
+    "name": "Nome do programa vigente",
+    "description": "Lorem ipsum dolor sit amet consectetur. Purus sit in nec ac ultrices eget. Feugiat pretium potenti scelerisque amet urna quisque pulvinar gravida. Condimentum vitae pretium elit massa ipsum vitae eu dolor. Gravida sit enim morbi praesent.",
+    "image": "/assets/images/universities/current-activity-qd-uni.png",
+    "imageAlt": "Imagem do programa vigente"
+  },
+  "historyTitle": "Histórico",
+  "historyItems": [
+    {
+      "title": "Título",
+      "image": "",
+      "imageAlt": "Imagem do histórico",
+      "link": "#"
+    },
+    {
+      "title": "Título",
+      "image": "",
+      "imageAlt": "Imagem do histórico",
+      "link": "#"
+    },
+    {
+      "title": "Título",
+      "image": "",
+      "imageAlt": "Imagem do histórico",
+      "link": "#"
+    }
+  ],
+  "fullListText": "Ver lista completa",
+  "fullListLink": "/universidades/historico/lista"
+}

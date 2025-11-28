@@ -114,6 +114,9 @@ import { AggregateStateFilterComponent } from './modules/pages/aggregate/filters
 import { AggregateCityFilterComponent } from './modules/pages/aggregate/filters/city-filter/aggregate-city-filter.component';
 import { HomeUniversitiesComponent } from './modules/pages/universities/home/home.component';
 import { KnowledgeBaseUniversitiesComponent } from './modules/pages/universities/knowledge-base/knowledge-base.component';
+import { HeaderUniversitiesComponent } from './modules/pages/universities/header/header.component';
+import { HowToJoinUniversitiesComponent } from './modules/pages/universities/how-to-join/how-to-join.component';
+import { ProgramHistoryUniversitiesComponent } from './modules/pages/universities/program-history/program-history.component';
 
 /* custom directives */
 @NgModule({
@@ -202,7 +205,10 @@ import { KnowledgeBaseUniversitiesComponent } from './modules/pages/universities
     AggregateDataComponent,
     AggregateStateFilterComponent,
     HomeUniversitiesComponent,
-    KnowledgeBaseUniversitiesComponent
+    KnowledgeBaseUniversitiesComponent,
+    HeaderUniversitiesComponent,
+    HowToJoinUniversitiesComponent,
+    ProgramHistoryUniversitiesComponent
   ],
   imports: [
     BrowserModule,

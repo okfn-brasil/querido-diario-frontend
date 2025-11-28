@@ -1,0 +1,32 @@
+{
+  "heroTitle": "Sobre o projeto",
+  "heroDescription": "Conheça o projeto que usa tecnologia para libertar o conteúdos dos diários oficiais dos municípios brasileiros",
+  "heroImage": "/assets/images/universities/hero-como-fazer-parte-qd-uni.png",
+  "heroImageAlt": "Ilustração de pessoas trabalhando com dados",
+  "partnershipsSection": {
+    "title": "Parcerias de apoio a projeto",
+    "subtitle": "Um registro de cada ciclo de parcerias e projetos realizados.",
+    "description": "Lorem ipsum dolor sit amet consectetur. Purus sit in nec ac ultrices eget. Feugiat pretium potenti scelerisque amet urna quisque pulvinar gravida. Condimentum vitae pretium elit massa ipsum vitae eu dolor. Gravida sit enim morbi praesent.",
+    "image": "/assets/images/universities/partnerships-handshake-qd-uni.png",
+    "imageAlt": "Aperto de mãos representando parceria",
+    "ctaLink": "https://docs.google.com/forms/d/e/1FAIpQLScmfDo3ItfKV1Xt0X2R3XgAy3CqxUqeomUoUr7Khxjqwj4R6g/viewform",
+    "ctaText": "Quero Participar"
+  },
+  "researchSection": {
+    "title": "Acompanhamento a grupos de pesquisa",
+    "description": "Lorem ipsum dolor sit amet consectetur. Purus sit in nec ac ultrices eget. Feugiat pretium potenti scelerisque amet urna quisque pulvinar gravida. Condimentum vitae pretium elit massa ipsum vitae eu dolor. Gravida sit enim morbi praesent.",
+    "image": "/assets/images/universities/partnerships-handshake-qd-uni.png",
+    "imageAlt": "Grupos de pesquisa trabalhando",
+    "ctaLink": "https://docs.google.com/forms/d/e/1FAIpQLScmfDo3ItfKV1Xt0X2R3XgAy3CqxUqeomUoUr7Khxjqwj4R6g/viewform",
+    "ctaText": "Saiba Mais"
+  },
+  "guidanceSection": {
+    "title": "Direcionamento e divulgação",
+    "subtitle": "Um registro de cada ciclo de parcerias e projetos realizados.",
+    "description": "Lorem ipsum dolor sit amet consectetur. Purus sit in nec ac ultrices eget. Feugiat pretium potenti scelerisque amet urna quisque pulvinar gravida. Condimentum vitae pretium elit massa ipsum vitae eu dolor. Gravida sit enim morbi praesent.",
+    "image": "/assets/images/universities/guidance-qd-uni.png",
+    "imageAlt": "Decoração visual",
+    "ctaLink": "https://go.ok.org.br/discord",
+    "ctaText": "Saiba Mais"
+  }
+}

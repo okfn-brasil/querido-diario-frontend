@@ -1,0 +1,134 @@
+@import 'src/assets/_tools.sass'
+
+$uni-header-bg: #5E408F
+
+.uni-header
+  background-color: $uni-header-bg
+
+  a
+    color: white
+    text-decoration: none
+
+  .desktop
+    display: flex
+    align-items: center
+    justify-content: center
+    height: rem(77)
+    padding: 0 rem(164)
+
+  .links
+    display: flex
+    align-items: center
+    gap: rem(130)
+
+  .link
+    font-size: rem(16)
+    font-weight: 400
+    line-height: 1em
+    letter-spacing: 0.04em
+    white-space: nowrap
+    transition: opacity 0.2s ease
+
+    &:hover
+      opacity: 0.8
+
+    &.active
+      line-height: 1.2em
+      font-family: 'Baloo'
+      font-weight: 700
+
+  .current-section
+    color: white
+    font-size: rem(14)
+    font-weight: 600
+
+  // Mobile
+  .mobile
+    display: none
+
+  .mobile-menu
+    width: rem(30)
+    height: rem(24)
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .hamburger
+    width: rem(24)
+    height: rem(2)
+    background-color: white
+    position: relative
+    transition: all 0.3s ease
+
+    &::before, &::after
+      content: ''
+      position: absolute
+      width: rem(24)
+      height: rem(2)
+      background-color: white
+      transition: all 0.3s ease
+
+    &::before
+      top: rem(-8)
+
+    &::after
+      top: rem(8)
+
+  .mobile-menu.open .hamburger
+    background-color: transparent
+
+    &::before
+      transform: rotate(45deg)
+      top: 0
+
+    &::after
+      transform: rotate(-45deg)
+      top: 0
+
+  .mobile-nav
+    z-index: 1000
+    position: absolute
+    top: 100%
+    left: 0
+    right: 0
+    background-color: $uni-header-bg
+    max-height: 0
+    overflow: hidden
+    transition: all 0.3s ease
+
+    &.open
+      max-height: rem(300)
+      padding: rem(16) rem(20)
+
+  .mobile-link
+    display: block
+    font-size: rem(16)
+    letter-spacing: 0.04em
+    padding: rem(12) 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+
+    &.active
+      font-weight: 700
+
+// Responsive
+@media only screen and (max-width: 1200px)
+  .uni-header
+    .desktop
+      padding: 0 rem(40)
+
+    .links
+      gap: rem(40)
+
+@media only screen and (max-width: 768px)
+  .uni-header
+    .desktop
+      display: none
+
+    .mobile
+      display: flex
+      align-items: center
+      justify-content: space-between
+      height: rem(56)
+      padding: 0 rem(20)
+      position: relative
