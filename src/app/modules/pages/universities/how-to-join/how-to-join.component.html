@@ -1,0 +1,74 @@
+<uni-header></uni-header>
+<div class="how-to-join">
+  <app-column>
+    <ng-template #loading>
+      <app-container fxFill>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+      </app-container>
+    </ng-template>
+    <ng-container *ngIf="content$ | async as content; else loading">
+      <!-- Hero/Project Section -->
+      <section class="hero-section block-container">
+        <div class="content">
+          <div class="hero-text">
+            <h1>{{ content.heroTitle }}</h1>
+            <p>{{ content.heroDescription }}</p>
+          </div>
+          <div class="hero-decoration">
+            <img [src]="content.heroImage" [alt]="content.heroImageAlt" class="hero-bg-image">
+          </div>
+        </div>
+      </section>
+      <!-- Section 1: Parcerias de apoio a projeto -->
+      <section class="section-partnerships block-container">
+        <div class="content">
+          <div class="section-image">
+            <img [src]="content.partnershipsSection.image" [alt]="content.partnershipsSection.imageAlt">
+          </div>
+          <div class="section-text">
+            <h2>{{ content.partnershipsSection.title }}</h2>
+            <p class="subtitle">{{ content.partnershipsSection.subtitle }}</p>
+            <p class="description">{{ content.partnershipsSection.description }}</p>
+            <a [href]="content.partnershipsSection.ctaLink" target="_blank" class="btn-secondary">
+              {{ content.partnershipsSection.ctaText }}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Acompanhamento a grupos de pesquisa -->
+      <section class="section-research block-container">
+        <div class="content">
+          <div class="section-text">
+            <h2>{{ content.researchSection.title }}</h2>
+            <p class="description">{{ content.researchSection.description }}</p>
+            <a [href]="content.researchSection.ctaLink" target="_blank" class="btn-primary">
+              {{ content.researchSection.ctaText }}
+            </a>
+          </div>
+          <div class="section-image">
+            <img [src]="content.researchSection.image" [alt]="content.researchSection.imageAlt">
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Direcionamento e divulgação -->
+      <section class="section-guidance block-container">
+        <div class="section-decoration">
+          <img [src]="content.guidanceSection.image" [alt]="content.guidanceSection.imageAlt"
+            class="decoration-svg">
+        </div>
+        <div class="content">
+          <div class="section-text">
+            <h2>{{ content.guidanceSection.title }}</h2>
+            <p class="subtitle">{{ content.guidanceSection.subtitle }}</p>
+            <p class="description">{{ content.guidanceSection.description }}</p>
+            <a [href]="content.guidanceSection.ctaLink" target="_blank" class="btn-primary">
+              {{ content.guidanceSection.ctaText }}
+            </a>
+          </div>
+        </div>
+      </section>
+    </ng-container>
+  </app-column>
+</div>

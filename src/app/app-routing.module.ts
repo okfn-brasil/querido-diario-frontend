@@ -30,6 +30,8 @@ import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
 import { HomeUniversitiesComponent } from './modules/pages/universities/home/home.component';
 import { KnowledgeBaseUniversitiesComponent } from './modules/pages/universities/knowledge-base/knowledge-base.component';
+import { HowToJoinUniversitiesComponent } from './modules/pages/universities/how-to-join/how-to-join.component';
+import { ProgramHistoryUniversitiesComponent } from './modules/pages/universities/program-history/program-history.component';
 
 
 const routes: Routes = [
@@ -66,7 +68,9 @@ const routes: Routes = [
   { path: 'educacao/pedido-analise', component: RequestAnalysisFormComponent },
   // area universidades
   { path: 'universidades', component: HomeUniversitiesComponent },
-  { path: 'universidades/base-de-conhecimento', component: KnowledgeBaseUniversitiesComponent}
+  { path: 'universidades/como-fazer-parte', component: HowToJoinUniversitiesComponent },
+  { path: 'universidades/historico', component: ProgramHistoryUniversitiesComponent },
+  { path: 'universidades/base-de-conhecimento', component: KnowledgeBaseUniversitiesComponent }
 ];
 
 @NgModule({
