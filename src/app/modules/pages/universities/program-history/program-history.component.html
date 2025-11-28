@@ -1,0 +1,88 @@
+<uni-header></uni-header>
+<div class="program-history">
+  <app-column>
+    <ng-template #loading>
+      <app-container fxFill>
+        <mat-spinner *ngIf="loading"></mat-spinner>
+      </app-container>
+    </ng-template>
+    <ng-container *ngIf="content$ | async as content; else loading">
+      <!-- Hero Section -->
+      <section class="hero-section block-container">
+        <div class="content">
+          <div class="hero-decoration">
+            <img [src]="content.heroImage" [alt]="content.heroImageAlt" class="hero-bg-image">
+          </div>
+          <div class="hero-text">
+            <h1>{{ content.title }}</h1>
+            <p class="subtitle">{{ content.subtitle }}</p>
+            <p class="description">{{ content.description }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Atividades Vigentes Section -->
+      <section class="current-activities-section block-container" *ngIf="content.currentActivity">
+        <div class="content">
+          <h2 class="section-title">{{ content.currentActivityTitle }}</h2>
+          <div class="featured-card-container">
+            <button class="nav-arrow nav-arrow--left" aria-label="Anterior">
+              <mat-icon svgIcon="pagination-left-single-arrow"></mat-icon>
+            </button>
+            <div class="featured-card">
+              <img 
+                *ngIf="content.currentActivity.image" 
+                [src]="content.currentActivity.image" 
+                [alt]="content.currentActivity.imageAlt"
+                class="featured-image"
+              >
+              <div class="featured-content">
+                <h3 class="featured-title">{{ content.currentActivity.name }}</h3>
+                <p class="featured-description">{{ content.currentActivity.description }}</p>
+              </div>
+            </div>
+            <button class="nav-arrow nav-arrow--right" aria-label="Próximo">
+              <mat-icon svgIcon="pagination-right-single-arrow"></mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Histórico Section -->
+      <section class="history-section block-container">
+        <div class="content">
+          <div class="history-header">
+            <a routerLink="/universidades" class="back-link" aria-label="Voltar">
+              <app-icon [icon]="{ file: 'slide-left', height: 16, width: 7 }"></app-icon>
+            </a>
+            <h2 class="section-title">{{ content.historyTitle }}</h2>
+          </div>
+          <div class="history-cards-container">
+            <div 
+              *ngFor="let item of content.historyItems; let i = index" 
+              class="history-card"
+              [ngClass]="'history-card--' + getCardColor(i)"
+            >
+              <div class="card-image">
+                <img *ngIf="item.image" [src]="item.image" [alt]="item.imageAlt">
+              </div>
+              <div class="card-content">
+                <h4 class="card-title">{{ item.title }}</h4>
+              </div>
+              <a [href]="item.link" target="_blank" class="card-link">
+                Ler mais
+                <app-icon [icon]="{ file: 'right-arrow-white', height: 10, width: 10 }"></app-icon>
+              </a>
+            </div>
+          </div>
+          <div class="history-footer">
+            <a [routerLink]="content.fullListLink" class="view-all-link">
+              {{ content.fullListText }}
+              <app-icon [icon]="{ file: 'right-arrow-white', height: 10, width: 10 }"></app-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+    </ng-container>
+  </app-column>
+</div>

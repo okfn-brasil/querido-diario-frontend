@@ -1,0 +1,318 @@
+@import 'src/assets/_tools.sass'
+@import 'src/assets/_variables.sass'
+
+$uni-purple: #4F3979
+
+@mixin display-heading($color)
+  font-family: 'Baloo'
+  font-size: rem(56)
+  font-weight: 400
+  line-height: 1.2
+  color: $color
+
+@mixin subtitle-text($color)
+  font-size: rem(18)
+  font-weight: 700
+  line-height: 1.4
+  letter-spacing: 0.04em
+  color: $color
+
+@mixin description-text($color)
+  font-size: rem(16)
+  font-weight: 600
+  line-height: 1.4
+  letter-spacing: 0.04em
+  color: $color
+
+.program-history
+  background-color: $white1
+
+// Hero Section
+.hero-section
+  background-color: $uni-purple
+  overflow: hidden
+  min-height: rem(640)
+
+  .content
+    display: flex
+    justify-content: space-between
+    align-items: center
+    min-height: rem(640)
+    gap: rem(32)
+
+  .hero-text
+    max-width: rem(496)
+    z-index: 1
+
+    h1
+      @include display-heading($white1)
+      margin-bottom: rem(16)
+
+    .subtitle
+      @include subtitle-text($white1)
+      margin-bottom: rem(16)
+
+    .description
+      @include description-text($white1)
+
+  .hero-decoration
+    position: relative
+    width: rem(550)
+    height: rem(347)
+    flex-shrink: 0
+
+    .hero-bg-image
+      width: 100%
+      height: 100%
+      object-fit: contain
+
+// Atividades Vigentes Section
+.current-activities-section
+  background-color: $white2
+  padding: rem(56) rem(108) rem(43)
+
+  .content
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: rem(36)
+
+  .section-title
+    @include display-heading(#5E408F)
+    text-align: center
+
+  .featured-card-container
+    border-radius: rem(10)
+    background-color: $white1
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: rem(44)
+    width: 100%
+    max-width: rem(908)
+
+  .nav-arrow
+    background: transparent
+    border: none
+    cursor: pointer
+    padding: rem(8)
+    opacity: 0.6
+    transition: opacity 0.2s ease
+
+    &:hover
+      opacity: 1
+
+    mat-icon
+      width: rem(88)
+      height: rem(88)
+      filter: brightness(0)
+
+  .featured-card
+    position: relative
+    border-radius: rem(10)
+    width: 100%
+    max-width: rem(800)
+    min-height: rem(462)
+    overflow: hidden
+    display: flex
+    flex-direction: column
+
+    .featured-image
+      width: 100%
+      height: rem(300)
+      object-fit: cover
+
+    .featured-content
+      padding: rem(24)
+      text-align: center
+
+    .featured-title
+      font-family: 'Baloo'
+      font-size: rem(22)
+      font-weight: 400
+      line-height: 1.57
+      color: $uni-purple
+      margin-bottom: rem(16)
+
+    .featured-description
+      @include description-text($uni-purple)
+
+// Histórico Section
+.history-section
+  background-color: #2D2145
+  padding: rem(80) rem(108) rem(131)
+
+  .content
+    display: flex
+    flex-direction: column
+    gap: rem(40)
+
+  .history-header
+    display: flex
+    align-items: center
+    gap: rem(16)
+
+  .back-link
+    display: flex
+    align-items: center
+    justify-content: center
+    color: $white1
+    transition: opacity 0.2s ease
+
+    &:hover
+      opacity: 0.8
+
+  .section-title
+    @include display-heading($white1)
+
+  .history-cards-container
+    display: flex
+    justify-content: space-between
+    gap: rem(24)
+
+  .history-card
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: rem(8)
+    padding: rem(24)
+    width: rem(288)
+    border-radius: rem(4) rem(4) rem(24) rem(4)
+    box-shadow: 0 rem(4) rem(4) rgba(0, 0, 0, 0.25)
+
+    &--purple-light
+      background-color: #654A9C
+
+    &--purple
+      background-color: #4F3979
+
+    &--purple-dark
+      background-color: #433168
+
+  .card-image
+    width: rem(186)
+    height: rem(212)
+    background-color: #D9D9D9
+    overflow: hidden
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  .card-content
+    width: rem(240)
+
+  .card-title
+    @include description-text($white1)
+    font-weight: 500
+    text-align: center
+
+  .card-link
+    display: inline-flex
+    align-items: center
+    gap: rem(4)
+    color: $white1
+    font-size: rem(14)
+    font-weight: 700
+    line-height: 1em
+    letter-spacing: 0.04em
+    text-decoration: none
+    transition: opacity 0.2s ease
+
+    &:hover
+      opacity: 0.8
+
+    app-icon
+      color: $white1
+
+  .history-footer
+    display: flex
+    justify-content: flex-start
+
+  .view-all-link
+    display: inline-flex
+    align-items: center
+    gap: rem(10)
+    color: $white1
+    font-size: rem(16)
+    font-weight: 700
+    line-height: 1.4
+    letter-spacing: 0.04em
+    text-decoration: underline
+    text-underline-offset: 4px
+    transition: opacity 0.2s ease
+
+    &:hover
+      opacity: 0.8
+
+    app-icon
+      color: $white1
+
+@media only screen and (max-width: 768px)
+  .hero-section
+    min-height: auto
+    padding: rem(40) 0
+
+    .content
+      flex-direction: column
+      min-height: auto
+      text-align: center
+      padding: rem(40) rem(20)
+
+    .hero-text
+      max-width: 100%
+      order: 2
+
+      h1
+        font-size: rem(32)
+        line-height: 1.3
+
+      .subtitle
+        font-size: rem(16)
+
+      .description
+        font-size: rem(14)
+
+    .hero-decoration
+      order: 1
+      width: 100%
+      max-width: rem(350)
+      height: auto
+      margin-bottom: rem(32)
+
+  .current-activities-section
+    padding: rem(60) rem(20)
+
+    .section-title
+      font-size: rem(32)
+
+    .featured-card-container
+      flex-direction: column
+      gap: rem(16)
+
+    .nav-arrow
+      display: none
+
+    .featured-card
+      min-height: auto
+
+      .featured-image
+        height: rem(200)
+
+  .history-section
+    padding: rem(40) rem(20)
+
+    .section-title
+      font-size: rem(32)
+
+    .history-cards-container
+      flex-direction: column
+      align-items: center
+
+    .history-card
+      width: 100%
+      max-width: rem(320)
+
+    .history-footer
+      justify-content: center
