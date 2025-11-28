@@ -6,15 +6,18 @@
   "homeBoxes": [
     {
       "title": "Como fazer parte",
-      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!"
+      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!",
+      "route": "/universidades/como-fazer-parte"
     },
     {
       "title": "Base de Conhecimento",
-      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!"
+      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!",
+      "route": "/universidades/base-de-conhecimento"
     },
     {
-      "title": "Histórico dos Ciclos",
-      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!"
+      "title": "Histórico do Programa",
+      "paragraph": "Cat ipsum dolor sit amet, pee in the shoe but flop over. I love cats i am one wake up scratch humans leg for food then purr then i have a and relax eat a plant, kill a hand humans,humans, humans oh how much they love us felines we are the center of attention they feed, they clean chew foot nyan fluffness ahh cucumber!",
+      "route": "/universidades/historico"
     }
   ]
 }
