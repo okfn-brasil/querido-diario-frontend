@@ -80,7 +80,7 @@ To search for content in gazettes, consult data from municipalities registered i
 
 It is possible to use the production API, especially if you need data that takes time to be collected (and is already ready for consultation in the production API) and your usage of the API is light. In this case, you do not need to change anything in the repository, which is already configured to access the production API.
 
-However, in other cases, it will be necessary to configure the API locally. To do this, change the constant `API` in the file [`src/app/constants.ts`](/src/app/constants.ts) from `'https://queridodiario.ok.org.br/api'` to `'http://0.0.0.0:8080'` (or `'http://localhost:8080'`), and run it locally (as instructed in the API environment setup documentation) to consume its data.
+However, in other cases, it will be necessary to configure the API locally. To do this, change the constant `API` in the file [`src/app/constants.ts`](/src/app/constants.ts) from `'https://api.queridodiario.ok.org.br'` to `'http://0.0.0.0:8080'` (or `'http://localhost:8080'`), and run it locally (as instructed in the API environment setup documentation) to consume its data.
 
 If it is necessary to populate the local API with a lot of data, you will need to execute the full QD workflow, from scraping to making it available through the API. In these cases, refer to how to [set up Querido Diário end-to-end](https://docs.queridodiario.ok.org.br/en/latest/contributing/end-to-end-configuration.html).
 
@@ -88,7 +88,7 @@ If it is necessary to populate the local API with a lot of data, you will need t
 
 The search and alert functionalities of [Querido Diário: Technologies in Education](https://queridodiario.ok.org.br/educacao)  depend entirely on the backend.
 
-It is not possible to use the production backend. To test any functionality related to QD-Edu, it will be necessary to configure the backend locally. To do this, change the constant `educationApi` in the file [`src/app/services/utils/index.ts`](/src/app/services/utils/index.ts) from `'https://backend-api.queridodiario.ok.org.br/api/'` to `'http://0.0.0.0:8000/api/'` (or `'http://localhost:8000/api/'`), and run it locally (as instructed in the API environment setup documentation) to use the local backend.
+It is not possible to use the production backend. To test any functionality related to QD-Edu, it will be necessary to configure the backend locally. To do this, change the constant `educationApi` in the file [`src/app/services/utils/index.ts`](/src/app/services/utils/index.ts) from `'https://backend.queridodiario.ok.org.br/'` to `'http://0.0.0.0:8000/api/'` (or `'http://localhost:8000/api/'`), and run it locally (as instructed in the API environment setup documentation) to use the local backend.
 
 If it is necessary to configure the QD API and backend at the same time, pay attention to the correct use of pods and containers so that both services can be deployed (either within the same pod with both ports open or in different pods) or refer to how to [set up Querido Diário end-to-end](https://docs.queridodiario.ok.org.br/en/latest/contributing/end-to-end-configuration.html).
 

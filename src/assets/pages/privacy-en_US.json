@@ -43,7 +43,7 @@
         {
           "title": "What can you do with the API?",
           "texts": [
-            "Querido Diário's API aims to make available the pure text extracted from the official gazettes and processing of the original files. This format is dedicated to people who develop software or who have sufficient technical knowledge to make requests based on parameters (“endpoints”) pre-defined by OKBR, such as period, keyword or city. <a target=\"_blank\" href=\"https://queridodiario.ok.org.br/api/docs\">API documentation</a> is available in the Swagger tool.",
+            "Querido Diário's API aims to make available the pure text extracted from the official gazettes and processing of the original files. This format is dedicated to people who develop software or who have sufficient technical knowledge to make requests based on parameters (“endpoints”) pre-defined by OKBR, such as period, keyword or city. <a target=\"_blank\" href=\"https://api.queridodiario.ok.org.br/docs\">API documentation</a> is available in the Swagger tool.",
             "This data access format serves the purpose of providing more efficient use of the data made available by QD than through the search platform. The API use is recommended for those who need to perform automatic queries, for example. However, to preserve the integrity of the infrastructure that provides the data, some precautions are necessary, such as keeping the rate of requests made at the lowest possible level. If any abuse is detected that harms or prevents the use of the platform or API by other users, we may take necessary measures to suspend this abusive use."
           ]
         }
