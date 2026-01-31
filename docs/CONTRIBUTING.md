@@ -51,7 +51,7 @@ Além das issues marcadas como [`good first issue`](https://github.com/okfn-bras
 Ao escolher issues de desenho de interfaces ou de desenho gráfico, se atente aos estilos do projeto. Você também pode achar útil a [documentação de design do frontend](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/frontend.html).
 
 ## Como configurar o ambiente de desenvolvimento
-O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](/package.json). 
+O projeto utiliza [Node.js](https://nodejs.org/) e [Yarn](https://yarnpkg.com/). Utilizamos também o [nvm](https://github.com/nvm-sh/nvm), um gerenciador de versão de `node.js`. Para saber a versão do `node.js`, a lista de dependências e suas versões, veja o arquivo [`package.json`](/package.json).
 
 A seguir, veja como instalar todas essas ferramentas em seu sistema operacional.
 
@@ -86,7 +86,7 @@ Para realizar buscas de conteúdo em diários, consultar dados de municípios ca
 
 É possível utilizar a API de produção, principalmente se precisar de dados que demoram a ser coletados (e na API de produção já estão prontos para consulta) e o seu uso da API for de intensidade leve. Neste caso, não é necessário alterar nada no repositório, já configurado para acessar a API de produção.
 
-Porém, em outros casos será necessário configurar localmente a API. Para isso, altere a constante `API` no arquivo [`src/app/constants.ts`](/src/app/constants.ts) de `'https://queridodiario.ok.org.br/api'` para `'http://0.0.0.0:8080'` (ou `'http://localhost:8080'`), e execute localmente (como instruído na documentação de configuração de ambiente da API) para consumir seus dados.
+Porém, em outros casos será necessário configurar localmente a API. Para isso, altere a constante `API` no arquivo [`src/app/constants.ts`](/src/app/constants.ts) de `'https://api.queridodiario.ok.org.br'` para `'http://0.0.0.0:8080'` (ou `'http://localhost:8080'`), e execute localmente (como instruído na documentação de configuração de ambiente da API) para consumir seus dados.
 
 Se for necessário popular a API local com muitos dados, será necessário executar o fluxo completo do QD, da raspagem à disponibilização pela API. Nesses casos, consulte como [configurar o Querido Diário de ponta-a-ponta](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/configuracao-de-ponta-a-ponta.html).
 
@@ -94,7 +94,7 @@ Se for necessário popular a API local com muitos dados, será necessário execu
 
 As funcionalidades de busca e alertas do [Querido Diário: Tecnologias na Educação](https://queridodiario.ok.org.br/educacao) dependem inteiramente do backend.
 
-Não é possível utilizar o backend de produção. Para testar qualquer funcionalidade referente ao QD-Edu, será necessário configurar o backend localmente. Para isso, altere a constante `educationApi` no arquivo [`src/app/services/utils/index.ts`](/src/app/services/utils/index.ts) de `'https://backend-api.queridodiario.ok.org.br/api/'` para `'http://0.0.0.0:8000/api/'` (ou `'http://localhost:8000/api/'`), e execute localmente (como instruído na documentação de configuração de ambiente da API) para utilizar o backend local.
+Não é possível utilizar o backend de produção. Para testar qualquer funcionalidade referente ao QD-Edu, será necessário configurar o backend localmente. Para isso, altere a constante `educationApi` no arquivo [`src/app/services/utils/index.ts`](/src/app/services/utils/index.ts) de `'https://backend.queridodiario.ok.org.br/'` para `'http://0.0.0.0:8000/api/'` (ou `'http://localhost:8000/api/'`), e execute localmente (como instruído na documentação de configuração de ambiente da API) para utilizar o backend local.
 
 Se for necessário configurar a API e o backend do QD ao mesmo tempo, se atente ao uso correto de pods e containers para que os dois serviços possam ser levantados (dentro do mesmo pod com as duas portas abertas ou em pods diferentes) ou consulte como [configurar o Querido Diário de ponta-a-ponta](https://docs.queridodiario.ok.org.br/pt-br/latest/contribuindo/configuracao-de-ponta-a-ponta.html).
 
