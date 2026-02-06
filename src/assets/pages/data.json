@@ -11,7 +11,7 @@
     "actions": [
       {
         "text": "Baixar Dicionário de Dados",
-        "to": "https://querido-diario-static.nyc3.cdn.digitaloceanspaces.com/assets-site/dicionario-de-dados.pdf",
+        "to": "https://static.queridodiario.ok.org.br/assets-site/dicionario-de-dados.pdf",
         "style": "btn-secondary"
       }
     ]
