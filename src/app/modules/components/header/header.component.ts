@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { UserModel } from 'src/app/interfaces/account';
 import { IconType } from 'src/app/interfaces/icon';
 import { NotificationsComponent } from 'src/app/modules/components/notifications/notifications.component';
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
   userData: UserModel = {};
   urlsHide = ['/educacao/cadastrar'];
   hideMenu = false;
+  headerItems: any[] = [];
   languageList = [
     { code: 'pt', label: 'Português (BR)' },
     { code: 'en', label: 'English (US)' }
@@ -34,6 +36,7 @@ export class HeaderComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private I18nService: I18nService,
+    private translateService: TranslateService,
   ) {}
 
   notificationIcon: IconType = {
@@ -43,6 +46,12 @@ export class HeaderComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    this.translateService.stream('header.items').subscribe((items) => {
+      if (Array.isArray(items)) {
+        this.headerItems = items;
+      }
+    });
+
     this.contentService.find('notifications').subscribe((content: any) => {
       if (content.list.length) {
         this.notificationIcon = { ...this.notificationIcon, file: 'bell-span' };

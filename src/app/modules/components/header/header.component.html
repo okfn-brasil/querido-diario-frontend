@@ -3,7 +3,7 @@
     <div class="container">
       <a routerLink="/"><mat-icon svgIcon="logo" class="logo"></mat-icon></a>
       <nav fxHide.xs fxLayoutGap="32px" *ngIf="!hideMenu">
-        <ng-container *ngFor="let item of 'header.items' | translate; let i = index">
+        <ng-container *ngFor="let item of headerItems; let i = index">
            <a 
             *ngIf="i === 0; else regularLink" 
             routerLink="{{ item.route }}" 
