@@ -17,7 +17,7 @@
           </ng-template>
         </ng-container>
 
-        <a fxLayout="center" (click)="openNotifications()">
+        <a fxLayout="center" (click)="openNotifications()" #notification>
           <app-icon [icon]="notificationIcon"></app-icon>
         </a>
         <button (click)="openCaterseUrl()" class="btn">{{ 'header.buttons.support' | translate }}</button>
