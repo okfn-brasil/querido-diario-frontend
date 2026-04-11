@@ -107,6 +107,7 @@ export class HeaderComponent implements OnInit {
         top: '40px',
         left: `${left}px`,
       },
+      autoFocus: false,
     });
 
     this.modal.afterAllClosed.subscribe(() => {
