@@ -17,20 +17,22 @@
     <app-container [gap]="34">
       <h1>{{ 'evolution.title' | translate }}</h1>
       <app-row layoutAlign="space-between" [flex]="true" [gap]="30">
-        <app-column *ngFor="let item of content.evolution.items">
+        <app-column *ngFor="let item of 'evolution.items' | translate; let index = index">
           <app-row
             [gap]="24"
             layoutAlign="left"
           >
             <app-icon [icon]="item.icon" class="evolution-icon"></app-icon>
             <app-column [gap]="16">
-              <span class="number">{{ item.count }}</span>
+              <span class="number">
+                {{ index === 0 ? content.evolution.items[0].count : item.count }}
+              </span>
               <p>{{ item.text }}</p>
             </app-column>
           </app-row>
         </app-column>
       </app-row>
-      <ng-container *ngFor="let action of content.evolution.actions">
+      <ng-container *ngFor="let action of 'evolution.actions' | translate">
         <app-row class="evolution-link" [gap]="6">
           <a [routerLink]="action.to">
             {{ action.text }}
