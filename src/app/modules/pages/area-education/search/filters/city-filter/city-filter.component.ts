@@ -80,6 +80,13 @@ export class CityFilterComponent implements OnChanges {
     this.showDropdown = true;
   }
 
+  onKeyDown(event: KeyboardEvent) {
+    //Avoid break line.
+    if (event.key === 'Enter') {
+      event.preventDefault();
+    }
+  }
+
   resetInput() {
     this.query = '';
     let container = document.getElementById('location-filter-educacao')
