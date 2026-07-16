@@ -59,12 +59,14 @@
           "width": 110
         },
         {
-          "file": "logo-ccsl",
+          "file": "assets/images/logo-ccsl.png",
+          "isPng": true,
           "height": 18,
           "width": 110
         },
         {
-          "file": "logo-ime-usp",
+          "file": "assets/images/logo-ime-usp.png",
+          "isPng": true,
           "height": 18,
           "width": 110
         },
