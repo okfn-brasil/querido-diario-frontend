@@ -51,13 +51,23 @@
     },
     {
       "title": "Armazenamento e hospedagem",
-      "text": "A plataforma está hospedada na <a href=\"https://www.digitalocean.com/\" target=\"_blank\">DigitalOcean</a>, que é apoiadora de longa data do Querido Diário e da Operação Serenata de Amor.",
+      "text": "Parte da infraestrutura da plataforma está hospedada na <a href=\"https://www.digitalocean.com/\" target=\"_blank\">DigitalOcean</a>, que é apoiadora de longa data do Querido Diário e da Operação Serenata de Amor. Desde junho/2026, outra parte está no Centro de Competência em Software Livre (CCSL) do Instituto de Matemática e Estatística da Universidade de São Paulo (IME-USP).",
       "icons": [
         {
           "file": "digital_ocean",
           "height": 18,
           "width": 110
-        }
+        },
+        {
+          "file": "logo-ccsl",
+          "height": 18,
+          "width": 110
+        },
+        {
+          "file": "logo-ime-usp",
+          "height": 18,
+          "width": 110
+        },
       ]
     },
     {
