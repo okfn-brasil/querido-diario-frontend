@@ -200,7 +200,23 @@
     },
     {
       "title": "APOIO",
-      "icons": [
+            "icons": [
+        {
+          "file": "assets/images/logo-ccsl0.png",
+          "isPng": true,
+          "to": "https://ccsl.ime.usp.br/pt-br/",
+          "target": "_blank",
+          "height": 18,
+          "width": 110
+        },
+        {
+          "file": "assets/images/logo-ime-usp0.png",
+          "isPng": true,
+          "to": "https://ccsl.ime.usp.br/pt-br/",
+          "target": "_blank",
+          "height": 18,
+          "width": 110
+        },
         {
           "file": "logo-Ilda",
           "to": "https://idatosabiertos.org/",
