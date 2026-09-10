@@ -101,6 +101,7 @@ import { AggregateSearchComponent } from './modules/pages/aggregate-search/aggre
 import { AggregateComponent } from './modules/pages/aggregate/aggregate.component';
 import { GlossaryComponent } from './modules/pages/glossary/glossary.component';
 import { HomeComponent } from './modules/pages/home/home.component';
+import { NotFoundComponent } from './modules/pages/not-found/not-found.component';
 import {
   PrivacyPolicyComponent as PrivacyPolicyComponentEnUS,
 } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
@@ -132,6 +133,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AboutComponent,
     UniversitiesComponent,
     PrivacyPolicyComponent,
+    NotFoundComponent,
     ComplaintComponent,
     AccessLevelsComponent,
     SupportComponent,

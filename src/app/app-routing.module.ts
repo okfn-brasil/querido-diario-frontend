@@ -29,6 +29,7 @@ import { AboutComponent as AboutComponentEnUS } from './modules/pages/about-en_U
 import { TechComponent as TechComponentEnUS } from './modules/pages/tech-en_US/tech.component';
 import { PrivacyPolicyComponent as PrivacyPolicyComponentEnUS } from './modules/pages/privacy-policy-en_US/privacy-policy.component';
 import { RequestAnalysisFormComponent } from './modules/pages/area-education/request-analysis-form/request-analysis-form.component';
+import { NotFoundComponent } from './modules/pages/not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -64,6 +65,7 @@ const routes: Routes = [
   { path: 'educacao/caso/:id', component: ReportDetailComponent },
   { path: 'educacao/redefinir-senha', component: PassResetComponent },
   { path: 'educacao/pedido-analise', component: RequestAnalysisFormComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
