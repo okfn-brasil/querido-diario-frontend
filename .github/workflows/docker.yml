@@ -49,3 +49,65 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  bump-deployment:
+    name: Bump image in querido-diario-deployment
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    concurrency:
+      group: bump-deployment
+      cancel-in-progress: false
+
+    steps:
+      # Token do GitHub App da org (ADR-009 do querido-diario-deployment),
+      # escopado só ao repositório de deployment.
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          app-id: ${{ secrets.QD_APP_ID }}
+          private-key: ${{ secrets.QD_APP_PRIVATE_KEY }}
+          owner: okfn-brasil
+          repositories: querido-diario-deployment
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          repository: okfn-brasil/querido-diario-deployment
+          ref: main
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
+
+      # Mesmo formato da tag publicada pelo job build (type=sha,format=short).
+      - name: Update frontend newTag
+        id: bump
+        env:
+          FILE: k8s/overlays/production/kustomization.yaml
+        run: |
+          tag="${GITHUB_SHA::7}"
+          awk -v tag="$tag" -v img="$IMAGE" '
+            $0 ~ "name: " img "$" { found = 1; print; next }
+            found && /newTag:/ { sub(/newTag:.*/, "newTag: \"" tag "\""); found = 0 }
+            { print }
+          ' "$FILE" > "$FILE.new"
+          mv "$FILE.new" "$FILE"
+          grep -q "newTag: \"$tag\"" "$FILE"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: bump/frontend-prod
+          base: main
+          commit-message: "release: atualiza imagem do frontend para ${{ steps.bump.outputs.tag }} em produção"
+          title: "release: atualiza imagem do frontend para ${{ steps.bump.outputs.tag }} em produção"
+          body: |
+            Bump automático de `${{ env.IMAGE }}` para `${{ steps.bump.outputs.tag }}`.
+
+            Origem: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}
+
+            Merge aciona o deploy em produção (ver ADR-009).
+          delete-branch: true
